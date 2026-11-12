@@ -1,11 +1,14 @@
 local S=game.ReplicatedStorage.Shared;local C=require(S.Config.ZombieConfig);local ZC=require(S.Config.ZoneConfig);local U=require(S.Config.UpgradeConfig);local R=require(S.Config.RewardConfig);local P=require(script.Parent.PlotService);local Pal=require(S.Palette);local Art=require(S.ArtKit)
 local Z={Models={}};local rng=Random.new()
-function Z.Cap(d,zone) return math.min(ZC[zone].Max,ZC[zone].Start+(d.upgrades[zone] or 0)*U[zone].Step) end
+function Z.Cap(d,zone)
+ if zone=="Field" then return require(S.HouseRules).FieldCap(d) end -- the house level sets it (HouseConfig)
+ return math.min(ZC[zone].Max,ZC[zone].Start+(d.upgrades[zone] or 0)*U[zone].Step)
+end
 function Z.Slot(d,zone) for i=1,Z.Cap(d,zone) do local used=false;for _,z in ipairs(d.zombies) do if z.zone==zone and z.slot==i then used=true end end;if not used then return i end end end
 function Z.Find(d,id) for i,z in ipairs(d.zombies) do if z.id==id then return z,i end end end
 function Z.Bonus(d) local types={} for key in pairs(d.zombiedex) do types[string.split(key,":")[1]]=true end;local count=0;for _ in pairs(types) do count+=1 end;return 1+count*R.DexBonus end
 function Z.Rate(z) return require(S.MergeRules).Rate(z) end
-function Z.Income(d,ignoreSuppression) local v=0;for _,z in ipairs(d.zombies) do if z.zone=="Field" and not z.carriedBy and not z.pendingTransfer and (ignoreSuppression or not Z.IsIncomeBlocked or not Z.IsIncomeBlocked(d,z)) then v+=Z.Rate(z) end end;return v*Z.Bonus(d)*(1+require(script.Parent.PetService).ForData(d).incomePct) end
+function Z.Income(d,ignoreSuppression) local v=0;for _,z in ipairs(d.zombies) do if z.zone=="Field" and not z.carriedBy and not z.pendingTransfer and (ignoreSuppression or not Z.IsIncomeBlocked or not Z.IsIncomeBlocked(d,z)) then v+=Z.Rate(z) end end;return v*Z.Bonus(d)*(1+require(script.Parent.PetService).ForData(d).incomePct)*require(S.PrestigeRules).Mult(d) end
 function Z.Roll(weights,night,starter,luck)
  luck=luck or 1
  local tier=1;local roll=rng:NextNumber()*100;for i,w in ipairs(weights) do roll-=w;if roll<=0 then tier=i;break end end

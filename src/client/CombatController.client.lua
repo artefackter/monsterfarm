@@ -25,7 +25,7 @@ local function clearStrip(kind) for _,c in strip:GetChildren() do if c:IsA('GuiO
 local function choice(kind,id,count,callback)
  local b=Style.Button(strip,id,UDim2.fromOffset(92,90),UDim2.new(),function() callback();strip.Visible=false end,Pal.Panel)
  choiceOrder+=1;b.LayoutOrder=choiceOrder
- if kind=='grave' then Style.Icon(b,kind,id,UDim2.new(1,-8,1,-22),UDim2.fromOffset(4,2)) else Style.ModalArt(b,kind,id,UDim2.new(1,-8,1,-22),UDim2.fromOffset(4,2)) end
+ Style.ModalArt(b,kind,id,UDim2.new(1,-8,1,-22),UDim2.fromOffset(4,2))
  if count then local n=Style.Text(b,tostring(count),UDim2.fromOffset(80,22),UDim2.fromOffset(6,65));n.ZIndex=3 end
 end
 local function chooseWeapons()
@@ -40,7 +40,8 @@ end
 local function chooseItems()
  if strip.Visible and stripKind=='items' then strip.Visible=false;return end;clearStrip('items')
  local n=0
- for _,g in itemsState and itemsState.graveInventory or {} do if not g.pendingTransfer then n+=1;choice('grave',g.type,1,function() rem.Intent:FireServer('selectGrave',g.id) end) end end
+ -- coffins brought back from the ruins first (drawn as coffins), then graves bought in the shop
+ for _,g in itemsState and itemsState.graveInventory or {} do if not g.pendingTransfer then n+=1;choice('coffin',g.type,1,function() rem.Intent:FireServer('selectGrave',g.id) end) end end
  for _,id in require(S.Config.GraveConfig).Order do local count=itemsState and itemsState.vouchers[id] or 0;if count>0 then n+=1;choice('grave',id,count,function() rem.Intent:FireServer('selectGrave',id) end) end end
  if n==0 then strip.Visible=false end
 end
@@ -107,7 +108,7 @@ end
 local reloadButton=roundButton('ReloadButton',3,Color3.fromRGB(255,196,64),function() rem.WeaponAction:FireServer('reload') end)
 local reloadIcon=Instance.new('ImageLabel');reloadIcon.Name='Icon';reloadIcon.BackgroundTransparency=1;reloadIcon.Size=UDim2.fromOffset(54,54);reloadIcon.Position=UDim2.fromOffset(12,12);reloadIcon.Image=Icons.reload;reloadIcon.ImageColor3=Color3.fromRGB(52,33,78);reloadIcon.Parent=reloadButton
 local dropButton=roundButton('DropGraveButton',-83,Color3.fromRGB(255,110,110),function() roadAction('dropGrave') end)
-Style.Icon(dropButton,'grave',nil,UDim2.fromOffset(44,42),UDim2.fromOffset(17,6))
+Style.ModalArt(dropButton,'coffin',nil,UDim2.fromOffset(46,44),UDim2.fromOffset(16,4))
 local dropLabel=Style.Text(dropButton,'',UDim2.fromOffset(70,22),UDim2.fromOffset(4,48));dropLabel.Name='Label';dropLabel.TextColor3=Color3.new(1,1,1);dropLabel.ZIndex=4
 local dropStroke=Instance.new('UIStroke',dropLabel);dropStroke.Color=Color3.fromRGB(20,14,40);dropStroke.Thickness=2
 Run.Heartbeat:Connect(function()
@@ -245,7 +246,8 @@ Instance.new('UICorner',chip).CornerRadius=UDim.new(0,9);do local st=Instance.ne
 vial(chip,UDim2.fromOffset(16,20),UDim2.fromOffset(6,3))
 local chipText=Style.Text(chip,'0',UDim2.fromOffset(50,22),UDim2.fromOffset(25,2));chipText.TextColor3=Color3.fromRGB(190,255,180);chipText.TextXAlignment=Enum.TextXAlignment.Left
 chip.Activated:Connect(function() Sfx.play('Click');openUpgrades() end)
-local function chipRefresh() local n=p:GetAttribute('Mutagen') or 0;chip.Visible=n>0;chipText.Text=L.compact(n,L.lang()) end
+-- moved to the HUD metrics at the bottom left (owner, 2026-11-12); the bench opens from the weapon strip
+local function chipRefresh() local n=p:GetAttribute("Mutagen") or 0;chip.Visible=false;chipText.Text=L.compact(n,L.lang()) end
 p:GetAttributeChangedSignal('Mutagen'):Connect(chipRefresh);chipRefresh()
 end
 local reticle=Instance.new("TextLabel");reticle.Name="TargetReticle";reticle.AnchorPoint=Vector2.new(.5,.5);reticle.Size=UDim2.fromOffset(32,32);reticle.BackgroundTransparency=1;reticle.Text="◇";reticle.Font=Enum.Font.GothamBold;reticle.TextSize=32;reticle.TextColor3=Pal.Orange;reticle.TextStrokeTransparency=.25;reticle.TextStrokeColor3=Pal.Stroke;reticle.Visible=false;reticle.Parent=gui
@@ -351,7 +353,7 @@ rem:WaitForChild("WeaponFX").OnClientEvent:Connect(function(uid,id,origin,ends,a
  if (workspace.CurrentCamera.CFrame.Position-origin).Magnitude>150 then return end
  if who and poses[who] then poses[who]:Kick(C[id].Recoil) end;if who then gunShot(who,id) end
  local from=who and muzzlePosition(who,origin) or origin
- muzzle(from,C[id].Color);for _,last in ipairs(ends) do trace(from,last,C[id].Color) end;Sfx.play("Fire"..id,.12)
+ muzzle(from,C[id].Color);for _,last in ipairs(ends) do trace(from,last,C[id].Color) end;Sfx.play("Fire"..id,.12,.7*Sfx.at(from,15,150))
 end)
 local function updateGun(player)
  local ch=player.Character;local hand=ch and (ch:FindFirstChild("RightHand") or ch:FindFirstChild("Right Arm"));local id=player:GetAttribute("EquippedWeapon")

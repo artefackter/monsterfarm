@@ -1,5 +1,7 @@
 -- The player's house, as in Clash of Clans: its level sets how far everything else on the farm can be upgraded.
 -- Building takes real time and carries on while the player is away.
+-- Field: how many monsters may stand out on the farm (owner, 2026-11-12: "limit the monsters you can place, the
+-- house upgrade raises it"). Crypt and Guards keep their own upgrades up to these caps; graves are unlimited.
 return {
  Levels={
   {Look=1,Limits={Field=8,Graves=5,Guards=2,Crypt=30}},
@@ -7,16 +9,21 @@ return {
   {Look=3,Price=50000,Seconds=300,Limits={Field=14,Graves=9,Guards=3,Crypt=50}},
   {Look=4,Price=500000,Seconds=1200,Limits={Field=17,Graves=11,Guards=4,Crypt=60}},
   {Look=5,Price=5000000,Seconds=3600,Limits={Field=20,Graves=12,Guards=4,Crypt=60}},
+  {Look=6,Price=25000000,Seconds=7200,Limits={Field=24,Graves=12,Guards=4,Crypt=60}},
+  {Look=7,Price=100000000,Seconds=14400,Limits={Field=28,Graves=12,Guards=4,Crypt=60}},
  },
- Zones={"Guards","Crypt"}, -- graves and pen zombies have no limit: only the room on the farm counts
- -- A cottage built from blocks: cream walls, a purple gabled roof with flared eaves, a chimney, a lamp by the
- -- open door. Each level grows it: a porch, a second floor, a corner tower, then the golden manor.
+ Zones={"Guards","Crypt"}, -- the upgradeable zones the house caps; Field is the house's own limit (HouseRules.FieldCap)
+ -- A monster base after the owner's reference (2026-11-12): graphite walls, cream corner pillars, a glass storefront.
+ -- Each level adds to it: awning and neon, a showroom floor with your best monsters, a rooftop billboard with your
+ -- name, gold and a beacon, a third floor, a crown. Tall bounds the room for "is the player inside".
  Looks={
-  {W=32,D=27,Wall=12,Roof=10,Tall=24,Sign=10.8,Asset="V3_House1"},
-  {W=32,D=27,Wall=12,Roof=10.5,Tall=25,Sign=10.8,Porch=true,Asset="V3_House2"},
-  {W=32,D=27,Wall=18,Roof=11,Tall=32,Sign=10.8,Porch=true,Floors=2,Asset="V3_House3"},
-  {W=32,D=27,Wall=18,Roof=11,Tall=38,Sign=10.8,Porch=true,Floors=2,Tower=true,Asset="V3_House4"},
-  {W=32,D=27,Wall=20,Roof=12,Tall=42,Sign=10.8,Porch=true,Floors=2,Tower=true,Gold=true,Asset="V3_House5"},
+  {W=32,D=27,Wall=12,Floors=1,FloorHeight=10,Tall=17},
+  {W=32,D=27,Wall=12,Floors=1,FloorHeight=10,Tall=17,Awning=true,Neon=true,Planters=true},
+  {W=32,D=27,Wall=12,Floors=2,FloorHeight=10,Tall=27,Awning=true,Neon=true,Planters=true},
+  {W=32,D=27,Wall=12,Floors=2,FloorHeight=10,Tall=27,Awning=true,Neon=true,Planters=true,Billboard=true},
+  {W=32,D=27,Wall=12,Floors=2,FloorHeight=10,Tall=27,Awning=true,Neon=true,Planters=true,Billboard=true,Gold=true,Beacon=true},
+  {W=32,D=27,Wall=12,Floors=3,FloorHeight=10,Tall=37,Awning=true,Neon=true,Planters=true,Billboard=true,Gold=true,Beacon=true},
+  {W=32,D=27,Wall=12,Floors=3,FloorHeight=10,Tall=37,Awning=true,Neon=true,Planters=true,Billboard=true,Gold=true,Beacon=true,Crown=true},
  },
  Spot={X=20,Z=-17.5},Depth=17,Width=20, -- where it stands on the plot; the door looks at the farm's central path
  -- The house stands across the back-right corner at 45 degrees: its back corners touch both fences, so it

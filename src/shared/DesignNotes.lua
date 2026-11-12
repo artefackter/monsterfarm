@@ -127,3 +127,49 @@ return {}
 -- are replaced with the real three-matching-zombies rule.
 -- Ranking board and champion pedestal moved just outside the west edge.
 -- DisplayRing is decorative only; MenuZone drives actual interaction.
+
+-- Revision 2026-11-12 (owner requests):
+-- Weapon sounds are real firearm recordings from the ProSoundEffects library (same licensed owner as before);
+-- every weapon has its own Fire/Reload/Empty entry. Other players' and guards' shots fade with distance (Sfx.at).
+-- Offline income no longer waits in the rewards menu: IncomeService.Offline adds it to the farm heap (farmBank),
+-- moving any old unclaimed offlinePending there once; a notice on join says how much the heap grew.
+-- Players spawn (and the Home button lands) on the path in front of their own gate, facing the farm.
+-- Road v4: locations 0-420-860-1380-1980-2800-3900. Each ends in an amphitheatre (radius 62, 18 studs before the
+-- next location) with its boss; only that location's two monster kinds spawn there (RoadMonsterRules.Districts).
+-- Bosses never leave their arena, heal when nobody fights them, are immune to the shovel stun, pay every player who
+-- hit them (RewardMult) and may drop a grave (RoadConfig.Boss.Graves; only the Chief's hatches the DeerChief).
+-- Two treasure graves per arena stay locked until its boss is beaten, and until it respawns. A boss that despawned
+-- because nobody was around was never beaten, so its graves stay locked.
+-- New kinds: Leaper (telegraphed dash) and Thrower (lobbed blast). Attacks are data in MutantConfig.Types.Attacks.
+-- Animation v2: each family has its own gait, idle and attack poses; deaths slump and sink into smoke in 0.55 s
+-- on the client (no corpse remains; the server still removes the model at once).
+
+-- Revision 2026-11-12, round 2 (owner feedback after playing):
+-- Night cultists stood at the farm fence: the 3-stud fence slips under the body sphere, so no detour was planned
+-- and the floor probe met the fence top (StepTooHigh). MutantNavigation now also casts a knee-high ray along the
+-- way; a low wall counts as an obstacle and the path goes through the gate.
+-- Icons are 2D everywhere: coffins/graves in the item strip and the inventory (tinted per material, UIStyle.GraveTint),
+-- the drop button, the treadmill and crypt tags, flying cash. The Monsterdex is picture cards (portraits, dark
+-- silhouettes with "?" for the unknown, mutation tint), and its HUD button is the icon alone.
+-- Shovels (corrected by the owner the same day): the better the shovel, the longer it knocks out (1-3 s, players and
+-- monsters) and the further a hit PLAYER flies (6-25 studs). Monsters are not shoved. Bosses take the damage only.
+-- Hiding bushes along every location (RoadConfig.Bushes, never in arenas): inside one a runner is no target; a shot
+-- or a swing reveals them for BushReveal seconds. The client shows a tag and fades the own body.
+-- House: the farm's monster count is capped by the house level (Limits.Field 8...28, HouseRules.FieldCap); 7 levels.
+-- The cottage is replaced by a monster base (graphite, glass storefront, neon, awning, showroom floors whose
+-- windows show the owner's best monsters, a rooftop billboard with the name, gold, beacon, crown). Treadmill has 7
+-- levels (6-7 reuse the level-5 model with glowing rails). Upgrade boards are larger and say what the next level gives.
+-- The road lies at the lawn's height (one stud lower than before) with an apron under the island's round edge; the
+-- entrance is two castle towers, a battlemented bridge with the big sign, open iron gates, torches and a cobbled
+-- threshold. Arena gates are gone. Studio-only chat commands: /farm n, /house n, /treadmill n.
+-- Blood Moon (BloodMoonConfig/BloodMoonService): every 3rd night, 20 s in, the road shuts behind a red barrier (runners
+-- are brought back, a carried grave is stored) and a random ruins boss, 55 studs tall, walks out onto the island.
+-- It hunts players outside houses with telegraphed Roar/Stomp/Smash that knock down and fling (nothing is lost).
+-- 150 s to kill it (health 6000 + 4500 per extra player): everyone who hit it is paid x25 plus mutagen and
+-- 3 graves per player rain down round it (at most 3 taken each). Else it leaves. The sky turns crimson meanwhile;
+-- farm raids pause. Weapons now measure range to the point they hit (a giant's centre is far up).
+-- Prestige (PrestigeRules/PrestigeService, board by the house door): needs house level 5 and 10M x3^n; resets coins,
+-- monsters, graves, coffins, house, treadmill and zone upgrades; keeps pets, dex, weapons, shovels, mutagen, speed.
+-- Income x(1 + 0.5 n). A confirmation window lists what goes and stays. Studio: /bloodmoon, /giant n.
+-- HUD bottom-left third row: the item in hand (shovel, or the gun when drawn) large, its damage incl. upgrades,
+-- and mutagen beside it (the chip over the hotbar is gone).

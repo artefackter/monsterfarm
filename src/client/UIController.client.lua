@@ -211,10 +211,14 @@ local function bigNumber(name,y,height,color,strokeColor)
 end
 iconImage(metrics,'hudSpeed',UDim2.fromOffset(66,58),UDim2.fromOffset(0,0))
 iconImage(metrics,'hudZombucks',UDim2.fromOffset(66,58),UDim2.fromOffset(0,62))
-local damageIcon=iconImage(metrics,'hudDamage',UDim2.fromOffset(66,58),UDim2.fromOffset(0,116));damageIcon.Name='DamageIcon'
 local speedText=bigNumber('Speed',2,54,Color3.new(1,1,1),Color3.fromRGB(18,14,30))
 local coins=bigNumber('Coins',64,54,Color3.fromRGB(110,255,90),Color3.fromRGB(20,70,20))
-local damageText=bigNumber('Damage',126,32,Color3.new(1,1,1),Color3.fromRGB(18,14,30))
+-- The third row (owner, 2026-11-12): what is in your hands, big — the shovel, or the gun once you take it out — with
+-- its damage now (upgrades included), and your mutagen beside it.
+local damageText=bigNumber('Damage',124,40,Color3.new(1,1,1),Color3.fromRGB(18,14,30));damageText.Size=UDim2.fromOffset(96,40);damageText.Position=UDim2.fromOffset(82,124)
+local mutagenIcon=Style.ModalArt(metrics,'mutagen',nil,UDim2.fromOffset(46,50),UDim2.fromOffset(180,120));mutagenIcon.Name='MutagenIcon'
+local mutagenText=bigNumber('Mutagen',126,36,Color3.fromRGB(184,247,73),Color3.fromRGB(30,60,10));mutagenText.Size=UDim2.fromOffset(110,36);mutagenText.Position=UDim2.fromOffset(228,126)
+local toolKey,toolArt
 -- Road status shares the metrics block: one heart + count, then the carried grave.
 local roadStatus=Instance.new('Frame');roadStatus.Name='RoadStatus';roadStatus.BackgroundTransparency=1;roadStatus.Size=UDim2.fromOffset(214,62);roadStatus.Position=UDim2.fromOffset(0,-66);roadStatus.Visible=false;roadStatus.Parent=metrics
 local heartIcon=iconImage(roadStatus,'hudHeart',UDim2.fromOffset(66,58));heartIcon.Name='HeartIcon'
@@ -223,8 +227,16 @@ local carryIcon=iconImage(roadStatus,'hudCoffin',UDim2.fromOffset(66,62),UDim2.f
 local income=Instance.new('TextLabel') -- income is displayed overhead, not in the HUD
 local slowTimer=label(metrics,'',UDim2.fromOffset(70,26),UDim2.fromOffset(250,16),{textSize=20,stroke=true,color=Pal.Red})
 RunService.Heartbeat:Connect(function()
- local slot=p:GetAttribute('ActiveSlot');local cfg=slot==1 and require(S.Config.ShovelConfig)[p:GetAttribute('EquippedShovel') or 'Rusty'] or slot==2 and WeaponC[p:GetAttribute('EquippedWeapon') or 'Deagle']
- damageText.Text=cfg and tostring(cfg.Damage) or '—'
+ local weapon=p:GetAttribute('ActiveSlot')==2 and (p:GetAttribute('EquippedWeapon') or 'Deagle');local shovel=p:GetAttribute('EquippedShovel') or 'Rusty'
+ local skin=p:GetAttribute('EquippedWeaponSkin') or 'Default'
+ local key=weapon and ('weapon:'..weapon..':'..skin) or ('shovel:'..shovel)
+ if key~=toolKey then
+  toolKey=key;if toolArt then toolArt:Destroy() end
+  toolArt=weapon and Style.ModalArt(metrics,'weapon',weapon,UDim2.fromOffset(96,72),UDim2.fromOffset(-14,108),skin) or Style.ModalArt(metrics,'shovel',shovel,UDim2.fromOffset(84,80),UDim2.fromOffset(-6,102))
+  toolArt.Name='ToolIcon'
+ end
+ damageText.Text=weapon and tostring(math.floor((p:GetAttribute('WeaponDamage') or WeaponC[weapon].Damage)+.5)) or tostring(require(S.Config.ShovelConfig)[shovel].Damage)
+ mutagenText.Text=short(p:GetAttribute('Mutagen') or 0)
  local left=math.max(0,(p:GetAttribute('MutantSlowUntil') or 0)-workspace:GetServerTimeNow());speedText.Text=short(p:GetAttribute('SpeedPoints') or 0);speedText.TextColor3=left>0 and Pal.Red or Pal.Text;slowTimer.Text=left>0 and string.format('◷ %.1f',left) or ''
 end)
 
@@ -276,12 +288,12 @@ local tutorialText = ""
 local nav = scaledBy(Instance.new("Frame"))
 nav.Name = "Nav"
 nav.AnchorPoint = Vector2.new(0, 1) -- sits just above the middle of the screen; the slow-mode switch is just below
-nav.Size = UDim2.fromOffset(210, 76)
+nav.Size = UDim2.fromOffset(84, 84)
 nav.Position = UDim2.new(0, 10, 0.5, -8)
 nav.BackgroundTransparency = 1
 nav.Parent = gui
 local navList = Instance.new("UIGridLayout")
-navList.CellSize = UDim2.fromOffset(210, 76)
+navList.CellSize = UDim2.fromOffset(84, 84)
 navList.CellPadding = UDim2.fromOffset(8, 8)
 navList.FillDirectionMaxCells = 2
 navList.SortOrder = Enum.SortOrder.LayoutOrder
@@ -698,7 +710,8 @@ local function renderInventory()
 		end
 	end
  for _,g in state.graveInventory or {} do if not g.pendingTransfer then
-  local f=row(80);label(f,t("grave_"..g.type),UDim2.fromScale(.55,1),nil,{title=true})
+  local f=row(80);Style.ModalArt(f,"coffin",g.type,UDim2.fromOffset(64,64),UDim2.fromOffset(10,8))
+  label(f,t("grave_"..g.type),UDim2.new(.55,-84,1,0),UDim2.fromOffset(84,0),{title=true,align=LEFT})
   button(f,t("selectGrave"),function() send("selectGrave",g.id);panel.Visible=false end,UDim2.fromScale(.43,.8),UDim2.fromScale(.56,.1))
  end end
 	local any = false
@@ -710,7 +723,7 @@ local function renderInventory()
 		local n = state.vouchers[name] or 0
 		if n > 0 then
 			local f = row(72)
-			label(f, ICON[name] or "⚰️", UDim2.fromOffset(64, 72), UDim2.fromOffset(8, 0), { textSize = 40 })
+			Style.ModalArt(f, "grave", name, UDim2.fromOffset(60, 60), UDim2.fromOffset(10, 6))
 			label(f, t("grave_" .. name), UDim2.new(1, -380, 1, 0), UDim2.fromOffset(84, 0), { title = true, textSize = 24, align = LEFT })
 			label(f, "× " .. n, UDim2.fromOffset(90, 72), UDim2.new(1, -290, 0, 0), { title = true, textSize = 28, align = RIGHT })
 			button(f, t("selectGrave"), function()
@@ -1012,35 +1025,103 @@ local function renderMerge()
 
 end
 
+-- Monsterdex v2 (owner, 2026-11-12: "refactor it visually, use the 2D icons"). Picture cards: every monster is its
+-- painted portrait; one still unknown is a dark silhouette with a question mark, so you can see what you hunt.
+-- The page tint is the mutation (gold, moonlight, a rainbow shimmer). The big card shows the selected monster with
+-- its rarity and income; the progress bar carries the milestone gifts, their buttons sit under the big card.
 local dexPage='None';local dexSelected='DeerFarmer'
-local function renderDex()
- local tabs=row(46)
- for i,page in InterfaceC.Pages do button(tabs,t('dexPage_'..page),function() dexPage=page;render() end,UDim2.new(.25,-6,1,-6),UDim2.new((i-1)*.25,3,0,3),dexPage==page and Pal.Orange or Pal.Panel) end
- local data={zombiedex=state.dex};local n=InterfaceRules.Count(data,dexPage);local total=0;for _,page in InterfaceC.Pages do total+=InterfaceRules.Count(data,page) end
- local catalog=require(S.MonsterCollection).Catalog;local count=#catalog;local gridHeight=math.ceil(count/4)*96
- local body=row(math.max(370,gridHeight+80));local index=0;local selected
- for _,entry in require(S.MonsterCollection).Catalog do local id,tier=entry.Id,entry.Tier
-  local i=index;index+=1;local known=state.dex[id..':'..dexPage]==true
-  local x=(i%4)*104;local y=math.floor(i/4)*96
-  local cell=button(body,'',function() dexSelected=id;render() end,UDim2.fromOffset(98,90),UDim2.fromOffset(x+4,y+3),dexSelected==id and Pal.Accent or Pal[ZC.Tiers[tier]])
-  zombieStage(cell,{id=id,type=id,tier=tier,mutation=dexPage},UDim2.fromOffset(82,62),UDim2.fromOffset(8,0),not known,true)
-  local caption=label(cell,known and t(id) or '???',UDim2.new(1,-4,0,25),UDim2.fromOffset(2,62),{textSize=14});caption.UITextSizeConstraint.MinTextSize=9
-  if id==dexSelected then selected={id=id,type=id,tier=tier,mutation=dexPage};selected.known=known end
+local DEX_PAGE_COLOR={None=Style.ModalColors.Cream,Golden=Color3.fromRGB(255,206,84),Lunar=Color3.fromRGB(176,150,255),Rainbow=Color3.fromRGB(255,140,200)}
+local DEX_TINT={Golden=Color3.fromRGB(255,215,120),Lunar=Color3.fromRGB(185,170,255)}
+local function dexPortrait(parent,id,known,page,size,pos)
+ local img=Instance.new('ImageLabel');img.Name='DexPortrait';img.BackgroundTransparency=1;img.ScaleType=Enum.ScaleType.Fit;img.Active=false
+ img.Image=Icons['modal_monster_'..id] or '';img.Size=size;img.Position=pos or UDim2.new();img.ZIndex=3;img.Parent=parent
+ if not known then
+  img.ImageColor3=Color3.fromRGB(44,26,74)
+ elseif DEX_TINT[page] then img.ImageColor3=DEX_TINT[page]
+ elseif page=='Rainbow' then
+  local g=Instance.new('UIGradient');g.Rotation=25;g.Parent=img
+  g.Color=ColorSequence.new({ColorSequenceKeypoint.new(0,Color3.fromRGB(255,150,150)),ColorSequenceKeypoint.new(.25,Color3.fromRGB(255,235,140)),ColorSequenceKeypoint.new(.5,Color3.fromRGB(150,255,170)),ColorSequenceKeypoint.new(.75,Color3.fromRGB(150,200,255)),ColorSequenceKeypoint.new(1,Color3.fromRGB(230,160,255))})
+  TweenService:Create(g,TweenInfo.new(2.4,Enum.EasingStyle.Sine,Enum.EasingDirection.InOut,-1,true),{Offset=Vector2.new(.35,0)}):Play()
  end
- if selected then zombieStage(body,selected,UDim2.fromOffset(130,110),UDim2.fromOffset(427,0),not selected.known,true);label(body,selected.known and t(selected.type) or '???',UDim2.fromOffset(145,40),UDim2.fromOffset(557,15),{title=true,textSize=23});label(body,selected.known and t(ZC.Tiers[selected.tier]) or '???',UDim2.fromOffset(145,45),UDim2.fromOffset(557,60),{textSize=18}) end
- local progress=candy(Instance.new('Frame'),Pal.Stroke,10);progress.Size=UDim2.fromOffset(409,34);progress.Position=UDim2.fromOffset(4,gridHeight+7);progress.ClipsDescendants=true;progress.Parent=body
- local fill=Instance.new('Frame',progress);fill.BorderSizePixel=0;fill.Size=UDim2.new(n/count,0,1,0);fill.BackgroundColor3=Pal.Mint
- label(progress,t('dexThreshold',{n=n,total=count}),UDim2.fromScale(1,1),nil,{textSize=22,stroke=true,color=Pal.Text})
- for _,threshold in InterfaceC.Thresholds do local mark=Instance.new('Frame',progress);mark.Size=UDim2.fromOffset(2,9);mark.Position=UDim2.new(threshold/count,-2,1,-9);mark.BackgroundColor3=Pal.Text;mark.BorderSizePixel=0 end
- Style.ModalArt(body,'shovel',InterfaceC.DexShovels[table.find(InterfaceC.Pages,dexPage)],UDim2.fromOffset(43,43),UDim2.fromOffset(372,gridHeight+1))
- label(body,t('dexUnlocked',{n=total}),UDim2.fromOffset(409,32),UDim2.fromOffset(4,gridHeight+47),{title=true,textSize=25})
+ return img
+end
+-- The white question mark over a silhouette
+local function dexMark(parent,size,pos)
+ local q=Instance.new('TextLabel');q.Name='Unknown';q.BackgroundTransparency=1;q.Text='?';q.Font=FONT_TITLE;q.TextScaled=true;q.AutoLocalize=false
+ q.TextColor3=Color3.new(1,1,1);q.Size=size;q.Position=pos;q.ZIndex=5;q.Parent=parent
+ local st=Instance.new('UIStroke',q);st.Color=Color3.fromRGB(42,18,72);st.Thickness=3
+ return q
+end
+-- A soft light behind the portrait
+local function dexGlow(parent,size,pos,color)
+ local g=Instance.new('Frame');g.Name='Glow';g.BackgroundColor3=color;g.BackgroundTransparency=.35;g.BorderSizePixel=0;g.Size=size;g.Position=pos;g.ZIndex=2;g.Parent=parent
+ Instance.new('UICorner',g).CornerRadius=UDim.new(1,0)
+ local gr=Instance.new('UIGradient',g);gr.Transparency=NumberSequence.new({NumberSequenceKeypoint.new(0,0),NumberSequenceKeypoint.new(.7,.35),NumberSequenceKeypoint.new(1,1)});gr.Rotation=90
+ return g
+end
+local function renderDex()
+ local catalog=require(S.MonsterCollection).Catalog;local count=#catalog
+ local data={zombiedex=state.dex};local n=InterfaceRules.Count(data,dexPage);local total=0;for _,page in InterfaceC.Pages do total+=InterfaceRules.Count(data,page) end
+ -- Pages: one tab per mutation, coloured like it
+ local tabs=row(54);Style.ModalRow(tabs)
+ for i,page in InterfaceC.Pages do
+  local b=button(tabs,t('dexPage_'..page),function() dexPage=page;render() end,UDim2.new(.25,-8,1,-8),UDim2.new((i-1)*.25,4,0,4),dexPage==page and Pal.Orange or Pal.Panel)
+  if dexPage~=page then b.BackgroundColor3=DEX_PAGE_COLOR[page] end
+ end
+ -- Progress: discovered on this page, the gifts marked on the bar
+ local head=row(70)
+ label(head,t('dexThreshold',{n=n,total=count}),UDim2.fromOffset(190,58),UDim2.fromOffset(12,6),{title=true,textSize=26,align=LEFT})
+ local bar=candy(Instance.new('Frame'),Color3.fromRGB(64,40,92),10);bar.Name='DexProgress';bar.Size=UDim2.new(1,-232,0,26);bar.Position=UDim2.fromOffset(210,22);bar.Parent=head
+ local fill=Instance.new('Frame',bar);fill.BorderSizePixel=0;fill.Size=UDim2.new(math.clamp(n/count,0,1),0,1,0);fill.BackgroundColor3=dexPage=='None' and Pal.Mint or DEX_PAGE_COLOR[dexPage];Instance.new('UICorner',fill).CornerRadius=UDim.new(0,10)
+ for _,threshold in InterfaceC.Thresholds do
+  local reached=n>=threshold;local claimed=(state.dexClaims or {})[dexPage..':'..threshold]
+  local gift=iconImage(bar,'daily',UDim2.fromOffset(34,34),UDim2.new(threshold/count,-17,.5,-17));gift.ZIndex=4
+  gift.ImageColor3=claimed and Color3.fromRGB(150,150,150) or reached and Color3.new(1,1,1) or Color3.fromRGB(120,100,150)
+ end
+ -- The cards
+ local cols,cw,ch=4,102,124
+ local gridHeight=math.ceil(count/cols)*(ch+6)
+ local body=row(math.max(gridHeight+12,480));Style.ModalRow(body)
+ local selected
+ for i,entry in catalog do
+  local id,tier=entry.Id,entry.Tier;local known=state.dex[id..':'..dexPage]==true
+  local x,y=((i-1)%cols)*(cw+6),math.floor((i-1)/cols)*(ch+6)
+  local rarity=Pal[ZC.Tiers[tier]] or Pal.Common
+  local card=Style.ModalSurface(Instance.new('Frame'),known and rarity:Lerp(Color3.new(1,1,1),.25) or Color3.fromRGB(122,108,150),14,false)
+  card.Name='DexCard_'..id;card.Size=UDim2.fromOffset(cw,ch);card.Position=UDim2.fromOffset(x+4,y+6);card.Parent=body
+  if dexSelected==id then Style.ModalSelected(card);card.UIStroke.Thickness=4 end
+  dexGlow(card,UDim2.fromOffset(78,78),UDim2.fromOffset(12,8),known and Color3.new(1,1,1) or Color3.fromRGB(70,52,104))
+  dexPortrait(card,id,known,dexPage,UDim2.fromOffset(88,88),UDim2.fromOffset(7,4))
+  if not known then dexMark(card,UDim2.fromOffset(44,50),UDim2.fromOffset(29,24)) end
+  local caption=label(card,known and t(id) or '???',UDim2.new(1,-8,0,26),UDim2.new(0,4,1,-30),{title=true,textSize=15,color=Pal.Text});caption.ZIndex=4;caption.UITextSizeConstraint.MinTextSize=8
+  local tap=Instance.new('TextButton');tap.Name='Tap';tap.Text='';tap.AutoLocalize=false;tap.BackgroundTransparency=1;tap.Size=UDim2.fromScale(1,1);tap.ZIndex=6;tap.Parent=card
+  tap.Activated:Connect(function() Sfx.play('Click');dexSelected=id;render() end)
+  if id==dexSelected then selected={id=id,type=id,tier=tier,mutation=dexPage,known=known} end
+ end
+ -- The big card on the right
+ local px=cols*(cw+6)+12
+ if selected then
+  local rarity=Pal[ZC.Tiers[selected.tier]] or Pal.Common
+  local big=Style.ModalSurface(Instance.new('Frame'),Style.ModalColors.Blue,16);big.Name='DexSelected';big.Size=UDim2.new(1,-px-6,0,272);big.Position=UDim2.fromOffset(px,6);big.Parent=body
+  dexGlow(big,UDim2.fromOffset(170,170),UDim2.new(.5,-85,0,14),selected.known and rarity:Lerp(Color3.new(1,1,1),.4) or Color3.fromRGB(150,130,190))
+  dexPortrait(big,selected.id,selected.known,dexPage,UDim2.fromOffset(186,186),UDim2.new(.5,-93,0,6))
+  if not selected.known then dexMark(big,UDim2.fromOffset(90,100),UDim2.new(.5,-45,0,50)) end
+  label(big,selected.known and t(selected.type) or '???',UDim2.new(1,-16,0,30),UDim2.fromOffset(8,192),{title=true,textSize=24})
+  badge(big,t(ZC.Tiers[selected.tier]),Style.ModalColors.Purple,UDim2.new(.5,-118,0,230),112).BackgroundColor3=rarity:Lerp(Color3.new(0,0,0),.15)
+  local rate=Merge.Rate({tier=selected.tier,mutation=dexPage})
+  badge(big,selected.known and t('incomeShort',{n=L.number(rate,lang,rate%1==0 and 0 or 1)}) or t('dexFindHint'),Style.ModalColors.Green,UDim2.new(.5,6,0,230),112)
+ end
+ -- Milestone gifts under the big card
  for i,threshold in InterfaceC.Thresholds do
   local reward=InterfaceRules.DexReward(dexPage,threshold);local key=dexPage..':'..threshold;local claimed=(state.dexClaims or {})[key]
-  local f=Style.ModalSurface(Instance.new('Frame'),Style.ModalColors.Blue,10);f.Size=UDim2.fromOffset(276,80);f.Position=UDim2.fromOffset(427,116+(i-1)*84);f.Parent=body
+  local f=Style.ModalSurface(Instance.new('Frame'),Style.ModalColors.Blue,12);f.Size=UDim2.new(1,-px-6,0,58);f.Position=UDim2.fromOffset(px,286+(i-1)*62);f.Parent=body
+  if reward.shovel then Style.ModalArt(f,'shovel',reward.shovel,UDim2.fromOffset(44,44),UDim2.fromOffset(6,7)) else Style.ModalArt(f,'cash',nil,UDim2.fromOffset(44,44),UDim2.fromOffset(6,7)) end
   local description=threshold..'/'..count..' · '..(reward.shovel and t('shovel_'..reward.shovel) or L.compact(reward.coins,lang)..' $')..(reward.speed>0 and (' · +'..short(reward.speed)..' 👟') or '')
-  label(f,description,UDim2.new(1,-8,0,35),UDim2.fromOffset(4,2),{textSize=16})
-  button(f,t(claimed and 'dexClaimed' or n>=threshold and 'claim' or 'dexLocked'),function() if not claimed and n>=threshold then rem.InterfaceAction:FireServer('dex',key) end end,UDim2.new(1,-12,0,34),UDim2.fromOffset(6,40),not claimed and n>=threshold and Pal.Mint or Pal.Common)
+  label(f,description,UDim2.new(1,-160,1,-8),UDim2.fromOffset(54,4),{textSize=15,align=LEFT})
+  button(f,t(claimed and 'dexClaimed' or n>=threshold and 'claim' or 'dexLocked'),function() if not claimed and n>=threshold then rem.InterfaceAction:FireServer('dex',key) end end,UDim2.fromOffset(100,40),UDim2.new(1,-106,0,9),not claimed and n>=threshold and Pal.Mint or Pal.Common)
  end
+ local foot=row(44);Style.ModalRow(foot)
+ label(foot,t('dexUnlockedAll',{n=total,total=count*#InterfaceC.Pages}),UDim2.fromScale(1,1),nil,{title=true,textSize=20})
 end
 render = function()
 	if not state then
@@ -1163,7 +1244,7 @@ elseif menu=="pets" then
   elseif owned then action={name='Shovel_'..id,text=t('choose'),callback=function() rem.EquipmentAction:FireServer('shovel',id) end}
   elseif cfg.Price then action={name='Shovel_'..id,text="$"..short(cfg.Price),enabled=state.coins>=cfg.Price,reason=t("petNoCoins"),callback=function() rem.EquipmentAction:FireServer('buyShovel',id) end}
   else action={name='Shovel_'..id,text="📖",enabled=false,reason=t('dexReward'),callback=function() end} end
-  tile(grid,{order=i,name="ShovelTile_"..id,title=t('shovel_'..id),color=Style.ModalColors.Blue,selected=selected,art=function(f) Style.ModalArt(f,'shovel',id) end,badge="⚔ "..cfg.Damage,badgeWidth=70,action=action})
+  tile(grid,{order=i,name="ShovelTile_"..id,title=t('shovel_'..id),color=Style.ModalColors.Blue,selected=selected,art=function(f) Style.ModalArt(f,'shovel',id) end,badge=t('shovelStats',{d=cfg.Damage,s=L.number(cfg.Knockout,lang,1),m=cfg.Distance}),badgeWidth=154,action=action})
  end
 	elseif menu == "crypt" then
   local chips = Style.ModalRow(row(48, Pal.Panel))
@@ -1236,11 +1317,7 @@ elseif menu=="pets" then
 	elseif menu == "top" then
 		renderTop()
 	elseif menu == "rewards" then
-		if state.offline > 0 then
-			button(row(66, Pal.Accent), "💤 " .. t("offline", { n = state.offline }) .. " · " .. t("claim"), function()
-				send("offline")
-			end, UDim2.new(1, -12, 0, 54), UDim2.fromOffset(6, 6), Pal.Orange)
-		end
+		-- Offline income is no longer claimed here: it piles up on the farm heap (IncomeService.Offline).
 		local grid = tileGrid(162, 208)
 		local today = state.dailyStreak
 		for i, prize in ipairs(RC.Daily) do
@@ -1287,10 +1364,8 @@ local function menuIcon(parent, key, size, order)
 	return b
 end
 local BIG, SMALL = UDim2.fromOffset(84,84), UDim2.fromOffset(TOP_HEIGHT,TOP_HEIGHT)
-local dex=menuIcon(nav,'dex',UDim2.fromOffset(210,76),1)
-if dex:FindFirstChild('Icon') then dex.Icon.Size=UDim2.fromOffset(62,62);dex.Icon.Position=UDim2.fromOffset(4,7) end
-local dexCaption=label(dex,t('dex'),UDim2.new(1,-74,1,0),UDim2.fromOffset(68,0),{title=true,textSize=30,color=Pal.Text});dexCaption.TextWrapped=false;dexCaption.UITextSizeConstraint.MinTextSize=9
-do local st=Instance.new('UIStroke',dexCaption);st.Color=Color3.fromRGB(10,40,90);st.Thickness=3 end
+-- The Monsterdex button is its book icon only, like the buttons on the right (owner, 2026-11-12: no caption).
+local dex=menuIcon(nav,'dex',BIG,1)
 navButtons.invite=iconButton(topRight,'invite',invite,SMALL);navButtons.invite.LayoutOrder=1
 menuIcon(topRight,'settings',SMALL,2);menuIcon(topRight,'top',SMALL,3)
 menuIcon(rightBox,'pets',BIG,1);menuIcon(rightBox,'crypt',BIG,2)
@@ -1307,7 +1382,6 @@ paint(navButtons.crypt,Color3.fromRGB(160,95,255),Color3.fromRGB(70,30,140))
 paint(navButtons.home,Color3.fromRGB(90,220,90),Color3.fromRGB(25,110,40))
 for _,key in {'invite','settings','top'} do local b=navButtons[key];if b then b.BackgroundColor3=Color3.fromRGB(28,30,44);b.BackgroundTransparency=.25;local st=b:FindFirstChildOfClass('UIStroke');if st then st.Color=Color3.fromRGB(70,74,96);st.Thickness=2 end;local g=b:FindFirstChildOfClass('UIGradient');if g then g.Enabled=false end;local c=b:FindFirstChildOfClass('UICorner');if c then c.CornerRadius=UDim.new(1,0) end end end
 RunService.Heartbeat:Connect(function() navButtons.home.BackgroundColor3=p:GetAttribute('HomeReason') and Pal.Common or navButtons.home:GetAttribute('Fill') end)
-p:GetAttributeChangedSignal('Language'):Connect(function() dexCaption.Text=L.text('dex',L.lang()) end)
 local menuBridge=Instance.new('BindableEvent');menuBridge.Name='ZoneMenu';menuBridge.Parent=gui
 menuBridge.Event:Connect(function(key,opening)
  if opening then openMenu(key);gui:SetAttribute('ZoneMenuKey',key)
@@ -1359,6 +1433,16 @@ for _,attribute in ipairs({"RoadHearts","CarryingGrave"}) do
  p:GetAttributeChangedSignal(attribute):Connect(refreshRoadHud)
 end
 refreshRoadHud()
+-- In a hiding bush: a green tag beside the hearts, and your own body goes see-through (only on your screen).
+local hiddenTag=Style.ModalSurface(Instance.new('TextLabel'),Color3.fromRGB(70,150,60),12,false);hiddenTag.Name='HiddenInBush'
+hiddenTag.Size=UDim2.fromOffset(196,34);hiddenTag.Position=UDim2.fromOffset(70,-38);hiddenTag.Font=FONT_TITLE;hiddenTag.TextScaled=true;hiddenTag.TextColor3=Pal.Text;hiddenTag.AutoLocalize=false;hiddenTag.Visible=false;hiddenTag.Parent=roadStatus
+Style.ModalText(hiddenTag,true)
+local function refreshHidden()
+ local hidden=p:GetAttribute("HiddenInBush")==true
+ hiddenTag.Text=t('bushHidden');hiddenTag.Visible=hidden
+ for _,q in p.Character and p.Character:GetDescendants() or {} do if q:IsA('BasePart') or q:IsA('Decal') then q.LocalTransparencyModifier=hidden and .45 or 0 end end
+end
+p:GetAttributeChangedSignal("HiddenInBush"):Connect(refreshHidden)
 responsive()
 
 -- Settings can change the language mid-game: everything built from t() on the next render picks it up.
@@ -1547,7 +1631,8 @@ rem.Notice.OnClientEvent:Connect(function(key, args)
 		revealCard(args)
 	else
 		if key == "starRare" then args.type=t(args.type) end
-		if key == "roadRare" or key == "roadDelivered" or key == "roadStored" then args.grave=t("grave_"..args.grave) end
+		if key == "roadRare" or key == "roadDelivered" or key == "roadStored" or key == "bloodMoonGrave" then args.grave=t("grave_"..args.grave) end
+		if (key == "bossArena" or key == "bossDefeated" or key == "bloodMoonRise" or key == "bloodMoonWin" or key == "bloodMoonLost") and args.boss then args.boss=t(args.boss) end
 		if key == "petDug" then args.rarity=t(args.rarity);args.type=t(args.type) elseif key=="petRare" then args.rarity=t(args.rarity);args.species=t(args.species) elseif key == "rare" then
 			args.rarity = t(args.rarity)
 			args.type = t(args.type)

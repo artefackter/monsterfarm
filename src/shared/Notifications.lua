@@ -14,11 +14,11 @@ N.Colors = {
 local types = {}
 local groups = {
  success = {"ok","roadStored","roadDelivered","trapBought","trapPlaced","houseDone","mutantNewbie"},
- reward = {"questDone","inviteReward","inviteWelcome","killToast","chiefGraveDropped","petDug"},
- rare = {"rare","starRare","petRare","roadRare"},
- warning = {"mutantWave","mutantStolen","petAlarm","caught","roadDropped","roadLost","roadFaint","roadFell","roadNight","roadPickupInterrupted","trapCaught","trapCaughtDrop"},
+ reward = {"questDone","inviteReward","inviteWelcome","killToast","chiefGraveDropped","bossGraveDropped","petDug","offlineHeap","bloodMoonGrave","prestigeDone"},
+ rare = {"rare","starRare","petRare","roadRare","bossDefeated","bloodMoonWin","prestigeAll"},
+ warning = {"bossArena","mutantWave","mutantStolen","petAlarm","caught","roadDropped","roadLost","roadFaint","roadFell","roadNight","roadPickupInterrupted","trapCaught","trapCaughtDrop","bloodMoonRise","bloodMoonLost","roadClosed","bloodMoonEnough"},
  guide = {"giftHint","petStarter","placeHint","placeCemetery","placeWorker","placeDefender","roadBatHint","mergeHint"},
- error = {"error","weaponDenied","inviteUnavailable","mergeNeedThree","giftGroupRequired","roadGearDenied","roadBossFirst","batCarryDenied","trapEmpty","trapFull","trapPlacedFull","trapVisitShop","trapStockFull","trapNoCoins","trapBadSpot","petBusy","petUnequipFirst","petSlotsFull","petShopDistance","petNightOnly","petMaxSlots","petNoCoins","petFull","placeFar","placeCrowded","placeGravesFull","placeOutside","placeGuardsFull","placeBad","placeNoGrave","placeFieldFull","homeKO","homeTrap","homeCooldown","homeDig","homeCarry","homeUnavailable","homeRoad"},
+ error = {"error","prestigeBusy","weaponDenied","inviteUnavailable","mergeNeedThree","giftGroupRequired","roadGearDenied","roadBossFirst","batCarryDenied","trapEmpty","trapFull","trapPlacedFull","trapVisitShop","trapStockFull","trapNoCoins","trapBadSpot","petBusy","petUnequipFirst","petSlotsFull","petShopDistance","petNightOnly","petMaxSlots","petNoCoins","petFull","placeFar","placeCrowded","placeGravesFull","placeOutside","placeGuardsFull","placeBad","placeNoGrave","placeFieldFull","homeKO","homeTrap","homeCooldown","homeDig","homeCarry","homeUnavailable","homeRoad"},
 }
 for kind, keys in pairs(groups) do for _, key in ipairs(keys) do types[key] = kind end end
 function N.Type(key) return types[key] or "info" end

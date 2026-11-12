@@ -16,7 +16,7 @@ end
 local function applyPlate(label)
 	label.AutoLocalize=false
 	local name = label:GetAttribute("OwnerName")
-	label.Text = name and L.text("owner", lang, { name = name }) or L.text("unclaimed", lang)
+	label.Text = name and L.text(label:GetAttribute("PlateKey") or "owner", lang, { name = name }) or L.text("unclaimed", lang)
 	label.Font = isRussian and Enum.Font.GothamBlack or Enum.Font.FredokaOne
 end
 local function applyStatue(label)

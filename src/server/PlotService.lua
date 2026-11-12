@@ -649,11 +649,11 @@ function P.Inside(p, plot)
 	return math.abs(v.X) <= C.FarmHalf + 1 and v.Z >= -C.FarmHalf - 1 and v.Z <= C.FarmHalf + 1
 end
 
--- Players arrive just inside the gate, looking at their own farm instead of back at the plaza.
+-- Players arrive on the path in front of their gate (owner, 2026-11-12), facing the arch and the farm behind it.
 function P.Home(p)
 	local q = P.Assigned[p]
 	if q and p.Character then
-		p.Character:PivotTo(q.Base * CFrame.new(0, 5, -20) * CFrame.Angles(0, math.pi, 0))
+		p.Character:PivotTo(q.Base * CFrame.new(0, 5, -(C.FarmHalf + 8)) * CFrame.Angles(0, math.pi, 0))
 		if typeof(p) == "Instance" then
 			p:SetAttribute("InHouse", false)
 		end

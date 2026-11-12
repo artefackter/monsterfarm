@@ -1,17 +1,31 @@
 -- Procedural animation for the road and farm mutants, driven by real movement so nobody skates.
--- Running: legs stride from the hips with a little knee lift, arms pump against them, the upper body leans
--- into the run and bobs twice per stride. Standing: breathing, arms hanging and swaying, a slow look around.
--- Attacks: a clear wind-up (arms over the head, body leaning back) and a hard follow-through. Hits make them
--- flinch, stuns make them wobble, the parasite's tendrils never stop wriggling. Each kind moves its own way.
+-- v2 (owner, 2026-11-12: "different animations for different enemies"): every family moves its own way.
+--   Deer        long-legged trot, claws up, alert head-jerks when it stands
+--   Stalker     low hunched sprint with the arms swept back, slow creepy sway at rest
+--   Verity      erratic stutter-steps, flailing arms, sudden twitches
+--   RingMaw     four-legged gallop with a flexing spine, sniffs the ground at rest
+--   Parasite    heavy waddle, wide arms, deep breathing, tendrils that never stop
+--   CaveDweller crouched lope, long arms dragged in front
+--   SirenHead   slow giant strides, limp dangling arms, a tilted head
+--   Cultist     marching robes, hands together, a chanting rock at rest
+--   Dealer      a floating head with detached hands
+-- Attacks read the server's AttackName (MutantConfig): Slam/Smash overhead blows, Shot aiming, Throw a wind-up
+-- over the shoulder, Leap a crouch then a stretched dive, Charge head down, Scream head back and arms flung out,
+-- Spit/Curse a lean back then a lunge, Summon arms raised, Stomp a raised leg. Bosses move with more weight.
 -- Signs (the rig faces -Z): a positive X angle swings a hanging limb forward, a negative one tips the body forward.
 local A = {}
 
--- How each kind carries itself: stride swing, arm pump, run lean, body sway, bob height.
-local STYLE = {
-	Imp = { leg = 0.95, arm = 0.9, lean = 0.28, sway = 0.06, bob = 0.2, reach = 0.15 },
-	Spitter = { leg = 0.8, arm = 0.45, lean = 0.2, sway = 0.04, bob = 0.15, reach = 0.6 }, -- keeps the gun up
-	Bubble = { leg = 0.65, arm = 0.55, lean = 0.12, sway = 0.16, bob = 0.26, reach = 0.25 }, -- heavy, lumbering
-	Chief = { leg = 0.7, arm = 0.6, lean = 0.14, sway = 0.12, bob = 0.3, reach = 0.2 },
+-- leg/arm: swing; lean: run lean; hunch: constant forward bend; sway: side roll; bob: bounce; stride: studs a step;
+-- arms: how they are carried while running; idle: what it does standing.
+local GAIT = {
+	Deer = { leg = 1.0, arm = 0.55, lean = 0.3, hunch = 0.1, sway = 0.05, bob = 0.24, stride = 6.5, knee = 0.3, arms = "claw", idle = "alert" },
+	Stalker = { leg = 0.9, arm = 0.2, lean = 0.55, hunch = 0.3, sway = 0.03, bob = 0.12, stride = 7, knee = 0.25, arms = "trail", idle = "sway" },
+	Verity = { leg = 0.95, arm = 0.9, lean = 0.22, hunch = 0.06, sway = 0.09, bob = 0.18, stride = 5.5, knee = 0.3, arms = "flail", idle = "twitch", jitter = true },
+	RingMaw = { quad = true, leg = 0.85, arm = 0.85, lean = 0.08, hunch = 0, sway = 0.04, bob = 0.26, stride = 7, knee = 0.2, arms = "quad", idle = "sniff" },
+	Parasite = { leg = 0.6, arm = 0.45, lean = 0.12, hunch = 0.12, sway = 0.16, bob = 0.26, stride = 5, knee = 0.15, arms = "heavy", idle = "breath" },
+	CaveDweller = { leg = 0.75, arm = 0.3, lean = 0.42, hunch = 0.35, sway = 0.06, bob = 0.16, stride = 6, knee = 0.25, arms = "drag", idle = "sway" },
+	SirenHead = { leg = 0.55, arm = 0.25, lean = 0.08, hunch = 0, sway = 0.1, bob = 0.12, stride = 11, knee = 0.15, arms = "hang", idle = "tilt" },
+	Cultist = { leg = 0.75, arm = 0.2, lean = 0.1, hunch = 0.08, sway = 0.04, bob = 0.1, stride = 5, knee = 0.12, arms = "robe", idle = "chant" },
 }
 
 local function smooth(t)
@@ -20,7 +34,7 @@ local function smooth(t)
 end
 
 function A.New(model)
-	return { last = model.PrimaryPart.Position, phase = 0, speed = 0, born = os.clock(), seed = math.random() * 10 }
+	return { last = model.PrimaryPart.Position, phase = 0, speed = 0, born = os.clock(), seed = math.random() * 10, look = 0 }
 end
 
 function A.Step(model, data, dt)
@@ -31,10 +45,13 @@ function A.Step(model, data, dt)
 	dt = math.clamp(dt, 1 / 240, 0.1)
 	local scale = model:GetScale()
 	local kind = model:GetAttribute("Kind") or model.Name
-	local style = STYLE[kind] or STYLE.Imp
- local quadruped=model:GetAttribute("Family")=="RingMaw"
- local floating=model:GetAttribute("Floating")==true
-	-- Speed from actual displacement, sampled so the server's 20 Hz updates don't make it stutter
+	local family = model:GetAttribute("Family") or "Deer"
+	local g = GAIT[family] or GAIT.Deer
+	local quadruped = g.quad == true
+	local floating = model:GetAttribute("Floating") == true
+	local boss = model:GetAttribute("Boss") ~= nil
+	local weight = boss and 1.35 or 1
+	-- Speed from actual displacement, sampled so the server's 10 Hz updates don't make it stutter
 	local delta = root.Position - data.last
 	data.last = root.Position
 	local distance = Vector3.new(delta.X, 0, delta.Z).Magnitude
@@ -49,19 +66,28 @@ function A.Step(model, data, dt)
 	end
 	data.speed += ((data.sampledSpeed or 0) - data.speed) * (1 - math.exp(-dt * 8))
 	local moving = smooth(data.speed / (4 * scale))
-	-- A stride covers about 6 studs times the size; fast mutants take quicker steps, capped so legs stay readable
-	data.phase += dt * math.clamp(data.speed / (6 * scale) * math.pi, 0, 22)
+	local now = workspace:GetServerTimeNow()
+	-- A stride covers the family's step times the size; Verity stutters, capped so legs stay readable
+	local rate = data.speed / (g.stride * scale * (boss and 1.15 or 1)) * math.pi
+	if g.jitter then
+		rate *= 1 + 0.7 * math.noise(now * 2.3, data.seed)
+	end
+	data.phase += dt * math.clamp(rate, 0, 22)
 	local phase = data.phase
 	local step = math.sin(phase)
 
-	local now = workspace:GetServerTimeNow()
 	local state = model:GetAttribute("State")
 	local age = math.max(0, now - (model:GetAttribute("StateStartedAt") or now))
-	local windup = state == "Windup" and smooth(age / (model:GetAttribute("AttackDuration") or 1)) or 0
+	local attack = model:GetAttribute("AttackName") or (kind == "Spitter" and "Shot" or "Slam")
+	local duration = model:GetAttribute("AttackDuration") or 1
+	local windup = state == "Windup" and smooth(age / duration) or 0
 	local strike = 0
+	local dash = state == "Dashing" and math.clamp(age / math.max(duration, 0.05), 0, 1) or nil
 	if state == "Recovering" and age < 0.35 then
 		strike = 1 - age / 0.35 -- road attacks land as the wind-up ends
 	elseif state == "Attacking" then
+		-- farm mutants: overhead blows on a zombie, one a second
+		attack = "Slam"
 		local strikeAge = now - (model:GetAttribute("StrikeAt") or -100)
 		windup = age < 0.24 and smooth(age / 0.24) or 0
 		if strikeAge >= 0 and strikeAge < 0.45 then
@@ -71,102 +97,283 @@ function A.Step(model, data, dt)
 			windup = smooth((strikeAge - 0.6) / 0.35) -- winding up for the next blow
 		end
 	end
+	local dashing = dash ~= nil
 	local biting = state == "Biting"
 	local noticed = now - (model:GetAttribute("NoticedAt") or -100)
 	local hop = noticed >= 0 and noticed < 0.4 and math.sin(noticed / 0.4 * math.pi) or 0
 	local hitAge = now - (model:GetAttribute("HitAt") or -100)
-	local flinch = hitAge >= 0 and hitAge < 0.3 and math.sin(hitAge / 0.3 * math.pi) or 0
+	local flinch = hitAge >= 0 and hitAge < 0.3 and math.sin(hitAge / 0.3 * math.pi) / weight or 0
 	local stunned = now < (model:GetAttribute("StunnedUntil") or 0)
 	if stunned then
 		moving, windup, strike, hop = 0, 0, 0, 0
-		biting = false
+		biting, dashing, dash = false, false, nil
 	end
-	local idle = 1 - moving
+	local busy = math.max(windup, strike, dashing and 1 or 0, biting and 1 or 0)
+	local idle = (1 - moving) * (1 - busy)
 	local breathe = math.sin(now * 2.1 + data.seed)
 
-	-- Whole body (legs too): bob twice per stride, a hop when it spots you, crouch before a slam
-	local bob = (math.abs(step) * style.bob * moving + breathe * 0.03 * idle + hop * 0.7 - windup * 0.25) * scale
+	-- What the family does standing still: head, lean, roll, arm offsets
+	local lookYaw, lookPitch, lookRoll, idleLean, idleRoll, idleArm, idleArmOut = 0, 0, 0, 0, 0, 0, 0
+	if g.idle == "alert" then
+		-- deer-like: freezes, then snaps its head to a new direction
+		local slot = math.floor(now * 0.7 + data.seed)
+		local target = math.noise(slot * 1.31, data.seed) * 2.2
+		data.look += (target - data.look) * (1 - math.exp(-dt * 16))
+		lookYaw, lookPitch = data.look, math.noise(slot * 0.77, data.seed + 3) * 0.3
+		idleArm = 0.35
+	elseif g.idle == "twitch" then
+		local spasm = math.max(0, math.noise(now * 1.7, data.seed * 3) - 0.2) * 3
+		lookYaw = math.sin(now * 0.6 + data.seed) * 0.4 + spasm * math.sin(now * 37) * 0.35
+		lookRoll = spasm * math.sin(now * 29) * 0.4 + 0.15
+		idleRoll = spasm * math.sin(now * 23) * 0.12
+		idleArm = spasm * math.sin(now * 31) * 0.5
+	elseif g.idle == "sniff" then
+		lookPitch = 0.3 + math.sin(now * 9 + data.seed) * 0.07
+		lookYaw = math.sin(now * 0.8 + data.seed) * 0.5
+		idleLean = -0.12
+	elseif g.idle == "breath" then
+		idleLean = breathe * 0.07
+		lookYaw = math.sin(now * 0.4 + data.seed) * 0.4
+		idleArmOut = 0.15 + breathe * 0.08
+	elseif g.idle == "chant" then
+		lookPitch = 0.38
+		idleLean = -0.05 + math.sin(now * 1.6 + data.seed) * 0.07
+		idleArm = 0.55 + math.sin(now * 1.6 + data.seed) * 0.12
+	elseif g.idle == "tilt" then
+		lookRoll = 0.25 + math.sin(now * 0.35 + data.seed) * 0.2
+		lookYaw = math.sin(now * 0.3 + data.seed) * 0.6
+		idleRoll = math.sin(now * 0.5 + data.seed) * 0.04
+	else -- sway
+		lookYaw = math.sin(now * 0.5 + data.seed) * 0.55 + math.sin(now * 1.3 + data.seed * 2) * 0.15
+		lookRoll = math.sin(now * 0.45 + data.seed) * 0.18
+		idleRoll = math.sin(now * 0.45 + data.seed) * 0.06
+	end
+	lookYaw *= idle
+	lookPitch *= idle
+	lookRoll *= idle
+
+	-- Per-attack body motion: crouches, dives, lean-backs
+	local crouch, rise, leanAdd, yawAdd, rollAdd = 0, 0, 0, 0, 0
+	if attack == "Leap" then
+		crouch = windup * 0.7
+		leanAdd -= windup * 0.3
+		if dashing then
+			rise = math.sin(dash * math.pi) * 1.8
+			leanAdd -= 0.6
+		end
+	elseif attack == "Charge" then
+		crouch = windup * 0.35
+		leanAdd -= windup * 0.45 + (dashing and 0.55 or 0)
+		rollAdd += windup * math.sin(now * 18) * 0.05 -- pawing the ground
+	elseif attack == "Scream" then
+		leanAdd += 0.4 * windup - 0.3 * strike
+		rollAdd += strike * math.sin(now * 40) * 0.08
+	elseif attack == "Spit" or attack == "Curse" then
+		leanAdd += 0.35 * windup - 0.55 * strike
+	elseif attack == "Summon" then
+		leanAdd += 0.3 * windup - 0.35 * strike
+		rollAdd += windup * math.sin(now * 6) * 0.06
+	elseif attack == "Throw" then
+		yawAdd += 0.55 * windup - 0.75 * strike
+		leanAdd += 0.15 * windup - 0.35 * strike
+	elseif attack == "Stomp" then
+		rollAdd += -0.12 * windup + 0.06 * strike
+		leanAdd += 0.1 * windup - 0.2 * strike
+	elseif attack == "Shot" or attack == "Buckshot" then
+		leanAdd += 0.05 * windup + 0.15 * strike -- the kick of the shot
+	else -- Slam, Smash: lean back to wind up, throw forward into the blow
+		crouch = windup * 0.25
+		leanAdd += 0.32 * windup - 0.5 * strike
+	end
+
+	-- Whole body (legs too): bob twice per stride, a hop when it spots you, crouch before an attack
+	local bob = (math.abs(step) * g.bob * weight * moving + breathe * 0.03 * idle + hop * 0.7 - crouch + rise) * scale
 	local body = CFrame.new(0, bob, (0.25 * flinch - 0.45 * strike) * scale)
-		* CFrame.Angles(0, step * 0.1 * moving, step * style.sway * moving)
+		* CFrame.Angles(0, step * 0.1 * moving + yawAdd, step * g.sway * moving + idleRoll + rollAdd)
+	if quadruped then
+		-- a gallop flexes the spine: the body pitches with the stride
+		body = body * CFrame.Angles(math.sin(phase * 2) * 0.08 * moving, 0, 0)
+	end
 	if state == "Spawning" then
-		local emerge = smooth(age / 0.9)
+		local emerge = smooth(age / (boss and 1.4 or 0.9))
 		body = CFrame.new(0, -3 * scale * (1 - emerge) ^ 2, 0) * body * CFrame.Angles(-(1 - emerge) * 0.5, 0, 0)
 	end
 	if stunned then
 		body = body * CFrame.Angles(math.sin(now * 4) * 0.1, 0, math.sin(now * 6) * 0.16)
 	end
-	-- Upper body only: lean into the run, lean back to wind up, throw forward into the blow, rock back when hit
-	local lean = -style.lean * moving + 0.32 * windup - 0.5 * strike + 0.35 * flinch + breathe * 0.02 * idle
+	-- Upper body only: hunch, lean into the run, the attack's lean, rock back when hit
+	local lean = -g.hunch * (0.6 + 0.4 * moving) - g.lean * moving + leanAdd + 0.35 * flinch + breathe * 0.02 * idle + idleLean * idle
 	if biting then
 		lean -= 0.25 + math.sin(now * 14) * 0.08
 	end
 	local upper = body * CFrame.Angles(lean, 0, 0)
-	local lookAround = (math.sin(now * 0.5 + data.seed) * 0.55 + math.sin(now * 1.3 + data.seed * 2) * 0.15) * idle
 
+	local function armPose(sign)
+		-- running: each family carries its arms its own way
+		local swing = -step * g.arm * moving * sign
+		local pose
+		if g.arms == "trail" then
+			pose = CFrame.Angles(-1.1 * moving + swing * 0.3 + math.sin(now * 13 + sign) * 0.05 * moving, 0, -sign * (0.15 + 0.2 * moving))
+		elseif g.arms == "flail" then
+			pose = CFrame.Angles(swing + math.sin(now * 9 + sign * 2) * 0.5 * moving, math.sin(now * 7 + sign) * 0.3 * moving, -sign * (0.2 + 0.35 * moving))
+		elseif g.arms == "heavy" then
+			pose = CFrame.Angles(swing * 0.8 + 0.2 * moving, 0, -sign * (0.35 + 0.15 * moving))
+		elseif g.arms == "drag" then
+			pose = CFrame.Angles(0.55 + swing * 0.5 + 0.15 * moving, 0, -sign * 0.08)
+		elseif g.arms == "hang" then
+			pose = CFrame.Angles(swing * 0.6 + math.sin(now * 1.1 + sign) * 0.08, 0, -sign * (0.05 + math.sin(now * 0.9 + sign) * 0.04))
+		elseif g.arms == "robe" then
+			pose = CFrame.Angles(0.6 + swing * 0.2, 0, sign * 0.25) -- hands together in front
+		elseif g.arms == "quad" then
+			-- front legs: the pair lands just after the hind pair
+			pose = CFrame.Angles(-math.sin(phase + 1.2 + (sign > 0 and 0.35 or 0)) * g.arm * moving, 0, 0)
+		else -- claw: arms up and forward, pumping
+			pose = CFrame.Angles(swing + 0.35 * moving, 0, -sign * (0.1 + 0.12 * moving))
+		end
+		if not quadruped then
+			-- standing: arms hang and sway, plus the idle's own gesture
+			pose = pose * CFrame.Angles(math.sin(now * 1.7 + data.seed + sign) * 0.07 * idle + idleArm * idle, 0, -sign * idleArmOut * idle)
+		end
+		if kind == "Spitter" and not quadruped then
+			-- the hunter keeps its rifle up at the ready while it runs
+			pose = pose:Lerp(CFrame.Angles(sign < 0 and 1.2 or 0.9, 0, sign < 0 and 0.05 or 0.35), 0.6 * moving)
+		end
+		-- the attack
+		if attack == "Shot" or attack == "Buckshot" then
+			local aim = math.max(windup, strike)
+			if sign < 0 then
+				pose = pose:Lerp(CFrame.Angles(1.55 + strike * 0.3, 0, 0.05), aim)
+			else
+				pose = pose:Lerp(CFrame.Angles(1.1, 0, 0.35), aim * 0.7) -- the other hand steadies it
+			end
+		elseif attack == "Throw" then
+			if sign < 0 then
+				pose = pose:Lerp(CFrame.Angles(2.6, 0, -0.4), windup)
+				pose = pose:Lerp(CFrame.Angles(0.9, 0, 0.1), strike)
+			else
+				pose = pose:Lerp(CFrame.Angles(0.7, 0, 0.3), math.max(windup, strike))
+			end
+		elseif attack == "Leap" then
+			pose = pose:Lerp(CFrame.Angles(-0.9, 0, -sign * 0.3), windup)
+			if dashing then
+				pose = pose:Lerp(CFrame.Angles(1.7, 0, -sign * 0.35), 1)
+			end
+		elseif attack == "Charge" then
+			pose = pose:Lerp(CFrame.Angles(-0.5, 0, -sign * 0.2), windup)
+			if dashing then
+				pose = CFrame.Angles(-step * 1.1 * sign - 0.2, 0, -sign * 0.25)
+			end
+		elseif attack == "Scream" then
+			pose = pose:Lerp(CFrame.Angles(0.4, 0, -sign * 1.25), windup)
+			pose = pose:Lerp(CFrame.Angles(0.6 + math.sin(now * 35 + sign) * 0.15, 0, -sign * 1.5), strike)
+		elseif attack == "Spit" or attack == "Curse" then
+			pose = pose:Lerp(CFrame.Angles(-0.35, 0, -sign * 0.5), windup)
+			pose = pose:Lerp(CFrame.Angles(0.9, 0, -sign * 0.25), strike)
+		elseif attack == "Summon" then
+			pose = pose:Lerp(CFrame.Angles(2.9 + math.sin(now * 8 + sign) * 0.1, 0, -sign * 0.55), windup)
+			pose = pose:Lerp(CFrame.Angles(1, 0, -sign * 0.3), strike)
+		elseif attack == "Stomp" then
+			pose = pose:Lerp(CFrame.Angles(0.3, 0, -sign * 0.7), math.max(windup, strike))
+		elseif windup > 0 or strike > 0 then
+			-- Slam / Smash: both arms up over the head, then slammed down in front
+			pose = pose:Lerp(CFrame.Angles(2.75, 0, -sign * 0.25), windup)
+			pose = pose:Lerp(CFrame.Angles(0.7, 0, -sign * 0.12), strike)
+		end
+		if biting then
+			if family == "Stalker" or family == "CaveDweller" then
+				-- raking claw swipes, one arm after the other
+				local swipe = math.sin(now * 12 + sign * 1.6)
+				pose = CFrame.Angles(1.2 + swipe * 0.5, swipe * 0.6 * sign, -sign * 0.3)
+			elseif not quadruped then
+				pose = CFrame.Angles(1.35 + math.sin(now * 14 + sign * 1.6) * 0.45, 0, -sign * 0.15)
+			end
+		end
+		if flinch > 0 then
+			pose = pose * CFrame.Angles(-0.45 * flinch, 0, -sign * 0.45 * flinch)
+		end
+		if stunned then
+			pose = CFrame.Angles(0.2 + math.sin(now * 5 + sign) * 0.35, 0, -sign * (0.55 + math.sin(now * 3) * 0.2))
+		end
+		return pose
+	end
+
+	local function legPose(sign)
+		local pose
+		if quadruped then
+			-- hind legs drive the gallop
+			pose = CFrame.Angles(math.sin(phase + (sign > 0 and 0.35 or 0)) * g.leg * moving, 0, 0)
+		else
+			local swing = step * sign
+			-- the swinging leg lifts a bit so the foot clears the floor
+			local lift = math.max(0, math.cos(phase) * sign) * g.knee * moving * scale
+			pose = CFrame.new(0, lift, 0) * CFrame.Angles(swing * g.leg * moving, 0, 0)
+		end
+		if attack == "Leap" then
+			pose = pose * CFrame.Angles(0.35 * windup, 0, -sign * 0.1 * windup)
+			if dashing then
+				pose = CFrame.Angles(-0.8 + sign * 0.15, 0, 0) -- stretched out behind
+			end
+		elseif attack == "Stomp" and sign < 0 then
+			pose = pose:Lerp(CFrame.new(0, 0.6 * scale, 0) * CFrame.Angles(1.25, 0, 0), windup)
+			pose = pose:Lerp(CFrame.Angles(-0.1, 0, 0), strike)
+		elseif windup > 0 then
+			pose = pose * CFrame.Angles(0.3 * windup * sign, 0, -sign * 0.08 * windup) -- feet apart, braced
+		end
+		if stunned then
+			pose = CFrame.Angles(math.sin(now * 5 + sign) * 0.15, 0, -sign * 0.12)
+		end
+		return pose
+	end
+
+	local function headPose()
+		local nod = math.sin(now * 2.1 + data.seed) * 0.04 * idle + 0.12 * moving - lean * 0.4 + lookPitch
+		local pose = CFrame.Angles(nod - 0.35 * windup + 0.3 * strike + 0.2 * flinch + 0.2 * hop, lookYaw + step * 0.06 * moving, lookRoll)
+		if attack == "Charge" then
+			pose = pose * CFrame.Angles(0.55 * math.max(windup, dashing and 1 or 0), 0, 0) -- head down, horns first
+		elseif attack == "Scream" then
+			pose = CFrame.Angles(-0.7 * windup + 0.25 * strike, math.sin(now * 30) * 0.12 * strike, math.sin(now * 33) * 0.1 * strike)
+		elseif attack == "Spit" or attack == "Curse" then
+			pose = CFrame.Angles(-0.45 * windup + 0.55 * strike, 0, 0)
+		elseif attack == "Summon" then
+			pose = CFrame.Angles(-0.5 * windup + 0.3 * strike, 0, math.sin(now * 6) * 0.1 * windup)
+		end
+		if quadruped and moving > 0.1 then
+			pose = pose * CFrame.Angles(math.sin(phase * 2 + 0.6) * 0.12 * moving, 0, 0)
+		end
+		if biting then
+			pose = quadruped and CFrame.Angles(0.45 + math.sin(now * 16) * 0.3, 0, 0) or CFrame.Angles(0.25 + math.sin(now * 18) * 0.2, 0, 0)
+		end
+		if stunned then
+			pose = CFrame.Angles(0.25, math.sin(now * 3) * 0.5, math.sin(now * 4) * 0.2)
+		end
+		return pose
+	end
+
+	local head = headPose()
 	for _, j in root:GetChildren() do
 		if j:IsA("Motor6D") then
 			local name = j:GetAttribute("PoseGroup") or j.Name
 			local pose = CFrame.identity
 			local frame = upper
 			if name == "ArmL" or name == "ArmR" then
-				local sign = name == "ArmL" and 1 or -1
-				-- pump against the legs; reach forward a little while running; hang and sway when still
-				local swing = -step * style.arm * moving * sign + style.reach * moving
-				local hang = math.sin(now * 1.7 + data.seed + sign) * 0.07 * idle
-				pose = quadruped and CFrame.Angles(-step*sign*.45*moving,0,0) or CFrame.Angles(swing + hang, 0, -sign * (0.1 + 0.12 * moving))
-				if kind == "Spitter" and (windup > 0 or strike > 0) then
-					-- the hunter raises its weapon arm and fires
-					local aim = math.max(windup, strike)
-					if sign < 0 then
-						pose = pose:Lerp(CFrame.Angles(1.55 + strike * 0.3, 0, 0.05), aim)
-					else
-						pose = pose:Lerp(CFrame.Angles(1.1, 0, 0.35), aim * 0.7) -- the other hand steadies it
-					end
-				elseif windup > 0 or strike > 0 then
-					-- both arms up over the head, then slammed down in front
-					pose = pose:Lerp(CFrame.Angles(2.75, 0, -sign * 0.25), windup)
-					pose = pose:Lerp(CFrame.Angles(0.7, 0, -sign * 0.12), strike)
-				end
-				if biting then
-					pose = CFrame.Angles(1.35 + math.sin(now * 14 + sign * 1.6) * 0.45, 0, -sign * 0.15)
-				end
-				if flinch > 0 then
-					pose = pose * CFrame.Angles(-0.45 * flinch, 0, -sign * 0.45 * flinch)
-				end
-				if stunned then
-					pose = CFrame.Angles(0.2 + math.sin(now * 5 + sign) * 0.35, 0, -sign * (0.55 + math.sin(now * 3) * 0.2))
+				pose = armPose(name == "ArmL" and 1 or -1)
+				if quadruped then
+					frame = body
 				end
 			elseif name == "LegL" or name == "LegR" then
-				local sign = name == "LegL" and 1 or -1
-				local swing = step * sign
-				-- the swinging leg lifts a bit so the foot clears the floor
-				local lift = math.max(0, math.cos(phase) * sign) * 0.25 * moving * scale
-				pose = CFrame.new(0, lift, 0) * CFrame.Angles(swing * style.leg * moving, 0, 0)
-				if windup > 0 then
-					pose = pose * CFrame.Angles(0.3 * windup * sign, 0, -sign * 0.08 * windup) -- feet apart, braced
-				end
-				if stunned then
-					pose = CFrame.Angles(math.sin(now * 5 + sign) * 0.15, 0, -sign * 0.12)
-				end
+				pose = legPose(name == "LegL" and 1 or -1)
 				frame = body
 			elseif name == "Legs" then
 				pose = CFrame.Angles(-step * 0.7 * moving, 0, 0)
 				frame = body
 			elseif name == "Head" or name == "EyesGlow" or name == "ParasiteHead" then
-				local nod = math.sin(now * 2.1 + data.seed) * 0.04 * idle + 0.12 * moving - lean * 0.4
-				pose = CFrame.Angles(nod - 0.35 * windup + 0.3 * strike + 0.2 * flinch + 0.2 * hop, lookAround + step * 0.06 * moving, 0)
-				if biting then
-					pose = CFrame.Angles(0.25 + math.sin(now * 18) * 0.2, 0, 0)
-				end
-				if stunned then
-					pose = CFrame.Angles(0.25, math.sin(now * 3) * 0.5, math.sin(now * 4) * 0.2)
-				end
+				pose = head
 				if name == "ParasiteHead" then
 					pose = pose * CFrame.new(0, math.sin(now * 4 + data.seed) * 0.12 * scale, 0)
 				end
 			elseif name == "TendrilL" or name == "TendrilR" then
 				local sign = name == "TendrilL" and 1 or -1
-				local agitated = 1 + windup * 2 + moving
+				local agitated = 1 + windup * 2 + moving + strike
 				pose = CFrame.Angles(
 					math.sin(now * 4.5 * agitated + sign) * 0.4 + windup * 0.8,
 					math.sin(now * 3.1 + sign) * 0.3,
@@ -178,16 +385,32 @@ function A.Step(model, data, dt)
 			end
 			if floating then
 				-- The Dealer has no torso or legs. Its head and detached hands hover independently.
-				frame=CFrame.new(0,(.5+math.sin(now*1.8+data.seed)*.18+hop*.25)*scale,(-.2*moving-.6*strike+.25*flinch)*scale)
-					* CFrame.Angles(-.05*moving+.10*flinch,0,math.sin(now*1.1+data.seed)*.025)
-				if name=="Head" then
-					pose=CFrame.Angles(-.12*windup+.22*strike,lookAround*.4,math.sin(now*.9)*.025)
-				elseif name=="ArmL" or name=="ArmR" then
-					local sign=name=="ArmL" and 1 or -1
-					pose=CFrame.new(sign*math.sin(now*1.4+sign)*.12*scale,math.sin(now*2+sign)*.18*scale,(-.8*strike+.25*windup)*scale)
-						* CFrame.Angles(.25*moving+.7*strike-.2*windup,0,sign*.12)
-				else pose=CFrame.identity end
-				if stunned then frame*=CFrame.Angles(0,math.sin(now*3)*.06,math.sin(now*5)*.08) end
+				local dashOffset = dashing and -1.2 or 0
+				frame = CFrame.new(0, (0.5 + math.sin(now * 1.8 + data.seed) * 0.18 + hop * 0.25 - 0.3 * windup * (attack == "Smash" and -1 or 0)) * scale, (-0.2 * moving - 0.6 * strike + 0.25 * flinch + dashOffset) * scale)
+					* CFrame.Angles(-0.05 * moving + 0.1 * flinch, 0, math.sin(now * 1.1 + data.seed) * 0.025)
+				if name == "Head" then
+					pose = CFrame.Angles(-0.12 * windup + 0.22 * strike, lookYaw * 0.4, math.sin(now * 0.9) * 0.025)
+				elseif name == "ArmL" or name == "ArmR" then
+					local sign = name == "ArmL" and 1 or -1
+					local float = math.sin(now * 2 + sign) * 0.18 * scale
+					if attack == "Smash" then
+						-- both hands rise high, then crash down in front
+						pose = CFrame.new(0, (float + 2.2 * windup - 1 * strike) * scale, (-0.6 * windup - 1.6 * strike) * scale)
+							* CFrame.Angles(0.9 * windup + 1.2 * strike, 0, sign * 0.12)
+					elseif attack == "Buckshot" then
+						-- the hands come together in front and kick back with the shot
+						pose = CFrame.new(-sign * 1.1 * math.max(windup, strike) * scale, float, (-1.2 * windup + 0.6 * strike) * scale)
+							* CFrame.Angles(0.3 * windup - 0.5 * strike, 0, sign * 0.12)
+					else
+						pose = CFrame.new(sign * math.sin(now * 1.4 + sign) * 0.12 * scale, float, (-0.8 * strike + 0.25 * windup) * scale)
+							* CFrame.Angles(0.25 * moving + 0.7 * strike - 0.2 * windup, 0, sign * 0.12)
+					end
+				else
+					pose = CFrame.identity
+				end
+				if stunned then
+					frame *= CFrame.Angles(0, math.sin(now * 3) * 0.06, math.sin(now * 5) * 0.08)
+				end
 			end
 			-- body movement in root space, moved into the joint's own pivot frame, then the joint's pose
 			j.Transform = j.C0:Inverse() * frame * j.C0 * pose

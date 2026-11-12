@@ -51,6 +51,13 @@ function N.Move(agent,goal,speed,dt)
   if math.abs(y-pos.Y)<=1.5 then pos=Vector3.new(pos.X,y,pos.Z);root.CFrame=CFrame.new(pos)*root.CFrame.Rotation;goal=Vector3.new(goal.X,y,goal.Z);delta=goal-pos end
  end
  local obstructed=workspace:Spherecast(pos+Vector3.new(0,sphereLift,0),radius,delta,params)
+ -- A low wall (the farm fence is 3 studs) slips under the body sphere, yet the feet can't climb it:
+ -- without this the night cultists walked straight at the fence and stood there (owner, 2026-11-12).
+ -- A knee-high ray along the whole way (capped) keeps the detour until the wall is really behind it.
+ if not obstructed then
+  local feet=pos-Vector3.new(0,heightOffset,0)
+  obstructed=workspace:Raycast(feet+Vector3.new(0,1.6,0),delta.Unit*math.min(delta.Magnitude,40),params)
+ end
  if obstructed then
   local now=os.clock()
   if not agent.pathBusy and now>=(agent.pathAt or 0) and N.Pending<3 then

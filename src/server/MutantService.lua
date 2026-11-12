@@ -45,19 +45,35 @@ function M.Damage(a,damage,killer,crit)
  if not a or not M.Live[a.id] or a.hp<=0 or a.state=="Spawning" then return false end
  a.model:SetAttribute("HitAt",workspace:GetServerTimeNow())
  a.hp=math.max(0,a.hp-damage);a.model:SetAttribute("Health",a.hp)
+ -- Everyone who hits a boss shares the win, not only the last shot.
+ if a.boss and killer then a.damagers=a.damagers or {};a.damagers[killer]=true end
  fx("Hit",a.id,a.model.PrimaryPart.Position,damage,crit==true)
  if a.hp==0 then
   -- Claim the death before analytics/remotes; repeated pellets can never pay again.
   local pos=a.model.PrimaryPart.Position;M.Remove(a,"Death")
-  local d=killer and D.Profiles[killer]
-  if d then local reward=math.clamp(Z.Income(d)*C.RewardIncomeSeconds,C.RewardMin,C.RewardMax)*(a.night and require(S.Config.RoadConfig).Night.KillReward or 1)
-   d.coins+=reward;A.Economy(killer,reward,d.coins,"MutantReward",pos);fx("Reward",a.id,pos,killer.UserId,reward)
-   if M.OnKill then M.OnKill(killer) end
-   if a.road and M.OnRoadKill then M.OnRoadKill(killer,a) end
-   if a.road and a.kind=="Chief" and M.OnBossDefeated then M.OnBossDefeated(killer,pos) end
+  local paid={};if a.boss and a.damagers then paid=a.damagers elseif killer then paid[killer]=true end
+  for who in pairs(paid) do
+   local d=D.Profiles[who]
+   if d and who.Parent then
+    local reward=math.clamp(Z.Income(d)*C.RewardIncomeSeconds,C.RewardMin,C.RewardMax)*(a.night and require(S.Config.RoadConfig).Night.KillReward or 1)*(a.rewardMult or 1)
+    d.coins+=reward;A.Economy(who,reward,d.coins,"MutantReward",pos);fx("Reward",a.id,pos,who.UserId,reward)
+    if M.OnKill then M.OnKill(who) end
+    if (a.road or a.giant) and M.OnRoadKill then M.OnRoadKill(who,a) end -- mutagen
+   end
   end
+  if a.road and a.boss and killer and D.Profiles[killer] and M.OnBossDefeated then M.OnBossDefeated(killer,pos,a) end
+  if a.giant and M.OnGiantDefeated then M.OnGiantDefeated(killer,pos,a) end
  end
  return true
+end
+-- The Blood Moon giant (BloodMoonService moves it): a ruins boss blown up to `height` studs, feet at `feet`.
+function M.SpawnGiant(kind,feet,variant,height)
+ M.Serial+=1;local id=tostring(M.Serial);local model=Model.Build(kind,feet*CFrame.new(0,C.RootHeight,0),variant)
+ local k=height/math.max(1,model:GetAttribute("MonsterHeight") or 12)
+ model:ScaleTo(k);model:PivotTo(model:GetPivot()+Vector3.new(0,(k-1)*C.RootHeight,0))
+ local a={id=id,giant=true,boss=true,kind=kind,hp=1,model=model,spawn=feet.Position}
+ M.Live[id]=a;model:SetAttribute("MutantId",id);model:SetAttribute("Kind",kind);model:SetAttribute("Giant",true);model:SetAttribute("Boss",0)
+ M.State(a,"Spawning");model.Parent=folder;return a
 end
 function M.SpawnRoad(kind,cf,speed,variant)
  M.Serial+=1;local id=tostring(M.Serial);local model=Model.Build(kind,cf,variant)
@@ -109,12 +125,12 @@ function M.Tick(dt,now,night)
  now=now or os.clock();if night==nil then night=Day.State() end
  if night and not nightStart then nightStart=now;M.WaveIndex=0;M.Served={} end
  if not night then
-  nightStart=nil;M.WaveIndex=0;for _,a in pairs(M.Live) do if not a.road then M.Remove(a) end end
- else
+  nightStart=nil;M.WaveIndex=0;for _,a in pairs(M.Live) do if not a.road and not a.giant then M.Remove(a) end end
+ elseif not M.PauseWaves then -- no farm raids while the Blood Moon giant is out
   if M.WaveIndex<C.WavesPerNight and now-nightStart>=C.FirstWave+M.WaveIndex*C.WaveInterval then M.WaveIndex+=1;M.Wave() end
  end
  -- A farm becoming eligible after the scheduled waves still gets its first encounter tonight.
- if night and now-nightStart>=C.FirstWave then
+ if night and not M.PauseWaves and now-nightStart>=C.FirstWave then
   for p,d in pairs(D.Profiles) do if not M.Served[p] and d.tutorialDone and P.Assigned[p] and M.Quota(d)>0 then
    local n=0;for _=1,M.Quota(d) do if M.Spawn(p) then n+=1 end end
    if n>0 then M.Served[p]=true;notify(p,"mutantWave") end
@@ -122,7 +138,7 @@ function M.Tick(dt,now,night)
  end
  for id,s in pairs(M.Stunned) do if s.untilTime<=now or D.Profiles[s.owner]~=s.profile or not Z.Find(s.profile,id) then M.Stunned[id]=nil end;attributes(id) end
  for _,a in pairs(M.Live) do
-  if a.road then continue end -- RoadService moves its own
+  if a.road or a.giant then continue end -- RoadService and BloodMoonService move their own
   local root=a.model.PrimaryPart;local plot=P.Assigned[a.owner]
   if not plot or D.Profiles[a.owner]~=a.profile or not a.owner.Parent then M.Remove(a);continue end
   if a.state~="Fleeing" and (not a.target or Z.Find(a.profile,a.target.id)~=a.target or not M.Eligible(a.profile,a.target)) then

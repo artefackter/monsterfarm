@@ -104,10 +104,14 @@ end
 function U.ModalArt(parent,kind,id,size,pos,finish)
  if kind=="weapon" and (finish and finish~="Default" or not require(script.Parent.Icons)["modal_weapon_"..tostring(id)]) then return U.Icon(parent,kind,id,size,pos,finish) end
  local icons=require(script.Parent.Icons)
- local key=kind=='cash' and 'hudZombucks' or kind=='shoe' and 'hudSpeed' or kind=='grave' and (id=='Golden' and 'modal_grave_Golden' or 'modal_grave_Stone') or 'modal_'..kind..(id and '_'..id or '')
+ local key=kind=='cash' and 'hudZombucks' or kind=='shoe' and 'hudSpeed' or kind=='coffin' and 'hudCoffin' or kind=='crypt' and 'crypt' or kind=='grave' and (id=='Golden' and 'modal_grave_Golden' or 'modal_grave_Stone') or 'modal_'..kind..(id and '_'..id or '')
  if not icons[key] then return U.Icon(parent,kind,id,size,pos) end
- local image=Instance.new('ImageLabel');image.Name='Art_'..kind;image.BackgroundTransparency=1;image.Image=icons[key];image.ScaleType=Enum.ScaleType.Fit;image.Size=size or UDim2.fromScale(1,1);image.Position=pos or UDim2.new();image.Active=false;image.Parent=parent;return image
+ local image=Instance.new('ImageLabel');image.Name='Art_'..kind;image.BackgroundTransparency=1;image.Image=icons[key];image.ScaleType=Enum.ScaleType.Fit;image.Size=size or UDim2.fromScale(1,1);image.Position=pos or UDim2.new();image.Active=false;image.Parent=parent
+ -- One stone and one coffin picture serve every grave: the material shows as a tint (the golden grave has its own).
+ if (kind=='grave' and id~='Golden' or kind=='coffin') and U.GraveTint[id] then image.ImageColor3=U.GraveTint[id] end
+ return image
 end
+U.GraveTint={Wooden=Color3.fromRGB(226,170,118),Stone=Color3.new(1,1,1),Marble=Color3.fromRGB(255,247,238),Golden=Color3.fromRGB(255,214,92),Lunar=Color3.fromRGB(192,166,255)}
 
 -- Code-native original icons: no imported image IDs or unavailable assets.
 function U.Icon(parent,kind,id,size,pos,finish)

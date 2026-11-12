@@ -5,26 +5,58 @@ local gui=p.PlayerGui:WaitForChild('DigUI');local bridge=gui:WaitForChild('ZoneM
 local function t(key,args) return L.text(key,L.lang(),args) end
 local layer=Instance.new('ScreenGui');layer.Name='WorldInterface';layer.ResetOnSpawn=false;layer.ScreenInsets=Enum.ScreenInsets.CoreUISafeInsets;layer.DisplayOrder=5;layer.Parent=p.PlayerGui
 local boards={};local zones={};local overhead={};local activeZone;local candidate;local enteredAt=0;local zonesFolder=Instance.new('Folder',workspace);zonesFolder.Name='LocalZoneRings'
+-- Prestige asks first: what goes, what stays, what you get.
+local confirm
+local function prestigeConfirm(part)
+ if confirm then confirm:Destroy() end
+ local PR=require(game.ReplicatedStorage.Shared.PrestigeRules);local n=part:GetAttribute('level') or 0
+ local f=U.ModalWindow(Instance.new('Frame'));f.Name='PrestigeConfirm';f.AnchorPoint=Vector2.new(.5,.5);f.Position=UDim2.fromScale(.5,.5);f.Size=UDim2.fromOffset(560,400);f.ZIndex=30;f.Parent=layer;confirm=f
+ local scale=Instance.new('UIScale',f);scale.Scale=math.clamp(math.min(layer.AbsoluteSize.X/700,layer.AbsoluteSize.Y/520),.5,1)
+ local title=U.Text(f,t('prestigeTitle',{n=n+1}),UDim2.new(1,-60,0,56),UDim2.fromOffset(30,26));title.UITextSizeConstraint.MaxTextSize=40;U.ModalText(title)
+ local body=U.Text(f,t('prestigeBody',{a=L.number(PR.MultAt(n),L.lang(),1),b=L.number(PR.MultAt(n+1),L.lang(),1),price=L.compact(part:GetAttribute('price') or 0,L.lang())}),UDim2.new(1,-70,0,200),UDim2.fromOffset(35,90))
+ body.TextScaled=true;body.UITextSizeConstraint.MaxTextSize=24;U.ModalText(body)
+ local yes=U.ModalButton(U.Button(f,'PrestigeYes',UDim2.fromOffset(230,64),UDim2.new(.5,-240,1,-92),function() rem.InterfaceAction:FireServer('prestige');f:Destroy();confirm=nil end),U.ModalColors.Green)
+ U.ModalText(U.Text(yes,t('prestigeYes'),UDim2.new(1,-16,1,-10),UDim2.fromOffset(8,5)),true)
+ local no=U.ModalButton(U.Button(f,'PrestigeNo',UDim2.fromOffset(230,64),UDim2.new(.5,10,1,-92),function() f:Destroy();confirm=nil end),U.ModalColors.Red)
+ U.ModalText(U.Text(no,t('prestigeNo'),UDim2.new(1,-16,1,-10),UDim2.fromOffset(8,5)),true)
+ for _,q in f:GetDescendants() do if q:IsA('GuiObject') then q.ZIndex=math.max(q.ZIndex,31) end end
+end
 local function board(part)
  if boards[part] or part:GetAttribute('Owner')~=p.UserId then return end
  local key=part:GetAttribute('UpgradeKey');if not key then return end
  local g=Instance.new('SurfaceGui');g.Name='Upgrade_'..key;g.Adornee=part;g.Face=Enum.NormalId.Front;g.CanvasSize=Vector2.new(600,345);g.LightInfluence=0;g.MaxDistance=70;g.Active=true;g.Parent=layer
  local frame=U.Panel(Instance.new('Frame'),Pal.Panel);frame.Size=UDim2.fromScale(1,1);frame.Parent=g
- local title=U.Text(frame,'',UDim2.new(1,-24,0,90),UDim2.fromOffset(12,8));local level=U.Text(frame,'',UDim2.new(1,-24,0,70),UDim2.fromOffset(12,94))
- local buy=U.Button(frame,'Buy',UDim2.new(1,-28,0,125),UDim2.fromOffset(14,198),function() rem.InterfaceAction:FireServer('upgrade',key) end)
+ local title=U.Text(frame,'',UDim2.new(1,-24,0,72),UDim2.fromOffset(12,6));local level=U.Text(frame,'',UDim2.new(1,-24,0,50),UDim2.fromOffset(12,78))
+ -- what the next level gives, in green
+ local gain=U.Text(frame,'',UDim2.new(1,-24,0,62),UDim2.fromOffset(12,130));gain.TextColor3=Color3.fromRGB(40,140,60);gain.UITextSizeConstraint.MaxTextSize=40
+ local buy=U.Button(frame,'Buy',UDim2.new(1,-28,0,125),UDim2.fromOffset(14,198),function()
+  if key=='Prestige' then if part:GetAttribute('afford') then prestigeConfirm(part) end else rem.InterfaceAction:FireServer('upgrade',key) end
+ end)
  local price=U.Text(buy,'');price.TextColor3=Pal.Text;price.TextStrokeColor3=Pal.Stroke;price.TextStrokeTransparency=0
- title.UITextSizeConstraint.MaxTextSize=58;level.UITextSizeConstraint.MaxTextSize=43;price.UITextSizeConstraint.MaxTextSize=58
+ title.UITextSizeConstraint.MaxTextSize=56;level.UITextSizeConstraint.MaxTextSize=40;price.UITextSizeConstraint.MaxTextSize=58
  local product=C.Products[key];if product and product.Id>0 then
   buy.Size=UDim2.new(.66,-22,0,125)
   local robux=U.Button(frame,'Robux',UDim2.new(.34,-14,0,125),UDim2.new(.66,0,0,198),function() rem.InterfaceAction:FireServer('product',key) end,Pal.Violet);U.Text(robux,'R$ '..product.Price).TextColor3=Pal.Text
  end
  local function update()
   title.Text=t('board'..key);level.Text=t('boardLevel',{n=part:GetAttribute('level') or 1,next=part:GetAttribute('next') or 2})
+  local n=part:GetAttribute('level') or 1;local max=part:GetAttribute('max')
+  if key=='House' then
+   local HC=require(game.ReplicatedStorage.Shared.Config.HouseConfig);local now,after=HC.Levels[n],HC.Levels[n+1]
+   gain.Text=t(max and 'boardHouseMax' or 'boardHouseGain',{used=p:GetAttribute('FieldUsed') or 0,a=now and now.Limits.Field or 0,b=after and after.Limits.Field or 0})
+  elseif key=='Treadmill' then
+   local RC=require(game.ReplicatedStorage.Shared.Config.RoadConfig);local now,after=RC.Treadmill[n],RC.Treadmill[n+1]
+   gain.Text=t(max and 'boardTreadmillMax' or 'boardTreadmillGain',{a=L.compact(now and now.Rate or 0,L.lang()),b=L.compact(after and after.Rate or 0,L.lang())})
+  elseif key=='PetSlots' then gain.Text=t(max and 'boardPetMax' or 'boardPetGain',{a=n,b=n+1})
+  elseif key=='Prestige' then
+   local PR=require(game.ReplicatedStorage.Shared.PrestigeRules)
+   level.Text=t('boardPrestigeLevel',{n=n,next=n+1});gain.Text=t('boardPrestigeGain',{a=L.number(PR.MultAt(n),L.lang(),1),b=L.number(PR.MultAt(n+1),L.lang(),1)})
+  else gain.Text='' end
   local reason=part:GetAttribute('reason');local value=part:GetAttribute('price') or 0
-  price.Text=part:GetAttribute('max') and t('boardMax') or reason=='houseLimit' and t('boardNeedHouse') or reason=='houseBuilding' and t('boardBusy',{n=value}) or reason=='lockWait' and t('lockWait',{n=value}) or key=='Lock' and t('boardReady') or part:GetAttribute('credit') and t('boardCredit') or L.compact(value,L.lang())..' $'
+  price.Text=part:GetAttribute('max') and t('boardMax') or reason=='prestigeHouse' and t('boardPrestigeHouse',{n=require(game.ReplicatedStorage.Shared.PrestigeRules).House}) or reason=='houseLimit' and t('boardNeedHouse') or reason=='houseBuilding' and t('boardBusy',{n=value}) or reason=='lockWait' and t('lockWait',{n=value}) or key=='Lock' and t('boardReady') or part:GetAttribute('credit') and t('boardCredit') or L.compact(value,L.lang())..' $'
   buy.BackgroundColor3=part:GetAttribute('afford') and Pal.Mint or Pal.Red
  end
- local connection=part.AttributeChanged:Connect(update);boards[part]={gui=g,update=update,connection=connection};update()
+ local connection=part.AttributeChanged:Connect(update);p:GetAttributeChangedSignal('FieldUsed'):Connect(update);boards[part]={gui=g,update=update,connection=connection};update()
 end
 -- Menu circles, alive: a glowing ring that breathes, dashes running round it, a wave that rolls outward
 -- every couple of seconds and sparkles rising from the floor. Standing inside makes it all brighter and faster.
@@ -105,7 +137,7 @@ Run.Heartbeat:Connect(function(dt)
   local h=overheadFor(who);if h then
    local slow=math.max(0,(who:GetAttribute('MutantSlowUntil') or 0)-workspace:GetServerTimeNow());local ko=math.max(0,(who:GetAttribute('KnockedOutUntil') or 0)-workspace:GetServerTimeNow())
    h.gui.Enabled=who~=p or slow>0
-   h.text.Text=(who~=p and (t('incomeShort',{n=L.compact(who:GetAttribute('IncomeRate') or 0,L.lang())})..'  ·  '..L.compact(who:GetAttribute('SpeedPoints') or 0,L.lang())..' 👟') or '')..(slow>0 and string.format('\n◷ %.1f',slow) or ko>0 and '  ★' or '')
+   h.text.Text=(who~=p and (((who:GetAttribute('Prestige') or 0)>0 and ('⭐'..who:GetAttribute('Prestige')..'  ') or '')..t('incomeShort',{n=L.compact(who:GetAttribute('IncomeRate') or 0,L.lang())})..'  ·  '..L.compact(who:GetAttribute('SpeedPoints') or 0,L.lang())..' 👟') or '')..(slow>0 and string.format('\n◷ %.1f',slow) or ko>0 and '  ★' or '')
    h.text.TextColor3=slow>0 and Pal.Red or Pal.Text
   end
  end
@@ -120,7 +152,7 @@ rem:WaitForChild('EconomyFX').OnClientEvent:Connect(function(delta,source,origin
  if typeof(origin)=='Vector3' then local point,on=workspace.CurrentCamera:WorldToViewportPoint(origin);if on then start=Vector2.new(point.X,point.Y)-game.GuiService:GetGuiInset() end end
  local n=source=='income' and 1 or math.clamp(math.floor(math.log10(math.abs(delta)+1))+1,1,8)
  if delta>0 then for i=1,n do
-  local icon=U.Icon(layer,'cash',nil,UDim2.fromOffset(44,35),UDim2.fromOffset(start.X+math.random(-25,25),start.Y+math.random(-20,20)));icon.ZIndex=12
+  local icon=U.ModalArt(layer,'cash',nil,UDim2.fromOffset(44,35),UDim2.fromOffset(start.X+math.random(-25,25),start.Y+math.random(-20,20)));icon.ZIndex=12
   local tw=Tween:Create(icon,TweenInfo.new(.55+i*.035,Enum.EasingStyle.Quad,Enum.EasingDirection.In),{Position=UDim2.fromOffset(target.X-22,target.Y-17),Size=UDim2.fromOffset(23,18)});tw:Play();tw.Completed:Once(function() icon:Destroy() end)
  end end
  local number=U.Text(layer,(delta>0 and '+' or '−')..L.compact(math.abs(delta),L.lang()),UDim2.fromOffset(130,30),UDim2.fromOffset(target.X,target.Y-25));number.TextColor3=delta>0 and Pal.Mint or Pal.Red;number.TextStrokeTransparency=0;number.ZIndex=13
@@ -137,7 +169,7 @@ local function effect(q)
  local uid=ancestor and ancestor:GetAttribute('Owner');if not uid then return end
  local g=Instance.new('BillboardGui');g.Name='ObjectEffect';g.Adornee=q;g.Size=UDim2.fromOffset(210,45);g.StudsOffsetWorldSpace=q.Name=='CryptSpot' and (Vector3.new(0,4.6,0)+q.CFrame.LookVector*4) or Vector3.new(0,6,0);g.MaxDistance=55;g.ResetOnSpawn=false;g.Parent=p.PlayerGui
  local label=U.Text(g,'',UDim2.new(1,-45,1,0),UDim2.fromOffset(45,0));label.TextColor3=Pal.Mint;label.TextStrokeTransparency=0;label.TextStrokeColor3=Pal.Stroke
- U.Icon(g,q.Name=='Treadmill' and 'shoe' or 'grave',nil,UDim2.fromOffset(45,45));effects[q]={gui=g,text=label,uid=uid}
+ U.ModalArt(g,q.Name=='Treadmill' and 'shoe' or 'crypt',nil,UDim2.fromOffset(45,45));effects[q]={gui=g,text=label,uid=uid}
 end
 for _,q in workspace:GetDescendants() do effect(q) end
 workspace.DescendantAdded:Connect(function(q) task.defer(effect,q) end)

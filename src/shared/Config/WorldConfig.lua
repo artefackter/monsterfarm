@@ -11,6 +11,7 @@ local themes={
 }
 for i,d in P.Districts do
  local t=themes[i];t.From=d.From;t.To=d.To;t.At=d.From+30;t.RecommendedSpeed=d.RecommendedSpeed
+ t.Arena=d.Arena;t.ArenaFrom=d.ArenaFrom;t.ArenaTo=d.ArenaTo;t.Index=i
  t.Title="location"..d.Id
  t.Emoji=({Forest="🌲",DarkForest="🌑",Hospital="🏥",Village="🏚️",Cave="🕯️",Factory="🏭"})[d.Id]
 end

@@ -467,5 +467,63 @@ L.Rows["StalkerAssassin"]={"Assassin Stalker","Сталкер-убийца"}
 L.Rows["VerityFarmer"]={"Farmer Verity","Верити-фермер"}
 L.Rows["VerityPunk"]={"Punk Verity","Верити-нефор"}
 L.Rows["VerityAssassin"]={"Assassin Verity","Верити-убийца"}
+-- Offline income goes to the farm heap (2026-11-12)
+L.Rows.offlineHeap={"While you were away, your farm earned ${n}. Collect it from the money heap!","Пока тебя не было, ферма заработала ${n}. Забери деньги из кучи на ферме!"}
+-- Location bosses and their amphitheatres (2026-11-12)
+L.Rows.bossHorned={"Horned Alpha","Рогатый вожак"}
+L.Rows.bossSiren={"Siren Head","Сиреноголовый"}
+L.Rows.bossPatient={"Patient Zero","Нулевой пациент"}
+L.Rows.bossDealer={"The Dealer","Дилер"}
+L.Rows.bossPriest={"High Priest","Верховный жрец"}
+L.Rows.arena1={"ARENA · HORNED ALPHA","АРЕНА · РОГАТЫЙ ВОЖАК"}
+L.Rows.arena2={"ARENA · SIREN HEAD","АРЕНА · СИРЕНОГОЛОВЫЙ"}
+L.Rows.arena3={"ARENA · PATIENT ZERO","АРЕНА · НУЛЕВОЙ ПАЦИЕНТ"}
+L.Rows.arena4={"ARENA · THE DEALER","АРЕНА · ДИЛЕР"}
+L.Rows.arena5={"ARENA · HIGH PRIEST","АРЕНА · ВЕРХОВНЫЙ ЖРЕЦ"}
+L.Rows.arena6={"ARENA · CHIEF PHYSICIAN","АРЕНА · ГЛАВВРАЧ"}
+L.Rows.bossArena={"Boss arena: {boss}! Beat it to open its graves.","Арена босса: {boss}! Победи его, чтобы открыть могилы."}
+L.Rows.bossDefeated={"{name} defeated {boss}!","{name} победил: {boss}!"}
+L.Rows.bossGraveDropped={"The boss left a grave! Carry it home.","Босс оставил могилу! Доставь её домой."}
+L.Rows.bossGrave={"BOSS GRAVE","МОГИЛА БОССА"}
+L.Rows.bossBar={"BOSS","БОСС"}
+L.Rows.Leaper={"Leaper","Прыгун"}
+L.Rows.Thrower={"Thrower","Метатель"}
+-- The padlock over arena graves now names no particular boss.
+L.Rows.roadBossFirst={"Defeat this arena's boss first!","Сначала победи босса этой арены!"}
+L.Rows.roadBossLock={"🔒 Defeat the boss","🔒 Победи босса"}
+-- 2026-11-12, round 2: Monsterdex cards, hiding bushes, shovel stats, the entrance, house levels and the farm's cap.
+L.Rows.dexFindHint={"Not found yet","Ещё не найден"}
+L.Rows.dexUnlockedAll={"All pages: {n}/{total} found","Всего открыто: {n}/{total}"}
+L.Rows.bushHidden={"🌿 In a bush: unseen","🌿 В кустах: тебя не видят"}
+L.Rows.shovelStats={"⚔{d}  💫{s}s  ➜{m}","⚔{d}  💫{s}с  ➜{m}"}
+L.Rows.signRoadHome={"BACK TO THE FARMS","ОБРАТНО К ФЕРМАМ"}
+L.Rows.houseOwner={"{name}'S BASE","БАЗА {name}"}
+L.Rows.boardHouseGain={"Farm monsters: {used}/{a} → {b}","Монстров на ферме: {used}/{a} → {b}"}
+L.Rows.boardHouseMax={"Farm monsters: {used}/{a}","Монстров на ферме: {used}/{a}"}
+L.Rows.boardTreadmillGain={"A step: +{a} → +{b}","Шаг: +{a} → +{b}"}
+L.Rows.boardTreadmillMax={"A step: +{a}","Шаг: +{a}"}
+L.Rows.boardPetGain={"Pet slots: {a} → {b}","Слоты питомцев: {a} → {b}"}
+L.Rows.boardPetMax={"Pet slots: {a}","Слоты питомцев: {a}"}
+L.Rows.placeFieldFull={"The farm is full: upgrade the house to place more monsters.","Ферма заполнена: улучши дом, чтобы ставить больше монстров."}
+-- Blood Moon and prestige (2026-11-12)
+L.Rows.bloodMoonRise={"🩸 BLOOD MOON! {boss} broke out of the ruins: kill it before it gets away! The road is shut.","🩸 КРОВАВАЯ ЛУНА! {boss} вырвался из заброшек: убейте его, пока он не ушёл! Дорога закрыта."}
+L.Rows.bloodMoonWin={"{boss} is down! Final blow: {name}. Graves are falling from the sky!","{boss} повержен! Последний удар: {name}. С неба падают могилы!"}
+L.Rows.bloodMoonLost={"{boss} went back into the ruins. The road is open again.","{boss} ушёл в заброшки. Дорога снова открыта."}
+L.Rows.bloodMoonGrave={"Blood Moon grave: {grave}!","Могила Кровавой луны: {grave}!"}
+L.Rows.bloodMoonEnough={"You already took {n} Blood Moon graves: leave some for the others!","Ты уже забрал {n} могилы Кровавой луны: оставь другим!"}
+L.Rows.bloodMoonBar={"BLOOD MOON","КРОВАВАЯ ЛУНА"}
+L.Rows.roadClosed={"The road is shut while the Blood Moon giant is out!","Дорога закрыта, пока гигант Кровавой луны на свободе!"}
+L.Rows.roadClosedSign={"CLOSED · BLOOD MOON","ЗАКРЫТО · КРОВАВАЯ ЛУНА"}
+L.Rows.boardPrestige={"Prestige","Престиж"}
+L.Rows.boardPrestigeLevel={"Prestige {n} → {next}","Престиж {n} → {next}"}
+L.Rows.boardPrestigeGain={"Income ×{a} → ×{b} forever","Доход ×{a} → ×{b} навсегда"}
+L.Rows.boardPrestigeHouse={"Needs house level {n}","Нужен дом {n} ур."}
+L.Rows.prestigeTitle={"Prestige {n}?","Престиж {n}?"}
+L.Rows.prestigeBody={"Your farm starts over: coins, monsters, graves, the house and the treadmill go back to the start.\nYou keep pets, the Monsterdex, weapons, shovels, mutagen and speed.\nIncome forever: ×{a} → ×{b}. Price: {price} $.","Ферма начнётся заново: монеты, монстры, могилы, дом и дорожка вернутся к началу.\nОстанутся питомцы, Монстродекс, оружие, лопаты, мутаген и скорость.\nДоход навсегда: ×{a} → ×{b}. Цена: {price} $."}
+L.Rows.prestigeYes={"Prestige!","Престиж!"}
+L.Rows.prestigeNo={"Not yet","Пока нет"}
+L.Rows.prestigeDone={"Prestige {n}! Your income is now ×{m} forever.","Престиж {n}! Теперь твой доход ×{m} навсегда."}
+L.Rows.prestigeAll={"{name} reached prestige {n}!","{name} получил престиж {n}!"}
+L.Rows.prestigeBusy={"Put down what you carry first.","Сначала положи то, что несёшь."}
 return L
 

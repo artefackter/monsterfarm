@@ -41,7 +41,7 @@ end
 function Gear.Bat(p)
  local d=D.Profiles[p];if not d or d.activeSlot~=1 or not Actions.CanAct(p) or os.clock()<(Actions.State(p).switch or 0) then return false,'actionBlocked' end
  local now=os.clock();if now<(Gear.NextBat[p] or 0) then return false end
- local cfg=table.clone(Shovels[d.equippedShovel or 'Rusty']);if Road.Carriers[p] then cfg.Damage*=Shovels.CarryDamage;cfg.Knockout*=Shovels.CarryKnockout;cfg.Distance*=Shovels.CarryDistance end;Gear.NextBat[p]=now+cfg.Cooldown;Road.CancelPickup(p)
+ local cfg=table.clone(Shovels[d.equippedShovel or 'Rusty']);if Road.Carriers[p] then cfg.Damage*=Shovels.CarryDamage;cfg.Knockout*=Shovels.CarryKnockout;cfg.Distance*=Shovels.CarryDistance end;Gear.NextBat[p]=now+cfg.Cooldown;Road.CancelPickup(p);Road.Reveal(p)
  p:SetAttribute('RoadBatUntil',workspace:GetServerTimeNow()+Shovels.Swing);p:SetAttribute('RoadBatReadyAt',workspace:GetServerTimeNow()+cfg.Cooldown)
  local character=p.Character;local swingAt=workspace:GetServerTimeNow()
  p:SetAttribute('ShovelSwingAt',swingAt)
@@ -70,7 +70,10 @@ function Gear.Bat(p)
   -- Snapshot first: damage/removal must not mutate the enumeration. Each target is hit once.
   for _,entry in targets do
    local target=entry.who
-   if entry.mutant then
+   if entry.mutant and target.boss then
+    M.Damage(target,cfg.Damage,p) -- bosses shrug off the knockout: no stun-locking an arena fight
+   elseif entry.mutant then
+    -- a monster is knocked out where it stands (only players are sent flying)
     target.attack=nil;target.stunnedUntil=os.clock()+cfg.Knockout;target.model:SetAttribute('StunnedUntil',workspace:GetServerTimeNow()+cfg.Knockout);M.State(target,'Stunned');M.Damage(target,cfg.Damage,p)
    else
     local rr=root(target)

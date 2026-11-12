@@ -13,7 +13,7 @@ end
 function W.Push(p)
  local d=D.Profiles[p];if not d or not rem then return end;local s=W.Session(p)
  s.holstered=d.activeSlot~=2;p:SetAttribute("EquippedWeapon",d.equippedWeapon);p:SetAttribute("EquippedWeaponSkin",d.weaponSkins and d.weaponSkins[d.equippedWeapon] or "Default");p:SetAttribute("CarryingZombie",false)
- local ends=s.reload[d.equippedWeapon];p:SetAttribute("WeaponHolstered",s.holstered==true);p:SetAttribute("WeaponReloadUntil",ends and workspace:GetServerTimeNow()+math.max(0,ends-os.clock()) or 0);if p:GetAttribute('Mutagen')~=d.mutagen then p:SetAttribute('Mutagen',d.mutagen or 0) end;local stats=Up.Stats_(d,d.equippedWeapon);rem.WeaponState:FireClient(p,{holstered=s.holstered==true,owned=d.weapons,skins=table.clone(d.weaponSkins or {}),equipped=d.equippedWeapon,skin=d.weaponSkins and d.weaponSkins[d.equippedWeapon] or "Default",ammo=s.ammo[d.equippedWeapon],reloadLeft=ends and math.max(0,ends-os.clock()) or 0,magazine=stats.Magazine,fireRate=stats.FireRate,upgrades=d.weaponUpgrades,mutagen=d.mutagen or 0,coins=d.coins})
+ local ends=s.reload[d.equippedWeapon];p:SetAttribute("WeaponHolstered",s.holstered==true);p:SetAttribute("WeaponReloadUntil",ends and workspace:GetServerTimeNow()+math.max(0,ends-os.clock()) or 0);if p:GetAttribute('Mutagen')~=d.mutagen then p:SetAttribute('Mutagen',d.mutagen or 0) end;local stats=Up.Stats_(d,d.equippedWeapon);if p:GetAttribute("WeaponDamage")~=stats.Damage then p:SetAttribute("WeaponDamage",stats.Damage) end;rem.WeaponState:FireClient(p,{holstered=s.holstered==true,owned=d.weapons,skins=table.clone(d.weaponSkins or {}),equipped=d.equippedWeapon,skin=d.weaponSkins and d.weaponSkins[d.equippedWeapon] or "Default",ammo=s.ammo[d.equippedWeapon],reloadLeft=ends and math.max(0,ends-os.clock()) or 0,magazine=stats.Magazine,fireRate=stats.FireRate,upgrades=d.weaponUpgrades,mutagen=d.mutagen or 0,coins=d.coins})
 end
 function W.Reload(p)
  local d=D.Profiles[p];if not d then return false end;local id=d.equippedWeapon;local s=W.Session(p);if not require(script.Parent.ActionService).Ready(p) or d.activeSlot~=2 then return false end
@@ -62,6 +62,7 @@ function W.Fire(p,id,aim)
  local ch=p.Character;local head=ch and ch:FindFirstChild("Head");local h=ch and ch:FindFirstChildOfClass("Humanoid")
  if not head or not h or h.Health<=0 then return false end
  local delta=aim-head.Position;if delta.Magnitude<.01 or delta.Magnitude>C[id].Range then return false end
+ require(script.Parent.RoadService).Reveal(p) -- a shot from a bush gives the shooter away
  local s=W.Session(p);local cfg=C[id];local now=os.clock()
  if s.holstered or now<(s.drawUntil or 0) or p:GetAttribute("Training") or now+C.RateTolerance<s.nextShot or s.reload[id] or s.ammo[id]<=0 then return false end
  local stats=Up.Stats_(d,id);local crit=rng:NextNumber()<stats.CritChance
@@ -71,7 +72,7 @@ function W.Fire(p,id,aim)
   local angle=rng:NextNumber(0,math.pi*2);local radius=math.tan(math.rad(cfg.Spread))*math.sqrt(rng:NextNumber())
   local direction=look:VectorToWorldSpace(Vector3.new(math.cos(angle)*radius,math.sin(angle)*radius,-1).Unit)
   local hit=W.Raycast(head.Position,direction*cfg.Range);table.insert(ends,hit and hit.Position or head.Position+direction*cfg.Range)
-  local model=hit and hit.Instance.Parent;local mid=model and model:GetAttribute("MutantId");if mid and M.Live[mid] and (M.Live[mid].model.PrimaryPart.Position-head.Position).Magnitude<=cfg.Range then hits[mid]=(hits[mid] or 0)+stats.Damage*(crit and stats.CritMult or 1) end
+  local model=hit and hit.Instance.Parent;local mid=model and model:GetAttribute("MutantId");if mid and M.Live[mid] and (hit.Position-head.Position).Magnitude<=cfg.Range+1 then hits[mid]=(hits[mid] or 0)+stats.Damage*(crit and stats.CritMult or 1) end
  end
  for mid,damage in pairs(hits) do M.Damage(M.Live[mid],math.floor(damage+.5),p,crit) end
  p:SetAttribute("CombatAim",aim);p:SetAttribute("CombatAimUntil",workspace:GetServerTimeNow()+C.PoseHold)
@@ -102,7 +103,7 @@ function W.Init()
  -- Mutagen: a chance drop from every monster killed in the ruins (WeaponUpgrades.Drop)
  M.OnRoadKill=function(killer,a)
   local d=D.Profiles[killer];if not d then return end
-  local amount=Up.DropFor(a.biome,a.kind=="Chief",a.night==true,rng:NextNumber())
+  local amount=Up.DropFor(a.biome,a.boss==true,a.night==true,rng:NextNumber())
   if amount<=0 then return end
   d.mutagen=(d.mutagen or 0)+amount;killer:SetAttribute("Mutagen",d.mutagen)
   rem.Notice:FireClient(killer,"mutagenDrop",{n=amount});W.Push(killer)

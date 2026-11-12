@@ -28,6 +28,10 @@ function I.Quote(p,key)
  elseif key=='Treadmill' then level=RR.Level(d);local n=RR.Next(d);max=not n;price=n and n.Price or 0
  elseif key=='PetSlots' then level=PC.StartSlots+d.petSlots;max=level>=PC.MaxSlots;price=UC.PetSlots.Price*UC.PetSlots.Factor^d.petSlots
  elseif key=='Lock' then local raid=require(script.Parent.RaidService);level=1;price=math.max(0,math.ceil((raid.LockCooldown[p] or 0)-os.clock()));if price>0 then reason='lockWait' end
+ elseif key=='Prestige' then
+  local PR=require(S.PrestigeRules);level=PR.Level(d);price=PR.Cost(d)
+  if HR.Level(d)<PR.House then reason='prestigeHouse' end
+  return {price=math.floor(price),level=level,next=level+1,max=false,reason=reason,credit=false,afford=not reason and d.coins>=price}
  elseif UC[key] and require(S.Config.ZoneConfig)[key] then
   level=HR.Cap(d,key);max=level>=require(S.Config.ZoneConfig)[key].Max;price=UC[key].Price*UC[key].Factor^(d.upgrades[key] or 0)
   local need=HR.Need(d,key);if need then reason='houseLimit' end
@@ -36,7 +40,7 @@ function I.Quote(p,key)
  return {price=math.floor(price),level=level,next=level+(key=='Crypt' and 10 or 1),max=max,reason=reason,credit=credit,afford=not max and not reason and (credit or key=='Lock' or d.coins>=price)}
 end
 function I.Buy(p,key)
- local d=D.Profiles[p];if not d or not Act.CanAct(p) or not I.NearBoard(p,key) then return false end
+ local d=D.Profiles[p];if not d or key=='Prestige' or not Act.CanAct(p) or not I.NearBoard(p,key) then return false end -- prestige only through its confirmation
  local q=I.Quote(p,key);if not q or not q.afford then return false end
  local before=d.coins
  if key=='Lock' then return require(script.Parent.RaidService).Lock(p) end
@@ -94,15 +98,19 @@ function I.Refresh(p)
  local d=D.Profiles[p];if not d then return end
  for key,q in I.Boards[p] or {} do if q.Parent then local quote=I.Quote(p,key);for k,v in quote do q:SetAttribute(k,v) end;q:SetAttribute('reason',quote.reason) end end
  p:SetAttribute('HomeReason',I.HomeReason(p));p:SetAttribute('IncomeRate',require(script.Parent.ZombieService).Income(d))
- local used=0;for _,z in d.zombies do if z.zone=='Crypt' then used+=1 end end;p:SetAttribute('CryptUsed',used);p:SetAttribute('CryptCapacity',HR.Cap(d,'Crypt'));p:SetAttribute('TreadmillRate',RR.Rate(d))
+ local used,field=0,0;for _,z in d.zombies do if z.zone=='Crypt' then used+=1 elseif z.zone=='Field' then field+=1 end end;p:SetAttribute('CryptUsed',used);p:SetAttribute('CryptCapacity',HR.Cap(d,'Crypt'));p:SetAttribute('TreadmillRate',RR.Rate(d))
+ p:SetAttribute('FieldUsed',field);p:SetAttribute('FieldCapacity',HR.FieldCap(d));p:SetAttribute('HouseLevel',HR.Level(d));p:SetAttribute('TreadmillLevel',RR.Level(d))
+ p:SetAttribute('Prestige',require(S.PrestigeRules).Level(d))
 end
 function I.Join(p)
  local d=D.Profiles[p];Rules.Migrate(d);for k,v in d.settings do p:SetAttribute(k,v) end
  local plot=P.Assigned[p];local folder=Instance.new('Folder');folder.Name='UpgradeBoards';folder.Parent=plot.Model;I.Boards[p]={}
  for key,pos in C.Boards do
   local cf=plot.Base*CFrame.new(pos.X,-.5,pos.Z)*CFrame.Angles(0,math.rad(pos.Yaw or 0),0)
-  Art.Spawn('V3_UpgradeBoard',folder,cf,{scale=.72})
-  local board=part(folder,key,Vector3.new(4.608,2.664,.9),cf*CFrame.new(0,3.168,0),'342647');board.Transparency=1;board.CanQuery=true;board:SetAttribute('UpgradeKey',key);board:SetAttribute('Owner',p.UserId);I.Boards[p][key]=board
+  -- Bigger than before (owner, 2026-11-12: the levels went unnoticed): the board now also says what the next level gives.
+  local k=1.1/.72
+  Art.Spawn('V3_UpgradeBoard',folder,cf,{scale=.72*k})
+  local board=part(folder,key,Vector3.new(4.608*k,2.664*k,.9),cf*CFrame.new(0,3.168*k,0),'342647');board.Transparency=1;board.CanQuery=true;board:SetAttribute('UpgradeKey',key);board:SetAttribute('Owner',p.UserId);I.Boards[p][key]=board
  end
  I.Refresh(p)
 end
@@ -160,6 +168,8 @@ function I.Init(push)
   if op=='home' then ok=I.Home(p)
   elseif not Act.CanAct(p) then return
   elseif op=='upgrade' then ok=I.Buy(p,arg)
+  elseif op=='prestige' then
+   if I.NearBoard(p,'Prestige') then local reason;ok,reason=require(script.Parent.PrestigeService).Do(p);if not ok and reason then notice(p,reason);I.Refresh(p);push(p);return end end
   elseif op=='setting' then ok=I.Settings(p,arg,value)
   elseif op=='dex' then local page,n=string.match(arg or '', '^(%a+):(%d+)$');if page then ok=Rules.ClaimDex(d,page,tonumber(n));Act.Push(p) end
   elseif op=='gift' then ok=I.Gift(p)

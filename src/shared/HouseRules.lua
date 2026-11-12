@@ -4,6 +4,8 @@ local R={Version=5,Max=#C.Levels}
 function R.Cap(d,zone) return math.min(ZoneC[zone].Max,ZoneC[zone].Start+((d.upgrades or {})[zone] or 0)*UC[zone].Step) end
 function R.Level(d) return type(d.houseLevel)=="number" and C.Levels[d.houseLevel] and d.houseLevel or 1 end
 function R.Limit(d,zone) return C.Levels[R.Level(d)].Limits[zone] end
+-- Monsters allowed out on the farm: set by the house alone. A farm already holding more keeps them all.
+function R.FieldCap(d) return R.Limit(d,"Field") end
 -- The house level a player has to reach before this zone can grow again; nil means nothing stands in the way.
 function R.Need(d,zone)
  local cap=R.Cap(d,zone)

@@ -11,7 +11,7 @@ local rem=RS:FindFirstChild("Remotes") or Instance.new("Folder",RS);rem.Name="Re
 for _,name in ipairs({"Intent","State","Notice","Merge"}) do if not rem:FindFirstChild(name) then local r=Instance.new("RemoteEvent");r.Name=name;r.Parent=rem end end
 local sounds=RS:FindFirstChild("Sounds") or Instance.new("Folder",RS);sounds.Name="Sounds"
 for name,cfg in pairs(require(S.Config.SoundConfig)) do local x=sounds:FindFirstChild(name) or Instance.new("Sound");x.Name=name;x.SoundId="rbxassetid://"..cfg.Id;x.Volume=cfg.Volume;x.PlaybackSpeed=cfg.Speed or 1;x.Parent=sounds end
-require(script.Parent.ActionService).Init();Pets.Init();P.Build();Bank.Init();require(script.Parent.InviteSpots).Init();require(script.Parent.MutantService).Init();require(script.Parent.WeaponService).Init();Board.Init();House.Init();Road.Init();require(script.Parent.RoadGearService).Init();require(script.Parent.MutantService).OnKill=function(p) Q.Track(p,"kill",1) end;Pets.OnHatch=function(p) Q.Track(p,"hatch",1) end;local lanternState=nil;local nightParticipants={};local accumulated={};local wasNight=Day.State();local last={};local joining={}
+require(script.Parent.ActionService).Init();Pets.Init();P.Build();Bank.Init();require(script.Parent.InviteSpots).Init();require(script.Parent.MutantService).Init();require(script.Parent.WeaponService).Init();Board.Init();House.Init();Road.Init();require(script.Parent.RoadGearService).Init();require(script.Parent.BloodMoonService).Init();require(script.Parent.MutantService).OnKill=function(p) Q.Track(p,"kill",1) end;Pets.OnHatch=function(p) Q.Track(p,"hatch",1) end;local lanternState=nil;local nightParticipants={};local accumulated={};local wasNight=Day.State();local last={};local joining={}
 local function allowed(p) local now=os.clock();if now-(last[p] or -1)<SC.RemoteInterval then return false end;last[p]=now;return true end
 local function notice(p,k,args) rem.Notice:FireClient(p,k,args) end
 -- "x,z" in farm-local studs, as sent by the placement preview
@@ -72,7 +72,6 @@ local function action(p,op,arg,zone)
  elseif op=="enterHouse" then if not House.Enter(p) then notice(p,"error") end;push(p);return
  elseif op=="leaveHouse" then if not House.Leave(p) then notice(p,"error") end;push(p);return
  elseif op=="language" and (arg=="auto" or arg=="en" or arg=="ru") then d.language=arg~="auto" and arg or nil;p:SetAttribute("Language",d.language);ok=true
- elseif op=="offline" and UI.NearZone(p,"rewards") and (d.offlinePending or 0)>0 then d.coins+=d.offlinePending;d.offlinePending=0;ok=true
  elseif op=="lock" then ok=UI.Buy(p,"Lock") end
  if d.coins~=before and op~="upgrade" and op~="houseUpgrade" and op~="treadmill" then A.Economy(p,d.coins-before,d.coins,op) end
  if ok then G.Render(p,d);Z.Render(p,d);Slots.Render(p,d) end;notice(p,ok and "ok" or reason or "error");push(p)
@@ -102,11 +101,14 @@ local function join(p)
  if joining[p] then return end;joining[p]=true
  if #Players:GetPlayers()>SC.MaxPlayers then p:Kick(require(S.Locale).text("serverFull",require(S.Locale).lang(p)));return end
  local d=D.Load(p);if not d then return end;local plot=P.Assign(p);if not plot then D.Release(p);p:Kick(require(S.Locale).text("serverFull",require(S.Locale).lang(p)));return end
- require(script.Parent.ActionService).Push(p);Pets.Refresh(p);Pets.Starter(p);I.Offline(d);if d.selectedGrave then G.Select(p,d.selectedGrave:gsub("^voucher:","")) end;p:SetAttribute("Language",d.language);Q.Ensure(p,d);Ref.Join(p,d);Board.Push(p);local stats=Instance.new("Folder");stats.Name="leaderstats";stats.Parent=p;for _,key in {"Income/s","Speed"} do local value=Instance.new("StringValue");value.Name=key;value.Parent=stats end
+ require(script.Parent.ActionService).Push(p);Pets.Refresh(p);Pets.Starter(p);local away=I.Offline(d);if d.selectedGrave then G.Select(p,d.selectedGrave:gsub("^voucher:","")) end;p:SetAttribute("Language",d.language);Q.Ensure(p,d);Ref.Join(p,d);Board.Push(p);local stats=Instance.new("Folder");stats.Name="leaderstats";stats.Parent=p;for _,key in {"Income/s","Speed"} do local value=Instance.new("StringValue");value.Name=key;value.Parent=stats end
  p.CharacterAdded:Connect(function(c) task.wait(.2);P.Home(p);local h=c:WaitForChild("Humanoid");h.Died:Connect(function() if Road.Carriers[p] then Road.Drop(p,true) else Raid.Return(p) end end) end)
  if p.Character then P.Home(p) end
 
- House.Join(p,d);Bank.Join(p,d);UI.Join(p);G.Render(p,d);Z.Render(p,d);Slots.Render(p,d);push(p);Pets.Push(p);require(script.Parent.WeaponService).Push(p)
+ House.Join(p,d);Bank.Join(p,d);UI.Join(p)
+ -- Offline income already lies on the heap; say so once the HUD is up.
+ if away>=1 then task.delay(4,function() if p.Parent then local Loc=require(S.Locale);notice(p,"offlineHeap",{n=Loc.compact(away,Loc.lang(p))}) end end) end
+ G.Render(p,d);Z.Render(p,d);Slots.Render(p,d);push(p);Pets.Push(p);require(script.Parent.WeaponService).Push(p)
 end
 Players.PlayerAdded:Connect(join);for _,p in ipairs(Players:GetPlayers()) do task.spawn(join,p) end
 Players.PlayerRemoving:Connect(function(p) Z.Drop(p);Raid.Leave(p);Board.Flush(p);Board.Forget(p.UserId);Ref.Forget(p);Slots.Forget(p);Road.Forget(p);UI.Forget(p);local departing=D.Profiles[p];if departing then for _,z in ipairs(departing.zombies) do Z.Remove(z.id) end end;D.Release(p);local plot=P.Assigned[p];if plot then local prompt=plot.Gate:FindFirstChild("LockPrompt");if prompt then prompt:Destroy() end end;House.Forget(p);P.Release(p);G.Models[p]=nil;joining[p]=nil;last[p]=nil;accumulated[p]=nil;nightParticipants[p]=nil end)

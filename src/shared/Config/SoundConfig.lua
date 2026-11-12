@@ -1,30 +1,48 @@
--- All game audio. Every id belongs to Roblox's licensed libraries (ProSoundEffects, APMOfficial), which any
+-- All game audio. Every id belongs to Roblox's licensed libraries (ProSoundEffects 7462895450, APMOfficial 7462718749), which any
 -- experience may use. Do not swap in user uploads: audio is often private or ripped from other games.
 -- To change a sound, replace its Id here. Volume is 0..1, Speed is pitch and tempo together.
 return {
  -- ProSoundEffects Creator Store verified 2026-11-07; spatial training loops.
  TreadmillMotor={Id=9112890980,Volume=.08,Speed=1},
  TreadmillWind={Id=9114057104,Volume=.06,Speed=1},
- ReloadDeagle={Id=9118828055,Volume=.4,Speed=1.3},
- EmptyDeagle={Id=9119717523,Volume=.25,Speed=1.3},
- ReloadAK={Id=9118828055,Volume=.4,Speed=0.9},
- EmptyAK={Id=9119717523,Volume=.25,Speed=0.9},
- ReloadM4={Id=9118828055,Volume=.4,Speed=1.15},
- EmptyM4={Id=9119717523,Volume=.25,Speed=1.15},
- ReloadAWP={Id=9118828055,Volume=.4,Speed=0.75},
- EmptyAWP={Id=9119717523,Volume=.25,Speed=0.75},
 
- -- ProSoundEffects Creator Store results verified 2026-11-05. Toy Ray Gun variations, not firearm recordings.
- FireAWP={Id=9120221105,Volume=.6,Speed=.85},
- FireDeagle={Id=9120221621,Volume=.45,Speed=1.35}, -- Toy Ray Gun 9
- FireAK={Id=9120221370,Volume=.26,Speed=1.65}, -- Toy Ray Gun 5
- FireM4={Id=9120221105,Volume=.6,Speed=1.15}, -- Toy Ray Gun 1
- WeaponReload={Id=9118828055,Volume=.45,Speed=1.3}, -- Scissors Snap 13, mechanical toy latch
- WeaponEmpty={Id=9119717523,Volume=.3,Speed=1.25}, -- Switch click, existing licensed source
- ImpHit={Id=9125994570,Volume=.35,Speed=1.6}, -- Squeeze Toy
- ImpLaugh={Id=9125439346,Volume=.4,Speed=1.6}, -- Chimpanzee chatter, comic creature giggle substitute
+ -- Real firearm recordings (owner, 2026-11-12: the toy ray guns were too cartoonish). All ProSoundEffects, the same
+ -- licensed library as every other sound here; ids checked on the Creator Store 2026-11-12, titles in comments.
+ -- Library gaps: no MP5, M249 or double-barrel recordings, so the Mini Uzi, a slowed AK and a Savage 12 ga stand in.
+ FireDeagle={Id=9117397964,Volume=.5,Speed=1}, -- Pistol Single Shots 10: Grizzly Win Mag .45
+ FireAK={Id=9114727865,Volume=.34,Speed=1}, -- Gun Single Shots 28: AK-47
+ FireM4={Id=9113177553,Volume=.34,Speed=1.05}, -- Assault Rifle 2: Steyr AUG .223
+ FireMP5={Id=9114728793,Volume=.3,Speed=1.05}, -- Gun Single Shots 1: Mini Uzi
+ FireM249={Id=9114727742,Volume=.36,Speed=.88}, -- Gun Single Shots 25: AK-47, slowed for a heavier gun
+ FireDouble={Id=9112912936,Volume=.55,Speed=1}, -- 12 Gauge Shotgun 101: Savage, direct
+ FirePump={Id=9114706610,Volume=.55,Speed=1}, -- Gun Live Ammunition 6: Mossberg 12 ga
+ FireAWP={Id=9118173999,Volume=.6,Speed=1}, -- Rifle Single Shots 2: Barrett .50
+ ReloadDeagle={Id=9113104509,Volume=.45,Speed=1.3}, -- Ammo Magazine 3: pistol magazine out/in
+ ReloadAK={Id=9116347811,Volume=.45,Speed=1}, -- Machine Gun 15: AK-47 magazine handling
+ ReloadM4={Id=9116347422,Volume=.45,Speed=1}, -- Machine Gun 8: rifle magazine handling
+ ReloadMP5={Id=9116344412,Volume=.45,Speed=1.2}, -- Machine Gun 1: SMG cocking and loading
+ ReloadM249={Id=9116361515,Volume=.45,Speed=1}, -- Machine Gun Chamber 1
+ ReloadDouble={Id=9113027690,Volume=.45,Speed=1.2}, -- 470 Rifle 3: break open, two shells, close
+ ReloadPump={Id=9112913305,Volume=.45,Speed=1}, -- 12 Gauge Shotgun 5: pump rack
+ ReloadAWP={Id=9116357348,Volume=.45,Speed=1.1}, -- Machine Gun Bolt 1: bolt open and close
+ EmptyDeagle={Id=9117396156,Volume=.3,Speed=1.4}, -- Pistol Clip 2, a dry metal click (no dry-fire take exists)
+ EmptyAK={Id=9117396156,Volume=.3,Speed=1.2},
+ EmptyM4={Id=9117396156,Volume=.3,Speed=1.25},
+ EmptyMP5={Id=9117396156,Volume=.3,Speed=1.35},
+ EmptyM249={Id=9117396156,Volume=.3,Speed=1.1},
+ EmptyDouble={Id=9117396156,Volume=.3,Speed=1.15},
+ EmptyPump={Id=9117396156,Volume=.3,Speed=1.15},
+ EmptyAWP={Id=9117396156,Volume=.3,Speed=1.1},
+ WeaponReload={Id=9116347811,Volume=.45,Speed=1}, -- Machine Gun 15
+ WeaponEmpty={Id=9117396156,Volume=.3,Speed=1.3}, -- Pistol Clip 2
+ -- Monsters: real creature recordings in place of the squeeze toy and the chimp.
+ ImpHit={Id=9114482141,Volume=.3,Speed=1.1}, -- Flesh Hits 2: low thud, no gore
+ ImpLaugh={Id=9113989720,Volume=.35,Speed=1}, -- Creature Vocal Spider Growls 2: short growl on spawn
  ImpBite={Id=9113138343,Volume=.3,Speed=1.35}, -- Apple Chew 1
- ImpDeath={Id=9125994570,Volume=.6,Speed=1.8}, -- Squeeze Toy squeak
+ ImpDeath={Id=9113987782,Volume=.4,Speed=1.1}, -- Creature Vocal Pterodactyl Death Shriek 1
+ BossRoar={Id=9113980644,Volume=.6,Speed=1}, -- Creature Mix Giant Crab Monster Roar Growl 4: boss appears / falls
+ BossScream={Id=9116967966,Volume=.7,Speed=.9}, -- Monster Vocals 6: the boss scream attack
+ BossCharge={Id=9113973520,Volume=.5,Speed=1}, -- Creature Growls Pit Bull 4: wind-up of a charge
 
 	-- Farm actions
 	Dig = { Id = 9114083260, Volume = 0.8 }, -- Dirt Dig, shovel throw, 0.9 s

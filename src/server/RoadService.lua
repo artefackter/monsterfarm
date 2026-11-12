@@ -8,7 +8,7 @@ local M=require(script.Parent.MutantService);local Raid=require(script.Parent.Ra
 local Navigation=require(script.Parent.MutantNavigation)
 local Progression=require(S.Config.RoadProgression)
 local MonsterRules=require(S.RoadMonsterRules)
-local Road={Carriers={},Hearts={},Spots={},Drops={},Holds={},BlockedUntil={},Imps={},Last=os.clock()}
+local Road={Carriers={},Hearts={},Spots={},Drops={},Holds={},BlockedUntil={},Imps={},BossCfg={},Summons={},RevealedUntil={},Last=os.clock()}
 local rng=Random.new();local base;local world;local lastOccupied=-math.huge
 local RARITY={Wooden=Pal.Common,Stone=Pal.Uncommon,Marble=Pal.Rare,Golden=Pal.Legendary,Lunar=Pal.Epic}
 local EARTH,STONE,DUSK=Color3.fromHex("A98463"),Color3.fromHex("8E86A8"),Color3.fromHex("6A5A94")
@@ -27,12 +27,37 @@ function Road.CancelPickup(p) Road.Holds[p]=nil;Raid.Cancel(p);require(script.Pa
 function Road.Stun(p,duration) return require(script.Parent.ActionService).Knockout(p,duration,Vector3.new(0,0,1),0) end
 -- Night in the ruins: richer graves, nastier mutants (RoadConfig.Night).
 function Road.Night() return (require(script.Parent.DayNightService).State()) end
--- Graves in the head doctor's biome stay locked while he stands.
-function Road.BossAlive()
- for _,cfg in ipairs(C.Imps) do if cfg.Kind==C.Boss.Kind and cfg.Live and M.Live[cfg.Live.id] then return true end end
+-- Hiding bushes (owner, 2026-11-12): a runner standing in one is invisible to the monsters, until a shot or a swing
+-- gives them away for C.BushReveal seconds. Area blows still land on whoever stands in them.
+function Road.InBush(s,x)
+ for _,q in ipairs(C.Bushes) do
+  local ds,dx=q.S-s,q.X-x
+  if math.abs(ds)<=C.BushRadius and ds*ds+dx*dx<=C.BushRadius*C.BushRadius then return true end
+ end
  return false
 end
-function Road.BossLocked(spot) return spot and not spot.Dropped and (spot.S or 0)>=C.Boss.From and Road.BossAlive() end
+function Road.Reveal(p) Road.RevealedUntil[p]=os.clock()+C.BushReveal end
+-- Every location's amphitheatre keeps two treasure graves locked until its boss falls; they stay open until the
+-- boss comes back (C.Boss.Respawn after the defeat, once somebody is near). A boss that merely went home while
+-- nobody was around was never beaten, so its graves stay shut.
+function Road.BossAlive(i)
+ local cfg=Road.BossCfg[i];return cfg~=nil and cfg.Live~=nil and M.Live[cfg.Live.id]~=nil
+end
+function Road.ArenaOpen(i)
+ local cfg=Road.BossCfg[i];return cfg~=nil and cfg.DefeatedAt~=nil and not Road.BossAlive(i)
+end
+function Road.BossLocked(spot) return spot~=nil and not spot.Dropped and spot.Arena~=nil and not Road.ArenaOpen(spot.Arena) end
+-- Arena geometry: a circle across the road, centred on the location's Arena mark.
+local function arenaCenter(i,y) return at(Progression.Districts[i].Arena,0,y or 0).Position end
+local function arenaDistance(i,pos)
+ local s,x=toRoad(pos);local ds=s-Progression.Districts[i].Arena;return math.sqrt(ds*ds+x*x)
+end
+local function clampToArena(i,s,x,margin)
+ local d=Progression.Districts[i];local ds=s-d.Arena;local r=math.sqrt(ds*ds+x*x);local limit=Progression.ArenaRadius-(margin or 8)
+ if r>limit then ds,x=ds*limit/r,x*limit/r end
+ return d.Arena+ds,x
+end
+Road.ArenaDistance=arenaDistance
 function Road.BeginPickup(p,spot)
  if Road.BossLocked(spot) then RS.Remotes.Notice:FireClient(p,"roadBossFirst");return false end
  local root=p.Character and p.Character:FindFirstChild("HumanoidRootPart")
@@ -66,6 +91,9 @@ local function buildRoad()
    local p=block('RoadFloor',Vector3.new(w,1,b-a+.1),at((a+b)/2,0,(y or 0)-.5),Color3.fromHex(d.Floor));p.Parent=model
    if i==1 then local texture=Instance.new("Texture");texture.Texture="rbxassetid://132213762657371";texture.Face=Enum.NormalId.Top;texture.StudsPerTileU=20;texture.StudsPerTileV=20;texture.Transparency=.5;texture.Parent=p end
   end
+  -- The first floor reaches back under the island's round edge, so the corners at the road's start have no holes
+  -- (the island lawn and the road share one height since 2026-11-12; the cobbled threshold covers the seam).
+  if i==1 then local apron=block('RoadApron',Vector3.new(w,1,14),at(-7,0,-.52),Color3.fromHex(d.Floor));apron.Parent=model end
   if d.From<C.Gap.From and d.To>C.Gap.To then
    floor(d.From,C.Gap.From);floor(C.Gap.To,d.To)
    -- A shallow pit catches jumps; no opening to the void under the obstacle.
@@ -80,17 +108,24 @@ local function buildRoad()
  -- Visible rocks/logs match the solid obstruction; both players and enemies route around it.
  for i,q in C.Walls do
   local solid=P.Solid(world,'RoadRubble',Vector3.new(q.W,3,q.D),at(q.S,q.X,1.5));solid.CanQuery=true
-  local asset=i<=3 and 'MR_Log' or 'MR_Rocks'
-  Art.Spawn(asset,world,at(q.S,q.X,0),{scale=Vector3.new(q.W/(i<=3 and 9 or 5.2),1.5,q.D/(i<=3 and 2 or 3.3))})
+  local asset=q.Log and 'MR_Log' or 'MR_Rocks'
+  Art.Spawn(asset,world,at(q.S,q.X,0),{scale=Vector3.new(q.W/(q.Log and 9 or 5.2),1.5,q.D/(q.Log and 2 or 3.3))})
  end
  for _,q in C.Slime do decal('RoadSlime',Vector3.new(q.Width,.12,q.To-q.From),at((q.From+q.To)/2,q.X,.07),Pal.Slime,.12) end
- for _,q in C.Bushes do Art.Spawn('V3_Bush',world,at(q.S,q.X,0),{scale=1.7}) end
+ -- Hiding bushes: a big bush between two smaller ones, tinted for the location. Walk-through, and invisible to the
+ -- monsters' navigation; the clump's middle is the hiding spot (C.BushRadius).
+ local tint={false,Color3.fromHex("3E7D3A"),Color3.fromHex("6E8F4A"),Color3.fromHex("8FA845"),Color3.fromHex("4F7F86"),Color3.fromHex("6B7A55")}
+ local bushes=Instance.new('Model');bushes.Name='HidingBushes';bushes.Parent=world
+ for n,q in C.Bushes do
+  local clump=Instance.new('Model');clump.Name='HidingBush';clump:SetAttribute('HideRadius',C.BushRadius);clump.Parent=bushes
+  for _,b in {{0,0,2.7,n*37},{-4.2,1.8,2,40+n*11},{4,-1.6,2.1,-25-n*13}} do
+   local parts=Art.Spawn('V3_Bush',clump,at(q.S+b[2],q.X+b[1],0)*CFrame.Angles(0,math.rad(b[4]),0),{scale=b[3],tints=tint[q.District] and {Main=tint[q.District]} or nil})
+   for _,part in parts do if typeof(part)=='Instance' and part:IsA('BasePart') then part.CanCollide=false;part.CanQuery=false;part.CanTouch=false end end
+  end
+ end
  decal('GuideRoad',Vector3.one,at(12,0,2),Pal.Panel,1)
  require(script.Parent.RoadArt).Build(world,at,C,districts,P)
- local gate=at(3,0,0)*CFrame.Angles(0,math.pi,0)
- -- The arch was modelled for a 96-wide road: stretch it across the wider biomes.
- Art.Spawn('V3_RoadArch',world,gate,{scale=Vector3.new(w/96,1.25,1)})
- P.SignText(world,gate*CFrame.new(0,25,-2.45),Vector3.new(44,3.6,.1),'signRoad',Pal.Text)
+ require(script.Parent.RoadArt).BuildEntrance(world,at,C,P)
 end
 -- Graves lying out on the road ---------------------------------------------------------------------------------------------
 local function spotPosition(spot,y) return spot.WorldPosition and spot.WorldPosition+Vector3.new(0,y or 0,0) or at(spot.S,spot.X,y).Position end
@@ -117,15 +152,15 @@ local function spawnGrave(spot)
  pr.PromptButtonHoldBegan:Connect(function(p) Road.BeginPickup(p,spot) end)
  pr.PromptButtonHoldEnded:Connect(function(p) Road.EndPickup(p,spot) end)
  pr.Triggered:Connect(function(p) Road.CompletePickup(p,spot) end)
- if not spot.Dropped and (spot.S or 0)>=C.Boss.From then
-  -- A padlock sign over the boss's graves; the road tick shows it while he stands.
+ if not spot.Dropped and spot.Arena then
+  -- A padlock sign over the arena's graves; the road tick shows it until the boss falls.
   local b=Instance.new("BillboardGui");b.Name="BossLock";b.Size=UDim2.fromScale(9,2.2);b.StudsOffsetWorldSpace=Vector3.new(0,5.5,0);b.LightInfluence=0;b.MaxDistance=120;b.Parent=spotPart
   local l=Instance.new("TextLabel");l.Size=UDim2.fromScale(1,1);l.BackgroundColor3=Color3.fromHex("FF5468");l.TextColor3=Color3.new(1,1,1);l.TextScaled=true;l.Font=Enum.Font.GothamBlack;l.Text="";l:SetAttribute("LocKey","roadBossLock");l.Parent=b
   Instance.new("UICorner",l).CornerRadius=UDim.new(0,10);local st=Instance.new("UIStroke",l);st.Color=Color3.fromHex("3A2366");st.Thickness=3;st.ApplyStrokeMode=Enum.ApplyStrokeMode.Border
  end
- if spot.MonsterType then
+ if spot.MonsterType or spot.BossDrop then
   local b=Instance.new("BillboardGui");b.Name="BossReward";b.Size=UDim2.fromOffset(200,38);b.StudsOffset=Vector3.new(0,4,0);b.MaxDistance=100;b.Parent=spotPart
-  local label=Instance.new("TextLabel");label.BackgroundTransparency=1;label.Size=UDim2.fromScale(1,1);label.TextColor3=Pal.Accent;label.Font=Enum.Font.GothamBlack;label.TextScaled=true;label.Text="";label:SetAttribute("LocKey","chiefGrave");label.Parent=b
+  local label=Instance.new("TextLabel");label.BackgroundTransparency=1;label.Size=UDim2.fromScale(1,1);label.TextColor3=Pal.Accent;label.Font=Enum.Font.GothamBlack;label.TextScaled=true;label.Text="";label:SetAttribute("LocKey",spot.MonsterType=="DeerChief" and "chiefGrave" or "bossGrave");label.Parent=b
  end
  m.Parent=world;spot.Model=m;spot.Kind=kind;spot.Prompt=pr
  if not spot.Dropped and C.Announce[kind] then RS.Remotes.Notice:FireAllClients("roadRare",{grave=kind}) end
@@ -184,9 +219,11 @@ function Road.Drop(p,death)
  if count>=C.MaxDrops and oldest then if oldest.Farm then Raid.ReturnRecord(oldest.Farm) end; if oldest.Model then oldest.Model:Destroy();oldest.Model=nil end;Road.Drops[oldest]=nil end
  spawnGrave(spot);Road.Drops[spot]=true;if p.Parent==Players then notice(p,"roadDropped") end;return spot
 end
-function Road.SpawnBossGrave(pos)
- local s,x=toRoad(pos)
- local spot={S=math.clamp(s,C.Boss.From+10,C.Length-10),X=math.clamp(x,-C.Width/2+10,C.Width/2-10),Kind="Golden",MonsterType="DeerChief",Dropped=true,Lifetime=C.Boss.GraveLifetime,Expires=os.clock()+C.Boss.GraveLifetime}
+-- What a beaten boss may leave behind (RoadConfig.Boss.Graves): dropped inside its arena, claimable like any drop.
+function Road.SpawnBossGrave(pos,i)
+ local loot=C.Boss.Graves[i];if not loot then return nil end
+ local s,x=toRoad(pos);s,x=clampToArena(i,s,x,10)
+ local spot={S=s,X=x,Kind=loot.Kind,MonsterType=loot.MonsterType,BossDrop=true,Dropped=true,Lifetime=C.Boss.GraveLifetime,Expires=os.clock()+C.Boss.GraveLifetime}
  spawnGrave(spot);Road.Drops[spot]=true;return spot
 end
 function Road.Deliver(p)
@@ -203,84 +240,277 @@ function Road.Faint(p,key)
  local ch=p.Character;if ch then ch:PivotTo(at(-6,0,5)*CFrame.Angles(0,math.pi,0)) end
  notice(p,lost and "roadLost" or key or "roadFaint")
 end
+-- Blood Moon (BloodMoonService): the road shuts. A red barrier stands across the entrance; whoever is out on the
+-- road is brought back to the island, a grave they carry already stored at home, and nobody gets in until it lifts.
+Road.Closed=false
+local closedNotice={}
+local function evacuate(p)
+ local root=p.Character and p.Character:FindFirstChild("HumanoidRootPart");if not root then return end
+ local s,x,y=toRoad(root.Position);if s<=C.GateLine-1 or math.abs(x)>C.Width/2+6 or y<=C.DropBelow then return end
+ local c=Road.Carriers[p]
+ if c then
+  if c.farm then Raid.Return(p) else
+   release(p);local item=G.New(c.grave);item.monsterType=c.monsterType;item.fromRoad=true;G.Store(p,item);notice(p,"roadStored",{grave=c.grave})
+  end
+ end
+ Road.CancelPickup(p)
+ p.Character:PivotTo(at(-14,math.clamp(x,-40,40),4)*CFrame.Angles(0,math.pi,0))
+ if os.clock()-(closedNotice[p] or -10)>4 then closedNotice[p]=os.clock();notice(p,"roadClosed") end
+end
+function Road.SetClosed(on)
+ if Road.Closed==on then return end
+ Road.Closed=on;workspace:SetAttribute("RoadClosed",on or nil)
+ if Road.Barrier then Road.Barrier:Destroy();Road.Barrier=nil end
+ if not on then return end
+ local m=Instance.new("Model");m.Name="BloodBarrier"
+ local wall=P.Solid(m,"BloodWall",Vector3.new(C.Width+6,34,1.5),at(7,0,17));wall.CanQuery=false
+ wall.Transparency,wall.Color,wall.Material,wall.CastShadow=.3,Color3.fromHex("C0102E"),Enum.Material.ForceField,false
+ for _,face in {math.pi,0} do
+  local label=P.SignText(m,at(7,0,10)*CFrame.Angles(0,face,0)*CFrame.new(0,0,-1),Vector3.new(60,6,.1),"roadClosedSign",Color3.fromHex("FFE7A3"))
+  label.Parent.PixelsPerStud=15;local st=Instance.new("UIStroke");st.Color=Color3.fromHex("4A0010");st.Thickness=3;st.Parent=label
+ end
+ m.Parent=world;Road.Barrier=m
+ for _,p in ipairs(Players:GetPlayers()) do evacuate(p) end
+end
 function Road.Bite(p,damage)
  require(script.Parent.ActionService).Slow(p)
  local left=(Road.Hearts[p] or C.Hearts)-((damage or 1)*(Road.Night() and C.Night.Damage or 1));Road.Hearts[p]=left;p:SetAttribute("RoadHearts",left)
  if left<=0 then Road.Faint(p) end
 end
--- Imps of the road ---------------------------------------------------------------------------------------------------------
-local function moveImp(a,goal,dt)
- Navigation.Move(a,goal,a.speed*(Road.Night() and C.Night.Speed or 1),dt)
+-- Monsters of the road -----------------------------------------------------------------------------------------------------
+-- Locations v4: each location spawns only its own two kinds (RoadMonsterRules.Districts); its boss lives in the
+-- amphitheatre and never leaves it. Attacks are data (MutantConfig.Types[kind].Attacks): a wind-up the client
+-- telegraphs, then the blow. Regular monsters still follow a runner from one location into the next.
+local function moveImp(a,goal,dt,speed)
+ Navigation.Move(a,goal,(speed or a.speed)*(Road.Night() and C.Night.Speed or 1),dt)
+end
+local function flat(v,y) return Vector3.new(v.X,y,v.Z) end
+-- Hearts a blow costs: the attack's own weight times the location's.
+local function blow(a,attack) return (attack and attack.Damage or 1)*(a.damage or 1) end
+-- One blast: every runner within radius of the centre and in sight of the monster loses hearts (once per hit set).
+local function strike(runners,center,radius,from,hearts,hit)
+ for _,r in ipairs(runners) do
+  if not (hit and hit[r.p]) and (flat(r.pos,center.Y)-center).Magnitude<=radius and Navigation.Visible(from,r.pos) then
+   if hit then hit[r.p]=true end
+   Road.Bite(r.p,hearts)
+  end
+ end
+end
+local function setHealth(a,hp,max)
+ a.hp=hp;a.model:SetAttribute("Health",hp)
+ if max then a.maxHp=max;a.model:SetAttribute("MaxHealth",max) end
+end
+local function bossName(cfg) return cfg and cfg.Variant and cfg.Variant.Name or "Chief" end
+-- Spawns the monster a config row stands for, sized and toughened for its location (and the night).
+local function spawnAgent(cfg,s,x,biome,variant,kind)
+ local spec=MC.Types[kind]
+ local a=M.SpawnRoad(kind,at(s,x,MC.RootHeight),cfg.Speed,variant)
+ if not a then return nil end
+ local m=a.model;local k=C.BiomeScale[biome]*(spec.Scale or 1)
+ -- deeper biomes, bigger mutants; the feet stay on the floor
+ if k~=1 then m:ScaleTo(k);m:PivotTo(m:GetPivot()+Vector3.new(0,(k-1)*MC.RootHeight,0));m:SetAttribute("BiomeScale",k) end
+ a.cfg=cfg;a.biome=biome;a.cooldowns={}
+ a.speed=Progression.EnemySpeed(biome,R)*(spec.SpeedFactor or 1);a.damage=C.BiomeDamage[biome]
+ local night=Road.Night()
+ local hp=math.floor(a.hp*C.BiomeHealth[biome]*(night and C.Night.Health or 1))
+ setHealth(a,hp,hp);m:SetAttribute("Biome",biome)
+ if night then
+  a.night=true;m:SetAttribute("Enraged",true)
+  local glow=Instance.new("Highlight");glow.Name="NightRage";glow.FillTransparency=1;glow.OutlineColor=Color3.fromRGB(255,60,90);glow.OutlineTransparency=.15;glow.DepthMode=Enum.HighlightDepthMode.Occluded;glow.Parent=m
+ end
+ if cfg.Boss then
+  a.boss=true;a.arena=cfg.Boss;a.rewardMult=spec.RewardMult;a.lastEngaged=os.clock()
+  m:SetAttribute("Boss",cfg.Boss);m:SetAttribute("BossName",bossName(cfg));m:SetAttribute("ArenaCenter",arenaCenter(cfg.Boss))
+  cfg.DefeatedAt=nil -- back on its feet: the arena graves lock again
+  M.FX("BossSpawn",a.id,m.PrimaryPart.Position,cfg.Boss,bossName(cfg))
+ end
+ return a
+end
+-- Whom to chase: the nearest runner in reach (carriers first). A boss only looks around its own arena.
+local function pickTarget(a,runners,root)
+ local best,bestDist
+ for _,r in ipairs(runners) do
+  local dist=(flat(r.pos,root.Y)-root).Magnitude;local ok
+  if r.hidden then ok=false -- in a bush: out of sight
+  elseif a.boss then ok=arenaDistance(a.arena,r.pos)<=Progression.ArenaRadius+30
+  else ok=dist<=(r.carrying and C.AggroCarrier or C.Aggro) end
+  if ok and (not bestDist or dist<bestDist or (r.carrying and not best.carrying)) then best,bestDist=r,dist end
+ end
+ return best,bestDist
+end
+local function minions(a)
+ local n=0;for _,q in ipairs(Road.Summons) do if q.Owner==a and q.Live and M.Live[q.Live.id] then n+=1 end end;return n
+end
+-- The first ready attack, in the order the kind lists them, whose range fits.
+local function chooseAttack(a,spec,best,bestDist,now,root)
+ if not spec.Attacks or not best or now<(a.nextSpecial or 0) then return nil end
+ for _,atk in ipairs(spec.Attacks) do
+  if now>=(a.cooldowns[atk.Name] or 0) and bestDist<=atk.Range and bestDist>=(atk.MinRange or 0) then
+   if atk.Shape=="Summon" then
+    if minions(a)<(atk.MaxMinions or 4) then return atk end
+   elseif atk.Shape=="Scream" or Navigation.Visible(root,best.pos) then return atk end
+  end
+ end
+ return nil
+end
+local function onRoad(s,x) return math.clamp(s,14,C.Length-4),math.clamp(x,-C.Width/2+5,C.Width/2-5) end
+-- How far inside the arena's edge a boss's centre must stay: big bosses keep their bulk off the walls.
+local function leash(a) return math.max(C.Boss.Leash+2,(a.model:GetAttribute("NavigationRadius") or 2)*a.model:GetScale()+3) end
+local function startAttack(a,atk,best,root,now)
+ local target=flat(best.pos,root.Y);local attack={atk=atk,ends=now+atk.Windup}
+ if atk.Shape=="Target" then attack.pos=target
+ elseif atk.Shape=="Volley" then
+  attack.points={target}
+  for _=2,atk.Count or 3 do
+   local angle=rng:NextNumber(0,math.pi*2);local r=rng:NextNumber((atk.Spread or 8)*.4,atk.Spread or 8)
+   table.insert(attack.points,target+Vector3.new(math.cos(angle)*r,0,math.sin(angle)*r))
+  end
+ elseif atk.Shape=="Dash" then
+  local dir=target-root;dir=dir.Magnitude>.1 and dir.Unit or a.model.PrimaryPart.CFrame.LookVector
+  local s,x=toRoad(root+dir*atk.Distance)
+  if a.boss then s,x=clampToArena(a.arena,s,x,leash(a)) end
+  s,x=onRoad(s,x);attack.goal=flat(at(s,x,0).Position,root.Y);attack.pos=attack.goal
+ else attack.pos=root end -- Self, Scream, Summon
+ a.attack=attack;M.State(a,"Windup",now)
+ a.model:SetAttribute("AttackDuration",atk.Windup);a.model:SetAttribute("AttackName",atk.Name)
+ if (target-root).Magnitude>.1 then a.model.PrimaryPart.CFrame=CFrame.lookAt(root,target) end
+ -- Telegraphs: what is coming and where, for exactly the wind-up.
+ if attack.points then for _,q in ipairs(attack.points) do M.FX("Telegraph",a.id,q,atk.Radius,atk.Windup) end
+ elseif atk.Shape=="Dash" then M.FX("DashLine",a.id,root,attack.goal,atk.Windup,atk.Radius*2*math.max(1,a.model:GetScale()*.6))
+ elseif atk.Shape=="Summon" then M.FX("Chant",a.id,root,0,atk.Windup)
+ else M.FX("Telegraph",a.id,attack.pos,atk.Radius,atk.Windup) end
+ if a.boss then M.FX("BossCue",a.id,root,0,atk.Shape) end
+end
+local function finishAttack(a,atk,now)
+ a.attack=nil;local rate=Road.Night() and C.Night.AttackRate or 1
+ a.cooldowns[atk.Name]=now+atk.Cooldown/rate
+ a.nextSpecial=now+(a.boss and 1.2 or atk.Cooldown)/rate
+ M.State(a,"Recovering",now)
+end
+-- A boss calls in monsters of its own location around itself.
+local function summon(a,atk)
+ local i=a.arena or a.biome or 1;local s0,x0=toRoad(a.model.PrimaryPart.Position)
+ for _=1,atk.Count or 2 do
+  local angle=rng:NextNumber(0,math.pi*2);local s,x=s0+math.cos(angle)*16,x0+math.sin(angle)*16
+  if a.arena then s,x=clampToArena(a.arena,s,x,8) end
+  s,x=onRoad(s,x)
+  if Navigation.ClearSpawn(at(s,x,0).Position,6*C.BiomeScale[i]) then
+   local variant=MonsterRules.Roll(rng,nil,i)
+   local cfg={S=s,X=x,Speed=14,Biome=i,Minion=true,Owner=a}
+   cfg.Live=spawnAgent(cfg,s,x,i,variant,variant.Kind)
+   if cfg.Live then table.insert(Road.Summons,cfg) end
+  end
+ end
+end
+local function resolveAttack(a,runners,root,now)
+ local attack=a.attack;local atk=attack.atk
+ if atk.Shape=="Dash" then
+  -- The wind-up is over: the lunge itself runs over the next ticks (dash).
+  local seconds=atk.Distance/atk.Speed
+  attack.dashing=true;attack.hit={};attack.dashEnds=now+seconds+.1;M.State(a,"Dashing",now)
+  a.model:SetAttribute("AttackDuration",seconds);M.FX(atk.Fx or "Leap",a.id,root,attack.goal,seconds)
+  return
+ elseif atk.Shape=="Summon" then
+  M.FX("Summon",a.id,root,atk.Count or 2);summon(a,atk)
+ elseif atk.Shape=="Scream" then
+  M.FX("Scream",a.id,root,atk.Radius);strike(runners,root,atk.Radius,root,blow(a,atk))
+ elseif attack.points then
+  local hit={}
+  for _,q in ipairs(attack.points) do M.FX(atk.Fx or "Slam",a.id,root,q,atk.Radius);strike(runners,q,atk.Radius,root,blow(a,atk),hit) end
+ else
+  M.FX(atk.Fx or "Slam",a.id,root,attack.pos,atk.Radius);strike(runners,attack.pos,atk.Radius,root,blow(a,atk))
+ end
+ finishAttack(a,atk,now)
+end
+local function dash(a,runners,dt,now)
+ local attack=a.attack;local atk=attack.atk;local part=a.model.PrimaryPart;local before=part.Position
+ moveImp(a,attack.goal,dt,atk.Speed)
+ local root=part.Position
+ strike(runners,root,atk.Radius*math.max(1,a.model:GetScale()*.6),root,blow(a,atk),attack.hit)
+ if now>=attack.dashEnds or (flat(attack.goal,root.Y)-root).Magnitude<1.5 or (root-before).Magnitude<.05 then finishAttack(a,atk,now) end
+end
+local function tickAgent(a,cfg,dt,now,runners)
+ if now<(a.stunnedUntil or 0) then return end -- the shovel's knockout (bosses are immune: RoadGearService)
+ if a.state=="Spawning" then if now-a.since>=MC.SpawnSeconds then M.State(a,"Running",now) end;return end
+ local root=a.model.PrimaryPart.Position
+ local best,bestDist=pickTarget(a,runners,root)
+ if best and a.noticeTarget~=best.p then a.noticeTarget=best.p;a.model:SetAttribute('NoticedAt',workspace:GetServerTimeNow()) elseif not best then a.noticeTarget=nil end
+ if a.boss then
+  -- Nobody to fight in the arena: it heals, so a boss can't be whittled down from outside its reach.
+  if best then a.lastEngaged=now
+  elseif now-(a.lastEngaged or now)>C.Boss.RegenAfter and a.hp<(a.maxHp or a.hp) then setHealth(a,math.min(a.maxHp,a.hp+a.maxHp*C.Boss.RegenRate*dt)) end
+ end
+ if a.attack then
+  if a.attack.dashing then dash(a,runners,dt,now) elseif now>=a.attack.ends then resolveAttack(a,runners,root,now) end
+  return
+ end
+ if a.state=="Recovering" and now-a.since<(a.boss and .7 or .4) then return end -- a clear escape window
+ local atk=chooseAttack(a,MC.Types[a.kind],best,bestDist,now,root)
+ if atk then startAttack(a,atk,best,root,now);return end
+ if best and bestDist<=C.BiteRange*a.model:GetScale() and Navigation.Visible(root,best.pos) then
+  if a.state~="Biting" then M.State(a,"Biting",now) end
+  if now>=(a.nextBite or 0) then a.nextBite=now+C.BiteEvery/(Road.Night() and C.Night.AttackRate or 1);M.FX("Bite",a.id,root,0);Road.Bite(best.p,a.damage) end
+  return
+ end
+ local s,x
+ if best then s,x=toRoad(best.pos) else s,x=cfg.S,cfg.X end
+ if a.boss then s,x=clampToArena(a.arena,s,x,leash(a)) end
+ s,x=onRoad(s,x)
+ local goal=at(s,x,MC.RootHeight).Position
+ if not best and (flat(goal,root.Y)-root).Magnitude<2 then
+  if a.state~="Idle" then M.State(a,"Idle",now) end -- home: stand and look around
+  return
+ end
+ if a.state~="Running" then M.State(a,"Running",now) end
+ moveImp(a,goal,dt)
+end
+-- Tells a runner whose arena they just walked into, while its boss stands.
+local inArena={}
+local function announceArenas(runners)
+ local seen={}
+ for _,r in ipairs(runners) do
+  local i=Progression.ArenaAt((toRoad(r.pos)),4);seen[r.p]=true
+  if i~=inArena[r.p] then
+   inArena[r.p]=i
+   if i and Road.BossAlive(i) then notice(r.p,"bossArena",{boss=bossName(Road.BossCfg[i])}) end
+  end
+ end
+ for p in pairs(inArena) do if not seen[p] then inArena[p]=nil end end
 end
 local function tickImps(dt,now,runners)
  local occupied=#runners>0
  if occupied then lastOccupied=now end
+ announceArenas(runners)
  local live=0;for _,a in M.Live do if a.road then live+=1 end end
  local spawned=0
  for _,cfg in ipairs(C.Imps) do
   local a=cfg.Live
-  if a and not M.Live[a.id] then a=nil;cfg.Live=nil;cfg.NextAt=now+(cfg.Kind==C.Boss.Kind and C.Boss.Respawn or rng:NextNumber(C.Population.RespawnMin,C.Population.RespawnMax)) end
+  if a and not M.Live[a.id] then a=nil;cfg.Live=nil;cfg.NextAt=now+(cfg.Boss and C.Boss.Respawn or rng:NextNumber(C.Population.RespawnMin,C.Population.RespawnMax)) end
   if not a then
-   if occupied and now>=(cfg.NextAt or 0) and spawned<C.Population.SpawnBudget and live<C.Population.MaxLive and (cfg.Kind==C.Boss.Kind or MonsterRules.Near(cfg.S,runners,toRoad,C.Population.ActiveDistance)) then
-    local variant=cfg.RandomVariant and MonsterRules.Roll(rng,cfg.LastVariant) or nil
-    if variant then cfg.LastVariant=variant.Id end
+   if occupied and now>=(cfg.NextAt or 0) and spawned<C.Population.SpawnBudget and live<C.Population.MaxLive and MonsterRules.Near(cfg.S,runners,toRoad,C.Population.ActiveDistance) then
+    local biome=cfg.Biome or Progression.Index(cfg.S)
+    local variant=cfg.Variant or (cfg.RandomVariant and MonsterRules.Roll(rng,cfg.LastVariant,biome)) or nil
+    local kind=variant and variant.Kind or cfg.Kind or "Imp"
     local s=cfg.RandomVariant and math.clamp(cfg.S+rng:NextNumber(-C.Population.SpawnJitter,C.Population.SpawnJitter),cfg.MinS,cfg.MaxS) or cfg.S
     local x=cfg.RandomVariant and rng:NextNumber(-C.Width*.34,C.Width*.34) or cfg.X
     local floorAt=at(s,x,0).Position
     local tooClose=false;for _,r in runners do local delta=Vector3.new(r.pos.X-floorAt.X,0,r.pos.Z-floorAt.Z);if delta.Magnitude<20 then tooClose=true;break end end
     if tooClose then cfg.NextAt=now+1;continue end
-    local clear=Navigation.ClearSpawn(floorAt,7*C.BiomeScale[Progression.Index(cfg.S)])
-    if not clear then cfg.NextAt=now+1;continue end
-    cfg.Live=M.SpawnRoad(variant and variant.Kind or cfg.Kind or "Imp",at(s,x,MC.RootHeight),cfg.Speed,variant)
-    spawned+=1;live+=1
-    -- deeper biomes, bigger mutants; the feet stay on the floor
-    local biome=Progression.Index(cfg.S);local k=C.BiomeScale[biome]
-    if cfg.Live and k~=1 then local m=cfg.Live.model;m:ScaleTo(k);m:PivotTo(m:GetPivot()+Vector3.new(0,(k-1)*MC.RootHeight,0));m:SetAttribute("BiomeScale",k) end
-    if cfg.Live then local enemy=cfg.Live;enemy.speed=Progression.EnemySpeed(biome,R);enemy.damage=C.BiomeDamage[biome];enemy.hp=math.floor(enemy.hp*C.BiomeHealth[biome]);enemy.model:SetAttribute('Health',enemy.hp);enemy.model:SetAttribute('MaxHealth',enemy.hp);enemy.model:SetAttribute('Biome',biome);enemy.biome=biome end
-    if cfg.Live and Road.Night() then
-     local a2=cfg.Live;a2.night=true;a2.hp=math.floor(a2.hp*C.Night.Health);a2.model:SetAttribute("Health",a2.hp);a2.model:SetAttribute("MaxHealth",a2.hp);a2.model:SetAttribute("Enraged",true)
-     local glow=Instance.new("Highlight");glow.Name="NightRage";glow.FillTransparency=1;glow.OutlineColor=Color3.fromRGB(255,60,90);glow.OutlineTransparency=.15;glow.DepthMode=Enum.HighlightDepthMode.Occluded;glow.Parent=a2.model
-    end
+    if not Navigation.ClearSpawn(floorAt,7*C.BiomeScale[biome]*(MC.Types[kind].Scale or 1)) then cfg.NextAt=now+1;continue end
+    if variant and cfg.RandomVariant then cfg.LastVariant=variant.Id end
+    cfg.Live=spawnAgent(cfg,s,x,biome,variant,kind)
+    if cfg.Live then spawned+=1;live+=1 end
    end
-  elseif now-lastOccupied>C.ImpsIdleAfter or (cfg.RandomVariant and not MonsterRules.Near(cfg.S,runners,toRoad,C.Population.ActiveDistance+120)) then M.Remove(a);cfg.Live=nil;cfg.NextAt=0
-  elseif now<(a.stunnedUntil or 0) then
-   -- Shovel stun also cancels prepared attacks.
-  elseif a.state=="Spawning" then if now-a.since>=MC.SpawnSeconds then M.State(a,"Running",now) end
-  else
-   local root=a.model.PrimaryPart.Position;local best,bestDist
-   for _,r in ipairs(runners) do
-    local dist=(Vector3.new(r.pos.X,root.Y,r.pos.Z)-root).Magnitude
-    if dist<=(r.carrying and C.AggroCarrier or C.Aggro) and (not bestDist or dist<bestDist or (r.carrying and not best.carrying)) then best,bestDist=r,dist end
-   end
-   if best and a.noticeTarget~=best.p then a.noticeTarget=best.p;a.model:SetAttribute('NoticedAt',workspace:GetServerTimeNow()) elseif not best then a.noticeTarget=nil end
-   local spec=MC.Types[a.kind]
-   if a.attack then
-    if now>=a.attack.ends then
-     local hitPos=a.attack.pos
-     M.FX(a.kind=="Spitter" and "HunterShot" or "Slam",a.id,root,hitPos,spec.Radius)
-     for _,r in ipairs(runners) do if (Vector3.new(r.pos.X,hitPos.Y,r.pos.Z)-hitPos).Magnitude<=spec.Radius and Navigation.Visible(root,r.pos) then Road.Bite(r.p,a.damage) end end
-     a.attack=nil;a.nextSpecial=now+spec.Cooldown/(Road.Night() and C.Night.AttackRate or 1);M.State(a,"Recovering",now)
-    end
-   elseif a.state=="Recovering" and now-a.since<.4 then
-    -- Recovery gives runners a clear escape window.
-   elseif spec.Range and best and bestDist<=spec.Range and now>=(a.nextSpecial or 0) and Navigation.Visible(root,best.pos) then
-    local hitPos=a.kind=="Spitter" and Vector3.new(best.pos.X,root.Y,best.pos.Z) or root
-    a.attack={pos=hitPos,ends=now+spec.Windup};M.State(a,"Windup",now)
-    a.model:SetAttribute("AttackDuration",spec.Windup)
-    local flat=Vector3.new(best.pos.X,root.Y,best.pos.Z);if (flat-root).Magnitude>.1 then a.model.PrimaryPart.CFrame=CFrame.lookAt(root,flat) end
-    M.FX("Telegraph",a.id,hitPos,spec.Radius,spec.Windup)
-   elseif best and bestDist<=C.BiteRange*a.model:GetScale() and Navigation.Visible(root,best.pos) then
-    if a.state~="Biting" then M.State(a,"Biting",now) end
-    if now>=(a.nextBite or 0) then a.nextBite=now+C.BiteEvery/(Road.Night() and C.Night.AttackRate or 1);M.FX("Bite",a.id,root,0);Road.Bite(best.p,a.damage) end
-   else
-    if a.state~="Running" then M.State(a,"Running",now) end
-    local s,x
-    if best then s,x=toRoad(best.pos) else s,x=cfg.S,cfg.X end
-    -- They follow a runner from one location into the next (owner, 2026-11-09); with nobody to chase they walk home.
-    s=math.clamp(s,14,C.Length-4);x=math.clamp(x,-C.Width/2+5,C.Width/2-5)
-    moveImp(a,at(s,x,MC.RootHeight).Position,dt)
-   end
-  end
+  elseif now-lastOccupied>C.ImpsIdleAfter or not MonsterRules.Near(cfg.S,runners,toRoad,C.Population.ActiveDistance+120) then
+   M.Remove(a);cfg.Live=nil;cfg.NextAt=0 -- nobody around: it goes home, a boss is not beaten by that
+  else tickAgent(a,cfg,dt,now,runners) end
+ end
+ -- Monsters a boss called in fight like the rest and leave when nobody is around.
+ for n=#Road.Summons,1,-1 do
+  local cfg=Road.Summons[n];local a=cfg.Live
+  if not a or not M.Live[a.id] then table.remove(Road.Summons,n)
+  elseif now-lastOccupied>C.ImpsIdleAfter or not MonsterRules.Near(cfg.S,runners,toRoad,C.Population.ActiveDistance) then M.Remove(a);table.remove(Road.Summons,n)
+  else tickAgent(a,cfg,dt,now,runners) end
  end
 end
 -- Every tenth of a second --------------------------------------------------------------------------------------------------
@@ -320,6 +550,7 @@ function Road.Tick()
    if h.Health<=0 then p:SetAttribute("Training",false);if Road.Carriers[p] then Road.Drop(p,true);notice(p,"roadDropped") end
    else
     local s,x,y=toRoad(root.Position)
+    if Road.Closed and s>C.GateLine-1 and s<C.Length+6 and math.abs(x)<C.Width/2+6 and y>C.DropBelow then evacuate(p);s,x,y=toRoad(root.Position) end
     local over=s>0 and s<C.Length+6 and math.abs(x)<C.Width/2+6
     local on=over and y>C.DropBelow
     if over and y<=C.DropBelow and y>C.DropBelow-60 then Road.Faint(p,"roadFell");on=false end
@@ -330,7 +561,9 @@ function Road.Tick()
      p:SetAttribute("RoadHearts",Road.Hearts[p] or C.Hearts)
     end
     if Road.Carriers[p] and not Road.Carriers[p].farm and s<=C.GateLine and math.abs(x)<C.Width/2+2 and y>C.DropBelow then Road.Deliver(p) end
-    if on then table.insert(runners,{p=p,pos=root.Position,carrying=Road.Carriers[p]~=nil}) end
+    local hidden=on and now>=(Road.RevealedUntil[p] or 0) and Road.InBush(s,x)
+    if p:GetAttribute("HiddenInBush")~=(hidden==true) then p:SetAttribute("HiddenInBush",hidden==true) end
+    if on then table.insert(runners,{p=p,pos=root.Position,carrying=Road.Carriers[p]~=nil,hidden=hidden}) end
     local plot=P.Assigned[p]
     if plot then
      local training=not Road.Blocked(p) and not Road.Carriers[p] and onTreadmill(p,plot,root)
@@ -343,26 +576,34 @@ function Road.Tick()
   end
  end
  for _,spot in ipairs(Road.Spots) do if not spot.Model and now>=(spot.NextAt or 0) then spawnGrave(spot) end end
- local bossUp=Road.BossAlive()
  for _,spot in ipairs(Road.Spots) do
-  if spot.Model and spot.Prompt and (spot.S or 0)>=C.Boss.From then
-   spot.Prompt.Enabled=not bossUp;spot.Model:SetAttribute("BossLocked",bossUp)
-   local lock=spot.Prompt.Parent:FindFirstChild("BossLock");if lock then lock.Enabled=bossUp end
+  if spot.Model and spot.Prompt and spot.Arena then
+   local locked=not Road.ArenaOpen(spot.Arena)
+   spot.Prompt.Enabled=not locked;spot.Model:SetAttribute("BossLocked",locked)
+   local lock=spot.Prompt.Parent:FindFirstChild("BossLock");if lock then lock.Enabled=locked end
   end
  end
  tickImps(dt,now,runners)
 end
 function Road.Forget(p)
- Road.Drop(p);release(p);Road.Hearts[p]=nil;Road.Holds[p]=nil;Road.BlockedUntil[p]=nil
+ Road.Drop(p);release(p);Road.Hearts[p]=nil;Road.Holds[p]=nil;Road.BlockedUntil[p]=nil;Road.RevealedUntil[p]=nil
 end
 function Road.Init()
- local dir=C.Dir.Unit;local rim=dir*C.Rim+Vector3.new(0,P.PlazaTop,0)
+ -- The road lies at the island lawn's height (a stud under the plaza), so the two meet without a step.
+ local dir=C.Dir.Unit;local rim=dir*C.Rim+Vector3.new(0,P.PlazaTop-1,0)
  base=CFrame.lookAt(rim,rim+dir)
  buildRoad()
- M.OnBossDefeated=function(killer,pos)
-  if rng:NextNumber()<C.Boss.GraveChance then Road.SpawnBossGrave(pos);notice(killer,"chiefGraveDropped") end
+ for _,cfg in ipairs(C.Imps) do if cfg.Boss then Road.BossCfg[cfg.Boss]=cfg end end
+ -- A boss falls: its arena graves open, everyone hears of it, and it may leave a grave of its own.
+ M.OnBossDefeated=function(killer,pos,a)
+  local i=a and a.arena;if not i then return end
+  local cfg=Road.BossCfg[i];if cfg then cfg.DefeatedAt=os.clock() end
+  M.FX("BossDeath",a.id,pos,i,0)
+  RS.Remotes.Notice:FireAllClients("bossDefeated",{boss=bossName(cfg),name=killer.DisplayName})
+  local loot=C.Boss.Graves[i]
+  if loot and rng:NextNumber()<loot.Chance and Road.SpawnBossGrave(pos,i) then notice(killer,loot.MonsterType=="DeerChief" and "chiefGraveDropped" or "bossGraveDropped") end
  end
- for i,q in ipairs(C.Spots) do Road.Spots[i]={S=q.S,X=q.X,Pool=q.Pool} end
+ for i,q in ipairs(C.Spots) do Road.Spots[i]={S=q.S,X=q.X,Pool=q.Pool,Arena=q.Arena} end
  task.spawn(function()
   while task.wait(.1) do
    local ok,err=pcall(Road.Tick)

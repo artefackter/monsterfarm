@@ -18,7 +18,18 @@ local LOOK = {
 		Fog = Color3.fromRGB(96, 76, 180), Density = 0.18, Haze = 0.9, AtmosphereColor = Color3.fromRGB(110, 90, 210),
 		Tint = Color3.fromRGB(235, 228, 255), Saturation = 0.2, Contrast = 0.05,
 	},
+	-- Blood Moon (BloodMoonService): the purple night turns crimson while the giant is out
+	blood = {
+		Clock = 0, Brightness = 0.95, Exposure = 0.05,
+		Ambient = Color3.fromRGB(160, 80, 95), Outdoor = Color3.fromRGB(185, 90, 105), Shift = Color3.fromRGB(255, 120, 120),
+		Fog = Color3.fromRGB(130, 20, 40), Density = 0.3, Haze = 1.4, AtmosphereColor = Color3.fromRGB(210, 40, 60),
+		Tint = Color3.fromRGB(255, 205, 210), Saturation = 0.25, Contrast = 0.1,
+	},
 }
+D.Blood = false
+function D.SetBlood(on)
+	D.Blood = on == true
+end
 
 local function ensure(class)
 	local e = Lighting:FindFirstChildOfClass(class)
@@ -68,7 +79,7 @@ function D.Update()
 		setup()
 	end
 	local night, left = D.State()
-	local look, k = LOOK[night and "night" or "day"], 0.08
+	local look, k = LOOK[night and (D.Blood and "blood" or "night") or "day"], 0.08
 	Lighting.ClockTime = lerp(Lighting.ClockTime, look.Clock, k)
 	Lighting.Brightness = lerp(Lighting.Brightness, look.Brightness, k)
 	Lighting.ExposureCompensation = lerp(Lighting.ExposureCompensation, look.Exposure, k)

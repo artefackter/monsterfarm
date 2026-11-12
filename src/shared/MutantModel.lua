@@ -15,7 +15,7 @@ function M.Build(kind,cf,variant)
   local size=(hi-lo)*scale;root.Size=Vector3.new(math.clamp(size.X*.6,3,9),size.Y,math.clamp(size.Z*.6,3,9))
   m:SetAttribute("MonsterHeight",size.Y);m:SetAttribute("ArtAsset",asset);m:SetAttribute("CollectionType",variant and variant.Id or "DeerChief")
   m:SetAttribute("Family",variant and variant.Family or "Deer")
-  m:SetAttribute("Floating",require(script.Parent.MonsterCollection).Floating[variant and variant.Id or "DeerChief"]==true)
+  m:SetAttribute("Floating",(variant and variant.Floating) or require(script.Parent.MonsterCollection).Floating[variant and variant.Id or "DeerChief"]==true)
   local limits=require(script.Parent.Config.MonsterSize)
   m:SetAttribute("NavigationRadius",math.clamp(math.max(size.X,size.Z)*.38,limits.NavigationRadiusMin,limits.NavigationRadiusMax))
  else
