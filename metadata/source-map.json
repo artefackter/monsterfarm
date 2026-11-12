@@ -1,0 +1,849 @@
+[
+  {
+    "studioPath": "ReplicatedStorage.Shared.ActionRules",
+    "file": "src/shared/ActionRules.lua",
+    "className": "ModuleScript",
+    "bytes": 960,
+    "sha256": "74a31e04278d6a11d8287257bb0a1f7a19f72466c2e9bb7eba173dd60e283c8c"
+  },
+  {
+    "studioPath": "ReplicatedStorage.Shared.ArtKit",
+    "file": "src/shared/ArtKit.lua",
+    "className": "ModuleScript",
+    "bytes": 8567,
+    "sha256": "09bf1f2eea75f3fc3d074b5c1f848bde1c8a779089c388539783c87be6c1f5c2"
+  },
+  {
+    "studioPath": "ReplicatedStorage.Shared.ArtManifest",
+    "file": "src/shared/ArtManifest.lua",
+    "className": "ModuleScript",
+    "bytes": 29408,
+    "sha256": "ba77930f5945520181eb265e464397981e034c9fb737f8502fb93fe4bebd2827"
+  },
+  {
+    "studioPath": "ReplicatedStorage.Shared.ArtManifestCollectionV2",
+    "file": "src/shared/ArtManifestCollectionV2.lua",
+    "className": "ModuleScript",
+    "bytes": 14018,
+    "sha256": "679072317710074114ad142c5e107bf3a10c33df0a861700f1aa471189d4f1d1"
+  },
+  {
+    "studioPath": "ReplicatedStorage.Shared.ArtManifestEnvironment",
+    "file": "src/shared/ArtManifestEnvironment.lua",
+    "className": "ModuleScript",
+    "bytes": 2516,
+    "sha256": "735b24f4e02359af46d79fb7e157014ac2aa444366849793de48d5862838daec"
+  },
+  {
+    "studioPath": "ReplicatedStorage.Shared.ArtManifestHorror",
+    "file": "src/shared/ArtManifestHorror.lua",
+    "className": "ModuleScript",
+    "bytes": 4162,
+    "sha256": "63b9965b2a9618f4804c8100a02e4587ec260b7fd78758ece7a58cb18e5458f6"
+  },
+  {
+    "studioPath": "ReplicatedStorage.Shared.ArtManifestMonsters",
+    "file": "src/shared/ArtManifestMonsters.lua",
+    "className": "ModuleScript",
+    "bytes": 10546,
+    "sha256": "6cc033cfb5b3391f43144757d32e094616b9187e602d0854f8e474423be3a84f"
+  },
+  {
+    "studioPath": "ReplicatedStorage.Shared.ArtManifestRelease",
+    "file": "src/shared/ArtManifestRelease.lua",
+    "className": "ModuleScript",
+    "bytes": 62239,
+    "sha256": "63c3c090e30c5d4a3cdacbfe118c3bc46b286f3704f9833154b7face9cf30eed"
+  },
+  {
+    "studioPath": "ReplicatedStorage.Shared.ArtManifestRoadRoots",
+    "file": "src/shared/ArtManifestRoadRoots.lua",
+    "className": "ModuleScript",
+    "bytes": 5530,
+    "sha256": "01a7bf1634bd7d1df07b4924d36904968571cf6ad1e634ab259269ccc993eb1b"
+  },
+  {
+    "studioPath": "ReplicatedStorage.Shared.ArtManifestRoadV2",
+    "file": "src/shared/ArtManifestRoadV2.lua",
+    "className": "ModuleScript",
+    "bytes": 5298,
+    "sha256": "50f7aa39f34f2a20d18fdd1e8573eee7e5ed470b9ebd2b86d817cf241792db6f"
+  },
+  {
+    "studioPath": "ReplicatedStorage.Shared.ArtManifestV3",
+    "file": "src/shared/ArtManifestV3.lua",
+    "className": "ModuleScript",
+    "bytes": 27221,
+    "sha256": "62ea8f0e8970c4a55aa8317f75587c08bbfea11b2b3b59aca7467ea17d128b23"
+  },
+  {
+    "studioPath": "ReplicatedStorage.Shared.ArtMetadataV3",
+    "file": "src/shared/ArtMetadataV3.lua",
+    "className": "ModuleScript",
+    "bytes": 14342,
+    "sha256": "fca914314664583d8c5f18102420d00eeae76f337685b2ca3ee925968615363e"
+  },
+  {
+    "studioPath": "ReplicatedStorage.Shared.CombatPose",
+    "file": "src/shared/CombatPose.lua",
+    "className": "ModuleScript",
+    "bytes": 13294,
+    "sha256": "59f51057a0de5adcc79e5fb669520ad7312bd53b9c908d06f1a116992288fb4c"
+  },
+  {
+    "studioPath": "ReplicatedStorage.Shared.Config.AnimationConfig",
+    "file": "src/shared/Config/AnimationConfig.lua",
+    "className": "ModuleScript",
+    "bytes": 1104,
+    "sha256": "8f8b84b720fd2b04bc02b021758de228f59c0ff90e3c8db7ca37a910b1ec3eb5"
+  },
+  {
+    "studioPath": "ReplicatedStorage.Shared.Config.GraveConfig",
+    "file": "src/shared/Config/GraveConfig.lua",
+    "className": "ModuleScript",
+    "bytes": 520,
+    "sha256": "76c6f99025833a1aacd9c9aa8b132f212a109fb3764cd77bf1bc1a4805fff795"
+  },
+  {
+    "studioPath": "ReplicatedStorage.Shared.Config.GuideConfig",
+    "file": "src/shared/Config/GuideConfig.lua",
+    "className": "ModuleScript",
+    "bytes": 548,
+    "sha256": "90ab86ba1cd89dd2d4ea4ea34029cb118aaf8f2e5d84cc1d1c9759b96c0747d0"
+  },
+  {
+    "studioPath": "ReplicatedStorage.Shared.Config.HouseConfig",
+    "file": "src/shared/Config/HouseConfig.lua",
+    "className": "ModuleScript",
+    "bytes": 1853,
+    "sha256": "48b3d368aa4afdf7e1323c857967c252441e01883729c5767bd11d9d33dde467"
+  },
+  {
+    "studioPath": "ReplicatedStorage.Shared.Config.InterfaceConfig",
+    "file": "src/shared/Config/InterfaceConfig.lua",
+    "className": "ModuleScript",
+    "bytes": 1826,
+    "sha256": "5027f951162af430b23b87503d8ca82b0351b9a63684a241da7d6cf498422a22"
+  },
+  {
+    "studioPath": "ReplicatedStorage.Shared.Config.MonsterSize",
+    "file": "src/shared/Config/MonsterSize.lua",
+    "className": "ModuleScript",
+    "bytes": 207,
+    "sha256": "cc5f0a049ba3ca25d3bb9928c7036af89f65afd8146b9299cd165bfbff196a2e"
+  },
+  {
+    "studioPath": "ReplicatedStorage.Shared.Config.MutantConfig",
+    "file": "src/shared/Config/MutantConfig.lua",
+    "className": "ModuleScript",
+    "bytes": 1074,
+    "sha256": "d7f73e0c531ba38b38db8abc3652006745f4e33df8641454ea8f29e32be85882"
+  },
+  {
+    "studioPath": "ReplicatedStorage.Shared.Config.NewbieConfig",
+    "file": "src/shared/Config/NewbieConfig.lua",
+    "className": "ModuleScript",
+    "bytes": 455,
+    "sha256": "fcdded169e3fce67564cc7faef2d932102338c39f145fbabebefae4292d7566c"
+  },
+  {
+    "studioPath": "ReplicatedStorage.Shared.Config.NightConfig",
+    "file": "src/shared/Config/NightConfig.lua",
+    "className": "ModuleScript",
+    "bytes": 134,
+    "sha256": "c27bae9350c215c7187406554302034f6d4a49f51836bfe3b13a8b7376998f17"
+  },
+  {
+    "studioPath": "ReplicatedStorage.Shared.Config.PetConfig",
+    "file": "src/shared/Config/PetConfig.lua",
+    "className": "ModuleScript",
+    "bytes": 748,
+    "sha256": "bc6c6755401b578b387ca87308034d5ed7192729cc729c89549581e9b3402d55"
+  },
+  {
+    "studioPath": "ReplicatedStorage.Shared.Config.PlacementConfig",
+    "file": "src/shared/Config/PlacementConfig.lua",
+    "className": "ModuleScript",
+    "bytes": 1553,
+    "sha256": "caf99bd8381da1db89c30b9d6253d8c961b6ebc2a6a59acff02c5ab2fc3ca8c8"
+  },
+  {
+    "studioPath": "ReplicatedStorage.Shared.Config.PumpkinConfig",
+    "file": "src/shared/Config/PumpkinConfig.lua",
+    "className": "ModuleScript",
+    "bytes": 281,
+    "sha256": "ae7a9532684c86c5256dd399172b36c3064da4536cbb9c2977e1f61f1b88df9f"
+  },
+  {
+    "studioPath": "ReplicatedStorage.Shared.Config.QuestConfig",
+    "file": "src/shared/Config/QuestConfig.lua",
+    "className": "ModuleScript",
+    "bytes": 1233,
+    "sha256": "383bc582228d89cae98510d856f64de1a5b88704079dfbce7dc342239c0f9ff9"
+  },
+  {
+    "studioPath": "ReplicatedStorage.Shared.Config.RewardConfig",
+    "file": "src/shared/Config/RewardConfig.lua",
+    "className": "ModuleScript",
+    "bytes": 217,
+    "sha256": "67faa926ebfc31d08314c60b39fc6aa25d5487ac3cee0d4946196567a3835240"
+  },
+  {
+    "studioPath": "ReplicatedStorage.Shared.Config.RoadConfig",
+    "file": "src/shared/Config/RoadConfig.lua",
+    "className": "ModuleScript",
+    "bytes": 2476,
+    "sha256": "8997513dc7a49c9d14fcb1b8f314204316afac0804ed8e98119c028af920ec36"
+  },
+  {
+    "studioPath": "ReplicatedStorage.Shared.Config.RoadProgression",
+    "file": "src/shared/Config/RoadProgression.lua",
+    "className": "ModuleScript",
+    "bytes": 1061,
+    "sha256": "9732e5ac77030676f19266868a034cf1dc09e809468f0af1c96b1e3bae31e22e"
+  },
+  {
+    "studioPath": "ReplicatedStorage.Shared.Config.ShopConfig",
+    "file": "src/shared/Config/ShopConfig.lua",
+    "className": "ModuleScript",
+    "bytes": 201,
+    "sha256": "f4a8564b17f5932ee2bc01fdaae92fe841b411d3b3a93d2b12748f862e8376d1"
+  },
+  {
+    "studioPath": "ReplicatedStorage.Shared.Config.ShovelConfig",
+    "file": "src/shared/Config/ShovelConfig.lua",
+    "className": "ModuleScript",
+    "bytes": 797,
+    "sha256": "50299dc89f688b8997f701e3821e2e60e82d2493182b9a82a9115b31f446fa3a"
+  },
+  {
+    "studioPath": "ReplicatedStorage.Shared.Config.SocialConfig",
+    "file": "src/shared/Config/SocialConfig.lua",
+    "className": "ModuleScript",
+    "bytes": 1015,
+    "sha256": "bb9abec84ceda6e42563cfba1d2e17aee3fbc7fbb61e857a9f3a9dcb746b9be5"
+  },
+  {
+    "studioPath": "ReplicatedStorage.Shared.Config.SoundConfig",
+    "file": "src/shared/Config/SoundConfig.lua",
+    "className": "ModuleScript",
+    "bytes": 3005,
+    "sha256": "be606d00012946ca737e7755b1a7b8da485e88e63f0f034e87c50c52607c5bbb"
+  },
+  {
+    "studioPath": "ReplicatedStorage.Shared.Config.UpgradeConfig",
+    "file": "src/shared/Config/UpgradeConfig.lua",
+    "className": "ModuleScript",
+    "bytes": 188,
+    "sha256": "83587e80a97dacf11794c4f5125ebdc9e5b5e91e3375767fc612d733edc5f3ca"
+  },
+  {
+    "studioPath": "ReplicatedStorage.Shared.Config.WeaponConfig",
+    "file": "src/shared/Config/WeaponConfig.lua",
+    "className": "ModuleScript",
+    "bytes": 2052,
+    "sha256": "418f072094a03459c270384709925180ba2349e6e16135b0db9939f41b445bab"
+  },
+  {
+    "studioPath": "ReplicatedStorage.Shared.Config.WorldConfig",
+    "file": "src/shared/Config/WorldConfig.lua",
+    "className": "ModuleScript",
+    "bytes": 1324,
+    "sha256": "25286520f7df4e9bce277f2c4cba68d1973cf4bdfad35d8948930e61c619a547"
+  },
+  {
+    "studioPath": "ReplicatedStorage.Shared.Config.ZombieConfig",
+    "file": "src/shared/Config/ZombieConfig.lua",
+    "className": "ModuleScript",
+    "bytes": 1131,
+    "sha256": "872d331b5de5319729031fbcd0d24088a8061c639006619e2c0a21c92ebcf75d"
+  },
+  {
+    "studioPath": "ReplicatedStorage.Shared.Config.ZoneConfig",
+    "file": "src/shared/Config/ZoneConfig.lua",
+    "className": "ModuleScript",
+    "bytes": 372,
+    "sha256": "7a62af9bacfe5f4743000dfc742340c689eb2501c237f8cb85a24c7ab4945e04"
+  },
+  {
+    "studioPath": "ReplicatedStorage.Shared.DesignNotes",
+    "file": "src/shared/DesignNotes.lua",
+    "className": "ModuleScript",
+    "bytes": 11985,
+    "sha256": "6088b28babca54bceb495dc2e383d354eaf3c181f97770d3987f33a6478d7443"
+  },
+  {
+    "studioPath": "ReplicatedStorage.Shared.GardenEnvironment",
+    "file": "src/shared/GardenEnvironment.lua",
+    "className": "ModuleScript",
+    "bytes": 1591,
+    "sha256": "7f9d0fe61d6d749e55c1d6fe45dd72820b4092f5a497624ade3a2f096a0c4fb6"
+  },
+  {
+    "studioPath": "ReplicatedStorage.Shared.HouseRules",
+    "file": "src/shared/HouseRules.lua",
+    "className": "ModuleScript",
+    "bytes": 2171,
+    "sha256": "65547506ff51073f9f8d2857c9fd3f218aae08a364e3180da7e355523098cfc2"
+  },
+  {
+    "studioPath": "ReplicatedStorage.Shared.Icons",
+    "file": "src/shared/Icons.lua",
+    "className": "ModuleScript",
+    "bytes": 2623,
+    "sha256": "9101e04b705d5e80bca349001028f0dc7711f65da2a2f26855c1d13ec526b37e"
+  },
+  {
+    "studioPath": "ReplicatedStorage.Shared.InterfaceRules",
+    "file": "src/shared/InterfaceRules.lua",
+    "className": "ModuleScript",
+    "bytes": 2597,
+    "sha256": "d0ca8c27453e7deabf8065fa3347cde5fc6ab28962a300a7bf99dcd2780ca9b9"
+  },
+  {
+    "studioPath": "ReplicatedStorage.Shared.Locale",
+    "file": "src/shared/Locale.lua",
+    "className": "ModuleScript",
+    "bytes": 49295,
+    "sha256": "e3212bc7e40d2ed87987642af8014c8c70e1d7fdd9d7484ba15db7e1788860eb"
+  },
+  {
+    "studioPath": "ReplicatedStorage.Shared.MergeRules",
+    "file": "src/shared/MergeRules.lua",
+    "className": "ModuleScript",
+    "bytes": 3517,
+    "sha256": "996129df916b051d26307667aa1f42e4e6c3f267f013e1b078994941f6fb3cca"
+  },
+  {
+    "studioPath": "ReplicatedStorage.Shared.MonsterCollection",
+    "file": "src/shared/MonsterCollection.lua",
+    "className": "ModuleScript",
+    "bytes": 4074,
+    "sha256": "cf74f6059358dd63171a5c30def238cf8f9538048687ab07b9c988dcc40e14e7"
+  },
+  {
+    "studioPath": "ReplicatedStorage.Shared.MonsterRig",
+    "file": "src/shared/MonsterRig.lua",
+    "className": "ModuleScript",
+    "bytes": 5653,
+    "sha256": "4733a3ab0623c24c8da3cf1d886259f88e62b573ed5c57d40c548811213649de"
+  },
+  {
+    "studioPath": "ReplicatedStorage.Shared.MonsterRigHorror",
+    "file": "src/shared/MonsterRigHorror.lua",
+    "className": "ModuleScript",
+    "bytes": 787,
+    "sha256": "169f6ff7872ab5d326a1551421505db38625429eb9dbbc2371b582772d2390a5"
+  },
+  {
+    "studioPath": "ReplicatedStorage.Shared.MonsterRigRelease",
+    "file": "src/shared/MonsterRigRelease.lua",
+    "className": "ModuleScript",
+    "bytes": 10825,
+    "sha256": "7a2a9bb05c314ce8be041bd618a0b3ce7f3c2fbd632fbeb005e7cd7f411aa335"
+  },
+  {
+    "studioPath": "ReplicatedStorage.Shared.MonsterRigRoadRoots",
+    "file": "src/shared/MonsterRigRoadRoots.lua",
+    "className": "ModuleScript",
+    "bytes": 1561,
+    "sha256": "6ecc8a0dc22c9addafa9d20715aeba59797ba777b6f0666438b1e98412370012"
+  },
+  {
+    "studioPath": "ReplicatedStorage.Shared.MutantAnimation",
+    "file": "src/shared/MutantAnimation.lua",
+    "className": "ModuleScript",
+    "bytes": 9532,
+    "sha256": "f2e916bc664b05fd5e3398a0932b38efcd537340159f9fc222f6e8d397411759"
+  },
+  {
+    "studioPath": "ReplicatedStorage.Shared.MutantModel",
+    "file": "src/shared/MutantModel.lua",
+    "className": "ModuleScript",
+    "bytes": 3388,
+    "sha256": "379d85a425c5c6248ee6c685952a5f65f272ed464e2ba7cd97303a23022aa2ec"
+  },
+  {
+    "studioPath": "ReplicatedStorage.Shared.Notifications",
+    "file": "src/shared/Notifications.lua",
+    "className": "ModuleScript",
+    "bytes": 8162,
+    "sha256": "0a608704dfb1f5d7ab6d1e99c4ec81a15b1de279e8bcc6afea976437ecad06c6"
+  },
+  {
+    "studioPath": "ReplicatedStorage.Shared.Palette",
+    "file": "src/shared/Palette.lua",
+    "className": "ModuleScript",
+    "bytes": 721,
+    "sha256": "a031ea81ef7e8637d3726e259ba81c7eb986899e94e0fe090bbefe827cc1b30e"
+  },
+  {
+    "studioPath": "ReplicatedStorage.Shared.PetModel",
+    "file": "src/shared/PetModel.lua",
+    "className": "ModuleScript",
+    "bytes": 3783,
+    "sha256": "f03591ebf5e3cc695f7b78cac8a268aca0175fc1dedf7c870c621c03a4b0c173"
+  },
+  {
+    "studioPath": "ReplicatedStorage.Shared.PetRules",
+    "file": "src/shared/PetRules.lua",
+    "className": "ModuleScript",
+    "bytes": 1573,
+    "sha256": "d877eea881b5d87bdb86258e8e05db95d39e89d4d6039f713989fc780bbf2aa4"
+  },
+  {
+    "studioPath": "ReplicatedStorage.Shared.PlacementRules",
+    "file": "src/shared/PlacementRules.lua",
+    "className": "ModuleScript",
+    "bytes": 5588,
+    "sha256": "854598851b78bb4a8fe8c2bfe778a0004443fadce3b0e7944eae01e4e25cc907"
+  },
+  {
+    "studioPath": "ReplicatedStorage.Shared.ProfileV3",
+    "file": "src/shared/ProfileV3.lua",
+    "className": "ModuleScript",
+    "bytes": 2200,
+    "sha256": "0e68ec1b0568e841354686638fe3051c68d3e58e39798d850670bb8cbf997bff"
+  },
+  {
+    "studioPath": "ReplicatedStorage.Shared.QuestRules",
+    "file": "src/shared/QuestRules.lua",
+    "className": "ModuleScript",
+    "bytes": 3661,
+    "sha256": "875cf9193cd2249cf24b77660ca9a394d68301efdcd372803819f83b712f1917"
+  },
+  {
+    "studioPath": "ReplicatedStorage.Shared.RoadGearModel",
+    "file": "src/shared/RoadGearModel.lua",
+    "className": "ModuleScript",
+    "bytes": 2471,
+    "sha256": "d6cefcc9c9a5ef3cc3cb780a0241b2c05498591b55d753cb99a3737982fa8045"
+  },
+  {
+    "studioPath": "ReplicatedStorage.Shared.RoadMonsterRules",
+    "file": "src/shared/RoadMonsterRules.lua",
+    "className": "ModuleScript",
+    "bytes": 1491,
+    "sha256": "878a3c2749e24ac83faa5f4891d1cc46e0e5f1571c562afa41601ae6147c18a5"
+  },
+  {
+    "studioPath": "ReplicatedStorage.Shared.RoadRules",
+    "file": "src/shared/RoadRules.lua",
+    "className": "ModuleScript",
+    "bytes": 2262,
+    "sha256": "cd519f57e5a69680cd2607353cbc0174d4ddf428b218e44ecb1ba25f8714dd1e"
+  },
+  {
+    "studioPath": "ReplicatedStorage.Shared.Sfx",
+    "file": "src/shared/Sfx.lua",
+    "className": "ModuleScript",
+    "bytes": 1052,
+    "sha256": "09d3caaac9fcb2a5c858e53d502edcc7c26edf2caab3963975caa17ef2926184"
+  },
+  {
+    "studioPath": "ReplicatedStorage.Shared.ShovelModel",
+    "file": "src/shared/ShovelModel.lua",
+    "className": "ModuleScript",
+    "bytes": 678,
+    "sha256": "0f8d947d22cc1b9181e393a3814f76f450f116a84c8fce1ae70de13ff7b5e39d"
+  },
+  {
+    "studioPath": "ReplicatedStorage.Shared.ShovelMotion",
+    "file": "src/shared/ShovelMotion.lua",
+    "className": "ModuleScript",
+    "bytes": 2016,
+    "sha256": "89d73b2a2b2807fb496eebebd3010bc8d94a88a3e3eeacd02eb4e90637ae01b9"
+  },
+  {
+    "studioPath": "ReplicatedStorage.Shared.Types",
+    "file": "src/shared/Types.lua",
+    "className": "ModuleScript",
+    "bytes": 201,
+    "sha256": "908066db47aee2faf9b9710a74ee52ecb0e2740e129d71f0203f05ab5e88e1f4"
+  },
+  {
+    "studioPath": "ReplicatedStorage.Shared.UIStyle",
+    "file": "src/shared/UIStyle.lua",
+    "className": "ModuleScript",
+    "bytes": 10359,
+    "sha256": "6898d49fb3c0f2d904fb1769f1bb863177a526487fa273711fad027f39ac9c62"
+  },
+  {
+    "studioPath": "ReplicatedStorage.Shared.WeaponAnimation",
+    "file": "src/shared/WeaponAnimation.lua",
+    "className": "ModuleScript",
+    "bytes": 1752,
+    "sha256": "ede598913f9679ae8893bf5cd26de077187f18d7aeef794f9d269d56ef235242"
+  },
+  {
+    "studioPath": "ReplicatedStorage.Shared.WeaponArtAnchors",
+    "file": "src/shared/WeaponArtAnchors.lua",
+    "className": "ModuleScript",
+    "bytes": 1689,
+    "sha256": "6869d1d3f5ba3e1780ecfd784b726da4ee12294317966f66eaca5feb5f851530"
+  },
+  {
+    "studioPath": "ReplicatedStorage.Shared.WeaponModel",
+    "file": "src/shared/WeaponModel.lua",
+    "className": "ModuleScript",
+    "bytes": 1505,
+    "sha256": "b20be4ff5b61f61e15e3c061886260b832dc9c4f0bd0a131d8c44131492763d3"
+  },
+  {
+    "studioPath": "ReplicatedStorage.Shared.WeaponRules",
+    "file": "src/shared/WeaponRules.lua",
+    "className": "ModuleScript",
+    "bytes": 885,
+    "sha256": "0768153940ce805f353e5759262881cfe455d3054f479308c2a7f69d9f421ac9"
+  },
+  {
+    "studioPath": "ReplicatedStorage.Shared.WeaponSkins",
+    "file": "src/shared/WeaponSkins.lua",
+    "className": "ModuleScript",
+    "bytes": 1233,
+    "sha256": "598bc5879c940ef6c93da465c514f13e4626c295be271a8ba9d4a258d6db79d1"
+  },
+  {
+    "studioPath": "ReplicatedStorage.Shared.WeaponUpgrades",
+    "file": "src/shared/WeaponUpgrades.lua",
+    "className": "ModuleScript",
+    "bytes": 3542,
+    "sha256": "5e0c327a2143fcb0d13292a18481d7a2b5bc2037f044febe0b52a25bddcd81f6"
+  },
+  {
+    "studioPath": "ReplicatedStorage.Shared.WorldArt",
+    "file": "src/shared/WorldArt.lua",
+    "className": "ModuleScript",
+    "bytes": 2275,
+    "sha256": "7b4c6c0832d171e9c32cab91e49ff2984c1ace375c03490612841f785a8bd687"
+  },
+  {
+    "studioPath": "ServerScriptService.ActionService",
+    "file": "src/server/ActionService.lua",
+    "className": "ModuleScript",
+    "bytes": 6076,
+    "sha256": "c3f8e6f8dd6137c5fc4d0ed255de2e64ebcf533ff969f7777648a939d80c5600"
+  },
+  {
+    "studioPath": "ServerScriptService.AnalyticsTracker",
+    "file": "src/server/AnalyticsTracker.lua",
+    "className": "ModuleScript",
+    "bytes": 905,
+    "sha256": "d8a40e6ac1c1e9cdf75c4c1345f727526110d5d1fd6b30bcefb122c4af573678"
+  },
+  {
+    "studioPath": "ServerScriptService.BankService",
+    "file": "src/server/BankService.lua",
+    "className": "ModuleScript",
+    "bytes": 5775,
+    "sha256": "fabe362120cf81471ea1be7378ef4c027609172fca08ab47e6a887b18e024ef6"
+  },
+  {
+    "studioPath": "ServerScriptService.DataService",
+    "file": "src/server/DataService.lua",
+    "className": "ModuleScript",
+    "bytes": 4966,
+    "sha256": "92c046c7adb4a0d9a234943149c1be68a9fe789efcfd6175964697d0dd651fa2"
+  },
+  {
+    "studioPath": "ServerScriptService.DayNightService",
+    "file": "src/server/DayNightService.lua",
+    "className": "ModuleScript",
+    "bytes": 3591,
+    "sha256": "652201cb6ef76b3464ded581a5cda550cd9577deb59c5aa4bf731c30b1f583e1"
+  },
+  {
+    "studioPath": "ServerScriptService.GraveService",
+    "file": "src/server/GraveService.lua",
+    "className": "ModuleScript",
+    "bytes": 8452,
+    "sha256": "e58b2a26687a575a305b8b2c69ddd8af714a15cdb8f0f6639e2c9e245c9a5e0e"
+  },
+  {
+    "studioPath": "ServerScriptService.HouseService",
+    "file": "src/server/HouseService.lua",
+    "className": "ModuleScript",
+    "bytes": 16172,
+    "sha256": "04dbc92fd16c32505de699e8eb76f8b3bb3d7b9b25ade00235d3207b1a8e221a"
+  },
+  {
+    "studioPath": "ServerScriptService.IncomeService",
+    "file": "src/server/IncomeService.lua",
+    "className": "ModuleScript",
+    "bytes": 933,
+    "sha256": "584078daa87808d6c982fa6d923e350701a654c069129eb310e22908530f7504"
+  },
+  {
+    "studioPath": "ServerScriptService.InterfaceService",
+    "file": "src/server/InterfaceService.lua",
+    "className": "ModuleScript",
+    "bytes": 12841,
+    "sha256": "8ba0cb2b0a139f44314a740ec8536b0835ef4b30823611a57d0fb72bdcc1de86"
+  },
+  {
+    "studioPath": "ServerScriptService.InviteSpots",
+    "file": "src/server/InviteSpots.lua",
+    "className": "ModuleScript",
+    "bytes": 1104,
+    "sha256": "524b51dcab914c9238bfcd2fdf58b5fd96d384be2e4746f019fb71ceef1138db"
+  },
+  {
+    "studioPath": "ServerScriptService.LeaderboardService",
+    "file": "src/server/LeaderboardService.lua",
+    "className": "ModuleScript",
+    "bytes": 11583,
+    "sha256": "1ac5100c494a4d3bd69d213b755cb43b321b9ce7985cf20652cad291fef79df5"
+  },
+  {
+    "studioPath": "ServerScriptService.Main",
+    "file": "src/server/Main.server.lua",
+    "className": "Script",
+    "bytes": 13653,
+    "sha256": "53a2eaeb042c20350d8940fc4bb5270cb1008cdfdedf61a806f6a514bd401b53"
+  },
+  {
+    "studioPath": "ServerScriptService.MergeService",
+    "file": "src/server/MergeService.lua",
+    "className": "ModuleScript",
+    "bytes": 944,
+    "sha256": "63297666377064d55ff6e6846f09deb5d73bfc595207cb228838adb3382caf40"
+  },
+  {
+    "studioPath": "ServerScriptService.MutantNavigation",
+    "file": "src/server/MutantNavigation.lua",
+    "className": "ModuleScript",
+    "bytes": 5261,
+    "sha256": "e08bb8f596b50be1b5c9af65a0d110a2adcaad71b40dba97c6a3d2c045071a06"
+  },
+  {
+    "studioPath": "ServerScriptService.MutantService",
+    "file": "src/server/MutantService.lua",
+    "className": "ModuleScript",
+    "bytes": 11146,
+    "sha256": "ada276f95a7c040d45781a3de86dfe7e9b78c5844a873e0531568c0ece52dc99"
+  },
+  {
+    "studioPath": "ServerScriptService.PetDebug",
+    "file": "src/server/PetDebug.server.lua",
+    "className": "Script",
+    "bytes": 1443,
+    "sha256": "10901a7c7ed9487e983a3381b2a3b57a344167b5e9bba37d895ac86e55f4814f"
+  },
+  {
+    "studioPath": "ServerScriptService.PetService",
+    "file": "src/server/PetService.lua",
+    "className": "ModuleScript",
+    "bytes": 7934,
+    "sha256": "ebd79e8bc83d59cad31a91b6d6ce0445f2b5679e47aea55196410e7d65ffc51e"
+  },
+  {
+    "studioPath": "ServerScriptService.PlotService",
+    "file": "src/server/PlotService.lua",
+    "className": "ModuleScript",
+    "bytes": 30845,
+    "sha256": "a90703e099b5f1ace36eeb74bbe921f9e64b2047163805fdf1638e1ca29cbaea"
+  },
+  {
+    "studioPath": "ServerScriptService.QuestService",
+    "file": "src/server/QuestService.lua",
+    "className": "ModuleScript",
+    "bytes": 1642,
+    "sha256": "33b2f3698d2ae3a4f4363bc1f76418e1ad3c7abb59f86053712b9b2cb68cbd0c"
+  },
+  {
+    "studioPath": "ServerScriptService.RaidService",
+    "file": "src/server/RaidService.lua",
+    "className": "ModuleScript",
+    "bytes": 7069,
+    "sha256": "b1bb1a15b2b614fe5f31f3ee23454a153da66b7def2fba3a754944abccfb36a6"
+  },
+  {
+    "studioPath": "ServerScriptService.ReferralService",
+    "file": "src/server/ReferralService.lua",
+    "className": "ModuleScript",
+    "bytes": 3527,
+    "sha256": "55b2f6a85adf389c48049145990b58d955a95d0f6950fa803dd0dbba5661de97"
+  },
+  {
+    "studioPath": "ServerScriptService.RewardService",
+    "file": "src/server/RewardService.lua",
+    "className": "ModuleScript",
+    "bytes": 498,
+    "sha256": "1fb4b42262b13b1017e3d8895f122e0099204bedefa1ad8e0c145347a57b9349"
+  },
+  {
+    "studioPath": "ServerScriptService.RoadArt",
+    "file": "src/server/RoadArt.lua",
+    "className": "ModuleScript",
+    "bytes": 12390,
+    "sha256": "9b3edfe944ccc98a8ce9afcef3f34cf13e9ac8b2950bf705bcc6081e2880930d"
+  },
+  {
+    "studioPath": "ServerScriptService.RoadGearService",
+    "file": "src/server/RoadGearService.lua",
+    "className": "ModuleScript",
+    "bytes": 11301,
+    "sha256": "18e2660ae840532d1845775d98d64f8052febbe3557a2109ab06c22b6d88fa4e"
+  },
+  {
+    "studioPath": "ServerScriptService.RoadService",
+    "file": "src/server/RoadService.lua",
+    "className": "ModuleScript",
+    "bytes": 27147,
+    "sha256": "64f5756362247fdbad246cbf0997de08f53b070957e56d5c3a1972246273c05d"
+  },
+  {
+    "studioPath": "ServerScriptService.ShopService",
+    "file": "src/server/ShopService.lua",
+    "className": "ModuleScript",
+    "bytes": 714,
+    "sha256": "940cbcd542480f2246474ffaf3b4034ddf8e8be8359b0060d67cfc899fb8b1e3"
+  },
+  {
+    "studioPath": "ServerScriptService.SlotService",
+    "file": "src/server/SlotService.lua",
+    "className": "ModuleScript",
+    "bytes": 618,
+    "sha256": "7a786cf429448a8a995306eba7741e3d5dbd4bfa9592f14d174f617c82c40071"
+  },
+  {
+    "studioPath": "ServerScriptService.WeaponService",
+    "file": "src/server/WeaponService.lua",
+    "className": "ModuleScript",
+    "bytes": 8754,
+    "sha256": "c4a1312573476b3fdd712eedda9f584a60988340c62165e8c4f1612e8300605a"
+  },
+  {
+    "studioPath": "ServerScriptService.ZombieService",
+    "file": "src/server/ZombieService.lua",
+    "className": "ModuleScript",
+    "bytes": 8481,
+    "sha256": "f0d7ddf9102978786f851490c47d583059c46001232130a7fdad0c08b3b136c7"
+  },
+  {
+    "studioPath": "StarterPlayer.StarterCharacterScripts.Animate",
+    "file": "src/character/Animate.client.lua",
+    "className": "LocalScript",
+    "bytes": 6492,
+    "sha256": "b2034196326f7e52e3b10fac8f30eef631c1d4bc27b7b60e5c7354fc50c01fee"
+  },
+  {
+    "studioPath": "StarterPlayer.StarterPlayerScripts.ActionVisuals",
+    "file": "src/client/ActionVisuals.client.lua",
+    "className": "LocalScript",
+    "bytes": 10662,
+    "sha256": "f802c449197dc3cf3041a9b677c419778a53eef1c25fa2c813ba414a763f0b06"
+  },
+  {
+    "studioPath": "StarterPlayer.StarterPlayerScripts.BankVisuals",
+    "file": "src/client/BankVisuals.client.lua",
+    "className": "LocalScript",
+    "bytes": 4009,
+    "sha256": "55f6de215fcfdcdf2fc0e7a16c20993cc6031bbcef7a92fe68efd81cfeb60cb5"
+  },
+  {
+    "studioPath": "StarterPlayer.StarterPlayerScripts.CombatController",
+    "file": "src/client/CombatController.client.lua",
+    "className": "LocalScript",
+    "bytes": 47025,
+    "sha256": "c7b7bfd3191f7dde807d4414ef2b5c573252856eb1b41fd577c8d8b3b3f98f38"
+  },
+  {
+    "studioPath": "StarterPlayer.StarterPlayerScripts.DistrictVisuals",
+    "file": "src/client/DistrictVisuals.client.lua",
+    "className": "LocalScript",
+    "bytes": 2889,
+    "sha256": "21351ae39f72374a4856aea6a99bd8ebbda4e028496ab0dd984e2a1c4876a254"
+  },
+  {
+    "studioPath": "StarterPlayer.StarterPlayerScripts.EffectsController",
+    "file": "src/client/EffectsController.client.lua",
+    "className": "LocalScript",
+    "bytes": 2922,
+    "sha256": "513a14004fcd343ffe34d4754e5b2709e2ed1d4b998cae98b228c046cb8cbcf3"
+  },
+  {
+    "studioPath": "StarterPlayer.StarterPlayerScripts.FarmInteraction",
+    "file": "src/client/FarmInteraction.client.lua",
+    "className": "LocalScript",
+    "bytes": 8122,
+    "sha256": "d7c482ca2644b694d3b8ada90936ab06a471a5fc634cad28f6fbed1ff86f10a7"
+  },
+  {
+    "studioPath": "StarterPlayer.StarterPlayerScripts.FontKeeper",
+    "file": "src/client/FontKeeper.client.lua",
+    "className": "LocalScript",
+    "bytes": 1552,
+    "sha256": "d470c622f85f63c2087aaac6b8c4c0451a4e70d6304b874e4fde3763131f1022"
+  },
+  {
+    "studioPath": "StarterPlayer.StarterPlayerScripts.HelpController",
+    "file": "src/client/HelpController.client.lua",
+    "className": "LocalScript",
+    "bytes": 10489,
+    "sha256": "61cb2d9d33e1dbcf5a6ffc25a0faf2249bd406fba1340d45a1b9e709b02bc083"
+  },
+  {
+    "studioPath": "StarterPlayer.StarterPlayerScripts.HouseRoofFade",
+    "file": "src/client/HouseRoofFade.client.lua",
+    "className": "LocalScript",
+    "bytes": 955,
+    "sha256": "89d47b9c504719b53cd51fdf6ccea50eb4edb08997f829e889193f895d3c781e"
+  },
+  {
+    "studioPath": "StarterPlayer.StarterPlayerScripts.InterfaceController",
+    "file": "src/client/InterfaceController.client.lua",
+    "className": "LocalScript",
+    "bytes": 14509,
+    "sha256": "6798941704cb65f6d945b35415ad795b8e6cd3cf36f904c12019772a0e4e82be"
+  },
+  {
+    "studioPath": "StarterPlayer.StarterPlayerScripts.MotionVisuals",
+    "file": "src/client/MotionVisuals.client.lua",
+    "className": "LocalScript",
+    "bytes": 9751,
+    "sha256": "4356298a03ace839c59323237187ee4a5991f9d62bddcad928e17f1c0728b0d9"
+  },
+  {
+    "studioPath": "StarterPlayer.StarterPlayerScripts.MutantVisuals",
+    "file": "src/client/MutantVisuals.client.lua",
+    "className": "LocalScript",
+    "bytes": 10969,
+    "sha256": "3adf73ac43b552aff4038527194338d8b3ac41a195329249570c048b9f0adc11"
+  },
+  {
+    "studioPath": "StarterPlayer.StarterPlayerScripts.PetVisuals",
+    "file": "src/client/PetVisuals.client.lua",
+    "className": "LocalScript",
+    "bytes": 3965,
+    "sha256": "22446b973b6121067e4c9e4c80138807d01a68a7be5e3d24e2d4d7f49a1b1815"
+  },
+  {
+    "studioPath": "StarterPlayer.StarterPlayerScripts.TutorialController",
+    "file": "src/client/TutorialController.client.lua",
+    "className": "LocalScript",
+    "bytes": 8666,
+    "sha256": "b1f9e96d855565e91a8dd1203db9fe9d95bd1d00c37158feddc90f9fe572e95d"
+  },
+  {
+    "studioPath": "StarterPlayer.StarterPlayerScripts.UIController",
+    "file": "src/client/UIController.client.lua",
+    "className": "LocalScript",
+    "bytes": 85902,
+    "sha256": "309d4b225c4bf0fadac7d448c7711e2201bb9c920a5f9de7065f7f1b75452e08"
+  },
+  {
+    "studioPath": "StarterPlayer.StarterPlayerScripts.WorldVisuals",
+    "file": "src/client/WorldVisuals.client.lua",
+    "className": "LocalScript",
+    "bytes": 7107,
+    "sha256": "c66658c1efabbd2d68fadb78645978883fff9b24054e0fee146de1ed981f42c2"
+  },
+  {
+    "studioPath": "StarterPlayer.StarterPlayerScripts.ZombieVisuals",
+    "file": "src/client/ZombieVisuals.client.lua",
+    "className": "LocalScript",
+    "bytes": 14744,
+    "sha256": "2a84afdc00119263f58af24101a1f2baee69d45ff18766a35079528f97e34915"
+  }
+]

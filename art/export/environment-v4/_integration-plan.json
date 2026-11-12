@@ -1,0 +1,61 @@
+{
+  "status": "Imported and integrated in Studio; playtested; place not published",
+  "models": {
+    "W_TreeA": "ENV_TreeA",
+    "W_TreeB": "ENV_TreeB",
+    "W_TreeC": "ENV_TreeC",
+    "W_Fence": "ENV_Fence",
+    "W_FencePost": "ENV_FencePost",
+    "W_Path": "ENV_Path",
+    "W_Tuft": "ENV_Tuft",
+    "ENV_Tile1": "ENV_Tile1",
+    "ENV_Tile2": "ENV_Tile2",
+    "ENV_Tile3": "ENV_Tile3"
+  },
+  "plotPathStones": [
+    "ENV_Tile1",
+    "ENV_Tile2",
+    "ENV_Tile3"
+  ],
+  "grass": {
+    "file": "GardenLawn_Seamless.png",
+    "tileStuds": 16,
+    "applyTo": [
+      "island surface",
+      "plot lawn",
+      "hub lawn"
+    ],
+    "keepGroundColliders": true
+  },
+  "preserve": [
+    "farm layout and size",
+    "cemetery placement zone",
+    "grave and zombie coordinates",
+    "houses",
+    "crypts",
+    "income rules",
+    "road gameplay",
+    "removed wooden pen stays removed"
+  ],
+  "integrationNotes": [
+    "Original gate arches and bushes retained.",
+    "Fence segments include their end post in Roblox placement coordinates; two exposed starts per plot capped.",
+    "Grass surface is visual only; original ground and fence colliders preserved.",
+    "Cemetery decorative surface lifted 0.03 stud to prevent grass occlusion; placement bounds unchanged.",
+    "Imported package retained unchanged in ServerStorage."
+  ],
+  "import": {
+    "MergeMeshes": false,
+    "IgnoreVertexColors": false
+  },
+  "checksAfterImport": [
+    "ground seams",
+    "path junctions",
+    "fence corners and entrances",
+    "tree trunk collisions",
+    "mobile performance",
+    "day and night palette"
+  ],
+  "modelAssetId": 101350868012687,
+  "grassImageId": 132213762657371
+}

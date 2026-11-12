@@ -1,0 +1,17 @@
+[
+  {
+    "id": "frame",
+    "prompt": "Use case: ui-mockup. Production 2D game UI asset, a blank rectangular window BODY FRAME only, front-on orthographic. Square canvas. Friendly polished mobile farm game, hand-painted glossy chunky orange golden timber border with carved flowing wood grain, mitered corners, four chunky beveled square golden bolt caps. Warm pale ivory parchment fills the entire flat rectangular center, completely empty. Frame border takes about 6% of width on each side, small corner caps inside the outer extent. Crisp layered bevels, warm brown outline, creamy inner highlight. Exactly symmetric straight horizontal and vertical sides, designed for nine-slice resizing. No roof, no awning, no header, no text, no icons, no buttons, no scene, no checkerboard. Transparent outside the silhouette. Artwork nearly fills square canvas with only 1% transparent padding.",
+    "path": "/Users/wingman/.codex/generated_images/01a1a70c-707e-72c1-8c91-918eb21f76c2/exec-d442de54-787d-47ce-b565-4380096dc45b.png"
+  },
+  {
+    "id": "canopy",
+    "prompt": "Use case: ui-mockup. Production 2D game UI asset, a very wide shallow wooden MARKET STALL HEADER, front-on orthographic, width-to-height ratio about 5:1. A long completely blank deep plum purple wooden signboard occupies the lower 60%, framed with thin golden orange wood and a thin golden horizontal underline near its bottom. Above it is a cheerful yellow-and-cream striped scalloped cloth awning, capped by a thin purple tile roof whose sides slope down slightly, small raised center ridge. Small golden bolt ornaments at outer ends and short diagonal orange timber braces at bottom outer corners. Polished glossy hand-painted casual farm game UI, rich wood grain, chunky beveled edges, warm dark brown outlines, soft specular highlights. Keep the signboard completely empty all the way across: NO text, NO buttons, NO X, NO icons, NO scenery, no shadows detached from object. Transparent around entire silhouette. Asset fills the width of a wide canvas; crop tight to artwork, minimal transparent padding.",
+    "path": "/Users/wingman/.codex/generated_images/01a1a70c-707e-72c1-8c91-918eb21f76c2/exec-6b975e4d-73e7-47de-9a0e-b958c84b4886.png"
+  },
+  {
+    "id": "card",
+    "prompt": "Use case: ui-mockup. Production 2D game UI asset: a single blank pale cream parchment item card, front-on orthographic, square canvas. Rounded rectangular corners, thin orange gold beveled wood edge, glossy cream inner rim and four small ornamental purple curved corner accents. Warm ivory flat interior, entirely blank. Very subtle warm gradient only. Polished hand-painted friendly mobile farm shop UI style. Border occupies only 5% on each side, designed for nine-slice resizing so the central 80% is empty uniform parchment. No objects, text, symbols, studs, buttons, stars, icons or scene. Transparent outside the rounded rectangle, only 1% transparent margin. Symmetric and neatly aligned, crisp high-quality edges.",
+    "path": "/Users/wingman/.codex/generated_images/01a1a70c-707e-72c1-8c91-918eb21f76c2/exec-2473c5cb-7199-4f74-a780-28aa7b58c56f.png"
+  }
+]

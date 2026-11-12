@@ -1,0 +1,10 @@
+<?xml version='1.0' encoding='utf-8'?>
+<roblox version="4"><Item class="StarterPlayer" referent="3520">
+    <Properties>
+      <string name="Name">StarterPlayer</string>
+      <BinaryString name="SerializedOverrides">
+      </BinaryString>
+      <token name="UseImprovedCharacterEvents">0</token>
+    </Properties>
+    </Item>
+  </roblox>

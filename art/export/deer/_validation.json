@@ -1,0 +1,38 @@
+{
+  "totalTriangles": 19979,
+  "assets": {
+    "Deer_Farmer": {
+      "parts": 8,
+      "triangles": 4665,
+      "height": 8.679
+    },
+    "Deer_Punk": {
+      "parts": 7,
+      "triangles": 5320,
+      "height": 8.8855
+    },
+    "Deer_Assassin": {
+      "parts": 8,
+      "triangles": 4046,
+      "height": 8.653
+    },
+    "Deer_Chief": {
+      "parts": 8,
+      "triangles": 5948,
+      "height": 8.6555
+    }
+  },
+  "status": "Awaiting render approval; no Studio imports or gameplay changes",
+  "meshes": 31,
+  "bytes": 1844620,
+  "sha256": "4e87daa12a62ea1a92841ee0d1e5ed6e3d869d84d6c52dffa76eb8bd859df6ed",
+  "checks": [
+    "finite vertices and normals",
+    "valid triangle indices",
+    "unique import names",
+    "GLB container length",
+    "four new models only",
+    "every mesh below 10000 triangles",
+    "separate head, arms, legs and props"
+  ]
+}

@@ -1,0 +1,1595 @@
+{
+  "Parasite_Farmer": [
+    {
+      "part": "Body",
+      "mesh": "Parasite_Farmer.Body",
+      "offset": [
+        0.0,
+        3.232,
+        -0.05
+      ],
+      "size": [
+        2.373,
+        2.488,
+        1.56
+      ],
+      "tint": null,
+      "attach": "Body",
+      "material": "SmoothPlastic",
+      "transparency": 0.0,
+      "collide": false,
+      "cast": true,
+      "tris": 572
+    },
+    {
+      "part": "LegR",
+      "mesh": "Parasite_Farmer.LegR",
+      "offset": [
+        0.872,
+        1.176,
+        -0.08
+      ],
+      "size": [
+        1.574,
+        2.336,
+        1.323
+      ],
+      "tint": null,
+      "attach": "LegR",
+      "material": "SmoothPlastic",
+      "transparency": 0.0,
+      "collide": false,
+      "cast": true,
+      "tris": 176
+    },
+    {
+      "part": "LegL",
+      "mesh": "Parasite_Farmer.LegL",
+      "offset": [
+        -0.872,
+        1.176,
+        -0.08
+      ],
+      "size": [
+        1.574,
+        2.336,
+        1.323
+      ],
+      "tint": null,
+      "attach": "LegL",
+      "material": "SmoothPlastic",
+      "transparency": 0.0,
+      "collide": false,
+      "cast": true,
+      "tris": 176
+    },
+    {
+      "part": "ArmR",
+      "mesh": "Parasite_Farmer.ArmR",
+      "offset": [
+        1.726,
+        2.773,
+        -0.157
+      ],
+      "size": [
+        1.669,
+        2.474,
+        1.319
+      ],
+      "tint": null,
+      "attach": "ArmR",
+      "material": "SmoothPlastic",
+      "transparency": 0.0,
+      "collide": false,
+      "cast": true,
+      "tris": 264
+    },
+    {
+      "part": "ArmL",
+      "mesh": "Parasite_Farmer.ArmL",
+      "offset": [
+        -1.726,
+        2.773,
+        -0.157
+      ],
+      "size": [
+        1.669,
+        2.474,
+        1.319
+      ],
+      "tint": null,
+      "attach": "ArmL",
+      "material": "SmoothPlastic",
+      "transparency": 0.0,
+      "collide": false,
+      "cast": true,
+      "tris": 264
+    },
+    {
+      "part": "TendrilR",
+      "mesh": "Parasite_Farmer.TendrilR",
+      "offset": [
+        1.458,
+        5.061,
+        0.519
+      ],
+      "size": [
+        1.627,
+        2.857,
+        0.568
+      ],
+      "tint": null,
+      "attach": "Body",
+      "material": "SmoothPlastic",
+      "transparency": 0.0,
+      "collide": false,
+      "cast": true,
+      "tris": 220
+    },
+    {
+      "part": "TendrilL",
+      "mesh": "Parasite_Farmer.TendrilL",
+      "offset": [
+        -1.458,
+        5.061,
+        0.519
+      ],
+      "size": [
+        1.627,
+        2.857,
+        0.568
+      ],
+      "tint": null,
+      "attach": "Body",
+      "material": "SmoothPlastic",
+      "transparency": 0.0,
+      "collide": false,
+      "cast": true,
+      "tris": 220
+    },
+    {
+      "part": "Head",
+      "mesh": "Parasite_Farmer.Head",
+      "offset": [
+        0.0,
+        5.174,
+        0.02
+      ],
+      "size": [
+        2.802,
+        2.36,
+        2.48
+      ],
+      "tint": null,
+      "attach": "Head",
+      "material": "SmoothPlastic",
+      "transparency": 0.0,
+      "collide": false,
+      "cast": true,
+      "tris": 1564
+    },
+    {
+      "part": "EyesGlow",
+      "mesh": "Parasite_Farmer.EyesGlow",
+      "offset": [
+        0.0,
+        5.534,
+        -1.003
+      ],
+      "size": [
+        0.802,
+        0.075,
+        0.05
+      ],
+      "tint": null,
+      "attach": "Head",
+      "material": "Neon",
+      "transparency": 0.0,
+      "collide": false,
+      "cast": true,
+      "tris": 24
+    },
+    {
+      "part": "HandItem",
+      "mesh": "Parasite_Farmer.HandItem",
+      "offset": [
+        2.0,
+        1.629,
+        -0.54
+      ],
+      "size": [
+        0.97,
+        3.209,
+        0.18
+      ],
+      "tint": null,
+      "attach": "ArmR",
+      "material": "SmoothPlastic",
+      "transparency": 0.0,
+      "collide": false,
+      "cast": true,
+      "tris": 140
+    },
+    {
+      "part": "HarvestItem",
+      "mesh": "Parasite_Farmer.HarvestItem",
+      "offset": [
+        -2.0,
+        1.417,
+        -0.57
+      ],
+      "size": [
+        1.232,
+        0.998,
+        0.81
+      ],
+      "tint": null,
+      "attach": "ArmL",
+      "material": "SmoothPlastic",
+      "transparency": 0.0,
+      "collide": false,
+      "cast": true,
+      "tris": 1148
+    }
+  ],
+  "Parasite_Punk": [
+    {
+      "part": "Body",
+      "mesh": "Parasite_Punk.Body",
+      "offset": [
+        0.0,
+        3.229,
+        -0.076
+      ],
+      "size": [
+        2.873,
+        2.494,
+        1.653
+      ],
+      "tint": null,
+      "attach": "Body",
+      "material": "SmoothPlastic",
+      "transparency": 0.0,
+      "collide": false,
+      "cast": true,
+      "tris": 1892
+    },
+    {
+      "part": "LegR",
+      "mesh": "Parasite_Punk.LegR",
+      "offset": [
+        0.872,
+        1.176,
+        -0.08
+      ],
+      "size": [
+        1.574,
+        2.336,
+        1.323
+      ],
+      "tint": null,
+      "attach": "LegR",
+      "material": "SmoothPlastic",
+      "transparency": 0.0,
+      "collide": false,
+      "cast": true,
+      "tris": 264
+    },
+    {
+      "part": "LegL",
+      "mesh": "Parasite_Punk.LegL",
+      "offset": [
+        -0.872,
+        1.176,
+        -0.08
+      ],
+      "size": [
+        1.574,
+        2.336,
+        1.323
+      ],
+      "tint": null,
+      "attach": "LegL",
+      "material": "SmoothPlastic",
+      "transparency": 0.0,
+      "collide": false,
+      "cast": true,
+      "tris": 264
+    },
+    {
+      "part": "ArmR",
+      "mesh": "Parasite_Punk.ArmR",
+      "offset": [
+        1.767,
+        2.773,
+        -0.196
+      ],
+      "size": [
+        1.751,
+        2.474,
+        1.397
+      ],
+      "tint": null,
+      "attach": "ArmR",
+      "material": "SmoothPlastic",
+      "transparency": 0.0,
+      "collide": false,
+      "cast": true,
+      "tris": 320
+    },
+    {
+      "part": "ArmL",
+      "mesh": "Parasite_Punk.ArmL",
+      "offset": [
+        -1.767,
+        2.773,
+        -0.196
+      ],
+      "size": [
+        1.751,
+        2.474,
+        1.397
+      ],
+      "tint": null,
+      "attach": "ArmL",
+      "material": "SmoothPlastic",
+      "transparency": 0.0,
+      "collide": false,
+      "cast": true,
+      "tris": 320
+    },
+    {
+      "part": "TendrilR",
+      "mesh": "Parasite_Punk.TendrilR",
+      "offset": [
+        1.458,
+        5.061,
+        0.519
+      ],
+      "size": [
+        1.627,
+        2.857,
+        0.568
+      ],
+      "tint": null,
+      "attach": "Body",
+      "material": "SmoothPlastic",
+      "transparency": 0.0,
+      "collide": false,
+      "cast": true,
+      "tris": 220
+    },
+    {
+      "part": "TendrilL",
+      "mesh": "Parasite_Punk.TendrilL",
+      "offset": [
+        -1.458,
+        5.061,
+        0.519
+      ],
+      "size": [
+        1.627,
+        2.857,
+        0.568
+      ],
+      "tint": null,
+      "attach": "Body",
+      "material": "SmoothPlastic",
+      "transparency": 0.0,
+      "collide": false,
+      "cast": true,
+      "tris": 220
+    },
+    {
+      "part": "Head",
+      "mesh": "Parasite_Punk.Head",
+      "offset": [
+        -0.017,
+        5.316,
+        -0.192
+      ],
+      "size": [
+        2.176,
+        2.645,
+        1.615
+      ],
+      "tint": null,
+      "attach": "Head",
+      "material": "SmoothPlastic",
+      "transparency": 0.0,
+      "collide": false,
+      "cast": true,
+      "tris": 1324
+    },
+    {
+      "part": "EyesGlow",
+      "mesh": "Parasite_Punk.EyesGlow",
+      "offset": [
+        0.0,
+        5.534,
+        -1.003
+      ],
+      "size": [
+        0.802,
+        0.075,
+        0.05
+      ],
+      "tint": null,
+      "attach": "Head",
+      "material": "Neon",
+      "transparency": 0.0,
+      "collide": false,
+      "cast": true,
+      "tris": 24
+    }
+  ],
+  "Parasite_Assassin": [
+    {
+      "part": "Body",
+      "mesh": "Parasite_Assassin.Body",
+      "offset": [
+        0.0,
+        3.002,
+        0.02
+      ],
+      "size": [
+        4.137,
+        2.948,
+        1.66
+      ],
+      "tint": null,
+      "attach": "Body",
+      "material": "SmoothPlastic",
+      "transparency": 0.0,
+      "collide": false,
+      "cast": true,
+      "tris": 572
+    },
+    {
+      "part": "LegR",
+      "mesh": "Parasite_Assassin.LegR",
+      "offset": [
+        0.872,
+        1.176,
+        -0.08
+      ],
+      "size": [
+        1.574,
+        2.336,
+        1.323
+      ],
+      "tint": null,
+      "attach": "LegR",
+      "material": "SmoothPlastic",
+      "transparency": 0.0,
+      "collide": false,
+      "cast": true,
+      "tris": 132
+    },
+    {
+      "part": "LegL",
+      "mesh": "Parasite_Assassin.LegL",
+      "offset": [
+        -0.872,
+        1.176,
+        -0.08
+      ],
+      "size": [
+        1.574,
+        2.336,
+        1.323
+      ],
+      "tint": null,
+      "attach": "LegL",
+      "material": "SmoothPlastic",
+      "transparency": 0.0,
+      "collide": false,
+      "cast": true,
+      "tris": 132
+    },
+    {
+      "part": "ArmR",
+      "mesh": "Parasite_Assassin.ArmR",
+      "offset": [
+        1.767,
+        2.773,
+        -0.157
+      ],
+      "size": [
+        1.751,
+        2.474,
+        1.319
+      ],
+      "tint": null,
+      "attach": "ArmR",
+      "material": "SmoothPlastic",
+      "transparency": 0.0,
+      "collide": false,
+      "cast": true,
+      "tris": 308
+    },
+    {
+      "part": "ArmL",
+      "mesh": "Parasite_Assassin.ArmL",
+      "offset": [
+        -1.767,
+        2.773,
+        -0.157
+      ],
+      "size": [
+        1.751,
+        2.474,
+        1.319
+      ],
+      "tint": null,
+      "attach": "ArmL",
+      "material": "SmoothPlastic",
+      "transparency": 0.0,
+      "collide": false,
+      "cast": true,
+      "tris": 308
+    },
+    {
+      "part": "TendrilR",
+      "mesh": "Parasite_Assassin.TendrilR",
+      "offset": [
+        1.458,
+        5.061,
+        0.519
+      ],
+      "size": [
+        1.627,
+        2.857,
+        0.568
+      ],
+      "tint": null,
+      "attach": "Body",
+      "material": "SmoothPlastic",
+      "transparency": 0.0,
+      "collide": false,
+      "cast": true,
+      "tris": 220
+    },
+    {
+      "part": "TendrilL",
+      "mesh": "Parasite_Assassin.TendrilL",
+      "offset": [
+        -1.458,
+        5.061,
+        0.519
+      ],
+      "size": [
+        1.627,
+        2.857,
+        0.568
+      ],
+      "tint": null,
+      "attach": "Body",
+      "material": "SmoothPlastic",
+      "transparency": 0.0,
+      "collide": false,
+      "cast": true,
+      "tris": 220
+    },
+    {
+      "part": "Head",
+      "mesh": "Parasite_Assassin.Head",
+      "offset": [
+        0.0,
+        5.194,
+        -0.145
+      ],
+      "size": [
+        2.622,
+        2.4,
+        1.71
+      ],
+      "tint": null,
+      "attach": "Head",
+      "material": "SmoothPlastic",
+      "transparency": 0.0,
+      "collide": false,
+      "cast": true,
+      "tris": 1432
+    },
+    {
+      "part": "EyesGlow",
+      "mesh": "Parasite_Assassin.EyesGlow",
+      "offset": [
+        0.0,
+        5.534,
+        -1.003
+      ],
+      "size": [
+        0.802,
+        0.075,
+        0.05
+      ],
+      "tint": null,
+      "attach": "Head",
+      "material": "Neon",
+      "transparency": 0.0,
+      "collide": false,
+      "cast": true,
+      "tris": 24
+    }
+  ],
+  "Stalker_Farmer": [
+    {
+      "part": "Body",
+      "mesh": "Stalker_Farmer.Body",
+      "offset": [
+        0.0,
+        3.694,
+        -0.072
+      ],
+      "size": [
+        1.26,
+        2.537,
+        1.263
+      ],
+      "tint": null,
+      "attach": "Body",
+      "material": "SmoothPlastic",
+      "transparency": 0.0,
+      "collide": false,
+      "cast": true,
+      "tris": 484
+    },
+    {
+      "part": "LegR",
+      "mesh": "Stalker_Farmer.LegR",
+      "offset": [
+        0.464,
+        1.382,
+        -0.215
+      ],
+      "size": [
+        0.775,
+        2.745,
+        1.119
+      ],
+      "tint": null,
+      "attach": "LegR",
+      "material": "SmoothPlastic",
+      "transparency": 0.0,
+      "collide": false,
+      "cast": true,
+      "tris": 308
+    },
+    {
+      "part": "LegL",
+      "mesh": "Stalker_Farmer.LegL",
+      "offset": [
+        -0.464,
+        1.382,
+        -0.215
+      ],
+      "size": [
+        0.775,
+        2.745,
+        1.119
+      ],
+      "tint": null,
+      "attach": "LegL",
+      "material": "SmoothPlastic",
+      "transparency": 0.0,
+      "collide": false,
+      "cast": true,
+      "tris": 308
+    },
+    {
+      "part": "ArmR",
+      "mesh": "Stalker_Farmer.ArmR",
+      "offset": [
+        1.128,
+        2.847,
+        -0.434
+      ],
+      "size": [
+        1.111,
+        3.159,
+        1.253
+      ],
+      "tint": null,
+      "attach": "ArmR",
+      "material": "SmoothPlastic",
+      "transparency": 0.0,
+      "collide": false,
+      "cast": true,
+      "tris": 396
+    },
+    {
+      "part": "ArmL",
+      "mesh": "Stalker_Farmer.ArmL",
+      "offset": [
+        -1.128,
+        2.847,
+        -0.434
+      ],
+      "size": [
+        1.111,
+        3.159,
+        1.253
+      ],
+      "tint": null,
+      "attach": "ArmL",
+      "material": "SmoothPlastic",
+      "transparency": 0.0,
+      "collide": false,
+      "cast": true,
+      "tris": 396
+    },
+    {
+      "part": "Head",
+      "mesh": "Stalker_Farmer.Head",
+      "offset": [
+        0.0,
+        5.655,
+        -0.3
+      ],
+      "size": [
+        2.572,
+        2.65,
+        2.48
+      ],
+      "tint": null,
+      "attach": "Head",
+      "material": "SmoothPlastic",
+      "transparency": 0.0,
+      "collide": false,
+      "cast": true,
+      "tris": 1380
+    },
+    {
+      "part": "EyesGlow",
+      "mesh": "Stalker_Farmer.EyesGlow",
+      "offset": [
+        0.0,
+        5.8,
+        -1.035
+      ],
+      "size": [
+        0.98,
+        0.23,
+        0.05
+      ],
+      "tint": null,
+      "attach": "Head",
+      "material": "Neon",
+      "transparency": 0.0,
+      "collide": false,
+      "cast": true,
+      "tris": 88
+    },
+    {
+      "part": "HandItem",
+      "mesh": "Stalker_Farmer.HandItem",
+      "offset": [
+        1.35,
+        1.995,
+        -0.592
+      ],
+      "size": [
+        1.25,
+        3.55,
+        0.302
+      ],
+      "tint": null,
+      "attach": "ArmR",
+      "material": "SmoothPlastic",
+      "transparency": 0.0,
+      "collide": false,
+      "cast": true,
+      "tris": 308
+    },
+    {
+      "part": "HarvestItem",
+      "mesh": "Stalker_Farmer.HarvestItem",
+      "offset": [
+        -1.35,
+        1.082,
+        -0.661
+      ],
+      "size": [
+        0.771,
+        1.615,
+        0.816
+      ],
+      "tint": null,
+      "attach": "ArmL",
+      "material": "SmoothPlastic",
+      "transparency": 0.0,
+      "collide": false,
+      "cast": true,
+      "tris": 288
+    }
+  ],
+  "Stalker_Punk": [
+    {
+      "part": "Body",
+      "mesh": "Stalker_Punk.Body",
+      "offset": [
+        -0.011,
+        3.69,
+        -0.172
+      ],
+      "size": [
+        1.545,
+        2.545,
+        1.404
+      ],
+      "tint": null,
+      "attach": "Body",
+      "material": "SmoothPlastic",
+      "transparency": 0.0,
+      "collide": false,
+      "cast": true,
+      "tris": 1892
+    },
+    {
+      "part": "LegR",
+      "mesh": "Stalker_Punk.LegR",
+      "offset": [
+        0.464,
+        1.382,
+        -0.215
+      ],
+      "size": [
+        0.775,
+        2.745,
+        1.119
+      ],
+      "tint": null,
+      "attach": "LegR",
+      "material": "SmoothPlastic",
+      "transparency": 0.0,
+      "collide": false,
+      "cast": true,
+      "tris": 396
+    },
+    {
+      "part": "LegL",
+      "mesh": "Stalker_Punk.LegL",
+      "offset": [
+        -0.464,
+        1.382,
+        -0.215
+      ],
+      "size": [
+        0.775,
+        2.745,
+        1.119
+      ],
+      "tint": null,
+      "attach": "LegL",
+      "material": "SmoothPlastic",
+      "transparency": 0.0,
+      "collide": false,
+      "cast": true,
+      "tris": 396
+    },
+    {
+      "part": "ArmR",
+      "mesh": "Stalker_Punk.ArmR",
+      "offset": [
+        1.128,
+        2.847,
+        -0.434
+      ],
+      "size": [
+        1.111,
+        3.159,
+        1.253
+      ],
+      "tint": null,
+      "attach": "ArmR",
+      "material": "SmoothPlastic",
+      "transparency": 0.0,
+      "collide": false,
+      "cast": true,
+      "tris": 452
+    },
+    {
+      "part": "ArmL",
+      "mesh": "Stalker_Punk.ArmL",
+      "offset": [
+        -1.128,
+        2.847,
+        -0.434
+      ],
+      "size": [
+        1.111,
+        3.159,
+        1.253
+      ],
+      "tint": null,
+      "attach": "ArmL",
+      "material": "SmoothPlastic",
+      "transparency": 0.0,
+      "collide": false,
+      "cast": true,
+      "tris": 452
+    },
+    {
+      "part": "Head",
+      "mesh": "Stalker_Punk.Head",
+      "offset": [
+        0.0,
+        5.727,
+        -0.52
+      ],
+      "size": [
+        2.572,
+        2.795,
+        1.31
+      ],
+      "tint": null,
+      "attach": "Head",
+      "material": "SmoothPlastic",
+      "transparency": 0.0,
+      "collide": false,
+      "cast": true,
+      "tris": 1188
+    },
+    {
+      "part": "EyesGlow",
+      "mesh": "Stalker_Punk.EyesGlow",
+      "offset": [
+        0.0,
+        5.8,
+        -1.035
+      ],
+      "size": [
+        0.98,
+        0.23,
+        0.05
+      ],
+      "tint": null,
+      "attach": "Head",
+      "material": "Neon",
+      "transparency": 0.0,
+      "collide": false,
+      "cast": true,
+      "tris": 88
+    }
+  ],
+  "Stalker_Assassin": [
+    {
+      "part": "Body",
+      "mesh": "Stalker_Assassin.Body",
+      "offset": [
+        0.0,
+        3.413,
+        -0.142
+      ],
+      "size": [
+        2.196,
+        3.098,
+        1.377
+      ],
+      "tint": null,
+      "attach": "Body",
+      "material": "SmoothPlastic",
+      "transparency": 0.0,
+      "collide": false,
+      "cast": true,
+      "tris": 576
+    },
+    {
+      "part": "LegR",
+      "mesh": "Stalker_Assassin.LegR",
+      "offset": [
+        0.464,
+        1.382,
+        -0.215
+      ],
+      "size": [
+        0.775,
+        2.745,
+        1.119
+      ],
+      "tint": null,
+      "attach": "LegR",
+      "material": "SmoothPlastic",
+      "transparency": 0.0,
+      "collide": false,
+      "cast": true,
+      "tris": 264
+    },
+    {
+      "part": "LegL",
+      "mesh": "Stalker_Assassin.LegL",
+      "offset": [
+        -0.464,
+        1.382,
+        -0.215
+      ],
+      "size": [
+        0.775,
+        2.745,
+        1.119
+      ],
+      "tint": null,
+      "attach": "LegL",
+      "material": "SmoothPlastic",
+      "transparency": 0.0,
+      "collide": false,
+      "cast": true,
+      "tris": 264
+    },
+    {
+      "part": "ArmR",
+      "mesh": "Stalker_Assassin.ArmR",
+      "offset": [
+        1.128,
+        2.847,
+        -0.434
+      ],
+      "size": [
+        1.111,
+        3.159,
+        1.253
+      ],
+      "tint": null,
+      "attach": "ArmR",
+      "material": "SmoothPlastic",
+      "transparency": 0.0,
+      "collide": false,
+      "cast": true,
+      "tris": 440
+    },
+    {
+      "part": "ArmL",
+      "mesh": "Stalker_Assassin.ArmL",
+      "offset": [
+        -1.128,
+        2.847,
+        -0.434
+      ],
+      "size": [
+        1.111,
+        3.159,
+        1.253
+      ],
+      "tint": null,
+      "attach": "ArmL",
+      "material": "SmoothPlastic",
+      "transparency": 0.0,
+      "collide": false,
+      "cast": true,
+      "tris": 440
+    },
+    {
+      "part": "Head",
+      "mesh": "Stalker_Assassin.Head",
+      "offset": [
+        0.0,
+        5.48,
+        -0.52
+      ],
+      "size": [
+        2.572,
+        2.299,
+        1.31
+      ],
+      "tint": null,
+      "attach": "Head",
+      "material": "SmoothPlastic",
+      "transparency": 0.0,
+      "collide": false,
+      "cast": true,
+      "tris": 968
+    },
+    {
+      "part": "EyesGlow",
+      "mesh": "Stalker_Assassin.EyesGlow",
+      "offset": [
+        0.0,
+        5.8,
+        -1.035
+      ],
+      "size": [
+        0.98,
+        0.23,
+        0.05
+      ],
+      "tint": null,
+      "attach": "Head",
+      "material": "Neon",
+      "transparency": 0.0,
+      "collide": false,
+      "cast": true,
+      "tris": 88
+    }
+  ],
+  "Verity_Farmer": [
+    {
+      "part": "Body",
+      "mesh": "Verity_Farmer.Body",
+      "offset": [
+        0.0,
+        4.155,
+        0.025
+      ],
+      "size": [
+        1.26,
+        2.587,
+        1.07
+      ],
+      "tint": null,
+      "attach": "Body",
+      "material": "SmoothPlastic",
+      "transparency": 0.0,
+      "collide": false,
+      "cast": true,
+      "tris": 484
+    },
+    {
+      "part": "LegR",
+      "mesh": "Verity_Farmer.LegR",
+      "offset": [
+        0.464,
+        1.62,
+        -0.14
+      ],
+      "size": [
+        0.642,
+        3.215,
+        0.95
+      ],
+      "tint": null,
+      "attach": "LegR",
+      "material": "SmoothPlastic",
+      "transparency": 0.0,
+      "collide": false,
+      "cast": true,
+      "tris": 176
+    },
+    {
+      "part": "LegL",
+      "mesh": "Verity_Farmer.LegL",
+      "offset": [
+        -0.464,
+        1.62,
+        -0.14
+      ],
+      "size": [
+        0.642,
+        3.215,
+        0.95
+      ],
+      "tint": null,
+      "attach": "LegL",
+      "material": "SmoothPlastic",
+      "transparency": 0.0,
+      "collide": false,
+      "cast": true,
+      "tris": 176
+    },
+    {
+      "part": "ArmR",
+      "mesh": "Verity_Farmer.ArmR",
+      "offset": [
+        1.138,
+        3.194,
+        -0.317
+      ],
+      "size": [
+        1.019,
+        3.398,
+        1.092
+      ],
+      "tint": null,
+      "attach": "ArmR",
+      "material": "SmoothPlastic",
+      "transparency": 0.0,
+      "collide": false,
+      "cast": true,
+      "tris": 396
+    },
+    {
+      "part": "ArmL",
+      "mesh": "Verity_Farmer.ArmL",
+      "offset": [
+        -1.138,
+        3.194,
+        -0.317
+      ],
+      "size": [
+        1.019,
+        3.398,
+        1.092
+      ],
+      "tint": null,
+      "attach": "ArmL",
+      "material": "SmoothPlastic",
+      "transparency": 0.0,
+      "collide": false,
+      "cast": true,
+      "tris": 396
+    },
+    {
+      "part": "Head",
+      "mesh": "Verity_Farmer.Head",
+      "offset": [
+        0.0,
+        6.426,
+        0.02
+      ],
+      "size": [
+        2.48,
+        2.08,
+        2.48
+      ],
+      "tint": null,
+      "attach": "Head",
+      "material": "SmoothPlastic",
+      "transparency": 0.0,
+      "collide": false,
+      "cast": true,
+      "tris": 1024
+    },
+    {
+      "part": "EyesGlow",
+      "mesh": "Verity_Farmer.EyesGlow",
+      "offset": [
+        0.0,
+        6.496,
+        -0.575
+      ],
+      "size": [
+        0.755,
+        0.05,
+        0.05
+      ],
+      "tint": null,
+      "attach": "Head",
+      "material": "Neon",
+      "transparency": 0.0,
+      "collide": false,
+      "cast": true,
+      "tris": 24
+    },
+    {
+      "part": "HandItem",
+      "mesh": "Verity_Farmer.HandItem",
+      "offset": [
+        1.35,
+        2.121,
+        -0.54
+      ],
+      "size": [
+        0.858,
+        4.171,
+        0.18
+      ],
+      "tint": null,
+      "attach": "ArmR",
+      "material": "SmoothPlastic",
+      "transparency": 0.0,
+      "collide": false,
+      "cast": true,
+      "tris": 140
+    },
+    {
+      "part": "HarvestItem",
+      "mesh": "Verity_Farmer.HarvestItem",
+      "offset": [
+        -1.678,
+        1.434,
+        -0.57
+      ],
+      "size": [
+        1.497,
+        1.64,
+        0.65
+      ],
+      "tint": null,
+      "attach": "ArmL",
+      "material": "SmoothPlastic",
+      "transparency": 0.0,
+      "collide": false,
+      "cast": true,
+      "tris": 348
+    }
+  ],
+  "Verity_Punk": [
+    {
+      "part": "Body",
+      "mesh": "Verity_Punk.Body",
+      "offset": [
+        -0.011,
+        4.15,
+        -0.071
+      ],
+      "size": [
+        1.545,
+        2.596,
+        1.203
+      ],
+      "tint": null,
+      "attach": "Body",
+      "material": "SmoothPlastic",
+      "transparency": 0.0,
+      "collide": false,
+      "cast": true,
+      "tris": 1892
+    },
+    {
+      "part": "LegR",
+      "mesh": "Verity_Punk.LegR",
+      "offset": [
+        0.464,
+        1.62,
+        -0.14
+      ],
+      "size": [
+        0.642,
+        3.215,
+        0.95
+      ],
+      "tint": null,
+      "attach": "LegR",
+      "material": "SmoothPlastic",
+      "transparency": 0.0,
+      "collide": false,
+      "cast": true,
+      "tris": 264
+    },
+    {
+      "part": "LegL",
+      "mesh": "Verity_Punk.LegL",
+      "offset": [
+        -0.464,
+        1.62,
+        -0.14
+      ],
+      "size": [
+        0.642,
+        3.215,
+        0.95
+      ],
+      "tint": null,
+      "attach": "LegL",
+      "material": "SmoothPlastic",
+      "transparency": 0.0,
+      "collide": false,
+      "cast": true,
+      "tris": 264
+    },
+    {
+      "part": "ArmR",
+      "mesh": "Verity_Punk.ArmR",
+      "offset": [
+        1.138,
+        3.194,
+        -0.333
+      ],
+      "size": [
+        1.019,
+        3.398,
+        1.124
+      ],
+      "tint": null,
+      "attach": "ArmR",
+      "material": "SmoothPlastic",
+      "transparency": 0.0,
+      "collide": false,
+      "cast": true,
+      "tris": 452
+    },
+    {
+      "part": "ArmL",
+      "mesh": "Verity_Punk.ArmL",
+      "offset": [
+        -1.138,
+        3.194,
+        -0.333
+      ],
+      "size": [
+        1.019,
+        3.398,
+        1.124
+      ],
+      "tint": null,
+      "attach": "ArmL",
+      "material": "SmoothPlastic",
+      "transparency": 0.0,
+      "collide": false,
+      "cast": true,
+      "tris": 452
+    },
+    {
+      "part": "Head",
+      "mesh": "Verity_Punk.Head",
+      "offset": [
+        0.293,
+        6.215,
+        -0.105
+      ],
+      "size": [
+        2.246,
+        1.658,
+        1.1
+      ],
+      "tint": null,
+      "attach": "Head",
+      "material": "SmoothPlastic",
+      "transparency": 0.0,
+      "collide": false,
+      "cast": true,
+      "tris": 920
+    },
+    {
+      "part": "EyesGlow",
+      "mesh": "Verity_Punk.EyesGlow",
+      "offset": [
+        0.0,
+        6.496,
+        -0.575
+      ],
+      "size": [
+        0.755,
+        0.05,
+        0.05
+      ],
+      "tint": null,
+      "attach": "Head",
+      "material": "Neon",
+      "transparency": 0.0,
+      "collide": false,
+      "cast": true,
+      "tris": 24
+    }
+  ],
+  "Verity_Assassin": [
+    {
+      "part": "Body",
+      "mesh": "Verity_Assassin.Body",
+      "offset": [
+        0.0,
+        3.824,
+        -0.01
+      ],
+      "size": [
+        2.196,
+        3.248,
+        1.26
+      ],
+      "tint": null,
+      "attach": "Body",
+      "material": "SmoothPlastic",
+      "transparency": 0.0,
+      "collide": false,
+      "cast": true,
+      "tris": 576
+    },
+    {
+      "part": "LegR",
+      "mesh": "Verity_Assassin.LegR",
+      "offset": [
+        0.464,
+        1.62,
+        -0.14
+      ],
+      "size": [
+        0.642,
+        3.215,
+        0.95
+      ],
+      "tint": null,
+      "attach": "LegR",
+      "material": "SmoothPlastic",
+      "transparency": 0.0,
+      "collide": false,
+      "cast": true,
+      "tris": 132
+    },
+    {
+      "part": "LegL",
+      "mesh": "Verity_Assassin.LegL",
+      "offset": [
+        -0.464,
+        1.62,
+        -0.14
+      ],
+      "size": [
+        0.642,
+        3.215,
+        0.95
+      ],
+      "tint": null,
+      "attach": "LegL",
+      "material": "SmoothPlastic",
+      "transparency": 0.0,
+      "collide": false,
+      "cast": true,
+      "tris": 132
+    },
+    {
+      "part": "ArmR",
+      "mesh": "Verity_Assassin.ArmR",
+      "offset": [
+        1.138,
+        3.194,
+        -0.317
+      ],
+      "size": [
+        1.019,
+        3.398,
+        1.092
+      ],
+      "tint": null,
+      "attach": "ArmR",
+      "material": "SmoothPlastic",
+      "transparency": 0.0,
+      "collide": false,
+      "cast": true,
+      "tris": 440
+    },
+    {
+      "part": "ArmL",
+      "mesh": "Verity_Assassin.ArmL",
+      "offset": [
+        -1.138,
+        3.194,
+        -0.317
+      ],
+      "size": [
+        1.019,
+        3.398,
+        1.092
+      ],
+      "tint": null,
+      "attach": "ArmL",
+      "material": "SmoothPlastic",
+      "transparency": 0.0,
+      "collide": false,
+      "cast": true,
+      "tris": 440
+    },
+    {
+      "part": "Head",
+      "mesh": "Verity_Assassin.Head",
+      "offset": [
+        0.0,
+        6.301,
+        -0.048
+      ],
+      "size": [
+        2.32,
+        2.13,
+        1.515
+      ],
+      "tint": null,
+      "attach": "Head",
+      "material": "SmoothPlastic",
+      "transparency": 0.0,
+      "collide": false,
+      "cast": true,
+      "tris": 940
+    },
+    {
+      "part": "EyesGlow",
+      "mesh": "Verity_Assassin.EyesGlow",
+      "offset": [
+        0.0,
+        6.496,
+        -0.575
+      ],
+      "size": [
+        0.755,
+        0.05,
+        0.05
+      ],
+      "tint": null,
+      "attach": "Head",
+      "material": "Neon",
+      "transparency": 0.0,
+      "collide": false,
+      "cast": true,
+      "tris": 24
+    }
+  ]
+}

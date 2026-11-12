@@ -1,0 +1,9 @@
+<?xml version='1.0' encoding='utf-8'?>
+<roblox version="4"><Item class="ServerScriptService" referent="790">
+    <Properties>
+      <string name="Name">ServerScriptService</string>
+      <BinaryString name="SerializedOverrides">
+      </BinaryString>
+    </Properties>
+    </Item>
+  </roblox>

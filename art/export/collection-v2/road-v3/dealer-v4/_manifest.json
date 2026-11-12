@@ -1,0 +1,174 @@
+{
+  "BuckshotDealer_Passive": [
+    {
+      "part": "Body",
+      "mesh": "BuckshotDealer_Passive.Body",
+      "offset": [
+        0.0,
+        4.62,
+        0.15
+      ],
+      "size": [
+        0.08,
+        0.08,
+        0.08
+      ],
+      "tint": null,
+      "attach": "Body",
+      "material": "SmoothPlastic",
+      "transparency": 1,
+      "collide": false,
+      "cast": false,
+      "tris": 12
+    },
+    {
+      "part": "Head",
+      "mesh": "BuckshotDealer_Passive.Head",
+      "offset": [
+        -0.0,
+        4.546,
+        -0.033
+      ],
+      "size": [
+        3.685,
+        3.631,
+        2.525
+      ],
+      "tint": null,
+      "attach": "Head",
+      "material": "SmoothPlastic",
+      "transparency": 0.0,
+      "collide": false,
+      "cast": true,
+      "tris": 5338
+    },
+    {
+      "part": "ArmR",
+      "mesh": "BuckshotDealer_Passive.ArmR",
+      "offset": [
+        3.016,
+        0.993,
+        -0.205
+      ],
+      "size": [
+        1.6,
+        1.379,
+        0.766
+      ],
+      "tint": null,
+      "attach": "ArmR",
+      "material": "SmoothPlastic",
+      "transparency": 0.0,
+      "collide": false,
+      "cast": true,
+      "tris": 1918
+    },
+    {
+      "part": "ArmL",
+      "mesh": "BuckshotDealer_Passive.ArmL",
+      "offset": [
+        -2.444,
+        0.848,
+        -0.435
+      ],
+      "size": [
+        1.146,
+        1.616,
+        1.105
+      ],
+      "tint": null,
+      "attach": "ArmL",
+      "material": "SmoothPlastic",
+      "transparency": 0.0,
+      "collide": false,
+      "cast": true,
+      "tris": 1914
+    }
+  ],
+  "BuckshotDealer_Aggressive": [
+    {
+      "part": "Body",
+      "mesh": "BuckshotDealer_Aggressive.Body",
+      "offset": [
+        0.0,
+        4.62,
+        0.15
+      ],
+      "size": [
+        0.08,
+        0.08,
+        0.08
+      ],
+      "tint": null,
+      "attach": "Body",
+      "material": "SmoothPlastic",
+      "transparency": 1,
+      "collide": false,
+      "cast": false,
+      "tris": 12
+    },
+    {
+      "part": "Head",
+      "mesh": "BuckshotDealer_Aggressive.Head",
+      "offset": [
+        -0.0,
+        4.051,
+        -0.033
+      ],
+      "size": [
+        3.685,
+        4.621,
+        2.525
+      ],
+      "tint": null,
+      "attach": "Head",
+      "material": "SmoothPlastic",
+      "transparency": 0.0,
+      "collide": false,
+      "cast": true,
+      "tris": 5198
+    },
+    {
+      "part": "ArmR",
+      "mesh": "BuckshotDealer_Aggressive.ArmR",
+      "offset": [
+        2.928,
+        1.028,
+        -0.24
+      ],
+      "size": [
+        1.565,
+        1.576,
+        0.726
+      ],
+      "tint": null,
+      "attach": "ArmR",
+      "material": "SmoothPlastic",
+      "transparency": 0.0,
+      "collide": false,
+      "cast": true,
+      "tris": 1912
+    },
+    {
+      "part": "ArmL",
+      "mesh": "BuckshotDealer_Aggressive.ArmL",
+      "offset": [
+        -2.436,
+        0.893,
+        -0.374
+      ],
+      "size": [
+        1.323,
+        1.705,
+        0.927
+      ],
+      "tint": null,
+      "attach": "ArmL",
+      "material": "SmoothPlastic",
+      "transparency": 0.0,
+      "collide": false,
+      "cast": true,
+      "tris": 1902
+    }
+  ]
+}

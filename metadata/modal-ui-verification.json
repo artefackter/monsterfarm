@@ -1,0 +1,30 @@
+{
+  "date": "2026-11-12",
+  "placeId": "119643181994579",
+  "windows": [
+    "crypt",
+    "weapons",
+    "weapon upgrades",
+    "merge"
+  ],
+  "validation": [
+    "Luau compiler: passed",
+    "Rojo full build: passed",
+    "Desktop screenshots: verified",
+    "iPhone 17 Pro landscape: no clipped windows",
+    "All upgrade image labels loaded",
+    "Upgrade button: FireRate 0->1; mutagen 5->4 in isolated Studio memory",
+    "Merge group selection and result preview: verified",
+    "All 60 source images copied and SHA-256 checked"
+  ],
+  "newUploadedAssets": 26,
+  "sourceImagesRemoved": true,
+  "build": "place/GrowAMonster-modal-ui.rbxl",
+  "sourceSha256": {
+    "src/client/UIController.client.lua": "3b01f342730367a870b4953b82f7c66ffa6d925d6533000ad258e01daf564605",
+    "src/client/CombatController.client.lua": "d4394449d22ee9683b7d9163b2bedef03ed46b119b1f4be29469a78a7b32f4c8",
+    "src/shared/UIStyle.lua": "f9bcb2b274c5411bc8a72554fd7bc6b74f3015176ac01e8bcafca062063cb0b7",
+    "src/shared/Icons.lua": "c63ac902e5e67a82187de645607d6716ef3d15999273e0d0c74704fdca50f88f",
+    "src/shared/Locale.lua": "497e21938983c37388815e0f894bf93dad0f5cb075eda9952040d1dc1c244645"
+  }
+}

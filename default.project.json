@@ -1,0 +1,69 @@
+{
+  "name": "GrowAMonster",
+  "tree": {
+    "$className": "DataModel",
+    "HttpService": {
+      "$path": "assets/runtime/HttpService.rbxmx"
+    },
+    "Lighting": {
+      "$path": "assets/runtime/Lighting.rbxmx"
+    },
+    "LocalizationService": {
+      "$path": "assets/runtime/LocalizationService.rbxmx"
+    },
+    "MaterialService": {
+      "$path": "assets/runtime/MaterialService.rbxmx"
+    },
+    "PhysicsService": {
+      "$path": "assets/runtime/PhysicsService.rbxmx"
+    },
+    "Players": {
+      "$path": "assets/runtime/Players.rbxmx"
+    },
+    "ReplicatedFirst": {
+      "$path": "assets/runtime/ReplicatedFirst.rbxmx"
+    },
+    "ReplicatedStorage": {
+      "$path": "assets/runtime/ReplicatedStorage.rbxmx",
+      "Shared": {
+        "$path": "src/shared"
+      }
+    },
+    "ServerScriptService": {
+      "$className": "ServerScriptService",
+      "$path": "src/server"
+    },
+    "ServerStorage": {
+      "$path": "assets/runtime/ServerStorage.rbxmx"
+    },
+    "SoundService": {
+      "$path": "assets/runtime/SoundService.rbxmx"
+    },
+    "StarterGui": {
+      "$path": "assets/runtime/StarterGui.rbxmx"
+    },
+    "StarterPack": {
+      "$path": "assets/runtime/StarterPack.rbxmx"
+    },
+    "StarterPlayer": {
+      "$path": "assets/runtime/StarterPlayer.rbxmx",
+      "StarterPlayerScripts": {
+        "$className": "StarterPlayerScripts",
+        "$path": "src/client"
+      },
+      "StarterCharacterScripts": {
+        "$className": "StarterCharacterScripts",
+        "$path": "src/character"
+      }
+    },
+    "Teams": {
+      "$path": "assets/runtime/Teams.rbxmx"
+    },
+    "TextChatService": {
+      "$path": "assets/runtime/TextChatService.rbxmx"
+    },
+    "Workspace": {
+      "$path": "assets/runtime/Workspace.rbxmx"
+    }
+  }
+}

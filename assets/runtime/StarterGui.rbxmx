@@ -1,0 +1,9 @@
+<?xml version='1.0' encoding='utf-8'?>
+<roblox version="4"><Item class="StarterGui" referent="3518">
+    <Properties>
+      <string name="Name">StarterGui</string>
+      <BinaryString name="SerializedOverrides">
+      </BinaryString>
+    </Properties>
+  </Item>
+  </roblox>

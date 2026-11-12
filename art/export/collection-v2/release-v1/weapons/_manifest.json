@@ -1,0 +1,432 @@
+{
+  "GunM249": [
+    {
+      "part": "Main",
+      "mesh": "GunM249.Main",
+      "offset": [
+        -0.037,
+        0.023,
+        -0.833
+      ],
+      "size": [
+        0.662,
+        1.486,
+        2.978
+      ],
+      "tint": null,
+      "attach": null,
+      "material": "SmoothPlastic",
+      "transparency": 0.0,
+      "collide": false,
+      "cast": true,
+      "tris": 2248
+    },
+    {
+      "part": "Magazine",
+      "mesh": "GunM249.Magazine",
+      "offset": [
+        -0.06,
+        -0.288,
+        -0.234
+      ],
+      "size": [
+        0.582,
+        0.597,
+        0.853
+      ],
+      "tint": null,
+      "attach": null,
+      "material": "SmoothPlastic",
+      "transparency": 0.0,
+      "collide": false,
+      "cast": true,
+      "tris": 216
+    },
+    {
+      "part": "Bolt",
+      "mesh": "GunM249.Bolt",
+      "offset": [
+        0.324,
+        0.245,
+        0.201
+      ],
+      "size": [
+        0.159,
+        0.143,
+        0.303
+      ],
+      "tint": null,
+      "attach": null,
+      "material": "SmoothPlastic",
+      "transparency": 0.0,
+      "collide": false,
+      "cast": true,
+      "tris": 88
+    },
+    {
+      "part": "Bipod",
+      "mesh": "GunM249.Bipod",
+      "offset": [
+        0.0,
+        -0.287,
+        -1.506
+      ],
+      "size": [
+        0.884,
+        0.712,
+        0.291
+      ],
+      "tint": null,
+      "attach": null,
+      "material": "SmoothPlastic",
+      "transparency": 0.0,
+      "collide": false,
+      "cast": true,
+      "tris": 220
+    },
+    {
+      "part": "Stock",
+      "mesh": "GunM249.Stock",
+      "offset": [
+        0.0,
+        -0.045,
+        1.18
+      ],
+      "size": [
+        0.387,
+        0.613,
+        1.121
+      ],
+      "tint": null,
+      "attach": null,
+      "material": "SmoothPlastic",
+      "transparency": 0.0,
+      "collide": false,
+      "cast": true,
+      "tris": 168
+    }
+  ],
+  "GunDouble": [
+    {
+      "part": "Main",
+      "mesh": "GunDouble.Main",
+      "offset": [
+        0.0,
+        -0.088,
+        0.767
+      ],
+      "size": [
+        0.558,
+        0.848,
+        1.947
+      ],
+      "tint": null,
+      "attach": null,
+      "material": "SmoothPlastic",
+      "transparency": 0.0,
+      "collide": false,
+      "cast": true,
+      "tris": 726
+    },
+    {
+      "part": "Barrels",
+      "mesh": "GunDouble.Barrels",
+      "offset": [
+        0.0,
+        0.227,
+        -1.195
+      ],
+      "size": [
+        0.51,
+        0.331,
+        2.195
+      ],
+      "tint": null,
+      "attach": null,
+      "material": "SmoothPlastic",
+      "transparency": 0.0,
+      "collide": false,
+      "cast": true,
+      "tris": 832
+    },
+    {
+      "part": "Foregrip",
+      "mesh": "GunDouble.Foregrip",
+      "offset": [
+        0.0,
+        0.017,
+        -0.851
+      ],
+      "size": [
+        0.538,
+        0.267,
+        1.037
+      ],
+      "tint": null,
+      "attach": null,
+      "material": "SmoothPlastic",
+      "transparency": 0.0,
+      "collide": false,
+      "cast": true,
+      "tris": 268
+    }
+  ],
+  "GunPump": [
+    {
+      "part": "Main",
+      "mesh": "GunPump.Main",
+      "offset": [
+        0.012,
+        -0.14,
+        -0.876
+      ],
+      "size": [
+        0.494,
+        1.148,
+        2.953
+      ],
+      "tint": null,
+      "attach": null,
+      "material": "SmoothPlastic",
+      "transparency": 0.0,
+      "collide": false,
+      "cast": true,
+      "tris": 1012
+    },
+    {
+      "part": "Pump",
+      "mesh": "GunPump.Pump",
+      "offset": [
+        0.0,
+        -0.053,
+        -1.221
+      ],
+      "size": [
+        0.553,
+        0.403,
+        0.762
+      ],
+      "tint": null,
+      "attach": null,
+      "material": "SmoothPlastic",
+      "transparency": 0.0,
+      "collide": false,
+      "cast": true,
+      "tris": 268
+    },
+    {
+      "part": "Bolt",
+      "mesh": "GunPump.Bolt",
+      "offset": [
+        0.324,
+        0.204,
+        0.035
+      ],
+      "size": [
+        0.159,
+        0.143,
+        0.302
+      ],
+      "tint": null,
+      "attach": null,
+      "material": "SmoothPlastic",
+      "transparency": 0.0,
+      "collide": false,
+      "cast": true,
+      "tris": 88
+    },
+    {
+      "part": "Stock",
+      "mesh": "GunPump.Stock",
+      "offset": [
+        0.0,
+        -0.05,
+        1.076
+      ],
+      "size": [
+        0.387,
+        0.623,
+        1.039
+      ],
+      "tint": null,
+      "attach": null,
+      "material": "SmoothPlastic",
+      "transparency": 0.0,
+      "collide": false,
+      "cast": true,
+      "tris": 168
+    }
+  ],
+  "GunMP5": [
+    {
+      "part": "Main",
+      "mesh": "GunMP5.Main",
+      "offset": [
+        0.016,
+        -0.052,
+        -0.596
+      ],
+      "size": [
+        0.487,
+        1.318,
+        2.302
+      ],
+      "tint": null,
+      "attach": null,
+      "material": "SmoothPlastic",
+      "transparency": 0.0,
+      "collide": false,
+      "cast": true,
+      "tris": 1780
+    },
+    {
+      "part": "Magazine",
+      "mesh": "GunMP5.Magazine",
+      "offset": [
+        0.0,
+        -0.474,
+        -0.285
+      ],
+      "size": [
+        0.269,
+        0.666,
+        0.514
+      ],
+      "tint": null,
+      "attach": null,
+      "material": "SmoothPlastic",
+      "transparency": 0.0,
+      "collide": false,
+      "cast": true,
+      "tris": 128
+    },
+    {
+      "part": "Bolt",
+      "mesh": "GunMP5.Bolt",
+      "offset": [
+        0.324,
+        0.203,
+        0.052
+      ],
+      "size": [
+        0.159,
+        0.144,
+        0.303
+      ],
+      "tint": null,
+      "attach": null,
+      "material": "SmoothPlastic",
+      "transparency": 0.0,
+      "collide": false,
+      "cast": true,
+      "tris": 88
+    },
+    {
+      "part": "Stock",
+      "mesh": "GunMP5.Stock",
+      "offset": [
+        0.0,
+        0.007,
+        1.038
+      ],
+      "size": [
+        0.369,
+        0.582,
+        1.075
+      ],
+      "tint": null,
+      "attach": null,
+      "material": "SmoothPlastic",
+      "transparency": 0.0,
+      "collide": false,
+      "cast": true,
+      "tris": 176
+    }
+  ],
+  "V3_GunAK": [
+    {
+      "part": "Main",
+      "mesh": "V3_GunAK.Main",
+      "offset": [
+        0.0,
+        -0.119,
+        -0.588
+      ],
+      "size": [
+        0.43,
+        1.258,
+        2.359
+      ],
+      "tint": null,
+      "attach": null,
+      "material": "SmoothPlastic",
+      "transparency": 0.0,
+      "collide": false,
+      "cast": true,
+      "tris": 1252
+    },
+    {
+      "part": "Magazine",
+      "mesh": "V3_GunAK.Magazine",
+      "offset": [
+        0.0,
+        -0.435,
+        -0.42
+      ],
+      "size": [
+        0.297,
+        0.79,
+        0.78
+      ],
+      "tint": null,
+      "attach": null,
+      "material": "SmoothPlastic",
+      "transparency": 0.0,
+      "collide": false,
+      "cast": true,
+      "tris": 300
+    },
+    {
+      "part": "Bolt",
+      "mesh": "V3_GunAK.Bolt",
+      "offset": [
+        -0.295,
+        0.195,
+        -0.04
+      ],
+      "size": [
+        0.25,
+        0.13,
+        0.3
+      ],
+      "tint": null,
+      "attach": null,
+      "material": "SmoothPlastic",
+      "transparency": 0.0,
+      "collide": false,
+      "cast": true,
+      "tris": 88
+    },
+    {
+      "part": "Stock",
+      "mesh": "V3_GunAK.Stock",
+      "offset": [
+        0.0,
+        0.028,
+        1.012
+      ],
+      "size": [
+        0.42,
+        0.665,
+        1.097
+      ],
+      "tint": null,
+      "attach": null,
+      "material": "SmoothPlastic",
+      "transparency": 0.0,
+      "collide": false,
+      "cast": true,
+      "tris": 316
+    }
+  ]
+}

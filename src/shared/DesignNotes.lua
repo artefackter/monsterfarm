@@ -1,0 +1,129 @@
+-- Save release fix: use not release and job or nil; release and nil or job never clears the lock.
+-- PET UPDATE v2:
+-- Existing economy computes all farmer income in ZombieService.Income; PetService.ForData is the hook
+-- so HUD, leaderstats, live income and offline income all use the same equipped-hen bonus.
+-- Existing dig transaction is Main.dig, exposed as GraveService.Dig for pets (no duplicated reward logic).
+-- Only the requested pets/petSlots/petStarterGiven fields are added; version 2; existing store keys unchanged.
+-- Pure PetRules migration validates IDs/species/tiers and unequips overflow; does not truncate owned inventory.
+-- Common starter cat is granted once, unequipped; equip starts its independent 60s timer.
+-- Owl additive increments cap at x2, hens +60%, total dig speed 70%, total guard chance 90%, carry penalty min 5%.
+-- Cat and manual dig share a non-yielding transaction. Active prompt hold excludes the slot from cat selection.
+-- Pumpkin preparation occurs before the currency/inventory commit; no yield inside the transaction.
+-- Existing autosave persists dirty pet profiles; no new DataStore or economy remote is introduced.
+-- Studio-only chat debug: /pet FarmerCat 1, /coins 5000, /ripe, /phase night (or day).
+-- No trading/fusion/Robux/offline cat work. Future pet ownership transfers would require a durable ID ledger.
+-- MVP: purchased graves plant automatically in the first empty grave slot.
+-- Reward graves are vouchers; plant them with the shop button, without consuming stock.
+-- Digger upgrade price was unspecified: 2500 * 3^n.
+-- Zombiedex records 44 variants; permanent income bonus counts the 11 distinct types.
+-- Maturity uses current digger boost, including offline time, as requested.
+-- StudioMemory enables isolated volatile profiles only in Studio. Live load failure always kicks.
+-- Fonts: FredokaOne for English, GothamBlack and BuilderSansExtraBold for Russian (FredokaOne has no Cyrillic).
+-- All meshes are our own (art/blender), no Toolbox or third-party models. Audio comes only from Roblox licensed libraries, see Config/SoundConfig.
+-- Crypt zombies are invisible stand-ins: a farm can hold 60 behind walls, and each full model is 10+ MeshParts.
+-- Cross-profile raid transfers use an ownership ledger. Recipient saves first; both saves retry.
+-- Durable ownership is checked at load to remove stale donor copies after a crash.
+-- MaxPlayers is a place setting, not a writable Players property. Set it to 6 before publishing.
+-- Play tests and remaining release checks are recorded in README.md.
+-- MUTANTS / WEAPONS v3:
+-- Four waves are capped explicitly at 15/50/85/120 s. The uncapped interval would add a fifth at 155 s.
+-- Waves start 15 s after this server observes night; joining mid-night does not receive a catch-up burst.
+-- Movement is server-owned kinematic Hitboxes (anchored, noncolliding), straight-line at 10 Hz.
+-- This avoids Humanoid physics/fence collisions and ownership transfer; Motor6D limb motion stays client-side.
+-- All visible meshes are non-queryable; weapon raycasts include mutant hitboxes and solid world colliders only.
+-- Body removal/death claim precedes reward; guards credit their farm owner, a helper player's shots credit that player.
+-- Theft uses unsuppressed farm income, so the bitten farmer cannot accidentally make the theft amount zero.
+-- Stuns are transient service state, never fields of a saved zombie. Offline income explicitly bypasses suppression.
+-- A dawn removes attackers without a new penalty. Recovery from an already completed bite lasts its remaining 40 s.
+-- Pistol is granted idempotently at migration; version 3; DataStore names/keys unchanged.
+-- Ammo and reloads are server-session state, per weapon. Switching does not refill or cancel a reload.
+-- Fire has a dedicated rate limiter, server head origin, finite Vector3 validation and server RNG spread.
+-- Aim points may be beyond weapon range; only the capped server ray can deal damage.
+-- Toy sounds: ProSoundEffects only. Chimp chatter is a pitched comic giggle substitute; creator must judge by ear.
+-- Imported art approval: creator approved imp-comparison.png on 2026-11-05 before GLB import.
+-- No blood, injury decals or corpses. Death removes the model immediately, then smoke and reward coins.
+-- Top farmers: ranked by peakIncome, the best income/s ever reached, so bites, thefts and sales never lower a rank.
+-- Statue: best zombie of the leader, read without a session lock; no ZombieId so nothing animates it.
+-- Quests: picked per UTC day from UserId, goal and reward frozen at pick time; profile version 4.
+-- Invites: Roblox's ReferredByPlayerId, new profiles only, inviter paid after 5 minutes of play, at most 10 times, each friend once.
+-- Right to erasure requests must also clear DigAZombie_IncomeBoard_v1 and DigAZombieReferrals_v1.
+-- Auto-combat revision: nearest visible mutant in all directions; aim/shot prediction local, damage validated by server.
+-- Auto fire pauses for menus, chat, focus loss, carrying zombies; reloads when a target exists and ammo is empty.
+-- Do not turn a moving root against joystick input; idle characters turn to aim.
+-- Late eligible farms receive one encounter after the first-wave delay, even if all scheduled waves were missed.
+-- New Pet_* and GunV2_* art is selected only once its imported IDs are in ArtManifest; old art is retained until then.
+-- Interface: icons without captions, so the tutorial flashes the icon it means. Coins and clock live in the Roblox topbar strip (DigTop).
+-- Weapon tile always shows the weapon in hand; a tap cycles owned weapons. Unowned weapons appear only in the shop. Hidden while a menu is open, when shooting is suppressed anyway.
+-- Language: profile field language (en/ru, nil means auto), mirrored to the Language player attribute, which L.lang reads first.
+-- Plots 140 studs from the centre (gap about 76). Nothing changes for a thief after leaving a plot: the guard roll happens once at the fence, so distance only adds carry time.
+-- Field 20 places, graves 12; saved slot numbers still fit because only the grid spacing changed. Prices Field x2, Graves x2.4 per step; stars will raise income further.
+-- Merging: 3 of the same type and stars become 1 with a star more (income x3.5, x12), so 9 commons are worth about one rare and rare graves keep their value.
+-- Stars also raise guard and digger strength. Nothing is protected from theft on the farm, Mythics and three-star zombies included: the owner decided against bans for now.
+-- House: levels gate how far zones can be upgraded, old farms start at the level they already earned, building runs on real time. Room is directly under the plot, so P.Inside still holds; only the owner's door leads there, and nobody can shoot from it.
+-- Road prototype: plain blocks, one stretch. What is stolen is a grave, the game's egg: it hatches at home. The gate at the plaza is the finish, so every farm is the same distance away.
+-- v3 supersedes prior design decisions; staged implementation, stop after each stage.
+-- Stage 1: authoritative hitboxes stay on the server. Client interpolation offsets only
+-- visual Motor6Ds; it never moves the authoritative root or changes damage/ranges.
+-- Navigation reuses RaycastParams until map membership or CanQuery/CanCollide changes.
+-- Reaction timing must state initial distance: 120 studs at 14 studs/s cannot be <=3s.
+-- Later v3 stages (not implemented in stage 1): shovel drops graves/knockout, no
+-- zombie theft, road-only graves, new weapons and inventory, voxel environment.
+-- v3 stage 2 (2026-11-07): graves alone may be stolen. Starter graves are protected.
+-- Road deliveries become graveInventory records; progress is a normalized growth fraction.
+-- UI selects a grave before explicit planting; full three-slot HUD is stage 4.
+-- Grave ownership uses grave_<guid> keys in the existing owners store. Save donor IDs,
+-- save recipient pending intent, commit ownership, then remove donor and clear pending.
+-- Removed diggers move to Crypt even when full; the old geometric upgrade costs refund once.
+-- Gun migration: Pistol->Deagle, Rifle->AK, Shotgun->M4. AWP is a new purchase.
+-- Guard gun cadence changes presentation only; damage per shot is old DPS / new fire rate.
+-- Ground attacks use nearest horizontal zombie bounds; eight-second theft/stun stays.
+-- Temporary gun silhouettes and existing licensed-library sounds are used in this stage.
+-- Stage 3: speedPoints is authoritative; real movement follows the shared logarithmic formula.
+-- Stage 3: temporary shovel meshes have separate tier silhouettes, final art waits for stage 5.
+-- Stage 3: shovel may swing while carrying; it interrupts digging, drops the grave and knocks out.
+-- Road PvP is allowed; farm PvP is only against that farm's grave thief at night.
+-- User additions 2026-11-07: stage 4 uses real weapon icons, never a text-only weapon tile.
+-- Stage 5 replaces temporary guns with higher-detail original cartoon firearm meshes.
+-- Stage 6 uses PUBG as a locomotion reference: low ready while running, stable two-handed
+-- grip, directional stride/lean, smooth run-to-aim; no copied PUBG assets or animation clips.
+return {}
+
+-- v3 stage 4: the owner has no community ID. InterfaceConfig.GroupId remains 0;
+-- the free-gift stand is completely absent until an ID is configured.
+-- Product IDs remain 0. Paid upgrades grant a durable upgrade credit first, so a
+-- house limit or a concurrent coin upgrade can never swallow a paid purchase.
+-- On compact landscape screens the three counters sit above the joystick.
+-- Final weapon meshes and PUBG-inspired locomotion remain stages 5 and 6.
+
+-- Stage 5 / WorldV3, 2026-11-07:
+-- Approved original mesh package, imported manually: 55 assets / 157 MeshParts.
+-- The source grid is retained in ServerStorage.ArtImportBackups, templates in ArtLib.
+-- All 5 house levels now have distinct looks; wide doors are physical openings.
+-- Outdoor treadmill uses plot-local coordinates, gains only while standing online.
+-- Road gap has a floor 3 studs below the lane: jump obstacle without a hole to the void.
+-- Existing falling/recovery guard remains active below DropBelow.
+-- New gun muzzles follow mesh geometry; gameplay range/damage/cost remain unchanged.
+-- GroupId=0 keeps the free gift chest hidden; models do not enable rewards.
+-- Stage 6 owns expanded locomotion, reload and mutant animation polish.
+
+-- Stage 6, user revision 2026-11-07: original W_ terrain/plaza/paths/fountain/scenery
+-- restored; approved V3 buildings/equipment and five road districts retained.
+-- Farm radius 140 from before-road backup; wider gap between plots 1/2 keeps the
+-- 96-stud road clear. Shared merge table is on the plaza; inventory access stays
+-- profile-scoped. No schema/economy/range changes.
+-- Original procedural low-ready run/aim stride, magazine/bolt/casing, KO recovery,
+-- training belt/steps/spatial loops and mutant anticipation/hit/stun layers.
+-- Camera shake has an explicit Settings toggle. No animation asset upload needed.
+-- Visual review: R15 uses two IK targets for the weapon grip and support hand;
+-- restored scenery respects the compact farm footprint. Belt labels exclude
+-- upgrade boards, and knockout/stun stars use the existing star image.
+-- Farm first-strike anticipation is .24s; the original 8s theft timer stays intact.
+
+-- Hub reference revision: central fountain/open lawn, imported W_Path stone ring,
+-- 14 low festival poles; no new uploads. Existing farms/road remain as in the live place.
+-- Back row: Gunsmith, Brawler (green canopy), Pet shop (yellow canopy).
+-- Front row: merge, quests, daily rewards. Information board on the right opens
+-- bilingual mechanics notes. Reference-only claims of passive merging/new skins
+-- are replaced with the real three-matching-zombies rule.
+-- Ranking board and champion pedestal moved just outside the west edge.
+-- DisplayRing is decorative only; MenuZone drives actual interaction.

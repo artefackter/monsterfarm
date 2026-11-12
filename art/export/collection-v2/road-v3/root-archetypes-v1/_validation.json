@@ -1,0 +1,24 @@
+{
+  "assets": {
+    "Deer_Root_Aggressive": {
+      "parts": 6,
+      "triangles": 3170
+    },
+    "Parasite_Root_Aggressive": {
+      "parts": 9,
+      "triangles": 2492
+    },
+    "Stalker_Root_Aggressive": {
+      "parts": 7,
+      "triangles": 2764
+    },
+    "Verity_Root_Aggressive": {
+      "parts": 7,
+      "triangles": 2520
+    }
+  },
+  "meshCount": 29,
+  "triangles": 10946,
+  "bytes": 1067084,
+  "sha256": "fe62d52f82d382eaee247d486524e6243f646e761ad01bc91c2eeaed59844def"
+}

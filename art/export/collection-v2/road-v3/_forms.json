@@ -1,0 +1,10 @@
+{
+  "SirenHead": {
+    "Passive": "SirenHead_Passive",
+    "Aggressive": "SirenHead_Aggressive"
+  },
+  "BuckshotDealer": {
+    "Passive": "BuckshotDealer_Passive",
+    "Aggressive": "BuckshotDealer_Aggressive"
+  }
+}

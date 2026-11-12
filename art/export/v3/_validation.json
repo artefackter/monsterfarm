@@ -1,0 +1,239 @@
+{
+  "assets": 55,
+  "meshes": 157,
+  "triangles": 77506,
+  "maxMeshTriangles": 2872,
+  "bytes": 7557244,
+  "sha256": "b9dd2fa900b26b6088027e0200e8c471f586fea06a701a1baa017c3af9a488a9",
+  "assetsDetail": {
+    "V3_Barricade": {
+      "parts": 1,
+      "triangles": 352
+    },
+    "V3_Bed": {
+      "parts": 1,
+      "triangles": 220
+    },
+    "V3_Bench": {
+      "parts": 1,
+      "triangles": 308
+    },
+    "V3_Bush": {
+      "parts": 1,
+      "triangles": 220
+    },
+    "V3_ChiefOffice": {
+      "parts": 3,
+      "triangles": 2024
+    },
+    "V3_Clinic": {
+      "parts": 3,
+      "triangles": 880
+    },
+    "V3_ClinicCart": {
+      "parts": 1,
+      "triangles": 244
+    },
+    "V3_CoffinRack": {
+      "parts": 1,
+      "triangles": 800
+    },
+    "V3_Crates": {
+      "parts": 1,
+      "triangles": 528
+    },
+    "V3_Factory": {
+      "parts": 3,
+      "triangles": 1100
+    },
+    "V3_Fence": {
+      "parts": 1,
+      "triangles": 220
+    },
+    "V3_FencePost": {
+      "parts": 1,
+      "triangles": 88
+    },
+    "V3_GateArch": {
+      "parts": 1,
+      "triangles": 264
+    },
+    "V3_GiftChest": {
+      "parts": 3,
+      "triangles": 660
+    },
+    "V3_GraveBorder": {
+      "parts": 1,
+      "triangles": 176
+    },
+    "V3_GunAK": {
+      "parts": 4,
+      "triangles": 1956
+    },
+    "V3_GunAWP": {
+      "parts": 6,
+      "triangles": 1980
+    },
+    "V3_GunDeagle": {
+      "parts": 3,
+      "triangles": 1240
+    },
+    "V3_GunM4": {
+      "parts": 5,
+      "triangles": 2396
+    },
+    "V3_House1": {
+      "parts": 4,
+      "triangles": 5292
+    },
+    "V3_House2": {
+      "parts": 5,
+      "triangles": 5468
+    },
+    "V3_House3": {
+      "parts": 8,
+      "triangles": 7536
+    },
+    "V3_House4": {
+      "parts": 9,
+      "triangles": 8108
+    },
+    "V3_House5": {
+      "parts": 10,
+      "triangles": 10396
+    },
+    "V3_Lantern": {
+      "parts": 1,
+      "triangles": 308
+    },
+    "V3_Mall": {
+      "parts": 3,
+      "triangles": 1716
+    },
+    "V3_MergeTable": {
+      "parts": 2,
+      "triangles": 604
+    },
+    "V3_MutagenTank": {
+      "parts": 2,
+      "triangles": 352
+    },
+    "V3_PathTile": {
+      "parts": 1,
+      "triangles": 220
+    },
+    "V3_QuestBoard": {
+      "parts": 1,
+      "triangles": 440
+    },
+    "V3_RewardChest": {
+      "parts": 3,
+      "triangles": 660
+    },
+    "V3_RoadArch": {
+      "parts": 1,
+      "triangles": 264
+    },
+    "V3_RoadSign": {
+      "parts": 1,
+      "triangles": 88
+    },
+    "V3_Rock": {
+      "parts": 1,
+      "triangles": 132
+    },
+    "V3_ShovelBone": {
+      "parts": 3,
+      "triangles": 952
+    },
+    "V3_ShovelCombat": {
+      "parts": 3,
+      "triangles": 1096
+    },
+    "V3_ShovelGolden": {
+      "parts": 3,
+      "triangles": 858
+    },
+    "V3_ShovelLunar": {
+      "parts": 3,
+      "triangles": 974
+    },
+    "V3_ShovelRainbow": {
+      "parts": 3,
+      "triangles": 982
+    },
+    "V3_ShovelRusty": {
+      "parts": 3,
+      "triangles": 892
+    },
+    "V3_ShovelSteel": {
+      "parts": 3,
+      "triangles": 832
+    },
+    "V3_StallBrawler": {
+      "parts": 2,
+      "triangles": 1452
+    },
+    "V3_StallPets": {
+      "parts": 2,
+      "triangles": 1540
+    },
+    "V3_StallWeapons": {
+      "parts": 2,
+      "triangles": 1540
+    },
+    "V3_Trap": {
+      "parts": 5,
+      "triangles": 1140
+    },
+    "V3_Treadmill1": {
+      "parts": 5,
+      "triangles": 924
+    },
+    "V3_Treadmill2": {
+      "parts": 5,
+      "triangles": 1056
+    },
+    "V3_Treadmill3": {
+      "parts": 5,
+      "triangles": 1188
+    },
+    "V3_Treadmill4": {
+      "parts": 5,
+      "triangles": 1320
+    },
+    "V3_Treadmill5": {
+      "parts": 5,
+      "triangles": 1452
+    },
+    "V3_Tree": {
+      "parts": 1,
+      "triangles": 264
+    },
+    "V3_TreeTall": {
+      "parts": 1,
+      "triangles": 264
+    },
+    "V3_UpgradeBoard": {
+      "parts": 1,
+      "triangles": 176
+    },
+    "V3_Wall": {
+      "parts": 1,
+      "triangles": 352
+    },
+    "V3_YardGarage": {
+      "parts": 3,
+      "triangles": 1012
+    }
+  },
+  "checks": [
+    "finite geometry",
+    "triangle indices",
+    "unique import names",
+    "GLB length",
+    "no old character meshes",
+    "door width >= 10 studs",
+    "every mesh <= 10000 triangles"
+  ]
+}

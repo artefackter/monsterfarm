@@ -1,0 +1,28 @@
+{
+  "status": "pending visual approval; no gameplay changes",
+  "intendedArea": "Abandoned road",
+  "models": {
+    "Cultist_Normal": {
+      "role": "melee enemy"
+    },
+    "Cultist_Hunter": {
+      "role": "ranged enemy",
+      "weaponPart": "Rifle"
+    },
+    "Cultist_Parasite": {
+      "role": "mutated enemy",
+      "separateParasiteParts": [
+        "ParasiteBody",
+        "ParasiteHead",
+        "ParasiteGlow",
+        "TendrilL",
+        "TendrilR"
+      ]
+    }
+  },
+  "import": {
+    "mergeMeshes": false,
+    "ignoreVertexColors": false
+  },
+  "animation": "Named parts and pivots prepared; gameplay animations not yet connected"
+}

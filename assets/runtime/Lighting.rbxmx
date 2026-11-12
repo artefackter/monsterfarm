@@ -1,0 +1,45 @@
+<?xml version='1.0' encoding='utf-8'?>
+<roblox version="4"><Item class="Lighting" referent="1">
+    <Properties>
+      <string name="Name">Lighting</string>
+      <Color3 name="Ambient">
+        <R>0.47058824</R>
+        <G>0.4627451</G>
+        <B>0.54901963</B>
+      </Color3>
+      <float name="Brightness">3.0313523</float>
+      <bool name="GlobalShadows">true</bool>
+      <Color3 name="OutdoorAmbient">
+        <R>0.50980395</R>
+        <G>0.5019608</G>
+        <B>0.5882353</B>
+      </Color3>
+      <BinaryString name="SerializedOverrides">
+      </BinaryString>
+    </Properties>
+    <Item class="BloomEffect" referent="2">
+      <Properties>
+        <string name="Name">Bloom</string>
+        <float name="Intensity">0</float>
+        <BinaryString name="SerializedOverrides">
+        </BinaryString>
+      </Properties>
+    </Item>
+    <Item class="ColorGradingEffect" referent="3">
+      <Properties>
+        <string name="Name">ColorGrading</string>
+        <BinaryString name="AttributesSerialize" />
+        <SecurityCapabilities name="Capabilities">0</SecurityCapabilities>
+        <bool name="Enabled">true</bool>
+        <UniqueId name="HistoryId">00000000000000000000000000000000</UniqueId>
+        <bool name="DefinesCapabilities">false</bool>
+        <BinaryString name="SerializedOverrides">
+        </BinaryString>
+        <int64 name="SourceAssetId">-1</int64>
+        <BinaryString name="Tags" />
+        <token name="TonemapperPreset">1</token>
+        <UniqueId name="UniqueId">77d40d424b96f42b0afd9317000012ae</UniqueId>
+      </Properties>
+    </Item>
+  </Item>
+  </roblox>

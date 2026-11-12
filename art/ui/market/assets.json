@@ -1,0 +1,33 @@
+{
+  "generator": "built-in image_gen",
+  "date": "2026-11-08",
+  "files": {
+    "frame": {
+      "path": "frame.png",
+      "assetId": "80561817185425",
+      "sliceCenter": [
+        118,
+        118,
+        906,
+        906
+      ],
+      "sliceScale": 0.27
+    },
+    "canopy": {
+      "path": "canopy.png",
+      "assetId": "96190471045024"
+    },
+    "card": {
+      "path": "card.png",
+      "assetId": "89499795207285",
+      "sliceCenter": [
+        147,
+        147,
+        877,
+        877
+      ],
+      "sliceScale": 0.135
+    }
+  },
+  "prompts": "prompts.json"
+}

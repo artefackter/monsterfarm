@@ -1,0 +1,36 @@
+-- Garden V4: approved replacement scope only. Original package retained in ServerStorage.
+return {
+W_TreeA={
+{part="Trunk",id=113281879335268,offset=Vector3.new(-0.345,6.325,0.181),size=Vector3.new(6.88,12.993,6.528),material="SmoothPlastic",transparency=0.0,cast=true,avg="B58B57"},
+{part="Canopy",id=88015673513050,offset=Vector3.new(-0.506,12.769,0.337),size=Vector3.new(13.796,8.934,13.051),material="SmoothPlastic",transparency=0.0,cast=true,avg="80982B"},
+},
+W_TreeB={
+{part="Trunk",id=109993101050842,offset=Vector3.new(-0.295,5.175,0.355),size=Vector3.new(6.148,10.631,5.188),material="SmoothPlastic",transparency=0.0,cast=true,avg="B58B57"},
+{part="Canopy",id=138136690266919,offset=Vector3.new(-0.301,10.411,0.485),size=Vector3.new(11.623,7.219,10.753),material="SmoothPlastic",transparency=0.0,cast=true,avg="80982B"},
+},
+W_TreeC={
+{part="Trunk",id=121120583572809,offset=Vector3.new(-0.311,7.092,-0.359),size=Vector3.new(7.026,14.568,7.561),material="SmoothPlastic",transparency=0.0,cast=true,avg="B58B57"},
+{part="Canopy",id=104673111918812,offset=Vector3.new(-0.211,14.332,-0.615),size=Vector3.new(14.456,9.941,15.382),material="SmoothPlastic",transparency=0.0,cast=true,avg="80982B"},
+},
+W_Fence={
+{part="Main",id=100167695046295,offset=Vector3.new(0.305,1.54,0.0),size=Vector3.new(8.61,3.08,1.18),material="SmoothPlastic",transparency=0.0,cast=true,avg="B58B57"},
+},
+W_FencePost={
+{part="Main",id=129895898753497,offset=Vector3.new(0.0,1.54,0.0),size=Vector3.new(1.22,3.08,1.18),material="SmoothPlastic",transparency=0.0,cast=true,avg="B58B57"},
+},
+W_Path={
+{part="Main",id=102429126853591,offset=Vector3.new(-0.004,0.123,9.362),size=Vector3.new(4.282,0.215,22.486),material="SmoothPlastic",transparency=0.0,cast=false,avg="B58B57"},
+},
+W_Tuft={
+{part="Main",id=133649453483406,offset=Vector3.new(-0.036,0.467,-0.105),size=Vector3.new(0.965,1.033,0.893),material="SmoothPlastic",transparency=0.0,cast=true,avg="80982B"},
+},
+ENV_Tile1={
+{part="Main",id=116086624334461,offset=Vector3.new(-0.003,0.123,-0.007),size=Vector3.new(3.845,0.215,3.829),material="SmoothPlastic",transparency=0.0,cast=false,avg="B58B57"},
+},
+ENV_Tile2={
+{part="Main",id=130994283145238,offset=Vector3.new(-0.004,0.123,-0.014),size=Vector3.new(3.819,0.215,3.816),material="SmoothPlastic",transparency=0.0,cast=false,avg="B58B57"},
+},
+ENV_Tile3={
+{part="Main",id=135447453252012,offset=Vector3.new(-0.012,0.123,-0.014),size=Vector3.new(3.836,0.215,3.847),material="SmoothPlastic",transparency=0.0,cast=false,avg="B58B57"},
+},
+}

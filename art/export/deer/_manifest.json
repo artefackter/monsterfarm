@@ -1,0 +1,661 @@
+{
+  "Deer_Farmer": [
+    {
+      "part": "Body",
+      "mesh": "Deer_Farmer.Body",
+      "offset": [
+        0.0,
+        4.124,
+        -0.174
+      ],
+      "size": [
+        1.398,
+        2.072,
+        1.507
+      ],
+      "tint": null,
+      "attach": "Body",
+      "material": "SmoothPlastic",
+      "transparency": 0.0,
+      "collide": false,
+      "cast": true,
+      "tris": 768
+    },
+    {
+      "part": "LegR",
+      "mesh": "Deer_Farmer.LegR",
+      "offset": [
+        0.432,
+        1.659,
+        0.068
+      ],
+      "size": [
+        0.75,
+        3.308,
+        0.989
+      ],
+      "tint": null,
+      "attach": "LegR",
+      "material": "SmoothPlastic",
+      "transparency": 0.0,
+      "collide": false,
+      "cast": true,
+      "tris": 264
+    },
+    {
+      "part": "LegL",
+      "mesh": "Deer_Farmer.LegL",
+      "offset": [
+        -0.432,
+        1.659,
+        0.068
+      ],
+      "size": [
+        0.75,
+        3.308,
+        0.989
+      ],
+      "tint": null,
+      "attach": "LegL",
+      "material": "SmoothPlastic",
+      "transparency": 0.0,
+      "collide": false,
+      "cast": true,
+      "tris": 264
+    },
+    {
+      "part": "ArmR",
+      "mesh": "Deer_Farmer.ArmR",
+      "offset": [
+        1.474,
+        3.426,
+        -0.437
+      ],
+      "size": [
+        1.636,
+        2.838,
+        0.826
+      ],
+      "tint": null,
+      "attach": "ArmR",
+      "material": "SmoothPlastic",
+      "transparency": 0.0,
+      "collide": false,
+      "cast": true,
+      "tris": 396
+    },
+    {
+      "part": "ArmL",
+      "mesh": "Deer_Farmer.ArmL",
+      "offset": [
+        -1.476,
+        3.426,
+        -0.437
+      ],
+      "size": [
+        1.64,
+        2.838,
+        0.826
+      ],
+      "tint": null,
+      "attach": "ArmL",
+      "material": "SmoothPlastic",
+      "transparency": 0.0,
+      "collide": false,
+      "cast": true,
+      "tris": 396
+    },
+    {
+      "part": "Head",
+      "mesh": "Deer_Farmer.Head",
+      "offset": [
+        0.328,
+        6.592,
+        -0.739
+      ],
+      "size": [
+        3.511,
+        4.174,
+        2.482
+      ],
+      "tint": null,
+      "attach": "Head",
+      "material": "SmoothPlastic",
+      "transparency": 0.0,
+      "collide": false,
+      "cast": true,
+      "tris": 2255
+    },
+    {
+      "part": "EyesGlow",
+      "mesh": "Deer_Farmer.EyesGlow",
+      "offset": [
+        0.105,
+        5.848,
+        -1.452
+      ],
+      "size": [
+        1.388,
+        0.831,
+        0.364
+      ],
+      "tint": null,
+      "attach": "Head",
+      "material": "Neon",
+      "transparency": 0.0,
+      "collide": false,
+      "cast": false,
+      "tris": 160
+    },
+    {
+      "part": "HandItem",
+      "mesh": "Deer_Farmer.HandItem",
+      "offset": [
+        2.142,
+        2.955,
+        -0.634
+      ],
+      "size": [
+        0.946,
+        3.699,
+        0.328
+      ],
+      "tint": null,
+      "attach": "ArmR",
+      "material": "SmoothPlastic",
+      "transparency": 0.0,
+      "collide": false,
+      "cast": true,
+      "tris": 162
+    }
+  ],
+  "Deer_Punk": [
+    {
+      "part": "Body",
+      "mesh": "Deer_Punk.Body",
+      "offset": [
+        0.0,
+        4.095,
+        -0.223
+      ],
+      "size": [
+        1.785,
+        2.474,
+        1.549
+      ],
+      "tint": null,
+      "attach": "Body",
+      "material": "SmoothPlastic",
+      "transparency": 0.0,
+      "collide": false,
+      "cast": true,
+      "tris": 2084
+    },
+    {
+      "part": "LegR",
+      "mesh": "Deer_Punk.LegR",
+      "offset": [
+        0.432,
+        1.659,
+        0.068
+      ],
+      "size": [
+        0.75,
+        3.308,
+        0.989
+      ],
+      "tint": null,
+      "attach": "LegR",
+      "material": "SmoothPlastic",
+      "transparency": 0.0,
+      "collide": false,
+      "cast": true,
+      "tris": 300
+    },
+    {
+      "part": "LegL",
+      "mesh": "Deer_Punk.LegL",
+      "offset": [
+        -0.432,
+        1.659,
+        0.068
+      ],
+      "size": [
+        0.75,
+        3.308,
+        0.989
+      ],
+      "tint": null,
+      "attach": "LegL",
+      "material": "SmoothPlastic",
+      "transparency": 0.0,
+      "collide": false,
+      "cast": true,
+      "tris": 300
+    },
+    {
+      "part": "ArmR",
+      "mesh": "Deer_Punk.ArmR",
+      "offset": [
+        1.394,
+        3.44,
+        -0.341
+      ],
+      "size": [
+        1.796,
+        2.867,
+        1.019
+      ],
+      "tint": null,
+      "attach": "ArmR",
+      "material": "SmoothPlastic",
+      "transparency": 0.0,
+      "collide": false,
+      "cast": true,
+      "tris": 440
+    },
+    {
+      "part": "ArmL",
+      "mesh": "Deer_Punk.ArmL",
+      "offset": [
+        -1.396,
+        3.44,
+        -0.34
+      ],
+      "size": [
+        1.8,
+        2.867,
+        1.018
+      ],
+      "tint": null,
+      "attach": "ArmL",
+      "material": "SmoothPlastic",
+      "transparency": 0.0,
+      "collide": false,
+      "cast": true,
+      "tris": 440
+    },
+    {
+      "part": "Head",
+      "mesh": "Deer_Punk.Head",
+      "offset": [
+        -0.383,
+        6.692,
+        -0.893
+      ],
+      "size": [
+        3.445,
+        4.387,
+        1.615
+      ],
+      "tint": null,
+      "attach": "Head",
+      "material": "SmoothPlastic",
+      "transparency": 0.0,
+      "collide": false,
+      "cast": true,
+      "tris": 1596
+    },
+    {
+      "part": "EyesGlow",
+      "mesh": "Deer_Punk.EyesGlow",
+      "offset": [
+        -0.08,
+        5.876,
+        -1.452
+      ],
+      "size": [
+        1.402,
+        0.722,
+        0.364
+      ],
+      "tint": null,
+      "attach": "Head",
+      "material": "Neon",
+      "transparency": 0.0,
+      "collide": false,
+      "cast": false,
+      "tris": 160
+    }
+  ],
+  "Deer_Assassin": [
+    {
+      "part": "Body",
+      "mesh": "Deer_Assassin.Body",
+      "offset": [
+        0.0,
+        3.762,
+        -0.067
+      ],
+      "size": [
+        1.945,
+        2.795,
+        1.67
+      ],
+      "tint": null,
+      "attach": "Body",
+      "material": "SmoothPlastic",
+      "transparency": 0.0,
+      "collide": false,
+      "cast": true,
+      "tris": 560
+    },
+    {
+      "part": "LegR",
+      "mesh": "Deer_Assassin.LegR",
+      "offset": [
+        0.432,
+        1.659,
+        0.068
+      ],
+      "size": [
+        0.75,
+        3.308,
+        0.989
+      ],
+      "tint": null,
+      "attach": "LegR",
+      "material": "SmoothPlastic",
+      "transparency": 0.0,
+      "collide": false,
+      "cast": true,
+      "tris": 176
+    },
+    {
+      "part": "LegL",
+      "mesh": "Deer_Assassin.LegL",
+      "offset": [
+        -0.432,
+        1.659,
+        0.068
+      ],
+      "size": [
+        0.75,
+        3.308,
+        0.989
+      ],
+      "tint": null,
+      "attach": "LegL",
+      "material": "SmoothPlastic",
+      "transparency": 0.0,
+      "collide": false,
+      "cast": true,
+      "tris": 176
+    },
+    {
+      "part": "ArmR",
+      "mesh": "Deer_Assassin.ArmR",
+      "offset": [
+        1.474,
+        3.426,
+        -0.437
+      ],
+      "size": [
+        1.636,
+        2.838,
+        0.826
+      ],
+      "tint": null,
+      "attach": "ArmR",
+      "material": "SmoothPlastic",
+      "transparency": 0.0,
+      "collide": false,
+      "cast": true,
+      "tris": 572
+    },
+    {
+      "part": "ArmL",
+      "mesh": "Deer_Assassin.ArmL",
+      "offset": [
+        -1.476,
+        3.426,
+        -0.437
+      ],
+      "size": [
+        1.64,
+        2.838,
+        0.826
+      ],
+      "tint": null,
+      "attach": "ArmL",
+      "material": "SmoothPlastic",
+      "transparency": 0.0,
+      "collide": false,
+      "cast": true,
+      "tris": 572
+    },
+    {
+      "part": "Head",
+      "mesh": "Deer_Assassin.Head",
+      "offset": [
+        0.545,
+        6.567,
+        -0.81
+      ],
+      "size": [
+        3.495,
+        4.172,
+        1.781
+      ],
+      "tint": null,
+      "attach": "Head",
+      "material": "SmoothPlastic",
+      "transparency": 0.0,
+      "collide": false,
+      "cast": true,
+      "tris": 1682
+    },
+    {
+      "part": "EyesGlow",
+      "mesh": "Deer_Assassin.EyesGlow",
+      "offset": [
+        0.161,
+        5.84,
+        -1.452
+      ],
+      "size": [
+        1.371,
+        0.875,
+        0.364
+      ],
+      "tint": null,
+      "attach": "Head",
+      "material": "Neon",
+      "transparency": 0.0,
+      "collide": false,
+      "cast": false,
+      "tris": 160
+    },
+    {
+      "part": "HandItem",
+      "mesh": "Deer_Assassin.HandItem",
+      "offset": [
+        1.871,
+        2.522,
+        -0.65
+      ],
+      "size": [
+        0.52,
+        1.835,
+        0.22
+      ],
+      "tint": null,
+      "attach": "ArmR",
+      "material": "SmoothPlastic",
+      "transparency": 0.0,
+      "collide": false,
+      "cast": true,
+      "tris": 148
+    }
+  ],
+  "Deer_Chief": [
+    {
+      "part": "Body",
+      "mesh": "Deer_Chief.Body",
+      "offset": [
+        0.0,
+        3.553,
+        -0.124
+      ],
+      "size": [
+        2.291,
+        3.213,
+        1.962
+      ],
+      "tint": null,
+      "attach": "Body",
+      "material": "SmoothPlastic",
+      "transparency": 0.0,
+      "collide": false,
+      "cast": true,
+      "tris": 1904
+    },
+    {
+      "part": "LegR",
+      "mesh": "Deer_Chief.LegR",
+      "offset": [
+        0.485,
+        1.659,
+        0.068
+      ],
+      "size": [
+        0.843,
+        3.308,
+        0.989
+      ],
+      "tint": null,
+      "attach": "LegR",
+      "material": "SmoothPlastic",
+      "transparency": 0.0,
+      "collide": false,
+      "cast": true,
+      "tris": 264
+    },
+    {
+      "part": "LegL",
+      "mesh": "Deer_Chief.LegL",
+      "offset": [
+        -0.485,
+        1.659,
+        0.068
+      ],
+      "size": [
+        0.843,
+        3.308,
+        0.989
+      ],
+      "tint": null,
+      "attach": "LegL",
+      "material": "SmoothPlastic",
+      "transparency": 0.0,
+      "collide": false,
+      "cast": true,
+      "tris": 264
+    },
+    {
+      "part": "ArmR",
+      "mesh": "Deer_Chief.ArmR",
+      "offset": [
+        1.617,
+        3.518,
+        -0.365
+      ],
+      "size": [
+        1.916,
+        3.023,
+        0.97
+      ],
+      "tint": null,
+      "attach": "ArmR",
+      "material": "SmoothPlastic",
+      "transparency": 0.0,
+      "collide": false,
+      "cast": true,
+      "tris": 528
+    },
+    {
+      "part": "ArmL",
+      "mesh": "Deer_Chief.ArmL",
+      "offset": [
+        -1.619,
+        3.518,
+        -0.365
+      ],
+      "size": [
+        1.92,
+        3.023,
+        0.969
+      ],
+      "tint": null,
+      "attach": "ArmL",
+      "material": "SmoothPlastic",
+      "transparency": 0.0,
+      "collide": false,
+      "cast": true,
+      "tris": 528
+    },
+    {
+      "part": "Head",
+      "mesh": "Deer_Chief.Head",
+      "offset": [
+        0.383,
+        6.577,
+        -0.893
+      ],
+      "size": [
+        3.509,
+        4.157,
+        1.615
+      ],
+      "tint": null,
+      "attach": "Head",
+      "material": "SmoothPlastic",
+      "transparency": 0.0,
+      "collide": false,
+      "cast": true,
+      "tris": 1948
+    },
+    {
+      "part": "EyesGlow",
+      "mesh": "Deer_Chief.EyesGlow",
+      "offset": [
+        0.119,
+        5.846,
+        -1.452
+      ],
+      "size": [
+        1.384,
+        0.842,
+        0.364
+      ],
+      "tint": null,
+      "attach": "Head",
+      "material": "Neon",
+      "transparency": 0.0,
+      "collide": false,
+      "cast": false,
+      "tris": 160
+    },
+    {
+      "part": "HandItem",
+      "mesh": "Deer_Chief.HandItem",
+      "offset": [
+        2.132,
+        2.255,
+        -0.72
+      ],
+      "size": [
+        0.81,
+        2.61,
+        0.6
+      ],
+      "tint": null,
+      "attach": "ArmR",
+      "material": "SmoothPlastic",
+      "transparency": 0.0,
+      "collide": false,
+      "cast": true,
+      "tris": 352
+    }
+  ]
+}

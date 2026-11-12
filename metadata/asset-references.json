@@ -1,0 +1,7061 @@
+{
+  "placeId": "133761867075682",
+  "universeId": "10774761288",
+  "assetOwnerId": "11935827585",
+  "dealerV4ModelAssetId": "126374725084007",
+  "note": "Asset references found in production Lua and exported service objects, including preserved ServerStorage backups. Geometry and images remain Roblox-hosted.",
+  "assets": [
+    {
+      "id": "70407593777770",
+      "files": [
+        "assets/runtime/ReplicatedStorage.rbxmx",
+        "assets/runtime/ServerStorage.rbxmx",
+        "src/shared/ArtManifestV3.lua"
+      ]
+    },
+    {
+      "id": "70419400750114",
+      "files": [
+        "assets/runtime/ReplicatedStorage.rbxmx",
+        "assets/runtime/ServerStorage.rbxmx",
+        "src/shared/ArtManifestCollectionV2.lua"
+      ]
+    },
+    {
+      "id": "70460788395594",
+      "files": [
+        "assets/runtime/ReplicatedStorage.rbxmx",
+        "assets/runtime/ServerStorage.rbxmx",
+        "src/shared/ArtManifestHorror.lua"
+      ]
+    },
+    {
+      "id": "70467878578417",
+      "files": [
+        "src/shared/ArtManifest.lua"
+      ]
+    },
+    {
+      "id": "70615886300931",
+      "files": [
+        "assets/runtime/ReplicatedStorage.rbxmx",
+        "assets/runtime/ServerStorage.rbxmx",
+        "src/shared/ArtManifestV3.lua"
+      ]
+    },
+    {
+      "id": "70636541182120",
+      "files": [
+        "src/shared/ArtManifest.lua"
+      ]
+    },
+    {
+      "id": "70652068521134",
+      "files": [
+        "assets/runtime/ReplicatedStorage.rbxmx",
+        "assets/runtime/ServerStorage.rbxmx",
+        "src/shared/ArtManifestRelease.lua"
+      ]
+    },
+    {
+      "id": "70796053566153",
+      "files": [
+        "assets/runtime/ServerStorage.rbxmx",
+        "src/shared/Icons.lua"
+      ]
+    },
+    {
+      "id": "70901854376134",
+      "files": [
+        "assets/runtime/ReplicatedStorage.rbxmx",
+        "assets/runtime/ServerStorage.rbxmx",
+        "src/shared/ArtManifestRelease.lua"
+      ]
+    },
+    {
+      "id": "70924677679695",
+      "files": [
+        "assets/runtime/ReplicatedStorage.rbxmx",
+        "assets/runtime/ServerStorage.rbxmx",
+        "src/shared/ArtManifestRelease.lua"
+      ]
+    },
+    {
+      "id": "71063727200518",
+      "files": [
+        "assets/runtime/ReplicatedStorage.rbxmx",
+        "assets/runtime/ServerStorage.rbxmx",
+        "src/shared/ArtManifestCollectionV2.lua"
+      ]
+    },
+    {
+      "id": "71090675626981",
+      "files": [
+        "assets/runtime/ReplicatedStorage.rbxmx",
+        "assets/runtime/ServerStorage.rbxmx",
+        "src/shared/ArtManifestRelease.lua"
+      ]
+    },
+    {
+      "id": "71161402906501",
+      "files": [
+        "assets/runtime/ReplicatedStorage.rbxmx",
+        "assets/runtime/ServerStorage.rbxmx",
+        "src/shared/ArtManifestRoadV2.lua"
+      ]
+    },
+    {
+      "id": "71184836067482",
+      "files": [
+        "assets/runtime/ReplicatedStorage.rbxmx",
+        "assets/runtime/ServerStorage.rbxmx",
+        "src/shared/ArtManifestV3.lua"
+      ]
+    },
+    {
+      "id": "71250843448860",
+      "files": [
+        "assets/runtime/ReplicatedStorage.rbxmx",
+        "assets/runtime/ServerStorage.rbxmx",
+        "src/shared/ArtManifestRelease.lua"
+      ]
+    },
+    {
+      "id": "71256885189208",
+      "files": [
+        "assets/runtime/ReplicatedStorage.rbxmx",
+        "assets/runtime/ServerStorage.rbxmx",
+        "src/shared/ArtManifestV3.lua"
+      ]
+    },
+    {
+      "id": "71290327854526",
+      "files": [
+        "src/shared/ArtManifest.lua"
+      ]
+    },
+    {
+      "id": "71324636257225",
+      "files": [
+        "src/shared/ArtManifest.lua"
+      ]
+    },
+    {
+      "id": "71366150586033",
+      "files": [
+        "assets/runtime/ReplicatedStorage.rbxmx",
+        "assets/runtime/ServerStorage.rbxmx",
+        "src/shared/ArtManifestMonsters.lua"
+      ]
+    },
+    {
+      "id": "71426635623582",
+      "files": [
+        "assets/runtime/ReplicatedStorage.rbxmx",
+        "assets/runtime/ServerStorage.rbxmx",
+        "src/shared/ArtManifestRelease.lua"
+      ]
+    },
+    {
+      "id": "71485656304030",
+      "files": [
+        "assets/runtime/ReplicatedStorage.rbxmx",
+        "assets/runtime/ServerStorage.rbxmx",
+        "src/shared/ArtManifestCollectionV2.lua"
+      ]
+    },
+    {
+      "id": "71572915345844",
+      "files": [
+        "assets/runtime/ReplicatedStorage.rbxmx",
+        "assets/runtime/ServerStorage.rbxmx",
+        "src/shared/ArtManifestMonsters.lua"
+      ]
+    },
+    {
+      "id": "71619453862985",
+      "files": [
+        "src/shared/ArtManifest.lua"
+      ]
+    },
+    {
+      "id": "71639472818401",
+      "files": [
+        "assets/runtime/ServerStorage.rbxmx",
+        "src/shared/Icons.lua"
+      ]
+    },
+    {
+      "id": "71670559432131",
+      "files": [
+        "src/shared/ArtManifest.lua"
+      ]
+    },
+    {
+      "id": "71727069207593",
+      "files": [
+        "assets/runtime/ReplicatedStorage.rbxmx",
+        "assets/runtime/ServerStorage.rbxmx",
+        "src/shared/ArtManifestV3.lua"
+      ]
+    },
+    {
+      "id": "71818964911582",
+      "files": [
+        "assets/runtime/ReplicatedStorage.rbxmx",
+        "assets/runtime/ServerStorage.rbxmx",
+        "src/shared/ArtManifestHorror.lua"
+      ]
+    },
+    {
+      "id": "71904038506815",
+      "files": [
+        "assets/runtime/ReplicatedStorage.rbxmx",
+        "assets/runtime/ServerStorage.rbxmx",
+        "src/shared/ArtManifestRelease.lua"
+      ]
+    },
+    {
+      "id": "71916389878344",
+      "files": [
+        "assets/runtime/ReplicatedStorage.rbxmx",
+        "assets/runtime/ServerStorage.rbxmx",
+        "src/shared/ArtManifestRelease.lua"
+      ]
+    },
+    {
+      "id": "71965090298255",
+      "files": [
+        "assets/runtime/ReplicatedStorage.rbxmx",
+        "assets/runtime/ServerStorage.rbxmx",
+        "src/shared/ArtManifestRoadV2.lua"
+      ]
+    },
+    {
+      "id": "71974096293572",
+      "files": [
+        "assets/runtime/ReplicatedStorage.rbxmx",
+        "assets/runtime/ServerStorage.rbxmx",
+        "src/shared/ArtManifestRelease.lua"
+      ]
+    },
+    {
+      "id": "72045867247709",
+      "files": [
+        "assets/runtime/ServerStorage.rbxmx"
+      ]
+    },
+    {
+      "id": "72115681729508",
+      "files": [
+        "assets/runtime/ReplicatedStorage.rbxmx",
+        "assets/runtime/ServerStorage.rbxmx",
+        "src/shared/ArtManifestRelease.lua"
+      ]
+    },
+    {
+      "id": "72225985714785",
+      "files": [
+        "assets/runtime/ReplicatedStorage.rbxmx",
+        "assets/runtime/ServerStorage.rbxmx",
+        "src/shared/ArtManifestCollectionV2.lua"
+      ]
+    },
+    {
+      "id": "72322820217218",
+      "files": [
+        "assets/runtime/ServerStorage.rbxmx"
+      ]
+    },
+    {
+      "id": "72436723624764",
+      "files": [
+        "assets/runtime/ReplicatedStorage.rbxmx",
+        "assets/runtime/ServerStorage.rbxmx",
+        "src/shared/ArtManifestRelease.lua"
+      ]
+    },
+    {
+      "id": "72518575783747",
+      "files": [
+        "assets/runtime/ReplicatedStorage.rbxmx",
+        "assets/runtime/ServerStorage.rbxmx",
+        "src/shared/ArtManifestRelease.lua"
+      ]
+    },
+    {
+      "id": "72528651635589",
+      "files": [
+        "src/shared/ArtManifest.lua"
+      ]
+    },
+    {
+      "id": "72549805277723",
+      "files": [
+        "assets/runtime/ReplicatedStorage.rbxmx",
+        "assets/runtime/ServerStorage.rbxmx",
+        "src/shared/ArtManifestMonsters.lua"
+      ]
+    },
+    {
+      "id": "72553583985078",
+      "files": [
+        "assets/runtime/ReplicatedStorage.rbxmx",
+        "assets/runtime/ServerStorage.rbxmx",
+        "src/shared/ArtManifestCollectionV2.lua"
+      ]
+    },
+    {
+      "id": "72635772572837",
+      "files": [
+        "assets/runtime/ReplicatedStorage.rbxmx",
+        "assets/runtime/ServerStorage.rbxmx",
+        "src/shared/ArtManifestMonsters.lua"
+      ]
+    },
+    {
+      "id": "72903774681235",
+      "files": [
+        "assets/runtime/ReplicatedStorage.rbxmx",
+        "assets/runtime/ServerStorage.rbxmx",
+        "src/shared/ArtManifestCollectionV2.lua"
+      ]
+    },
+    {
+      "id": "73035816695791",
+      "files": [
+        "assets/runtime/ReplicatedStorage.rbxmx",
+        "assets/runtime/ServerStorage.rbxmx",
+        "src/shared/ArtManifestRelease.lua"
+      ]
+    },
+    {
+      "id": "73186309138441",
+      "files": [
+        "assets/runtime/ReplicatedStorage.rbxmx",
+        "assets/runtime/ServerStorage.rbxmx",
+        "src/shared/ArtManifestCollectionV2.lua"
+      ]
+    },
+    {
+      "id": "73245531204179",
+      "files": [
+        "assets/runtime/ReplicatedStorage.rbxmx",
+        "assets/runtime/ServerStorage.rbxmx",
+        "src/shared/ArtManifestCollectionV2.lua"
+      ]
+    },
+    {
+      "id": "73292174975279",
+      "files": [
+        "assets/runtime/ReplicatedStorage.rbxmx",
+        "assets/runtime/ServerStorage.rbxmx",
+        "src/shared/ArtManifestMonsters.lua"
+      ]
+    },
+    {
+      "id": "73356032910057",
+      "files": [
+        "assets/runtime/ReplicatedStorage.rbxmx",
+        "assets/runtime/ServerStorage.rbxmx",
+        "src/shared/ArtManifestRoadV2.lua"
+      ]
+    },
+    {
+      "id": "73382412107623",
+      "files": [
+        "assets/runtime/ReplicatedStorage.rbxmx",
+        "assets/runtime/ServerStorage.rbxmx",
+        "src/shared/ArtManifestV3.lua"
+      ]
+    },
+    {
+      "id": "73457344320813",
+      "files": [
+        "assets/runtime/ReplicatedStorage.rbxmx",
+        "assets/runtime/ServerStorage.rbxmx",
+        "src/shared/ArtManifestV3.lua"
+      ]
+    },
+    {
+      "id": "73548865047737",
+      "files": [
+        "src/shared/ArtManifest.lua"
+      ]
+    },
+    {
+      "id": "73706080778745",
+      "files": [
+        "assets/runtime/ReplicatedStorage.rbxmx",
+        "assets/runtime/ServerStorage.rbxmx",
+        "src/shared/ArtManifestRoadRoots.lua"
+      ]
+    },
+    {
+      "id": "73916702451360",
+      "files": [
+        "src/shared/ArtManifest.lua"
+      ]
+    },
+    {
+      "id": "73964908093230",
+      "files": [
+        "assets/runtime/ReplicatedStorage.rbxmx",
+        "assets/runtime/ServerStorage.rbxmx",
+        "src/shared/ArtManifestRoadRoots.lua"
+      ]
+    },
+    {
+      "id": "74111662590659",
+      "files": [
+        "src/shared/ArtManifest.lua"
+      ]
+    },
+    {
+      "id": "74212424891576",
+      "files": [
+        "assets/runtime/ReplicatedStorage.rbxmx",
+        "assets/runtime/ServerStorage.rbxmx",
+        "src/shared/ArtManifestRelease.lua"
+      ]
+    },
+    {
+      "id": "74351845477001",
+      "files": [
+        "src/shared/ArtManifest.lua"
+      ]
+    },
+    {
+      "id": "74461897205951",
+      "files": [
+        "assets/runtime/ReplicatedStorage.rbxmx",
+        "assets/runtime/ServerStorage.rbxmx",
+        "src/shared/ArtManifestRelease.lua"
+      ]
+    },
+    {
+      "id": "74481204098919",
+      "files": [
+        "src/shared/ArtManifest.lua"
+      ]
+    },
+    {
+      "id": "74542948814765",
+      "files": [
+        "assets/runtime/ServerStorage.rbxmx",
+        "src/shared/Icons.lua"
+      ]
+    },
+    {
+      "id": "74660776450706",
+      "files": [
+        "assets/runtime/ServerStorage.rbxmx",
+        "src/shared/Icons.lua"
+      ]
+    },
+    {
+      "id": "74752525402757",
+      "files": [
+        "assets/runtime/ReplicatedStorage.rbxmx",
+        "assets/runtime/ServerStorage.rbxmx",
+        "src/shared/ArtManifestCollectionV2.lua"
+      ]
+    },
+    {
+      "id": "74875050354751",
+      "files": [
+        "assets/runtime/ReplicatedStorage.rbxmx",
+        "assets/runtime/ServerStorage.rbxmx",
+        "src/shared/ArtManifestV3.lua"
+      ]
+    },
+    {
+      "id": "74985909561227",
+      "files": [
+        "src/shared/ArtManifest.lua"
+      ]
+    },
+    {
+      "id": "75004876423290",
+      "files": [
+        "assets/runtime/ReplicatedStorage.rbxmx",
+        "assets/runtime/ServerStorage.rbxmx",
+        "src/shared/ArtManifestRelease.lua"
+      ]
+    },
+    {
+      "id": "75184111638399",
+      "files": [
+        "assets/runtime/ReplicatedStorage.rbxmx",
+        "assets/runtime/ServerStorage.rbxmx",
+        "src/shared/ArtManifestV3.lua"
+      ]
+    },
+    {
+      "id": "75225767909732",
+      "files": [
+        "assets/runtime/ReplicatedStorage.rbxmx",
+        "assets/runtime/ServerStorage.rbxmx",
+        "src/shared/ArtManifestRoadRoots.lua"
+      ]
+    },
+    {
+      "id": "75261191843915",
+      "files": [
+        "assets/runtime/ReplicatedStorage.rbxmx",
+        "assets/runtime/ServerStorage.rbxmx",
+        "src/shared/ArtManifestRelease.lua"
+      ]
+    },
+    {
+      "id": "75292668309747",
+      "files": [
+        "assets/runtime/ReplicatedStorage.rbxmx",
+        "assets/runtime/ServerStorage.rbxmx",
+        "src/shared/ArtManifestV3.lua"
+      ]
+    },
+    {
+      "id": "75390175787805",
+      "files": [
+        "assets/runtime/ReplicatedStorage.rbxmx",
+        "assets/runtime/ServerStorage.rbxmx",
+        "src/shared/ArtManifestRelease.lua"
+      ]
+    },
+    {
+      "id": "75503198394112",
+      "files": [
+        "assets/runtime/ReplicatedStorage.rbxmx",
+        "assets/runtime/ServerStorage.rbxmx",
+        "src/shared/ArtManifestMonsters.lua"
+      ]
+    },
+    {
+      "id": "75621329131424",
+      "files": [
+        "assets/runtime/ReplicatedStorage.rbxmx",
+        "assets/runtime/ServerStorage.rbxmx",
+        "src/shared/ArtManifestRelease.lua"
+      ]
+    },
+    {
+      "id": "75654604918717",
+      "files": [
+        "assets/runtime/ServerStorage.rbxmx",
+        "src/shared/Icons.lua"
+      ]
+    },
+    {
+      "id": "75659881201999",
+      "files": [
+        "src/shared/ArtManifest.lua"
+      ]
+    },
+    {
+      "id": "75778555017755",
+      "files": [
+        "assets/runtime/ReplicatedStorage.rbxmx",
+        "assets/runtime/ServerStorage.rbxmx",
+        "src/shared/ArtManifestMonsters.lua"
+      ]
+    },
+    {
+      "id": "75872313150570",
+      "files": [
+        "assets/runtime/ReplicatedStorage.rbxmx",
+        "assets/runtime/ServerStorage.rbxmx",
+        "src/shared/ArtManifestRelease.lua"
+      ]
+    },
+    {
+      "id": "75893167301965",
+      "files": [
+        "assets/runtime/ReplicatedStorage.rbxmx",
+        "assets/runtime/ServerStorage.rbxmx",
+        "src/shared/ArtManifestRoadV2.lua"
+      ]
+    },
+    {
+      "id": "75938170622935",
+      "files": [
+        "src/shared/ArtManifest.lua"
+      ]
+    },
+    {
+      "id": "76099890276299",
+      "files": [
+        "assets/runtime/ReplicatedStorage.rbxmx",
+        "assets/runtime/ServerStorage.rbxmx",
+        "src/shared/ArtManifestCollectionV2.lua"
+      ]
+    },
+    {
+      "id": "76122381559419",
+      "files": [
+        "assets/runtime/ReplicatedStorage.rbxmx",
+        "assets/runtime/ServerStorage.rbxmx",
+        "src/shared/ArtManifestV3.lua"
+      ]
+    },
+    {
+      "id": "76158471010854",
+      "files": [
+        "assets/runtime/ReplicatedStorage.rbxmx",
+        "assets/runtime/ServerStorage.rbxmx",
+        "src/shared/ArtManifestRelease.lua"
+      ]
+    },
+    {
+      "id": "76205582630738",
+      "files": [
+        "assets/runtime/ReplicatedStorage.rbxmx",
+        "assets/runtime/ServerStorage.rbxmx",
+        "src/shared/ArtManifestV3.lua"
+      ]
+    },
+    {
+      "id": "76423865052317",
+      "files": [
+        "src/shared/ArtManifest.lua"
+      ]
+    },
+    {
+      "id": "76522795027946",
+      "files": [
+        "assets/runtime/ReplicatedStorage.rbxmx",
+        "assets/runtime/ServerStorage.rbxmx",
+        "src/shared/ArtManifestRoadV2.lua"
+      ]
+    },
+    {
+      "id": "76549063105888",
+      "files": [
+        "assets/runtime/ReplicatedStorage.rbxmx",
+        "assets/runtime/ServerStorage.rbxmx",
+        "src/shared/ArtManifestV3.lua"
+      ]
+    },
+    {
+      "id": "76549281271088",
+      "files": [
+        "assets/runtime/ReplicatedStorage.rbxmx",
+        "assets/runtime/ServerStorage.rbxmx",
+        "src/shared/ArtManifestV3.lua"
+      ]
+    },
+    {
+      "id": "76564476356463",
+      "files": [
+        "assets/runtime/ReplicatedStorage.rbxmx",
+        "assets/runtime/ServerStorage.rbxmx",
+        "src/shared/ArtManifestRelease.lua"
+      ]
+    },
+    {
+      "id": "76690919186002",
+      "files": [
+        "assets/runtime/ReplicatedStorage.rbxmx",
+        "assets/runtime/ServerStorage.rbxmx",
+        "src/shared/ArtManifestRelease.lua"
+      ]
+    },
+    {
+      "id": "77185612537726",
+      "files": [
+        "assets/runtime/ReplicatedStorage.rbxmx",
+        "assets/runtime/ServerStorage.rbxmx",
+        "src/shared/ArtManifestV3.lua"
+      ]
+    },
+    {
+      "id": "77187822693682",
+      "files": [
+        "assets/runtime/ReplicatedStorage.rbxmx",
+        "assets/runtime/ServerStorage.rbxmx",
+        "src/shared/ArtManifestRelease.lua"
+      ]
+    },
+    {
+      "id": "77848033893455",
+      "files": [
+        "assets/runtime/ReplicatedStorage.rbxmx",
+        "assets/runtime/ServerStorage.rbxmx",
+        "src/shared/ArtManifestRelease.lua"
+      ]
+    },
+    {
+      "id": "77874467732453",
+      "files": [
+        "assets/runtime/ReplicatedStorage.rbxmx",
+        "assets/runtime/ServerStorage.rbxmx",
+        "src/shared/ArtManifestRelease.lua"
+      ]
+    },
+    {
+      "id": "77906359130565",
+      "files": [
+        "assets/runtime/ReplicatedStorage.rbxmx",
+        "assets/runtime/ServerStorage.rbxmx",
+        "src/shared/ArtManifestRelease.lua"
+      ]
+    },
+    {
+      "id": "78000102924248",
+      "files": [
+        "src/shared/ArtManifest.lua"
+      ]
+    },
+    {
+      "id": "78034874065504",
+      "files": [
+        "assets/runtime/ReplicatedStorage.rbxmx",
+        "assets/runtime/ServerStorage.rbxmx",
+        "src/shared/ArtManifestRelease.lua"
+      ]
+    },
+    {
+      "id": "78066638005625",
+      "files": [
+        "assets/runtime/ReplicatedStorage.rbxmx",
+        "assets/runtime/ServerStorage.rbxmx",
+        "src/shared/ArtManifestV3.lua"
+      ]
+    },
+    {
+      "id": "78079651354248",
+      "files": [
+        "assets/runtime/ReplicatedStorage.rbxmx",
+        "assets/runtime/ServerStorage.rbxmx",
+        "src/shared/ArtManifestHorror.lua"
+      ]
+    },
+    {
+      "id": "78127778057238",
+      "files": [
+        "assets/runtime/ReplicatedStorage.rbxmx",
+        "assets/runtime/ServerStorage.rbxmx",
+        "src/shared/ArtManifestRelease.lua"
+      ]
+    },
+    {
+      "id": "78461585129892",
+      "files": [
+        "assets/runtime/ReplicatedStorage.rbxmx",
+        "assets/runtime/ServerStorage.rbxmx",
+        "src/shared/ArtManifestRelease.lua"
+      ]
+    },
+    {
+      "id": "78509256158710",
+      "files": [
+        "assets/runtime/ReplicatedStorage.rbxmx",
+        "assets/runtime/ServerStorage.rbxmx",
+        "src/shared/ArtManifestV3.lua"
+      ]
+    },
+    {
+      "id": "78539860678340",
+      "files": [
+        "src/shared/ArtManifest.lua"
+      ]
+    },
+    {
+      "id": "78692239904825",
+      "files": [
+        "src/shared/ArtManifest.lua"
+      ]
+    },
+    {
+      "id": "78915319340016",
+      "files": [
+        "assets/runtime/ReplicatedStorage.rbxmx",
+        "assets/runtime/ServerStorage.rbxmx",
+        "src/shared/ArtManifestV3.lua"
+      ]
+    },
+    {
+      "id": "78985086596276",
+      "files": [
+        "assets/runtime/ReplicatedStorage.rbxmx",
+        "assets/runtime/ServerStorage.rbxmx",
+        "src/shared/ArtManifestRoadV2.lua"
+      ]
+    },
+    {
+      "id": "78991290770222",
+      "files": [
+        "assets/runtime/ReplicatedStorage.rbxmx",
+        "assets/runtime/ServerStorage.rbxmx",
+        "src/shared/ArtManifestCollectionV2.lua"
+      ]
+    },
+    {
+      "id": "79154068264479",
+      "files": [
+        "assets/runtime/ReplicatedStorage.rbxmx",
+        "assets/runtime/ServerStorage.rbxmx",
+        "src/shared/ArtManifestRelease.lua"
+      ]
+    },
+    {
+      "id": "79249341306960",
+      "files": [
+        "assets/runtime/ReplicatedStorage.rbxmx",
+        "assets/runtime/ServerStorage.rbxmx",
+        "src/shared/ArtManifestMonsters.lua"
+      ]
+    },
+    {
+      "id": "79280690738270",
+      "files": [
+        "assets/runtime/ReplicatedStorage.rbxmx",
+        "assets/runtime/ServerStorage.rbxmx",
+        "src/shared/ArtManifestV3.lua"
+      ]
+    },
+    {
+      "id": "79666024109099",
+      "files": [
+        "assets/runtime/ReplicatedStorage.rbxmx",
+        "assets/runtime/ServerStorage.rbxmx",
+        "src/shared/ArtManifestCollectionV2.lua"
+      ]
+    },
+    {
+      "id": "79684868505051",
+      "files": [
+        "assets/runtime/ReplicatedStorage.rbxmx",
+        "assets/runtime/ServerStorage.rbxmx",
+        "src/shared/ArtManifestRelease.lua"
+      ]
+    },
+    {
+      "id": "79685318085769",
+      "files": [
+        "assets/runtime/ReplicatedStorage.rbxmx",
+        "assets/runtime/ServerStorage.rbxmx",
+        "src/shared/ArtManifestRoadRoots.lua"
+      ]
+    },
+    {
+      "id": "79686418862121",
+      "files": [
+        "assets/runtime/ReplicatedStorage.rbxmx",
+        "assets/runtime/ServerStorage.rbxmx",
+        "src/shared/ArtManifestRelease.lua"
+      ]
+    },
+    {
+      "id": "79689013537045",
+      "files": [
+        "src/shared/ArtManifest.lua"
+      ]
+    },
+    {
+      "id": "79739168165418",
+      "files": [
+        "src/shared/ArtManifest.lua"
+      ]
+    },
+    {
+      "id": "79819100760177",
+      "files": [
+        "assets/runtime/ReplicatedStorage.rbxmx",
+        "assets/runtime/ServerStorage.rbxmx",
+        "src/shared/ArtManifestRelease.lua"
+      ]
+    },
+    {
+      "id": "79841030279892",
+      "files": [
+        "assets/runtime/ReplicatedStorage.rbxmx",
+        "assets/runtime/ServerStorage.rbxmx",
+        "src/shared/ArtManifestV3.lua"
+      ]
+    },
+    {
+      "id": "79851951806949",
+      "files": [
+        "assets/runtime/ReplicatedStorage.rbxmx",
+        "assets/runtime/ServerStorage.rbxmx",
+        "src/shared/ArtManifestRelease.lua"
+      ]
+    },
+    {
+      "id": "79871563531035",
+      "files": [
+        "src/shared/ArtManifest.lua"
+      ]
+    },
+    {
+      "id": "79899112171101",
+      "files": [
+        "src/shared/ArtManifest.lua"
+      ]
+    },
+    {
+      "id": "79983994435314",
+      "files": [
+        "assets/runtime/ReplicatedStorage.rbxmx",
+        "assets/runtime/ServerStorage.rbxmx",
+        "src/shared/ArtManifestV3.lua"
+      ]
+    },
+    {
+      "id": "80043217571928",
+      "files": [
+        "assets/runtime/ReplicatedStorage.rbxmx",
+        "assets/runtime/ServerStorage.rbxmx",
+        "src/shared/ArtManifestV3.lua"
+      ]
+    },
+    {
+      "id": "80045885700518",
+      "files": [
+        "src/shared/ArtManifest.lua"
+      ]
+    },
+    {
+      "id": "80075827963385",
+      "files": [
+        "assets/runtime/ReplicatedStorage.rbxmx",
+        "assets/runtime/ServerStorage.rbxmx",
+        "src/shared/ArtManifestMonsters.lua"
+      ]
+    },
+    {
+      "id": "80248207679832",
+      "files": [
+        "src/shared/ArtManifest.lua"
+      ]
+    },
+    {
+      "id": "80369498146061",
+      "files": [
+        "assets/runtime/ReplicatedStorage.rbxmx",
+        "assets/runtime/ServerStorage.rbxmx",
+        "src/shared/ArtManifestHorror.lua"
+      ]
+    },
+    {
+      "id": "80425255160755",
+      "files": [
+        "assets/runtime/ReplicatedStorage.rbxmx",
+        "assets/runtime/ServerStorage.rbxmx",
+        "src/shared/ArtManifestMonsters.lua"
+      ]
+    },
+    {
+      "id": "80428727429906",
+      "files": [
+        "src/shared/ArtManifest.lua"
+      ]
+    },
+    {
+      "id": "80435481530764",
+      "files": [
+        "src/shared/ArtManifest.lua"
+      ]
+    },
+    {
+      "id": "80442168929046",
+      "files": [
+        "src/shared/ArtManifest.lua"
+      ]
+    },
+    {
+      "id": "80545873706586",
+      "files": [
+        "assets/runtime/ServerStorage.rbxmx"
+      ]
+    },
+    {
+      "id": "80561817185425",
+      "files": [
+        "assets/runtime/ServerStorage.rbxmx",
+        "src/shared/Icons.lua"
+      ]
+    },
+    {
+      "id": "80572148458574",
+      "files": [
+        "assets/runtime/ReplicatedStorage.rbxmx",
+        "assets/runtime/ServerStorage.rbxmx",
+        "src/shared/ArtManifestRelease.lua"
+      ]
+    },
+    {
+      "id": "80574308286062",
+      "files": [
+        "assets/runtime/ReplicatedStorage.rbxmx",
+        "assets/runtime/ServerStorage.rbxmx",
+        "src/shared/ArtManifestRoadRoots.lua"
+      ]
+    },
+    {
+      "id": "80601619543906",
+      "files": [
+        "assets/runtime/ReplicatedStorage.rbxmx",
+        "assets/runtime/ServerStorage.rbxmx",
+        "src/shared/ArtManifestRelease.lua"
+      ]
+    },
+    {
+      "id": "80613822037645",
+      "files": [
+        "src/shared/ArtManifest.lua"
+      ]
+    },
+    {
+      "id": "80642960643035",
+      "files": [
+        "assets/runtime/ReplicatedStorage.rbxmx",
+        "assets/runtime/ServerStorage.rbxmx",
+        "src/shared/ArtManifestMonsters.lua"
+      ]
+    },
+    {
+      "id": "80647052462956",
+      "files": [
+        "assets/runtime/ReplicatedStorage.rbxmx",
+        "assets/runtime/ServerStorage.rbxmx",
+        "src/shared/ArtManifestRelease.lua"
+      ]
+    },
+    {
+      "id": "80735127234181",
+      "files": [
+        "assets/runtime/ReplicatedStorage.rbxmx",
+        "assets/runtime/ServerStorage.rbxmx",
+        "src/shared/ArtManifestV3.lua"
+      ]
+    },
+    {
+      "id": "80754613707565",
+      "files": [
+        "assets/runtime/ReplicatedStorage.rbxmx",
+        "assets/runtime/ServerStorage.rbxmx",
+        "src/shared/ArtManifestRelease.lua"
+      ]
+    },
+    {
+      "id": "80780451543062",
+      "files": [
+        "assets/runtime/ReplicatedStorage.rbxmx",
+        "assets/runtime/ServerStorage.rbxmx",
+        "src/shared/ArtManifestMonsters.lua"
+      ]
+    },
+    {
+      "id": "80788906235080",
+      "files": [
+        "assets/runtime/ServerStorage.rbxmx",
+        "src/shared/Icons.lua"
+      ]
+    },
+    {
+      "id": "80814090987409",
+      "files": [
+        "assets/runtime/ReplicatedStorage.rbxmx",
+        "assets/runtime/ServerStorage.rbxmx",
+        "src/shared/ArtManifestV3.lua"
+      ]
+    },
+    {
+      "id": "80837944384274",
+      "files": [
+        "assets/runtime/ReplicatedStorage.rbxmx",
+        "assets/runtime/ServerStorage.rbxmx",
+        "src/shared/ArtManifestMonsters.lua"
+      ]
+    },
+    {
+      "id": "81023424612236",
+      "files": [
+        "assets/runtime/ServerStorage.rbxmx"
+      ]
+    },
+    {
+      "id": "81026119235067",
+      "files": [
+        "assets/runtime/ReplicatedStorage.rbxmx",
+        "assets/runtime/ServerStorage.rbxmx",
+        "src/shared/ArtManifestV3.lua"
+      ]
+    },
+    {
+      "id": "81056237204090",
+      "files": [
+        "assets/runtime/ReplicatedStorage.rbxmx",
+        "assets/runtime/ServerStorage.rbxmx",
+        "src/shared/ArtManifestRelease.lua"
+      ]
+    },
+    {
+      "id": "81089474531977",
+      "files": [
+        "assets/runtime/ReplicatedStorage.rbxmx",
+        "assets/runtime/ServerStorage.rbxmx",
+        "src/shared/ArtManifestV3.lua"
+      ]
+    },
+    {
+      "id": "81151653849700",
+      "files": [
+        "assets/runtime/ReplicatedStorage.rbxmx",
+        "assets/runtime/ServerStorage.rbxmx",
+        "src/shared/ArtManifestHorror.lua"
+      ]
+    },
+    {
+      "id": "81179064475329",
+      "files": [
+        "assets/runtime/ReplicatedStorage.rbxmx",
+        "assets/runtime/ServerStorage.rbxmx",
+        "src/shared/ArtManifestV3.lua"
+      ]
+    },
+    {
+      "id": "81183018815960",
+      "files": [
+        "assets/runtime/ReplicatedStorage.rbxmx",
+        "assets/runtime/ServerStorage.rbxmx",
+        "src/shared/ArtManifestRelease.lua"
+      ]
+    },
+    {
+      "id": "81208081957712",
+      "files": [
+        "assets/runtime/ReplicatedStorage.rbxmx",
+        "assets/runtime/ServerStorage.rbxmx",
+        "src/shared/ArtManifestRelease.lua"
+      ]
+    },
+    {
+      "id": "81428228624792",
+      "files": [
+        "assets/runtime/ReplicatedStorage.rbxmx",
+        "assets/runtime/ServerStorage.rbxmx",
+        "src/shared/ArtManifestRelease.lua"
+      ]
+    },
+    {
+      "id": "81466280612249",
+      "files": [
+        "assets/runtime/ReplicatedStorage.rbxmx",
+        "assets/runtime/ServerStorage.rbxmx",
+        "src/shared/ArtManifestCollectionV2.lua"
+      ]
+    },
+    {
+      "id": "81490110004869",
+      "files": [
+        "assets/runtime/ReplicatedStorage.rbxmx",
+        "assets/runtime/ServerStorage.rbxmx",
+        "src/shared/ArtManifestV3.lua"
+      ]
+    },
+    {
+      "id": "81494464775256",
+      "files": [
+        "assets/runtime/ReplicatedStorage.rbxmx",
+        "assets/runtime/ServerStorage.rbxmx",
+        "src/shared/ArtManifestRelease.lua"
+      ]
+    },
+    {
+      "id": "81556139499480",
+      "files": [
+        "assets/runtime/ReplicatedStorage.rbxmx",
+        "assets/runtime/ServerStorage.rbxmx",
+        "src/shared/ArtManifestRelease.lua"
+      ]
+    },
+    {
+      "id": "81766010158622",
+      "files": [
+        "assets/runtime/ReplicatedStorage.rbxmx",
+        "assets/runtime/ServerStorage.rbxmx",
+        "src/shared/ArtManifestCollectionV2.lua"
+      ]
+    },
+    {
+      "id": "81800364606137",
+      "files": [
+        "assets/runtime/ReplicatedStorage.rbxmx",
+        "assets/runtime/ServerStorage.rbxmx",
+        "src/shared/ArtManifestRelease.lua"
+      ]
+    },
+    {
+      "id": "82025119785107",
+      "files": [
+        "assets/runtime/ReplicatedStorage.rbxmx",
+        "assets/runtime/ServerStorage.rbxmx",
+        "src/shared/ArtManifestCollectionV2.lua"
+      ]
+    },
+    {
+      "id": "82081785498324",
+      "files": [
+        "src/shared/ArtManifest.lua"
+      ]
+    },
+    {
+      "id": "82153051440606",
+      "files": [
+        "assets/runtime/ReplicatedStorage.rbxmx",
+        "assets/runtime/ServerStorage.rbxmx",
+        "src/shared/ArtManifestCollectionV2.lua"
+      ]
+    },
+    {
+      "id": "82157145762850",
+      "files": [
+        "src/shared/ArtManifest.lua"
+      ]
+    },
+    {
+      "id": "82378464239389",
+      "files": [
+        "src/shared/ArtManifest.lua"
+      ]
+    },
+    {
+      "id": "82452314499320",
+      "files": [
+        "assets/runtime/ReplicatedStorage.rbxmx",
+        "assets/runtime/ServerStorage.rbxmx",
+        "src/shared/ArtManifestV3.lua"
+      ]
+    },
+    {
+      "id": "82455102087672",
+      "files": [
+        "assets/runtime/ServerStorage.rbxmx"
+      ]
+    },
+    {
+      "id": "82483290110128",
+      "files": [
+        "assets/runtime/ReplicatedStorage.rbxmx",
+        "assets/runtime/ServerStorage.rbxmx",
+        "src/shared/ArtManifestV3.lua"
+      ]
+    },
+    {
+      "id": "82484584816075",
+      "files": [
+        "src/shared/ArtManifest.lua"
+      ]
+    },
+    {
+      "id": "82501475768215",
+      "files": [
+        "assets/runtime/ServerStorage.rbxmx"
+      ]
+    },
+    {
+      "id": "82523893251188",
+      "files": [
+        "src/shared/ArtManifest.lua"
+      ]
+    },
+    {
+      "id": "82552471941444",
+      "files": [
+        "assets/runtime/ReplicatedStorage.rbxmx",
+        "assets/runtime/ServerStorage.rbxmx",
+        "src/shared/ArtManifestRelease.lua"
+      ]
+    },
+    {
+      "id": "82582737125070",
+      "files": [
+        "assets/runtime/ReplicatedStorage.rbxmx",
+        "assets/runtime/ServerStorage.rbxmx",
+        "src/shared/ArtManifestRelease.lua"
+      ]
+    },
+    {
+      "id": "82599089280000",
+      "files": [
+        "assets/runtime/ReplicatedStorage.rbxmx",
+        "assets/runtime/ServerStorage.rbxmx",
+        "src/shared/ArtManifestMonsters.lua"
+      ]
+    },
+    {
+      "id": "82719073895954",
+      "files": [
+        "assets/runtime/ReplicatedStorage.rbxmx",
+        "assets/runtime/ServerStorage.rbxmx",
+        "src/shared/ArtManifestCollectionV2.lua"
+      ]
+    },
+    {
+      "id": "82745355681406",
+      "files": [
+        "assets/runtime/ServerStorage.rbxmx",
+        "src/shared/Icons.lua"
+      ]
+    },
+    {
+      "id": "82938699351232",
+      "files": [
+        "assets/runtime/ReplicatedStorage.rbxmx",
+        "assets/runtime/ServerStorage.rbxmx",
+        "src/shared/ArtManifestRelease.lua"
+      ]
+    },
+    {
+      "id": "83042927971592",
+      "files": [
+        "assets/runtime/ReplicatedStorage.rbxmx",
+        "assets/runtime/ServerStorage.rbxmx",
+        "src/shared/ArtManifestRelease.lua"
+      ]
+    },
+    {
+      "id": "83124506489397",
+      "files": [
+        "assets/runtime/ReplicatedStorage.rbxmx",
+        "assets/runtime/ServerStorage.rbxmx",
+        "src/shared/ArtManifestV3.lua"
+      ]
+    },
+    {
+      "id": "83163318703924",
+      "files": [
+        "assets/runtime/ReplicatedStorage.rbxmx",
+        "assets/runtime/ServerStorage.rbxmx",
+        "src/shared/ArtManifestRoadRoots.lua"
+      ]
+    },
+    {
+      "id": "83202754764728",
+      "files": [
+        "assets/runtime/ReplicatedStorage.rbxmx",
+        "assets/runtime/ServerStorage.rbxmx",
+        "src/shared/ArtManifestRelease.lua"
+      ]
+    },
+    {
+      "id": "83276469830029",
+      "files": [
+        "assets/runtime/ReplicatedStorage.rbxmx",
+        "assets/runtime/ServerStorage.rbxmx",
+        "src/shared/ArtManifestRelease.lua"
+      ]
+    },
+    {
+      "id": "83338692326077",
+      "files": [
+        "assets/runtime/ReplicatedStorage.rbxmx",
+        "assets/runtime/ServerStorage.rbxmx",
+        "src/shared/ArtManifestV3.lua"
+      ]
+    },
+    {
+      "id": "83375629321113",
+      "files": [
+        "assets/runtime/ReplicatedStorage.rbxmx",
+        "assets/runtime/ServerStorage.rbxmx",
+        "src/shared/ArtManifestRelease.lua"
+      ]
+    },
+    {
+      "id": "83410785244008",
+      "files": [
+        "src/shared/ArtManifest.lua"
+      ]
+    },
+    {
+      "id": "83447682867165",
+      "files": [
+        "assets/runtime/ReplicatedStorage.rbxmx",
+        "assets/runtime/ServerStorage.rbxmx",
+        "src/shared/ArtManifestRelease.lua"
+      ]
+    },
+    {
+      "id": "83542189105414",
+      "files": [
+        "assets/runtime/MaterialService.rbxmx"
+      ]
+    },
+    {
+      "id": "83553001867907",
+      "files": [
+        "assets/runtime/ReplicatedStorage.rbxmx",
+        "assets/runtime/ServerStorage.rbxmx",
+        "src/shared/ArtManifestRelease.lua"
+      ]
+    },
+    {
+      "id": "83672708588195",
+      "files": [
+        "assets/runtime/ReplicatedStorage.rbxmx",
+        "assets/runtime/ServerStorage.rbxmx",
+        "src/shared/ArtManifestV3.lua"
+      ]
+    },
+    {
+      "id": "83677353594865",
+      "files": [
+        "assets/runtime/ReplicatedStorage.rbxmx",
+        "assets/runtime/ServerStorage.rbxmx",
+        "src/shared/ArtManifestRelease.lua"
+      ]
+    },
+    {
+      "id": "83754183010981",
+      "files": [
+        "assets/runtime/ReplicatedStorage.rbxmx",
+        "assets/runtime/ServerStorage.rbxmx",
+        "src/shared/ArtManifestRelease.lua"
+      ]
+    },
+    {
+      "id": "83782057066275",
+      "files": [
+        "assets/runtime/ReplicatedStorage.rbxmx",
+        "assets/runtime/ServerStorage.rbxmx",
+        "src/shared/ArtManifestRelease.lua"
+      ]
+    },
+    {
+      "id": "83914850157609",
+      "files": [
+        "src/shared/ArtManifest.lua"
+      ]
+    },
+    {
+      "id": "83961185990115",
+      "files": [
+        "assets/runtime/ReplicatedStorage.rbxmx",
+        "assets/runtime/ServerStorage.rbxmx",
+        "src/shared/ArtManifestV3.lua"
+      ]
+    },
+    {
+      "id": "84245745651499",
+      "files": [
+        "assets/runtime/ServerStorage.rbxmx",
+        "src/shared/Icons.lua"
+      ]
+    },
+    {
+      "id": "84268538979256",
+      "files": [
+        "assets/runtime/ReplicatedStorage.rbxmx",
+        "assets/runtime/ServerStorage.rbxmx",
+        "src/shared/ArtManifestRelease.lua"
+      ]
+    },
+    {
+      "id": "84393230607238",
+      "files": [
+        "assets/runtime/ReplicatedStorage.rbxmx",
+        "assets/runtime/ServerStorage.rbxmx",
+        "src/shared/ArtManifestRelease.lua"
+      ]
+    },
+    {
+      "id": "84408640353333",
+      "files": [
+        "assets/runtime/ReplicatedStorage.rbxmx",
+        "assets/runtime/ServerStorage.rbxmx",
+        "src/shared/ArtManifestRoadV2.lua"
+      ]
+    },
+    {
+      "id": "84566373814356",
+      "files": [
+        "assets/runtime/ReplicatedStorage.rbxmx",
+        "assets/runtime/ServerStorage.rbxmx",
+        "src/shared/ArtManifestCollectionV2.lua"
+      ]
+    },
+    {
+      "id": "84662188157097",
+      "files": [
+        "assets/runtime/ReplicatedStorage.rbxmx",
+        "assets/runtime/ServerStorage.rbxmx",
+        "src/shared/ArtManifestRelease.lua"
+      ]
+    },
+    {
+      "id": "84806634920085",
+      "files": [
+        "src/shared/ArtManifest.lua"
+      ]
+    },
+    {
+      "id": "84874665300761",
+      "files": [
+        "src/shared/ArtManifest.lua"
+      ]
+    },
+    {
+      "id": "84951720635675",
+      "files": [
+        "assets/runtime/ReplicatedStorage.rbxmx",
+        "assets/runtime/ServerStorage.rbxmx",
+        "src/shared/ArtManifestRelease.lua"
+      ]
+    },
+    {
+      "id": "84957077288153",
+      "files": [
+        "src/shared/ArtManifest.lua"
+      ]
+    },
+    {
+      "id": "84972653701331",
+      "files": [
+        "assets/runtime/ReplicatedStorage.rbxmx",
+        "assets/runtime/ServerStorage.rbxmx",
+        "src/shared/ArtManifestV3.lua"
+      ]
+    },
+    {
+      "id": "84994023037866",
+      "files": [
+        "assets/runtime/ReplicatedStorage.rbxmx",
+        "assets/runtime/ServerStorage.rbxmx",
+        "src/shared/ArtManifestRelease.lua"
+      ]
+    },
+    {
+      "id": "85251866593425",
+      "files": [
+        "assets/runtime/ReplicatedStorage.rbxmx",
+        "assets/runtime/ServerStorage.rbxmx",
+        "src/shared/ArtManifestRelease.lua"
+      ]
+    },
+    {
+      "id": "85343554797589",
+      "files": [
+        "src/shared/ArtManifest.lua"
+      ]
+    },
+    {
+      "id": "85546577019811",
+      "files": [
+        "assets/runtime/ReplicatedStorage.rbxmx",
+        "assets/runtime/ServerStorage.rbxmx",
+        "src/shared/ArtManifestRelease.lua"
+      ]
+    },
+    {
+      "id": "85552645890920",
+      "files": [
+        "src/shared/ArtManifest.lua"
+      ]
+    },
+    {
+      "id": "85611959869380",
+      "files": [
+        "assets/runtime/ReplicatedStorage.rbxmx",
+        "assets/runtime/ServerStorage.rbxmx",
+        "src/shared/ArtManifestRoadRoots.lua"
+      ]
+    },
+    {
+      "id": "85635194793411",
+      "files": [
+        "src/shared/ArtManifest.lua"
+      ]
+    },
+    {
+      "id": "85734750019703",
+      "files": [
+        "assets/runtime/ReplicatedStorage.rbxmx",
+        "assets/runtime/ServerStorage.rbxmx",
+        "src/shared/ArtManifestRelease.lua"
+      ]
+    },
+    {
+      "id": "85994487200024",
+      "files": [
+        "assets/runtime/ReplicatedStorage.rbxmx",
+        "assets/runtime/ServerStorage.rbxmx",
+        "src/shared/ArtManifestRelease.lua"
+      ]
+    },
+    {
+      "id": "85995875185152",
+      "files": [
+        "src/shared/ArtManifest.lua"
+      ]
+    },
+    {
+      "id": "85997699284253",
+      "files": [
+        "assets/runtime/ReplicatedStorage.rbxmx",
+        "assets/runtime/ServerStorage.rbxmx",
+        "src/shared/ArtManifestV3.lua"
+      ]
+    },
+    {
+      "id": "86197663162249",
+      "files": [
+        "assets/runtime/ReplicatedStorage.rbxmx",
+        "assets/runtime/ServerStorage.rbxmx",
+        "src/shared/ArtManifestV3.lua"
+      ]
+    },
+    {
+      "id": "86303753896357",
+      "files": [
+        "assets/runtime/ReplicatedStorage.rbxmx",
+        "assets/runtime/ServerStorage.rbxmx",
+        "src/shared/ArtManifestRelease.lua"
+      ]
+    },
+    {
+      "id": "86394913786254",
+      "files": [
+        "assets/runtime/ReplicatedStorage.rbxmx",
+        "assets/runtime/ServerStorage.rbxmx",
+        "src/shared/ArtManifestRoadRoots.lua"
+      ]
+    },
+    {
+      "id": "86416013262866",
+      "files": [
+        "assets/runtime/ServerStorage.rbxmx"
+      ]
+    },
+    {
+      "id": "86509756058171",
+      "files": [
+        "assets/runtime/ReplicatedStorage.rbxmx",
+        "assets/runtime/ServerStorage.rbxmx",
+        "src/shared/ArtManifestMonsters.lua"
+      ]
+    },
+    {
+      "id": "86560557956897",
+      "files": [
+        "assets/runtime/ReplicatedStorage.rbxmx",
+        "assets/runtime/ServerStorage.rbxmx",
+        "src/shared/ArtManifestRelease.lua"
+      ]
+    },
+    {
+      "id": "87053340417060",
+      "files": [
+        "assets/runtime/ReplicatedStorage.rbxmx",
+        "assets/runtime/ServerStorage.rbxmx",
+        "src/shared/ArtManifestRoadV2.lua"
+      ]
+    },
+    {
+      "id": "87061389392763",
+      "files": [
+        "assets/runtime/ReplicatedStorage.rbxmx",
+        "assets/runtime/ServerStorage.rbxmx",
+        "src/shared/ArtManifestCollectionV2.lua"
+      ]
+    },
+    {
+      "id": "87083813823904",
+      "files": [
+        "assets/runtime/ReplicatedStorage.rbxmx",
+        "assets/runtime/ServerStorage.rbxmx",
+        "src/shared/ArtManifestRelease.lua"
+      ]
+    },
+    {
+      "id": "87257280074538",
+      "files": [
+        "assets/runtime/ReplicatedStorage.rbxmx",
+        "assets/runtime/ServerStorage.rbxmx",
+        "src/shared/ArtManifestMonsters.lua"
+      ]
+    },
+    {
+      "id": "87334689874658",
+      "files": [
+        "src/shared/ArtManifest.lua"
+      ]
+    },
+    {
+      "id": "87386032401488",
+      "files": [
+        "assets/runtime/ReplicatedStorage.rbxmx",
+        "assets/runtime/ServerStorage.rbxmx",
+        "src/shared/ArtManifestRelease.lua"
+      ]
+    },
+    {
+      "id": "87475933921185",
+      "files": [
+        "assets/runtime/ReplicatedStorage.rbxmx",
+        "assets/runtime/ServerStorage.rbxmx",
+        "src/shared/ArtManifestV3.lua"
+      ]
+    },
+    {
+      "id": "87666158908980",
+      "files": [
+        "assets/runtime/ServerStorage.rbxmx"
+      ]
+    },
+    {
+      "id": "87666670791311",
+      "files": [
+        "src/shared/ArtManifest.lua"
+      ]
+    },
+    {
+      "id": "87733180181864",
+      "files": [
+        "assets/runtime/ReplicatedStorage.rbxmx",
+        "assets/runtime/ServerStorage.rbxmx",
+        "src/shared/ArtManifestRelease.lua"
+      ]
+    },
+    {
+      "id": "87874753039762",
+      "files": [
+        "assets/runtime/ReplicatedStorage.rbxmx",
+        "assets/runtime/ServerStorage.rbxmx",
+        "src/shared/ArtManifestRelease.lua"
+      ]
+    },
+    {
+      "id": "87983128529032",
+      "files": [
+        "src/shared/ArtManifest.lua"
+      ]
+    },
+    {
+      "id": "88015673513050",
+      "files": [
+        "assets/runtime/ReplicatedStorage.rbxmx",
+        "assets/runtime/ServerStorage.rbxmx",
+        "src/shared/ArtManifestEnvironment.lua"
+      ]
+    },
+    {
+      "id": "88232068055505",
+      "files": [
+        "assets/runtime/ReplicatedStorage.rbxmx",
+        "assets/runtime/ServerStorage.rbxmx",
+        "src/shared/ArtManifestV3.lua"
+      ]
+    },
+    {
+      "id": "88265236844340",
+      "files": [
+        "assets/runtime/ReplicatedStorage.rbxmx",
+        "assets/runtime/ServerStorage.rbxmx",
+        "src/shared/ArtManifestV3.lua"
+      ]
+    },
+    {
+      "id": "88433350865926",
+      "files": [
+        "assets/runtime/ReplicatedStorage.rbxmx",
+        "assets/runtime/ServerStorage.rbxmx",
+        "src/shared/ArtManifestV3.lua"
+      ]
+    },
+    {
+      "id": "88482891603694",
+      "files": [
+        "assets/runtime/ServerStorage.rbxmx",
+        "src/shared/Icons.lua"
+      ]
+    },
+    {
+      "id": "88556290524074",
+      "files": [
+        "src/shared/ArtManifest.lua"
+      ]
+    },
+    {
+      "id": "88635742661842",
+      "files": [
+        "assets/runtime/ReplicatedStorage.rbxmx",
+        "assets/runtime/ServerStorage.rbxmx",
+        "src/shared/ArtManifestV3.lua"
+      ]
+    },
+    {
+      "id": "88719346106074",
+      "files": [
+        "assets/runtime/ReplicatedStorage.rbxmx",
+        "assets/runtime/ServerStorage.rbxmx",
+        "src/shared/ArtManifestV3.lua"
+      ]
+    },
+    {
+      "id": "88731579311620",
+      "files": [
+        "assets/runtime/ReplicatedStorage.rbxmx",
+        "assets/runtime/ServerStorage.rbxmx",
+        "src/shared/ArtManifestRelease.lua"
+      ]
+    },
+    {
+      "id": "88758369282854",
+      "files": [
+        "assets/runtime/ServerStorage.rbxmx"
+      ]
+    },
+    {
+      "id": "88827050014997",
+      "files": [
+        "src/shared/ArtManifest.lua"
+      ]
+    },
+    {
+      "id": "88831584112516",
+      "files": [
+        "assets/runtime/ReplicatedStorage.rbxmx",
+        "assets/runtime/ServerStorage.rbxmx",
+        "src/shared/ArtManifestRelease.lua"
+      ]
+    },
+    {
+      "id": "88847729919512",
+      "files": [
+        "assets/runtime/ServerStorage.rbxmx"
+      ]
+    },
+    {
+      "id": "88865306199874",
+      "files": [
+        "assets/runtime/ReplicatedStorage.rbxmx",
+        "assets/runtime/ServerStorage.rbxmx",
+        "src/shared/ArtManifestV3.lua"
+      ]
+    },
+    {
+      "id": "88879315961135",
+      "files": [
+        "assets/runtime/ReplicatedStorage.rbxmx",
+        "assets/runtime/ServerStorage.rbxmx",
+        "src/shared/ArtManifestV3.lua"
+      ]
+    },
+    {
+      "id": "89212520170263",
+      "files": [
+        "assets/runtime/ReplicatedStorage.rbxmx",
+        "assets/runtime/ServerStorage.rbxmx",
+        "src/shared/ArtManifestRelease.lua"
+      ]
+    },
+    {
+      "id": "89334025467879",
+      "files": [
+        "assets/runtime/ReplicatedStorage.rbxmx",
+        "assets/runtime/ServerStorage.rbxmx",
+        "src/shared/ArtManifestRelease.lua"
+      ]
+    },
+    {
+      "id": "89388740915904",
+      "files": [
+        "assets/runtime/ReplicatedStorage.rbxmx",
+        "assets/runtime/ServerStorage.rbxmx",
+        "src/shared/ArtManifestMonsters.lua"
+      ]
+    },
+    {
+      "id": "89499795207285",
+      "files": [
+        "assets/runtime/ServerStorage.rbxmx",
+        "src/shared/Icons.lua"
+      ]
+    },
+    {
+      "id": "89503671521042",
+      "files": [
+        "assets/runtime/ReplicatedStorage.rbxmx",
+        "assets/runtime/ServerStorage.rbxmx",
+        "src/shared/ArtManifestV3.lua"
+      ]
+    },
+    {
+      "id": "89593518513627",
+      "files": [
+        "src/shared/ArtManifest.lua"
+      ]
+    },
+    {
+      "id": "89660840903447",
+      "files": [
+        "assets/runtime/ReplicatedStorage.rbxmx",
+        "assets/runtime/ServerStorage.rbxmx",
+        "src/shared/ArtManifestRelease.lua"
+      ]
+    },
+    {
+      "id": "89663046819636",
+      "files": [
+        "assets/runtime/ReplicatedStorage.rbxmx",
+        "assets/runtime/ServerStorage.rbxmx",
+        "src/shared/ArtManifestRelease.lua"
+      ]
+    },
+    {
+      "id": "89728854365441",
+      "files": [
+        "assets/runtime/ServerStorage.rbxmx",
+        "src/shared/Icons.lua"
+      ]
+    },
+    {
+      "id": "89818697106419",
+      "files": [
+        "assets/runtime/ReplicatedStorage.rbxmx",
+        "assets/runtime/ServerStorage.rbxmx",
+        "src/shared/ArtManifestV3.lua"
+      ]
+    },
+    {
+      "id": "89831321804397",
+      "files": [
+        "assets/runtime/ReplicatedStorage.rbxmx",
+        "assets/runtime/ServerStorage.rbxmx",
+        "src/shared/ArtManifestRelease.lua"
+      ]
+    },
+    {
+      "id": "90014669530895",
+      "files": [
+        "assets/runtime/ReplicatedStorage.rbxmx",
+        "assets/runtime/ServerStorage.rbxmx",
+        "src/shared/ArtManifestRelease.lua"
+      ]
+    },
+    {
+      "id": "90187497622264",
+      "files": [
+        "assets/runtime/ReplicatedStorage.rbxmx",
+        "assets/runtime/ServerStorage.rbxmx",
+        "src/shared/ArtManifestV3.lua"
+      ]
+    },
+    {
+      "id": "90291616635168",
+      "files": [
+        "assets/runtime/ReplicatedStorage.rbxmx",
+        "assets/runtime/ServerStorage.rbxmx",
+        "src/shared/ArtManifestCollectionV2.lua"
+      ]
+    },
+    {
+      "id": "90400536644124",
+      "files": [
+        "assets/runtime/ReplicatedStorage.rbxmx",
+        "assets/runtime/ServerStorage.rbxmx",
+        "src/shared/ArtManifestCollectionV2.lua"
+      ]
+    },
+    {
+      "id": "90528420120617",
+      "files": [
+        "assets/runtime/ReplicatedStorage.rbxmx",
+        "assets/runtime/ServerStorage.rbxmx",
+        "src/shared/ArtManifestRoadRoots.lua"
+      ]
+    },
+    {
+      "id": "90584364504155",
+      "files": [
+        "src/shared/ArtManifest.lua"
+      ]
+    },
+    {
+      "id": "90774170244882",
+      "files": [
+        "assets/runtime/ReplicatedStorage.rbxmx",
+        "assets/runtime/ServerStorage.rbxmx",
+        "src/shared/ArtManifestHorror.lua"
+      ]
+    },
+    {
+      "id": "90976613570004",
+      "files": [
+        "assets/runtime/ReplicatedStorage.rbxmx",
+        "assets/runtime/ServerStorage.rbxmx",
+        "src/shared/ArtManifestMonsters.lua"
+      ]
+    },
+    {
+      "id": "90986756521382",
+      "files": [
+        "assets/runtime/ReplicatedStorage.rbxmx",
+        "assets/runtime/ServerStorage.rbxmx",
+        "src/shared/ArtManifestRelease.lua"
+      ]
+    },
+    {
+      "id": "91050316502783",
+      "files": [
+        "assets/runtime/ReplicatedStorage.rbxmx",
+        "assets/runtime/ServerStorage.rbxmx",
+        "src/shared/ArtManifestRelease.lua"
+      ]
+    },
+    {
+      "id": "91287033048053",
+      "files": [
+        "assets/runtime/ServerStorage.rbxmx"
+      ]
+    },
+    {
+      "id": "91419853530673",
+      "files": [
+        "src/shared/ArtManifest.lua"
+      ]
+    },
+    {
+      "id": "91500184205153",
+      "files": [
+        "assets/runtime/ReplicatedStorage.rbxmx",
+        "assets/runtime/ServerStorage.rbxmx",
+        "src/shared/ArtManifestRelease.lua"
+      ]
+    },
+    {
+      "id": "91509951463926",
+      "files": [
+        "assets/runtime/ReplicatedStorage.rbxmx",
+        "assets/runtime/ServerStorage.rbxmx",
+        "src/shared/ArtManifestRelease.lua"
+      ]
+    },
+    {
+      "id": "91532282280504",
+      "files": [
+        "src/shared/ArtManifest.lua"
+      ]
+    },
+    {
+      "id": "91596512669124",
+      "files": [
+        "assets/runtime/ReplicatedStorage.rbxmx",
+        "assets/runtime/ServerStorage.rbxmx",
+        "src/shared/ArtManifestRelease.lua"
+      ]
+    },
+    {
+      "id": "91665697947590",
+      "files": [
+        "assets/runtime/ReplicatedStorage.rbxmx",
+        "assets/runtime/ServerStorage.rbxmx",
+        "src/shared/ArtManifestRelease.lua"
+      ]
+    },
+    {
+      "id": "91728203973406",
+      "files": [
+        "assets/runtime/ReplicatedStorage.rbxmx",
+        "assets/runtime/ServerStorage.rbxmx",
+        "src/shared/ArtManifestV3.lua"
+      ]
+    },
+    {
+      "id": "91747421103791",
+      "files": [
+        "assets/runtime/ReplicatedStorage.rbxmx",
+        "assets/runtime/ServerStorage.rbxmx",
+        "src/shared/ArtManifestCollectionV2.lua"
+      ]
+    },
+    {
+      "id": "91991186456225",
+      "files": [
+        "assets/runtime/ServerStorage.rbxmx",
+        "src/shared/Icons.lua"
+      ]
+    },
+    {
+      "id": "92062793982966",
+      "files": [
+        "assets/runtime/ReplicatedStorage.rbxmx",
+        "assets/runtime/ServerStorage.rbxmx",
+        "src/shared/ArtManifestRelease.lua"
+      ]
+    },
+    {
+      "id": "92088500631703",
+      "files": [
+        "assets/runtime/ReplicatedStorage.rbxmx",
+        "assets/runtime/ServerStorage.rbxmx",
+        "src/shared/ArtManifestMonsters.lua"
+      ]
+    },
+    {
+      "id": "92158717779590",
+      "files": [
+        "assets/runtime/ReplicatedStorage.rbxmx",
+        "assets/runtime/ServerStorage.rbxmx",
+        "src/shared/ArtManifestMonsters.lua"
+      ]
+    },
+    {
+      "id": "92164247274691",
+      "files": [
+        "assets/runtime/ReplicatedStorage.rbxmx",
+        "assets/runtime/ServerStorage.rbxmx",
+        "src/shared/ArtManifestRelease.lua"
+      ]
+    },
+    {
+      "id": "92225158756356",
+      "files": [
+        "assets/runtime/ReplicatedStorage.rbxmx",
+        "assets/runtime/ServerStorage.rbxmx",
+        "src/shared/ArtManifestV3.lua"
+      ]
+    },
+    {
+      "id": "92244077792172",
+      "files": [
+        "assets/runtime/ReplicatedStorage.rbxmx",
+        "assets/runtime/ServerStorage.rbxmx",
+        "src/shared/ArtManifestMonsters.lua"
+      ]
+    },
+    {
+      "id": "92407003587843",
+      "files": [
+        "assets/runtime/ReplicatedStorage.rbxmx",
+        "assets/runtime/ServerStorage.rbxmx",
+        "src/shared/ArtManifestCollectionV2.lua"
+      ]
+    },
+    {
+      "id": "92423477121431",
+      "files": [
+        "assets/runtime/ReplicatedStorage.rbxmx",
+        "assets/runtime/ServerStorage.rbxmx",
+        "src/shared/ArtManifestHorror.lua"
+      ]
+    },
+    {
+      "id": "92437808642896",
+      "files": [
+        "assets/runtime/ServerStorage.rbxmx",
+        "src/shared/Icons.lua"
+      ]
+    },
+    {
+      "id": "92466666876439",
+      "files": [
+        "assets/runtime/ReplicatedStorage.rbxmx",
+        "assets/runtime/ServerStorage.rbxmx",
+        "src/shared/ArtManifestRelease.lua"
+      ]
+    },
+    {
+      "id": "92556885479057",
+      "files": [
+        "assets/runtime/ReplicatedStorage.rbxmx",
+        "assets/runtime/ServerStorage.rbxmx",
+        "src/shared/ArtManifestV3.lua"
+      ]
+    },
+    {
+      "id": "92643735596200",
+      "files": [
+        "src/shared/ArtManifest.lua"
+      ]
+    },
+    {
+      "id": "92649970579204",
+      "files": [
+        "assets/runtime/ReplicatedStorage.rbxmx",
+        "assets/runtime/ServerStorage.rbxmx",
+        "src/shared/ArtManifestRoadRoots.lua"
+      ]
+    },
+    {
+      "id": "92659136249561",
+      "files": [
+        "assets/runtime/ServerStorage.rbxmx",
+        "src/shared/Icons.lua"
+      ]
+    },
+    {
+      "id": "92823111846746",
+      "files": [
+        "assets/runtime/ServerStorage.rbxmx",
+        "src/shared/Icons.lua"
+      ]
+    },
+    {
+      "id": "92942278046112",
+      "files": [
+        "assets/runtime/ReplicatedStorage.rbxmx",
+        "assets/runtime/ServerStorage.rbxmx",
+        "src/shared/ArtManifestV3.lua"
+      ]
+    },
+    {
+      "id": "93087926360730",
+      "files": [
+        "assets/runtime/ReplicatedStorage.rbxmx",
+        "assets/runtime/ServerStorage.rbxmx",
+        "src/shared/ArtManifestRelease.lua"
+      ]
+    },
+    {
+      "id": "93175798628284",
+      "files": [
+        "assets/runtime/ReplicatedStorage.rbxmx",
+        "assets/runtime/ServerStorage.rbxmx",
+        "src/shared/ArtManifestV3.lua"
+      ]
+    },
+    {
+      "id": "93191360019661",
+      "files": [
+        "assets/runtime/ServerStorage.rbxmx",
+        "src/shared/Icons.lua"
+      ]
+    },
+    {
+      "id": "93192115635466",
+      "files": [
+        "assets/runtime/ReplicatedStorage.rbxmx",
+        "assets/runtime/ServerStorage.rbxmx",
+        "src/shared/ArtManifestRelease.lua"
+      ]
+    },
+    {
+      "id": "93240750279143",
+      "files": [
+        "assets/runtime/ReplicatedStorage.rbxmx",
+        "assets/runtime/ServerStorage.rbxmx",
+        "src/shared/ArtManifestCollectionV2.lua"
+      ]
+    },
+    {
+      "id": "93248573509792",
+      "files": [
+        "assets/runtime/ReplicatedStorage.rbxmx",
+        "assets/runtime/ServerStorage.rbxmx",
+        "src/shared/ArtManifestV3.lua"
+      ]
+    },
+    {
+      "id": "93300677814731",
+      "files": [
+        "src/shared/ArtManifest.lua"
+      ]
+    },
+    {
+      "id": "93548384694197",
+      "files": [
+        "assets/runtime/ReplicatedStorage.rbxmx",
+        "assets/runtime/ServerStorage.rbxmx",
+        "src/shared/ArtManifestRelease.lua"
+      ]
+    },
+    {
+      "id": "93587823289017",
+      "files": [
+        "assets/runtime/ReplicatedStorage.rbxmx",
+        "assets/runtime/ServerStorage.rbxmx",
+        "src/shared/ArtManifestCollectionV2.lua"
+      ]
+    },
+    {
+      "id": "93646434853716",
+      "files": [
+        "assets/runtime/ReplicatedStorage.rbxmx",
+        "assets/runtime/ServerStorage.rbxmx",
+        "src/shared/ArtManifestRelease.lua"
+      ]
+    },
+    {
+      "id": "93752971751487",
+      "files": [
+        "assets/runtime/ReplicatedStorage.rbxmx",
+        "assets/runtime/ServerStorage.rbxmx",
+        "src/shared/ArtManifestRelease.lua"
+      ]
+    },
+    {
+      "id": "93772625226124",
+      "files": [
+        "src/shared/ArtManifest.lua"
+      ]
+    },
+    {
+      "id": "93781966372894",
+      "files": [
+        "assets/runtime/ReplicatedStorage.rbxmx",
+        "assets/runtime/ServerStorage.rbxmx",
+        "src/shared/ArtManifestCollectionV2.lua"
+      ]
+    },
+    {
+      "id": "93840636790152",
+      "files": [
+        "assets/runtime/ReplicatedStorage.rbxmx",
+        "assets/runtime/ServerStorage.rbxmx",
+        "src/shared/ArtManifestHorror.lua"
+      ]
+    },
+    {
+      "id": "93973847964340",
+      "files": [
+        "assets/runtime/ReplicatedStorage.rbxmx",
+        "assets/runtime/ServerStorage.rbxmx",
+        "src/shared/ArtManifestRelease.lua"
+      ]
+    },
+    {
+      "id": "94107000800875",
+      "files": [
+        "assets/runtime/ReplicatedStorage.rbxmx",
+        "assets/runtime/ServerStorage.rbxmx",
+        "src/shared/ArtManifestV3.lua"
+      ]
+    },
+    {
+      "id": "94166976784892",
+      "files": [
+        "assets/runtime/ReplicatedStorage.rbxmx",
+        "assets/runtime/ServerStorage.rbxmx",
+        "src/shared/ArtManifestRelease.lua"
+      ]
+    },
+    {
+      "id": "94170543174350",
+      "files": [
+        "assets/runtime/ReplicatedStorage.rbxmx",
+        "assets/runtime/ServerStorage.rbxmx",
+        "src/shared/ArtManifestV3.lua"
+      ]
+    },
+    {
+      "id": "94172435926876",
+      "files": [
+        "src/shared/ArtManifest.lua"
+      ]
+    },
+    {
+      "id": "94373668537349",
+      "files": [
+        "src/shared/ArtManifest.lua"
+      ]
+    },
+    {
+      "id": "94400873944694",
+      "files": [
+        "assets/runtime/ServerStorage.rbxmx",
+        "src/shared/Icons.lua"
+      ]
+    },
+    {
+      "id": "94515508108544",
+      "files": [
+        "src/shared/ArtManifest.lua"
+      ]
+    },
+    {
+      "id": "94573698382058",
+      "files": [
+        "assets/runtime/ReplicatedStorage.rbxmx",
+        "assets/runtime/ServerStorage.rbxmx",
+        "src/shared/ArtManifestRelease.lua"
+      ]
+    },
+    {
+      "id": "94580936555225",
+      "files": [
+        "assets/runtime/ReplicatedStorage.rbxmx",
+        "assets/runtime/ServerStorage.rbxmx",
+        "src/shared/ArtManifestV3.lua"
+      ]
+    },
+    {
+      "id": "94584831145717",
+      "files": [
+        "assets/runtime/ReplicatedStorage.rbxmx",
+        "assets/runtime/ServerStorage.rbxmx",
+        "src/shared/ArtManifestV3.lua"
+      ]
+    },
+    {
+      "id": "94694437556009",
+      "files": [
+        "assets/runtime/MaterialService.rbxmx"
+      ]
+    },
+    {
+      "id": "94714361744916",
+      "files": [
+        "assets/runtime/ReplicatedStorage.rbxmx",
+        "assets/runtime/ServerStorage.rbxmx",
+        "src/shared/ArtManifestRelease.lua"
+      ]
+    },
+    {
+      "id": "94720936237915",
+      "files": [
+        "assets/runtime/ReplicatedStorage.rbxmx",
+        "assets/runtime/ServerStorage.rbxmx",
+        "src/shared/ArtManifestRoadRoots.lua"
+      ]
+    },
+    {
+      "id": "94731656990408",
+      "files": [
+        "src/shared/ArtManifest.lua"
+      ]
+    },
+    {
+      "id": "94788247439002",
+      "files": [
+        "src/shared/ArtManifest.lua"
+      ]
+    },
+    {
+      "id": "94805450486534",
+      "files": [
+        "assets/runtime/ReplicatedStorage.rbxmx",
+        "assets/runtime/ServerStorage.rbxmx",
+        "src/shared/ArtManifestMonsters.lua"
+      ]
+    },
+    {
+      "id": "94842471728790",
+      "files": [
+        "src/shared/ArtManifest.lua"
+      ]
+    },
+    {
+      "id": "94902157461641",
+      "files": [
+        "assets/runtime/ReplicatedStorage.rbxmx",
+        "assets/runtime/ServerStorage.rbxmx",
+        "src/shared/ArtManifestRelease.lua"
+      ]
+    },
+    {
+      "id": "95296210989635",
+      "files": [
+        "assets/runtime/ServerStorage.rbxmx",
+        "src/shared/Icons.lua"
+      ]
+    },
+    {
+      "id": "95434786289351",
+      "files": [
+        "src/shared/ArtManifest.lua"
+      ]
+    },
+    {
+      "id": "95668231262734",
+      "files": [
+        "assets/runtime/ReplicatedStorage.rbxmx",
+        "assets/runtime/ServerStorage.rbxmx",
+        "src/shared/ArtManifestV3.lua"
+      ]
+    },
+    {
+      "id": "95808393309785",
+      "files": [
+        "assets/runtime/ReplicatedStorage.rbxmx",
+        "assets/runtime/ServerStorage.rbxmx",
+        "src/shared/ArtManifestRelease.lua"
+      ]
+    },
+    {
+      "id": "95821468428281",
+      "files": [
+        "src/shared/ArtManifest.lua"
+      ]
+    },
+    {
+      "id": "95932229192143",
+      "files": [
+        "assets/runtime/ReplicatedStorage.rbxmx",
+        "assets/runtime/ServerStorage.rbxmx",
+        "src/shared/ArtManifestRelease.lua"
+      ]
+    },
+    {
+      "id": "95933286552504",
+      "files": [
+        "assets/runtime/ReplicatedStorage.rbxmx",
+        "assets/runtime/ServerStorage.rbxmx",
+        "src/shared/ArtManifestRelease.lua"
+      ]
+    },
+    {
+      "id": "96026026216411",
+      "files": [
+        "assets/runtime/ReplicatedStorage.rbxmx",
+        "assets/runtime/ServerStorage.rbxmx",
+        "src/shared/ArtManifestCollectionV2.lua"
+      ]
+    },
+    {
+      "id": "96119940947027",
+      "files": [
+        "assets/runtime/ReplicatedStorage.rbxmx",
+        "assets/runtime/ServerStorage.rbxmx",
+        "src/shared/ArtManifestHorror.lua"
+      ]
+    },
+    {
+      "id": "96190471045024",
+      "files": [
+        "assets/runtime/ServerStorage.rbxmx",
+        "src/shared/Icons.lua"
+      ]
+    },
+    {
+      "id": "96238000632954",
+      "files": [
+        "assets/runtime/ReplicatedStorage.rbxmx",
+        "assets/runtime/ServerStorage.rbxmx",
+        "src/shared/ArtManifestRelease.lua"
+      ]
+    },
+    {
+      "id": "96244191645250",
+      "files": [
+        "assets/runtime/ReplicatedStorage.rbxmx",
+        "assets/runtime/ServerStorage.rbxmx",
+        "src/shared/ArtManifestRelease.lua"
+      ]
+    },
+    {
+      "id": "96302257070655",
+      "files": [
+        "src/shared/ArtManifest.lua"
+      ]
+    },
+    {
+      "id": "96356231073309",
+      "files": [
+        "assets/runtime/ReplicatedStorage.rbxmx",
+        "assets/runtime/ServerStorage.rbxmx",
+        "src/shared/ArtManifestRelease.lua"
+      ]
+    },
+    {
+      "id": "96523996820965",
+      "files": [
+        "assets/runtime/ReplicatedStorage.rbxmx",
+        "assets/runtime/ServerStorage.rbxmx",
+        "src/shared/ArtManifestRelease.lua"
+      ]
+    },
+    {
+      "id": "96802993750679",
+      "files": [
+        "assets/runtime/ReplicatedStorage.rbxmx",
+        "assets/runtime/ServerStorage.rbxmx",
+        "src/shared/ArtManifestRelease.lua"
+      ]
+    },
+    {
+      "id": "96973019257495",
+      "files": [
+        "assets/runtime/ServerStorage.rbxmx",
+        "src/shared/Icons.lua"
+      ]
+    },
+    {
+      "id": "97148424438875",
+      "files": [
+        "assets/runtime/ServerStorage.rbxmx"
+      ]
+    },
+    {
+      "id": "97256039142623",
+      "files": [
+        "assets/runtime/ReplicatedStorage.rbxmx",
+        "assets/runtime/ServerStorage.rbxmx",
+        "src/shared/ArtManifestCollectionV2.lua"
+      ]
+    },
+    {
+      "id": "97327264021431",
+      "files": [
+        "assets/runtime/ReplicatedStorage.rbxmx",
+        "assets/runtime/ServerStorage.rbxmx",
+        "src/shared/ArtManifestHorror.lua"
+      ]
+    },
+    {
+      "id": "97351466171452",
+      "files": [
+        "assets/runtime/ReplicatedStorage.rbxmx",
+        "assets/runtime/ServerStorage.rbxmx",
+        "src/shared/ArtManifestMonsters.lua"
+      ]
+    },
+    {
+      "id": "97363847740938",
+      "files": [
+        "assets/runtime/ReplicatedStorage.rbxmx",
+        "assets/runtime/ServerStorage.rbxmx",
+        "src/shared/ArtManifestRoadRoots.lua"
+      ]
+    },
+    {
+      "id": "97433488358793",
+      "files": [
+        "assets/runtime/ReplicatedStorage.rbxmx",
+        "assets/runtime/ServerStorage.rbxmx",
+        "src/shared/ArtManifestV3.lua"
+      ]
+    },
+    {
+      "id": "97483070636883",
+      "files": [
+        "assets/runtime/ServerStorage.rbxmx"
+      ]
+    },
+    {
+      "id": "97547882575440",
+      "files": [
+        "src/shared/ArtManifest.lua"
+      ]
+    },
+    {
+      "id": "97596016722542",
+      "files": [
+        "assets/runtime/ReplicatedStorage.rbxmx",
+        "assets/runtime/ServerStorage.rbxmx",
+        "src/shared/ArtManifestV3.lua"
+      ]
+    },
+    {
+      "id": "97641817339357",
+      "files": [
+        "assets/runtime/ServerStorage.rbxmx"
+      ]
+    },
+    {
+      "id": "97689258237982",
+      "files": [
+        "assets/runtime/ReplicatedStorage.rbxmx",
+        "assets/runtime/ServerStorage.rbxmx",
+        "src/shared/ArtManifestV3.lua"
+      ]
+    },
+    {
+      "id": "97739532541743",
+      "files": [
+        "assets/runtime/ServerStorage.rbxmx",
+        "src/shared/Icons.lua"
+      ]
+    },
+    {
+      "id": "97798837086402",
+      "files": [
+        "assets/runtime/ReplicatedStorage.rbxmx",
+        "assets/runtime/ServerStorage.rbxmx",
+        "src/shared/ArtManifestV3.lua"
+      ]
+    },
+    {
+      "id": "97970458438045",
+      "files": [
+        "assets/runtime/ReplicatedStorage.rbxmx",
+        "assets/runtime/ServerStorage.rbxmx",
+        "src/shared/ArtManifestCollectionV2.lua"
+      ]
+    },
+    {
+      "id": "97991747287707",
+      "files": [
+        "src/shared/ArtManifest.lua"
+      ]
+    },
+    {
+      "id": "98053118793991",
+      "files": [
+        "assets/runtime/ReplicatedStorage.rbxmx",
+        "assets/runtime/ServerStorage.rbxmx",
+        "src/shared/ArtManifestV3.lua"
+      ]
+    },
+    {
+      "id": "98055786445800",
+      "files": [
+        "assets/runtime/ReplicatedStorage.rbxmx",
+        "assets/runtime/ServerStorage.rbxmx",
+        "src/shared/ArtManifestV3.lua"
+      ]
+    },
+    {
+      "id": "98157220639997",
+      "files": [
+        "assets/runtime/ReplicatedStorage.rbxmx",
+        "assets/runtime/ServerStorage.rbxmx",
+        "src/shared/ArtManifestRelease.lua"
+      ]
+    },
+    {
+      "id": "98176461846622",
+      "files": [
+        "assets/runtime/ReplicatedStorage.rbxmx",
+        "assets/runtime/ServerStorage.rbxmx",
+        "src/shared/ArtManifestRelease.lua"
+      ]
+    },
+    {
+      "id": "98220498166514",
+      "files": [
+        "src/shared/ArtManifest.lua"
+      ]
+    },
+    {
+      "id": "98274028410125",
+      "files": [
+        "assets/runtime/ReplicatedStorage.rbxmx",
+        "assets/runtime/ServerStorage.rbxmx",
+        "src/shared/ArtManifestRelease.lua"
+      ]
+    },
+    {
+      "id": "98508206846531",
+      "files": [
+        "assets/runtime/ReplicatedStorage.rbxmx",
+        "assets/runtime/ServerStorage.rbxmx",
+        "src/shared/ArtManifestRelease.lua"
+      ]
+    },
+    {
+      "id": "98601275870645",
+      "files": [
+        "assets/runtime/ReplicatedStorage.rbxmx",
+        "assets/runtime/ServerStorage.rbxmx",
+        "src/shared/ArtManifestRelease.lua"
+      ]
+    },
+    {
+      "id": "98606195797074",
+      "files": [
+        "assets/runtime/ReplicatedStorage.rbxmx",
+        "assets/runtime/ServerStorage.rbxmx",
+        "src/shared/ArtManifestV3.lua"
+      ]
+    },
+    {
+      "id": "98654666745779",
+      "files": [
+        "assets/runtime/ReplicatedStorage.rbxmx",
+        "assets/runtime/ServerStorage.rbxmx",
+        "src/shared/ArtManifestRelease.lua"
+      ]
+    },
+    {
+      "id": "98663640278463",
+      "files": [
+        "src/shared/ArtManifest.lua"
+      ]
+    },
+    {
+      "id": "98673955199828",
+      "files": [
+        "src/shared/ArtManifest.lua"
+      ]
+    },
+    {
+      "id": "98706383115121",
+      "files": [
+        "assets/runtime/ReplicatedStorage.rbxmx",
+        "assets/runtime/ServerStorage.rbxmx",
+        "src/shared/ArtManifestMonsters.lua"
+      ]
+    },
+    {
+      "id": "98729361760915",
+      "files": [
+        "assets/runtime/ReplicatedStorage.rbxmx",
+        "assets/runtime/ServerStorage.rbxmx",
+        "src/shared/ArtManifestV3.lua"
+      ]
+    },
+    {
+      "id": "98794599299354",
+      "files": [
+        "assets/runtime/ReplicatedStorage.rbxmx",
+        "assets/runtime/ServerStorage.rbxmx",
+        "src/shared/ArtManifestRoadRoots.lua"
+      ]
+    },
+    {
+      "id": "98804595872254",
+      "files": [
+        "assets/runtime/ReplicatedStorage.rbxmx",
+        "assets/runtime/ServerStorage.rbxmx",
+        "src/shared/ArtManifestRelease.lua"
+      ]
+    },
+    {
+      "id": "98839987876233",
+      "files": [
+        "src/shared/ArtManifest.lua"
+      ]
+    },
+    {
+      "id": "98897047190835",
+      "files": [
+        "assets/runtime/ReplicatedStorage.rbxmx",
+        "assets/runtime/ServerStorage.rbxmx",
+        "src/shared/ArtManifestHorror.lua"
+      ]
+    },
+    {
+      "id": "99214842452555",
+      "files": [
+        "assets/runtime/ReplicatedStorage.rbxmx",
+        "assets/runtime/ServerStorage.rbxmx",
+        "src/shared/ArtManifestV3.lua"
+      ]
+    },
+    {
+      "id": "99281035434497",
+      "files": [
+        "assets/runtime/ReplicatedStorage.rbxmx",
+        "assets/runtime/ServerStorage.rbxmx",
+        "src/shared/ArtManifestRelease.lua"
+      ]
+    },
+    {
+      "id": "99319892493771",
+      "files": [
+        "assets/runtime/ReplicatedStorage.rbxmx",
+        "assets/runtime/ServerStorage.rbxmx",
+        "src/shared/ArtManifestHorror.lua"
+      ]
+    },
+    {
+      "id": "99564639388090",
+      "files": [
+        "assets/runtime/ReplicatedStorage.rbxmx",
+        "assets/runtime/ServerStorage.rbxmx",
+        "src/shared/ArtManifestV3.lua"
+      ]
+    },
+    {
+      "id": "99793727381166",
+      "files": [
+        "assets/runtime/ReplicatedStorage.rbxmx",
+        "assets/runtime/ServerStorage.rbxmx",
+        "src/shared/ArtManifestV3.lua"
+      ]
+    },
+    {
+      "id": "99832237742707",
+      "files": [
+        "assets/runtime/ReplicatedStorage.rbxmx",
+        "assets/runtime/ServerStorage.rbxmx",
+        "src/shared/ArtManifestV3.lua"
+      ]
+    },
+    {
+      "id": "99878597396172",
+      "files": [
+        "src/shared/ArtManifest.lua"
+      ]
+    },
+    {
+      "id": "99964598208324",
+      "files": [
+        "src/shared/ArtManifest.lua"
+      ]
+    },
+    {
+      "id": "99967028037427",
+      "files": [
+        "assets/runtime/ReplicatedStorage.rbxmx",
+        "assets/runtime/ServerStorage.rbxmx",
+        "src/shared/ArtManifestMonsters.lua"
+      ]
+    },
+    {
+      "id": "100167695046295",
+      "files": [
+        "assets/runtime/ReplicatedStorage.rbxmx",
+        "assets/runtime/ServerStorage.rbxmx",
+        "src/shared/ArtManifestEnvironment.lua"
+      ]
+    },
+    {
+      "id": "100410132852755",
+      "files": [
+        "assets/runtime/ServerStorage.rbxmx",
+        "src/shared/Icons.lua"
+      ]
+    },
+    {
+      "id": "100456011622280",
+      "files": [
+        "assets/runtime/ReplicatedStorage.rbxmx",
+        "assets/runtime/ServerStorage.rbxmx",
+        "src/shared/ArtManifestRelease.lua"
+      ]
+    },
+    {
+      "id": "100601835739040",
+      "files": [
+        "assets/runtime/ReplicatedStorage.rbxmx",
+        "assets/runtime/ServerStorage.rbxmx",
+        "src/shared/ArtManifestRelease.lua"
+      ]
+    },
+    {
+      "id": "100676608811546",
+      "files": [
+        "assets/runtime/ReplicatedStorage.rbxmx",
+        "assets/runtime/ServerStorage.rbxmx",
+        "src/shared/ArtManifestRelease.lua"
+      ]
+    },
+    {
+      "id": "100803000806619",
+      "files": [
+        "assets/runtime/ReplicatedStorage.rbxmx",
+        "assets/runtime/ServerStorage.rbxmx",
+        "src/shared/ArtManifestRelease.lua"
+      ]
+    },
+    {
+      "id": "100815832919821",
+      "files": [
+        "assets/runtime/ReplicatedStorage.rbxmx",
+        "assets/runtime/ServerStorage.rbxmx",
+        "src/shared/ArtManifestRelease.lua"
+      ]
+    },
+    {
+      "id": "100825517280832",
+      "files": [
+        "src/shared/ArtManifest.lua"
+      ]
+    },
+    {
+      "id": "101012582899298",
+      "files": [
+        "assets/runtime/ReplicatedStorage.rbxmx",
+        "assets/runtime/ServerStorage.rbxmx",
+        "src/shared/ArtManifestRelease.lua"
+      ]
+    },
+    {
+      "id": "101085668311147",
+      "files": [
+        "assets/runtime/ReplicatedStorage.rbxmx",
+        "assets/runtime/ServerStorage.rbxmx",
+        "src/shared/ArtManifestRoadRoots.lua"
+      ]
+    },
+    {
+      "id": "101241030983943",
+      "files": [
+        "assets/runtime/ReplicatedStorage.rbxmx",
+        "assets/runtime/ServerStorage.rbxmx",
+        "src/shared/ArtManifestCollectionV2.lua"
+      ]
+    },
+    {
+      "id": "101284939965565",
+      "files": [
+        "assets/runtime/ReplicatedStorage.rbxmx",
+        "assets/runtime/ServerStorage.rbxmx",
+        "src/shared/ArtManifestCollectionV2.lua"
+      ]
+    },
+    {
+      "id": "101336034244453",
+      "files": [
+        "assets/runtime/ReplicatedStorage.rbxmx",
+        "assets/runtime/ServerStorage.rbxmx",
+        "src/shared/ArtManifestCollectionV2.lua"
+      ]
+    },
+    {
+      "id": "101350868012687",
+      "files": [
+        "assets/runtime/ServerStorage.rbxmx"
+      ]
+    },
+    {
+      "id": "101397092322889",
+      "files": [
+        "assets/runtime/ReplicatedStorage.rbxmx",
+        "assets/runtime/ServerStorage.rbxmx",
+        "src/shared/ArtManifestV3.lua"
+      ]
+    },
+    {
+      "id": "101491109871584",
+      "files": [
+        "assets/runtime/ServerStorage.rbxmx",
+        "src/shared/Icons.lua"
+      ]
+    },
+    {
+      "id": "101548980986361",
+      "files": [
+        "assets/runtime/ServerStorage.rbxmx",
+        "src/shared/Icons.lua"
+      ]
+    },
+    {
+      "id": "101599909352361",
+      "files": [
+        "src/shared/ArtManifest.lua"
+      ]
+    },
+    {
+      "id": "101643789565311",
+      "files": [
+        "src/shared/ArtManifest.lua"
+      ]
+    },
+    {
+      "id": "101689659084532",
+      "files": [
+        "assets/runtime/ReplicatedStorage.rbxmx",
+        "assets/runtime/ServerStorage.rbxmx",
+        "src/shared/ArtManifestRelease.lua"
+      ]
+    },
+    {
+      "id": "101741990329221",
+      "files": [
+        "assets/runtime/ReplicatedStorage.rbxmx",
+        "assets/runtime/ServerStorage.rbxmx",
+        "src/shared/ArtManifestRelease.lua"
+      ]
+    },
+    {
+      "id": "101970263472798",
+      "files": [
+        "assets/runtime/ReplicatedStorage.rbxmx",
+        "assets/runtime/ServerStorage.rbxmx",
+        "src/shared/ArtManifestRelease.lua"
+      ]
+    },
+    {
+      "id": "102011884091624",
+      "files": [
+        "src/shared/ArtManifest.lua"
+      ]
+    },
+    {
+      "id": "102087359111421",
+      "files": [
+        "assets/runtime/ReplicatedStorage.rbxmx",
+        "assets/runtime/ServerStorage.rbxmx",
+        "src/shared/ArtManifestRelease.lua"
+      ]
+    },
+    {
+      "id": "102097466253881",
+      "files": [
+        "src/shared/ArtManifest.lua"
+      ]
+    },
+    {
+      "id": "102351076000364",
+      "files": [
+        "assets/runtime/ReplicatedStorage.rbxmx",
+        "assets/runtime/ServerStorage.rbxmx",
+        "src/shared/ArtManifestRelease.lua"
+      ]
+    },
+    {
+      "id": "102429126853591",
+      "files": [
+        "assets/runtime/ReplicatedStorage.rbxmx",
+        "assets/runtime/ServerStorage.rbxmx",
+        "src/shared/ArtManifestEnvironment.lua"
+      ]
+    },
+    {
+      "id": "102473185993484",
+      "files": [
+        "assets/runtime/ReplicatedStorage.rbxmx",
+        "assets/runtime/ServerStorage.rbxmx",
+        "src/shared/ArtManifestMonsters.lua"
+      ]
+    },
+    {
+      "id": "102650417719945",
+      "files": [
+        "assets/runtime/ReplicatedStorage.rbxmx",
+        "assets/runtime/ServerStorage.rbxmx",
+        "src/shared/ArtManifestRelease.lua"
+      ]
+    },
+    {
+      "id": "102698494896227",
+      "files": [
+        "src/shared/ArtManifest.lua"
+      ]
+    },
+    {
+      "id": "102892973174422",
+      "files": [
+        "assets/runtime/ReplicatedStorage.rbxmx",
+        "assets/runtime/ServerStorage.rbxmx",
+        "src/shared/ArtManifestRelease.lua"
+      ]
+    },
+    {
+      "id": "103057051791326",
+      "files": [
+        "assets/runtime/ReplicatedStorage.rbxmx",
+        "assets/runtime/ServerStorage.rbxmx",
+        "src/shared/ArtManifestRelease.lua"
+      ]
+    },
+    {
+      "id": "103106530537673",
+      "files": [
+        "assets/runtime/ReplicatedStorage.rbxmx",
+        "assets/runtime/ServerStorage.rbxmx",
+        "src/shared/ArtManifestRoadRoots.lua"
+      ]
+    },
+    {
+      "id": "103109023473729",
+      "files": [
+        "assets/runtime/ReplicatedStorage.rbxmx",
+        "assets/runtime/ServerStorage.rbxmx",
+        "src/shared/ArtManifestRelease.lua"
+      ]
+    },
+    {
+      "id": "103189289220820",
+      "files": [
+        "assets/runtime/ReplicatedStorage.rbxmx",
+        "assets/runtime/ServerStorage.rbxmx",
+        "src/shared/ArtManifestRelease.lua"
+      ]
+    },
+    {
+      "id": "103226229126165",
+      "files": [
+        "assets/runtime/ServerStorage.rbxmx",
+        "src/shared/Icons.lua"
+      ]
+    },
+    {
+      "id": "103239808064540",
+      "files": [
+        "assets/runtime/ReplicatedStorage.rbxmx",
+        "assets/runtime/ServerStorage.rbxmx",
+        "src/shared/ArtManifestV3.lua"
+      ]
+    },
+    {
+      "id": "103260939607110",
+      "files": [
+        "src/shared/ArtManifest.lua"
+      ]
+    },
+    {
+      "id": "103482703548399",
+      "files": [
+        "assets/runtime/ReplicatedStorage.rbxmx",
+        "assets/runtime/ServerStorage.rbxmx",
+        "src/shared/ArtManifestCollectionV2.lua"
+      ]
+    },
+    {
+      "id": "103718414717574",
+      "files": [
+        "src/shared/ArtManifest.lua"
+      ]
+    },
+    {
+      "id": "103826613053179",
+      "files": [
+        "assets/runtime/ReplicatedStorage.rbxmx",
+        "assets/runtime/ServerStorage.rbxmx",
+        "src/shared/ArtManifestMonsters.lua"
+      ]
+    },
+    {
+      "id": "104042946762014",
+      "files": [
+        "src/shared/ArtManifest.lua"
+      ]
+    },
+    {
+      "id": "104141242950933",
+      "files": [
+        "assets/runtime/ReplicatedStorage.rbxmx",
+        "assets/runtime/ServerStorage.rbxmx",
+        "src/shared/ArtManifestCollectionV2.lua"
+      ]
+    },
+    {
+      "id": "104380891478765",
+      "files": [
+        "assets/runtime/ReplicatedStorage.rbxmx",
+        "assets/runtime/ServerStorage.rbxmx",
+        "src/shared/ArtManifestRelease.lua"
+      ]
+    },
+    {
+      "id": "104440269626523",
+      "files": [
+        "assets/runtime/ServerStorage.rbxmx",
+        "src/shared/Icons.lua"
+      ]
+    },
+    {
+      "id": "104590236192853",
+      "files": [
+        "assets/runtime/ReplicatedStorage.rbxmx",
+        "assets/runtime/ServerStorage.rbxmx",
+        "src/shared/ArtManifestV3.lua"
+      ]
+    },
+    {
+      "id": "104656489878103",
+      "files": [
+        "assets/runtime/ReplicatedStorage.rbxmx",
+        "assets/runtime/ServerStorage.rbxmx",
+        "src/shared/ArtManifestRoadV2.lua"
+      ]
+    },
+    {
+      "id": "104673111918812",
+      "files": [
+        "assets/runtime/ReplicatedStorage.rbxmx",
+        "assets/runtime/ServerStorage.rbxmx",
+        "src/shared/ArtManifestEnvironment.lua"
+      ]
+    },
+    {
+      "id": "104691405374561",
+      "files": [
+        "assets/runtime/ReplicatedStorage.rbxmx",
+        "assets/runtime/ServerStorage.rbxmx",
+        "src/shared/ArtManifestCollectionV2.lua"
+      ]
+    },
+    {
+      "id": "104726009534287",
+      "files": [
+        "assets/runtime/ReplicatedStorage.rbxmx",
+        "assets/runtime/ServerStorage.rbxmx",
+        "src/shared/ArtManifestRelease.lua"
+      ]
+    },
+    {
+      "id": "104962194268811",
+      "files": [
+        "assets/runtime/ReplicatedStorage.rbxmx",
+        "assets/runtime/ServerStorage.rbxmx",
+        "src/shared/ArtManifestV3.lua"
+      ]
+    },
+    {
+      "id": "105033864907741",
+      "files": [
+        "assets/runtime/ReplicatedStorage.rbxmx",
+        "assets/runtime/ServerStorage.rbxmx",
+        "src/shared/ArtManifestV3.lua"
+      ]
+    },
+    {
+      "id": "105086985755477",
+      "files": [
+        "assets/runtime/ReplicatedStorage.rbxmx",
+        "assets/runtime/ServerStorage.rbxmx",
+        "src/shared/ArtManifestV3.lua"
+      ]
+    },
+    {
+      "id": "105129042206239",
+      "files": [
+        "assets/runtime/ReplicatedStorage.rbxmx",
+        "assets/runtime/ServerStorage.rbxmx",
+        "src/shared/ArtManifestV3.lua"
+      ]
+    },
+    {
+      "id": "105238300230075",
+      "files": [
+        "assets/runtime/ReplicatedStorage.rbxmx",
+        "assets/runtime/ServerStorage.rbxmx",
+        "src/shared/ArtManifestRelease.lua"
+      ]
+    },
+    {
+      "id": "105239287391750",
+      "files": [
+        "assets/runtime/ServerStorage.rbxmx"
+      ]
+    },
+    {
+      "id": "105262289490565",
+      "files": [
+        "assets/runtime/ReplicatedStorage.rbxmx",
+        "assets/runtime/ServerStorage.rbxmx",
+        "src/shared/ArtManifestV3.lua"
+      ]
+    },
+    {
+      "id": "105271577814692",
+      "files": [
+        "assets/runtime/ReplicatedStorage.rbxmx",
+        "assets/runtime/ServerStorage.rbxmx",
+        "src/shared/ArtManifestRelease.lua"
+      ]
+    },
+    {
+      "id": "105285618966980",
+      "files": [
+        "assets/runtime/ReplicatedStorage.rbxmx",
+        "assets/runtime/ServerStorage.rbxmx",
+        "src/shared/ArtManifestRelease.lua"
+      ]
+    },
+    {
+      "id": "105303654007974",
+      "files": [
+        "assets/runtime/ReplicatedStorage.rbxmx",
+        "assets/runtime/ServerStorage.rbxmx",
+        "src/shared/ArtManifestRelease.lua"
+      ]
+    },
+    {
+      "id": "105383113794934",
+      "files": [
+        "src/shared/ArtManifest.lua"
+      ]
+    },
+    {
+      "id": "105404035588187",
+      "files": [
+        "assets/runtime/ReplicatedStorage.rbxmx",
+        "assets/runtime/ServerStorage.rbxmx",
+        "src/shared/ArtManifestRelease.lua"
+      ]
+    },
+    {
+      "id": "105475254182966",
+      "files": [
+        "assets/runtime/ReplicatedStorage.rbxmx",
+        "assets/runtime/ServerStorage.rbxmx",
+        "src/shared/ArtManifestRelease.lua"
+      ]
+    },
+    {
+      "id": "105500975111728",
+      "files": [
+        "assets/runtime/ReplicatedStorage.rbxmx",
+        "assets/runtime/ServerStorage.rbxmx",
+        "src/shared/ArtManifestV3.lua"
+      ]
+    },
+    {
+      "id": "105517497635293",
+      "files": [
+        "assets/runtime/ServerStorage.rbxmx",
+        "src/shared/Icons.lua"
+      ]
+    },
+    {
+      "id": "105642669311423",
+      "files": [
+        "src/shared/ArtManifest.lua"
+      ]
+    },
+    {
+      "id": "105913991351848",
+      "files": [
+        "assets/runtime/ReplicatedStorage.rbxmx",
+        "assets/runtime/ServerStorage.rbxmx",
+        "src/shared/ArtManifestHorror.lua"
+      ]
+    },
+    {
+      "id": "105946811305855",
+      "files": [
+        "assets/runtime/ReplicatedStorage.rbxmx",
+        "assets/runtime/ServerStorage.rbxmx",
+        "src/shared/ArtManifestRelease.lua"
+      ]
+    },
+    {
+      "id": "106103123200305",
+      "files": [
+        "assets/runtime/ReplicatedStorage.rbxmx",
+        "assets/runtime/ServerStorage.rbxmx",
+        "src/shared/ArtManifestRelease.lua"
+      ]
+    },
+    {
+      "id": "106121165601410",
+      "files": [
+        "assets/runtime/ReplicatedStorage.rbxmx",
+        "assets/runtime/ServerStorage.rbxmx",
+        "src/shared/ArtManifestRelease.lua"
+      ]
+    },
+    {
+      "id": "106167504639438",
+      "files": [
+        "assets/runtime/ReplicatedStorage.rbxmx",
+        "assets/runtime/ServerStorage.rbxmx",
+        "src/shared/ArtManifestMonsters.lua"
+      ]
+    },
+    {
+      "id": "106183851167545",
+      "files": [
+        "assets/runtime/ReplicatedStorage.rbxmx",
+        "assets/runtime/ServerStorage.rbxmx",
+        "src/shared/ArtManifestRelease.lua"
+      ]
+    },
+    {
+      "id": "106219992488633",
+      "files": [
+        "src/shared/ArtManifest.lua"
+      ]
+    },
+    {
+      "id": "106258594644809",
+      "files": [
+        "assets/runtime/ReplicatedStorage.rbxmx",
+        "assets/runtime/ServerStorage.rbxmx",
+        "src/shared/ArtManifestRelease.lua"
+      ]
+    },
+    {
+      "id": "106265031158544",
+      "files": [
+        "assets/runtime/ReplicatedStorage.rbxmx",
+        "assets/runtime/ServerStorage.rbxmx",
+        "src/shared/ArtManifestV3.lua"
+      ]
+    },
+    {
+      "id": "106330442235266",
+      "files": [
+        "assets/runtime/ReplicatedStorage.rbxmx",
+        "assets/runtime/ServerStorage.rbxmx",
+        "src/shared/ArtManifestRelease.lua"
+      ]
+    },
+    {
+      "id": "106356972333433",
+      "files": [
+        "assets/runtime/ReplicatedStorage.rbxmx",
+        "assets/runtime/ServerStorage.rbxmx",
+        "src/shared/ArtManifestRoadV2.lua"
+      ]
+    },
+    {
+      "id": "106445639670105",
+      "files": [
+        "src/shared/ArtManifest.lua"
+      ]
+    },
+    {
+      "id": "106500266142888",
+      "files": [
+        "assets/runtime/ReplicatedStorage.rbxmx",
+        "assets/runtime/ServerStorage.rbxmx",
+        "src/shared/ArtManifestRelease.lua"
+      ]
+    },
+    {
+      "id": "106573557100496",
+      "files": [
+        "src/shared/ArtManifest.lua"
+      ]
+    },
+    {
+      "id": "106633932208188",
+      "files": [
+        "assets/runtime/ReplicatedStorage.rbxmx",
+        "assets/runtime/ServerStorage.rbxmx",
+        "src/shared/ArtManifestRelease.lua"
+      ]
+    },
+    {
+      "id": "106723601586963",
+      "files": [
+        "assets/runtime/ReplicatedStorage.rbxmx",
+        "assets/runtime/ServerStorage.rbxmx",
+        "src/shared/ArtManifestRoadV2.lua"
+      ]
+    },
+    {
+      "id": "106880540383112",
+      "files": [
+        "assets/runtime/ReplicatedStorage.rbxmx",
+        "assets/runtime/ServerStorage.rbxmx",
+        "src/shared/ArtManifestRelease.lua"
+      ]
+    },
+    {
+      "id": "107004858294939",
+      "files": [
+        "assets/runtime/ServerStorage.rbxmx"
+      ]
+    },
+    {
+      "id": "107022191088402",
+      "files": [
+        "assets/runtime/ReplicatedStorage.rbxmx",
+        "assets/runtime/ServerStorage.rbxmx",
+        "src/shared/ArtManifestRelease.lua"
+      ]
+    },
+    {
+      "id": "107119713082418",
+      "files": [
+        "assets/runtime/ReplicatedStorage.rbxmx",
+        "assets/runtime/ServerStorage.rbxmx",
+        "src/shared/ArtManifestMonsters.lua"
+      ]
+    },
+    {
+      "id": "107138189958981",
+      "files": [
+        "assets/runtime/ServerStorage.rbxmx"
+      ]
+    },
+    {
+      "id": "107220873815148",
+      "files": [
+        "assets/runtime/ReplicatedStorage.rbxmx",
+        "assets/runtime/ServerStorage.rbxmx",
+        "src/shared/ArtManifestV3.lua"
+      ]
+    },
+    {
+      "id": "107423853717373",
+      "files": [
+        "assets/runtime/ReplicatedStorage.rbxmx",
+        "assets/runtime/ServerStorage.rbxmx",
+        "src/shared/ArtManifestRelease.lua"
+      ]
+    },
+    {
+      "id": "107490783644801",
+      "files": [
+        "assets/runtime/MaterialService.rbxmx"
+      ]
+    },
+    {
+      "id": "107505733215138",
+      "files": [
+        "src/shared/ArtManifest.lua"
+      ]
+    },
+    {
+      "id": "107559657370009",
+      "files": [
+        "assets/runtime/ReplicatedStorage.rbxmx",
+        "assets/runtime/ServerStorage.rbxmx",
+        "src/shared/ArtManifestRelease.lua"
+      ]
+    },
+    {
+      "id": "107698916488117",
+      "files": [
+        "assets/runtime/ReplicatedStorage.rbxmx",
+        "assets/runtime/ServerStorage.rbxmx",
+        "src/shared/ArtManifestCollectionV2.lua"
+      ]
+    },
+    {
+      "id": "107701909022121",
+      "files": [
+        "assets/runtime/ReplicatedStorage.rbxmx",
+        "assets/runtime/ServerStorage.rbxmx",
+        "src/shared/ArtManifestV3.lua"
+      ]
+    },
+    {
+      "id": "107710657341299",
+      "files": [
+        "assets/runtime/ReplicatedStorage.rbxmx",
+        "assets/runtime/ServerStorage.rbxmx",
+        "src/shared/ArtManifestRelease.lua"
+      ]
+    },
+    {
+      "id": "107909954150817",
+      "files": [
+        "assets/runtime/ReplicatedStorage.rbxmx",
+        "assets/runtime/ServerStorage.rbxmx",
+        "src/shared/ArtManifestRelease.lua"
+      ]
+    },
+    {
+      "id": "107962436189345",
+      "files": [
+        "assets/runtime/ReplicatedStorage.rbxmx",
+        "assets/runtime/ServerStorage.rbxmx",
+        "src/shared/ArtManifestV3.lua"
+      ]
+    },
+    {
+      "id": "107996953371602",
+      "files": [
+        "src/shared/Icons.lua"
+      ]
+    },
+    {
+      "id": "108073990266975",
+      "files": [
+        "assets/runtime/ReplicatedStorage.rbxmx",
+        "assets/runtime/ServerStorage.rbxmx",
+        "src/shared/ArtManifestV3.lua"
+      ]
+    },
+    {
+      "id": "108180520556914",
+      "files": [
+        "assets/runtime/ReplicatedStorage.rbxmx",
+        "assets/runtime/ServerStorage.rbxmx",
+        "src/shared/ArtManifestRelease.lua"
+      ]
+    },
+    {
+      "id": "108199457797242",
+      "files": [
+        "assets/runtime/ReplicatedStorage.rbxmx",
+        "assets/runtime/ServerStorage.rbxmx",
+        "src/shared/ArtManifestRelease.lua"
+      ]
+    },
+    {
+      "id": "108232488261344",
+      "files": [
+        "assets/runtime/ReplicatedStorage.rbxmx",
+        "assets/runtime/ServerStorage.rbxmx",
+        "src/shared/ArtManifestRelease.lua"
+      ]
+    },
+    {
+      "id": "108298402388383",
+      "files": [
+        "assets/runtime/ReplicatedStorage.rbxmx",
+        "assets/runtime/ServerStorage.rbxmx",
+        "src/shared/ArtManifestCollectionV2.lua"
+      ]
+    },
+    {
+      "id": "108349734196219",
+      "files": [
+        "assets/runtime/ReplicatedStorage.rbxmx",
+        "assets/runtime/ServerStorage.rbxmx",
+        "src/shared/ArtManifestRelease.lua"
+      ]
+    },
+    {
+      "id": "108472838435494",
+      "files": [
+        "assets/runtime/ServerStorage.rbxmx",
+        "src/shared/Icons.lua"
+      ]
+    },
+    {
+      "id": "108542106469305",
+      "files": [
+        "assets/runtime/ReplicatedStorage.rbxmx",
+        "assets/runtime/ServerStorage.rbxmx",
+        "src/shared/ArtManifestMonsters.lua"
+      ]
+    },
+    {
+      "id": "108589312242843",
+      "files": [
+        "assets/runtime/ReplicatedStorage.rbxmx",
+        "assets/runtime/ServerStorage.rbxmx",
+        "src/shared/ArtManifestRelease.lua"
+      ]
+    },
+    {
+      "id": "108652519420219",
+      "files": [
+        "src/shared/ArtManifest.lua"
+      ]
+    },
+    {
+      "id": "108698914493026",
+      "files": [
+        "assets/runtime/ReplicatedStorage.rbxmx",
+        "assets/runtime/ServerStorage.rbxmx",
+        "src/shared/ArtManifestRelease.lua"
+      ]
+    },
+    {
+      "id": "108801703028181",
+      "files": [
+        "assets/runtime/ServerStorage.rbxmx",
+        "src/shared/Icons.lua"
+      ]
+    },
+    {
+      "id": "108823401840215",
+      "files": [
+        "assets/runtime/ReplicatedStorage.rbxmx",
+        "assets/runtime/ServerStorage.rbxmx",
+        "src/shared/ArtManifestCollectionV2.lua"
+      ]
+    },
+    {
+      "id": "108859877739657",
+      "files": [
+        "assets/runtime/ReplicatedStorage.rbxmx",
+        "assets/runtime/ServerStorage.rbxmx",
+        "src/shared/ArtManifestRelease.lua"
+      ]
+    },
+    {
+      "id": "108898790398649",
+      "files": [
+        "assets/runtime/ReplicatedStorage.rbxmx",
+        "assets/runtime/ServerStorage.rbxmx",
+        "src/shared/ArtManifestV3.lua"
+      ]
+    },
+    {
+      "id": "108976951428453",
+      "files": [
+        "assets/runtime/ReplicatedStorage.rbxmx",
+        "assets/runtime/ServerStorage.rbxmx",
+        "src/shared/ArtManifestRelease.lua"
+      ]
+    },
+    {
+      "id": "109020113953203",
+      "files": [
+        "assets/runtime/ServerStorage.rbxmx"
+      ]
+    },
+    {
+      "id": "109098431967553",
+      "files": [
+        "assets/runtime/ReplicatedStorage.rbxmx",
+        "assets/runtime/ServerStorage.rbxmx",
+        "src/shared/ArtManifestV3.lua"
+      ]
+    },
+    {
+      "id": "109416936185099",
+      "files": [
+        "assets/runtime/ReplicatedStorage.rbxmx",
+        "assets/runtime/ServerStorage.rbxmx",
+        "src/shared/ArtManifestV3.lua"
+      ]
+    },
+    {
+      "id": "109601973544882",
+      "files": [
+        "assets/runtime/ReplicatedStorage.rbxmx",
+        "assets/runtime/ServerStorage.rbxmx",
+        "src/shared/ArtManifestV3.lua"
+      ]
+    },
+    {
+      "id": "109618539696994",
+      "files": [
+        "assets/runtime/ReplicatedStorage.rbxmx",
+        "assets/runtime/ServerStorage.rbxmx",
+        "src/shared/ArtManifestRelease.lua"
+      ]
+    },
+    {
+      "id": "109706266383918",
+      "files": [
+        "assets/runtime/ReplicatedStorage.rbxmx",
+        "assets/runtime/ServerStorage.rbxmx",
+        "src/shared/ArtManifestCollectionV2.lua"
+      ]
+    },
+    {
+      "id": "109797321888761",
+      "files": [
+        "assets/runtime/ServerStorage.rbxmx"
+      ]
+    },
+    {
+      "id": "109877272289303",
+      "files": [
+        "src/shared/ArtManifest.lua"
+      ]
+    },
+    {
+      "id": "109881480751922",
+      "files": [
+        "src/shared/ArtManifest.lua"
+      ]
+    },
+    {
+      "id": "109912314538163",
+      "files": [
+        "assets/runtime/ReplicatedStorage.rbxmx",
+        "assets/runtime/ServerStorage.rbxmx",
+        "src/shared/ArtManifestMonsters.lua"
+      ]
+    },
+    {
+      "id": "109985505033717",
+      "files": [
+        "assets/runtime/ReplicatedStorage.rbxmx",
+        "assets/runtime/ServerStorage.rbxmx",
+        "src/shared/ArtManifestV3.lua"
+      ]
+    },
+    {
+      "id": "109993101050842",
+      "files": [
+        "assets/runtime/ReplicatedStorage.rbxmx",
+        "assets/runtime/ServerStorage.rbxmx",
+        "src/shared/ArtManifestEnvironment.lua"
+      ]
+    },
+    {
+      "id": "110171488278977",
+      "files": [
+        "assets/runtime/ReplicatedStorage.rbxmx",
+        "assets/runtime/ServerStorage.rbxmx",
+        "src/shared/ArtManifestRelease.lua"
+      ]
+    },
+    {
+      "id": "110257735691853",
+      "files": [
+        "assets/runtime/ReplicatedStorage.rbxmx",
+        "assets/runtime/ServerStorage.rbxmx",
+        "src/shared/ArtManifestCollectionV2.lua"
+      ]
+    },
+    {
+      "id": "110398459982445",
+      "files": [
+        "src/shared/ArtManifest.lua"
+      ]
+    },
+    {
+      "id": "110720415498809",
+      "files": [
+        "assets/runtime/ReplicatedStorage.rbxmx",
+        "assets/runtime/ServerStorage.rbxmx",
+        "src/shared/ArtManifestV3.lua"
+      ]
+    },
+    {
+      "id": "110779957242343",
+      "files": [
+        "assets/runtime/ReplicatedStorage.rbxmx",
+        "assets/runtime/ServerStorage.rbxmx",
+        "src/shared/ArtManifestCollectionV2.lua"
+      ]
+    },
+    {
+      "id": "110796476530087",
+      "files": [
+        "assets/runtime/ReplicatedStorage.rbxmx",
+        "assets/runtime/ServerStorage.rbxmx",
+        "src/shared/ArtManifestRelease.lua"
+      ]
+    },
+    {
+      "id": "110804969657575",
+      "files": [
+        "assets/runtime/ReplicatedStorage.rbxmx",
+        "assets/runtime/ServerStorage.rbxmx",
+        "src/shared/ArtManifestRelease.lua"
+      ]
+    },
+    {
+      "id": "110914049765056",
+      "files": [
+        "assets/runtime/ReplicatedStorage.rbxmx",
+        "assets/runtime/ServerStorage.rbxmx",
+        "src/shared/ArtManifestRelease.lua"
+      ]
+    },
+    {
+      "id": "111019398020629",
+      "files": [
+        "assets/runtime/ReplicatedStorage.rbxmx",
+        "assets/runtime/ServerStorage.rbxmx",
+        "src/shared/ArtManifestRelease.lua"
+      ]
+    },
+    {
+      "id": "111212594701332",
+      "files": [
+        "assets/runtime/ReplicatedStorage.rbxmx",
+        "assets/runtime/ServerStorage.rbxmx",
+        "src/shared/ArtManifestV3.lua"
+      ]
+    },
+    {
+      "id": "111261081037781",
+      "files": [
+        "assets/runtime/ReplicatedStorage.rbxmx",
+        "assets/runtime/ServerStorage.rbxmx",
+        "src/shared/ArtManifestMonsters.lua"
+      ]
+    },
+    {
+      "id": "111338892033865",
+      "files": [
+        "assets/runtime/ReplicatedStorage.rbxmx",
+        "assets/runtime/ServerStorage.rbxmx",
+        "src/shared/ArtManifestRelease.lua"
+      ]
+    },
+    {
+      "id": "111361468187088",
+      "files": [
+        "assets/runtime/ReplicatedStorage.rbxmx",
+        "assets/runtime/ServerStorage.rbxmx",
+        "src/shared/ArtManifestV3.lua"
+      ]
+    },
+    {
+      "id": "111381767380366",
+      "files": [
+        "src/shared/ArtManifest.lua"
+      ]
+    },
+    {
+      "id": "111397632653945",
+      "files": [
+        "assets/runtime/ServerStorage.rbxmx",
+        "src/shared/Icons.lua"
+      ]
+    },
+    {
+      "id": "111470272077328",
+      "files": [
+        "assets/runtime/ReplicatedStorage.rbxmx",
+        "assets/runtime/ServerStorage.rbxmx",
+        "src/shared/ArtManifestV3.lua"
+      ]
+    },
+    {
+      "id": "111515628599293",
+      "files": [
+        "assets/runtime/ReplicatedStorage.rbxmx",
+        "assets/runtime/ServerStorage.rbxmx",
+        "src/shared/ArtManifestRelease.lua"
+      ]
+    },
+    {
+      "id": "111517101948157",
+      "files": [
+        "assets/runtime/ReplicatedStorage.rbxmx",
+        "assets/runtime/ServerStorage.rbxmx",
+        "src/shared/ArtManifestRelease.lua"
+      ]
+    },
+    {
+      "id": "111624291666056",
+      "files": [
+        "assets/runtime/ReplicatedStorage.rbxmx",
+        "assets/runtime/ServerStorage.rbxmx",
+        "src/shared/ArtManifestRelease.lua"
+      ]
+    },
+    {
+      "id": "111642738375705",
+      "files": [
+        "assets/runtime/ReplicatedStorage.rbxmx",
+        "assets/runtime/ServerStorage.rbxmx",
+        "src/shared/ArtManifestRelease.lua"
+      ]
+    },
+    {
+      "id": "111662172424691",
+      "files": [
+        "assets/runtime/ServerStorage.rbxmx"
+      ]
+    },
+    {
+      "id": "111816302365336",
+      "files": [
+        "src/shared/ArtManifest.lua"
+      ]
+    },
+    {
+      "id": "111994279499849",
+      "files": [
+        "assets/runtime/ReplicatedStorage.rbxmx",
+        "assets/runtime/ServerStorage.rbxmx",
+        "src/shared/ArtManifestCollectionV2.lua"
+      ]
+    },
+    {
+      "id": "112198457579290",
+      "files": [
+        "assets/runtime/ReplicatedStorage.rbxmx",
+        "assets/runtime/ServerStorage.rbxmx",
+        "src/shared/ArtManifestRelease.lua"
+      ]
+    },
+    {
+      "id": "112239829717702",
+      "files": [
+        "assets/runtime/ReplicatedStorage.rbxmx",
+        "assets/runtime/ServerStorage.rbxmx",
+        "src/shared/ArtManifestRelease.lua"
+      ]
+    },
+    {
+      "id": "112262426094252",
+      "files": [
+        "assets/runtime/ReplicatedStorage.rbxmx",
+        "assets/runtime/ServerStorage.rbxmx",
+        "src/shared/ArtManifestRelease.lua"
+      ]
+    },
+    {
+      "id": "112290366452617",
+      "files": [
+        "src/shared/ArtManifest.lua"
+      ]
+    },
+    {
+      "id": "112512088728601",
+      "files": [
+        "assets/runtime/ReplicatedStorage.rbxmx",
+        "assets/runtime/ServerStorage.rbxmx",
+        "src/shared/ArtManifestRelease.lua"
+      ]
+    },
+    {
+      "id": "112602862622575",
+      "files": [
+        "assets/runtime/ReplicatedStorage.rbxmx",
+        "assets/runtime/ServerStorage.rbxmx",
+        "src/shared/ArtManifestHorror.lua"
+      ]
+    },
+    {
+      "id": "112867354422627",
+      "files": [
+        "assets/runtime/ReplicatedStorage.rbxmx",
+        "assets/runtime/ServerStorage.rbxmx",
+        "src/shared/ArtManifestHorror.lua"
+      ]
+    },
+    {
+      "id": "112922863662308",
+      "files": [
+        "assets/runtime/ReplicatedStorage.rbxmx",
+        "assets/runtime/ServerStorage.rbxmx",
+        "src/shared/ArtManifestRelease.lua"
+      ]
+    },
+    {
+      "id": "113040898360680",
+      "files": [
+        "assets/runtime/ReplicatedStorage.rbxmx",
+        "assets/runtime/ServerStorage.rbxmx",
+        "src/shared/ArtManifestRelease.lua"
+      ]
+    },
+    {
+      "id": "113097934424271",
+      "files": [
+        "assets/runtime/ReplicatedStorage.rbxmx",
+        "assets/runtime/ServerStorage.rbxmx",
+        "src/shared/ArtManifestRoadRoots.lua"
+      ]
+    },
+    {
+      "id": "113134657597929",
+      "files": [
+        "src/shared/ArtManifest.lua"
+      ]
+    },
+    {
+      "id": "113274229205255",
+      "files": [
+        "assets/runtime/ReplicatedStorage.rbxmx",
+        "assets/runtime/ServerStorage.rbxmx",
+        "src/shared/ArtManifestRelease.lua"
+      ]
+    },
+    {
+      "id": "113281879335268",
+      "files": [
+        "assets/runtime/ReplicatedStorage.rbxmx",
+        "assets/runtime/ServerStorage.rbxmx",
+        "src/shared/ArtManifestEnvironment.lua"
+      ]
+    },
+    {
+      "id": "113290113605812",
+      "files": [
+        "assets/runtime/ReplicatedStorage.rbxmx",
+        "assets/runtime/ServerStorage.rbxmx",
+        "src/shared/ArtManifestV3.lua"
+      ]
+    },
+    {
+      "id": "113352584082396",
+      "files": [
+        "assets/runtime/ReplicatedStorage.rbxmx",
+        "assets/runtime/ServerStorage.rbxmx",
+        "src/shared/ArtManifestRelease.lua"
+      ]
+    },
+    {
+      "id": "113442856061615",
+      "files": [
+        "assets/runtime/ReplicatedStorage.rbxmx",
+        "assets/runtime/ServerStorage.rbxmx",
+        "src/shared/ArtManifestRelease.lua"
+      ]
+    },
+    {
+      "id": "113475129451847",
+      "files": [
+        "assets/runtime/ReplicatedStorage.rbxmx",
+        "assets/runtime/ServerStorage.rbxmx",
+        "src/shared/ArtManifestMonsters.lua"
+      ]
+    },
+    {
+      "id": "113491222995487",
+      "files": [
+        "assets/runtime/ReplicatedStorage.rbxmx",
+        "assets/runtime/ServerStorage.rbxmx",
+        "src/shared/ArtManifestRelease.lua"
+      ]
+    },
+    {
+      "id": "113501566776447",
+      "files": [
+        "assets/runtime/ReplicatedStorage.rbxmx",
+        "assets/runtime/ServerStorage.rbxmx",
+        "src/shared/ArtManifestRoadV2.lua"
+      ]
+    },
+    {
+      "id": "113591154515209",
+      "files": [
+        "assets/runtime/ReplicatedStorage.rbxmx",
+        "assets/runtime/ServerStorage.rbxmx",
+        "src/shared/ArtManifestRelease.lua"
+      ]
+    },
+    {
+      "id": "113633277929622",
+      "files": [
+        "assets/runtime/ReplicatedStorage.rbxmx",
+        "assets/runtime/ServerStorage.rbxmx",
+        "src/shared/ArtManifestCollectionV2.lua"
+      ]
+    },
+    {
+      "id": "113710448729397",
+      "files": [
+        "assets/runtime/ReplicatedStorage.rbxmx",
+        "assets/runtime/ServerStorage.rbxmx",
+        "src/shared/ArtManifestRoadRoots.lua"
+      ]
+    },
+    {
+      "id": "113742163125283",
+      "files": [
+        "assets/runtime/ReplicatedStorage.rbxmx",
+        "assets/runtime/ServerStorage.rbxmx",
+        "src/shared/ArtManifestCollectionV2.lua"
+      ]
+    },
+    {
+      "id": "113781546456037",
+      "files": [
+        "assets/runtime/ReplicatedStorage.rbxmx",
+        "assets/runtime/ServerStorage.rbxmx",
+        "src/shared/ArtManifestRelease.lua"
+      ]
+    },
+    {
+      "id": "113845174528226",
+      "files": [
+        "src/shared/ArtManifest.lua"
+      ]
+    },
+    {
+      "id": "113909088145372",
+      "files": [
+        "assets/runtime/ReplicatedStorage.rbxmx",
+        "assets/runtime/ServerStorage.rbxmx",
+        "src/shared/ArtManifestRelease.lua"
+      ]
+    },
+    {
+      "id": "113999609227385",
+      "files": [
+        "assets/runtime/ReplicatedStorage.rbxmx",
+        "assets/runtime/ServerStorage.rbxmx",
+        "src/shared/ArtManifestRelease.lua"
+      ]
+    },
+    {
+      "id": "114018673763586",
+      "files": [
+        "assets/runtime/ReplicatedStorage.rbxmx",
+        "assets/runtime/ServerStorage.rbxmx",
+        "src/shared/ArtManifestRelease.lua"
+      ]
+    },
+    {
+      "id": "114056446734039",
+      "files": [
+        "assets/runtime/ReplicatedStorage.rbxmx",
+        "assets/runtime/ServerStorage.rbxmx",
+        "src/shared/ArtManifestV3.lua"
+      ]
+    },
+    {
+      "id": "114125651820606",
+      "files": [
+        "assets/runtime/ReplicatedStorage.rbxmx",
+        "assets/runtime/ServerStorage.rbxmx",
+        "src/shared/ArtManifestCollectionV2.lua"
+      ]
+    },
+    {
+      "id": "114245587545573",
+      "files": [
+        "assets/runtime/ReplicatedStorage.rbxmx",
+        "assets/runtime/ServerStorage.rbxmx",
+        "src/shared/ArtManifestRelease.lua"
+      ]
+    },
+    {
+      "id": "114426771772535",
+      "files": [
+        "assets/runtime/ReplicatedStorage.rbxmx",
+        "assets/runtime/ServerStorage.rbxmx",
+        "src/shared/ArtManifestCollectionV2.lua"
+      ]
+    },
+    {
+      "id": "114485863257427",
+      "files": [
+        "assets/runtime/ReplicatedStorage.rbxmx",
+        "assets/runtime/ServerStorage.rbxmx",
+        "src/shared/ArtManifestRelease.lua"
+      ]
+    },
+    {
+      "id": "114533921669702",
+      "files": [
+        "assets/runtime/ReplicatedStorage.rbxmx",
+        "assets/runtime/ServerStorage.rbxmx",
+        "src/shared/ArtManifestRoadV2.lua"
+      ]
+    },
+    {
+      "id": "114598530320170",
+      "files": [
+        "assets/runtime/ReplicatedStorage.rbxmx",
+        "assets/runtime/ServerStorage.rbxmx",
+        "src/shared/ArtManifestRoadV2.lua"
+      ]
+    },
+    {
+      "id": "114606182786563",
+      "files": [
+        "assets/runtime/ReplicatedStorage.rbxmx",
+        "assets/runtime/ServerStorage.rbxmx",
+        "src/shared/ArtManifestRelease.lua"
+      ]
+    },
+    {
+      "id": "114629785379744",
+      "files": [
+        "assets/runtime/ReplicatedStorage.rbxmx",
+        "assets/runtime/ServerStorage.rbxmx",
+        "src/shared/ArtManifestRelease.lua"
+      ]
+    },
+    {
+      "id": "114651442318193",
+      "files": [
+        "assets/runtime/ServerStorage.rbxmx",
+        "src/shared/ArtManifestV3.lua"
+      ]
+    },
+    {
+      "id": "114675743575810",
+      "files": [
+        "assets/runtime/ReplicatedStorage.rbxmx",
+        "assets/runtime/ServerStorage.rbxmx",
+        "src/shared/ArtManifestMonsters.lua"
+      ]
+    },
+    {
+      "id": "114812293235811",
+      "files": [
+        "assets/runtime/ReplicatedStorage.rbxmx",
+        "assets/runtime/ServerStorage.rbxmx",
+        "src/shared/ArtManifestRelease.lua"
+      ]
+    },
+    {
+      "id": "115084617433894",
+      "files": [
+        "assets/runtime/ReplicatedStorage.rbxmx",
+        "assets/runtime/ServerStorage.rbxmx",
+        "src/shared/ArtManifestRelease.lua"
+      ]
+    },
+    {
+      "id": "115186194159191",
+      "files": [
+        "assets/runtime/ReplicatedStorage.rbxmx",
+        "assets/runtime/ServerStorage.rbxmx",
+        "src/shared/ArtManifestRelease.lua"
+      ]
+    },
+    {
+      "id": "115261831459198",
+      "files": [
+        "src/shared/ArtManifest.lua"
+      ]
+    },
+    {
+      "id": "115293594703079",
+      "files": [
+        "assets/runtime/ReplicatedStorage.rbxmx",
+        "assets/runtime/ServerStorage.rbxmx",
+        "src/shared/ArtManifestMonsters.lua"
+      ]
+    },
+    {
+      "id": "115447996619007",
+      "files": [
+        "assets/runtime/ReplicatedStorage.rbxmx",
+        "assets/runtime/ServerStorage.rbxmx",
+        "src/shared/ArtManifestMonsters.lua"
+      ]
+    },
+    {
+      "id": "115475685100228",
+      "files": [
+        "assets/runtime/ReplicatedStorage.rbxmx",
+        "assets/runtime/ServerStorage.rbxmx",
+        "src/shared/ArtManifestRelease.lua"
+      ]
+    },
+    {
+      "id": "115487548109800",
+      "files": [
+        "assets/runtime/ReplicatedStorage.rbxmx",
+        "assets/runtime/ServerStorage.rbxmx",
+        "src/shared/ArtManifestMonsters.lua"
+      ]
+    },
+    {
+      "id": "115497394651220",
+      "files": [
+        "assets/runtime/ReplicatedStorage.rbxmx",
+        "assets/runtime/ServerStorage.rbxmx",
+        "src/shared/ArtManifestRelease.lua"
+      ]
+    },
+    {
+      "id": "115500591303731",
+      "files": [
+        "assets/runtime/ServerStorage.rbxmx",
+        "src/shared/Icons.lua"
+      ]
+    },
+    {
+      "id": "115622623613508",
+      "files": [
+        "assets/runtime/ReplicatedStorage.rbxmx",
+        "assets/runtime/ServerStorage.rbxmx",
+        "src/shared/ArtManifestRelease.lua"
+      ]
+    },
+    {
+      "id": "115680521676292",
+      "files": [
+        "assets/runtime/ReplicatedStorage.rbxmx",
+        "assets/runtime/ServerStorage.rbxmx",
+        "src/shared/ArtManifestMonsters.lua"
+      ]
+    },
+    {
+      "id": "115781954572388",
+      "files": [
+        "assets/runtime/ReplicatedStorage.rbxmx",
+        "assets/runtime/ServerStorage.rbxmx",
+        "src/shared/ArtManifestCollectionV2.lua"
+      ]
+    },
+    {
+      "id": "115831388971167",
+      "files": [
+        "assets/runtime/ReplicatedStorage.rbxmx",
+        "assets/runtime/ServerStorage.rbxmx",
+        "src/shared/ArtManifestV3.lua"
+      ]
+    },
+    {
+      "id": "115845104832624",
+      "files": [
+        "assets/runtime/ReplicatedStorage.rbxmx",
+        "assets/runtime/ServerStorage.rbxmx",
+        "src/shared/ArtManifestRelease.lua"
+      ]
+    },
+    {
+      "id": "116028817602417",
+      "files": [
+        "assets/runtime/ReplicatedStorage.rbxmx",
+        "assets/runtime/ServerStorage.rbxmx",
+        "src/shared/ArtManifestRelease.lua"
+      ]
+    },
+    {
+      "id": "116086624334461",
+      "files": [
+        "assets/runtime/ReplicatedStorage.rbxmx",
+        "assets/runtime/ServerStorage.rbxmx",
+        "src/shared/ArtManifestEnvironment.lua"
+      ]
+    },
+    {
+      "id": "116157862433671",
+      "files": [
+        "assets/runtime/ReplicatedStorage.rbxmx",
+        "assets/runtime/ServerStorage.rbxmx",
+        "src/shared/ArtManifestRelease.lua"
+      ]
+    },
+    {
+      "id": "116182340459468",
+      "files": [
+        "assets/runtime/ServerStorage.rbxmx",
+        "src/shared/Icons.lua"
+      ]
+    },
+    {
+      "id": "116185215298205",
+      "files": [
+        "src/shared/ArtManifest.lua"
+      ]
+    },
+    {
+      "id": "116297259543706",
+      "files": [
+        "assets/runtime/ReplicatedStorage.rbxmx",
+        "assets/runtime/ServerStorage.rbxmx",
+        "src/shared/ArtManifestV3.lua"
+      ]
+    },
+    {
+      "id": "116299768032197",
+      "files": [
+        "assets/runtime/ReplicatedStorage.rbxmx",
+        "assets/runtime/ServerStorage.rbxmx",
+        "src/shared/ArtManifestRelease.lua"
+      ]
+    },
+    {
+      "id": "116562258521987",
+      "files": [
+        "assets/runtime/ReplicatedStorage.rbxmx",
+        "assets/runtime/ServerStorage.rbxmx",
+        "src/shared/ArtManifestRelease.lua"
+      ]
+    },
+    {
+      "id": "116576602061599",
+      "files": [
+        "src/shared/ArtManifest.lua"
+      ]
+    },
+    {
+      "id": "116760732285052",
+      "files": [
+        "assets/runtime/ReplicatedStorage.rbxmx",
+        "assets/runtime/ServerStorage.rbxmx",
+        "src/shared/ArtManifestV3.lua"
+      ]
+    },
+    {
+      "id": "117037307279457",
+      "files": [
+        "src/shared/ArtManifest.lua"
+      ]
+    },
+    {
+      "id": "117065329851040",
+      "files": [
+        "assets/runtime/ReplicatedStorage.rbxmx",
+        "assets/runtime/ServerStorage.rbxmx",
+        "src/shared/ArtManifestRelease.lua"
+      ]
+    },
+    {
+      "id": "117143305972832",
+      "files": [
+        "assets/runtime/ReplicatedStorage.rbxmx",
+        "assets/runtime/ServerStorage.rbxmx",
+        "src/shared/ArtManifestV3.lua"
+      ]
+    },
+    {
+      "id": "117155304348395",
+      "files": [
+        "src/shared/ArtManifest.lua"
+      ]
+    },
+    {
+      "id": "117310186962962",
+      "files": [
+        "assets/runtime/ReplicatedStorage.rbxmx",
+        "assets/runtime/ServerStorage.rbxmx",
+        "src/shared/ArtManifestRelease.lua"
+      ]
+    },
+    {
+      "id": "117427584131576",
+      "files": [
+        "assets/runtime/ReplicatedStorage.rbxmx",
+        "assets/runtime/ServerStorage.rbxmx",
+        "src/shared/ArtManifestRelease.lua"
+      ]
+    },
+    {
+      "id": "117503591085604",
+      "files": [
+        "assets/runtime/ReplicatedStorage.rbxmx",
+        "assets/runtime/ServerStorage.rbxmx",
+        "src/shared/ArtManifestRelease.lua"
+      ]
+    },
+    {
+      "id": "117610723137990",
+      "files": [
+        "src/shared/ArtManifest.lua"
+      ]
+    },
+    {
+      "id": "117674861983961",
+      "files": [
+        "assets/runtime/ReplicatedStorage.rbxmx",
+        "assets/runtime/ServerStorage.rbxmx",
+        "src/shared/ArtManifestRoadRoots.lua"
+      ]
+    },
+    {
+      "id": "117692426816481",
+      "files": [
+        "assets/runtime/ReplicatedStorage.rbxmx",
+        "assets/runtime/ServerStorage.rbxmx",
+        "src/shared/ArtManifestV3.lua"
+      ]
+    },
+    {
+      "id": "117735350038559",
+      "files": [
+        "src/shared/ArtManifest.lua"
+      ]
+    },
+    {
+      "id": "117976829096152",
+      "files": [
+        "src/shared/ArtManifest.lua"
+      ]
+    },
+    {
+      "id": "118104375007694",
+      "files": [
+        "src/shared/ArtManifest.lua"
+      ]
+    },
+    {
+      "id": "118256260030252",
+      "files": [
+        "assets/runtime/ReplicatedStorage.rbxmx",
+        "assets/runtime/ServerStorage.rbxmx",
+        "src/shared/ArtManifestHorror.lua"
+      ]
+    },
+    {
+      "id": "118277400120392",
+      "files": [
+        "src/shared/ArtManifest.lua"
+      ]
+    },
+    {
+      "id": "118281235787878",
+      "files": [
+        "src/shared/ArtManifest.lua"
+      ]
+    },
+    {
+      "id": "118478705952715",
+      "files": [
+        "assets/runtime/ReplicatedStorage.rbxmx",
+        "assets/runtime/ServerStorage.rbxmx",
+        "src/shared/ArtManifestRelease.lua"
+      ]
+    },
+    {
+      "id": "118693807809746",
+      "files": [
+        "assets/runtime/ReplicatedStorage.rbxmx",
+        "assets/runtime/ServerStorage.rbxmx",
+        "src/shared/ArtManifestRelease.lua"
+      ]
+    },
+    {
+      "id": "119006859486884",
+      "files": [
+        "assets/runtime/ServerStorage.rbxmx"
+      ]
+    },
+    {
+      "id": "119097160835418",
+      "files": [
+        "src/shared/ArtManifest.lua"
+      ]
+    },
+    {
+      "id": "119115581045713",
+      "files": [
+        "assets/runtime/ReplicatedStorage.rbxmx",
+        "assets/runtime/ServerStorage.rbxmx",
+        "src/shared/ArtManifestCollectionV2.lua"
+      ]
+    },
+    {
+      "id": "119121815730003",
+      "files": [
+        "assets/runtime/ReplicatedStorage.rbxmx",
+        "assets/runtime/ServerStorage.rbxmx",
+        "src/shared/ArtManifestHorror.lua"
+      ]
+    },
+    {
+      "id": "119138239054370",
+      "files": [
+        "assets/runtime/ServerStorage.rbxmx",
+        "src/shared/Icons.lua"
+      ]
+    },
+    {
+      "id": "119256784930229",
+      "files": [
+        "assets/runtime/ReplicatedStorage.rbxmx",
+        "assets/runtime/ServerStorage.rbxmx",
+        "src/shared/ArtManifestRelease.lua"
+      ]
+    },
+    {
+      "id": "119387295912602",
+      "files": [
+        "assets/runtime/ReplicatedStorage.rbxmx",
+        "assets/runtime/ServerStorage.rbxmx",
+        "src/shared/ArtManifestRoadV2.lua"
+      ]
+    },
+    {
+      "id": "119441617156622",
+      "files": [
+        "src/shared/ArtManifest.lua"
+      ]
+    },
+    {
+      "id": "119501411151724",
+      "files": [
+        "assets/runtime/ReplicatedStorage.rbxmx",
+        "assets/runtime/ServerStorage.rbxmx",
+        "src/shared/ArtManifestRelease.lua"
+      ]
+    },
+    {
+      "id": "119620642120017",
+      "files": [
+        "assets/runtime/ReplicatedStorage.rbxmx",
+        "assets/runtime/ServerStorage.rbxmx",
+        "src/shared/ArtManifestRelease.lua"
+      ]
+    },
+    {
+      "id": "119671056078730",
+      "files": [
+        "assets/runtime/ReplicatedStorage.rbxmx",
+        "assets/runtime/ServerStorage.rbxmx",
+        "src/shared/ArtManifestV3.lua"
+      ]
+    },
+    {
+      "id": "119737043317790",
+      "files": [
+        "assets/runtime/ReplicatedStorage.rbxmx",
+        "assets/runtime/ServerStorage.rbxmx",
+        "src/shared/ArtManifestCollectionV2.lua"
+      ]
+    },
+    {
+      "id": "119832412413637",
+      "files": [
+        "assets/runtime/ReplicatedStorage.rbxmx",
+        "assets/runtime/ServerStorage.rbxmx",
+        "src/shared/ArtManifestCollectionV2.lua"
+      ]
+    },
+    {
+      "id": "119848360754761",
+      "files": [
+        "assets/runtime/ReplicatedStorage.rbxmx",
+        "assets/runtime/ServerStorage.rbxmx",
+        "src/shared/ArtManifestRelease.lua"
+      ]
+    },
+    {
+      "id": "119911897858009",
+      "files": [
+        "assets/runtime/ReplicatedStorage.rbxmx",
+        "assets/runtime/ServerStorage.rbxmx",
+        "src/shared/ArtManifestMonsters.lua"
+      ]
+    },
+    {
+      "id": "120010776371534",
+      "files": [
+        "assets/runtime/ServerStorage.rbxmx",
+        "src/shared/Icons.lua"
+      ]
+    },
+    {
+      "id": "120130168759821",
+      "files": [
+        "assets/runtime/ReplicatedStorage.rbxmx",
+        "assets/runtime/ServerStorage.rbxmx",
+        "src/shared/ArtManifestRelease.lua"
+      ]
+    },
+    {
+      "id": "120194937403044",
+      "files": [
+        "assets/runtime/ReplicatedStorage.rbxmx",
+        "assets/runtime/ServerStorage.rbxmx",
+        "src/shared/ArtManifestCollectionV2.lua"
+      ]
+    },
+    {
+      "id": "120215838686535",
+      "files": [
+        "assets/runtime/ReplicatedStorage.rbxmx",
+        "assets/runtime/ServerStorage.rbxmx",
+        "src/shared/ArtManifestV3.lua"
+      ]
+    },
+    {
+      "id": "120344597637973",
+      "files": [
+        "assets/runtime/ReplicatedStorage.rbxmx",
+        "assets/runtime/ServerStorage.rbxmx",
+        "src/shared/ArtManifestCollectionV2.lua"
+      ]
+    },
+    {
+      "id": "120519879831090",
+      "files": [
+        "src/shared/ArtManifest.lua"
+      ]
+    },
+    {
+      "id": "120668759262619",
+      "files": [
+        "assets/runtime/ReplicatedStorage.rbxmx",
+        "assets/runtime/ServerStorage.rbxmx",
+        "src/shared/ArtManifestV3.lua"
+      ]
+    },
+    {
+      "id": "120710416078156",
+      "files": [
+        "src/shared/ArtManifest.lua"
+      ]
+    },
+    {
+      "id": "120811690060698",
+      "files": [
+        "src/shared/ArtManifest.lua"
+      ]
+    },
+    {
+      "id": "120876047407728",
+      "files": [
+        "assets/runtime/ReplicatedStorage.rbxmx",
+        "assets/runtime/ServerStorage.rbxmx",
+        "src/shared/ArtManifestRelease.lua"
+      ]
+    },
+    {
+      "id": "120951501236621",
+      "files": [
+        "assets/runtime/ReplicatedStorage.rbxmx",
+        "assets/runtime/ServerStorage.rbxmx",
+        "src/shared/ArtManifestMonsters.lua"
+      ]
+    },
+    {
+      "id": "120972652888759",
+      "files": [
+        "assets/runtime/ReplicatedStorage.rbxmx",
+        "assets/runtime/ServerStorage.rbxmx",
+        "src/shared/ArtManifestV3.lua"
+      ]
+    },
+    {
+      "id": "120981235497279",
+      "files": [
+        "assets/runtime/ReplicatedStorage.rbxmx",
+        "assets/runtime/ServerStorage.rbxmx",
+        "src/shared/ArtManifestRelease.lua"
+      ]
+    },
+    {
+      "id": "120999659468654",
+      "files": [
+        "assets/runtime/ReplicatedStorage.rbxmx",
+        "assets/runtime/ServerStorage.rbxmx",
+        "src/shared/ArtManifestMonsters.lua"
+      ]
+    },
+    {
+      "id": "121101715229399",
+      "files": [
+        "assets/runtime/ReplicatedStorage.rbxmx",
+        "assets/runtime/ServerStorage.rbxmx",
+        "src/shared/ArtManifestRelease.lua"
+      ]
+    },
+    {
+      "id": "121106673630390",
+      "files": [
+        "assets/runtime/ReplicatedStorage.rbxmx",
+        "assets/runtime/ServerStorage.rbxmx",
+        "src/shared/ArtManifestRoadRoots.lua"
+      ]
+    },
+    {
+      "id": "121120583572809",
+      "files": [
+        "assets/runtime/ReplicatedStorage.rbxmx",
+        "assets/runtime/ServerStorage.rbxmx",
+        "src/shared/ArtManifestEnvironment.lua"
+      ]
+    },
+    {
+      "id": "121134205340234",
+      "files": [
+        "assets/runtime/ReplicatedStorage.rbxmx",
+        "assets/runtime/ServerStorage.rbxmx",
+        "src/shared/ArtManifestRelease.lua"
+      ]
+    },
+    {
+      "id": "121163197422882",
+      "files": [
+        "assets/runtime/ReplicatedStorage.rbxmx",
+        "assets/runtime/ServerStorage.rbxmx",
+        "src/shared/ArtManifestRelease.lua"
+      ]
+    },
+    {
+      "id": "121177821832829",
+      "files": [
+        "assets/runtime/ReplicatedStorage.rbxmx",
+        "assets/runtime/ServerStorage.rbxmx",
+        "src/shared/ArtManifestCollectionV2.lua"
+      ]
+    },
+    {
+      "id": "121416253357544",
+      "files": [
+        "assets/runtime/ReplicatedStorage.rbxmx",
+        "assets/runtime/ServerStorage.rbxmx",
+        "src/shared/ArtManifestRelease.lua"
+      ]
+    },
+    {
+      "id": "121519696727495",
+      "files": [
+        "assets/runtime/ServerStorage.rbxmx",
+        "src/shared/Icons.lua"
+      ]
+    },
+    {
+      "id": "121537255194304",
+      "files": [
+        "assets/runtime/ReplicatedStorage.rbxmx",
+        "assets/runtime/ServerStorage.rbxmx",
+        "src/shared/ArtManifestRoadRoots.lua"
+      ]
+    },
+    {
+      "id": "121762883332912",
+      "files": [
+        "assets/runtime/ReplicatedStorage.rbxmx",
+        "assets/runtime/ServerStorage.rbxmx",
+        "src/shared/ArtManifestRelease.lua"
+      ]
+    },
+    {
+      "id": "121792466721887",
+      "files": [
+        "assets/runtime/ReplicatedStorage.rbxmx",
+        "assets/runtime/ServerStorage.rbxmx",
+        "src/shared/ArtManifestV3.lua"
+      ]
+    },
+    {
+      "id": "121882670050389",
+      "files": [
+        "src/shared/ArtManifest.lua"
+      ]
+    },
+    {
+      "id": "122028216814866",
+      "files": [
+        "assets/runtime/ReplicatedStorage.rbxmx",
+        "assets/runtime/ServerStorage.rbxmx",
+        "src/shared/ArtManifestRelease.lua"
+      ]
+    },
+    {
+      "id": "122060433795998",
+      "files": [
+        "assets/runtime/ReplicatedStorage.rbxmx",
+        "assets/runtime/ServerStorage.rbxmx",
+        "src/shared/ArtManifestRelease.lua"
+      ]
+    },
+    {
+      "id": "122112393641207",
+      "files": [
+        "assets/runtime/ReplicatedStorage.rbxmx",
+        "assets/runtime/ServerStorage.rbxmx",
+        "src/shared/ArtManifestRelease.lua"
+      ]
+    },
+    {
+      "id": "122154562483910",
+      "files": [
+        "src/shared/ArtManifest.lua"
+      ]
+    },
+    {
+      "id": "122215633339996",
+      "files": [
+        "assets/runtime/ReplicatedStorage.rbxmx",
+        "assets/runtime/ServerStorage.rbxmx",
+        "src/shared/ArtManifestRoadV2.lua"
+      ]
+    },
+    {
+      "id": "122345218553958",
+      "files": [
+        "src/shared/Icons.lua"
+      ]
+    },
+    {
+      "id": "122434585449705",
+      "files": [
+        "assets/runtime/ReplicatedStorage.rbxmx",
+        "assets/runtime/ServerStorage.rbxmx",
+        "src/shared/ArtManifestV3.lua"
+      ]
+    },
+    {
+      "id": "122435824220687",
+      "files": [
+        "assets/runtime/ReplicatedStorage.rbxmx",
+        "assets/runtime/ServerStorage.rbxmx",
+        "src/shared/ArtManifestV3.lua"
+      ]
+    },
+    {
+      "id": "122622883021399",
+      "files": [
+        "assets/runtime/ReplicatedStorage.rbxmx",
+        "assets/runtime/ServerStorage.rbxmx",
+        "src/shared/ArtManifestV3.lua"
+      ]
+    },
+    {
+      "id": "122687000812047",
+      "files": [
+        "assets/runtime/ReplicatedStorage.rbxmx",
+        "assets/runtime/ServerStorage.rbxmx",
+        "src/shared/ArtManifestV3.lua"
+      ]
+    },
+    {
+      "id": "122712552846449",
+      "files": [
+        "assets/runtime/ReplicatedStorage.rbxmx",
+        "assets/runtime/ServerStorage.rbxmx",
+        "src/shared/ArtManifestV3.lua"
+      ]
+    },
+    {
+      "id": "122756026601718",
+      "files": [
+        "assets/runtime/ReplicatedStorage.rbxmx",
+        "assets/runtime/ServerStorage.rbxmx",
+        "src/shared/ArtManifestRelease.lua"
+      ]
+    },
+    {
+      "id": "122768521618847",
+      "files": [
+        "assets/runtime/ReplicatedStorage.rbxmx",
+        "assets/runtime/ServerStorage.rbxmx",
+        "src/shared/ArtManifestV3.lua"
+      ]
+    },
+    {
+      "id": "122784437623857",
+      "files": [
+        "assets/runtime/ServerStorage.rbxmx"
+      ]
+    },
+    {
+      "id": "122793335533084",
+      "files": [
+        "assets/runtime/ReplicatedStorage.rbxmx",
+        "assets/runtime/ServerStorage.rbxmx",
+        "src/shared/ArtManifestRoadV2.lua"
+      ]
+    },
+    {
+      "id": "122839108459625",
+      "files": [
+        "assets/runtime/ReplicatedStorage.rbxmx",
+        "assets/runtime/ServerStorage.rbxmx",
+        "src/shared/ArtManifestV3.lua"
+      ]
+    },
+    {
+      "id": "122961476134249",
+      "files": [
+        "assets/runtime/ReplicatedStorage.rbxmx",
+        "assets/runtime/ServerStorage.rbxmx",
+        "src/shared/ArtManifestV3.lua"
+      ]
+    },
+    {
+      "id": "122979967916911",
+      "files": [
+        "assets/runtime/ReplicatedStorage.rbxmx",
+        "assets/runtime/ServerStorage.rbxmx",
+        "src/shared/ArtManifestV3.lua"
+      ]
+    },
+    {
+      "id": "122980803597347",
+      "files": [
+        "src/shared/ArtManifest.lua"
+      ]
+    },
+    {
+      "id": "123060315769268",
+      "files": [
+        "assets/runtime/ReplicatedStorage.rbxmx",
+        "assets/runtime/ServerStorage.rbxmx",
+        "src/shared/ArtManifestRoadV2.lua"
+      ]
+    },
+    {
+      "id": "123092501832754",
+      "files": [
+        "assets/runtime/ReplicatedStorage.rbxmx",
+        "assets/runtime/ServerStorage.rbxmx",
+        "src/shared/ArtManifestMonsters.lua"
+      ]
+    },
+    {
+      "id": "123302595129699",
+      "files": [
+        "assets/runtime/ReplicatedStorage.rbxmx",
+        "assets/runtime/ServerStorage.rbxmx",
+        "src/shared/ArtManifestV3.lua"
+      ]
+    },
+    {
+      "id": "123343727382912",
+      "files": [
+        "assets/runtime/ReplicatedStorage.rbxmx",
+        "assets/runtime/ServerStorage.rbxmx",
+        "src/shared/ArtManifestRoadRoots.lua"
+      ]
+    },
+    {
+      "id": "123355999646089",
+      "files": [
+        "assets/runtime/ReplicatedStorage.rbxmx",
+        "assets/runtime/ServerStorage.rbxmx",
+        "src/shared/ArtManifestRelease.lua"
+      ]
+    },
+    {
+      "id": "123595574300356",
+      "files": [
+        "assets/runtime/ReplicatedStorage.rbxmx",
+        "assets/runtime/ServerStorage.rbxmx",
+        "src/shared/ArtManifestRelease.lua"
+      ]
+    },
+    {
+      "id": "123623709480756",
+      "files": [
+        "src/shared/ArtManifest.lua"
+      ]
+    },
+    {
+      "id": "123693064960736",
+      "files": [
+        "assets/runtime/ReplicatedStorage.rbxmx",
+        "assets/runtime/ServerStorage.rbxmx",
+        "src/shared/ArtManifestV3.lua"
+      ]
+    },
+    {
+      "id": "123789271627697",
+      "files": [
+        "assets/runtime/ReplicatedStorage.rbxmx",
+        "assets/runtime/ServerStorage.rbxmx",
+        "src/shared/ArtManifestCollectionV2.lua"
+      ]
+    },
+    {
+      "id": "123813392503854",
+      "files": [
+        "assets/runtime/ReplicatedStorage.rbxmx",
+        "assets/runtime/ServerStorage.rbxmx",
+        "src/shared/ArtManifestRelease.lua"
+      ]
+    },
+    {
+      "id": "123846243628404",
+      "files": [
+        "assets/runtime/ReplicatedStorage.rbxmx",
+        "assets/runtime/ServerStorage.rbxmx",
+        "src/shared/ArtManifestRelease.lua"
+      ]
+    },
+    {
+      "id": "123887042839954",
+      "files": [
+        "assets/runtime/ReplicatedStorage.rbxmx",
+        "assets/runtime/ServerStorage.rbxmx",
+        "src/shared/ArtManifestRelease.lua"
+      ]
+    },
+    {
+      "id": "124002951078652",
+      "files": [
+        "src/shared/ArtManifest.lua"
+      ]
+    },
+    {
+      "id": "124070236621690",
+      "files": [
+        "assets/runtime/ReplicatedStorage.rbxmx",
+        "assets/runtime/ServerStorage.rbxmx",
+        "src/shared/ArtManifestRelease.lua"
+      ]
+    },
+    {
+      "id": "124176776556814",
+      "files": [
+        "assets/runtime/ReplicatedStorage.rbxmx",
+        "assets/runtime/ServerStorage.rbxmx",
+        "src/shared/ArtManifestCollectionV2.lua"
+      ]
+    },
+    {
+      "id": "124197736748842",
+      "files": [
+        "assets/runtime/ReplicatedStorage.rbxmx",
+        "assets/runtime/ServerStorage.rbxmx",
+        "src/shared/ArtManifestRelease.lua"
+      ]
+    },
+    {
+      "id": "124290005827914",
+      "files": [
+        "assets/runtime/ServerStorage.rbxmx",
+        "src/shared/Config/WorldConfig.lua"
+      ]
+    },
+    {
+      "id": "124337756321303",
+      "files": [
+        "assets/runtime/ReplicatedStorage.rbxmx",
+        "assets/runtime/ServerStorage.rbxmx",
+        "src/shared/ArtManifestCollectionV2.lua"
+      ]
+    },
+    {
+      "id": "124431285515975",
+      "files": [
+        "assets/runtime/ReplicatedStorage.rbxmx",
+        "assets/runtime/ServerStorage.rbxmx",
+        "src/shared/ArtManifestRelease.lua"
+      ]
+    },
+    {
+      "id": "124498992219341",
+      "files": [
+        "assets/runtime/ReplicatedStorage.rbxmx",
+        "assets/runtime/ServerStorage.rbxmx",
+        "src/shared/ArtManifestRoadRoots.lua"
+      ]
+    },
+    {
+      "id": "124499131294781",
+      "files": [
+        "assets/runtime/ReplicatedStorage.rbxmx",
+        "assets/runtime/ServerStorage.rbxmx",
+        "src/shared/ArtManifestV3.lua"
+      ]
+    },
+    {
+      "id": "124618999462374",
+      "files": [
+        "assets/runtime/ReplicatedStorage.rbxmx",
+        "assets/runtime/ServerStorage.rbxmx",
+        "src/shared/ArtManifestRelease.lua"
+      ]
+    },
+    {
+      "id": "124646246557789",
+      "files": [
+        "assets/runtime/ReplicatedStorage.rbxmx",
+        "assets/runtime/ServerStorage.rbxmx",
+        "src/shared/ArtManifestRoadRoots.lua"
+      ]
+    },
+    {
+      "id": "124673348314059",
+      "files": [
+        "src/shared/ArtManifest.lua"
+      ]
+    },
+    {
+      "id": "124763866267564",
+      "files": [
+        "assets/runtime/ReplicatedStorage.rbxmx",
+        "assets/runtime/ServerStorage.rbxmx",
+        "src/shared/ArtManifestRelease.lua"
+      ]
+    },
+    {
+      "id": "124768943285308",
+      "files": [
+        "src/shared/ArtManifest.lua"
+      ]
+    },
+    {
+      "id": "124808886089436",
+      "files": [
+        "assets/runtime/ReplicatedStorage.rbxmx",
+        "assets/runtime/ServerStorage.rbxmx",
+        "src/shared/ArtManifestRelease.lua"
+      ]
+    },
+    {
+      "id": "125050005235221",
+      "files": [
+        "src/shared/ArtManifest.lua"
+      ]
+    },
+    {
+      "id": "125072260885212",
+      "files": [
+        "assets/runtime/ServerStorage.rbxmx",
+        "src/shared/Icons.lua"
+      ]
+    },
+    {
+      "id": "125106248628775",
+      "files": [
+        "assets/runtime/ReplicatedStorage.rbxmx",
+        "assets/runtime/ServerStorage.rbxmx",
+        "src/shared/ArtManifestV3.lua"
+      ]
+    },
+    {
+      "id": "125126124353795",
+      "files": [
+        "assets/runtime/ReplicatedStorage.rbxmx",
+        "assets/runtime/ServerStorage.rbxmx",
+        "src/shared/ArtManifestRelease.lua"
+      ]
+    },
+    {
+      "id": "125133603559965",
+      "files": [
+        "assets/runtime/ReplicatedStorage.rbxmx",
+        "assets/runtime/ServerStorage.rbxmx",
+        "src/shared/ArtManifestRoadV2.lua"
+      ]
+    },
+    {
+      "id": "125373505831077",
+      "files": [
+        "assets/runtime/ReplicatedStorage.rbxmx",
+        "assets/runtime/ServerStorage.rbxmx",
+        "src/shared/ArtManifestRelease.lua"
+      ]
+    },
+    {
+      "id": "125439192391284",
+      "files": [
+        "assets/runtime/ReplicatedStorage.rbxmx",
+        "assets/runtime/ServerStorage.rbxmx",
+        "src/shared/ArtManifestMonsters.lua"
+      ]
+    },
+    {
+      "id": "125466050295543",
+      "files": [
+        "assets/runtime/ReplicatedStorage.rbxmx",
+        "assets/runtime/ServerStorage.rbxmx",
+        "src/shared/ArtManifestRoadRoots.lua"
+      ]
+    },
+    {
+      "id": "125471155077685",
+      "files": [
+        "assets/runtime/ReplicatedStorage.rbxmx",
+        "assets/runtime/ServerStorage.rbxmx",
+        "src/shared/ArtManifestV3.lua"
+      ]
+    },
+    {
+      "id": "125567266555683",
+      "files": [
+        "assets/runtime/ReplicatedStorage.rbxmx",
+        "assets/runtime/ServerStorage.rbxmx",
+        "src/shared/ArtManifestRoadV2.lua"
+      ]
+    },
+    {
+      "id": "125672655523862",
+      "files": [
+        "assets/runtime/ReplicatedStorage.rbxmx",
+        "assets/runtime/ServerStorage.rbxmx",
+        "src/shared/ArtManifestRelease.lua"
+      ]
+    },
+    {
+      "id": "125747700414501",
+      "files": [
+        "src/shared/ArtManifest.lua"
+      ]
+    },
+    {
+      "id": "125771329987878",
+      "files": [
+        "assets/runtime/ReplicatedStorage.rbxmx",
+        "assets/runtime/ServerStorage.rbxmx",
+        "src/shared/ArtManifestV3.lua"
+      ]
+    },
+    {
+      "id": "125796515396852",
+      "files": [
+        "src/shared/ArtManifest.lua"
+      ]
+    },
+    {
+      "id": "125807393499425",
+      "files": [
+        "src/shared/ArtManifest.lua"
+      ]
+    },
+    {
+      "id": "125814665618669",
+      "files": [
+        "assets/runtime/ReplicatedStorage.rbxmx",
+        "assets/runtime/ServerStorage.rbxmx",
+        "src/shared/ArtManifestRelease.lua"
+      ]
+    },
+    {
+      "id": "125955353241015",
+      "files": [
+        "assets/runtime/ReplicatedStorage.rbxmx",
+        "assets/runtime/ServerStorage.rbxmx",
+        "src/shared/ArtManifestRelease.lua"
+      ]
+    },
+    {
+      "id": "126048715845944",
+      "files": [
+        "assets/runtime/ReplicatedStorage.rbxmx",
+        "assets/runtime/ServerStorage.rbxmx",
+        "src/shared/ArtManifestCollectionV2.lua"
+      ]
+    },
+    {
+      "id": "126073487842239",
+      "files": [
+        "assets/runtime/ReplicatedStorage.rbxmx",
+        "assets/runtime/ServerStorage.rbxmx",
+        "src/shared/ArtManifestCollectionV2.lua"
+      ]
+    },
+    {
+      "id": "126100676043064",
+      "files": [
+        "src/shared/ArtManifest.lua"
+      ]
+    },
+    {
+      "id": "126160398739135",
+      "files": [
+        "assets/runtime/ReplicatedStorage.rbxmx",
+        "assets/runtime/ServerStorage.rbxmx",
+        "src/shared/ArtManifestRelease.lua"
+      ]
+    },
+    {
+      "id": "126252186391090",
+      "files": [
+        "assets/runtime/ReplicatedStorage.rbxmx",
+        "assets/runtime/ServerStorage.rbxmx",
+        "src/shared/ArtManifestRelease.lua"
+      ]
+    },
+    {
+      "id": "126286741718903",
+      "files": [
+        "assets/runtime/ReplicatedStorage.rbxmx",
+        "assets/runtime/ServerStorage.rbxmx",
+        "src/shared/ArtManifestRelease.lua"
+      ]
+    },
+    {
+      "id": "126374725084007",
+      "files": [
+        "assets/runtime/ServerStorage.rbxmx"
+      ]
+    },
+    {
+      "id": "126445737809393",
+      "files": [
+        "assets/runtime/ReplicatedStorage.rbxmx",
+        "assets/runtime/ServerStorage.rbxmx",
+        "src/shared/ArtManifestV3.lua"
+      ]
+    },
+    {
+      "id": "126520302514639",
+      "files": [
+        "assets/runtime/ReplicatedStorage.rbxmx",
+        "assets/runtime/ServerStorage.rbxmx",
+        "src/shared/ArtManifestRoadV2.lua"
+      ]
+    },
+    {
+      "id": "126677264265759",
+      "files": [
+        "assets/runtime/ServerStorage.rbxmx"
+      ]
+    },
+    {
+      "id": "126759293606322",
+      "files": [
+        "assets/runtime/ReplicatedStorage.rbxmx",
+        "assets/runtime/ServerStorage.rbxmx",
+        "src/shared/ArtManifestV3.lua"
+      ]
+    },
+    {
+      "id": "126779198400290",
+      "files": [
+        "assets/runtime/ReplicatedStorage.rbxmx",
+        "assets/runtime/ServerStorage.rbxmx",
+        "src/shared/ArtManifestRelease.lua"
+      ]
+    },
+    {
+      "id": "126916688400200",
+      "files": [
+        "assets/runtime/ReplicatedStorage.rbxmx",
+        "assets/runtime/ServerStorage.rbxmx",
+        "src/shared/ArtManifestRelease.lua"
+      ]
+    },
+    {
+      "id": "127118871455101",
+      "files": [
+        "assets/runtime/ReplicatedStorage.rbxmx",
+        "assets/runtime/ServerStorage.rbxmx",
+        "src/shared/ArtManifestRelease.lua"
+      ]
+    },
+    {
+      "id": "127174775639719",
+      "files": [
+        "assets/runtime/ReplicatedStorage.rbxmx",
+        "assets/runtime/ServerStorage.rbxmx",
+        "src/shared/ArtManifestRelease.lua"
+      ]
+    },
+    {
+      "id": "127318794246835",
+      "files": [
+        "src/shared/ArtManifest.lua"
+      ]
+    },
+    {
+      "id": "127365173181434",
+      "files": [
+        "assets/runtime/ReplicatedStorage.rbxmx",
+        "assets/runtime/ServerStorage.rbxmx",
+        "src/shared/ArtManifestHorror.lua"
+      ]
+    },
+    {
+      "id": "127559094416607",
+      "files": [
+        "assets/runtime/ReplicatedStorage.rbxmx",
+        "assets/runtime/ServerStorage.rbxmx",
+        "src/shared/ArtManifestRelease.lua"
+      ]
+    },
+    {
+      "id": "127574075365233",
+      "files": [
+        "assets/runtime/ReplicatedStorage.rbxmx",
+        "assets/runtime/ServerStorage.rbxmx",
+        "src/shared/ArtManifestRelease.lua"
+      ]
+    },
+    {
+      "id": "127598087141824",
+      "files": [
+        "assets/runtime/ReplicatedStorage.rbxmx",
+        "assets/runtime/ServerStorage.rbxmx",
+        "src/shared/ArtManifestCollectionV2.lua"
+      ]
+    },
+    {
+      "id": "127659206968812",
+      "files": [
+        "assets/runtime/ReplicatedStorage.rbxmx",
+        "assets/runtime/ServerStorage.rbxmx",
+        "src/shared/ArtManifestRelease.lua"
+      ]
+    },
+    {
+      "id": "127716913497961",
+      "files": [
+        "assets/runtime/ReplicatedStorage.rbxmx",
+        "assets/runtime/ServerStorage.rbxmx",
+        "src/shared/ArtManifestV3.lua"
+      ]
+    },
+    {
+      "id": "127764986405761",
+      "files": [
+        "assets/runtime/ReplicatedStorage.rbxmx",
+        "assets/runtime/ServerStorage.rbxmx",
+        "src/shared/ArtManifestCollectionV2.lua"
+      ]
+    },
+    {
+      "id": "127775244501022",
+      "files": [
+        "assets/runtime/ReplicatedStorage.rbxmx",
+        "assets/runtime/ServerStorage.rbxmx",
+        "src/shared/ArtManifestV3.lua"
+      ]
+    },
+    {
+      "id": "127816315437116",
+      "files": [
+        "src/shared/ArtManifest.lua"
+      ]
+    },
+    {
+      "id": "127870623043275",
+      "files": [
+        "assets/runtime/ReplicatedStorage.rbxmx",
+        "assets/runtime/ServerStorage.rbxmx",
+        "src/shared/ArtManifestCollectionV2.lua"
+      ]
+    },
+    {
+      "id": "127940852180145",
+      "files": [
+        "assets/runtime/ReplicatedStorage.rbxmx",
+        "assets/runtime/ServerStorage.rbxmx",
+        "src/shared/ArtManifestRelease.lua"
+      ]
+    },
+    {
+      "id": "128102499972244",
+      "files": [
+        "assets/runtime/ReplicatedStorage.rbxmx",
+        "assets/runtime/ServerStorage.rbxmx",
+        "src/shared/ArtManifestRelease.lua"
+      ]
+    },
+    {
+      "id": "128193117828322",
+      "files": [
+        "assets/runtime/ServerStorage.rbxmx",
+        "src/shared/Icons.lua"
+      ]
+    },
+    {
+      "id": "128648586549420",
+      "files": [
+        "assets/runtime/ReplicatedStorage.rbxmx",
+        "assets/runtime/ServerStorage.rbxmx",
+        "src/shared/ArtManifestCollectionV2.lua"
+      ]
+    },
+    {
+      "id": "128668962250537",
+      "files": [
+        "assets/runtime/ReplicatedStorage.rbxmx",
+        "assets/runtime/ServerStorage.rbxmx",
+        "src/shared/ArtManifestRelease.lua"
+      ]
+    },
+    {
+      "id": "128772631626473",
+      "files": [
+        "assets/runtime/ReplicatedStorage.rbxmx",
+        "assets/runtime/ServerStorage.rbxmx",
+        "src/shared/ArtManifestRelease.lua"
+      ]
+    },
+    {
+      "id": "128811809118495",
+      "files": [
+        "assets/runtime/ReplicatedStorage.rbxmx",
+        "assets/runtime/ServerStorage.rbxmx",
+        "src/shared/ArtManifestRelease.lua"
+      ]
+    },
+    {
+      "id": "128862631327036",
+      "files": [
+        "assets/runtime/ReplicatedStorage.rbxmx",
+        "assets/runtime/ServerStorage.rbxmx",
+        "src/shared/ArtManifestRelease.lua"
+      ]
+    },
+    {
+      "id": "128915726981390",
+      "files": [
+        "src/shared/ArtManifest.lua"
+      ]
+    },
+    {
+      "id": "128968825187599",
+      "files": [
+        "assets/runtime/ReplicatedStorage.rbxmx",
+        "assets/runtime/ServerStorage.rbxmx",
+        "src/shared/ArtManifestRelease.lua"
+      ]
+    },
+    {
+      "id": "129104113515541",
+      "files": [
+        "assets/runtime/ReplicatedStorage.rbxmx",
+        "assets/runtime/ServerStorage.rbxmx",
+        "src/shared/ArtManifestRelease.lua"
+      ]
+    },
+    {
+      "id": "129222146623265",
+      "files": [
+        "assets/runtime/ReplicatedStorage.rbxmx",
+        "assets/runtime/ServerStorage.rbxmx",
+        "src/shared/ArtManifestV3.lua"
+      ]
+    },
+    {
+      "id": "129352816422941",
+      "files": [
+        "assets/runtime/ReplicatedStorage.rbxmx",
+        "assets/runtime/ServerStorage.rbxmx",
+        "src/shared/ArtManifestRelease.lua"
+      ]
+    },
+    {
+      "id": "129457921109505",
+      "files": [
+        "assets/runtime/ReplicatedStorage.rbxmx",
+        "assets/runtime/ServerStorage.rbxmx",
+        "src/shared/ArtManifestRelease.lua"
+      ]
+    },
+    {
+      "id": "129520504537663",
+      "files": [
+        "assets/runtime/ReplicatedStorage.rbxmx",
+        "assets/runtime/ServerStorage.rbxmx",
+        "src/shared/ArtManifestRelease.lua"
+      ]
+    },
+    {
+      "id": "129617784283507",
+      "files": [
+        "assets/runtime/ServerStorage.rbxmx"
+      ]
+    },
+    {
+      "id": "129653294438797",
+      "files": [
+        "src/shared/Icons.lua"
+      ]
+    },
+    {
+      "id": "129675203301379",
+      "files": [
+        "assets/runtime/ReplicatedStorage.rbxmx",
+        "assets/runtime/ServerStorage.rbxmx",
+        "src/shared/ArtManifestRelease.lua"
+      ]
+    },
+    {
+      "id": "129760062435940",
+      "files": [
+        "assets/runtime/ReplicatedStorage.rbxmx",
+        "assets/runtime/ServerStorage.rbxmx",
+        "src/shared/ArtManifestRelease.lua"
+      ]
+    },
+    {
+      "id": "129850838397781",
+      "files": [
+        "assets/runtime/ReplicatedStorage.rbxmx",
+        "assets/runtime/ServerStorage.rbxmx",
+        "src/shared/ArtManifestRelease.lua"
+      ]
+    },
+    {
+      "id": "129888483476509",
+      "files": [
+        "assets/runtime/ReplicatedStorage.rbxmx",
+        "assets/runtime/ServerStorage.rbxmx",
+        "src/shared/ArtManifestHorror.lua"
+      ]
+    },
+    {
+      "id": "129895898753497",
+      "files": [
+        "assets/runtime/ReplicatedStorage.rbxmx",
+        "assets/runtime/ServerStorage.rbxmx",
+        "src/shared/ArtManifestEnvironment.lua"
+      ]
+    },
+    {
+      "id": "129923195970396",
+      "files": [
+        "assets/runtime/ReplicatedStorage.rbxmx",
+        "assets/runtime/ServerStorage.rbxmx",
+        "src/shared/ArtManifestMonsters.lua"
+      ]
+    },
+    {
+      "id": "129993157602759",
+      "files": [
+        "src/shared/ArtManifest.lua"
+      ]
+    },
+    {
+      "id": "130045306981622",
+      "files": [
+        "assets/runtime/ReplicatedStorage.rbxmx",
+        "assets/runtime/ServerStorage.rbxmx",
+        "src/shared/ArtManifestRelease.lua"
+      ]
+    },
+    {
+      "id": "130095169556252",
+      "files": [
+        "assets/runtime/ReplicatedStorage.rbxmx",
+        "assets/runtime/ServerStorage.rbxmx",
+        "src/shared/ArtManifestRoadRoots.lua"
+      ]
+    },
+    {
+      "id": "130117511666230",
+      "files": [
+        "src/shared/ArtManifest.lua"
+      ]
+    },
+    {
+      "id": "130219119940172",
+      "files": [
+        "assets/runtime/ReplicatedStorage.rbxmx",
+        "assets/runtime/ServerStorage.rbxmx",
+        "src/shared/ArtManifestRoadV2.lua"
+      ]
+    },
+    {
+      "id": "130357573995997",
+      "files": [
+        "assets/runtime/ServerStorage.rbxmx"
+      ]
+    },
+    {
+      "id": "130374514600598",
+      "files": [
+        "assets/runtime/ReplicatedStorage.rbxmx",
+        "assets/runtime/ServerStorage.rbxmx",
+        "src/shared/ArtManifestMonsters.lua"
+      ]
+    },
+    {
+      "id": "130435147751586",
+      "files": [
+        "src/shared/ArtManifest.lua"
+      ]
+    },
+    {
+      "id": "130442747393750",
+      "files": [
+        "assets/runtime/ReplicatedStorage.rbxmx",
+        "assets/runtime/ServerStorage.rbxmx",
+        "src/shared/ArtManifestV3.lua"
+      ]
+    },
+    {
+      "id": "130488171578165",
+      "files": [
+        "assets/runtime/ReplicatedStorage.rbxmx",
+        "assets/runtime/ServerStorage.rbxmx",
+        "src/shared/ArtManifestRelease.lua"
+      ]
+    },
+    {
+      "id": "130492467427373",
+      "files": [
+        "assets/runtime/ReplicatedStorage.rbxmx",
+        "assets/runtime/ServerStorage.rbxmx",
+        "src/shared/ArtManifestRelease.lua"
+      ]
+    },
+    {
+      "id": "130568470486765",
+      "files": [
+        "assets/runtime/ReplicatedStorage.rbxmx",
+        "assets/runtime/ServerStorage.rbxmx",
+        "src/shared/ArtManifestCollectionV2.lua"
+      ]
+    },
+    {
+      "id": "130761655896384",
+      "files": [
+        "assets/runtime/ReplicatedStorage.rbxmx",
+        "assets/runtime/ServerStorage.rbxmx",
+        "src/shared/ArtManifestRelease.lua"
+      ]
+    },
+    {
+      "id": "130826299164916",
+      "files": [
+        "assets/runtime/ReplicatedStorage.rbxmx",
+        "assets/runtime/ServerStorage.rbxmx",
+        "src/shared/ArtManifestRelease.lua"
+      ]
+    },
+    {
+      "id": "130834407696721",
+      "files": [
+        "assets/runtime/ReplicatedStorage.rbxmx",
+        "assets/runtime/ServerStorage.rbxmx",
+        "src/shared/ArtManifestMonsters.lua"
+      ]
+    },
+    {
+      "id": "130923387547562",
+      "files": [
+        "assets/runtime/ReplicatedStorage.rbxmx",
+        "assets/runtime/ServerStorage.rbxmx",
+        "src/shared/ArtManifestV3.lua"
+      ]
+    },
+    {
+      "id": "130923880649724",
+      "files": [
+        "assets/runtime/ReplicatedStorage.rbxmx",
+        "assets/runtime/ServerStorage.rbxmx",
+        "src/shared/ArtManifestV3.lua"
+      ]
+    },
+    {
+      "id": "130950156628527",
+      "files": [
+        "assets/runtime/ServerStorage.rbxmx"
+      ]
+    },
+    {
+      "id": "130994283145238",
+      "files": [
+        "assets/runtime/ReplicatedStorage.rbxmx",
+        "assets/runtime/ServerStorage.rbxmx",
+        "src/shared/ArtManifestEnvironment.lua"
+      ]
+    },
+    {
+      "id": "130998231002627",
+      "files": [
+        "assets/runtime/ReplicatedStorage.rbxmx",
+        "assets/runtime/ServerStorage.rbxmx",
+        "src/shared/ArtManifestV3.lua"
+      ]
+    },
+    {
+      "id": "131084983428599",
+      "files": [
+        "assets/runtime/ReplicatedStorage.rbxmx",
+        "assets/runtime/ServerStorage.rbxmx",
+        "src/shared/ArtManifestRelease.lua"
+      ]
+    },
+    {
+      "id": "131117754135626",
+      "files": [
+        "assets/runtime/ReplicatedStorage.rbxmx",
+        "assets/runtime/ServerStorage.rbxmx",
+        "src/shared/ArtManifestRelease.lua"
+      ]
+    },
+    {
+      "id": "131170020908695",
+      "files": [
+        "assets/runtime/ReplicatedStorage.rbxmx",
+        "assets/runtime/ServerStorage.rbxmx",
+        "src/shared/ArtManifestRelease.lua"
+      ]
+    },
+    {
+      "id": "131294557245972",
+      "files": [
+        "src/shared/ArtManifest.lua"
+      ]
+    },
+    {
+      "id": "131295630231478",
+      "files": [
+        "assets/runtime/ReplicatedStorage.rbxmx",
+        "assets/runtime/ServerStorage.rbxmx",
+        "src/shared/ArtManifestRelease.lua"
+      ]
+    },
+    {
+      "id": "131620840426501",
+      "files": [
+        "src/shared/ArtManifest.lua"
+      ]
+    },
+    {
+      "id": "131669053310794",
+      "files": [
+        "src/shared/ArtManifest.lua"
+      ]
+    },
+    {
+      "id": "131683020254395",
+      "files": [
+        "assets/runtime/ReplicatedStorage.rbxmx",
+        "assets/runtime/ServerStorage.rbxmx",
+        "src/shared/ArtManifestRelease.lua"
+      ]
+    },
+    {
+      "id": "131713508535108",
+      "files": [
+        "assets/runtime/ReplicatedStorage.rbxmx",
+        "assets/runtime/ServerStorage.rbxmx",
+        "src/shared/ArtManifestRelease.lua"
+      ]
+    },
+    {
+      "id": "131737990413842",
+      "files": [
+        "assets/runtime/ReplicatedStorage.rbxmx",
+        "assets/runtime/ServerStorage.rbxmx",
+        "src/shared/ArtManifestRelease.lua"
+      ]
+    },
+    {
+      "id": "131838285218983",
+      "files": [
+        "assets/runtime/ReplicatedStorage.rbxmx",
+        "assets/runtime/ServerStorage.rbxmx",
+        "src/shared/ArtManifestV3.lua"
+      ]
+    },
+    {
+      "id": "131925617037866",
+      "files": [
+        "assets/runtime/ReplicatedStorage.rbxmx",
+        "assets/runtime/ServerStorage.rbxmx",
+        "src/shared/ArtManifestCollectionV2.lua"
+      ]
+    },
+    {
+      "id": "131984642461439",
+      "files": [
+        "assets/runtime/ReplicatedStorage.rbxmx",
+        "assets/runtime/ServerStorage.rbxmx",
+        "src/shared/ArtManifestV3.lua"
+      ]
+    },
+    {
+      "id": "132016582023261",
+      "files": [
+        "assets/runtime/ReplicatedStorage.rbxmx",
+        "assets/runtime/ServerStorage.rbxmx",
+        "src/shared/ArtManifestRoadV2.lua"
+      ]
+    },
+    {
+      "id": "132189747837661",
+      "files": [
+        "assets/runtime/ServerStorage.rbxmx",
+        "src/shared/Icons.lua"
+      ]
+    },
+    {
+      "id": "132213762657371",
+      "files": [
+        "assets/runtime/ServerStorage.rbxmx",
+        "src/server/RoadService.lua",
+        "src/shared/GardenEnvironment.lua"
+      ]
+    },
+    {
+      "id": "132229887022020",
+      "files": [
+        "src/shared/ArtManifest.lua"
+      ]
+    },
+    {
+      "id": "132487241261163",
+      "files": [
+        "assets/runtime/ReplicatedStorage.rbxmx",
+        "assets/runtime/ServerStorage.rbxmx",
+        "src/shared/ArtManifestMonsters.lua"
+      ]
+    },
+    {
+      "id": "132604519779958",
+      "files": [
+        "src/shared/ArtManifest.lua"
+      ]
+    },
+    {
+      "id": "132605595783055",
+      "files": [
+        "assets/runtime/ReplicatedStorage.rbxmx",
+        "assets/runtime/ServerStorage.rbxmx",
+        "src/shared/ArtManifestCollectionV2.lua"
+      ]
+    },
+    {
+      "id": "132630688742329",
+      "files": [
+        "assets/runtime/ReplicatedStorage.rbxmx",
+        "assets/runtime/ServerStorage.rbxmx",
+        "src/shared/ArtManifestRelease.lua"
+      ]
+    },
+    {
+      "id": "132696503883607",
+      "files": [
+        "assets/runtime/ReplicatedStorage.rbxmx",
+        "assets/runtime/ServerStorage.rbxmx",
+        "src/shared/ArtManifestRoadRoots.lua"
+      ]
+    },
+    {
+      "id": "132768670457513",
+      "files": [
+        "assets/runtime/ReplicatedStorage.rbxmx",
+        "assets/runtime/ServerStorage.rbxmx",
+        "src/shared/ArtManifestRelease.lua"
+      ]
+    },
+    {
+      "id": "132828806032589",
+      "files": [
+        "assets/runtime/ReplicatedStorage.rbxmx",
+        "assets/runtime/ServerStorage.rbxmx",
+        "src/shared/ArtManifestRoadV2.lua"
+      ]
+    },
+    {
+      "id": "132902269697755",
+      "files": [
+        "assets/runtime/ServerStorage.rbxmx",
+        "src/shared/Icons.lua"
+      ]
+    },
+    {
+      "id": "132934739766411",
+      "files": [
+        "assets/runtime/ServerStorage.rbxmx",
+        "src/shared/Icons.lua"
+      ]
+    },
+    {
+      "id": "132949244575687",
+      "files": [
+        "assets/runtime/ReplicatedStorage.rbxmx",
+        "assets/runtime/ServerStorage.rbxmx",
+        "src/shared/ArtManifestRelease.lua"
+      ]
+    },
+    {
+      "id": "133110780083558",
+      "files": [
+        "assets/runtime/ServerStorage.rbxmx",
+        "src/shared/Icons.lua"
+      ]
+    },
+    {
+      "id": "133254076471739",
+      "files": [
+        "assets/runtime/ReplicatedStorage.rbxmx",
+        "assets/runtime/ServerStorage.rbxmx",
+        "src/shared/ArtManifestRelease.lua"
+      ]
+    },
+    {
+      "id": "133479081914693",
+      "files": [
+        "assets/runtime/ReplicatedStorage.rbxmx",
+        "assets/runtime/ServerStorage.rbxmx",
+        "src/shared/ArtManifestRelease.lua"
+      ]
+    },
+    {
+      "id": "133568916934363",
+      "files": [
+        "src/shared/ArtManifest.lua"
+      ]
+    },
+    {
+      "id": "133649453483406",
+      "files": [
+        "assets/runtime/ReplicatedStorage.rbxmx",
+        "assets/runtime/ServerStorage.rbxmx",
+        "src/shared/ArtManifestEnvironment.lua"
+      ]
+    },
+    {
+      "id": "133720931556764",
+      "files": [
+        "assets/runtime/ReplicatedStorage.rbxmx",
+        "assets/runtime/ServerStorage.rbxmx",
+        "src/shared/ArtManifestRelease.lua"
+      ]
+    },
+    {
+      "id": "133733485055592",
+      "files": [
+        "assets/runtime/ReplicatedStorage.rbxmx",
+        "assets/runtime/ServerStorage.rbxmx",
+        "src/shared/ArtManifestRelease.lua"
+      ]
+    },
+    {
+      "id": "133954671082003",
+      "files": [
+        "assets/runtime/ReplicatedStorage.rbxmx",
+        "assets/runtime/ServerStorage.rbxmx",
+        "src/shared/ArtManifestV3.lua"
+      ]
+    },
+    {
+      "id": "134039860497089",
+      "files": [
+        "assets/runtime/ReplicatedStorage.rbxmx",
+        "assets/runtime/ServerStorage.rbxmx",
+        "src/shared/ArtManifestRelease.lua"
+      ]
+    },
+    {
+      "id": "134102494957741",
+      "files": [
+        "assets/runtime/ServerStorage.rbxmx",
+        "src/shared/Icons.lua"
+      ]
+    },
+    {
+      "id": "134137885442309",
+      "files": [
+        "assets/runtime/ReplicatedStorage.rbxmx",
+        "assets/runtime/ServerStorage.rbxmx",
+        "src/shared/ArtManifestRelease.lua"
+      ]
+    },
+    {
+      "id": "134176123965279",
+      "files": [
+        "assets/runtime/ReplicatedStorage.rbxmx",
+        "assets/runtime/ServerStorage.rbxmx",
+        "src/shared/ArtManifestRelease.lua"
+      ]
+    },
+    {
+      "id": "134220702785121",
+      "files": [
+        "src/shared/ArtManifest.lua"
+      ]
+    },
+    {
+      "id": "134226795861930",
+      "files": [
+        "src/shared/ArtManifest.lua"
+      ]
+    },
+    {
+      "id": "134265244737259",
+      "files": [
+        "assets/runtime/ReplicatedStorage.rbxmx",
+        "assets/runtime/ServerStorage.rbxmx",
+        "src/shared/ArtManifestV3.lua"
+      ]
+    },
+    {
+      "id": "134301882925373",
+      "files": [
+        "assets/runtime/ReplicatedStorage.rbxmx",
+        "assets/runtime/ServerStorage.rbxmx",
+        "src/shared/ArtManifestRelease.lua"
+      ]
+    },
+    {
+      "id": "134340302185222",
+      "files": [
+        "assets/runtime/ServerStorage.rbxmx",
+        "src/shared/Icons.lua"
+      ]
+    },
+    {
+      "id": "134406806318576",
+      "files": [
+        "assets/runtime/ReplicatedStorage.rbxmx",
+        "assets/runtime/ServerStorage.rbxmx",
+        "src/shared/ArtManifestRelease.lua"
+      ]
+    },
+    {
+      "id": "134459547965570",
+      "files": [
+        "assets/runtime/ServerStorage.rbxmx",
+        "src/shared/Icons.lua"
+      ]
+    },
+    {
+      "id": "134591557546094",
+      "files": [
+        "assets/runtime/ReplicatedStorage.rbxmx",
+        "assets/runtime/ServerStorage.rbxmx",
+        "src/shared/ArtManifestV3.lua"
+      ]
+    },
+    {
+      "id": "134635024083447",
+      "files": [
+        "src/shared/ArtManifest.lua"
+      ]
+    },
+    {
+      "id": "134641917025204",
+      "files": [
+        "src/shared/ArtManifest.lua"
+      ]
+    },
+    {
+      "id": "134676363970819",
+      "files": [
+        "assets/runtime/ReplicatedStorage.rbxmx",
+        "assets/runtime/ServerStorage.rbxmx",
+        "src/shared/ArtManifestRelease.lua"
+      ]
+    },
+    {
+      "id": "134798835677811",
+      "files": [
+        "assets/runtime/ServerStorage.rbxmx",
+        "src/shared/Icons.lua"
+      ]
+    },
+    {
+      "id": "134813234657961",
+      "files": [
+        "assets/runtime/ReplicatedStorage.rbxmx",
+        "assets/runtime/ServerStorage.rbxmx",
+        "src/shared/ArtManifestCollectionV2.lua"
+      ]
+    },
+    {
+      "id": "134950796664778",
+      "files": [
+        "assets/runtime/ReplicatedStorage.rbxmx",
+        "assets/runtime/ServerStorage.rbxmx",
+        "src/shared/ArtManifestRelease.lua"
+      ]
+    },
+    {
+      "id": "134955626891356",
+      "files": [
+        "assets/runtime/ReplicatedStorage.rbxmx",
+        "assets/runtime/ServerStorage.rbxmx",
+        "src/shared/ArtManifestRelease.lua"
+      ]
+    },
+    {
+      "id": "134995973878783",
+      "files": [
+        "assets/runtime/ServerStorage.rbxmx",
+        "src/shared/Icons.lua"
+      ]
+    },
+    {
+      "id": "135055086246508",
+      "files": [
+        "assets/runtime/ReplicatedStorage.rbxmx",
+        "assets/runtime/ServerStorage.rbxmx",
+        "src/shared/ArtManifestRelease.lua"
+      ]
+    },
+    {
+      "id": "135117164285401",
+      "files": [
+        "assets/runtime/ReplicatedStorage.rbxmx",
+        "assets/runtime/ServerStorage.rbxmx",
+        "src/shared/ArtManifestRelease.lua"
+      ]
+    },
+    {
+      "id": "135132963450808",
+      "files": [
+        "assets/runtime/ServerStorage.rbxmx",
+        "src/shared/Icons.lua"
+      ]
+    },
+    {
+      "id": "135397906367499",
+      "files": [
+        "assets/runtime/ReplicatedStorage.rbxmx",
+        "assets/runtime/ServerStorage.rbxmx",
+        "src/shared/ArtManifestV3.lua"
+      ]
+    },
+    {
+      "id": "135447453252012",
+      "files": [
+        "assets/runtime/ReplicatedStorage.rbxmx",
+        "assets/runtime/ServerStorage.rbxmx",
+        "src/shared/ArtManifestEnvironment.lua"
+      ]
+    },
+    {
+      "id": "135620197026660",
+      "files": [
+        "assets/runtime/ReplicatedStorage.rbxmx",
+        "assets/runtime/ServerStorage.rbxmx",
+        "src/shared/ArtManifestRoadV2.lua"
+      ]
+    },
+    {
+      "id": "135635744287284",
+      "files": [
+        "assets/runtime/ReplicatedStorage.rbxmx",
+        "assets/runtime/ServerStorage.rbxmx",
+        "src/shared/ArtManifestRelease.lua"
+      ]
+    },
+    {
+      "id": "135671696990025",
+      "files": [
+        "assets/runtime/ReplicatedStorage.rbxmx",
+        "assets/runtime/ServerStorage.rbxmx",
+        "src/shared/ArtManifestRelease.lua"
+      ]
+    },
+    {
+      "id": "135823023750283",
+      "files": [
+        "assets/runtime/ReplicatedStorage.rbxmx",
+        "assets/runtime/ServerStorage.rbxmx",
+        "src/shared/ArtManifestRoadV2.lua"
+      ]
+    },
+    {
+      "id": "135919066747050",
+      "files": [
+        "assets/runtime/ReplicatedStorage.rbxmx",
+        "assets/runtime/ServerStorage.rbxmx",
+        "src/shared/ArtManifestRelease.lua"
+      ]
+    },
+    {
+      "id": "135919724139048",
+      "files": [
+        "assets/runtime/ReplicatedStorage.rbxmx",
+        "assets/runtime/ServerStorage.rbxmx",
+        "src/shared/ArtManifestRelease.lua"
+      ]
+    },
+    {
+      "id": "136026334905121",
+      "files": [
+        "assets/runtime/ReplicatedStorage.rbxmx",
+        "assets/runtime/ServerStorage.rbxmx",
+        "src/shared/ArtManifestV3.lua"
+      ]
+    },
+    {
+      "id": "136036412524489",
+      "files": [
+        "assets/runtime/ReplicatedStorage.rbxmx",
+        "assets/runtime/ServerStorage.rbxmx",
+        "src/shared/ArtManifestRoadV2.lua"
+      ]
+    },
+    {
+      "id": "136051435969891",
+      "files": [
+        "assets/runtime/ReplicatedStorage.rbxmx",
+        "assets/runtime/ServerStorage.rbxmx",
+        "src/shared/ArtManifestRoadRoots.lua"
+      ]
+    },
+    {
+      "id": "136374585735260",
+      "files": [
+        "assets/runtime/ReplicatedStorage.rbxmx",
+        "assets/runtime/ServerStorage.rbxmx",
+        "src/shared/ArtManifestMonsters.lua"
+      ]
+    },
+    {
+      "id": "136388484516698",
+      "files": [
+        "assets/runtime/ReplicatedStorage.rbxmx",
+        "assets/runtime/ServerStorage.rbxmx",
+        "src/shared/ArtManifestV3.lua"
+      ]
+    },
+    {
+      "id": "136431021764667",
+      "files": [
+        "assets/runtime/ReplicatedStorage.rbxmx",
+        "assets/runtime/ServerStorage.rbxmx",
+        "src/shared/ArtManifestCollectionV2.lua"
+      ]
+    },
+    {
+      "id": "136471719114833",
+      "files": [
+        "assets/runtime/ServerStorage.rbxmx"
+      ]
+    },
+    {
+      "id": "136626952271843",
+      "files": [
+        "src/shared/ArtManifest.lua"
+      ]
+    },
+    {
+      "id": "136636406892398",
+      "files": [
+        "assets/runtime/ReplicatedStorage.rbxmx",
+        "assets/runtime/ServerStorage.rbxmx",
+        "src/shared/ArtManifestRelease.lua"
+      ]
+    },
+    {
+      "id": "136644726704889",
+      "files": [
+        "assets/runtime/ReplicatedStorage.rbxmx",
+        "assets/runtime/ServerStorage.rbxmx",
+        "src/shared/ArtManifestCollectionV2.lua"
+      ]
+    },
+    {
+      "id": "136650637704206",
+      "files": [
+        "assets/runtime/ReplicatedStorage.rbxmx",
+        "assets/runtime/ServerStorage.rbxmx",
+        "src/shared/ArtManifestRelease.lua"
+      ]
+    },
+    {
+      "id": "136730907273281",
+      "files": [
+        "assets/runtime/ReplicatedStorage.rbxmx",
+        "assets/runtime/ServerStorage.rbxmx",
+        "src/shared/ArtManifestRelease.lua"
+      ]
+    },
+    {
+      "id": "136878970828027",
+      "files": [
+        "assets/runtime/ReplicatedStorage.rbxmx",
+        "assets/runtime/ServerStorage.rbxmx",
+        "src/shared/ArtManifestCollectionV2.lua"
+      ]
+    },
+    {
+      "id": "136893820315630",
+      "files": [
+        "src/shared/ArtManifest.lua"
+      ]
+    },
+    {
+      "id": "137101751864286",
+      "files": [
+        "assets/runtime/ReplicatedStorage.rbxmx",
+        "assets/runtime/ServerStorage.rbxmx",
+        "src/shared/ArtManifestV3.lua"
+      ]
+    },
+    {
+      "id": "137130626523177",
+      "files": [
+        "assets/runtime/ReplicatedStorage.rbxmx",
+        "assets/runtime/ServerStorage.rbxmx",
+        "src/shared/ArtManifestCollectionV2.lua"
+      ]
+    },
+    {
+      "id": "137269298912517",
+      "files": [
+        "assets/runtime/ReplicatedStorage.rbxmx",
+        "assets/runtime/ServerStorage.rbxmx",
+        "src/shared/ArtManifestRelease.lua"
+      ]
+    },
+    {
+      "id": "137282862904548",
+      "files": [
+        "assets/runtime/ReplicatedStorage.rbxmx",
+        "assets/runtime/ServerStorage.rbxmx",
+        "src/shared/ArtManifestV3.lua"
+      ]
+    },
+    {
+      "id": "137283534769133",
+      "files": [
+        "assets/runtime/ReplicatedStorage.rbxmx",
+        "assets/runtime/ServerStorage.rbxmx",
+        "src/shared/ArtManifestRelease.lua"
+      ]
+    },
+    {
+      "id": "137316023566595",
+      "files": [
+        "src/shared/ArtManifest.lua"
+      ]
+    },
+    {
+      "id": "137316663683666",
+      "files": [
+        "assets/runtime/ReplicatedStorage.rbxmx",
+        "assets/runtime/ServerStorage.rbxmx",
+        "src/shared/ArtManifestRelease.lua"
+      ]
+    },
+    {
+      "id": "137395605652196",
+      "files": [
+        "assets/runtime/ReplicatedStorage.rbxmx",
+        "assets/runtime/ServerStorage.rbxmx",
+        "src/shared/ArtManifestCollectionV2.lua"
+      ]
+    },
+    {
+      "id": "137404067283556",
+      "files": [
+        "assets/runtime/ReplicatedStorage.rbxmx",
+        "assets/runtime/ServerStorage.rbxmx",
+        "src/shared/ArtManifestRelease.lua"
+      ]
+    },
+    {
+      "id": "137433782706978",
+      "files": [
+        "assets/runtime/ReplicatedStorage.rbxmx",
+        "assets/runtime/ServerStorage.rbxmx",
+        "src/shared/ArtManifestV3.lua"
+      ]
+    },
+    {
+      "id": "137441171191380",
+      "files": [
+        "assets/runtime/ReplicatedStorage.rbxmx",
+        "assets/runtime/ServerStorage.rbxmx",
+        "src/shared/ArtManifestRelease.lua"
+      ]
+    },
+    {
+      "id": "137586172275901",
+      "files": [
+        "assets/runtime/ReplicatedStorage.rbxmx",
+        "assets/runtime/ServerStorage.rbxmx",
+        "src/shared/ArtManifestV3.lua"
+      ]
+    },
+    {
+      "id": "137680956185057",
+      "files": [
+        "assets/runtime/ServerStorage.rbxmx",
+        "src/shared/Icons.lua"
+      ]
+    },
+    {
+      "id": "137688238914506",
+      "files": [
+        "assets/runtime/ReplicatedStorage.rbxmx",
+        "assets/runtime/ServerStorage.rbxmx",
+        "src/shared/ArtManifestMonsters.lua"
+      ]
+    },
+    {
+      "id": "137722177800711",
+      "files": [
+        "assets/runtime/ReplicatedStorage.rbxmx",
+        "assets/runtime/ServerStorage.rbxmx",
+        "src/shared/ArtManifestMonsters.lua"
+      ]
+    },
+    {
+      "id": "137774967606920",
+      "files": [
+        "assets/runtime/ReplicatedStorage.rbxmx",
+        "assets/runtime/ServerStorage.rbxmx",
+        "src/shared/ArtManifestV3.lua"
+      ]
+    },
+    {
+      "id": "137786740189046",
+      "files": [
+        "assets/runtime/ReplicatedStorage.rbxmx",
+        "assets/runtime/ServerStorage.rbxmx",
+        "src/shared/ArtManifestV3.lua"
+      ]
+    },
+    {
+      "id": "137829845740541",
+      "files": [
+        "assets/runtime/ReplicatedStorage.rbxmx",
+        "assets/runtime/ServerStorage.rbxmx",
+        "src/shared/ArtManifestRelease.lua"
+      ]
+    },
+    {
+      "id": "137907147892212",
+      "files": [
+        "assets/runtime/ReplicatedStorage.rbxmx",
+        "assets/runtime/ServerStorage.rbxmx",
+        "src/shared/ArtManifestHorror.lua"
+      ]
+    },
+    {
+      "id": "137914482699974",
+      "files": [
+        "assets/runtime/ReplicatedStorage.rbxmx",
+        "assets/runtime/ServerStorage.rbxmx",
+        "src/shared/ArtManifestRelease.lua"
+      ]
+    },
+    {
+      "id": "137929637095179",
+      "files": [
+        "assets/runtime/ReplicatedStorage.rbxmx",
+        "assets/runtime/ServerStorage.rbxmx",
+        "src/shared/ArtManifestHorror.lua"
+      ]
+    },
+    {
+      "id": "137993689724987",
+      "files": [
+        "src/shared/Icons.lua"
+      ]
+    },
+    {
+      "id": "138090611564405",
+      "files": [
+        "assets/runtime/ReplicatedStorage.rbxmx",
+        "assets/runtime/ServerStorage.rbxmx",
+        "src/shared/ArtManifestV3.lua"
+      ]
+    },
+    {
+      "id": "138136690266919",
+      "files": [
+        "assets/runtime/ReplicatedStorage.rbxmx",
+        "assets/runtime/ServerStorage.rbxmx",
+        "src/shared/ArtManifestEnvironment.lua"
+      ]
+    },
+    {
+      "id": "138203820164401",
+      "files": [
+        "assets/runtime/ReplicatedStorage.rbxmx",
+        "assets/runtime/ServerStorage.rbxmx",
+        "src/shared/ArtManifestRelease.lua"
+      ]
+    },
+    {
+      "id": "138321768917639",
+      "files": [
+        "assets/runtime/ReplicatedStorage.rbxmx",
+        "assets/runtime/ServerStorage.rbxmx",
+        "src/shared/ArtManifestRelease.lua"
+      ]
+    },
+    {
+      "id": "138425571644742",
+      "files": [
+        "assets/runtime/ReplicatedStorage.rbxmx",
+        "assets/runtime/ServerStorage.rbxmx",
+        "src/shared/ArtManifestMonsters.lua"
+      ]
+    },
+    {
+      "id": "138430220962350",
+      "files": [
+        "assets/runtime/ServerStorage.rbxmx",
+        "src/shared/Icons.lua"
+      ]
+    },
+    {
+      "id": "138451639592333",
+      "files": [
+        "assets/runtime/ReplicatedStorage.rbxmx",
+        "assets/runtime/ServerStorage.rbxmx",
+        "src/shared/ArtManifestRoadRoots.lua"
+      ]
+    },
+    {
+      "id": "138485209463713",
+      "files": [
+        "assets/runtime/ReplicatedStorage.rbxmx",
+        "assets/runtime/ServerStorage.rbxmx",
+        "src/shared/ArtManifestRelease.lua"
+      ]
+    },
+    {
+      "id": "138703754565453",
+      "files": [
+        "assets/runtime/ReplicatedStorage.rbxmx",
+        "assets/runtime/ServerStorage.rbxmx",
+        "src/shared/ArtManifestV3.lua"
+      ]
+    },
+    {
+      "id": "138722388745426",
+      "files": [
+        "assets/runtime/ReplicatedStorage.rbxmx",
+        "assets/runtime/ServerStorage.rbxmx",
+        "src/shared/ArtManifestRelease.lua"
+      ]
+    },
+    {
+      "id": "138726708828978",
+      "files": [
+        "assets/runtime/ReplicatedStorage.rbxmx",
+        "assets/runtime/ServerStorage.rbxmx",
+        "src/shared/ArtManifestCollectionV2.lua"
+      ]
+    },
+    {
+      "id": "138794827221470",
+      "files": [
+        "assets/runtime/ReplicatedStorage.rbxmx",
+        "assets/runtime/ServerStorage.rbxmx",
+        "src/shared/ArtManifestV3.lua"
+      ]
+    },
+    {
+      "id": "138866574598625",
+      "files": [
+        "assets/runtime/ReplicatedStorage.rbxmx",
+        "assets/runtime/ServerStorage.rbxmx",
+        "src/shared/ArtManifestHorror.lua"
+      ]
+    },
+    {
+      "id": "139078334784115",
+      "files": [
+        "assets/runtime/ReplicatedStorage.rbxmx",
+        "assets/runtime/ServerStorage.rbxmx",
+        "src/shared/ArtManifestRelease.lua"
+      ]
+    },
+    {
+      "id": "139266671061531",
+      "files": [
+        "assets/runtime/ServerStorage.rbxmx",
+        "src/shared/ArtManifestV3.lua"
+      ]
+    },
+    {
+      "id": "139405814790713",
+      "files": [
+        "assets/runtime/ReplicatedStorage.rbxmx",
+        "assets/runtime/ServerStorage.rbxmx",
+        "src/shared/ArtManifestMonsters.lua"
+      ]
+    },
+    {
+      "id": "139463572395515",
+      "files": [
+        "assets/runtime/ReplicatedStorage.rbxmx",
+        "assets/runtime/ServerStorage.rbxmx",
+        "src/shared/ArtManifestRelease.lua"
+      ]
+    },
+    {
+      "id": "139501135043771",
+      "files": [
+        "assets/runtime/ReplicatedStorage.rbxmx",
+        "assets/runtime/ServerStorage.rbxmx",
+        "src/shared/ArtManifestMonsters.lua"
+      ]
+    },
+    {
+      "id": "139513447841510",
+      "files": [
+        "assets/runtime/ReplicatedStorage.rbxmx",
+        "assets/runtime/ServerStorage.rbxmx",
+        "src/shared/ArtManifestV3.lua"
+      ]
+    },
+    {
+      "id": "139528389907627",
+      "files": [
+        "assets/runtime/ReplicatedStorage.rbxmx",
+        "assets/runtime/ServerStorage.rbxmx",
+        "src/shared/ArtManifestRoadRoots.lua"
+      ]
+    },
+    {
+      "id": "139532579415562",
+      "files": [
+        "assets/runtime/ReplicatedStorage.rbxmx",
+        "assets/runtime/ServerStorage.rbxmx",
+        "src/shared/ArtManifestCollectionV2.lua"
+      ]
+    },
+    {
+      "id": "139555203279643",
+      "files": [
+        "assets/runtime/ReplicatedStorage.rbxmx",
+        "assets/runtime/ServerStorage.rbxmx",
+        "src/shared/ArtManifestRoadV2.lua"
+      ]
+    },
+    {
+      "id": "139622945393240",
+      "files": [
+        "assets/runtime/ReplicatedStorage.rbxmx",
+        "assets/runtime/ServerStorage.rbxmx",
+        "src/shared/ArtManifestV3.lua"
+      ]
+    },
+    {
+      "id": "139639110870600",
+      "files": [
+        "assets/runtime/ReplicatedStorage.rbxmx",
+        "assets/runtime/ServerStorage.rbxmx",
+        "src/shared/ArtManifestV3.lua"
+      ]
+    },
+    {
+      "id": "139664995808459",
+      "files": [
+        "assets/runtime/ReplicatedStorage.rbxmx",
+        "assets/runtime/ServerStorage.rbxmx",
+        "src/shared/ArtManifestRelease.lua"
+      ]
+    },
+    {
+      "id": "139724421521210",
+      "files": [
+        "assets/runtime/ReplicatedStorage.rbxmx",
+        "assets/runtime/ServerStorage.rbxmx",
+        "src/shared/ArtManifestRelease.lua"
+      ]
+    },
+    {
+      "id": "139729592064750",
+      "files": [
+        "assets/runtime/ServerStorage.rbxmx",
+        "src/shared/ArtManifestV3.lua"
+      ]
+    },
+    {
+      "id": "139835003820935",
+      "files": [
+        "assets/runtime/ReplicatedStorage.rbxmx",
+        "assets/runtime/ServerStorage.rbxmx",
+        "src/shared/ArtManifestMonsters.lua"
+      ]
+    },
+    {
+      "id": "139872247226640",
+      "files": [
+        "assets/runtime/ServerStorage.rbxmx",
+        "src/shared/ArtManifestV3.lua"
+      ]
+    },
+    {
+      "id": "139890119657676",
+      "files": [
+        "assets/runtime/ReplicatedStorage.rbxmx",
+        "assets/runtime/ServerStorage.rbxmx",
+        "src/shared/ArtManifestCollectionV2.lua"
+      ]
+    },
+    {
+      "id": "139909614893923",
+      "files": [
+        "assets/runtime/ReplicatedStorage.rbxmx",
+        "assets/runtime/ServerStorage.rbxmx",
+        "src/shared/ArtManifestRelease.lua"
+      ]
+    },
+    {
+      "id": "139917085404538",
+      "files": [
+        "src/shared/ArtManifest.lua"
+      ]
+    },
+    {
+      "id": "139976017845983",
+      "files": [
+        "assets/runtime/ReplicatedStorage.rbxmx",
+        "assets/runtime/ServerStorage.rbxmx",
+        "src/shared/ArtManifestRelease.lua"
+      ]
+    },
+    {
+      "id": "140064772652167",
+      "files": [
+        "assets/runtime/ReplicatedStorage.rbxmx",
+        "assets/runtime/ServerStorage.rbxmx",
+        "src/shared/ArtManifestRelease.lua"
+      ]
+    },
+    {
+      "id": "140111271665673",
+      "files": [
+        "assets/runtime/ReplicatedStorage.rbxmx",
+        "assets/runtime/ServerStorage.rbxmx",
+        "src/shared/ArtManifestV3.lua"
+      ]
+    },
+    {
+      "id": "140164890497209",
+      "files": [
+        "assets/runtime/ReplicatedStorage.rbxmx",
+        "assets/runtime/ServerStorage.rbxmx",
+        "src/shared/ArtManifestRelease.lua"
+      ]
+    },
+    {
+      "id": "140268117817878",
+      "files": [
+        "assets/runtime/ServerStorage.rbxmx"
+      ]
+    },
+    {
+      "id": "140304693457136",
+      "files": [
+        "src/shared/ArtManifest.lua"
+      ]
+    },
+    {
+      "id": "140307195997329",
+      "files": [
+        "assets/runtime/ReplicatedStorage.rbxmx",
+        "assets/runtime/ServerStorage.rbxmx",
+        "src/shared/ArtManifestRelease.lua"
+      ]
+    },
+    {
+      "id": "140463270347816",
+      "files": [
+        "assets/runtime/ReplicatedStorage.rbxmx",
+        "assets/runtime/ServerStorage.rbxmx",
+        "src/shared/ArtManifestV3.lua"
+      ]
+    },
+    {
+      "id": "140477502054204",
+      "files": [
+        "assets/runtime/ReplicatedStorage.rbxmx",
+        "assets/runtime/ServerStorage.rbxmx",
+        "src/shared/ArtManifestV3.lua"
+      ]
+    },
+    {
+      "id": "140517461468392",
+      "files": [
+        "assets/runtime/ReplicatedStorage.rbxmx",
+        "assets/runtime/ServerStorage.rbxmx",
+        "src/shared/ArtManifestMonsters.lua"
+      ]
+    },
+    {
+      "id": "140586833820713",
+      "files": [
+        "assets/runtime/ServerStorage.rbxmx",
+        "src/shared/Icons.lua"
+      ]
+    }
+  ]
+}

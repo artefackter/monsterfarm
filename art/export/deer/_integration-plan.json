@@ -1,0 +1,52 @@
+{
+  "status": "Models prepared for approval; not imported or enabled in the game",
+  "referenceCharacters": "/var/folders/g0/p39b0rv17qv4_m_fxvnm1zkr0000gn/T/codex-clipboard-0646e4ec-95f9-4a8d-82d1-6e3a7440fc8d.png",
+  "referenceChief": "/var/folders/g0/p39b0rv17qv4_m_fxvnm1zkr0000gn/T/codex-clipboard-946f77a2-6c8e-47c1-bb09-b437acaa6591.png",
+  "characters": [
+    {
+      "asset": "Deer_Farmer",
+      "ru": "Фермер",
+      "role": "player collection"
+    },
+    {
+      "asset": "Deer_Punk",
+      "ru": "Нефор",
+      "role": "player collection"
+    },
+    {
+      "asset": "Deer_Assassin",
+      "ru": "Убийца",
+      "role": "player collection"
+    },
+    {
+      "asset": "Deer_Chief",
+      "ru": "Главврач",
+      "role": "replace existing road Chief boss, also collectible"
+    }
+  ],
+  "chiefCollectionAcquisition": "Chance to drop a special grave after defeating the boss; confirmed by user",
+  "chiefGraveDropChance": null,
+  "requiredIntegration": [
+    "Import approved meshes and map IDs into ArtKit",
+    "Use authored joint pivots for both mutant and collection animations",
+    "Scale collection and boss versions separately and verify foot placement",
+    "Add collection types, localization, Zombiedex entries and configured acquisition",
+    "Implement boss special-grave reward server-side with death deduplication and saved grave metadata",
+    "Verify excavation, carrying, placement, income, guard role and merging"
+  ],
+  "importSettings": {
+    "Merge Meshes": false,
+    "Ignore Vertex Colors": false
+  },
+  "liveFilesChanged": [],
+  "artRevision": 2,
+  "uncannyReference": "art/references/deer/uncanny-reference.png",
+  "previousVersion": "art/versions/deer-v1",
+  "visualChanges": [
+    "elongated legs and thin forearms",
+    "forward-hunched torso and tilted head",
+    "unequal protruding red eyes with dark pupils",
+    "asymmetric curved antlers",
+    "long hooked claws"
+  ]
+}

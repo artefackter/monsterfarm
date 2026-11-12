@@ -1,0 +1,33 @@
+{
+  "assets": {
+    "GunM249": {
+      "parts": 5,
+      "triangles": 2940
+    },
+    "GunDouble": {
+      "parts": 3,
+      "triangles": 1826
+    },
+    "GunPump": {
+      "parts": 4,
+      "triangles": 1536
+    },
+    "GunMP5": {
+      "parts": 4,
+      "triangles": 2172
+    },
+    "V3_GunAK": {
+      "parts": 4,
+      "triangles": 1956
+    }
+  },
+  "meshCount": 20,
+  "triangles": 10430,
+  "bytes": 981856,
+  "sha256": "c65acb37cee31836e5adf3bda4818ba6829fa3989b65b76f30446aa0008f20ce",
+  "roundtrip": {
+    "parts": 20,
+    "vertexColors": true,
+    "groupsAndDimensionsVerified": true
+  }
+}

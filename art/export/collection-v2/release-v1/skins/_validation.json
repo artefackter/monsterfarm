@@ -1,0 +1,30 @@
+{
+  "assets": {
+    "Kalash_Asiimov": {
+      "parts": 4,
+      "triangles": 2496
+    },
+    "Kalash_GoldenDragon": {
+      "parts": 4,
+      "triangles": 3504
+    },
+    "Kalash_Cyberpunk": {
+      "parts": 5,
+      "triangles": 2896
+    }
+  },
+  "meshCount": 13,
+  "triangles": 8896,
+  "bytes": 747564,
+  "sha256": "7b51df983aae265d475e52768ac574ce22f3087c1c13ee4ba711eda8cff9d27c",
+  "roundtrip": {
+    "parts": 13,
+    "vertexColors": true,
+    "movingPartsAndDimensionsVerified": true
+  },
+  "skinNames": [
+    "Asiimov",
+    "GoldenDragon",
+    "Cyberpunk"
+  ]
+}

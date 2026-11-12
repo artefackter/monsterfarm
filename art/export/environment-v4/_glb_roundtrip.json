@@ -1,0 +1,11 @@
+{
+  "passed": true,
+  "importedMeshes": 15,
+  "vertexColors": true,
+  "grassTexture": [
+    512,
+    512
+  ],
+  "models": 12,
+  "geometryChecked": true
+}

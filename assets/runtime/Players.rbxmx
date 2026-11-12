@@ -1,0 +1,11 @@
+<?xml version='1.0' encoding='utf-8'?>
+<roblox version="4"><Item class="Players" referent="8">
+    <Properties>
+      <string name="Name">Players</string>
+      <int name="MaxPlayersInternal">60</int>
+      <int name="PreferredPlayersInternal">60</int>
+      <BinaryString name="SerializedOverrides">
+      </BinaryString>
+    </Properties>
+  </Item>
+  </roblox>

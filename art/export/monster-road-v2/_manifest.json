@@ -1,0 +1,644 @@
+{
+  "MR_VillageHouse": [
+    {
+      "part": "Main",
+      "mesh": "MR_VillageHouse.Main",
+      "offset": [
+        0.0,
+        7.987,
+        0.0
+      ],
+      "size": [
+        16.216,
+        16.375,
+        14.0
+      ],
+      "tint": null,
+      "attach": null,
+      "material": "SmoothPlastic",
+      "transparency": 0.0,
+      "collide": false,
+      "cast": true,
+      "tris": 3992
+    }
+  ],
+  "MR_Hospital": [
+    {
+      "part": "Main",
+      "mesh": "MR_Hospital.Main",
+      "offset": [
+        0.0,
+        8.225,
+        -1.95
+      ],
+      "size": [
+        26.0,
+        16.85,
+        17.7
+      ],
+      "tint": null,
+      "attach": null,
+      "material": "SmoothPlastic",
+      "transparency": 0.0,
+      "collide": false,
+      "cast": true,
+      "tris": 2288
+    }
+  ],
+  "MR_Factory": [
+    {
+      "part": "Main",
+      "mesh": "MR_Factory.Main",
+      "offset": [
+        0.0,
+        8.875,
+        0.0
+      ],
+      "size": [
+        22.92,
+        17.75,
+        15.177
+      ],
+      "tint": null,
+      "attach": null,
+      "material": "SmoothPlastic",
+      "transparency": 0.0,
+      "collide": false,
+      "cast": true,
+      "tris": 4620
+    }
+  ],
+  "MR_Boiler": [
+    {
+      "part": "Main",
+      "mesh": "MR_Boiler.Main",
+      "offset": [
+        -0.5,
+        4.683,
+        -0.875
+      ],
+      "size": [
+        13.5,
+        9.366,
+        6.75
+      ],
+      "tint": null,
+      "attach": null,
+      "material": "SmoothPlastic",
+      "transparency": 0.0,
+      "collide": false,
+      "cast": true,
+      "tris": 336
+    }
+  ],
+  "MR_Log": [
+    {
+      "part": "Main",
+      "mesh": "MR_Log.Main",
+      "offset": [
+        -0.043,
+        1.0,
+        0.0
+      ],
+      "size": [
+        9.085,
+        2.0,
+        2.0
+      ],
+      "tint": null,
+      "attach": null,
+      "material": "SmoothPlastic",
+      "transparency": 0.0,
+      "collide": false,
+      "cast": true,
+      "tris": 88
+    }
+  ],
+  "MR_Well": [
+    {
+      "part": "Main",
+      "mesh": "MR_Well.Main",
+      "offset": [
+        0.0,
+        3.2,
+        0.0
+      ],
+      "size": [
+        6.0,
+        6.4,
+        5.05
+      ],
+      "tint": null,
+      "attach": null,
+      "material": "SmoothPlastic",
+      "transparency": 0.0,
+      "collide": false,
+      "cast": true,
+      "tris": 660
+    }
+  ],
+  "MR_Sign": [
+    {
+      "part": "Main",
+      "mesh": "MR_Sign.Main",
+      "offset": [
+        0.0,
+        2.75,
+        -0.038
+      ],
+      "size": [
+        9.0,
+        5.5,
+        0.825
+      ],
+      "tint": null,
+      "attach": null,
+      "material": "SmoothPlastic",
+      "transparency": 0.0,
+      "collide": false,
+      "cast": true,
+      "tris": 176
+    }
+  ],
+  "MR_Rocks": [
+    {
+      "part": "Main",
+      "mesh": "MR_Rocks.Main",
+      "offset": [
+        -0.179,
+        0.99,
+        -0.01
+      ],
+      "size": [
+        5.22,
+        2.82,
+        3.342
+      ],
+      "tint": null,
+      "attach": null,
+      "material": "SmoothPlastic",
+      "transparency": 0.0,
+      "collide": false,
+      "cast": true,
+      "tris": 60
+    }
+  ],
+  "MR_ForestTree": [
+    {
+      "part": "Trunk",
+      "mesh": "MR_ForestTree.Trunk",
+      "offset": [
+        0.118,
+        3.833,
+        0.023
+      ],
+      "size": [
+        4.457,
+        7.875,
+        4.887
+      ],
+      "tint": null,
+      "attach": null,
+      "material": "SmoothPlastic",
+      "transparency": 0.0,
+      "collide": false,
+      "cast": true,
+      "tris": 1130
+    },
+    {
+      "part": "Canopy",
+      "mesh": "MR_ForestTree.Canopy",
+      "offset": [
+        0.164,
+        7.828,
+        0.031
+      ],
+      "size": [
+        8.753,
+        5.249,
+        9.112
+      ],
+      "tint": null,
+      "attach": null,
+      "material": "SmoothPlastic",
+      "transparency": 0.0,
+      "collide": false,
+      "cast": true,
+      "tris": 9360
+    }
+  ],
+  "MR_DirtPath": [
+    {
+      "part": "Main",
+      "mesh": "MR_DirtPath.Main",
+      "offset": [
+        -0.002,
+        0.114,
+        -0.002
+      ],
+      "size": [
+        9.957,
+        0.228,
+        13.145
+      ],
+      "tint": null,
+      "attach": null,
+      "material": "SmoothPlastic",
+      "transparency": 0.0,
+      "collide": false,
+      "cast": true,
+      "tris": 704
+    }
+  ],
+  "MR_VillagePaving": [
+    {
+      "part": "Main",
+      "mesh": "MR_VillagePaving.Main",
+      "offset": [
+        0.001,
+        0.114,
+        -0.001
+      ],
+      "size": [
+        9.902,
+        0.228,
+        13.112
+      ],
+      "tint": null,
+      "attach": null,
+      "material": "SmoothPlastic",
+      "transparency": 0.0,
+      "collide": false,
+      "cast": true,
+      "tris": 704
+    }
+  ],
+  "MR_FactoryPaving": [
+    {
+      "part": "Main",
+      "mesh": "MR_FactoryPaving.Main",
+      "offset": [
+        0.003,
+        0.114,
+        -0.0
+      ],
+      "size": [
+        9.935,
+        0.228,
+        13.149
+      ],
+      "tint": null,
+      "attach": null,
+      "material": "SmoothPlastic",
+      "transparency": 0.0,
+      "collide": false,
+      "cast": true,
+      "tris": 704
+    }
+  ],
+  "MR_CavePaving": [
+    {
+      "part": "Main",
+      "mesh": "MR_CavePaving.Main",
+      "offset": [
+        0.007,
+        0.114,
+        0.001
+      ],
+      "size": [
+        9.949,
+        0.228,
+        13.138
+      ],
+      "tint": null,
+      "attach": null,
+      "material": "SmoothPlastic",
+      "transparency": 0.0,
+      "collide": false,
+      "cast": true,
+      "tris": 704
+    }
+  ],
+  "MR_GrassClump": [
+    {
+      "part": "Main",
+      "mesh": "MR_GrassClump.Main",
+      "offset": [
+        -0.004,
+        0.525,
+        -0.007
+      ],
+      "size": [
+        0.993,
+        1.05,
+        0.982
+      ],
+      "tint": null,
+      "attach": null,
+      "material": "SmoothPlastic",
+      "transparency": 0.0,
+      "collide": false,
+      "cast": true,
+      "tris": 96
+    }
+  ],
+  "MR_Mushrooms": [
+    {
+      "part": "Main",
+      "mesh": "MR_Mushrooms.Main",
+      "offset": [
+        0.1,
+        0.522,
+        -0.15
+      ],
+      "size": [
+        2.056,
+        1.045,
+        1.6
+      ],
+      "tint": null,
+      "attach": null,
+      "material": "SmoothPlastic",
+      "transparency": 0.0,
+      "collide": false,
+      "cast": true,
+      "tris": 504
+    }
+  ],
+  "MR_LeafLitter": [
+    {
+      "part": "Main",
+      "mesh": "MR_LeafLitter.Main",
+      "offset": [
+        -0.104,
+        0.05,
+        -0.153
+      ],
+      "size": [
+        3.562,
+        0.05,
+        3.946
+      ],
+      "tint": null,
+      "attach": null,
+      "material": "SmoothPlastic",
+      "transparency": 0.0,
+      "collide": false,
+      "cast": true,
+      "tris": 280
+    }
+  ],
+  "MR_TwistedTree": [
+    {
+      "part": "Main",
+      "mesh": "MR_TwistedTree.Main",
+      "offset": [
+        0.326,
+        6.365,
+        -0.044
+      ],
+      "size": [
+        11.041,
+        13.285,
+        6.098
+      ],
+      "tint": null,
+      "attach": null,
+      "material": "SmoothPlastic",
+      "transparency": 0.0,
+      "collide": false,
+      "cast": true,
+      "tris": 1730
+    }
+  ],
+  "MR_HangingLantern": [
+    {
+      "part": "Main",
+      "mesh": "MR_HangingLantern.Main",
+      "offset": [
+        -1.275,
+        3.805,
+        0.0
+      ],
+      "size": [
+        3.05,
+        7.61,
+        1.273
+      ],
+      "tint": null,
+      "attach": null,
+      "material": "SmoothPlastic",
+      "transparency": 0.0,
+      "collide": false,
+      "cast": true,
+      "tris": 428
+    }
+  ],
+  "MR_CultTorch": [
+    {
+      "part": "Main",
+      "mesh": "MR_CultTorch.Main",
+      "offset": [
+        0.0,
+        1.875,
+        0.0
+      ],
+      "size": [
+        1.0,
+        3.75,
+        1.0
+      ],
+      "tint": null,
+      "attach": null,
+      "material": "SmoothPlastic",
+      "transparency": 0.0,
+      "collide": false,
+      "cast": true,
+      "tris": 232
+    }
+  ],
+  "MR_CultSkulls": [
+    {
+      "part": "Main",
+      "mesh": "MR_CultSkulls.Main",
+      "offset": [
+        0.077,
+        0.694,
+        0.035
+      ],
+      "size": [
+        2.382,
+        1.312,
+        1.15
+      ],
+      "tint": null,
+      "attach": null,
+      "material": "SmoothPlastic",
+      "transparency": 0.0,
+      "collide": false,
+      "cast": true,
+      "tris": 832
+    }
+  ],
+  "MR_RuneStone": [
+    {
+      "part": "Main",
+      "mesh": "MR_RuneStone.Main",
+      "offset": [
+        0.0,
+        1.1,
+        -0.061
+      ],
+      "size": [
+        2.057,
+        3.0,
+        1.227
+      ],
+      "tint": null,
+      "attach": null,
+      "material": "SmoothPlastic",
+      "transparency": 0.0,
+      "collide": false,
+      "cast": true,
+      "tris": 196
+    }
+  ],
+  "MR_Cart": [
+    {
+      "part": "Main",
+      "mesh": "MR_Cart.Main",
+      "offset": [
+        0.0,
+        1.2,
+        -1.21
+      ],
+      "size": [
+        5.23,
+        2.6,
+        7.621
+      ],
+      "tint": null,
+      "attach": null,
+      "material": "SmoothPlastic",
+      "transparency": 0.0,
+      "collide": false,
+      "cast": true,
+      "tris": 804
+    }
+  ],
+  "MR_CultCave": [
+    {
+      "part": "Main",
+      "mesh": "MR_CultCave.Main",
+      "offset": [
+        0.0,
+        3.675,
+        0.331
+      ],
+      "size": [
+        17.609,
+        9.35,
+        7.462
+      ],
+      "tint": null,
+      "attach": null,
+      "material": "SmoothPlastic",
+      "transparency": 0.0,
+      "collide": false,
+      "cast": true,
+      "tris": 1140
+    }
+  ],
+  "MR_WallDetailed": [
+    {
+      "part": "Main",
+      "mesh": "MR_WallDetailed.Main",
+      "offset": [
+        0.255,
+        4.475,
+        -0.25
+      ],
+      "size": [
+        16.49,
+        9.05,
+        3.4
+      ],
+      "tint": null,
+      "attach": null,
+      "material": "SmoothPlastic",
+      "transparency": 0.0,
+      "collide": false,
+      "cast": true,
+      "tris": 1144
+    }
+  ],
+  "MR_RustTank": [
+    {
+      "part": "Main",
+      "mesh": "MR_RustTank.Main",
+      "offset": [
+        -1.055,
+        4.063,
+        -0.075
+      ],
+      "size": [
+        7.25,
+        8.23,
+        5.29
+      ],
+      "tint": null,
+      "attach": null,
+      "material": "SmoothPlastic",
+      "transparency": 0.0,
+      "collide": false,
+      "cast": true,
+      "tris": 1064
+    }
+  ],
+  "MR_HazardEdge": [
+    {
+      "part": "Main",
+      "mesh": "MR_HazardEdge.Main",
+      "offset": [
+        0.0,
+        0.09,
+        0.0
+      ],
+      "size": [
+        1.056,
+        0.18,
+        30.0
+      ],
+      "tint": null,
+      "attach": null,
+      "material": "SmoothPlastic",
+      "transparency": 0.0,
+      "collide": false,
+      "cast": true,
+      "tris": 704
+    }
+  ],
+  "MR_ArenaSeal": [
+    {
+      "part": "Main",
+      "mesh": "MR_ArenaSeal.Main",
+      "offset": [
+        0.0,
+        0.11,
+        0.0
+      ],
+      "size": [
+        8.4,
+        0.22,
+        8.4
+      ],
+      "tint": null,
+      "attach": null,
+      "material": "SmoothPlastic",
+      "transparency": 0.0,
+      "collide": false,
+      "cast": true,
+      "tris": 564
+    }
+  ]
+}

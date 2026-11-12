@@ -1,0 +1,1 @@
+return {Field={Start=999,Max=999},Graves={Start=999,Max=999},Guards={Start=2,Max=4},Crypt={Start=20,Max=60},DiggerBoost=.04,MaxBoost=.6,GuardChance=.08,MaxGuardChance=.85,PlotRadius=135,PlotAngles={-7,67,124,181,238,295},IslandScale=1.25,FarmHalf=42,Boundary={Height=26,Thickness=4,Inset=4,Segments=96},PlotSize=64,GateRadius=10,IncomeTick=1,FloatInterval=3,WalkSpeed=16}

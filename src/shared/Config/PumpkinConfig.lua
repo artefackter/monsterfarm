@@ -1,0 +1,1 @@
+return {Order={"Pumpkin","BigPumpkin","GoldenPumpkin","LunarPumpkin"},Pumpkin={Price=5000,Weights={70,25,5,0,0}},BigPumpkin={Price=75000,Weights={35,40,20,5,0}},GoldenPumpkin={Price=750000,Weights={0,30,45,20,5}},LunarPumpkin={Price=3000000,Weights={0,0,40,45,15},NightOnly=true}}

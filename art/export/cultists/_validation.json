@@ -1,0 +1,33 @@
+{
+  "totalTriangles": 15484,
+  "assets": {
+    "Cultist_Normal": {
+      "parts": 6,
+      "triangles": 4358,
+      "height": 5.684
+    },
+    "Cultist_Hunter": {
+      "parts": 7,
+      "triangles": 5210,
+      "height": 5.67
+    },
+    "Cultist_Parasite": {
+      "parts": 11,
+      "triangles": 5916,
+      "height": 5.882
+    }
+  },
+  "status": "Awaiting render approval; no Studio imports or gameplay changes",
+  "meshes": 24,
+  "bytes": 1474060,
+  "sha256": "d979acb762d78622523d2e80d25af459e17a60c66ea50f56d9816797d2c10e54",
+  "checks": [
+    "finite vertices and normals",
+    "valid triangle indices",
+    "unique import names",
+    "GLB container length",
+    "three new models only",
+    "every mesh below 10000 triangles",
+    "separate head, arms, legs and props"
+  ]
+}

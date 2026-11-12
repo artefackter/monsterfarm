@@ -1,0 +1,619 @@
+{
+  "Deer_Root_Aggressive": [
+    {
+      "part": "Body",
+      "mesh": "Deer_Root_Aggressive.Body",
+      "offset": [
+        0.0,
+        3.983,
+        -0.133
+      ],
+      "size": [
+        1.72,
+        2.565,
+        1.226
+      ],
+      "tint": null,
+      "attach": "Body",
+      "material": "SmoothPlastic",
+      "transparency": 0.0,
+      "collide": false,
+      "cast": true,
+      "tris": 202
+    },
+    {
+      "part": "LegR",
+      "mesh": "Deer_Root_Aggressive.LegR",
+      "offset": [
+        0.63,
+        1.578,
+        -0.13
+      ],
+      "size": [
+        0.939,
+        3.157,
+        1.281
+      ],
+      "tint": null,
+      "attach": "LegR",
+      "material": "SmoothPlastic",
+      "transparency": 0.0,
+      "collide": false,
+      "cast": true,
+      "tris": 210
+    },
+    {
+      "part": "LegL",
+      "mesh": "Deer_Root_Aggressive.LegL",
+      "offset": [
+        -0.612,
+        1.579,
+        -0.116
+      ],
+      "size": [
+        0.94,
+        3.157,
+        1.263
+      ],
+      "tint": null,
+      "attach": "LegL",
+      "material": "SmoothPlastic",
+      "transparency": 0.0,
+      "collide": false,
+      "cast": true,
+      "tris": 210
+    },
+    {
+      "part": "ArmR",
+      "mesh": "Deer_Root_Aggressive.ArmR",
+      "offset": [
+        1.422,
+        3.211,
+        -0.662
+      ],
+      "size": [
+        1.528,
+        2.937,
+        1.403
+      ],
+      "tint": null,
+      "attach": "ArmR",
+      "material": "SmoothPlastic",
+      "transparency": 0.0,
+      "collide": false,
+      "cast": true,
+      "tris": 420
+    },
+    {
+      "part": "ArmL",
+      "mesh": "Deer_Root_Aggressive.ArmL",
+      "offset": [
+        -1.425,
+        3.214,
+        -0.667
+      ],
+      "size": [
+        1.522,
+        2.943,
+        1.409
+      ],
+      "tint": null,
+      "attach": "ArmL",
+      "material": "SmoothPlastic",
+      "transparency": 0.0,
+      "collide": false,
+      "cast": true,
+      "tris": 422
+    },
+    {
+      "part": "Head",
+      "mesh": "Deer_Root_Aggressive.Head",
+      "offset": [
+        0.001,
+        6.504,
+        -0.95
+      ],
+      "size": [
+        3.474,
+        4.17,
+        1.636
+      ],
+      "tint": null,
+      "attach": "Head",
+      "material": "SmoothPlastic",
+      "transparency": 0.0,
+      "collide": false,
+      "cast": true,
+      "tris": 1706
+    }
+  ],
+  "Parasite_Root_Aggressive": [
+    {
+      "part": "Body",
+      "mesh": "Parasite_Root_Aggressive.Body",
+      "offset": [
+        0.0,
+        3.232,
+        0.08
+      ],
+      "size": [
+        2.373,
+        2.488,
+        1.05
+      ],
+      "tint": null,
+      "attach": "Body",
+      "material": "SmoothPlastic",
+      "transparency": 0.0,
+      "collide": false,
+      "cast": true,
+      "tris": 132
+    },
+    {
+      "part": "LegR",
+      "mesh": "Parasite_Root_Aggressive.LegR",
+      "offset": [
+        0.872,
+        1.176,
+        -0.08
+      ],
+      "size": [
+        1.574,
+        2.336,
+        1.323
+      ],
+      "tint": null,
+      "attach": "LegR",
+      "material": "SmoothPlastic",
+      "transparency": 0.0,
+      "collide": false,
+      "cast": true,
+      "tris": 132
+    },
+    {
+      "part": "LegL",
+      "mesh": "Parasite_Root_Aggressive.LegL",
+      "offset": [
+        -0.872,
+        1.176,
+        -0.08
+      ],
+      "size": [
+        1.574,
+        2.336,
+        1.323
+      ],
+      "tint": null,
+      "attach": "LegL",
+      "material": "SmoothPlastic",
+      "transparency": 0.0,
+      "collide": false,
+      "cast": true,
+      "tris": 132
+    },
+    {
+      "part": "ArmR",
+      "mesh": "Parasite_Root_Aggressive.ArmR",
+      "offset": [
+        1.876,
+        2.967,
+        -0.382
+      ],
+      "size": [
+        1.928,
+        2.343,
+        1.677
+      ],
+      "tint": null,
+      "attach": "ArmR",
+      "material": "SmoothPlastic",
+      "transparency": 0.0,
+      "collide": false,
+      "cast": true,
+      "tris": 264
+    },
+    {
+      "part": "ArmL",
+      "mesh": "Parasite_Root_Aggressive.ArmL",
+      "offset": [
+        -1.876,
+        2.967,
+        -0.382
+      ],
+      "size": [
+        1.928,
+        2.343,
+        1.677
+      ],
+      "tint": null,
+      "attach": "ArmL",
+      "material": "SmoothPlastic",
+      "transparency": 0.0,
+      "collide": false,
+      "cast": true,
+      "tris": 264
+    },
+    {
+      "part": "TendrilR",
+      "mesh": "Parasite_Root_Aggressive.TendrilR",
+      "offset": [
+        1.378,
+        4.994,
+        -0.092
+      ],
+      "size": [
+        1.443,
+        2.774,
+        1.569
+      ],
+      "tint": null,
+      "attach": "TendrilR",
+      "material": "SmoothPlastic",
+      "transparency": 0.0,
+      "collide": false,
+      "cast": true,
+      "tris": 220
+    },
+    {
+      "part": "TendrilL",
+      "mesh": "Parasite_Root_Aggressive.TendrilL",
+      "offset": [
+        -1.378,
+        4.994,
+        -0.092
+      ],
+      "size": [
+        1.443,
+        2.774,
+        1.569
+      ],
+      "tint": null,
+      "attach": "TendrilL",
+      "material": "SmoothPlastic",
+      "transparency": 0.0,
+      "collide": false,
+      "cast": true,
+      "tris": 220
+    },
+    {
+      "part": "Head",
+      "mesh": "Parasite_Root_Aggressive.Head",
+      "offset": [
+        -0.018,
+        4.785,
+        -0.287
+      ],
+      "size": [
+        2.394,
+        2.086,
+        1.774
+      ],
+      "tint": null,
+      "attach": "Head",
+      "material": "SmoothPlastic",
+      "transparency": 0.0,
+      "collide": false,
+      "cast": true,
+      "tris": 1104
+    },
+    {
+      "part": "EyesGlow",
+      "mesh": "Parasite_Root_Aggressive.EyesGlow",
+      "offset": [
+        0.0,
+        5.389,
+        -1.17
+      ],
+      "size": [
+        0.802,
+        0.078,
+        0.05
+      ],
+      "tint": null,
+      "attach": "Head",
+      "material": "Neon",
+      "transparency": 0.0,
+      "collide": false,
+      "cast": true,
+      "tris": 24
+    }
+  ],
+  "Stalker_Root_Aggressive": [
+    {
+      "part": "Body",
+      "mesh": "Stalker_Root_Aggressive.Body",
+      "offset": [
+        0.0,
+        3.694,
+        -0.069
+      ],
+      "size": [
+        1.26,
+        2.537,
+        1.018
+      ],
+      "tint": null,
+      "attach": "Body",
+      "material": "SmoothPlastic",
+      "transparency": 0.0,
+      "collide": false,
+      "cast": true,
+      "tris": 132
+    },
+    {
+      "part": "LegR",
+      "mesh": "Stalker_Root_Aggressive.LegR",
+      "offset": [
+        0.464,
+        1.382,
+        -0.215
+      ],
+      "size": [
+        0.775,
+        2.745,
+        1.119
+      ],
+      "tint": null,
+      "attach": "LegR",
+      "material": "SmoothPlastic",
+      "transparency": 0.0,
+      "collide": false,
+      "cast": true,
+      "tris": 264
+    },
+    {
+      "part": "LegL",
+      "mesh": "Stalker_Root_Aggressive.LegL",
+      "offset": [
+        -0.464,
+        1.382,
+        -0.215
+      ],
+      "size": [
+        0.775,
+        2.745,
+        1.119
+      ],
+      "tint": null,
+      "attach": "LegL",
+      "material": "SmoothPlastic",
+      "transparency": 0.0,
+      "collide": false,
+      "cast": true,
+      "tris": 264
+    },
+    {
+      "part": "ArmR",
+      "mesh": "Stalker_Root_Aggressive.ArmR",
+      "offset": [
+        1.312,
+        3.042,
+        -0.788
+      ],
+      "size": [
+        1.453,
+        2.906,
+        1.755
+      ],
+      "tint": null,
+      "attach": "ArmR",
+      "material": "SmoothPlastic",
+      "transparency": 0.0,
+      "collide": false,
+      "cast": true,
+      "tris": 396
+    },
+    {
+      "part": "ArmL",
+      "mesh": "Stalker_Root_Aggressive.ArmL",
+      "offset": [
+        -1.312,
+        3.042,
+        -0.788
+      ],
+      "size": [
+        1.453,
+        2.906,
+        1.755
+      ],
+      "tint": null,
+      "attach": "ArmL",
+      "material": "SmoothPlastic",
+      "transparency": 0.0,
+      "collide": false,
+      "cast": true,
+      "tris": 396
+    },
+    {
+      "part": "Head",
+      "mesh": "Stalker_Root_Aggressive.Head",
+      "offset": [
+        0.0,
+        5.319,
+        -0.634
+      ],
+      "size": [
+        2.97,
+        2.629,
+        1.389
+      ],
+      "tint": null,
+      "attach": "Head",
+      "material": "SmoothPlastic",
+      "transparency": 0.0,
+      "collide": false,
+      "cast": true,
+      "tris": 1224
+    },
+    {
+      "part": "EyesGlow",
+      "mesh": "Stalker_Root_Aggressive.EyesGlow",
+      "offset": [
+        0.0,
+        5.692,
+        -1.174
+      ],
+      "size": [
+        0.98,
+        0.231,
+        0.069
+      ],
+      "tint": null,
+      "attach": "Head",
+      "material": "Neon",
+      "transparency": 0.0,
+      "collide": false,
+      "cast": true,
+      "tris": 88
+    }
+  ],
+  "Verity_Root_Aggressive": [
+    {
+      "part": "Body",
+      "mesh": "Verity_Root_Aggressive.Body",
+      "offset": [
+        0.0,
+        4.131,
+        -0.019
+      ],
+      "size": [
+        1.46,
+        2.422,
+        0.679
+      ],
+      "tint": null,
+      "attach": "Body",
+      "material": "SmoothPlastic",
+      "transparency": 0.0,
+      "collide": false,
+      "cast": true,
+      "tris": 828
+    },
+    {
+      "part": "LegR",
+      "mesh": "Verity_Root_Aggressive.LegR",
+      "offset": [
+        0.464,
+        1.62,
+        -0.14
+      ],
+      "size": [
+        0.642,
+        3.215,
+        0.95
+      ],
+      "tint": null,
+      "attach": "LegR",
+      "material": "SmoothPlastic",
+      "transparency": 0.0,
+      "collide": false,
+      "cast": true,
+      "tris": 132
+    },
+    {
+      "part": "LegL",
+      "mesh": "Verity_Root_Aggressive.LegL",
+      "offset": [
+        -0.464,
+        1.62,
+        -0.14
+      ],
+      "size": [
+        0.642,
+        3.215,
+        0.95
+      ],
+      "tint": null,
+      "attach": "LegL",
+      "material": "SmoothPlastic",
+      "transparency": 0.0,
+      "collide": false,
+      "cast": true,
+      "tris": 132
+    },
+    {
+      "part": "ArmR",
+      "mesh": "Verity_Root_Aggressive.ArmR",
+      "offset": [
+        1.336,
+        3.388,
+        -0.658
+      ],
+      "size": [
+        1.394,
+        3.108,
+        1.732
+      ],
+      "tint": null,
+      "attach": "ArmR",
+      "material": "SmoothPlastic",
+      "transparency": 0.0,
+      "collide": false,
+      "cast": true,
+      "tris": 396
+    },
+    {
+      "part": "ArmL",
+      "mesh": "Verity_Root_Aggressive.ArmL",
+      "offset": [
+        -1.336,
+        3.388,
+        -0.658
+      ],
+      "size": [
+        1.394,
+        3.108,
+        1.732
+      ],
+      "tint": null,
+      "attach": "ArmL",
+      "material": "SmoothPlastic",
+      "transparency": 0.0,
+      "collide": false,
+      "cast": true,
+      "tris": 396
+    },
+    {
+      "part": "Head",
+      "mesh": "Verity_Root_Aggressive.Head",
+      "offset": [
+        0.0,
+        6.105,
+        -0.184
+      ],
+      "size": [
+        1.66,
+        1.546,
+        1.183
+      ],
+      "tint": null,
+      "attach": "Head",
+      "material": "SmoothPlastic",
+      "transparency": 0.0,
+      "collide": false,
+      "cast": true,
+      "tris": 612
+    },
+    {
+      "part": "EyesGlow",
+      "mesh": "Verity_Root_Aggressive.EyesGlow",
+      "offset": [
+        0.0,
+        6.411,
+        -0.745
+      ],
+      "size": [
+        0.755,
+        0.05,
+        0.05
+      ],
+      "tint": null,
+      "attach": "Head",
+      "material": "Neon",
+      "transparency": 0.0,
+      "collide": false,
+      "cast": true,
+      "tris": 24
+    }
+  ]
+}

@@ -1,0 +1,197 @@
+{
+  "assets": {
+    "Deer_Farmer_Passive": {
+      "parts": 7,
+      "triangles": 3902
+    },
+    "Deer_Farmer_Aggressive": {
+      "parts": 7,
+      "triangles": 4252
+    },
+    "Deer_Punk_Passive": {
+      "parts": 6,
+      "triangles": 4796
+    },
+    "Deer_Punk_Aggressive": {
+      "parts": 6,
+      "triangles": 5144
+    },
+    "Deer_Assassin_Passive": {
+      "parts": 7,
+      "triangles": 4214
+    },
+    "Deer_Assassin_Aggressive": {
+      "parts": 7,
+      "triangles": 4552
+    },
+    "Deer_Chief_Passive": {
+      "parts": 7,
+      "triangles": 4674
+    },
+    "Deer_Chief_Aggressive": {
+      "parts": 7,
+      "triangles": 5038
+    },
+    "RingMaw_Passive": {
+      "parts": 7,
+      "triangles": 3452
+    },
+    "RingMaw_Aggressive": {
+      "parts": 7,
+      "triangles": 6309
+    },
+    "CaveDweller_Passive": {
+      "parts": 7,
+      "triangles": 2537
+    },
+    "CaveDweller_Aggressive": {
+      "parts": 7,
+      "triangles": 2535
+    },
+    "CaveDweller_Farmer_Passive": {
+      "parts": 9,
+      "triangles": 3545
+    },
+    "CaveDweller_Farmer_Aggressive": {
+      "parts": 9,
+      "triangles": 3543
+    },
+    "RingMaw_Farmer_Passive": {
+      "parts": 9,
+      "triangles": 4246
+    },
+    "RingMaw_Farmer_Aggressive": {
+      "parts": 9,
+      "triangles": 7103
+    },
+    "CaveDweller_Punk_Passive": {
+      "parts": 9,
+      "triangles": 3753
+    },
+    "CaveDweller_Punk_Aggressive": {
+      "parts": 9,
+      "triangles": 3751
+    },
+    "RingMaw_Punk_Passive": {
+      "parts": 9,
+      "triangles": 4572
+    },
+    "RingMaw_Punk_Aggressive": {
+      "parts": 9,
+      "triangles": 7429
+    },
+    "CaveDweller_Assassin_Passive": {
+      "parts": 9,
+      "triangles": 3025
+    },
+    "CaveDweller_Assassin_Aggressive": {
+      "parts": 9,
+      "triangles": 3023
+    },
+    "RingMaw_Assassin_Passive": {
+      "parts": 9,
+      "triangles": 4208
+    },
+    "RingMaw_Assassin_Aggressive": {
+      "parts": 9,
+      "triangles": 7065
+    },
+    "Parasite_Farmer_Passive": {
+      "parts": 11,
+      "triangles": 4768
+    },
+    "Parasite_Farmer_Aggressive": {
+      "parts": 11,
+      "triangles": 4878
+    },
+    "Parasite_Punk_Passive": {
+      "parts": 9,
+      "triangles": 4848
+    },
+    "Parasite_Punk_Aggressive": {
+      "parts": 9,
+      "triangles": 4848
+    },
+    "Parasite_Assassin_Passive": {
+      "parts": 9,
+      "triangles": 3348
+    },
+    "Parasite_Assassin_Aggressive": {
+      "parts": 9,
+      "triangles": 3348
+    },
+    "Stalker_Farmer_Passive": {
+      "parts": 9,
+      "triangles": 3956
+    },
+    "Stalker_Farmer_Aggressive": {
+      "parts": 9,
+      "triangles": 4360
+    },
+    "Stalker_Punk_Passive": {
+      "parts": 7,
+      "triangles": 4864
+    },
+    "Stalker_Punk_Aggressive": {
+      "parts": 7,
+      "triangles": 5120
+    },
+    "Stalker_Assassin_Passive": {
+      "parts": 7,
+      "triangles": 3040
+    },
+    "Stalker_Assassin_Aggressive": {
+      "parts": 7,
+      "triangles": 3296
+    }
+  },
+  "meshCount": 294,
+  "triangles": 157342,
+  "bytes": 14498160,
+  "sha256": "8b25d0989cde1f81eaf9ca98fc8ef735e20c99ccc04390ed1c2f835cd9f77041",
+  "roundtrip": {
+    "parts": 294,
+    "vertexColors": true,
+    "groupsAndDimensionsVerified": true
+  },
+  "formPairs": 18,
+  "scope": "Appearance and poses only.",
+  "footClearance": {
+    "Deer_Farmer_Passive": 0.0,
+    "Deer_Farmer_Aggressive": 0.0,
+    "Deer_Punk_Passive": 0.0,
+    "Deer_Punk_Aggressive": 0.0,
+    "Deer_Assassin_Passive": 0.0,
+    "Deer_Assassin_Aggressive": 0.0,
+    "Deer_Chief_Passive": 0.0,
+    "Deer_Chief_Aggressive": 0.0,
+    "RingMaw_Passive": 0.014,
+    "RingMaw_Aggressive": 0.014,
+    "CaveDweller_Passive": 0.014,
+    "CaveDweller_Aggressive": 0.014,
+    "CaveDweller_Farmer_Passive": 0.014,
+    "CaveDweller_Farmer_Aggressive": 0.014,
+    "RingMaw_Farmer_Passive": 0.014,
+    "RingMaw_Farmer_Aggressive": 0.014,
+    "CaveDweller_Punk_Passive": 0.014,
+    "CaveDweller_Punk_Aggressive": 0.014,
+    "RingMaw_Punk_Passive": 0.014,
+    "RingMaw_Punk_Aggressive": 0.014,
+    "CaveDweller_Assassin_Passive": 0.014,
+    "CaveDweller_Assassin_Aggressive": 0.014,
+    "RingMaw_Assassin_Passive": 0.014,
+    "RingMaw_Assassin_Aggressive": 0.014,
+    "Parasite_Farmer_Passive": 0.008,
+    "Parasite_Farmer_Aggressive": 0.008,
+    "Parasite_Punk_Passive": 0.008,
+    "Parasite_Punk_Aggressive": 0.008,
+    "Parasite_Assassin_Passive": 0.008,
+    "Parasite_Assassin_Aggressive": 0.008,
+    "Stalker_Farmer_Passive": 0.01,
+    "Stalker_Farmer_Aggressive": 0.01,
+    "Stalker_Punk_Passive": 0.01,
+    "Stalker_Punk_Aggressive": 0.01,
+    "Stalker_Assassin_Passive": 0.01,
+    "Stalker_Assassin_Aggressive": 0.01
+  }
+}

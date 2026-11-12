@@ -1,0 +1,598 @@
+{
+  "SirenHead_Passive": [
+    {
+      "part": "Body",
+      "mesh": "SirenHead_Passive.Body",
+      "offset": [
+        0.0,
+        4.385,
+        -0.022
+      ],
+      "size": [
+        1.34,
+        2.47,
+        0.695
+      ],
+      "tint": null,
+      "attach": "Body",
+      "material": "SmoothPlastic",
+      "transparency": 0.0,
+      "collide": false,
+      "cast": true,
+      "tris": 668
+    },
+    {
+      "part": "LegR",
+      "mesh": "SirenHead_Passive.LegR",
+      "offset": [
+        0.435,
+        1.689,
+        -0.176
+      ],
+      "size": [
+        0.533,
+        3.358,
+        0.872
+      ],
+      "tint": null,
+      "attach": "LegR",
+      "material": "SmoothPlastic",
+      "transparency": 0.0,
+      "collide": false,
+      "cast": true,
+      "tris": 264
+    },
+    {
+      "part": "LegL",
+      "mesh": "SirenHead_Passive.LegL",
+      "offset": [
+        -0.435,
+        1.689,
+        -0.176
+      ],
+      "size": [
+        0.533,
+        3.358,
+        0.872
+      ],
+      "tint": null,
+      "attach": "LegL",
+      "material": "SmoothPlastic",
+      "transparency": 0.0,
+      "collide": false,
+      "cast": true,
+      "tris": 264
+    },
+    {
+      "part": "ArmR",
+      "mesh": "SirenHead_Passive.ArmR",
+      "offset": [
+        1.1,
+        3.073,
+        -0.195
+      ],
+      "size": [
+        1.064,
+        4.852,
+        0.611
+      ],
+      "tint": null,
+      "attach": "ArmR",
+      "material": "SmoothPlastic",
+      "transparency": 0.0,
+      "collide": false,
+      "cast": true,
+      "tris": 592
+    },
+    {
+      "part": "ArmL",
+      "mesh": "SirenHead_Passive.ArmL",
+      "offset": [
+        -1.1,
+        3.073,
+        -0.195
+      ],
+      "size": [
+        1.064,
+        4.852,
+        0.611
+      ],
+      "tint": null,
+      "attach": "ArmL",
+      "material": "SmoothPlastic",
+      "transparency": 0.0,
+      "collide": false,
+      "cast": true,
+      "tris": 592
+    },
+    {
+      "part": "Head",
+      "mesh": "SirenHead_Passive.Head",
+      "offset": [
+        0.019,
+        6.69,
+        -0.243
+      ],
+      "size": [
+        2.025,
+        2.46,
+        1.183
+      ],
+      "tint": null,
+      "attach": "Head",
+      "material": "SmoothPlastic",
+      "transparency": 0.0,
+      "collide": false,
+      "cast": true,
+      "tris": 768
+    },
+    {
+      "part": "EyesGlow",
+      "mesh": "SirenHead_Passive.EyesGlow",
+      "offset": [
+        0.025,
+        6.855,
+        -0.51
+      ],
+      "size": [
+        0.644,
+        0.96,
+        0.06
+      ],
+      "tint": null,
+      "attach": "Head",
+      "material": "Neon",
+      "transparency": 0.0,
+      "collide": false,
+      "cast": true,
+      "tris": 40
+    }
+  ],
+  "SirenHead_Aggressive": [
+    {
+      "part": "Body",
+      "mesh": "SirenHead_Aggressive.Body",
+      "offset": [
+        0.0,
+        4.385,
+        -0.022
+      ],
+      "size": [
+        1.34,
+        2.47,
+        0.695
+      ],
+      "tint": null,
+      "attach": "Body",
+      "material": "SmoothPlastic",
+      "transparency": 0.0,
+      "collide": false,
+      "cast": true,
+      "tris": 668
+    },
+    {
+      "part": "LegR",
+      "mesh": "SirenHead_Aggressive.LegR",
+      "offset": [
+        0.435,
+        1.689,
+        -0.176
+      ],
+      "size": [
+        0.533,
+        3.358,
+        0.872
+      ],
+      "tint": null,
+      "attach": "LegR",
+      "material": "SmoothPlastic",
+      "transparency": 0.0,
+      "collide": false,
+      "cast": true,
+      "tris": 264
+    },
+    {
+      "part": "LegL",
+      "mesh": "SirenHead_Aggressive.LegL",
+      "offset": [
+        -0.435,
+        1.689,
+        -0.176
+      ],
+      "size": [
+        0.533,
+        3.358,
+        0.872
+      ],
+      "tint": null,
+      "attach": "LegL",
+      "material": "SmoothPlastic",
+      "transparency": 0.0,
+      "collide": false,
+      "cast": true,
+      "tris": 264
+    },
+    {
+      "part": "ArmR",
+      "mesh": "SirenHead_Aggressive.ArmR",
+      "offset": [
+        1.1,
+        3.211,
+        -0.816
+      ],
+      "size": [
+        1.064,
+        4.613,
+        1.831
+      ],
+      "tint": null,
+      "attach": "ArmR",
+      "material": "SmoothPlastic",
+      "transparency": 0.0,
+      "collide": false,
+      "cast": true,
+      "tris": 592
+    },
+    {
+      "part": "ArmL",
+      "mesh": "SirenHead_Aggressive.ArmL",
+      "offset": [
+        -1.1,
+        3.211,
+        -0.816
+      ],
+      "size": [
+        1.064,
+        4.613,
+        1.831
+      ],
+      "tint": null,
+      "attach": "ArmL",
+      "material": "SmoothPlastic",
+      "transparency": 0.0,
+      "collide": false,
+      "cast": true,
+      "tris": 592
+    },
+    {
+      "part": "Head",
+      "mesh": "SirenHead_Aggressive.Head",
+      "offset": [
+        0.019,
+        6.69,
+        -0.243
+      ],
+      "size": [
+        2.025,
+        2.46,
+        1.183
+      ],
+      "tint": null,
+      "attach": "Head",
+      "material": "SmoothPlastic",
+      "transparency": 0.0,
+      "collide": false,
+      "cast": true,
+      "tris": 1664
+    },
+    {
+      "part": "EyesGlow",
+      "mesh": "SirenHead_Aggressive.EyesGlow",
+      "offset": [
+        0.025,
+        6.855,
+        -0.51
+      ],
+      "size": [
+        0.644,
+        0.96,
+        0.06
+      ],
+      "tint": null,
+      "attach": "Head",
+      "material": "Neon",
+      "transparency": 0.0,
+      "collide": false,
+      "cast": true,
+      "tris": 40
+    }
+  ],
+  "BuckshotDealer_Passive": [
+    {
+      "part": "Body",
+      "mesh": "BuckshotDealer_Passive.Body",
+      "offset": [
+        0.0,
+        3.2,
+        0.006
+      ],
+      "size": [
+        1.68,
+        2.1,
+        0.831
+      ],
+      "tint": null,
+      "attach": "Body",
+      "material": "SmoothPlastic",
+      "transparency": 0.0,
+      "collide": false,
+      "cast": true,
+      "tris": 260
+    },
+    {
+      "part": "LegR",
+      "mesh": "BuckshotDealer_Passive.LegR",
+      "offset": [
+        0.447,
+        1.242,
+        -0.12
+      ],
+      "size": [
+        0.627,
+        2.465,
+        0.76
+      ],
+      "tint": null,
+      "attach": "LegR",
+      "material": "SmoothPlastic",
+      "transparency": 0.0,
+      "collide": false,
+      "cast": true,
+      "tris": 132
+    },
+    {
+      "part": "LegL",
+      "mesh": "BuckshotDealer_Passive.LegL",
+      "offset": [
+        -0.447,
+        1.242,
+        -0.12
+      ],
+      "size": [
+        0.627,
+        2.465,
+        0.76
+      ],
+      "tint": null,
+      "attach": "LegL",
+      "material": "SmoothPlastic",
+      "transparency": 0.0,
+      "collide": false,
+      "cast": true,
+      "tris": 132
+    },
+    {
+      "part": "ArmR",
+      "mesh": "BuckshotDealer_Passive.ArmR",
+      "offset": [
+        1.156,
+        2.584,
+        -0.156
+      ],
+      "size": [
+        1.099,
+        3.222,
+        0.72
+      ],
+      "tint": null,
+      "attach": "ArmR",
+      "material": "SmoothPlastic",
+      "transparency": 0.0,
+      "collide": false,
+      "cast": true,
+      "tris": 564
+    },
+    {
+      "part": "ArmL",
+      "mesh": "BuckshotDealer_Passive.ArmL",
+      "offset": [
+        -1.156,
+        2.584,
+        -0.156
+      ],
+      "size": [
+        1.099,
+        3.222,
+        0.72
+      ],
+      "tint": null,
+      "attach": "ArmL",
+      "material": "SmoothPlastic",
+      "transparency": 0.0,
+      "collide": false,
+      "cast": true,
+      "tris": 564
+    },
+    {
+      "part": "Head",
+      "mesh": "BuckshotDealer_Passive.Head",
+      "offset": [
+        0.0,
+        5.25,
+        -0.158
+      ],
+      "size": [
+        1.959,
+        2.2,
+        1.575
+      ],
+      "tint": null,
+      "attach": "Head",
+      "material": "SmoothPlastic",
+      "transparency": 0.0,
+      "collide": false,
+      "cast": true,
+      "tris": 1016
+    },
+    {
+      "part": "EyesGlow",
+      "mesh": "BuckshotDealer_Passive.EyesGlow",
+      "offset": [
+        0.0,
+        5.56,
+        -0.805
+      ],
+      "size": [
+        1.067,
+        0.11,
+        0.05
+      ],
+      "tint": null,
+      "attach": "Head",
+      "material": "Neon",
+      "transparency": 0.0,
+      "collide": false,
+      "cast": true,
+      "tris": 40
+    }
+  ],
+  "BuckshotDealer_Aggressive": [
+    {
+      "part": "Body",
+      "mesh": "BuckshotDealer_Aggressive.Body",
+      "offset": [
+        0.0,
+        3.2,
+        0.006
+      ],
+      "size": [
+        1.68,
+        2.1,
+        0.831
+      ],
+      "tint": null,
+      "attach": "Body",
+      "material": "SmoothPlastic",
+      "transparency": 0.0,
+      "collide": false,
+      "cast": true,
+      "tris": 260
+    },
+    {
+      "part": "LegR",
+      "mesh": "BuckshotDealer_Aggressive.LegR",
+      "offset": [
+        0.447,
+        1.242,
+        -0.12
+      ],
+      "size": [
+        0.627,
+        2.465,
+        0.76
+      ],
+      "tint": null,
+      "attach": "LegR",
+      "material": "SmoothPlastic",
+      "transparency": 0.0,
+      "collide": false,
+      "cast": true,
+      "tris": 132
+    },
+    {
+      "part": "LegL",
+      "mesh": "BuckshotDealer_Aggressive.LegL",
+      "offset": [
+        -0.447,
+        1.242,
+        -0.12
+      ],
+      "size": [
+        0.627,
+        2.465,
+        0.76
+      ],
+      "tint": null,
+      "attach": "LegL",
+      "material": "SmoothPlastic",
+      "transparency": 0.0,
+      "collide": false,
+      "cast": true,
+      "tris": 132
+    },
+    {
+      "part": "ArmR",
+      "mesh": "BuckshotDealer_Aggressive.ArmR",
+      "offset": [
+        1.156,
+        2.7,
+        -0.606
+      ],
+      "size": [
+        1.099,
+        3.063,
+        1.583
+      ],
+      "tint": null,
+      "attach": "ArmR",
+      "material": "SmoothPlastic",
+      "transparency": 0.0,
+      "collide": false,
+      "cast": true,
+      "tris": 564
+    },
+    {
+      "part": "ArmL",
+      "mesh": "BuckshotDealer_Aggressive.ArmL",
+      "offset": [
+        -1.156,
+        2.7,
+        -0.606
+      ],
+      "size": [
+        1.099,
+        3.063,
+        1.583
+      ],
+      "tint": null,
+      "attach": "ArmL",
+      "material": "SmoothPlastic",
+      "transparency": 0.0,
+      "collide": false,
+      "cast": true,
+      "tris": 564
+    },
+    {
+      "part": "Head",
+      "mesh": "BuckshotDealer_Aggressive.Head",
+      "offset": [
+        0.0,
+        5.25,
+        -0.158
+      ],
+      "size": [
+        1.959,
+        2.2,
+        1.575
+      ],
+      "tint": null,
+      "attach": "Head",
+      "material": "SmoothPlastic",
+      "transparency": 0.0,
+      "collide": false,
+      "cast": true,
+      "tris": 1544
+    },
+    {
+      "part": "EyesGlow",
+      "mesh": "BuckshotDealer_Aggressive.EyesGlow",
+      "offset": [
+        0.0,
+        5.56,
+        -0.805
+      ],
+      "size": [
+        1.067,
+        0.11,
+        0.05
+      ],
+      "tint": null,
+      "attach": "Head",
+      "material": "Neon",
+      "transparency": 0.0,
+      "collide": false,
+      "cast": true,
+      "tris": 40
+    }
+  ]
+}

@@ -1,0 +1,15 @@
+import bpy,json
+from pathlib import Path
+ROOT=Path(__file__).resolve().parents[1];folder=ROOT/'export'/'collection-v2'
+for obj in list(bpy.data.objects):bpy.data.objects.remove(obj,do_unlink=True)
+bpy.ops.import_scene.gltf(filepath=str(folder/'GrowAMonster_CollectionV2.glb'))
+objects=[o for o in bpy.data.objects if o.type=='MESH']
+assert len(objects)==75,len(objects)
+assert all(o.name.startswith(('Parasite_','Stalker_','Verity_')) and '__' in o.name for o in objects)
+assert all(len(o.data.color_attributes)>0 for o in objects)
+assert all(len(o.data.polygons)>0 for o in objects)
+for name in (f+'_'+r for f in ('Parasite','Stalker','Verity') for r in ('Farmer','Punk','Assassin')):
+    for part in ('Body','Head','ArmL','ArmR','LegL','LegR','EyesGlow'):
+        assert bpy.data.objects.get(name+'__'+part), (name,part)
+result={'passed':True,'importedMeshes':len(objects),'vertexColors':True,'namedAnimationParts':True}
+(folder/'_glb_roundtrip.json').write_text(json.dumps(result,indent=2));print('ROUNDTRIP',result,flush=True)

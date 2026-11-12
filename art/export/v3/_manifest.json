@@ -1,0 +1,3409 @@
+{
+  "V3_House1": [
+    {
+      "part": "Floor",
+      "mesh": "V3_House1.Floor",
+      "offset": [
+        0.0,
+        0.3,
+        0.0
+      ],
+      "size": [
+        48.0,
+        0.6,
+        36.0
+      ],
+      "tint": null,
+      "attach": null,
+      "material": "SmoothPlastic",
+      "transparency": 0.0,
+      "collide": false,
+      "cast": true,
+      "tris": 44
+    },
+    {
+      "part": "Walls",
+      "mesh": "V3_House1.Walls",
+      "offset": [
+        0.0,
+        9.225,
+        0.0
+      ],
+      "size": [
+        48.02,
+        17.25,
+        36.0
+      ],
+      "tint": null,
+      "attach": null,
+      "material": "SmoothPlastic",
+      "transparency": 0.0,
+      "collide": false,
+      "cast": true,
+      "tris": 1496
+    },
+    {
+      "part": "Trim",
+      "mesh": "V3_House1.Trim",
+      "offset": [
+        0.0,
+        8.575,
+        -0.437
+      ],
+      "size": [
+        48.3,
+        15.95,
+        37.374
+      ],
+      "tint": null,
+      "attach": null,
+      "material": "SmoothPlastic",
+      "transparency": 0.0,
+      "collide": false,
+      "cast": true,
+      "tris": 2872
+    },
+    {
+      "part": "Roof",
+      "mesh": "V3_House1.Roof",
+      "offset": [
+        0.0,
+        16.788,
+        0.0
+      ],
+      "size": [
+        51.15,
+        8.625,
+        39.35
+      ],
+      "tint": null,
+      "attach": null,
+      "material": "SmoothPlastic",
+      "transparency": 0.0,
+      "collide": false,
+      "cast": true,
+      "tris": 880
+    }
+  ],
+  "V3_Treadmill1": [
+    {
+      "part": "Frame",
+      "mesh": "V3_Treadmill1.Frame",
+      "offset": [
+        0.0,
+        3.795,
+        0.0
+      ],
+      "size": [
+        9.393,
+        7.591,
+        15.0
+      ],
+      "tint": null,
+      "attach": null,
+      "material": "SmoothPlastic",
+      "transparency": 0.0,
+      "collide": false,
+      "cast": true,
+      "tris": 308
+    },
+    {
+      "part": "Belt",
+      "mesh": "V3_Treadmill1.Belt",
+      "offset": [
+        0.0,
+        1.5,
+        0.0
+      ],
+      "size": [
+        6.4,
+        0.2,
+        13.0
+      ],
+      "tint": null,
+      "attach": null,
+      "material": "SmoothPlastic",
+      "transparency": 0.0,
+      "collide": false,
+      "cast": true,
+      "tris": 44
+    },
+    {
+      "part": "Rollers",
+      "mesh": "V3_Treadmill1.Rollers",
+      "offset": [
+        0.0,
+        1.2,
+        0.0
+      ],
+      "size": [
+        6.8,
+        0.88,
+        13.88
+      ],
+      "tint": null,
+      "attach": null,
+      "material": "SmoothPlastic",
+      "transparency": 0.0,
+      "collide": false,
+      "cast": true,
+      "tris": 88
+    },
+    {
+      "part": "Console",
+      "mesh": "V3_Treadmill1.Console",
+      "offset": [
+        0.0,
+        7.2,
+        -5.2
+      ],
+      "size": [
+        7.5,
+        1.351,
+        2.722
+      ],
+      "tint": null,
+      "attach": null,
+      "material": "SmoothPlastic",
+      "transparency": 0.0,
+      "collide": false,
+      "cast": true,
+      "tris": 220
+    },
+    {
+      "part": "Arrows",
+      "mesh": "V3_Treadmill1.Arrows",
+      "offset": [
+        0.0,
+        1.63,
+        0.0
+      ],
+      "size": [
+        3.006,
+        0.05,
+        9.226
+      ],
+      "tint": null,
+      "attach": null,
+      "material": "Neon",
+      "transparency": 0.0,
+      "collide": false,
+      "cast": true,
+      "tris": 264
+    }
+  ],
+  "V3_House2": [
+    {
+      "part": "Floor",
+      "mesh": "V3_House2.Floor",
+      "offset": [
+        0.0,
+        0.3,
+        0.0
+      ],
+      "size": [
+        48.0,
+        0.6,
+        36.0
+      ],
+      "tint": null,
+      "attach": null,
+      "material": "SmoothPlastic",
+      "transparency": 0.0,
+      "collide": false,
+      "cast": true,
+      "tris": 44
+    },
+    {
+      "part": "Walls",
+      "mesh": "V3_House2.Walls",
+      "offset": [
+        0.0,
+        9.225,
+        0.0
+      ],
+      "size": [
+        48.02,
+        17.25,
+        36.0
+      ],
+      "tint": null,
+      "attach": null,
+      "material": "SmoothPlastic",
+      "transparency": 0.0,
+      "collide": false,
+      "cast": true,
+      "tris": 1496
+    },
+    {
+      "part": "Trim",
+      "mesh": "V3_House2.Trim",
+      "offset": [
+        0.0,
+        8.575,
+        -0.437
+      ],
+      "size": [
+        48.3,
+        15.95,
+        37.374
+      ],
+      "tint": null,
+      "attach": null,
+      "material": "SmoothPlastic",
+      "transparency": 0.0,
+      "collide": false,
+      "cast": true,
+      "tris": 2872
+    },
+    {
+      "part": "Roof",
+      "mesh": "V3_House2.Roof",
+      "offset": [
+        0.0,
+        16.788,
+        0.0
+      ],
+      "size": [
+        51.15,
+        8.625,
+        39.35
+      ],
+      "tint": null,
+      "attach": null,
+      "material": "SmoothPlastic",
+      "transparency": 0.0,
+      "collide": false,
+      "cast": true,
+      "tris": 880
+    },
+    {
+      "part": "Porch",
+      "mesh": "V3_House2.Porch",
+      "offset": [
+        0.0,
+        5.75,
+        -21.25
+      ],
+      "size": [
+        32.0,
+        11.5,
+        7.5
+      ],
+      "tint": null,
+      "attach": null,
+      "material": "SmoothPlastic",
+      "transparency": 0.0,
+      "collide": false,
+      "cast": true,
+      "tris": 176
+    }
+  ],
+  "V3_Treadmill2": [
+    {
+      "part": "Frame",
+      "mesh": "V3_Treadmill2.Frame",
+      "offset": [
+        0.0,
+        3.795,
+        0.0
+      ],
+      "size": [
+        9.393,
+        7.591,
+        15.0
+      ],
+      "tint": null,
+      "attach": null,
+      "material": "SmoothPlastic",
+      "transparency": 0.0,
+      "collide": false,
+      "cast": true,
+      "tris": 396
+    },
+    {
+      "part": "Belt",
+      "mesh": "V3_Treadmill2.Belt",
+      "offset": [
+        0.0,
+        1.5,
+        0.0
+      ],
+      "size": [
+        6.4,
+        0.2,
+        13.0
+      ],
+      "tint": null,
+      "attach": null,
+      "material": "SmoothPlastic",
+      "transparency": 0.0,
+      "collide": false,
+      "cast": true,
+      "tris": 44
+    },
+    {
+      "part": "Rollers",
+      "mesh": "V3_Treadmill2.Rollers",
+      "offset": [
+        0.0,
+        1.2,
+        0.0
+      ],
+      "size": [
+        6.8,
+        0.88,
+        13.88
+      ],
+      "tint": null,
+      "attach": null,
+      "material": "SmoothPlastic",
+      "transparency": 0.0,
+      "collide": false,
+      "cast": true,
+      "tris": 88
+    },
+    {
+      "part": "Console",
+      "mesh": "V3_Treadmill2.Console",
+      "offset": [
+        0.0,
+        7.2,
+        -5.2
+      ],
+      "size": [
+        7.5,
+        1.351,
+        2.722
+      ],
+      "tint": null,
+      "attach": null,
+      "material": "SmoothPlastic",
+      "transparency": 0.0,
+      "collide": false,
+      "cast": true,
+      "tris": 264
+    },
+    {
+      "part": "Arrows",
+      "mesh": "V3_Treadmill2.Arrows",
+      "offset": [
+        0.0,
+        1.63,
+        0.0
+      ],
+      "size": [
+        3.006,
+        0.05,
+        9.226
+      ],
+      "tint": null,
+      "attach": null,
+      "material": "Neon",
+      "transparency": 0.0,
+      "collide": false,
+      "cast": true,
+      "tris": 264
+    }
+  ],
+  "V3_House3": [
+    {
+      "part": "Floor",
+      "mesh": "V3_House3.Floor",
+      "offset": [
+        0.0,
+        0.3,
+        0.0
+      ],
+      "size": [
+        48.0,
+        0.6,
+        36.0
+      ],
+      "tint": null,
+      "attach": null,
+      "material": "SmoothPlastic",
+      "transparency": 0.0,
+      "collide": false,
+      "cast": true,
+      "tris": 44
+    },
+    {
+      "part": "Walls",
+      "mesh": "V3_House3.Walls",
+      "offset": [
+        0.0,
+        14.875,
+        0.0
+      ],
+      "size": [
+        48.02,
+        28.55,
+        36.0
+      ],
+      "tint": null,
+      "attach": null,
+      "material": "SmoothPlastic",
+      "transparency": 0.0,
+      "collide": false,
+      "cast": true,
+      "tris": 1496
+    },
+    {
+      "part": "Trim",
+      "mesh": "V3_House3.Trim",
+      "offset": [
+        0.0,
+        14.225,
+        -0.437
+      ],
+      "size": [
+        48.3,
+        27.25,
+        37.374
+      ],
+      "tint": null,
+      "attach": null,
+      "material": "SmoothPlastic",
+      "transparency": 0.0,
+      "collide": false,
+      "cast": true,
+      "tris": 2872
+    },
+    {
+      "part": "Roof",
+      "mesh": "V3_House3.Roof",
+      "offset": [
+        0.0,
+        28.088,
+        0.0
+      ],
+      "size": [
+        51.15,
+        8.625,
+        39.35
+      ],
+      "tint": null,
+      "attach": null,
+      "material": "SmoothPlastic",
+      "transparency": 0.0,
+      "collide": false,
+      "cast": true,
+      "tris": 880
+    },
+    {
+      "part": "Porch",
+      "mesh": "V3_House3.Porch",
+      "offset": [
+        0.0,
+        5.75,
+        -21.25
+      ],
+      "size": [
+        32.0,
+        11.5,
+        7.5
+      ],
+      "tint": null,
+      "attach": null,
+      "material": "SmoothPlastic",
+      "transparency": 0.0,
+      "collide": false,
+      "cast": true,
+      "tris": 176
+    },
+    {
+      "part": "Upper",
+      "mesh": "V3_House3.Upper",
+      "offset": [
+        0.0,
+        18.25,
+        -3.25
+      ],
+      "size": [
+        48.0,
+        11.7,
+        42.5
+      ],
+      "tint": null,
+      "attach": null,
+      "material": "SmoothPlastic",
+      "transparency": 0.0,
+      "collide": false,
+      "cast": true,
+      "tris": 836
+    },
+    {
+      "part": "Stairs",
+      "mesh": "V3_House3.Stairs",
+      "offset": [
+        20.0,
+        6.6,
+        -1.5
+      ],
+      "size": [
+        5.8,
+        12.0,
+        24.02
+      ],
+      "tint": null,
+      "attach": null,
+      "material": "SmoothPlastic",
+      "transparency": 0.0,
+      "collide": false,
+      "cast": true,
+      "tris": 1056
+    },
+    {
+      "part": "Rails",
+      "mesh": "V3_House3.Rails",
+      "offset": [
+        1.012,
+        14.6,
+        -7.5
+      ],
+      "size": [
+        32.525,
+        3.0,
+        34.0
+      ],
+      "tint": null,
+      "attach": null,
+      "material": "SmoothPlastic",
+      "transparency": 0.0,
+      "collide": false,
+      "cast": true,
+      "tris": 176
+    }
+  ],
+  "V3_Treadmill3": [
+    {
+      "part": "Frame",
+      "mesh": "V3_Treadmill3.Frame",
+      "offset": [
+        0.0,
+        3.795,
+        0.0
+      ],
+      "size": [
+        9.393,
+        7.591,
+        15.0
+      ],
+      "tint": null,
+      "attach": null,
+      "material": "SmoothPlastic",
+      "transparency": 0.0,
+      "collide": false,
+      "cast": true,
+      "tris": 484
+    },
+    {
+      "part": "Belt",
+      "mesh": "V3_Treadmill3.Belt",
+      "offset": [
+        0.0,
+        1.5,
+        0.0
+      ],
+      "size": [
+        6.4,
+        0.2,
+        13.0
+      ],
+      "tint": null,
+      "attach": null,
+      "material": "SmoothPlastic",
+      "transparency": 0.0,
+      "collide": false,
+      "cast": true,
+      "tris": 44
+    },
+    {
+      "part": "Rollers",
+      "mesh": "V3_Treadmill3.Rollers",
+      "offset": [
+        0.0,
+        1.2,
+        0.0
+      ],
+      "size": [
+        6.8,
+        0.88,
+        13.88
+      ],
+      "tint": null,
+      "attach": null,
+      "material": "SmoothPlastic",
+      "transparency": 0.0,
+      "collide": false,
+      "cast": true,
+      "tris": 88
+    },
+    {
+      "part": "Console",
+      "mesh": "V3_Treadmill3.Console",
+      "offset": [
+        0.0,
+        7.2,
+        -5.2
+      ],
+      "size": [
+        7.5,
+        1.351,
+        2.722
+      ],
+      "tint": null,
+      "attach": null,
+      "material": "SmoothPlastic",
+      "transparency": 0.0,
+      "collide": false,
+      "cast": true,
+      "tris": 308
+    },
+    {
+      "part": "Arrows",
+      "mesh": "V3_Treadmill3.Arrows",
+      "offset": [
+        0.0,
+        1.63,
+        0.0
+      ],
+      "size": [
+        3.006,
+        0.05,
+        9.226
+      ],
+      "tint": null,
+      "attach": null,
+      "material": "Neon",
+      "transparency": 0.0,
+      "collide": false,
+      "cast": true,
+      "tris": 264
+    }
+  ],
+  "V3_House4": [
+    {
+      "part": "Floor",
+      "mesh": "V3_House4.Floor",
+      "offset": [
+        0.0,
+        0.3,
+        0.0
+      ],
+      "size": [
+        48.0,
+        0.6,
+        36.0
+      ],
+      "tint": null,
+      "attach": null,
+      "material": "SmoothPlastic",
+      "transparency": 0.0,
+      "collide": false,
+      "cast": true,
+      "tris": 44
+    },
+    {
+      "part": "Walls",
+      "mesh": "V3_House4.Walls",
+      "offset": [
+        0.0,
+        14.875,
+        0.0
+      ],
+      "size": [
+        48.02,
+        28.55,
+        36.0
+      ],
+      "tint": null,
+      "attach": null,
+      "material": "SmoothPlastic",
+      "transparency": 0.0,
+      "collide": false,
+      "cast": true,
+      "tris": 1496
+    },
+    {
+      "part": "Trim",
+      "mesh": "V3_House4.Trim",
+      "offset": [
+        0.0,
+        14.225,
+        -0.437
+      ],
+      "size": [
+        48.3,
+        27.25,
+        37.374
+      ],
+      "tint": null,
+      "attach": null,
+      "material": "SmoothPlastic",
+      "transparency": 0.0,
+      "collide": false,
+      "cast": true,
+      "tris": 2872
+    },
+    {
+      "part": "Roof",
+      "mesh": "V3_House4.Roof",
+      "offset": [
+        0.0,
+        28.088,
+        0.0
+      ],
+      "size": [
+        51.15,
+        8.625,
+        39.35
+      ],
+      "tint": null,
+      "attach": null,
+      "material": "SmoothPlastic",
+      "transparency": 0.0,
+      "collide": false,
+      "cast": true,
+      "tris": 880
+    },
+    {
+      "part": "Porch",
+      "mesh": "V3_House4.Porch",
+      "offset": [
+        0.0,
+        5.75,
+        -21.25
+      ],
+      "size": [
+        32.0,
+        11.5,
+        7.5
+      ],
+      "tint": null,
+      "attach": null,
+      "material": "SmoothPlastic",
+      "transparency": 0.0,
+      "collide": false,
+      "cast": true,
+      "tris": 176
+    },
+    {
+      "part": "Upper",
+      "mesh": "V3_House4.Upper",
+      "offset": [
+        0.0,
+        18.25,
+        -3.25
+      ],
+      "size": [
+        48.0,
+        11.7,
+        42.5
+      ],
+      "tint": null,
+      "attach": null,
+      "material": "SmoothPlastic",
+      "transparency": 0.0,
+      "collide": false,
+      "cast": true,
+      "tris": 836
+    },
+    {
+      "part": "Stairs",
+      "mesh": "V3_House4.Stairs",
+      "offset": [
+        20.0,
+        6.6,
+        -1.5
+      ],
+      "size": [
+        5.8,
+        12.0,
+        24.02
+      ],
+      "tint": null,
+      "attach": null,
+      "material": "SmoothPlastic",
+      "transparency": 0.0,
+      "collide": false,
+      "cast": true,
+      "tris": 1056
+    },
+    {
+      "part": "Rails",
+      "mesh": "V3_House4.Rails",
+      "offset": [
+        1.012,
+        14.6,
+        -7.5
+      ],
+      "size": [
+        32.525,
+        3.0,
+        34.0
+      ],
+      "tint": null,
+      "attach": null,
+      "material": "SmoothPlastic",
+      "transparency": 0.0,
+      "collide": false,
+      "cast": true,
+      "tris": 176
+    },
+    {
+      "part": "Tower",
+      "mesh": "V3_House4.Tower",
+      "offset": [
+        -17.0,
+        33.5,
+        10.0
+      ],
+      "size": [
+        12.0,
+        18.0,
+        12.0
+      ],
+      "tint": null,
+      "attach": null,
+      "material": "SmoothPlastic",
+      "transparency": 0.0,
+      "collide": false,
+      "cast": true,
+      "tris": 572
+    }
+  ],
+  "V3_Treadmill4": [
+    {
+      "part": "Frame",
+      "mesh": "V3_Treadmill4.Frame",
+      "offset": [
+        0.0,
+        3.795,
+        0.0
+      ],
+      "size": [
+        9.393,
+        7.591,
+        15.0
+      ],
+      "tint": null,
+      "attach": null,
+      "material": "SmoothPlastic",
+      "transparency": 0.0,
+      "collide": false,
+      "cast": true,
+      "tris": 572
+    },
+    {
+      "part": "Belt",
+      "mesh": "V3_Treadmill4.Belt",
+      "offset": [
+        0.0,
+        1.5,
+        0.0
+      ],
+      "size": [
+        6.4,
+        0.2,
+        13.0
+      ],
+      "tint": null,
+      "attach": null,
+      "material": "SmoothPlastic",
+      "transparency": 0.0,
+      "collide": false,
+      "cast": true,
+      "tris": 44
+    },
+    {
+      "part": "Rollers",
+      "mesh": "V3_Treadmill4.Rollers",
+      "offset": [
+        0.0,
+        1.2,
+        0.0
+      ],
+      "size": [
+        6.8,
+        0.88,
+        13.88
+      ],
+      "tint": null,
+      "attach": null,
+      "material": "SmoothPlastic",
+      "transparency": 0.0,
+      "collide": false,
+      "cast": true,
+      "tris": 88
+    },
+    {
+      "part": "Console",
+      "mesh": "V3_Treadmill4.Console",
+      "offset": [
+        0.0,
+        7.2,
+        -5.2
+      ],
+      "size": [
+        7.5,
+        1.351,
+        2.722
+      ],
+      "tint": null,
+      "attach": null,
+      "material": "SmoothPlastic",
+      "transparency": 0.0,
+      "collide": false,
+      "cast": true,
+      "tris": 352
+    },
+    {
+      "part": "Arrows",
+      "mesh": "V3_Treadmill4.Arrows",
+      "offset": [
+        0.0,
+        1.63,
+        0.0
+      ],
+      "size": [
+        3.006,
+        0.05,
+        9.226
+      ],
+      "tint": null,
+      "attach": null,
+      "material": "Neon",
+      "transparency": 0.0,
+      "collide": false,
+      "cast": true,
+      "tris": 264
+    }
+  ],
+  "V3_House5": [
+    {
+      "part": "Floor",
+      "mesh": "V3_House5.Floor",
+      "offset": [
+        0.0,
+        0.3,
+        0.0
+      ],
+      "size": [
+        48.0,
+        0.6,
+        36.0
+      ],
+      "tint": null,
+      "attach": null,
+      "material": "SmoothPlastic",
+      "transparency": 0.0,
+      "collide": false,
+      "cast": true,
+      "tris": 44
+    },
+    {
+      "part": "Walls",
+      "mesh": "V3_House5.Walls",
+      "offset": [
+        0.0,
+        14.875,
+        0.0
+      ],
+      "size": [
+        48.02,
+        28.55,
+        36.0
+      ],
+      "tint": null,
+      "attach": null,
+      "material": "SmoothPlastic",
+      "transparency": 0.0,
+      "collide": false,
+      "cast": true,
+      "tris": 1496
+    },
+    {
+      "part": "Trim",
+      "mesh": "V3_House5.Trim",
+      "offset": [
+        0.0,
+        14.225,
+        -0.437
+      ],
+      "size": [
+        48.3,
+        27.25,
+        37.374
+      ],
+      "tint": null,
+      "attach": null,
+      "material": "SmoothPlastic",
+      "transparency": 0.0,
+      "collide": false,
+      "cast": true,
+      "tris": 2872
+    },
+    {
+      "part": "Roof",
+      "mesh": "V3_House5.Roof",
+      "offset": [
+        0.0,
+        28.088,
+        0.0
+      ],
+      "size": [
+        51.15,
+        8.625,
+        39.35
+      ],
+      "tint": null,
+      "attach": null,
+      "material": "SmoothPlastic",
+      "transparency": 0.0,
+      "collide": false,
+      "cast": true,
+      "tris": 880
+    },
+    {
+      "part": "Porch",
+      "mesh": "V3_House5.Porch",
+      "offset": [
+        0.0,
+        5.75,
+        -21.25
+      ],
+      "size": [
+        32.0,
+        11.5,
+        7.5
+      ],
+      "tint": null,
+      "attach": null,
+      "material": "SmoothPlastic",
+      "transparency": 0.0,
+      "collide": false,
+      "cast": true,
+      "tris": 176
+    },
+    {
+      "part": "Upper",
+      "mesh": "V3_House5.Upper",
+      "offset": [
+        0.0,
+        18.25,
+        -3.25
+      ],
+      "size": [
+        48.0,
+        11.7,
+        42.5
+      ],
+      "tint": null,
+      "attach": null,
+      "material": "SmoothPlastic",
+      "transparency": 0.0,
+      "collide": false,
+      "cast": true,
+      "tris": 836
+    },
+    {
+      "part": "Stairs",
+      "mesh": "V3_House5.Stairs",
+      "offset": [
+        20.0,
+        6.6,
+        -1.5
+      ],
+      "size": [
+        5.8,
+        12.0,
+        24.02
+      ],
+      "tint": null,
+      "attach": null,
+      "material": "SmoothPlastic",
+      "transparency": 0.0,
+      "collide": false,
+      "cast": true,
+      "tris": 1056
+    },
+    {
+      "part": "Rails",
+      "mesh": "V3_House5.Rails",
+      "offset": [
+        1.012,
+        14.6,
+        -7.5
+      ],
+      "size": [
+        32.525,
+        3.0,
+        34.0
+      ],
+      "tint": null,
+      "attach": null,
+      "material": "SmoothPlastic",
+      "transparency": 0.0,
+      "collide": false,
+      "cast": true,
+      "tris": 176
+    },
+    {
+      "part": "Tower",
+      "mesh": "V3_House5.Tower",
+      "offset": [
+        -17.0,
+        33.5,
+        10.0
+      ],
+      "size": [
+        12.0,
+        18.0,
+        12.0
+      ],
+      "tint": null,
+      "attach": null,
+      "material": "SmoothPlastic",
+      "transparency": 0.0,
+      "collide": false,
+      "cast": true,
+      "tris": 572
+    },
+    {
+      "part": "CastleTrim",
+      "mesh": "V3_House5.CastleTrim",
+      "offset": [
+        0.0,
+        16.825,
+        -13.3
+      ],
+      "size": [
+        51.0,
+        33.65,
+        11.6
+      ],
+      "tint": null,
+      "attach": null,
+      "material": "SmoothPlastic",
+      "transparency": 0.0,
+      "collide": false,
+      "cast": true,
+      "tris": 2288
+    }
+  ],
+  "V3_Treadmill5": [
+    {
+      "part": "Frame",
+      "mesh": "V3_Treadmill5.Frame",
+      "offset": [
+        0.0,
+        3.795,
+        0.0
+      ],
+      "size": [
+        9.393,
+        7.591,
+        15.0
+      ],
+      "tint": null,
+      "attach": null,
+      "material": "SmoothPlastic",
+      "transparency": 0.0,
+      "collide": false,
+      "cast": true,
+      "tris": 660
+    },
+    {
+      "part": "Belt",
+      "mesh": "V3_Treadmill5.Belt",
+      "offset": [
+        0.0,
+        1.5,
+        0.0
+      ],
+      "size": [
+        6.4,
+        0.2,
+        13.0
+      ],
+      "tint": null,
+      "attach": null,
+      "material": "SmoothPlastic",
+      "transparency": 0.0,
+      "collide": false,
+      "cast": true,
+      "tris": 44
+    },
+    {
+      "part": "Rollers",
+      "mesh": "V3_Treadmill5.Rollers",
+      "offset": [
+        0.0,
+        1.2,
+        0.0
+      ],
+      "size": [
+        6.8,
+        0.88,
+        13.88
+      ],
+      "tint": null,
+      "attach": null,
+      "material": "SmoothPlastic",
+      "transparency": 0.0,
+      "collide": false,
+      "cast": true,
+      "tris": 88
+    },
+    {
+      "part": "Console",
+      "mesh": "V3_Treadmill5.Console",
+      "offset": [
+        0.0,
+        7.2,
+        -5.2
+      ],
+      "size": [
+        7.5,
+        1.351,
+        2.722
+      ],
+      "tint": null,
+      "attach": null,
+      "material": "SmoothPlastic",
+      "transparency": 0.0,
+      "collide": false,
+      "cast": true,
+      "tris": 396
+    },
+    {
+      "part": "Arrows",
+      "mesh": "V3_Treadmill5.Arrows",
+      "offset": [
+        0.0,
+        1.63,
+        0.0
+      ],
+      "size": [
+        3.006,
+        0.05,
+        9.226
+      ],
+      "tint": null,
+      "attach": null,
+      "material": "Neon",
+      "transparency": 0.0,
+      "collide": false,
+      "cast": true,
+      "tris": 264
+    }
+  ],
+  "V3_StallWeapons": [
+    {
+      "part": "Main",
+      "mesh": "V3_StallWeapons.Main",
+      "offset": [
+        0.0,
+        4.0,
+        0.0
+      ],
+      "size": [
+        11.0,
+        8.0,
+        7.0
+      ],
+      "tint": null,
+      "attach": null,
+      "material": "SmoothPlastic",
+      "transparency": 0.0,
+      "collide": false,
+      "cast": true,
+      "tris": 836
+    },
+    {
+      "part": "Canopy",
+      "mesh": "V3_StallWeapons.Canopy",
+      "offset": [
+        0.0,
+        8.412,
+        -0.057
+      ],
+      "size": [
+        12.0,
+        1.924,
+        8.087
+      ],
+      "tint": null,
+      "attach": null,
+      "material": "SmoothPlastic",
+      "transparency": 0.0,
+      "collide": false,
+      "cast": true,
+      "tris": 704
+    }
+  ],
+  "V3_StallPets": [
+    {
+      "part": "Main",
+      "mesh": "V3_StallPets.Main",
+      "offset": [
+        0.0,
+        4.0,
+        0.0
+      ],
+      "size": [
+        11.0,
+        8.0,
+        7.0
+      ],
+      "tint": null,
+      "attach": null,
+      "material": "SmoothPlastic",
+      "transparency": 0.0,
+      "collide": false,
+      "cast": true,
+      "tris": 836
+    },
+    {
+      "part": "Canopy",
+      "mesh": "V3_StallPets.Canopy",
+      "offset": [
+        0.0,
+        8.412,
+        -0.057
+      ],
+      "size": [
+        12.0,
+        1.924,
+        8.087
+      ],
+      "tint": null,
+      "attach": null,
+      "material": "SmoothPlastic",
+      "transparency": 0.0,
+      "collide": false,
+      "cast": true,
+      "tris": 704
+    }
+  ],
+  "V3_StallBrawler": [
+    {
+      "part": "Main",
+      "mesh": "V3_StallBrawler.Main",
+      "offset": [
+        0.0,
+        4.0,
+        0.0
+      ],
+      "size": [
+        11.0,
+        8.0,
+        7.0
+      ],
+      "tint": null,
+      "attach": null,
+      "material": "SmoothPlastic",
+      "transparency": 0.0,
+      "collide": false,
+      "cast": true,
+      "tris": 748
+    },
+    {
+      "part": "Canopy",
+      "mesh": "V3_StallBrawler.Canopy",
+      "offset": [
+        0.0,
+        8.412,
+        -0.057
+      ],
+      "size": [
+        12.0,
+        1.924,
+        8.087
+      ],
+      "tint": null,
+      "attach": null,
+      "material": "SmoothPlastic",
+      "transparency": 0.0,
+      "collide": false,
+      "cast": true,
+      "tris": 704
+    }
+  ],
+  "V3_GiftChest": [
+    {
+      "part": "Base",
+      "mesh": "V3_GiftChest.Base",
+      "offset": [
+        0.0,
+        1.75,
+        0.0
+      ],
+      "size": [
+        7.2,
+        3.5,
+        5.0
+      ],
+      "tint": null,
+      "attach": null,
+      "material": "SmoothPlastic",
+      "transparency": 0.0,
+      "collide": false,
+      "cast": true,
+      "tris": 264
+    },
+    {
+      "part": "Lid",
+      "mesh": "V3_GiftChest.Lid",
+      "offset": [
+        0.0,
+        4.125,
+        0.0
+      ],
+      "size": [
+        6.0,
+        1.9,
+        4.15
+      ],
+      "tint": null,
+      "attach": null,
+      "material": "SmoothPlastic",
+      "transparency": 0.0,
+      "collide": false,
+      "cast": true,
+      "tris": 352
+    },
+    {
+      "part": "Glow",
+      "mesh": "V3_GiftChest.Glow",
+      "offset": [
+        0.0,
+        3.25,
+        -2.1
+      ],
+      "size": [
+        4.0,
+        0.12,
+        0.08
+      ],
+      "tint": null,
+      "attach": null,
+      "material": "Neon",
+      "transparency": 0.0,
+      "collide": false,
+      "cast": true,
+      "tris": 44
+    }
+  ],
+  "V3_RewardChest": [
+    {
+      "part": "Base",
+      "mesh": "V3_RewardChest.Base",
+      "offset": [
+        0.0,
+        1.75,
+        0.0
+      ],
+      "size": [
+        7.2,
+        3.5,
+        5.0
+      ],
+      "tint": null,
+      "attach": null,
+      "material": "SmoothPlastic",
+      "transparency": 0.0,
+      "collide": false,
+      "cast": true,
+      "tris": 264
+    },
+    {
+      "part": "Lid",
+      "mesh": "V3_RewardChest.Lid",
+      "offset": [
+        0.0,
+        4.125,
+        0.0
+      ],
+      "size": [
+        6.0,
+        1.9,
+        4.15
+      ],
+      "tint": null,
+      "attach": null,
+      "material": "SmoothPlastic",
+      "transparency": 0.0,
+      "collide": false,
+      "cast": true,
+      "tris": 352
+    },
+    {
+      "part": "Glow",
+      "mesh": "V3_RewardChest.Glow",
+      "offset": [
+        0.0,
+        3.25,
+        -2.1
+      ],
+      "size": [
+        4.0,
+        0.12,
+        0.08
+      ],
+      "tint": null,
+      "attach": null,
+      "material": "Neon",
+      "transparency": 0.0,
+      "collide": false,
+      "cast": true,
+      "tris": 44
+    }
+  ],
+  "V3_UpgradeBoard": [
+    {
+      "part": "Main",
+      "mesh": "V3_UpgradeBoard.Main",
+      "offset": [
+        0.0,
+        3.3,
+        -0.045
+      ],
+      "size": [
+        7.0,
+        6.6,
+        0.69
+      ],
+      "tint": null,
+      "attach": null,
+      "material": "SmoothPlastic",
+      "transparency": 0.0,
+      "collide": false,
+      "cast": true,
+      "tris": 176
+    }
+  ],
+  "V3_QuestBoard": [
+    {
+      "part": "Main",
+      "mesh": "V3_QuestBoard.Main",
+      "offset": [
+        0.0,
+        4.0,
+        -0.125
+      ],
+      "size": [
+        8.0,
+        8.0,
+        1.05
+      ],
+      "tint": null,
+      "attach": null,
+      "material": "SmoothPlastic",
+      "transparency": 0.0,
+      "collide": false,
+      "cast": true,
+      "tris": 440
+    }
+  ],
+  "V3_MergeTable": [
+    {
+      "part": "Main",
+      "mesh": "V3_MergeTable.Main",
+      "offset": [
+        0.0,
+        3.4,
+        0.0
+      ],
+      "size": [
+        11.0,
+        6.8,
+        6.0
+      ],
+      "tint": null,
+      "attach": null,
+      "material": "SmoothPlastic",
+      "transparency": 0.0,
+      "collide": false,
+      "cast": true,
+      "tris": 520
+    },
+    {
+      "part": "Glow",
+      "mesh": "V3_MergeTable.Glow",
+      "offset": [
+        0.0,
+        4.13,
+        0.0
+      ],
+      "size": [
+        9.1,
+        0.05,
+        2.7
+      ],
+      "tint": null,
+      "attach": null,
+      "material": "Neon",
+      "transparency": 0.0,
+      "collide": false,
+      "cast": true,
+      "tris": 84
+    }
+  ],
+  "V3_CoffinRack": [
+    {
+      "part": "Main",
+      "mesh": "V3_CoffinRack.Main",
+      "offset": [
+        0.0,
+        3.6,
+        0.0
+      ],
+      "size": [
+        16.8,
+        7.2,
+        2.3
+      ],
+      "tint": null,
+      "attach": null,
+      "material": "SmoothPlastic",
+      "transparency": 0.0,
+      "collide": false,
+      "cast": true,
+      "tris": 800
+    }
+  ],
+  "V3_Fence": [
+    {
+      "part": "Main",
+      "mesh": "V3_Fence.Main",
+      "offset": [
+        0.0,
+        2.0,
+        0.0
+      ],
+      "size": [
+        8.0,
+        3.7,
+        0.6
+      ],
+      "tint": null,
+      "attach": null,
+      "material": "SmoothPlastic",
+      "transparency": 0.0,
+      "collide": false,
+      "cast": true,
+      "tris": 220
+    }
+  ],
+  "V3_FencePost": [
+    {
+      "part": "Main",
+      "mesh": "V3_FencePost.Main",
+      "offset": [
+        0.0,
+        2.225,
+        0.0
+      ],
+      "size": [
+        1.9,
+        4.45,
+        1.9
+      ],
+      "tint": null,
+      "attach": null,
+      "material": "SmoothPlastic",
+      "transparency": 0.0,
+      "collide": false,
+      "cast": true,
+      "tris": 88
+    }
+  ],
+  "V3_GateArch": [
+    {
+      "part": "Main",
+      "mesh": "V3_GateArch.Main",
+      "offset": [
+        0.0,
+        4.725,
+        0.0
+      ],
+      "size": [
+        18.1,
+        9.45,
+        2.1
+      ],
+      "tint": null,
+      "attach": null,
+      "material": "SmoothPlastic",
+      "transparency": 0.0,
+      "collide": false,
+      "cast": true,
+      "tris": 264
+    }
+  ],
+  "V3_RoadArch": [
+    {
+      "part": "Main",
+      "mesh": "V3_RoadArch.Main",
+      "offset": [
+        0.0,
+        11.0,
+        0.0
+      ],
+      "size": [
+        103.0,
+        22.0,
+        5.0
+      ],
+      "tint": null,
+      "attach": null,
+      "material": "SmoothPlastic",
+      "transparency": 0.0,
+      "collide": false,
+      "cast": true,
+      "tris": 264
+    }
+  ],
+  "V3_Wall": [
+    {
+      "part": "Main",
+      "mesh": "V3_Wall.Main",
+      "offset": [
+        0.0,
+        12.25,
+        -0.05
+      ],
+      "size": [
+        24.2,
+        24.5,
+        2.7
+      ],
+      "tint": null,
+      "attach": null,
+      "material": "SmoothPlastic",
+      "transparency": 0.0,
+      "collide": false,
+      "cast": true,
+      "tris": 352
+    }
+  ],
+  "V3_Tree": [
+    {
+      "part": "Main",
+      "mesh": "V3_Tree.Main",
+      "offset": [
+        0.1,
+        5.5,
+        0.275
+      ],
+      "size": [
+        6.8,
+        11.0,
+        6.35
+      ],
+      "tint": null,
+      "attach": null,
+      "material": "SmoothPlastic",
+      "transparency": 0.0,
+      "collide": false,
+      "cast": true,
+      "tris": 264
+    }
+  ],
+  "V3_TreeTall": [
+    {
+      "part": "Main",
+      "mesh": "V3_TreeTall.Main",
+      "offset": [
+        0.1,
+        6.85,
+        0.275
+      ],
+      "size": [
+        6.8,
+        13.7,
+        6.35
+      ],
+      "tint": null,
+      "attach": null,
+      "material": "SmoothPlastic",
+      "transparency": 0.0,
+      "collide": false,
+      "cast": true,
+      "tris": 264
+    }
+  ],
+  "V3_Bush": [
+    {
+      "part": "Main",
+      "mesh": "V3_Bush.Main",
+      "offset": [
+        0.05,
+        1.325,
+        0.137
+      ],
+      "size": [
+        3.4,
+        3.35,
+        3.175
+      ],
+      "tint": null,
+      "attach": null,
+      "material": "SmoothPlastic",
+      "transparency": 0.0,
+      "collide": false,
+      "cast": true,
+      "tris": 220
+    }
+  ],
+  "V3_Rock": [
+    {
+      "part": "Main",
+      "mesh": "V3_Rock.Main",
+      "offset": [
+        0.0,
+        1.05,
+        0.0
+      ],
+      "size": [
+        3.0,
+        2.1,
+        2.6
+      ],
+      "tint": null,
+      "attach": null,
+      "material": "SmoothPlastic",
+      "transparency": 0.0,
+      "collide": false,
+      "cast": true,
+      "tris": 132
+    }
+  ],
+  "V3_Lantern": [
+    {
+      "part": "Main",
+      "mesh": "V3_Lantern.Main",
+      "offset": [
+        0.0,
+        3.909,
+        0.0
+      ],
+      "size": [
+        1.43,
+        7.817,
+        1.2
+      ],
+      "tint": null,
+      "attach": null,
+      "material": "SmoothPlastic",
+      "transparency": 0.0,
+      "collide": false,
+      "cast": true,
+      "tris": 308
+    }
+  ],
+  "V3_Bed": [
+    {
+      "part": "Main",
+      "mesh": "V3_Bed.Main",
+      "offset": [
+        0.0,
+        0.35,
+        0.0
+      ],
+      "size": [
+        6.35,
+        0.7,
+        6.35
+      ],
+      "tint": null,
+      "attach": null,
+      "material": "SmoothPlastic",
+      "transparency": 0.0,
+      "collide": false,
+      "cast": true,
+      "tris": 220
+    }
+  ],
+  "V3_GraveBorder": [
+    {
+      "part": "Main",
+      "mesh": "V3_GraveBorder.Main",
+      "offset": [
+        0.0,
+        0.25,
+        0.0
+      ],
+      "size": [
+        4.7,
+        0.5,
+        6.0
+      ],
+      "tint": null,
+      "attach": null,
+      "material": "SmoothPlastic",
+      "transparency": 0.0,
+      "collide": false,
+      "cast": true,
+      "tris": 176
+    }
+  ],
+  "V3_PathTile": [
+    {
+      "part": "Main",
+      "mesh": "V3_PathTile.Main",
+      "offset": [
+        0.0,
+        -0.057,
+        0.0
+      ],
+      "size": [
+        8.0,
+        0.365,
+        8.0
+      ],
+      "tint": null,
+      "attach": null,
+      "material": "SmoothPlastic",
+      "transparency": 0.0,
+      "collide": false,
+      "cast": true,
+      "tris": 220
+    }
+  ],
+  "V3_Bench": [
+    {
+      "part": "Main",
+      "mesh": "V3_Bench.Main",
+      "offset": [
+        0.0,
+        1.938,
+        0.012
+      ],
+      "size": [
+        7.0,
+        3.875,
+        2.425
+      ],
+      "tint": null,
+      "attach": null,
+      "material": "SmoothPlastic",
+      "transparency": 0.0,
+      "collide": false,
+      "cast": true,
+      "tris": 308
+    }
+  ],
+  "V3_Barricade": [
+    {
+      "part": "Main",
+      "mesh": "V3_Barricade.Main",
+      "offset": [
+        0.0,
+        1.627,
+        0.0
+      ],
+      "size": [
+        8.0,
+        3.255,
+        2.0
+      ],
+      "tint": null,
+      "attach": null,
+      "material": "SmoothPlastic",
+      "transparency": 0.0,
+      "collide": false,
+      "cast": true,
+      "tris": 352
+    }
+  ],
+  "V3_Crates": [
+    {
+      "part": "Main",
+      "mesh": "V3_Crates.Main",
+      "offset": [
+        0.0,
+        2.4,
+        -0.055
+      ],
+      "size": [
+        5.3,
+        4.8,
+        2.61
+      ],
+      "tint": null,
+      "attach": null,
+      "material": "SmoothPlastic",
+      "transparency": 0.0,
+      "collide": false,
+      "cast": true,
+      "tris": 528
+    }
+  ],
+  "V3_MutagenTank": [
+    {
+      "part": "Main",
+      "mesh": "V3_MutagenTank.Main",
+      "offset": [
+        0.0,
+        3.75,
+        0.0
+      ],
+      "size": [
+        5.0,
+        7.5,
+        5.0
+      ],
+      "tint": null,
+      "attach": null,
+      "material": "SmoothPlastic",
+      "transparency": 0.0,
+      "collide": false,
+      "cast": true,
+      "tris": 308
+    },
+    {
+      "part": "Glow",
+      "mesh": "V3_MutagenTank.Glow",
+      "offset": [
+        0.0,
+        3.6,
+        -1.96
+      ],
+      "size": [
+        2.9,
+        4.4,
+        0.08
+      ],
+      "tint": null,
+      "attach": null,
+      "material": "Neon",
+      "transparency": 0.0,
+      "collide": false,
+      "cast": true,
+      "tris": 44
+    }
+  ],
+  "V3_ClinicCart": [
+    {
+      "part": "Main",
+      "mesh": "V3_ClinicCart.Main",
+      "offset": [
+        0.0,
+        2.0,
+        0.0
+      ],
+      "size": [
+        4.0,
+        3.8,
+        6.0
+      ],
+      "tint": null,
+      "attach": null,
+      "material": "SmoothPlastic",
+      "transparency": 0.0,
+      "collide": false,
+      "cast": true,
+      "tris": 244
+    }
+  ],
+  "V3_RoadSign": [
+    {
+      "part": "Main",
+      "mesh": "V3_RoadSign.Main",
+      "offset": [
+        0.0,
+        3.25,
+        0.0
+      ],
+      "size": [
+        8.0,
+        6.5,
+        0.7
+      ],
+      "tint": null,
+      "attach": null,
+      "material": "SmoothPlastic",
+      "transparency": 0.0,
+      "collide": false,
+      "cast": true,
+      "tris": 88
+    }
+  ],
+  "V3_YardGarage": [
+    {
+      "part": "Walls",
+      "mesh": "V3_YardGarage.Walls",
+      "offset": [
+        0.0,
+        5.5,
+        -0.07
+      ],
+      "size": [
+        24.0,
+        11.0,
+        14.14
+      ],
+      "tint": null,
+      "attach": null,
+      "material": "SmoothPlastic",
+      "transparency": 0.0,
+      "collide": false,
+      "cast": true,
+      "tris": 88
+    },
+    {
+      "part": "Trim",
+      "mesh": "V3_YardGarage.Trim",
+      "offset": [
+        0.0,
+        6.025,
+        -7.5
+      ],
+      "size": [
+        21.4,
+        11.55,
+        1.8
+      ],
+      "tint": null,
+      "attach": null,
+      "material": "SmoothPlastic",
+      "transparency": 0.0,
+      "collide": false,
+      "cast": true,
+      "tris": 836
+    },
+    {
+      "part": "Roof",
+      "mesh": "V3_YardGarage.Roof",
+      "offset": [
+        0.0,
+        12.2,
+        0.0
+      ],
+      "size": [
+        26.0,
+        2.8,
+        16.0
+      ],
+      "tint": null,
+      "attach": null,
+      "material": "SmoothPlastic",
+      "transparency": 0.0,
+      "collide": false,
+      "cast": true,
+      "tris": 88
+    }
+  ],
+  "V3_Mall": [
+    {
+      "part": "Walls",
+      "mesh": "V3_Mall.Walls",
+      "offset": [
+        0.0,
+        5.5,
+        -0.07
+      ],
+      "size": [
+        24.0,
+        11.0,
+        14.14
+      ],
+      "tint": null,
+      "attach": null,
+      "material": "SmoothPlastic",
+      "transparency": 0.0,
+      "collide": false,
+      "cast": true,
+      "tris": 88
+    },
+    {
+      "part": "Trim",
+      "mesh": "V3_Mall.Trim",
+      "offset": [
+        0.0,
+        8.9,
+        -8.447
+      ],
+      "size": [
+        21.4,
+        16.0,
+        5.095
+      ],
+      "tint": null,
+      "attach": null,
+      "material": "SmoothPlastic",
+      "transparency": 0.0,
+      "collide": false,
+      "cast": true,
+      "tris": 1496
+    },
+    {
+      "part": "Roof",
+      "mesh": "V3_Mall.Roof",
+      "offset": [
+        0.0,
+        14.85,
+        0.0
+      ],
+      "size": [
+        26.0,
+        8.1,
+        16.0
+      ],
+      "tint": null,
+      "attach": null,
+      "material": "SmoothPlastic",
+      "transparency": 0.0,
+      "collide": false,
+      "cast": true,
+      "tris": 132
+    }
+  ],
+  "V3_Factory": [
+    {
+      "part": "Walls",
+      "mesh": "V3_Factory.Walls",
+      "offset": [
+        0.0,
+        5.5,
+        -0.07
+      ],
+      "size": [
+        24.0,
+        11.0,
+        14.14
+      ],
+      "tint": null,
+      "attach": null,
+      "material": "SmoothPlastic",
+      "transparency": 0.0,
+      "collide": false,
+      "cast": true,
+      "tris": 88
+    },
+    {
+      "part": "Trim",
+      "mesh": "V3_Factory.Trim",
+      "offset": [
+        0.0,
+        6.35,
+        -7.425
+      ],
+      "size": [
+        21.4,
+        10.9,
+        1.15
+      ],
+      "tint": null,
+      "attach": null,
+      "material": "SmoothPlastic",
+      "transparency": 0.0,
+      "collide": false,
+      "cast": true,
+      "tris": 616
+    },
+    {
+      "part": "Roof",
+      "mesh": "V3_Factory.Roof",
+      "offset": [
+        0.0,
+        17.9,
+        0.0
+      ],
+      "size": [
+        26.0,
+        14.2,
+        16.0
+      ],
+      "tint": null,
+      "attach": null,
+      "material": "SmoothPlastic",
+      "transparency": 0.0,
+      "collide": false,
+      "cast": true,
+      "tris": 396
+    }
+  ],
+  "V3_Clinic": [
+    {
+      "part": "Walls",
+      "mesh": "V3_Clinic.Walls",
+      "offset": [
+        0.0,
+        5.5,
+        -0.07
+      ],
+      "size": [
+        24.0,
+        11.0,
+        14.14
+      ],
+      "tint": null,
+      "attach": null,
+      "material": "SmoothPlastic",
+      "transparency": 0.0,
+      "collide": false,
+      "cast": true,
+      "tris": 88
+    },
+    {
+      "part": "Trim",
+      "mesh": "V3_Clinic.Trim",
+      "offset": [
+        0.0,
+        8.95,
+        -6.525
+      ],
+      "size": [
+        21.4,
+        16.1,
+        2.95
+      ],
+      "tint": null,
+      "attach": null,
+      "material": "SmoothPlastic",
+      "transparency": 0.0,
+      "collide": false,
+      "cast": true,
+      "tris": 660
+    },
+    {
+      "part": "Roof",
+      "mesh": "V3_Clinic.Roof",
+      "offset": [
+        0.0,
+        14.9,
+        0.0
+      ],
+      "size": [
+        26.0,
+        8.2,
+        16.0
+      ],
+      "tint": null,
+      "attach": null,
+      "material": "SmoothPlastic",
+      "transparency": 0.0,
+      "collide": false,
+      "cast": true,
+      "tris": 132
+    }
+  ],
+  "V3_ChiefOffice": [
+    {
+      "part": "Walls",
+      "mesh": "V3_ChiefOffice.Walls",
+      "offset": [
+        0.0,
+        5.5,
+        -0.07
+      ],
+      "size": [
+        24.0,
+        11.0,
+        14.14
+      ],
+      "tint": null,
+      "attach": null,
+      "material": "SmoothPlastic",
+      "transparency": 0.0,
+      "collide": false,
+      "cast": true,
+      "tris": 88
+    },
+    {
+      "part": "Trim",
+      "mesh": "V3_ChiefOffice.Trim",
+      "offset": [
+        0.0,
+        10.4,
+        -7.175
+      ],
+      "size": [
+        22.0,
+        20.8,
+        2.65
+      ],
+      "tint": null,
+      "attach": null,
+      "material": "SmoothPlastic",
+      "transparency": 0.0,
+      "collide": false,
+      "cast": true,
+      "tris": 1540
+    },
+    {
+      "part": "Roof",
+      "mesh": "V3_ChiefOffice.Roof",
+      "offset": [
+        0.0,
+        17.15,
+        0.0
+      ],
+      "size": [
+        26.0,
+        12.7,
+        16.0
+      ],
+      "tint": null,
+      "attach": null,
+      "material": "SmoothPlastic",
+      "transparency": 0.0,
+      "collide": false,
+      "cast": true,
+      "tris": 396
+    }
+  ],
+  "V3_GunDeagle": [
+    {
+      "part": "Main",
+      "mesh": "V3_GunDeagle.Main",
+      "offset": [
+        0.0,
+        -0.232,
+        -0.308
+      ],
+      "size": [
+        0.445,
+        0.993,
+        1.719
+      ],
+      "tint": null,
+      "attach": null,
+      "material": "SmoothPlastic",
+      "transparency": 0.0,
+      "collide": false,
+      "cast": true,
+      "tris": 704
+    },
+    {
+      "part": "Slide",
+      "mesh": "V3_GunDeagle.Slide",
+      "offset": [
+        0.0,
+        0.365,
+        -0.38
+      ],
+      "size": [
+        0.499,
+        0.39,
+        1.45
+      ],
+      "tint": null,
+      "attach": null,
+      "material": "SmoothPlastic",
+      "transparency": 0.0,
+      "collide": false,
+      "cast": true,
+      "tris": 448
+    },
+    {
+      "part": "Magazine",
+      "mesh": "V3_GunDeagle.Magazine",
+      "offset": [
+        0.0,
+        -0.583,
+        0.39
+      ],
+      "size": [
+        0.34,
+        0.505,
+        0.45
+      ],
+      "tint": null,
+      "attach": null,
+      "material": "SmoothPlastic",
+      "transparency": 0.0,
+      "collide": false,
+      "cast": true,
+      "tris": 88
+    }
+  ],
+  "V3_GunAK": [
+    {
+      "part": "Main",
+      "mesh": "V3_GunAK.Main",
+      "offset": [
+        0.0,
+        -0.119,
+        -0.588
+      ],
+      "size": [
+        0.43,
+        1.258,
+        2.359
+      ],
+      "tint": null,
+      "attach": null,
+      "material": "SmoothPlastic",
+      "transparency": 0.0,
+      "collide": false,
+      "cast": true,
+      "tris": 1252
+    },
+    {
+      "part": "Magazine",
+      "mesh": "V3_GunAK.Magazine",
+      "offset": [
+        0.0,
+        -0.435,
+        -0.1
+      ],
+      "size": [
+        0.297,
+        0.79,
+        0.78
+      ],
+      "tint": null,
+      "attach": null,
+      "material": "SmoothPlastic",
+      "transparency": 0.0,
+      "collide": false,
+      "cast": true,
+      "tris": 300
+    },
+    {
+      "part": "Bolt",
+      "mesh": "V3_GunAK.Bolt",
+      "offset": [
+        -0.295,
+        0.195,
+        -0.04
+      ],
+      "size": [
+        0.25,
+        0.13,
+        0.3
+      ],
+      "tint": null,
+      "attach": null,
+      "material": "SmoothPlastic",
+      "transparency": 0.0,
+      "collide": false,
+      "cast": true,
+      "tris": 88
+    },
+    {
+      "part": "Stock",
+      "mesh": "V3_GunAK.Stock",
+      "offset": [
+        0.0,
+        0.028,
+        1.012
+      ],
+      "size": [
+        0.42,
+        0.665,
+        1.097
+      ],
+      "tint": null,
+      "attach": null,
+      "material": "SmoothPlastic",
+      "transparency": 0.0,
+      "collide": false,
+      "cast": true,
+      "tris": 316
+    }
+  ],
+  "V3_GunM4": [
+    {
+      "part": "Main",
+      "mesh": "V3_GunM4.Main",
+      "offset": [
+        0.0,
+        -0.119,
+        -0.588
+      ],
+      "size": [
+        0.461,
+        1.258,
+        2.359
+      ],
+      "tint": null,
+      "attach": null,
+      "material": "SmoothPlastic",
+      "transparency": 0.0,
+      "collide": false,
+      "cast": true,
+      "tris": 1596
+    },
+    {
+      "part": "Magazine",
+      "mesh": "V3_GunM4.Magazine",
+      "offset": [
+        0.0,
+        -0.43,
+        -0.28
+      ],
+      "size": [
+        0.28,
+        0.723,
+        0.502
+      ],
+      "tint": null,
+      "attach": null,
+      "material": "SmoothPlastic",
+      "transparency": 0.0,
+      "collide": false,
+      "cast": true,
+      "tris": 176
+    },
+    {
+      "part": "Bolt",
+      "mesh": "V3_GunM4.Bolt",
+      "offset": [
+        -0.295,
+        0.195,
+        -0.04
+      ],
+      "size": [
+        0.25,
+        0.13,
+        0.3
+      ],
+      "tint": null,
+      "attach": null,
+      "material": "SmoothPlastic",
+      "transparency": 0.0,
+      "collide": false,
+      "cast": true,
+      "tris": 88
+    },
+    {
+      "part": "Stock",
+      "mesh": "V3_GunM4.Stock",
+      "offset": [
+        0.0,
+        0.028,
+        1.012
+      ],
+      "size": [
+        0.42,
+        0.665,
+        1.097
+      ],
+      "tint": null,
+      "attach": null,
+      "material": "SmoothPlastic",
+      "transparency": 0.0,
+      "collide": false,
+      "cast": true,
+      "tris": 316
+    },
+    {
+      "part": "Sight",
+      "mesh": "V3_GunM4.Sight",
+      "offset": [
+        0.0,
+        0.705,
+        -0.1
+      ],
+      "size": [
+        0.38,
+        0.37,
+        0.3
+      ],
+      "tint": null,
+      "attach": null,
+      "material": "SmoothPlastic",
+      "transparency": 0.0,
+      "collide": false,
+      "cast": true,
+      "tris": 220
+    }
+  ],
+  "V3_GunAWP": [
+    {
+      "part": "Main",
+      "mesh": "V3_GunAWP.Main",
+      "offset": [
+        0.0,
+        -0.177,
+        -0.863
+      ],
+      "size": [
+        0.44,
+        1.143,
+        2.909
+      ],
+      "tint": null,
+      "attach": null,
+      "material": "SmoothPlastic",
+      "transparency": 0.0,
+      "collide": false,
+      "cast": true,
+      "tris": 936
+    },
+    {
+      "part": "Magazine",
+      "mesh": "V3_GunAWP.Magazine",
+      "offset": [
+        0.0,
+        -0.27,
+        -0.1
+      ],
+      "size": [
+        0.28,
+        0.32,
+        0.44
+      ],
+      "tint": null,
+      "attach": null,
+      "material": "SmoothPlastic",
+      "transparency": 0.0,
+      "collide": false,
+      "cast": true,
+      "tris": 44
+    },
+    {
+      "part": "Bolt",
+      "mesh": "V3_GunAWP.Bolt",
+      "offset": [
+        -0.345,
+        0.15,
+        -0.032
+      ],
+      "size": [
+        0.35,
+        0.22,
+        0.317
+      ],
+      "tint": null,
+      "attach": null,
+      "material": "SmoothPlastic",
+      "transparency": 0.0,
+      "collide": false,
+      "cast": true,
+      "tris": 108
+    },
+    {
+      "part": "Stock",
+      "mesh": "V3_GunAWP.Stock",
+      "offset": [
+        0.0,
+        0.028,
+        1.012
+      ],
+      "size": [
+        0.42,
+        0.665,
+        1.097
+      ],
+      "tint": null,
+      "attach": null,
+      "material": "SmoothPlastic",
+      "transparency": 0.0,
+      "collide": false,
+      "cast": true,
+      "tris": 316
+    },
+    {
+      "part": "Scope",
+      "mesh": "V3_GunAWP.Scope",
+      "offset": [
+        0.0,
+        0.677,
+        -0.26
+      ],
+      "size": [
+        0.44,
+        0.655,
+        1.7
+      ],
+      "tint": null,
+      "attach": null,
+      "material": "SmoothPlastic",
+      "transparency": 0.0,
+      "collide": false,
+      "cast": true,
+      "tris": 488
+    },
+    {
+      "part": "Bipod",
+      "mesh": "V3_GunAWP.Bipod",
+      "offset": [
+        0.0,
+        -0.36,
+        -1.12
+      ],
+      "size": [
+        0.79,
+        0.606,
+        0.1
+      ],
+      "tint": null,
+      "attach": null,
+      "material": "SmoothPlastic",
+      "transparency": 0.0,
+      "collide": false,
+      "cast": true,
+      "tris": 88
+    }
+  ],
+  "V3_ShovelRusty": [
+    {
+      "part": "Handle",
+      "mesh": "V3_ShovelRusty.Handle",
+      "offset": [
+        0.0,
+        0.275,
+        0.0
+      ],
+      "size": [
+        0.7,
+        3.15,
+        0.32
+      ],
+      "tint": null,
+      "attach": null,
+      "material": "SmoothPlastic",
+      "transparency": 0.0,
+      "collide": false,
+      "cast": true,
+      "tris": 568
+    },
+    {
+      "part": "Blade",
+      "mesh": "V3_ShovelRusty.Blade",
+      "offset": [
+        0.0,
+        -1.714,
+        -0.02
+      ],
+      "size": [
+        1.136,
+        1.288,
+        0.18
+      ],
+      "tint": null,
+      "attach": null,
+      "material": "SmoothPlastic",
+      "transparency": 0.0,
+      "collide": false,
+      "cast": true,
+      "tris": 172
+    },
+    {
+      "part": "Details",
+      "mesh": "V3_ShovelRusty.Details",
+      "offset": [
+        0.0,
+        -1.664,
+        -0.12
+      ],
+      "size": [
+        0.768,
+        1.151,
+        0.051
+      ],
+      "tint": null,
+      "attach": null,
+      "material": "SmoothPlastic",
+      "transparency": 0.0,
+      "collide": false,
+      "cast": true,
+      "tris": 152
+    }
+  ],
+  "V3_ShovelSteel": [
+    {
+      "part": "Handle",
+      "mesh": "V3_ShovelSteel.Handle",
+      "offset": [
+        0.0,
+        0.275,
+        0.0
+      ],
+      "size": [
+        0.7,
+        3.15,
+        0.32
+      ],
+      "tint": null,
+      "attach": null,
+      "material": "SmoothPlastic",
+      "transparency": 0.0,
+      "collide": false,
+      "cast": true,
+      "tris": 568
+    },
+    {
+      "part": "Blade",
+      "mesh": "V3_ShovelSteel.Blade",
+      "offset": [
+        0.0,
+        -1.714,
+        -0.02
+      ],
+      "size": [
+        1.186,
+        1.288,
+        0.18
+      ],
+      "tint": null,
+      "attach": null,
+      "material": "SmoothPlastic",
+      "transparency": 0.0,
+      "collide": false,
+      "cast": true,
+      "tris": 172
+    },
+    {
+      "part": "Details",
+      "mesh": "V3_ShovelSteel.Details",
+      "offset": [
+        0.0,
+        -1.522,
+        -0.12
+      ],
+      "size": [
+        0.8,
+        0.866,
+        0.051
+      ],
+      "tint": null,
+      "attach": null,
+      "material": "SmoothPlastic",
+      "transparency": 0.0,
+      "collide": false,
+      "cast": true,
+      "tris": 92
+    }
+  ],
+  "V3_ShovelCombat": [
+    {
+      "part": "Handle",
+      "mesh": "V3_ShovelCombat.Handle",
+      "offset": [
+        0.0,
+        0.275,
+        0.0
+      ],
+      "size": [
+        0.7,
+        3.15,
+        0.32
+      ],
+      "tint": null,
+      "attach": null,
+      "material": "SmoothPlastic",
+      "transparency": 0.0,
+      "collide": false,
+      "cast": true,
+      "tris": 568
+    },
+    {
+      "part": "Blade",
+      "mesh": "V3_ShovelCombat.Blade",
+      "offset": [
+        0.0,
+        -1.714,
+        -0.02
+      ],
+      "size": [
+        1.236,
+        1.289,
+        0.18
+      ],
+      "tint": null,
+      "attach": null,
+      "material": "SmoothPlastic",
+      "transparency": 0.0,
+      "collide": false,
+      "cast": true,
+      "tris": 172
+    },
+    {
+      "part": "Details",
+      "mesh": "V3_ShovelCombat.Details",
+      "offset": [
+        0.0,
+        -1.522,
+        -0.023
+      ],
+      "size": [
+        1.34,
+        0.867,
+        0.246
+      ],
+      "tint": null,
+      "attach": null,
+      "material": "SmoothPlastic",
+      "transparency": 0.0,
+      "collide": false,
+      "cast": true,
+      "tris": 356
+    }
+  ],
+  "V3_ShovelBone": [
+    {
+      "part": "Handle",
+      "mesh": "V3_ShovelBone.Handle",
+      "offset": [
+        0.0,
+        0.275,
+        0.0
+      ],
+      "size": [
+        0.7,
+        3.15,
+        0.32
+      ],
+      "tint": null,
+      "attach": null,
+      "material": "SmoothPlastic",
+      "transparency": 0.0,
+      "collide": false,
+      "cast": true,
+      "tris": 568
+    },
+    {
+      "part": "Blade",
+      "mesh": "V3_ShovelBone.Blade",
+      "offset": [
+        0.0,
+        -1.715,
+        -0.02
+      ],
+      "size": [
+        1.286,
+        1.289,
+        0.18
+      ],
+      "tint": null,
+      "attach": null,
+      "material": "SmoothPlastic",
+      "transparency": 0.0,
+      "collide": false,
+      "cast": true,
+      "tris": 172
+    },
+    {
+      "part": "Details",
+      "mesh": "V3_ShovelBone.Details",
+      "offset": [
+        0.0,
+        -1.521,
+        -0.183
+      ],
+      "size": [
+        0.865,
+        0.867,
+        0.246
+      ],
+      "tint": null,
+      "attach": null,
+      "material": "SmoothPlastic",
+      "transparency": 0.0,
+      "collide": false,
+      "cast": true,
+      "tris": 212
+    }
+  ],
+  "V3_ShovelGolden": [
+    {
+      "part": "Handle",
+      "mesh": "V3_ShovelGolden.Handle",
+      "offset": [
+        0.0,
+        0.275,
+        0.0
+      ],
+      "size": [
+        0.7,
+        3.15,
+        0.32
+      ],
+      "tint": null,
+      "attach": null,
+      "material": "SmoothPlastic",
+      "transparency": 0.0,
+      "collide": false,
+      "cast": true,
+      "tris": 568
+    },
+    {
+      "part": "Blade",
+      "mesh": "V3_ShovelGolden.Blade",
+      "offset": [
+        0.0,
+        -1.72,
+        -0.02
+      ],
+      "size": [
+        1.336,
+        1.3,
+        0.18
+      ],
+      "tint": null,
+      "attach": null,
+      "material": "SmoothPlastic",
+      "transparency": 0.0,
+      "collide": false,
+      "cast": true,
+      "tris": 154
+    },
+    {
+      "part": "Details",
+      "mesh": "V3_ShovelGolden.Details",
+      "offset": [
+        0.0,
+        -1.521,
+        -0.142
+      ],
+      "size": [
+        0.898,
+        0.868,
+        0.096
+      ],
+      "tint": null,
+      "attach": null,
+      "material": "SmoothPlastic",
+      "transparency": 0.0,
+      "collide": false,
+      "cast": true,
+      "tris": 136
+    }
+  ],
+  "V3_ShovelLunar": [
+    {
+      "part": "Handle",
+      "mesh": "V3_ShovelLunar.Handle",
+      "offset": [
+        0.0,
+        0.275,
+        0.0
+      ],
+      "size": [
+        0.7,
+        3.15,
+        0.32
+      ],
+      "tint": null,
+      "attach": null,
+      "material": "SmoothPlastic",
+      "transparency": 0.0,
+      "collide": false,
+      "cast": true,
+      "tris": 568
+    },
+    {
+      "part": "Blade",
+      "mesh": "V3_ShovelLunar.Blade",
+      "offset": [
+        0.0,
+        -1.72,
+        -0.02
+      ],
+      "size": [
+        1.385,
+        1.3,
+        0.18
+      ],
+      "tint": null,
+      "attach": null,
+      "material": "SmoothPlastic",
+      "transparency": 0.0,
+      "collide": false,
+      "cast": true,
+      "tris": 154
+    },
+    {
+      "part": "Details",
+      "mesh": "V3_ShovelLunar.Details",
+      "offset": [
+        0.0,
+        -1.521,
+        -0.176
+      ],
+      "size": [
+        0.93,
+        0.868,
+        0.163
+      ],
+      "tint": null,
+      "attach": null,
+      "material": "SmoothPlastic",
+      "transparency": 0.0,
+      "collide": false,
+      "cast": true,
+      "tris": 252
+    }
+  ],
+  "V3_ShovelRainbow": [
+    {
+      "part": "Handle",
+      "mesh": "V3_ShovelRainbow.Handle",
+      "offset": [
+        0.0,
+        0.275,
+        0.0
+      ],
+      "size": [
+        0.7,
+        3.15,
+        0.32
+      ],
+      "tint": null,
+      "attach": null,
+      "material": "SmoothPlastic",
+      "transparency": 0.0,
+      "collide": false,
+      "cast": true,
+      "tris": 568
+    },
+    {
+      "part": "Blade",
+      "mesh": "V3_ShovelRainbow.Blade",
+      "offset": [
+        0.0,
+        -1.72,
+        -0.02
+      ],
+      "size": [
+        1.435,
+        1.3,
+        0.18
+      ],
+      "tint": null,
+      "attach": null,
+      "material": "SmoothPlastic",
+      "transparency": 0.0,
+      "collide": false,
+      "cast": true,
+      "tris": 154
+    },
+    {
+      "part": "Details",
+      "mesh": "V3_ShovelRainbow.Details",
+      "offset": [
+        0.0,
+        -1.521,
+        -0.121
+      ],
+      "size": [
+        0.962,
+        0.869,
+        0.053
+      ],
+      "tint": null,
+      "attach": null,
+      "material": "SmoothPlastic",
+      "transparency": 0.0,
+      "collide": false,
+      "cast": true,
+      "tris": 260
+    }
+  ],
+  "V3_Trap": [
+    {
+      "part": "Base",
+      "mesh": "V3_Trap.Base",
+      "offset": [
+        0.0,
+        0.35,
+        0.0
+      ],
+      "size": [
+        4.6,
+        0.7,
+        4.6
+      ],
+      "tint": null,
+      "attach": null,
+      "material": "SmoothPlastic",
+      "transparency": 0.0,
+      "collide": false,
+      "cast": true,
+      "tris": 300
+    },
+    {
+      "part": "Plate",
+      "mesh": "V3_Trap.Plate",
+      "offset": [
+        0.0,
+        0.385,
+        0.0
+      ],
+      "size": [
+        2.56,
+        0.21,
+        2.56
+      ],
+      "tint": null,
+      "attach": null,
+      "material": "SmoothPlastic",
+      "transparency": 0.0,
+      "collide": false,
+      "cast": true,
+      "tris": 320
+    },
+    {
+      "part": "Light",
+      "mesh": "V3_Trap.Light",
+      "offset": [
+        0.0,
+        0.4,
+        -1.8
+      ],
+      "size": [
+        0.342,
+        0.24,
+        0.36
+      ],
+      "tint": null,
+      "attach": null,
+      "material": "SmoothPlastic",
+      "transparency": 0.0,
+      "collide": false,
+      "cast": true,
+      "tris": 80
+    },
+    {
+      "part": "JawL",
+      "mesh": "V3_Trap.JawL",
+      "offset": [
+        1.6,
+        0.59,
+        0.0
+      ],
+      "size": [
+        1.06,
+        0.62,
+        4.0
+      ],
+      "tint": null,
+      "attach": null,
+      "material": "SmoothPlastic",
+      "transparency": 0.0,
+      "collide": false,
+      "cast": true,
+      "tris": 220
+    },
+    {
+      "part": "JawR",
+      "mesh": "V3_Trap.JawR",
+      "offset": [
+        -1.6,
+        0.59,
+        0.0
+      ],
+      "size": [
+        1.06,
+        0.62,
+        4.0
+      ],
+      "tint": null,
+      "attach": null,
+      "material": "SmoothPlastic",
+      "transparency": 0.0,
+      "collide": false,
+      "cast": true,
+      "tris": 220
+    }
+  ]
+}

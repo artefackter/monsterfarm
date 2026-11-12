@@ -1,0 +1,14 @@
+local RS=game:GetService("ReplicatedStorage");local rem=RS:WaitForChild("Remotes");local rng=Random.new();local Sfx=require(RS:WaitForChild("Shared"):WaitForChild("Sfx"))
+game:GetService("ProximityPromptService").PromptButtonHoldBegan:Connect(function(prompt) if prompt.Name=="DigPrompt" and prompt.Parent.Parent:GetAttribute("Remaining")==0 then Sfx.play("Dig") end end)
+rem.Notice.OnClientEvent:Connect(function(key,z) if key~="reveal" then return end
+ Sfx.play(z.tier>=3 and "RareReveal" or "Reveal")
+ local p=game.Players.LocalPlayer;local root=p.Character and p.Character:FindFirstChild("HumanoidRootPart");if root then for i=1,18 do local part=Instance.new("Part");part.Shape=Enum.PartType.Ball;local d=rng:NextNumber(.3,.8);part.Size=Vector3.new(d,d,d);part.Color=Color3.fromHex(i%3==0 and "6E4429" or "8A5A3B");part.Material=Enum.Material.SmoothPlastic;part.CanCollide=false;part.CanQuery=false;part.CanTouch=false;part.Anchored=true;part.Position=root.Position+root.CFrame.LookVector*3;part.Parent=workspace;local top=part.Position+Vector3.new(rng:NextNumber(-4,4),rng:NextNumber(3,7),rng:NextNumber(-4,4));local up=game.TweenService:Create(part,TweenInfo.new(.3,Enum.EasingStyle.Quad,Enum.EasingDirection.Out),{Position=top});up:Play();up.Completed:Connect(function() if part.Parent then game.TweenService:Create(part,TweenInfo.new(.4,Enum.EasingStyle.Quad,Enum.EasingDirection.In),{Position=top-Vector3.new(0,7,0),Size=Vector3.new(.05,.05,.05)}):Play() end end);game.Debris:AddItem(part,.8) end end
+ if z.tier>=3 then local gui=p.PlayerGui:WaitForChild("DigUI");for i=1,28 do local f=Instance.new("Frame");f.Size=UDim2.fromOffset(rng:NextInteger(10,18),rng:NextInteger(10,18));f.Position=UDim2.fromScale(.5,.35);f.BorderSizePixel=0;f.ZIndex=30;f.BackgroundColor3=Color3.fromHSV(rng:NextNumber(),.75,1);Instance.new("UICorner",f).CornerRadius=UDim.new(0,3);f.Parent=gui;game.TweenService:Create(f,TweenInfo.new(1.3),{Position=UDim2.fromScale(rng:NextNumber(),1.1),Rotation=rng:NextNumber(-300,300),BackgroundTransparency=1}):Play();game.Debris:AddItem(f,1.4) end end
+end)
+
+local music={};local musicVolume={};local player=game.Players.LocalPlayer
+local sounds=RS:WaitForChild("Sounds")
+for _,name in ipairs({"DayMusic","NightMusic"}) do local source=sounds:WaitForChild(name);local sound=source:Clone();musicVolume[name]=source.Volume;sound.Volume=0;sound.Looped=true;sound.Parent=game:GetService("SoundService");music[name]=sound;if sound.SoundId~="" then sound:Play() end end
+local gui=player.PlayerGui:WaitForChild("DigUI")
+local function mix() local night=gui:GetAttribute("Night");for name,sound in pairs(music) do game.TweenService:Create(sound,TweenInfo.new(3),{Volume=((name=="NightMusic")==night) and musicVolume[name]*(player:GetAttribute("MusicVolume") or .7) or 0}):Play() end end
+gui:GetAttributeChangedSignal("Night"):Connect(mix);player:GetAttributeChangedSignal("MusicVolume"):Connect(mix);mix()

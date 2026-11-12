@@ -1,0 +1,20 @@
+{
+  "scope": "Local appearance prototypes for approval; no game scripts or statistics changed.",
+  "skins": {
+    "Asiimov": "White ceramic, orange angular panels, charcoal grip.",
+    "GoldenDragon": "Dark alloy, original gold dragon graphic and scale motif.",
+    "Cyberpunk": "Silver, graphite, teal circuit tracery and small illuminated indicators."
+  },
+  "movingComponents": [
+    "Main",
+    "Magazine",
+    "Bolt",
+    "Stock"
+  ],
+  "magazineBendsTowardMuzzle": true,
+  "referenceLinks": [
+    "https://x.com/so2_official/status/946442910089834496",
+    "https://www.csgowallpapers.com/wallpaper/1675-ak47-asiimov"
+  ],
+  "interpretation": "Original stylized game finishes inspired by the requested visual directions."
+}

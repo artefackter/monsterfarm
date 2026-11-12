@@ -1,0 +1,11 @@
+{
+  "generator": "built-in image_gen",
+  "prompts": {
+    "heart": "Create one isolated mobile-game HUD icon: glossy bright red heart, thick dark almost-black plum outline, rounded friendly cartoon shape, upper-left white shine, subtle darker red lower edge. Match polished casual Roblox simulator UI item illustrations. No face, no text, no numerals, no badge, no square background, no shadow outside silhouette. Heart fills nearly all the square canvas with small uniform padding. Transparent background.",
+    "coffin": "Create one isolated mobile-game HUD icon: a closed warm orange-brown wooden coffin, long hexagonal coffin shape in three-quarter view diagonally rising from lower left to upper right, golden trim around lid, small gold cross on lid, two gold side handles. Friendly polished casual Roblox simulator item illustration, chunky proportions, glossy highlights, thick dark nearly-black plum outline. No text, no numerals, no square background, no floor or shadow outside silhouette. Fill nearly all square canvas with small uniform padding. Transparent background."
+  },
+  "assets": {
+    "heart": "rbxassetid://97739532541743",
+    "coffin": "rbxassetid://125072260885212"
+  }
+}

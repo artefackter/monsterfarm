@@ -1,0 +1,281 @@
+{
+  "Kalash_Asiimov": [
+    {
+      "part": "Main",
+      "mesh": "Kalash_Asiimov.Main",
+      "offset": [
+        0.0,
+        -0.119,
+        -0.588
+      ],
+      "size": [
+        0.45,
+        1.258,
+        2.359
+      ],
+      "tint": null,
+      "attach": "Main",
+      "material": "SmoothPlastic",
+      "transparency": 0.0,
+      "collide": false,
+      "cast": true,
+      "tris": 1600
+    },
+    {
+      "part": "Magazine",
+      "mesh": "Kalash_Asiimov.Magazine",
+      "offset": [
+        0.0,
+        -0.435,
+        -0.42
+      ],
+      "size": [
+        0.297,
+        0.79,
+        0.78
+      ],
+      "tint": null,
+      "attach": "Magazine",
+      "material": "SmoothPlastic",
+      "transparency": 0.0,
+      "collide": false,
+      "cast": true,
+      "tris": 444
+    },
+    {
+      "part": "Bolt",
+      "mesh": "Kalash_Asiimov.Bolt",
+      "offset": [
+        -0.295,
+        0.195,
+        -0.04
+      ],
+      "size": [
+        0.25,
+        0.13,
+        0.3
+      ],
+      "tint": null,
+      "attach": "Bolt",
+      "material": "SmoothPlastic",
+      "transparency": 0.0,
+      "collide": false,
+      "cast": true,
+      "tris": 88
+    },
+    {
+      "part": "Stock",
+      "mesh": "Kalash_Asiimov.Stock",
+      "offset": [
+        0.0,
+        0.028,
+        1.012
+      ],
+      "size": [
+        0.42,
+        0.665,
+        1.097
+      ],
+      "tint": null,
+      "attach": "Stock",
+      "material": "SmoothPlastic",
+      "transparency": 0.0,
+      "collide": false,
+      "cast": true,
+      "tris": 364
+    }
+  ],
+  "Kalash_GoldenDragon": [
+    {
+      "part": "Main",
+      "mesh": "Kalash_GoldenDragon.Main",
+      "offset": [
+        0.0,
+        -0.119,
+        -0.588
+      ],
+      "size": [
+        0.442,
+        1.258,
+        2.359
+      ],
+      "tint": null,
+      "attach": "Main",
+      "material": "SmoothPlastic",
+      "transparency": 0.0,
+      "collide": false,
+      "cast": true,
+      "tris": 2016
+    },
+    {
+      "part": "Magazine",
+      "mesh": "Kalash_GoldenDragon.Magazine",
+      "offset": [
+        0.0,
+        -0.435,
+        -0.42
+      ],
+      "size": [
+        0.297,
+        0.79,
+        0.78
+      ],
+      "tint": null,
+      "attach": "Magazine",
+      "material": "SmoothPlastic",
+      "transparency": 0.0,
+      "collide": false,
+      "cast": true,
+      "tris": 876
+    },
+    {
+      "part": "Bolt",
+      "mesh": "Kalash_GoldenDragon.Bolt",
+      "offset": [
+        -0.295,
+        0.195,
+        -0.04
+      ],
+      "size": [
+        0.25,
+        0.13,
+        0.3
+      ],
+      "tint": null,
+      "attach": "Bolt",
+      "material": "SmoothPlastic",
+      "transparency": 0.0,
+      "collide": false,
+      "cast": true,
+      "tris": 88
+    },
+    {
+      "part": "Stock",
+      "mesh": "Kalash_GoldenDragon.Stock",
+      "offset": [
+        0.0,
+        0.028,
+        1.012
+      ],
+      "size": [
+        0.42,
+        0.665,
+        1.097
+      ],
+      "tint": null,
+      "attach": "Stock",
+      "material": "SmoothPlastic",
+      "transparency": 0.0,
+      "collide": false,
+      "cast": true,
+      "tris": 524
+    }
+  ],
+  "Kalash_Cyberpunk": [
+    {
+      "part": "Main",
+      "mesh": "Kalash_Cyberpunk.Main",
+      "offset": [
+        0.0,
+        -0.119,
+        -0.588
+      ],
+      "size": [
+        0.444,
+        1.258,
+        2.359
+      ],
+      "tint": null,
+      "attach": "Main",
+      "material": "SmoothPlastic",
+      "transparency": 0.0,
+      "collide": false,
+      "cast": true,
+      "tris": 1712
+    },
+    {
+      "part": "Magazine",
+      "mesh": "Kalash_Cyberpunk.Magazine",
+      "offset": [
+        0.0,
+        -0.435,
+        -0.42
+      ],
+      "size": [
+        0.297,
+        0.79,
+        0.78
+      ],
+      "tint": null,
+      "attach": "Magazine",
+      "material": "SmoothPlastic",
+      "transparency": 0.0,
+      "collide": false,
+      "cast": true,
+      "tris": 564
+    },
+    {
+      "part": "Bolt",
+      "mesh": "Kalash_Cyberpunk.Bolt",
+      "offset": [
+        -0.295,
+        0.195,
+        -0.04
+      ],
+      "size": [
+        0.25,
+        0.13,
+        0.3
+      ],
+      "tint": null,
+      "attach": "Bolt",
+      "material": "SmoothPlastic",
+      "transparency": 0.0,
+      "collide": false,
+      "cast": true,
+      "tris": 88
+    },
+    {
+      "part": "Stock",
+      "mesh": "Kalash_Cyberpunk.Stock",
+      "offset": [
+        0.0,
+        0.028,
+        1.012
+      ],
+      "size": [
+        0.42,
+        0.665,
+        1.097
+      ],
+      "tint": null,
+      "attach": "Stock",
+      "material": "SmoothPlastic",
+      "transparency": 0.0,
+      "collide": false,
+      "cast": true,
+      "tris": 460
+    },
+    {
+      "part": "Glow",
+      "mesh": "Kalash_Cyberpunk.Glow",
+      "offset": [
+        0.0,
+        0.133,
+        -0.105
+      ],
+      "size": [
+        0.374,
+        0.209,
+        1.054
+      ],
+      "tint": null,
+      "attach": "Main",
+      "material": "Neon",
+      "transparency": 0.0,
+      "collide": false,
+      "cast": false,
+      "tris": 72
+    }
+  ]
+}

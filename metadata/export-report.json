@@ -1,0 +1,49 @@
+{
+  "date": "2026-11-12",
+  "project": "Grow a Monster",
+  "placeId": "133761867075682",
+  "universeId": "10774761288",
+  "savedVersion": 243,
+  "published": false,
+  "playStarted": false,
+  "snapshot": {
+    "file": "place/GrowAMonster-current.rbxl",
+    "bytes": 3896174,
+    "sha256": "f3acd0dfb822f5743faffbcad2f5b47f36785e0a8c1ba748b6f879655f041226"
+  },
+  "dealer": {
+    "version": 4,
+    "modelAssetId": "126374725084007",
+    "forms": [
+      "Passive",
+      "Aggressive"
+    ],
+    "visiblePartsPerForm": [
+      "Head",
+      "ArmL",
+      "ArmR"
+    ],
+    "floating": true,
+    "farmHeightStuds": 12,
+    "reviewedInStudio": true,
+    "glbSha256": "442b118208183b00eaa317e6b7a9a966b4dc856894bbe45cbbf180fcb5ba3ce5"
+  },
+  "verification": {
+    "productionScripts": 121,
+    "productionSourcesMatchStudio": true,
+    "luauCompilePassed": true,
+    "rojoVersion": "7.7.1",
+    "rojoBuildPassed": true,
+    "artlibTemplates": 702,
+    "artlibMatchesSnapshot": true,
+    "temporaryReviewRemoved": true,
+    "gitDryRunPassed": true
+  },
+  "knownExportLimitation": "Rojo 7.7.1 does not decode the new Terrain.VoxelGridAssetContentMap value type. The original binary place is retained without conversion.",
+  "canonicalSourceDifferencesFromOriginalLocalFolder": [
+    {
+      "file": "src/shared/ArtManifestV3.lua",
+      "reason": "export uses saved Studio version"
+    }
+  ]
+}

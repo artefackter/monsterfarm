@@ -1,0 +1,17 @@
+{
+  "mode": "built-in image_gen",
+  "prompts": [
+    [
+      "speed",
+      "Create a polished casual Roblox mobile game HUD icon. A single blue sneaker, white sole and laces, toe pointing lower-left, heel upper-right, three-quarter side view. Bold thick near-black contour, clean rounded cartoon illustration, bright saturated colors, soft cel shading, crisp simple silhouette legible at 40 pixels. One isolated object centered filling 86% of a square canvas. Transparent background including all negative spaces. No text, numbers, badge, frame, ground shadow, extra objects or scenery. Match a cheerful zombie farming game."
+    ],
+    [
+      "zombucks",
+      "Create a polished casual Roblox mobile game HUD icon. A single chunky stack of bright green banknotes in three-quarter view, held by a pale green paper band bearing one cute green zombie face with two eyes and a little tooth. No currency symbols. Bold thick near-black contour, clean rounded cartoon illustration, bright saturated colors, soft cel shading, crisp simple silhouette legible at 40 pixels. One isolated object centered filling 86% of a square canvas. Transparent background including all negative spaces. No text, numbers, badge, frame, ground shadow, extra objects or scenery. Match a cheerful zombie farming game."
+    ],
+    [
+      "damage",
+      "Create a polished casual Roblox mobile game HUD icon. A single small digging shovel diagonally from bottom-left silver blue spade to upper-right orange-brown wooden D-shaped handle. Short wooden shaft, friendly chunky proportions. Bold thick near-black contour, clean rounded cartoon illustration, bright saturated colors, soft cel shading, crisp simple silhouette legible at 40 pixels. One isolated object centered filling 86% of a square canvas. Transparent background including all negative spaces. No text, numbers, badge, frame, ground shadow, extra objects or scenery. Match a cheerful zombie farming game."
+    ]
+  ]
+}

@@ -1,0 +1,58 @@
+{
+  "totalTriangles": 33246,
+  "status": "Imported and integrated in Studio; playtested; place not published",
+  "assets": {
+    "ENV_TreeA": {
+      "parts": 2,
+      "triangles": 10490
+    },
+    "ENV_TreeB": {
+      "parts": 2,
+      "triangles": 10490
+    },
+    "ENV_TreeC": {
+      "parts": 2,
+      "triangles": 10490
+    },
+    "ENV_Fence": {
+      "parts": 1,
+      "triangles": 784
+    },
+    "ENV_FencePost": {
+      "parts": 1,
+      "triangles": 272
+    },
+    "ENV_Path": {
+      "parts": 1,
+      "triangles": 264
+    },
+    "ENV_Tuft": {
+      "parts": 1,
+      "triangles": 324
+    },
+    "ENV_Tile1": {
+      "parts": 1,
+      "triangles": 44
+    },
+    "ENV_Tile2": {
+      "parts": 1,
+      "triangles": 44
+    },
+    "ENV_Tile3": {
+      "parts": 1,
+      "triangles": 44
+    }
+  },
+  "meshes": 13,
+  "bytes": 1840516,
+  "sha256": "d691dff1990b73fc5d31b21a6edb6590b281ef7bb097d1a5ed62415b7e88e2cb",
+  "checks": [
+    "finite vertices and normals",
+    "valid triangle indices",
+    "unique import names",
+    "GLB container length",
+    "ten approved environment models only; bushes and gates excluded",
+    "every mesh below 10000 triangles",
+    "separate tree trunk and canopy"
+  ]
+}

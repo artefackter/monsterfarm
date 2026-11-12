@@ -1,0 +1,63 @@
+{
+  "totalTriangles": 34940,
+  "assets": {
+    "Parasite_Farmer": {
+      "parts": 11,
+      "triangles": 4768,
+      "height": 6.4895
+    },
+    "Parasite_Punk": {
+      "parts": 9,
+      "triangles": 4848,
+      "height": 6.6385
+    },
+    "Parasite_Assassin": {
+      "parts": 9,
+      "triangles": 3348,
+      "height": 6.4895
+    },
+    "Stalker_Farmer": {
+      "parts": 9,
+      "triangles": 3956,
+      "height": 6.98
+    },
+    "Stalker_Punk": {
+      "parts": 7,
+      "triangles": 4864,
+      "height": 7.1245
+    },
+    "Stalker_Assassin": {
+      "parts": 7,
+      "triangles": 3040,
+      "height": 6.6295
+    },
+    "Verity_Farmer": {
+      "parts": 9,
+      "triangles": 3164,
+      "height": 7.466
+    },
+    "Verity_Punk": {
+      "parts": 7,
+      "triangles": 4268,
+      "height": 7.044
+    },
+    "Verity_Assassin": {
+      "parts": 7,
+      "triangles": 2684,
+      "height": 7.366
+    }
+  },
+  "status": "Awaiting render approval; no Studio imports or gameplay changes",
+  "meshes": 75,
+  "bytes": 3461552,
+  "sha256": "672b597edc992af5a24102e3490f520920179649829fa00b5aa315e2351ee12c",
+  "checks": [
+    "finite vertices and normals",
+    "valid triangle indices",
+    "unique import names",
+    "GLB container length",
+    "nine new models only",
+    "every mesh below 10000 triangles",
+    "separate head, arms, legs and props"
+  ]
+}

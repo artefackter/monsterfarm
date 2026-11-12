@@ -1,0 +1,66 @@
+{
+  "totalTriangles": 37706,
+  "status": "Awaiting style approval; no live replacements",
+  "assets": {
+    "ENV_TreeA": {
+      "parts": 2,
+      "triangles": 10490
+    },
+    "ENV_TreeB": {
+      "parts": 2,
+      "triangles": 10490
+    },
+    "ENV_TreeC": {
+      "parts": 2,
+      "triangles": 10490
+    },
+    "ENV_Fence": {
+      "parts": 1,
+      "triangles": 784
+    },
+    "ENV_FencePost": {
+      "parts": 1,
+      "triangles": 272
+    },
+    "ENV_Gate": {
+      "parts": 1,
+      "triangles": 1180
+    },
+    "ENV_Tile1": {
+      "parts": 1,
+      "triangles": 44
+    },
+    "ENV_Tile2": {
+      "parts": 1,
+      "triangles": 44
+    },
+    "ENV_Tile3": {
+      "parts": 1,
+      "triangles": 44
+    },
+    "ENV_Path": {
+      "parts": 1,
+      "triangles": 264
+    },
+    "ENV_Bush": {
+      "parts": 1,
+      "triangles": 3280
+    },
+    "ENV_Tuft": {
+      "parts": 1,
+      "triangles": 324
+    }
+  },
+  "meshes": 15,
+  "bytes": 2062788,
+  "sha256": "a32c4ab67ec02cf1a4961a4935453f52d243912fee45d57dbb10360f3faeef67",
+  "checks": [
+    "finite vertices and normals",
+    "valid triangle indices",
+    "unique import names",
+    "GLB container length",
+    "twelve environment models only",
+    "every mesh below 10000 triangles",
+    "separate tree trunk and canopy"
+  ]
+}

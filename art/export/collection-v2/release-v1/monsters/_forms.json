@@ -1,0 +1,571 @@
+{
+  "scope": "Appearance and poses only; no game state changes.",
+  "forms": {
+    "Deer_Farmer": {
+      "Passive": "Deer_Farmer_Passive",
+      "Aggressive": "Deer_Farmer_Aggressive"
+    },
+    "Deer_Punk": {
+      "Passive": "Deer_Punk_Passive",
+      "Aggressive": "Deer_Punk_Aggressive"
+    },
+    "Deer_Assassin": {
+      "Passive": "Deer_Assassin_Passive",
+      "Aggressive": "Deer_Assassin_Aggressive"
+    },
+    "Deer_Chief": {
+      "Passive": "Deer_Chief_Passive",
+      "Aggressive": "Deer_Chief_Aggressive"
+    },
+    "RingMaw": {
+      "Passive": "RingMaw_Passive",
+      "Aggressive": "RingMaw_Aggressive"
+    },
+    "CaveDweller": {
+      "Passive": "CaveDweller_Passive",
+      "Aggressive": "CaveDweller_Aggressive"
+    },
+    "CaveDweller_Farmer": {
+      "Passive": "CaveDweller_Farmer_Passive",
+      "Aggressive": "CaveDweller_Farmer_Aggressive"
+    },
+    "RingMaw_Farmer": {
+      "Passive": "RingMaw_Farmer_Passive",
+      "Aggressive": "RingMaw_Farmer_Aggressive"
+    },
+    "CaveDweller_Punk": {
+      "Passive": "CaveDweller_Punk_Passive",
+      "Aggressive": "CaveDweller_Punk_Aggressive"
+    },
+    "RingMaw_Punk": {
+      "Passive": "RingMaw_Punk_Passive",
+      "Aggressive": "RingMaw_Punk_Aggressive"
+    },
+    "CaveDweller_Assassin": {
+      "Passive": "CaveDweller_Assassin_Passive",
+      "Aggressive": "CaveDweller_Assassin_Aggressive"
+    },
+    "RingMaw_Assassin": {
+      "Passive": "RingMaw_Assassin_Passive",
+      "Aggressive": "RingMaw_Assassin_Aggressive"
+    },
+    "Parasite_Farmer": {
+      "Passive": "Parasite_Farmer_Passive",
+      "Aggressive": "Parasite_Farmer_Aggressive"
+    },
+    "Parasite_Punk": {
+      "Passive": "Parasite_Punk_Passive",
+      "Aggressive": "Parasite_Punk_Aggressive"
+    },
+    "Parasite_Assassin": {
+      "Passive": "Parasite_Assassin_Passive",
+      "Aggressive": "Parasite_Assassin_Aggressive"
+    },
+    "Stalker_Farmer": {
+      "Passive": "Stalker_Farmer_Passive",
+      "Aggressive": "Stalker_Farmer_Aggressive"
+    },
+    "Stalker_Punk": {
+      "Passive": "Stalker_Punk_Passive",
+      "Aggressive": "Stalker_Punk_Aggressive"
+    },
+    "Stalker_Assassin": {
+      "Passive": "Stalker_Assassin_Passive",
+      "Aggressive": "Stalker_Assassin_Aggressive"
+    }
+  },
+  "appearanceChecks": {
+    "Deer_Farmer_Passive": {
+      "mouthOpen": true,
+      "hasFangs": false,
+      "thumbsPointForward": true,
+      "clawHooksPointTowardPalm": true
+    },
+    "Deer_Farmer_Aggressive": {
+      "mouthOpen": true,
+      "hasFangs": true,
+      "thumbsPointForward": true,
+      "clawHooksPointTowardPalm": true
+    },
+    "Deer_Punk_Passive": {
+      "mouthOpen": true,
+      "hasFangs": false,
+      "thumbsPointForward": true,
+      "clawHooksPointTowardPalm": true
+    },
+    "Deer_Punk_Aggressive": {
+      "mouthOpen": true,
+      "hasFangs": true,
+      "thumbsPointForward": true,
+      "clawHooksPointTowardPalm": true
+    },
+    "Deer_Assassin_Passive": {
+      "mouthOpen": true,
+      "hasFangs": false,
+      "thumbsPointForward": true,
+      "clawHooksPointTowardPalm": true
+    },
+    "Deer_Assassin_Aggressive": {
+      "mouthOpen": true,
+      "hasFangs": true,
+      "thumbsPointForward": true,
+      "clawHooksPointTowardPalm": true
+    },
+    "Deer_Chief_Passive": {
+      "mouthOpen": true,
+      "hasFangs": false,
+      "thumbsPointForward": true,
+      "clawHooksPointTowardPalm": true
+    },
+    "Deer_Chief_Aggressive": {
+      "mouthOpen": true,
+      "hasFangs": true,
+      "thumbsPointForward": true,
+      "clawHooksPointTowardPalm": true
+    },
+    "RingMaw_Passive": {
+      "ringClosed": true,
+      "centerApertureRadius": 0,
+      "closedMouthConstruction": "Contracted volumetric lips with a sealed horizontal seam.",
+      "flatCoverPlate": false
+    },
+    "RingMaw_Aggressive": {
+      "ringClosed": false,
+      "centerApertureRadius": 0.19
+    },
+    "CaveDweller_Passive": {
+      "skullSize": [
+        0.87,
+        0.67,
+        0.84
+      ],
+      "skullCenter": [
+        0,
+        -0.665,
+        5.875
+      ],
+      "jawSize": [
+        0.742,
+        0.51,
+        0.214
+      ],
+      "jawCenterZ": 4.683,
+      "fangLengths": [
+        0.298,
+        0.406,
+        0.45,
+        0.234,
+        0.45,
+        0.234,
+        0.298,
+        0.406
+      ],
+      "eyeColor": "ivory",
+      "mouthOpen": true,
+      "mouthOpeningHeight": 0.665,
+      "fangsFolded": false,
+      "headTiltBackDegrees": 0,
+      "headPitchBlenderXDegrees": 0,
+      "headPivot": [
+        -0.0,
+        4.590000152587891,
+        -0.4300000071525574
+      ],
+      "headwearFollowsHead": true
+    },
+    "CaveDweller_Aggressive": {
+      "skullSize": [
+        0.87,
+        0.67,
+        0.84
+      ],
+      "skullCenter": [
+        0,
+        -0.665,
+        5.875
+      ],
+      "jawSize": [
+        0.742,
+        0.51,
+        0.214
+      ],
+      "jawCenterZ": 4.28,
+      "fangLengths": [
+        0.298,
+        0.406,
+        0.45,
+        0.234,
+        0.45,
+        0.234,
+        0.298,
+        0.406
+      ],
+      "eyeColor": "red",
+      "mouthOpen": true,
+      "mouthOpeningHeight": 1.0679999999999996,
+      "fangsFolded": false,
+      "headTiltBackDegrees": 30,
+      "headPitchBlenderXDegrees": -30,
+      "headPivot": [
+        -0.0,
+        4.590000152587891,
+        -0.4300000071525574
+      ],
+      "headwearFollowsHead": true
+    },
+    "CaveDweller_Farmer_Passive": {
+      "skullSize": [
+        0.87,
+        0.67,
+        0.84
+      ],
+      "skullCenter": [
+        0,
+        -0.665,
+        5.875
+      ],
+      "jawSize": [
+        0.742,
+        0.51,
+        0.214
+      ],
+      "jawCenterZ": 4.683,
+      "fangLengths": [
+        0.298,
+        0.406,
+        0.45,
+        0.234,
+        0.45,
+        0.234,
+        0.298,
+        0.406
+      ],
+      "eyeColor": "ivory",
+      "mouthOpen": true,
+      "mouthOpeningHeight": 0.665,
+      "fangsFolded": false,
+      "headTiltBackDegrees": 0,
+      "headPitchBlenderXDegrees": 0,
+      "headPivot": [
+        -0.0,
+        4.590000152587891,
+        -0.4300000071525574
+      ],
+      "headwearFollowsHead": true
+    },
+    "CaveDweller_Farmer_Aggressive": {
+      "skullSize": [
+        0.87,
+        0.67,
+        0.84
+      ],
+      "skullCenter": [
+        0,
+        -0.665,
+        5.875
+      ],
+      "jawSize": [
+        0.742,
+        0.51,
+        0.214
+      ],
+      "jawCenterZ": 4.28,
+      "fangLengths": [
+        0.298,
+        0.406,
+        0.45,
+        0.234,
+        0.45,
+        0.234,
+        0.298,
+        0.406
+      ],
+      "eyeColor": "red",
+      "mouthOpen": true,
+      "mouthOpeningHeight": 1.0679999999999996,
+      "fangsFolded": false,
+      "headTiltBackDegrees": 30,
+      "headPitchBlenderXDegrees": -30,
+      "headPivot": [
+        -0.0,
+        4.590000152587891,
+        -0.4300000071525574
+      ],
+      "headwearFollowsHead": true
+    },
+    "RingMaw_Farmer_Passive": {
+      "ringClosed": true,
+      "centerApertureRadius": 0,
+      "closedMouthConstruction": "Contracted volumetric lips with a sealed horizontal seam.",
+      "flatCoverPlate": false
+    },
+    "RingMaw_Farmer_Aggressive": {
+      "ringClosed": false,
+      "centerApertureRadius": 0.19
+    },
+    "CaveDweller_Punk_Passive": {
+      "skullSize": [
+        0.87,
+        0.67,
+        0.84
+      ],
+      "skullCenter": [
+        0,
+        -0.665,
+        5.875
+      ],
+      "jawSize": [
+        0.742,
+        0.51,
+        0.214
+      ],
+      "jawCenterZ": 4.683,
+      "fangLengths": [
+        0.298,
+        0.406,
+        0.45,
+        0.234,
+        0.45,
+        0.234,
+        0.298,
+        0.406
+      ],
+      "eyeColor": "ivory",
+      "mouthOpen": true,
+      "mouthOpeningHeight": 0.665,
+      "fangsFolded": false,
+      "headTiltBackDegrees": 0,
+      "headPitchBlenderXDegrees": 0,
+      "headPivot": [
+        -0.0,
+        4.590000152587891,
+        -0.4300000071525574
+      ],
+      "headwearFollowsHead": true
+    },
+    "CaveDweller_Punk_Aggressive": {
+      "skullSize": [
+        0.87,
+        0.67,
+        0.84
+      ],
+      "skullCenter": [
+        0,
+        -0.665,
+        5.875
+      ],
+      "jawSize": [
+        0.742,
+        0.51,
+        0.214
+      ],
+      "jawCenterZ": 4.28,
+      "fangLengths": [
+        0.298,
+        0.406,
+        0.45,
+        0.234,
+        0.45,
+        0.234,
+        0.298,
+        0.406
+      ],
+      "eyeColor": "red",
+      "mouthOpen": true,
+      "mouthOpeningHeight": 1.0679999999999996,
+      "fangsFolded": false,
+      "headTiltBackDegrees": 30,
+      "headPitchBlenderXDegrees": -30,
+      "headPivot": [
+        -0.0,
+        4.590000152587891,
+        -0.4300000071525574
+      ],
+      "headwearFollowsHead": true
+    },
+    "RingMaw_Punk_Passive": {
+      "ringClosed": true,
+      "centerApertureRadius": 0,
+      "closedMouthConstruction": "Contracted volumetric lips with a sealed horizontal seam.",
+      "flatCoverPlate": false
+    },
+    "RingMaw_Punk_Aggressive": {
+      "ringClosed": false,
+      "centerApertureRadius": 0.19
+    },
+    "CaveDweller_Assassin_Passive": {
+      "skullSize": [
+        0.87,
+        0.67,
+        0.84
+      ],
+      "skullCenter": [
+        0,
+        -0.665,
+        5.875
+      ],
+      "jawSize": [
+        0.742,
+        0.51,
+        0.214
+      ],
+      "jawCenterZ": 4.683,
+      "fangLengths": [
+        0.298,
+        0.406,
+        0.45,
+        0.234,
+        0.45,
+        0.234,
+        0.298,
+        0.406
+      ],
+      "eyeColor": "ivory",
+      "mouthOpen": true,
+      "mouthOpeningHeight": 0.665,
+      "fangsFolded": false,
+      "headTiltBackDegrees": 0,
+      "headPitchBlenderXDegrees": 0,
+      "headPivot": [
+        -0.0,
+        4.590000152587891,
+        -0.4300000071525574
+      ],
+      "headwearFollowsHead": true
+    },
+    "CaveDweller_Assassin_Aggressive": {
+      "skullSize": [
+        0.87,
+        0.67,
+        0.84
+      ],
+      "skullCenter": [
+        0,
+        -0.665,
+        5.875
+      ],
+      "jawSize": [
+        0.742,
+        0.51,
+        0.214
+      ],
+      "jawCenterZ": 4.28,
+      "fangLengths": [
+        0.298,
+        0.406,
+        0.45,
+        0.234,
+        0.45,
+        0.234,
+        0.298,
+        0.406
+      ],
+      "eyeColor": "red",
+      "mouthOpen": true,
+      "mouthOpeningHeight": 1.0679999999999996,
+      "fangsFolded": false,
+      "headTiltBackDegrees": 30,
+      "headPitchBlenderXDegrees": -30,
+      "headPivot": [
+        -0.0,
+        4.590000152587891,
+        -0.4300000071525574
+      ],
+      "headwearFollowsHead": true
+    },
+    "RingMaw_Assassin_Passive": {
+      "ringClosed": true,
+      "centerApertureRadius": 0,
+      "closedMouthConstruction": "Contracted volumetric lips with a sealed horizontal seam.",
+      "flatCoverPlate": false
+    },
+    "RingMaw_Assassin_Aggressive": {
+      "ringClosed": false,
+      "centerApertureRadius": 0.19
+    },
+    "Parasite_Farmer_Passive": {
+      "mouthOpen": true,
+      "eyeColor": "amber",
+      "widerMouth": false,
+      "costume": "Farmer",
+      "familySpecificExtremities": true
+    },
+    "Parasite_Farmer_Aggressive": {
+      "mouthOpen": true,
+      "eyeColor": "red",
+      "widerMouth": true,
+      "costume": "Farmer",
+      "familySpecificExtremities": true
+    },
+    "Parasite_Punk_Passive": {
+      "mouthOpen": true,
+      "eyeColor": "amber",
+      "widerMouth": false,
+      "costume": "Punk",
+      "familySpecificExtremities": true
+    },
+    "Parasite_Punk_Aggressive": {
+      "mouthOpen": true,
+      "eyeColor": "red",
+      "widerMouth": true,
+      "costume": "Punk",
+      "familySpecificExtremities": true
+    },
+    "Parasite_Assassin_Passive": {
+      "mouthOpen": true,
+      "eyeColor": "amber",
+      "widerMouth": false,
+      "costume": "Assassin",
+      "familySpecificExtremities": true
+    },
+    "Parasite_Assassin_Aggressive": {
+      "mouthOpen": true,
+      "eyeColor": "red",
+      "widerMouth": true,
+      "costume": "Assassin",
+      "familySpecificExtremities": true
+    },
+    "Stalker_Farmer_Passive": {
+      "mouthOpen": true,
+      "eyeColor": "cyan",
+      "widerMouth": false,
+      "costume": "Farmer",
+      "familySpecificExtremities": true
+    },
+    "Stalker_Farmer_Aggressive": {
+      "mouthOpen": true,
+      "eyeColor": "red",
+      "widerMouth": true,
+      "costume": "Farmer",
+      "familySpecificExtremities": true
+    },
+    "Stalker_Punk_Passive": {
+      "mouthOpen": true,
+      "eyeColor": "cyan",
+      "widerMouth": false,
+      "costume": "Punk",
+      "familySpecificExtremities": true
+    },
+    "Stalker_Punk_Aggressive": {
+      "mouthOpen": true,
+      "eyeColor": "red",
+      "widerMouth": true,
+      "costume": "Punk",
+      "familySpecificExtremities": true
+    },
+    "Stalker_Assassin_Passive": {
+      "mouthOpen": true,
+      "eyeColor": "cyan",
+      "widerMouth": false,
+      "costume": "Assassin",
+      "familySpecificExtremities": true
+    },
+    "Stalker_Assassin_Aggressive": {
+      "mouthOpen": true,
+      "eyeColor": "red",
+      "widerMouth": true,
+      "costume": "Assassin",
+      "familySpecificExtremities": true
+    }
+  }
+}

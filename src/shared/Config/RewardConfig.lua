@@ -1,0 +1,1 @@
+return {DexBonus=.01,OfflineRate=.5,OfflineCap=10800,DaySeconds=86400,Daily={{Coins=500},{Grave="Stone",Count=1},{Coins=3000},{Grave="Marble",Count=1},{Coins=20000},{Grave="Marble",Count=2},{Grave="Golden",Count=1}}}

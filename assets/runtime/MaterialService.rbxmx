@@ -1,0 +1,57 @@
+<?xml version='1.0' encoding='utf-8'?>
+<roblox version="4"><Item class="MaterialService" referent="5">
+    <Properties>
+      <string name="Name">MaterialService</string>
+      <BinaryString name="SerializedOverrides">
+      </BinaryString>
+    </Properties>
+    <Item class="MaterialVariant" referent="6">
+      <Properties>
+        <string name="Name">GrowVoxelV3</string>
+        <token name="AlphaMode">3</token>
+        <BinaryString name="AttributesSerialize">AwAAAA0AAABBcHByb3ZlZFN0eWxlAwEOAAAAQXV0aG9yaW5nU3RhZ2UGAAAAAAAAFEARAAAAVGV4dHVyZVZhbGlkYXRpb24CDQAAAFZpc2libGVJblBsYXk=</BinaryString>
+        <token name="BaseMaterial">272</token>
+        <SecurityCapabilities name="Capabilities">0</SecurityCapabilities>
+        <Content name="ColorMapContent">
+          <uri>rbxassetid://83542189105414</uri>
+        </Content>
+        <PhysicalProperties name="CustomPhysicalProperties">
+          <CustomPhysics>false</CustomPhysics>
+        </PhysicalProperties>
+        <Content name="EmissiveMaskContent">
+          <null>
+          </null>
+        </Content>
+        <float name="EmissiveStrength">1</float>
+        <Color3 name="EmissiveTint">
+          <R>1</R>
+          <G>1</G>
+          <B>1</B>
+        </Color3>
+        <UniqueId name="HistoryId">00000000000000000000000000000000</UniqueId>
+        <token name="MaterialPattern">0</token>
+        <Content name="MetalnessMapContent">
+          <null>
+          </null>
+        </Content>
+        <Content name="NormalMapContent">
+          <uri>rbxassetid://94694437556009</uri>
+        </Content>
+        <Content name="RoughnessMapContent">
+          <null>
+          </null>
+        </Content>
+        <bool name="DefinesCapabilities">false</bool>
+        <BinaryString name="SerializedOverrides">
+        </BinaryString>
+        <int64 name="SourceAssetId">-1</int64>
+        <float name="StudsPerTile">8</float>
+        <BinaryString name="Tags" />
+        <Content name="TexturePackContent">
+          <uri>rbxassetid://107490783644801</uri>
+        </Content>
+        <UniqueId name="UniqueId">4955f0b6e57264f60b00386a00009d4a</UniqueId>
+      </Properties>
+    </Item>
+  </Item>
+  </roblox>

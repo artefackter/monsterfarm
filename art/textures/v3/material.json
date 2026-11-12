@@ -1,0 +1,18 @@
+{
+  "name": "GrowVoxelV3",
+  "BaseMaterial": "SmoothPlastic",
+  "StudsPerTile": 8,
+  "ColorMap": "GrowVoxel_Color.png",
+  "NormalMap": "GrowVoxel_Normal.png",
+  "normalConvention": "OpenGL tangent space; flat=127,127,255",
+  "source": "Original analytical height field, material_v3.py",
+  "documentation": "https://create.roblox.com/docs/reference/engine/classes/MaterialVariant",
+  "ColorMapAssetId": 83542189105414,
+  "NormalMapAssetId": 94694437556009,
+  "uploaded": true,
+  "assetMetadataVerified": true,
+  "fetchStatus": "Material pattern visually confirmed in Studio Play after WorldV3 import; previous PreloadAsync failures retained in preparation report",
+  "moderationColor": "Approved",
+  "stateColor": "Active",
+  "visualEvidence": "art/preview/v3-stage5/studio-farm.png"
+}

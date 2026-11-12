@@ -1,0 +1,477 @@
+{
+  "sourceDirectory": "/Users/wingman/Downloads/GrowAMonster-Git-2026-11-12/images",
+  "files": [
+    {
+      "index": 0,
+      "name": "coffin",
+      "source": "exec-028df6c8-acde-4dc5-b98a-8df4de122808.png",
+      "path": "art/ui/modal-refresh/coffin.png",
+      "sha256": "78d658b7a3db3eb885d5ffbad5b03903f913428702da805769e6c9315916ea17"
+    },
+    {
+      "index": 1,
+      "name": "cash",
+      "source": "exec-0620399f-138d-4efc-8dcd-bd9ac7947aad.png",
+      "path": "art/ui/modal-refresh/cash.png",
+      "sha256": "549047cd8519b5f91de9914bda3ff96ee4f0eaaf67a338afed639c829071345a"
+    },
+    {
+      "index": 2,
+      "name": "weapon_AK",
+      "source": "exec-1403b51e-4c41-4bbf-9368-4c6d326ca207.png",
+      "path": "art/ui/modal-refresh/weapon_AK.png",
+      "sha256": "d7b19d8d7349333158c8e0a75a3e9b2914e2fdd78a4886d46f950a856b1d9c7e"
+    },
+    {
+      "index": 3,
+      "name": "VerityAssassin",
+      "source": "exec-18e38d5e-80e7-465c-88d2-b634c454d44b.png",
+      "path": "art/ui/modal-refresh/VerityAssassin.png",
+      "sha256": "962c1ac4ab6ec84ea9d7528e137059fe71cef3857bd51757191e74e3850fcf1d",
+      "assetId": "70737226268829",
+      "texture": "rbxassetid://99838969854645"
+    },
+    {
+      "index": 4,
+      "name": "pumpkin_LunarPumpkin",
+      "source": "exec-1a98e654-efa6-44d7-8fc5-dc981caf6c03.png",
+      "path": "art/ui/modal-refresh/pumpkin_LunarPumpkin.png",
+      "sha256": "62658e094de0be4563f2d9730f7aab4e4788dbe53d47f486b279cd98584b5aea"
+    },
+    {
+      "index": 5,
+      "name": "weapon_AWP",
+      "source": "exec-1beaadb4-c56e-4601-a045-d3d3cdf8c109.png",
+      "path": "art/ui/modal-refresh/weapon_AWP.png",
+      "sha256": "12a74f2331ecd2791f7a5f92773a45a0f201f133da015d5ffd2396d6dcdb557f"
+    },
+    {
+      "index": 6,
+      "name": "shovel_Combat",
+      "source": "exec-1d5e0df0-3134-4617-98b5-cb41ece202c7.png",
+      "path": "art/ui/modal-refresh/shovel_Combat.png",
+      "sha256": "2673838a10bdc40c567b0e85d10457eb09ecd629df5f2761aee4f5e638948ed3"
+    },
+    {
+      "index": 7,
+      "name": "reference_upgrades_alt",
+      "source": "exec-21131e9d-0e0b-4f99-b3b8-e9ba616f3e30.png",
+      "path": "art/ui/modal-refresh/reference_upgrades_alt.png",
+      "sha256": "4c38cdd0cb65e6affd970a14e8eeddc80748531e00d200aa2d982e48666ecef8"
+    },
+    {
+      "index": 8,
+      "name": "card",
+      "source": "exec-2473c5cb-7199-4f74-a780-28aa7b58c56f.png",
+      "path": "art/ui/modal-refresh/card.png",
+      "sha256": "c41cb4509a10fc691c576985ba69dc494a27550035af8bbf22453e82e9f34ccf"
+    },
+    {
+      "index": 9,
+      "name": "reference_crypt",
+      "source": "exec-24ab94cd-f93d-406a-abcf-54e643d787dd.png",
+      "path": "art/ui/modal-refresh/reference_crypt.png",
+      "sha256": "b98776cdb6a69fb691b4370bf6497dd0304cbc96cd288a49ff8fc76070ccfec4"
+    },
+    {
+      "index": 10,
+      "name": "ParasiteFarmer",
+      "source": "exec-293c5079-7671-43db-bd71-dad44aad39a8.png",
+      "path": "art/ui/modal-refresh/ParasiteFarmer.png",
+      "sha256": "8f30b8b04b3f6a445e15efe81bc8df1e9a7d2753f5576c183b4c536af598744f",
+      "assetId": "80130596973400",
+      "texture": "rbxassetid://132502619697780"
+    },
+    {
+      "index": 11,
+      "name": "BuckshotDealer",
+      "source": "exec-2a1bda65-e49d-483d-882b-bab4f463d8c4.png",
+      "path": "art/ui/modal-refresh/BuckshotDealer.png",
+      "sha256": "4e1819d0d5fdab7d70380950b73be7d571632370ef997805cf15709d6a778582",
+      "assetId": "71304524603253",
+      "texture": "rbxassetid://93810913749577"
+    },
+    {
+      "index": 12,
+      "name": "RingMawPunk",
+      "source": "exec-2fc308a7-c251-4c1a-9235-902fc2bef544.png",
+      "path": "art/ui/modal-refresh/RingMawPunk.png",
+      "sha256": "0bcde0c13a68d4cb541bac81f88679c330fbda475f3bbe88a9ea19d53cb2557a",
+      "assetId": "127826927323613",
+      "texture": "rbxassetid://137506457758005"
+    },
+    {
+      "index": 13,
+      "name": "reference_merge",
+      "source": "exec-30ac6e74-9c57-46d7-a377-6e0af1d866b2.png",
+      "path": "art/ui/modal-refresh/reference_merge.png",
+      "sha256": "4ee91a3c3480f01543b4ac387bbdd789b61fe1258ec6ba0e8e355b118b0600f0"
+    },
+    {
+      "index": 14,
+      "name": "RingMawFarmer",
+      "source": "exec-36451176-f0d8-4aec-8675-7d72530d3295.png",
+      "path": "art/ui/modal-refresh/RingMawFarmer.png",
+      "sha256": "00ba1a62a0612b26aad96a0a2acfd663b839978231f26393e4541c1d26888a91",
+      "assetId": "106184603019637",
+      "texture": "rbxassetid://110805430918850"
+    },
+    {
+      "index": 15,
+      "name": "speed",
+      "source": "exec-3cc64aa6-539e-42f3-9c9a-bcdcd783a260.png",
+      "path": "art/ui/modal-refresh/speed.png",
+      "sha256": "4543ab6632f94f53d8a1e9855e42b3dfd920e827de6c7bbaea1c123265c8fc73"
+    },
+    {
+      "index": 16,
+      "name": "weapon_M4",
+      "source": "exec-4440cc7f-9d81-47ec-b4cc-e7ab6220ded7.png",
+      "path": "art/ui/modal-refresh/weapon_M4.png",
+      "sha256": "40f78663f70290b0b12e849843eade1a24bdecd60045df6bcf4aec552c20dc1f"
+    },
+    {
+      "index": 17,
+      "name": "CaveDwellerPunk",
+      "source": "exec-449f9e48-4df5-4b55-afcb-cce53fbb40a7.png",
+      "path": "art/ui/modal-refresh/CaveDwellerPunk.png",
+      "sha256": "2e3489280b6e3208c18073b482faf0575db9f9e9567bce47a31df049bc4d5100",
+      "assetId": "103550031688446",
+      "texture": "rbxassetid://94680736681723"
+    },
+    {
+      "index": 18,
+      "name": "reference_crypt_alt",
+      "source": "exec-456a8084-98f8-4722-a2ce-264a36a9a2a2.png",
+      "path": "art/ui/modal-refresh/reference_crypt_alt.png",
+      "sha256": "155b6d1d643f4a8b9b9061e532866d32611ddf003eb89e5befd4f89381c863f1"
+    },
+    {
+      "index": 19,
+      "name": "reference_weapons",
+      "source": "exec-4e8d46e6-ec3f-474e-8365-e1eb92f4e7a7.png",
+      "path": "art/ui/modal-refresh/reference_weapons.png",
+      "sha256": "e6928b6efd6881dd236eb73975379ea5e73a1335cd2aa183c907cb3f70130c4e"
+    },
+    {
+      "index": 20,
+      "name": "pumpkin_Pumpkin",
+      "source": "exec-527ab345-28da-46ab-a810-66cb382d0fb4.png",
+      "path": "art/ui/modal-refresh/pumpkin_Pumpkin.png",
+      "sha256": "67befeb8ecaf14cd5c41f77e078ffe5d421946cf96cb818d127a1cef23517fdd"
+    },
+    {
+      "index": 21,
+      "name": "mutagen",
+      "source": "exec-5545f245-4b28-4403-b1ca-8ff4d1cef7be.png",
+      "path": "art/ui/modal-refresh/mutagen.png",
+      "sha256": "b310b9336eb6df21a63446a40a27afb76a810e8798a837284832d1fb034d807a",
+      "assetId": "136653624474582",
+      "texture": "rbxassetid://118582358537780"
+    },
+    {
+      "index": 22,
+      "name": "weapon_M249",
+      "source": "exec-58a6fa42-e641-49ae-90e6-68fa2540efc6.png",
+      "path": "art/ui/modal-refresh/weapon_M249.png",
+      "sha256": "093f92e3d87a4e2b7e3c2ef762caf5fb20a64fa28db4104c2420e43d13ab2e36",
+      "assetId": "94432026244756",
+      "texture": "rbxassetid://128162314247530"
+    },
+    {
+      "index": 23,
+      "name": "weapon_Pump",
+      "source": "exec-58f20108-3985-4758-9a3b-d345bd491c92.png",
+      "path": "art/ui/modal-refresh/weapon_Pump.png",
+      "sha256": "d7143e8aacff1fd760b91b2e68ea3ba4c435fd60be3d24170fbbadcd098844bf",
+      "assetId": "120741594047159",
+      "texture": "rbxassetid://120845841963531"
+    },
+    {
+      "index": 24,
+      "name": "reference_world",
+      "source": "exec-6210caa3-efaf-4400-a4cf-11a0a54d775a.png",
+      "path": "art/ui/modal-refresh/reference_world.png",
+      "sha256": "2bb535cdee529fc2537e237a29c2294725ecc75c1f0465b37d9bd37591f0b3b3"
+    },
+    {
+      "index": 25,
+      "name": "canopy",
+      "source": "exec-6b975e4d-73e7-47de-9a0e-b958c84b4886.png",
+      "path": "art/ui/modal-refresh/canopy.png",
+      "sha256": "7f44194f7671ab46ef1fb50461d339b096c6661ca7be21806e7fd450d7e63616"
+    },
+    {
+      "index": 26,
+      "name": "CaveDwellerFarmer",
+      "source": "exec-72cbdcd8-1b79-4ca1-b948-fd082eddb7e1.png",
+      "path": "art/ui/modal-refresh/CaveDwellerFarmer.png",
+      "sha256": "44deb3d32b38571751d651de8d997b17202fb3a8dda1d7ee1539def99316629d",
+      "assetId": "92830259979559",
+      "texture": "rbxassetid://79677620556690"
+    },
+    {
+      "index": 27,
+      "name": "reference_upgrades",
+      "source": "exec-73be1886-73c2-42fa-ac89-395cf9d44619.png",
+      "path": "art/ui/modal-refresh/reference_upgrades.png",
+      "sha256": "bf144770caffc659935c6d021a32286dee498db1862f431a351da9750c0df26b"
+    },
+    {
+      "index": 28,
+      "name": "shovel_Golden",
+      "source": "exec-773f27cc-6fd3-450b-9ff8-be73b2671506.png",
+      "path": "art/ui/modal-refresh/shovel_Golden.png",
+      "sha256": "d12e4827ba0781ad2a7ebbb2235fb70662b85363b36c3b11ffb322e84248aaa4"
+    },
+    {
+      "index": 29,
+      "name": "pumpkin_GoldenPumpkin",
+      "source": "exec-77899acf-06e6-4e16-83f8-13e1858282a8.png",
+      "path": "art/ui/modal-refresh/pumpkin_GoldenPumpkin.png",
+      "sha256": "5cd0a8ae3325fad73c8fd348f5dcdfe8bf2d555ae3b2ac81703e0805f2dbd880"
+    },
+    {
+      "index": 30,
+      "name": "shovel_Rainbow",
+      "source": "exec-7f298a6e-aa7b-41c1-9b31-f75826e7c986.png",
+      "path": "art/ui/modal-refresh/shovel_Rainbow.png",
+      "sha256": "73e7856fe58d86938f03110862edc3f38edae199150c21f7e7cd76ac6d882a27"
+    },
+    {
+      "index": 31,
+      "name": "damage",
+      "source": "exec-80455117-06f0-4dcd-84b0-e5f24ee8f36e.png",
+      "path": "art/ui/modal-refresh/damage.png",
+      "sha256": "a79be5e8825ee1201ae4e235f817e87d2e503b3b4e7895cd0597aec49733f628"
+    },
+    {
+      "index": 32,
+      "name": "StalkerPunk",
+      "source": "exec-811ff358-d369-4990-9777-9c4558bdcb0f.png",
+      "path": "art/ui/modal-refresh/StalkerPunk.png",
+      "sha256": "0af170cff40ce474dac15804151294b030233bcebcde74ff7f24351c59d3d292",
+      "assetId": "80349950883560",
+      "texture": "rbxassetid://128365298734482"
+    },
+    {
+      "index": 33,
+      "name": "DeerFarmer",
+      "source": "exec-85c4d6d3-aa5e-433f-b446-b75fd5052c63.png",
+      "path": "art/ui/modal-refresh/DeerFarmer.png",
+      "sha256": "51c614df7033bbce55fef0bef3c34c935eda0b44fea2ead07a9e48083b1ddf6e",
+      "assetId": "72609635476095",
+      "texture": "rbxassetid://77915485298991"
+    },
+    {
+      "index": 34,
+      "name": "shovel_Steel",
+      "source": "exec-94604e2d-cd97-411c-bd26-687730049884.png",
+      "path": "art/ui/modal-refresh/shovel_Steel.png",
+      "sha256": "0f94dc0c9e415c540cea4cb6a74a248acebf6e9fb4ce123e4e1b0c0fa21e649e"
+    },
+    {
+      "index": 35,
+      "name": "weapon_Double",
+      "source": "exec-96f01a82-8afe-4ad5-8a26-0778ba5b2143.png",
+      "path": "art/ui/modal-refresh/weapon_Double.png",
+      "sha256": "62f84224e8ad52a13fd0419d5d7599cde4ed01609ae8071011ca7574409cfea6",
+      "assetId": "130213120878531",
+      "texture": "rbxassetid://74841702847091"
+    },
+    {
+      "index": 36,
+      "name": "grave_Golden",
+      "source": "exec-979a3a63-01f8-4404-96ec-15b6d4c0407e.png",
+      "path": "art/ui/modal-refresh/grave_Golden.png",
+      "sha256": "a331dc39df28ea076da898643d479e32cfcebf005b6bc5b2d1c540207145bbc2"
+    },
+    {
+      "index": 37,
+      "name": "StalkerAssassin",
+      "source": "exec-9a342f5b-03e5-412c-b8d3-cb8ab7493469.png",
+      "path": "art/ui/modal-refresh/StalkerAssassin.png",
+      "sha256": "f01527e932672d66d0ed7e671e412db9f73545697d41ec2b6253830346e91a32",
+      "assetId": "103731952959359",
+      "texture": "rbxassetid://115506366328628"
+    },
+    {
+      "index": 38,
+      "name": "trap",
+      "source": "exec-9a55a4c4-a5cb-4e5b-ab4d-b9c290446daf.png",
+      "path": "art/ui/modal-refresh/trap.png",
+      "sha256": "e0bec5c08c9040856886a8efe7b9348ed25977e25b09884eb8f6ea6f32a66d66"
+    },
+    {
+      "index": 39,
+      "name": "CaveDwellerAssassin",
+      "source": "exec-a4651c11-09fc-435d-8dc3-dda682399293.png",
+      "path": "art/ui/modal-refresh/CaveDwellerAssassin.png",
+      "sha256": "e05a0f2feb7963d267de5afe87921f8f714df465789d093ae1c67fbd0b9f829b",
+      "assetId": "127617233755557",
+      "texture": "rbxassetid://93525176608259"
+    },
+    {
+      "index": 40,
+      "name": "weapon_Deagle",
+      "source": "exec-ab700c38-35c6-42de-adfc-e77708501c84.png",
+      "path": "art/ui/modal-refresh/weapon_Deagle.png",
+      "sha256": "64715db675ca6b0b87a0f7bebe0bd7e879d48d3f502d721dd13237a00119d807"
+    },
+    {
+      "index": 41,
+      "name": "SirenHead",
+      "source": "exec-ac7e8cdf-d74c-4321-bce3-6b3fa407ebf4.png",
+      "path": "art/ui/modal-refresh/SirenHead.png",
+      "sha256": "2263e79dd896556dc938410b1fc3424a375b9571896e08f814e1204dcdfca879",
+      "assetId": "129303373906768",
+      "texture": "rbxassetid://89181420418461"
+    },
+    {
+      "index": 42,
+      "name": "DeerPunk",
+      "source": "exec-afd5925d-1f88-4449-b096-f931bf6e8de1.png",
+      "path": "art/ui/modal-refresh/DeerPunk.png",
+      "sha256": "49d6e9c905998e2ec490a8268fee4dbdaf3ae6cd175cae8520c269f4a29c3d00",
+      "assetId": "91037293048677",
+      "texture": "rbxassetid://118059774362344"
+    },
+    {
+      "index": 43,
+      "name": "pumpkin_BigPumpkin",
+      "source": "exec-bbe878f5-5ea1-4476-981f-c7fb85eb88fe.png",
+      "path": "art/ui/modal-refresh/pumpkin_BigPumpkin.png",
+      "sha256": "ac39761e09136993dbceb24704259164b3b0610f43f666c1b23ec2afb48060f2"
+    },
+    {
+      "index": 44,
+      "name": "VerityFarmer",
+      "source": "exec-bc42d907-9325-40ca-9cec-862d07f06392.png",
+      "path": "art/ui/modal-refresh/VerityFarmer.png",
+      "sha256": "b64fe00aef4f1b9d8b2c8d5b3f4053ddec23da15a1f059aeb6811382e906a034",
+      "assetId": "119769615870772",
+      "texture": "rbxassetid://105415388173874"
+    },
+    {
+      "index": 45,
+      "name": "shovel_Rusty",
+      "source": "exec-bc90c48a-dcd6-4b2c-9d9a-4fd00d5a4485.png",
+      "path": "art/ui/modal-refresh/shovel_Rusty.png",
+      "sha256": "2a71a08bcc86f5c77bf5276e840e1cf914bf64a520853953faba19479e771158"
+    },
+    {
+      "index": 46,
+      "name": "ParasitePunk",
+      "source": "exec-c571ca1d-1d7d-4449-ba6f-851a2455abe4.png",
+      "path": "art/ui/modal-refresh/ParasitePunk.png",
+      "sha256": "3fab9d1eeb10624281da9a3abd9ff6c2f9845dca54ff39a5857b3dd41c91afe8",
+      "assetId": "98273525649000",
+      "texture": "rbxassetid://132522046041971"
+    },
+    {
+      "index": 47,
+      "name": "RingMawAssassin",
+      "source": "exec-c751ec6b-eec2-4930-87d3-5b2e52aa0102.png",
+      "path": "art/ui/modal-refresh/RingMawAssassin.png",
+      "sha256": "f1078bee6620dc7442e608db4bddab15462c6b6a2a6dc0f9cb47919e6c80fcdf",
+      "assetId": "118753920736077",
+      "texture": "rbxassetid://72022552740998"
+    },
+    {
+      "index": 48,
+      "name": "DeerChief",
+      "source": "exec-cb0b1200-54e1-499e-b4d2-f253341ee760.png",
+      "path": "art/ui/modal-refresh/DeerChief.png",
+      "sha256": "ddff7e311fa096c77f061db079f37383abbfa9b4807068dd5c3aee4e0f50a8fd",
+      "assetId": "127755867496415",
+      "texture": "rbxassetid://109180766206254"
+    },
+    {
+      "index": 49,
+      "name": "frame",
+      "source": "exec-d442de54-787d-47ce-b565-4380096dc45b.png",
+      "path": "art/ui/modal-refresh/frame.png",
+      "sha256": "ca14f75e3229996604138fd286eef0298b776f59518abf50345d9843a5f23e62"
+    },
+    {
+      "index": 50,
+      "name": "StalkerFarmer",
+      "source": "exec-d6b047c2-1dc7-4eb7-92b6-c45cb74f424b.png",
+      "path": "art/ui/modal-refresh/StalkerFarmer.png",
+      "sha256": "16f28a60bba12f31a350425d012ba1fde2d322d67d2eeac7fe04a06b37ce8830",
+      "assetId": "137325589700890",
+      "texture": "rbxassetid://89460443636610"
+    },
+    {
+      "index": 51,
+      "name": "petEmpty",
+      "source": "exec-d7eaa3a2-8e2f-4b53-bd63-ebb31617adec.png",
+      "path": "art/ui/modal-refresh/petEmpty.png",
+      "sha256": "b0232132ee2bdc43a2058a44212c0d9f4fd20b54337a4ab36c9c1fefc28fae7a"
+    },
+    {
+      "index": 52,
+      "name": "shovel_Bone",
+      "source": "exec-da60dcf8-3605-4651-96e2-f51ac2976d79.png",
+      "path": "art/ui/modal-refresh/shovel_Bone.png",
+      "sha256": "189fc8e1cacfc95ee3bfdc767d84fd5c30dcec0853dc8d9abf9ef13668b234c5"
+    },
+    {
+      "index": 53,
+      "name": "weapon_MP5",
+      "source": "exec-dbc8fb66-8051-4312-9ca9-d967b6c2c9be.png",
+      "path": "art/ui/modal-refresh/weapon_MP5.png",
+      "sha256": "48a690e26afae21d1d0eba4b7e889ae08886f349ad47f0abfe48885aa06815b1",
+      "assetId": "135436908639391",
+      "texture": "rbxassetid://108905947977041"
+    },
+    {
+      "index": 54,
+      "name": "DeerAssassin",
+      "source": "exec-de35eaf3-46ca-4d18-ac96-9118c81bb85f.png",
+      "path": "art/ui/modal-refresh/DeerAssassin.png",
+      "sha256": "9bc2db915cb49b33b0f8687d37845cbeb652836a941f0f78cda5e6e7d53f8231",
+      "assetId": "83195832106951",
+      "texture": "rbxassetid://133824753464375"
+    },
+    {
+      "index": 55,
+      "name": "shovel_Lunar",
+      "source": "exec-e0667c01-86d0-4867-bd3b-5b0a83e49420.png",
+      "path": "art/ui/modal-refresh/shovel_Lunar.png",
+      "sha256": "9818fdae5b9425ed752364829115625f44fe0f7b2ee7c8cca3ff388cfb262df7"
+    },
+    {
+      "index": 56,
+      "name": "grave_Stone",
+      "source": "exec-eac10baa-9856-4552-974b-62422de7777c.png",
+      "path": "art/ui/modal-refresh/grave_Stone.png",
+      "sha256": "bf83bd03cc0b200d9e7b19b2e5d20c2587f3ac6422efdd57a596ab6c7cc64e36"
+    },
+    {
+      "index": 57,
+      "name": "heart",
+      "source": "exec-ef8c9af4-0a2a-4747-9f3c-bd548ab85178.png",
+      "path": "art/ui/modal-refresh/heart.png",
+      "sha256": "6fc5d3cf3d8b12e3d3d8000c1385b840c1e6a9fcf2b85f9cc1b8ae98b6c84d1c"
+    },
+    {
+      "index": 58,
+      "name": "VerityPunk",
+      "source": "exec-f9f1c009-623c-4544-86ca-b76b106a6a79.png",
+      "path": "art/ui/modal-refresh/VerityPunk.png",
+      "sha256": "47bc9fef9282888372ea89bde3ca530aba8a5fbff04d2e2d1177a72cc47de23b",
+      "assetId": "82098201144794",
+      "texture": "rbxassetid://115813210276153"
+    },
+    {
+      "index": 59,
+      "name": "ParasiteAssassin",
+      "source": "exec-fbf13b63-711b-4e46-b45d-1ab193cda10c.png",
+      "path": "art/ui/modal-refresh/ParasiteAssassin.png",
+      "sha256": "b9c8a813db64edbe5152dccf6956f2331d71717e3d2bed501ba2bcb9e65a08df",
+      "assetId": "140509601100862",
+      "texture": "rbxassetid://105354790133863"
+    }
+  ]
+}

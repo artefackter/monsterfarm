@@ -1,0 +1,24 @@
+{
+  "assets": {
+    "SirenHead_Passive": {
+      "parts": 7,
+      "triangles": 3188
+    },
+    "SirenHead_Aggressive": {
+      "parts": 7,
+      "triangles": 4084
+    },
+    "BuckshotDealer_Passive": {
+      "parts": 7,
+      "triangles": 2708
+    },
+    "BuckshotDealer_Aggressive": {
+      "parts": 7,
+      "triangles": 3236
+    }
+  },
+  "meshCount": 28,
+  "triangles": 13216,
+  "bytes": 1291936,
+  "sha256": "b8fe7ff9304e6bb0994ccf67acec70fb6e2add401e942018020c27f96efd04a0"
+}

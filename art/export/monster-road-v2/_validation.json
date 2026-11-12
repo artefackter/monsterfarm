@@ -1,0 +1,126 @@
+{
+  "totalTriangles": 35244,
+  "assets": {
+    "MR_VillageHouse": {
+      "parts": 1,
+      "triangles": 3992
+    },
+    "MR_Hospital": {
+      "parts": 1,
+      "triangles": 2288
+    },
+    "MR_Factory": {
+      "parts": 1,
+      "triangles": 4620
+    },
+    "MR_Boiler": {
+      "parts": 1,
+      "triangles": 336
+    },
+    "MR_Log": {
+      "parts": 1,
+      "triangles": 88
+    },
+    "MR_Well": {
+      "parts": 1,
+      "triangles": 660
+    },
+    "MR_Sign": {
+      "parts": 1,
+      "triangles": 176
+    },
+    "MR_Rocks": {
+      "parts": 1,
+      "triangles": 60
+    },
+    "MR_ForestTree": {
+      "parts": 2,
+      "triangles": 10490
+    },
+    "MR_DirtPath": {
+      "parts": 1,
+      "triangles": 704
+    },
+    "MR_VillagePaving": {
+      "parts": 1,
+      "triangles": 704
+    },
+    "MR_FactoryPaving": {
+      "parts": 1,
+      "triangles": 704
+    },
+    "MR_CavePaving": {
+      "parts": 1,
+      "triangles": 704
+    },
+    "MR_GrassClump": {
+      "parts": 1,
+      "triangles": 96
+    },
+    "MR_Mushrooms": {
+      "parts": 1,
+      "triangles": 504
+    },
+    "MR_LeafLitter": {
+      "parts": 1,
+      "triangles": 280
+    },
+    "MR_TwistedTree": {
+      "parts": 1,
+      "triangles": 1730
+    },
+    "MR_HangingLantern": {
+      "parts": 1,
+      "triangles": 428
+    },
+    "MR_CultTorch": {
+      "parts": 1,
+      "triangles": 232
+    },
+    "MR_CultSkulls": {
+      "parts": 1,
+      "triangles": 832
+    },
+    "MR_RuneStone": {
+      "parts": 1,
+      "triangles": 196
+    },
+    "MR_Cart": {
+      "parts": 1,
+      "triangles": 804
+    },
+    "MR_CultCave": {
+      "parts": 1,
+      "triangles": 1140
+    },
+    "MR_WallDetailed": {
+      "parts": 1,
+      "triangles": 1144
+    },
+    "MR_RustTank": {
+      "parts": 1,
+      "triangles": 1064
+    },
+    "MR_HazardEdge": {
+      "parts": 1,
+      "triangles": 704
+    },
+    "MR_ArenaSeal": {
+      "parts": 1,
+      "triangles": 564
+    }
+  },
+  "meshes": 28,
+  "bytes": 1556684,
+  "sha256": "4dadc276152bf752544712653282a1b8ca7eeaf2d897e7426b8bc930855f1382",
+  "checks": [
+    "finite vertices and normals",
+    "valid triangle indices",
+    "unique import names",
+    "GLB container length",
+    "original modular road assets",
+    "every mesh below 10000 triangles",
+    "separate tree trunk and canopy"
+  ],
+  "status": "Revision 2: closer to supplied reference; exported and roundtrip verified; not installed"
+}

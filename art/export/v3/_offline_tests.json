@@ -1,0 +1,8 @@
+{
+  "passed": true,
+  "checks": 1098,
+  "zeroAreaTrianglesAfterQuantization": 0,
+  "limitations": [
+    "Offline geometry checks do not prove Roblox collision, camera behavior, import colors, device FPS, or mobile UI."
+  ]
+}

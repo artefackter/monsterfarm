@@ -1,0 +1,20 @@
+{
+  "date": "2026-11-12",
+  "checks": [
+    "Luau compile passed",
+    "Rojo build passed",
+    "2D reveal desktop and iPhone landscape visually checked",
+    "Golden mutation and three stars verified",
+    "No automatic dismissal after 6 seconds",
+    "Confirm and close buttons verified",
+    "Previous crypt menu restored",
+    "Missing illustration uses ViewportFrame and model",
+    "Console: no runtime errors",
+    "Simulator reset to desktop"
+  ],
+  "files": {
+    "src/client/UIController.client.lua": "b13ca439f9e32f125b0070dd6543de5f8977dc71842d9bda57abf860eaeda524",
+    "src/shared/MonsterPortrait.lua": "78ee81b11846eeed9d0b836bafc1b6c850a095644bb3afeb4b3cd303179fe86a",
+    "src/shared/Locale.lua": "61094f72d8b9e5ed2706a0fc4b3951bd5ea319b48cd5937fa0da2f76d93a326e"
+  }
+}

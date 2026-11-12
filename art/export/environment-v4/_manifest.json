@@ -1,0 +1,341 @@
+{
+  "ENV_TreeA": [
+    {
+      "part": "Trunk",
+      "mesh": "ENV_TreeA.Trunk",
+      "offset": [
+        -0.345,
+        6.325,
+        0.181
+      ],
+      "size": [
+        6.88,
+        12.993,
+        6.528
+      ],
+      "tint": null,
+      "attach": null,
+      "material": "SmoothPlastic",
+      "transparency": 0.0,
+      "collide": false,
+      "cast": true,
+      "tris": 1130
+    },
+    {
+      "part": "Canopy",
+      "mesh": "ENV_TreeA.Canopy",
+      "offset": [
+        -0.506,
+        12.769,
+        0.337
+      ],
+      "size": [
+        13.796,
+        8.934,
+        13.051
+      ],
+      "tint": null,
+      "attach": null,
+      "material": "SmoothPlastic",
+      "transparency": 0.0,
+      "collide": false,
+      "cast": true,
+      "tris": 9360
+    }
+  ],
+  "ENV_TreeB": [
+    {
+      "part": "Trunk",
+      "mesh": "ENV_TreeB.Trunk",
+      "offset": [
+        -0.295,
+        5.175,
+        0.355
+      ],
+      "size": [
+        6.148,
+        10.631,
+        5.188
+      ],
+      "tint": null,
+      "attach": null,
+      "material": "SmoothPlastic",
+      "transparency": 0.0,
+      "collide": false,
+      "cast": true,
+      "tris": 1130
+    },
+    {
+      "part": "Canopy",
+      "mesh": "ENV_TreeB.Canopy",
+      "offset": [
+        -0.301,
+        10.411,
+        0.485
+      ],
+      "size": [
+        11.623,
+        7.219,
+        10.753
+      ],
+      "tint": null,
+      "attach": null,
+      "material": "SmoothPlastic",
+      "transparency": 0.0,
+      "collide": false,
+      "cast": true,
+      "tris": 9360
+    }
+  ],
+  "ENV_TreeC": [
+    {
+      "part": "Trunk",
+      "mesh": "ENV_TreeC.Trunk",
+      "offset": [
+        -0.311,
+        7.092,
+        -0.359
+      ],
+      "size": [
+        7.026,
+        14.568,
+        7.561
+      ],
+      "tint": null,
+      "attach": null,
+      "material": "SmoothPlastic",
+      "transparency": 0.0,
+      "collide": false,
+      "cast": true,
+      "tris": 1130
+    },
+    {
+      "part": "Canopy",
+      "mesh": "ENV_TreeC.Canopy",
+      "offset": [
+        -0.211,
+        14.332,
+        -0.615
+      ],
+      "size": [
+        14.456,
+        9.941,
+        15.382
+      ],
+      "tint": null,
+      "attach": null,
+      "material": "SmoothPlastic",
+      "transparency": 0.0,
+      "collide": false,
+      "cast": true,
+      "tris": 9360
+    }
+  ],
+  "ENV_Fence": [
+    {
+      "part": "Main",
+      "mesh": "ENV_Fence.Main",
+      "offset": [
+        0.305,
+        1.54,
+        0.0
+      ],
+      "size": [
+        8.61,
+        3.08,
+        1.18
+      ],
+      "tint": null,
+      "attach": null,
+      "material": "SmoothPlastic",
+      "transparency": 0.0,
+      "collide": false,
+      "cast": true,
+      "tris": 784
+    }
+  ],
+  "ENV_FencePost": [
+    {
+      "part": "Main",
+      "mesh": "ENV_FencePost.Main",
+      "offset": [
+        0.0,
+        1.54,
+        0.0
+      ],
+      "size": [
+        1.22,
+        3.08,
+        1.18
+      ],
+      "tint": null,
+      "attach": null,
+      "material": "SmoothPlastic",
+      "transparency": 0.0,
+      "collide": false,
+      "cast": true,
+      "tris": 272
+    }
+  ],
+  "ENV_Gate": [
+    {
+      "part": "Main",
+      "mesh": "ENV_Gate.Main",
+      "offset": [
+        0.0,
+        3.41,
+        0.0
+      ],
+      "size": [
+        12.82,
+        6.82,
+        1.18
+      ],
+      "tint": null,
+      "attach": null,
+      "material": "SmoothPlastic",
+      "transparency": 0.0,
+      "collide": false,
+      "cast": true,
+      "tris": 1180
+    }
+  ],
+  "ENV_Tile1": [
+    {
+      "part": "Main",
+      "mesh": "ENV_Tile1.Main",
+      "offset": [
+        -0.003,
+        0.123,
+        -0.007
+      ],
+      "size": [
+        3.845,
+        0.215,
+        3.829
+      ],
+      "tint": null,
+      "attach": null,
+      "material": "SmoothPlastic",
+      "transparency": 0.0,
+      "collide": false,
+      "cast": false,
+      "tris": 44
+    }
+  ],
+  "ENV_Tile2": [
+    {
+      "part": "Main",
+      "mesh": "ENV_Tile2.Main",
+      "offset": [
+        -0.004,
+        0.123,
+        -0.014
+      ],
+      "size": [
+        3.819,
+        0.215,
+        3.816
+      ],
+      "tint": null,
+      "attach": null,
+      "material": "SmoothPlastic",
+      "transparency": 0.0,
+      "collide": false,
+      "cast": false,
+      "tris": 44
+    }
+  ],
+  "ENV_Tile3": [
+    {
+      "part": "Main",
+      "mesh": "ENV_Tile3.Main",
+      "offset": [
+        -0.012,
+        0.123,
+        -0.014
+      ],
+      "size": [
+        3.836,
+        0.215,
+        3.847
+      ],
+      "tint": null,
+      "attach": null,
+      "material": "SmoothPlastic",
+      "transparency": 0.0,
+      "collide": false,
+      "cast": false,
+      "tris": 44
+    }
+  ],
+  "ENV_Path": [
+    {
+      "part": "Main",
+      "mesh": "ENV_Path.Main",
+      "offset": [
+        -0.004,
+        0.123,
+        9.362
+      ],
+      "size": [
+        4.282,
+        0.215,
+        22.486
+      ],
+      "tint": null,
+      "attach": null,
+      "material": "SmoothPlastic",
+      "transparency": 0.0,
+      "collide": false,
+      "cast": false,
+      "tris": 264
+    }
+  ],
+  "ENV_Bush": [
+    {
+      "part": "Main",
+      "mesh": "ENV_Bush.Main",
+      "offset": [
+        -0.035,
+        0.81,
+        -0.03
+      ],
+      "size": [
+        3.418,
+        1.7,
+        3.33
+      ],
+      "tint": null,
+      "attach": null,
+      "material": "SmoothPlastic",
+      "transparency": 0.0,
+      "collide": false,
+      "cast": true,
+      "tris": 3280
+    }
+  ],
+  "ENV_Tuft": [
+    {
+      "part": "Main",
+      "mesh": "ENV_Tuft.Main",
+      "offset": [
+        -0.036,
+        0.467,
+        -0.105
+      ],
+      "size": [
+        0.965,
+        1.033,
+        0.893
+      ],
+      "tint": null,
+      "attach": null,
+      "material": "SmoothPlastic",
+      "transparency": 0.0,
+      "collide": false,
+      "cast": true,
+      "tris": 324
+    }
+  ]
+}

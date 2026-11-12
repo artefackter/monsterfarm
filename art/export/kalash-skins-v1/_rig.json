@@ -1,0 +1,83 @@
+{
+  "Kalash_Asiimov": {
+    "Grip": [
+      0,
+      -0.12,
+      0.3
+    ],
+    "SupportHand": [
+      0,
+      -0.12,
+      -0.9
+    ],
+    "Muzzle": [
+      0,
+      0.13,
+      -1.77
+    ],
+    "BoltPivot": [
+      -0.2,
+      0.2,
+      -0.04
+    ],
+    "MagazinePivot": [
+      0,
+      -0.04,
+      -0.26
+    ]
+  },
+  "Kalash_GoldenDragon": {
+    "Grip": [
+      0,
+      -0.12,
+      0.3
+    ],
+    "SupportHand": [
+      0,
+      -0.12,
+      -0.9
+    ],
+    "Muzzle": [
+      0,
+      0.13,
+      -1.77
+    ],
+    "BoltPivot": [
+      -0.2,
+      0.2,
+      -0.04
+    ],
+    "MagazinePivot": [
+      0,
+      -0.04,
+      -0.26
+    ]
+  },
+  "Kalash_Cyberpunk": {
+    "Grip": [
+      0,
+      -0.12,
+      0.3
+    ],
+    "SupportHand": [
+      0,
+      -0.12,
+      -0.9
+    ],
+    "Muzzle": [
+      0,
+      0.13,
+      -1.77
+    ],
+    "BoltPivot": [
+      -0.2,
+      0.2,
+      -0.04
+    ],
+    "MagazinePivot": [
+      0,
+      -0.04,
+      -0.26
+    ]
+  }
+}

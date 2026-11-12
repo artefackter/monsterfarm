@@ -1,0 +1,37 @@
+<?xml version='1.0' encoding='utf-8'?>
+<roblox version="4"><Item class="TextChatService" referent="3542">
+    <Properties>
+      <string name="Name">TextChatService</string>
+      <BinaryString name="SerializedOverrides">
+      </BinaryString>
+    </Properties>
+    <Item class="BubbleChatConfiguration" referent="3543">
+      <Properties>
+        <string name="Name">BubbleChatConfiguration</string>
+        <BinaryString name="SerializedOverrides">
+        </BinaryString>
+      </Properties>
+    </Item>
+    <Item class="ChannelTabsConfiguration" referent="3544">
+      <Properties>
+        <string name="Name">ChannelTabsConfiguration</string>
+        <BinaryString name="SerializedOverrides">
+        </BinaryString>
+      </Properties>
+    </Item>
+    <Item class="ChatInputBarConfiguration" referent="3545">
+      <Properties>
+        <string name="Name">ChatInputBarConfiguration</string>
+        <BinaryString name="SerializedOverrides">
+        </BinaryString>
+      </Properties>
+    </Item>
+    <Item class="ChatWindowConfiguration" referent="3546">
+      <Properties>
+        <string name="Name">ChatWindowConfiguration</string>
+        <BinaryString name="SerializedOverrides">
+        </BinaryString>
+      </Properties>
+    </Item>
+  </Item>
+  </roblox>

@@ -1,0 +1,16 @@
+{
+  "assets": {
+    "BuckshotDealer_Passive": {
+      "parts": 4,
+      "triangles": 9182
+    },
+    "BuckshotDealer_Aggressive": {
+      "parts": 4,
+      "triangles": 9024
+    }
+  },
+  "meshCount": 8,
+  "triangles": 18206,
+  "bytes": 1436132,
+  "sha256": "442b118208183b00eaa317e6b7a9a966b4dc856894bbe45cbbf180fcb5ba3ce5"
+}

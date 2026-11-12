@@ -1,0 +1,512 @@
+{
+  "Cultist_Normal": [
+    {
+      "part": "Body",
+      "mesh": "Cultist_Normal.Body",
+      "offset": [
+        0.0,
+        2.761,
+        -0.048
+      ],
+      "size": [
+        2.003,
+        2.685,
+        1.474
+      ],
+      "tint": null,
+      "attach": "Body",
+      "material": "SmoothPlastic",
+      "transparency": 0.0,
+      "collide": false,
+      "cast": true,
+      "tris": 1178
+    },
+    {
+      "part": "LegR",
+      "mesh": "Cultist_Normal.LegR",
+      "offset": [
+        0.503,
+        1.225,
+        -0.116
+      ],
+      "size": [
+        0.823,
+        2.44,
+        1.327
+      ],
+      "tint": null,
+      "attach": "LegR",
+      "material": "SmoothPlastic",
+      "transparency": 0.0,
+      "collide": false,
+      "cast": true,
+      "tris": 484
+    },
+    {
+      "part": "LegL",
+      "mesh": "Cultist_Normal.LegL",
+      "offset": [
+        -0.503,
+        1.225,
+        -0.064
+      ],
+      "size": [
+        0.823,
+        2.44,
+        1.222
+      ],
+      "tint": null,
+      "attach": "LegL",
+      "material": "SmoothPlastic",
+      "transparency": 0.0,
+      "collide": false,
+      "cast": true,
+      "tris": 308
+    },
+    {
+      "part": "ArmR",
+      "mesh": "Cultist_Normal.ArmR",
+      "offset": [
+        1.208,
+        2.817,
+        -0.277
+      ],
+      "size": [
+        1.476,
+        2.258,
+        1.183
+      ],
+      "tint": null,
+      "attach": "ArmR",
+      "material": "SmoothPlastic",
+      "transparency": 0.0,
+      "collide": false,
+      "cast": true,
+      "tris": 492
+    },
+    {
+      "part": "ArmL",
+      "mesh": "Cultist_Normal.ArmL",
+      "offset": [
+        -1.204,
+        2.817,
+        -0.276
+      ],
+      "size": [
+        1.467,
+        2.258,
+        1.182
+      ],
+      "tint": null,
+      "attach": "ArmL",
+      "material": "SmoothPlastic",
+      "transparency": 0.0,
+      "collide": false,
+      "cast": true,
+      "tris": 492
+    },
+    {
+      "part": "Head",
+      "mesh": "Cultist_Normal.Head",
+      "offset": [
+        -0.039,
+        4.684,
+        -0.285
+      ],
+      "size": [
+        2.01,
+        2.0,
+        1.5
+      ],
+      "tint": null,
+      "attach": "Head",
+      "material": "SmoothPlastic",
+      "transparency": 0.0,
+      "collide": false,
+      "cast": true,
+      "tris": 1404
+    }
+  ],
+  "Cultist_Hunter": [
+    {
+      "part": "Body",
+      "mesh": "Cultist_Hunter.Body",
+      "offset": [
+        0.0,
+        2.761,
+        0.184
+      ],
+      "size": [
+        2.003,
+        2.685,
+        1.828
+      ],
+      "tint": null,
+      "attach": "Body",
+      "material": "SmoothPlastic",
+      "transparency": 0.0,
+      "collide": false,
+      "cast": true,
+      "tris": 1528
+    },
+    {
+      "part": "LegR",
+      "mesh": "Cultist_Hunter.LegR",
+      "offset": [
+        0.503,
+        1.225,
+        -0.064
+      ],
+      "size": [
+        0.823,
+        2.44,
+        1.222
+      ],
+      "tint": null,
+      "attach": "LegR",
+      "material": "SmoothPlastic",
+      "transparency": 0.0,
+      "collide": false,
+      "cast": true,
+      "tris": 308
+    },
+    {
+      "part": "LegL",
+      "mesh": "Cultist_Hunter.LegL",
+      "offset": [
+        -0.503,
+        1.225,
+        -0.064
+      ],
+      "size": [
+        0.823,
+        2.44,
+        1.222
+      ],
+      "tint": null,
+      "attach": "LegL",
+      "material": "SmoothPlastic",
+      "transparency": 0.0,
+      "collide": false,
+      "cast": true,
+      "tris": 308
+    },
+    {
+      "part": "ArmR",
+      "mesh": "Cultist_Hunter.ArmR",
+      "offset": [
+        0.595,
+        3.32,
+        -0.382
+      ],
+      "size": [
+        1.415,
+        1.251,
+        1.395
+      ],
+      "tint": null,
+      "attach": "ArmR",
+      "material": "SmoothPlastic",
+      "transparency": 0.0,
+      "collide": false,
+      "cast": true,
+      "tris": 440
+    },
+    {
+      "part": "ArmL",
+      "mesh": "Cultist_Hunter.ArmL",
+      "offset": [
+        -0.795,
+        3.363,
+        -0.731
+      ],
+      "size": [
+        1.013,
+        1.164,
+        2.092
+      ],
+      "tint": null,
+      "attach": "ArmL",
+      "material": "SmoothPlastic",
+      "transparency": 0.0,
+      "collide": false,
+      "cast": true,
+      "tris": 440
+    },
+    {
+      "part": "Head",
+      "mesh": "Cultist_Hunter.Head",
+      "offset": [
+        0.01,
+        4.715,
+        -0.285
+      ],
+      "size": [
+        2.02,
+        1.91,
+        1.5
+      ],
+      "tint": null,
+      "attach": "Head",
+      "material": "SmoothPlastic",
+      "transparency": 0.0,
+      "collide": false,
+      "cast": true,
+      "tris": 1462
+    },
+    {
+      "part": "Rifle",
+      "mesh": "Cultist_Hunter.Rifle",
+      "offset": [
+        -0.135,
+        3.071,
+        -1.143
+      ],
+      "size": [
+        1.629,
+        1.058,
+        2.194
+      ],
+      "tint": null,
+      "attach": "ArmR",
+      "material": "SmoothPlastic",
+      "transparency": 0.0,
+      "collide": false,
+      "cast": true,
+      "tris": 724
+    }
+  ],
+  "Cultist_Parasite": [
+    {
+      "part": "Body",
+      "mesh": "Cultist_Parasite.Body",
+      "offset": [
+        0.0,
+        2.761,
+        -0.016
+      ],
+      "size": [
+        2.003,
+        2.685,
+        1.242
+      ],
+      "tint": null,
+      "attach": "Body",
+      "material": "SmoothPlastic",
+      "transparency": 0.0,
+      "collide": false,
+      "cast": true,
+      "tris": 844
+    },
+    {
+      "part": "LegR",
+      "mesh": "Cultist_Parasite.LegR",
+      "offset": [
+        0.503,
+        1.225,
+        -0.116
+      ],
+      "size": [
+        0.823,
+        2.44,
+        1.327
+      ],
+      "tint": null,
+      "attach": "LegR",
+      "material": "SmoothPlastic",
+      "transparency": 0.0,
+      "collide": false,
+      "cast": true,
+      "tris": 484
+    },
+    {
+      "part": "LegL",
+      "mesh": "Cultist_Parasite.LegL",
+      "offset": [
+        -0.503,
+        1.225,
+        -0.064
+      ],
+      "size": [
+        0.823,
+        2.44,
+        1.222
+      ],
+      "tint": null,
+      "attach": "LegL",
+      "material": "SmoothPlastic",
+      "transparency": 0.0,
+      "collide": false,
+      "cast": true,
+      "tris": 308
+    },
+    {
+      "part": "ArmR",
+      "mesh": "Cultist_Parasite.ArmR",
+      "offset": [
+        1.208,
+        2.817,
+        -0.277
+      ],
+      "size": [
+        1.476,
+        2.258,
+        1.183
+      ],
+      "tint": null,
+      "attach": "ArmR",
+      "material": "SmoothPlastic",
+      "transparency": 0.0,
+      "collide": false,
+      "cast": true,
+      "tris": 492
+    },
+    {
+      "part": "ArmL",
+      "mesh": "Cultist_Parasite.ArmL",
+      "offset": [
+        -1.461,
+        2.613,
+        -0.169
+      ],
+      "size": [
+        1.982,
+        2.665,
+        1.121
+      ],
+      "tint": null,
+      "attach": "ArmL",
+      "material": "SmoothPlastic",
+      "transparency": 0.0,
+      "collide": false,
+      "cast": true,
+      "tris": 540
+    },
+    {
+      "part": "Head",
+      "mesh": "Cultist_Parasite.Head",
+      "offset": [
+        0.286,
+        4.602,
+        -0.302
+      ],
+      "size": [
+        1.837,
+        1.837,
+        1.465
+      ],
+      "tint": null,
+      "attach": "Head",
+      "material": "SmoothPlastic",
+      "transparency": 0.0,
+      "collide": false,
+      "cast": true,
+      "tris": 1230
+    },
+    {
+      "part": "ParasiteBody",
+      "mesh": "Cultist_Parasite.ParasiteBody",
+      "offset": [
+        -0.665,
+        3.676,
+        0.696
+      ],
+      "size": [
+        1.814,
+        2.404,
+        1.657
+      ],
+      "tint": null,
+      "attach": "Body",
+      "material": "SmoothPlastic",
+      "transparency": 0.0,
+      "collide": false,
+      "cast": true,
+      "tris": 754
+    },
+    {
+      "part": "ParasiteHead",
+      "mesh": "Cultist_Parasite.ParasiteHead",
+      "offset": [
+        -1.23,
+        4.79,
+        -0.005
+      ],
+      "size": [
+        1.122,
+        1.24,
+        1.23
+      ],
+      "tint": null,
+      "attach": "ParasiteHead",
+      "material": "SmoothPlastic",
+      "transparency": 0.0,
+      "collide": false,
+      "cast": true,
+      "tris": 632
+    },
+    {
+      "part": "ParasiteGlow",
+      "mesh": "Cultist_Parasite.ParasiteGlow",
+      "offset": [
+        -1.303,
+        5.127,
+        -0.44
+      ],
+      "size": [
+        0.853,
+        0.485,
+        0.2
+      ],
+      "tint": null,
+      "attach": "ParasiteHead",
+      "material": "Neon",
+      "transparency": 0.0,
+      "collide": false,
+      "cast": false,
+      "tris": 240
+    },
+    {
+      "part": "TendrilL",
+      "mesh": "Cultist_Parasite.TendrilL",
+      "offset": [
+        -0.557,
+        5.427,
+        -0.131
+      ],
+      "size": [
+        0.885,
+        0.91,
+        0.799
+      ],
+      "tint": null,
+      "attach": "TendrilL",
+      "material": "SmoothPlastic",
+      "transparency": 0.0,
+      "collide": false,
+      "cast": true,
+      "tris": 196
+    },
+    {
+      "part": "TendrilR",
+      "mesh": "Cultist_Parasite.TendrilR",
+      "offset": [
+        -1.903,
+        5.427,
+        -0.131
+      ],
+      "size": [
+        0.885,
+        0.91,
+        0.799
+      ],
+      "tint": null,
+      "attach": "TendrilR",
+      "material": "SmoothPlastic",
+      "transparency": 0.0,
+      "collide": false,
+      "cast": true,
+      "tris": 196
+    }
+  ]
+}
