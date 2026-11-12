@@ -10,7 +10,7 @@
 -- Cat and manual dig share a non-yielding transaction. Active prompt hold excludes the slot from cat selection.
 -- Pumpkin preparation occurs before the currency/inventory commit; no yield inside the transaction.
 -- Existing autosave persists dirty pet profiles; no new DataStore or economy remote is introduced.
--- Studio-only chat debug: /pet FarmerCat 1, /coins 5000, /ripe, /phase night (or day).
+-- Studio-only chat debug: /pet DragonHead 1, /coins 5000, /ripe, /phase night (or day).
 -- No trading/fusion/Robux/offline cat work. Future pet ownership transfers would require a durable ID ledger.
 -- MVP: purchased graves plant automatically in the first empty grave slot.
 -- Reward graves are vouchers; plant them with the shop button, without consuming stock.
@@ -173,3 +173,9 @@ return {}
 -- Income x(1 + 0.5 n). A confirmation window lists what goes and stays. Studio: /bloodmoon, /giant n.
 -- HUD bottom-left third row: the item in hand (shovel, or the gun when drawn) large, its damage incl. upgrades,
 -- and mutagen beside it (the chip over the hotbar is gone).
+-- Pets v3 (owner, 2026-11-12): the six old pets are gone (each refunded at its release price on load) and no pet
+-- follows the player; they live on the owner's farm (PetVisuals). DragonHead patrols a ring in the yard and breathes
+-- fire on raiders every 2 s (PetService; damage by tier 14-80). BedBanker guards the zombucks heap; income x1.1-1.3.
+-- FacepalmCat is everyone's starter (PetRules.Migrate adds it): no slot, can't be released, walks the fence top and
+-- facepalms with its tail. Pumpkins hatch DragonHead/BedBanker. Night raiders now come from MutantConfig.FarmRaiders
+-- (cultists, deer, stalkers, Verity, cave dwellers, parasites).

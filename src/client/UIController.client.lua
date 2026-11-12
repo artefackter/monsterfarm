@@ -623,8 +623,8 @@ local function zombieStage(parent,z,size,pos,silhouette,prefer3D)
 end
 
 local function petAbility(pet)
- local n=PetC.Power[pet.species][pet.tier]
- if pet.species~="FarmerCat" and pet.species~="LuckyOwl" then n=math.round(n*100) end
+ local n=PetC.Power[pet.species] and PetC.Power[pet.species][pet.tier] or 0
+ if pet.species=="BedBanker" then n=L.number(n,lang,2) end -- a multiplier; the dragon's is damage, the cat has none
  return t("petAbility_"..pet.species,{n=n})
 end
 local function petSend(op,id) rem:WaitForChild(op):FireServer(id) end
@@ -1183,7 +1183,7 @@ elseif menu=="info" then
  end
 elseif menu=="pets" then
  if not petState then petSend("PetSync");return end
- local ps=petState;local equipped=0;for _,pet in ipairs(ps.pets) do if pet.equipped then equipped+=1 end end
+ local ps=petState;local equipped=0;for _,pet in ipairs(ps.pets) do if pet.equipped and pet.species~=PetC.Starter then equipped+=1 end end
  local top=row(62,Pal.Panel)
  label(top,"🐾 "..equipped.." / "..ps.slots,UDim2.fromOffset(180,62),UDim2.fromOffset(10,0),{title=true,textSize=30})
  button(top,t("petBest"),function() petSend("PetEquipBest") end,UDim2.fromOffset(230,48),UDim2.new(1,-240,0,7),Pal.Mint)
@@ -1195,9 +1195,15 @@ elseif menu=="pets" then
  local grid=tileGrid()
  for i,pet in ipairs(ps.pets) do
   local tierName=PetC.Tiers[pet.tier]
+  if pet.species==PetC.Starter then
+   -- the farm cat: always out on the farm, no slot, can't be let go
+   tile(grid,{order=0,title=t(pet.species),color=Pal[tierName],selected=true,art=function(f) petArt(f,pet) end,badge=t(tierName),
+    action={text=t("petOnFarm"),enabled=false,reason=t("petStarterStays"),callback=function() end}})
+  else
   tile(grid,{order=i,title=t(pet.species),color=Pal[tierName],selected=pet.equipped,art=function(f) petArt(f,pet) end,badge=t(tierName),
    action={text=t(pet.equipped and "petUnequip" or "petEquip"),color=pet.equipped and Pal.Orange or Pal.Mint,callback=function() petSend(pet.equipped and "PetUnequip" or "PetEquip",pet.id);petStarterHint=false end},
    small={name="Release",text=releaseId==pet.id and "✓" or "✕",callback=function() if releaseId==pet.id then petSend("PetRelease",pet.id);releaseId=nil else releaseId=pet.id;render() end end}})
+  end
  end
  elseif menu=="pumpkins" then
  local grid=tileGrid()

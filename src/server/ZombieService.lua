@@ -8,7 +8,7 @@ function Z.Slot(d,zone) for i=1,Z.Cap(d,zone) do local used=false;for _,z in ipa
 function Z.Find(d,id) for i,z in ipairs(d.zombies) do if z.id==id then return z,i end end end
 function Z.Bonus(d) local types={} for key in pairs(d.zombiedex) do types[string.split(key,":")[1]]=true end;local count=0;for _ in pairs(types) do count+=1 end;return 1+count*R.DexBonus end
 function Z.Rate(z) return require(S.MergeRules).Rate(z) end
-function Z.Income(d,ignoreSuppression) local v=0;for _,z in ipairs(d.zombies) do if z.zone=="Field" and not z.carriedBy and not z.pendingTransfer and (ignoreSuppression or not Z.IsIncomeBlocked or not Z.IsIncomeBlocked(d,z)) then v+=Z.Rate(z) end end;return v*Z.Bonus(d)*(1+require(script.Parent.PetService).ForData(d).incomePct)*require(S.PrestigeRules).Mult(d) end
+function Z.Income(d,ignoreSuppression) local v=0;for _,z in ipairs(d.zombies) do if z.zone=="Field" and not z.carriedBy and not z.pendingTransfer and (ignoreSuppression or not Z.IsIncomeBlocked or not Z.IsIncomeBlocked(d,z)) then v+=Z.Rate(z) end end;return v*Z.Bonus(d)*(1+require(script.Parent.PetService).ForData(d).incomePct)*require(script.Parent.PetService).ForData(d).incomeMult*require(S.PrestigeRules).Mult(d) end
 function Z.Roll(weights,night,starter,luck)
  luck=luck or 1
  local tier=1;local roll=rng:NextNumber()*100;for i,w in ipairs(weights) do roll-=w;if roll<=0 then tier=i;break end end

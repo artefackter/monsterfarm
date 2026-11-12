@@ -525,5 +525,16 @@ L.Rows.prestigeNo={"Not yet","Пока нет"}
 L.Rows.prestigeDone={"Prestige {n}! Your income is now ×{m} forever.","Престиж {n}! Теперь твой доход ×{m} навсегда."}
 L.Rows.prestigeAll={"{name} reached prestige {n}!","{name} получил престиж {n}!"}
 L.Rows.prestigeBusy={"Put down what you carry first.","Сначала положи то, что несёшь."}
+-- Pets v3 (2026-11-12): they live on the farm; the old kinds are gone and refunded
+L.Rows.DragonHead={"Dragonhead","Драконоголовый"}
+L.Rows.BedBanker={"Banker Bed","Банкир-Кровать"}
+L.Rows.FacepalmCat={"Facepalm Cat","Котик Фейспалм"}
+L.Rows.petAbility_DragonHead={"Patrols the farm, burns raiders: {n} damage","Патрулирует ферму, жжёт налётчиков: {n} урона"}
+L.Rows.petAbility_BedBanker={"Farm income ×{n}","Доход фермы ×{n}"}
+L.Rows.petAbility_FacepalmCat={"Just a cat. Just a facepalm.","Просто котик. Просто фейспалм."}
+L.Rows.petOnFarm={"Lives on the farm","Живёт на ферме"}
+L.Rows.petStarterStays={"The Facepalm Cat always lives on your farm.","Котик Фейспалм всегда живёт на твоей ферме."}
+L.Rows.petsRefunded={"The old pets have left: you got {n} $ back for them.","Старые питомцы ушли: за них вернули {n} $."}
+L.Rows.mutantWave={"Monsters are raiding your farm!","Монстры нападают на ферму!"}
 return L
 

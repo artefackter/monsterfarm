@@ -81,12 +81,20 @@ function M.SpawnRoad(kind,cf,speed,variant)
  M.Live[id]=a;model:SetAttribute("MutantId",id);model:SetAttribute("Health",a.hp);model:SetAttribute("MaxHealth",a.hp);model:SetAttribute("Kind",kind)
  M.State(a,"Spawning");model.Parent=folder;fx("Spawn",id,cf.Position,0);return a
 end
+-- A night raider: a weighted pick from FarmRaiders (MutantConfig).
+local function raider()
+ local total=0;for _,r in ipairs(C.FarmRaiders or {}) do total+=r.Weight end
+ local roll=rng:NextNumber()*total
+ for _,r in ipairs(C.FarmRaiders or {}) do roll-=r.Weight;if roll<=0 then return r end end
+ return nil
+end
 function M.Spawn(p,kind)
- local d=D.Profiles[p];local plot=P.Assigned[p];kind=kind or C.DefaultType
+ local variant;if not kind then variant=raider() end
+ local d=D.Profiles[p];local plot=P.Assigned[p];kind=kind or variant and variant.Kind or C.DefaultType
  if not d or not plot or not d.tutorialDone or not C.Types[kind] or M.Count()>=C.ServerLimit then return end
  M.Serial+=1;local id=tostring(M.Serial);local radius=rng:NextNumber(C.SpawnMin,C.SpawnMax);local side=rng:NextNumber(-C.SpawnSide,C.SpawnSide)
  local edge=require(S.Config.ZoneConfig).FarmHalf+6;local pos=(plot.Base*CFrame.new(rng:NextNumber()<.5 and -edge or edge,C.RootHeight,side)).Position
- local cf=CFrame.lookAt(pos,Vector3.new(plot.Base.X,pos.Y,plot.Base.Z));local model=Model.Build(kind,cf)
+ local cf=CFrame.lookAt(pos,Vector3.new(plot.Base.X,pos.Y,plot.Base.Z));local model=Model.Build(kind,cf,variant)
  local a={id=id,owner=p,profile=d,kind=kind,hp=C.Types[kind].Health,model=model,spawn=pos,alarmed=false}
  if not M.ChooseTarget(a) then model:Destroy();return end
  M.Live[id]=a;model:SetAttribute("MutantId",id);model:SetAttribute("Owner",p.UserId);model:SetAttribute("Health",a.hp);model:SetAttribute("MaxHealth",a.hp);model:SetAttribute("Kind",kind)

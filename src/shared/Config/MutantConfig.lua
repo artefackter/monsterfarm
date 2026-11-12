@@ -11,6 +11,16 @@ return {
  TheftFraction=.05, TheftIncomeSeconds=60, RewardIncomeSeconds=10, RewardMin=25, RewardMax=5000,
  GuardInterval=2, GuardDamagePerTier=8, FleeSeconds=3, AnimateDistance=130,
  RootHeight=6, HitboxSize=Vector3.new(5,12,5), AlarmGap=10,
+ -- Who raids the farms at night (owner, 2026-11-12: "not only cultists"): every raider bites the same way; Kind sets
+ -- its health and speed (Types), Weight how often it comes.
+ FarmRaiders={
+  {Id="CultistNormal",Asset="Cultist_Normal",Family="Cultist",Kind="Imp",Weight=3},
+  {Id="Deer",Asset="Deer_Root_Aggressive",Family="Deer",Kind="Imp",Weight=2},
+  {Id="Stalker",Asset="Stalker_Root_Aggressive",Family="Stalker",Kind="Leaper",Weight=2},
+  {Id="Verity",Asset="Verity_Root_Aggressive",Family="Verity",Kind="Imp",Weight=2},
+  {Id="CaveDweller",Asset="CaveDweller_Aggressive",Family="CaveDweller",Kind="Imp",Weight=1},
+  {Id="Parasite",Asset="Parasite_Root_Aggressive",Family="Parasite",Kind="Bubble",Weight=1},
+ },
  Types={
   Imp={Health=30,Speed=14,Model="Cultist_Normal",Color=Color3.fromHex("B3123F")},
   Spitter={Health=55,Speed=12,Model="Cultist_Hunter",Color=Color3.fromHex("7D448E"),Range=40,Windup=.65,Cooldown=2.8,Radius=3,
