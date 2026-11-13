@@ -1,0 +1,1402 @@
+{
+  "version": 1,
+  "units": "stud",
+  "blender_front": "-Y",
+  "blender_up": "Z",
+  "gltf_up": "Y",
+  "assets": [
+    {
+      "name": "Pavilion_Weapons",
+      "label": "Оружейник",
+      "category": "pavilions",
+      "triangles": 30456,
+      "meshes": 10,
+      "bounds": [
+        [
+          -6.5706,
+          6.5706
+        ],
+        [
+          -7.5,
+          4.4341
+        ],
+        [
+          0.0,
+          12.05
+        ]
+      ],
+      "anchors": {
+        "Title": [
+          0,
+          -4.75,
+          8.12
+        ],
+        "Zone": [
+          0,
+          -5.1,
+          0.16
+        ],
+        "Vendor": [
+          0,
+          0.5,
+          0.56
+        ],
+        "SignSurface": [
+          0,
+          -4.78,
+          8.12
+        ]
+      },
+      "colliders": [
+        {
+          "name": "Counter",
+          "center": [
+            0,
+            -1.5,
+            1.7
+          ],
+          "size": [
+            9,
+            2,
+            3.2
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Pavilion_Brawler",
+      "label": "Драчун",
+      "category": "pavilions",
+      "triangles": 25520,
+      "meshes": 10,
+      "bounds": [
+        [
+          -6.5706,
+          6.5706
+        ],
+        [
+          -7.5,
+          4.4341
+        ],
+        [
+          0.0,
+          11.4897
+        ]
+      ],
+      "anchors": {
+        "Title": [
+          0,
+          -4.75,
+          8.12
+        ],
+        "Zone": [
+          0,
+          -5.1,
+          0.16
+        ],
+        "Vendor": [
+          0,
+          0.5,
+          0.56
+        ],
+        "SignSurface": [
+          0,
+          -4.78,
+          8.12
+        ]
+      },
+      "colliders": []
+    },
+    {
+      "name": "Pavilion_Pets",
+      "label": "Питомник",
+      "category": "pavilions",
+      "triangles": 24288,
+      "meshes": 10,
+      "bounds": [
+        [
+          -6.5706,
+          6.5706
+        ],
+        [
+          -7.5,
+          4.4341
+        ],
+        [
+          0.0,
+          11.4897
+        ]
+      ],
+      "anchors": {
+        "Title": [
+          0,
+          -4.75,
+          8.12
+        ],
+        "Zone": [
+          0,
+          -5.1,
+          0.16
+        ],
+        "Vendor": [
+          0,
+          0.5,
+          0.56
+        ],
+        "SignSurface": [
+          0,
+          -4.78,
+          8.12
+        ]
+      },
+      "colliders": [
+        {
+          "name": "Counter",
+          "center": [
+            0,
+            -1.5,
+            1.7
+          ],
+          "size": [
+            9,
+            2,
+            3.2
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Pavilion_Quests",
+      "label": "Задания",
+      "category": "pavilions",
+      "triangles": 24400,
+      "meshes": 9,
+      "bounds": [
+        [
+          -6.5706,
+          6.5706
+        ],
+        [
+          -7.5,
+          4.4341
+        ],
+        [
+          0.0,
+          11.4897
+        ]
+      ],
+      "anchors": {
+        "Title": [
+          0,
+          -4.75,
+          8.12
+        ],
+        "Zone": [
+          0,
+          -5.1,
+          0.16
+        ],
+        "Vendor": [
+          0,
+          0.5,
+          0.56
+        ],
+        "SignSurface": [
+          0,
+          -4.78,
+          8.12
+        ]
+      },
+      "colliders": []
+    },
+    {
+      "name": "Pavilion_Rewards",
+      "label": "Награды",
+      "category": "pavilions",
+      "triangles": 23576,
+      "meshes": 10,
+      "bounds": [
+        [
+          -6.5706,
+          6.5706
+        ],
+        [
+          -7.5,
+          4.4341
+        ],
+        [
+          0.0,
+          11.4897
+        ]
+      ],
+      "anchors": {
+        "Title": [
+          0,
+          -4.75,
+          8.12
+        ],
+        "Zone": [
+          0,
+          -5.1,
+          0.16
+        ],
+        "Vendor": [
+          0,
+          0.5,
+          0.56
+        ],
+        "SignSurface": [
+          0,
+          -4.78,
+          8.12
+        ]
+      },
+      "colliders": []
+    },
+    {
+      "name": "Pavilion_Help",
+      "label": "Помощь",
+      "category": "pavilions",
+      "triangles": 21760,
+      "meshes": 9,
+      "bounds": [
+        [
+          -6.5706,
+          6.5706
+        ],
+        [
+          -7.5,
+          4.4341
+        ],
+        [
+          0.0,
+          11.4897
+        ]
+      ],
+      "anchors": {
+        "Title": [
+          0,
+          -4.75,
+          8.12
+        ],
+        "Zone": [
+          0,
+          -5.1,
+          0.16
+        ],
+        "Vendor": [
+          0,
+          0.5,
+          0.56
+        ],
+        "SignSurface": [
+          0,
+          -4.78,
+          8.12
+        ]
+      },
+      "colliders": []
+    },
+    {
+      "name": "Reward_Chest",
+      "label": "Сундук наград",
+      "category": "hero",
+      "triangles": 1772,
+      "meshes": 3,
+      "bounds": [
+        [
+          -2.425,
+          2.425
+        ],
+        [
+          -1.87,
+          1.7004
+        ],
+        [
+          -0.05,
+          3.3612
+        ]
+      ],
+      "anchors": {
+        "LidPivot": [
+          0,
+          1.55,
+          2.2
+        ]
+      },
+      "colliders": []
+    },
+    {
+      "name": "Champion_ImpStatue",
+      "label": "Золотой чемпион",
+      "category": "hero",
+      "triangles": 4420,
+      "meshes": 2,
+      "bounds": [
+        [
+          -2.3,
+          2.3
+        ],
+        [
+          -2.3,
+          2.3
+        ],
+        [
+          0.0,
+          4.8838
+        ]
+      ],
+      "anchors": {
+        "FigureBase": [
+          0,
+          0,
+          1.1
+        ]
+      },
+      "colliders": []
+    },
+    {
+      "name": "Records_Pergola",
+      "label": "Пергола рекордов",
+      "category": "pavilions",
+      "triangles": 14100,
+      "meshes": 9,
+      "bounds": [
+        [
+          -10.1934,
+          10.1934
+        ],
+        [
+          -2.384,
+          3.3128
+        ],
+        [
+          0.0,
+          10.8827
+        ]
+      ],
+      "anchors": {
+        "RankingSurfaceLeft": [
+          -5.5,
+          -0.54,
+          5.2
+        ],
+        "RankingSurfaceRight": [
+          5.5,
+          -0.54,
+          5.2
+        ],
+        "ChampionSpot": [
+          0,
+          -0.35,
+          0
+        ],
+        "Title": [
+          0,
+          -2.32,
+          9.94
+        ]
+      },
+      "colliders": []
+    },
+    {
+      "name": "Slime_Fountain",
+      "label": "Слизневый фонтан с кристаллом",
+      "category": "hero",
+      "triangles": 15282,
+      "meshes": 4,
+      "bounds": [
+        [
+          -7.2,
+          7.2
+        ],
+        [
+          -7.3859,
+          7.2
+        ],
+        [
+          0.0,
+          8.85
+        ]
+      ],
+      "anchors": {
+        "Crystal": [
+          0,
+          0,
+          7.0
+        ],
+        "Water": [
+          0,
+          0,
+          0.9
+        ],
+        "Spout": [
+          0,
+          0,
+          2.7
+        ]
+      },
+      "colliders": [
+        {
+          "name": "Basin",
+          "shape": "cylinder",
+          "radius": 7.2,
+          "height": 1.6
+        }
+      ]
+    },
+    {
+      "name": "Bench",
+      "label": "Лавка",
+      "category": "decor",
+      "triangles": 3204,
+      "meshes": 2,
+      "bounds": [
+        [
+          -3.075,
+          3.075
+        ],
+        [
+          -1.0186,
+          1.1546
+        ],
+        [
+          0.0,
+          3.665
+        ]
+      ],
+      "anchors": {},
+      "colliders": []
+    },
+    {
+      "name": "Lantern",
+      "label": "Фонарь",
+      "category": "decor",
+      "triangles": 2116,
+      "meshes": 3,
+      "bounds": [
+        [
+          -0.6,
+          0.6
+        ],
+        [
+          -0.6,
+          0.6
+        ],
+        [
+          0.0,
+          7.711
+        ]
+      ],
+      "anchors": {
+        "Light": [
+          0,
+          0,
+          6.55
+        ]
+      },
+      "colliders": []
+    },
+    {
+      "name": "Lantern_Banner",
+      "label": "Фонарь со знаменем",
+      "category": "decor",
+      "triangles": 3216,
+      "meshes": 5,
+      "bounds": [
+        [
+          -0.6,
+          2.65
+        ],
+        [
+          -0.6,
+          0.6
+        ],
+        [
+          0.0,
+          7.711
+        ]
+      ],
+      "anchors": {
+        "Light": [
+          0,
+          0,
+          6.55
+        ]
+      },
+      "colliders": []
+    },
+    {
+      "name": "Shrub_Cluster",
+      "label": "Кусты",
+      "category": "greenery",
+      "triangles": 320,
+      "meshes": 1,
+      "bounds": [
+        [
+          -1.5655,
+          1.6218
+        ],
+        [
+          -1.3125,
+          1.1515
+        ],
+        [
+          -0.14,
+          1.96
+        ]
+      ],
+      "anchors": {},
+      "colliders": []
+    },
+    {
+      "name": "Mushroom_Cluster",
+      "label": "Грибы",
+      "category": "greenery",
+      "triangles": 832,
+      "meshes": 1,
+      "bounds": [
+        [
+          -0.8522,
+          0.7696
+        ],
+        [
+          -0.495,
+          0.495
+        ],
+        [
+          0.0,
+          1.1165
+        ]
+      ],
+      "anchors": {},
+      "colliders": []
+    },
+    {
+      "name": "Planter_Box",
+      "label": "Ящик с лавандой",
+      "category": "greenery",
+      "triangles": 6912,
+      "meshes": 2,
+      "bounds": [
+        [
+          -1.4,
+          1.4
+        ],
+        [
+          -0.87,
+          0.8
+        ],
+        [
+          0.0,
+          2.323
+        ]
+      ],
+      "anchors": {},
+      "colliders": []
+    },
+    {
+      "name": "Flowerbed_Curved",
+      "label": "Дуговая клумба",
+      "category": "greenery",
+      "triangles": 18348,
+      "meshes": 4,
+      "bounds": [
+        [
+          11.8186,
+          20.0
+        ],
+        [
+          -8.3715,
+          8.3715
+        ],
+        [
+          0.0,
+          2.18
+        ]
+      ],
+      "anchors": {
+        "ArcCenter": [
+          0,
+          0,
+          0
+        ]
+      },
+      "colliders": []
+    },
+    {
+      "name": "Tree_Oak",
+      "label": "Мультяшный дуб",
+      "category": "greenery",
+      "triangles": 7284,
+      "meshes": 2,
+      "bounds": [
+        [
+          -4.7494,
+          4.6533
+        ],
+        [
+          -3.9951,
+          3.9951
+        ],
+        [
+          -0.0515,
+          10.68
+        ]
+      ],
+      "anchors": {},
+      "colliders": []
+    },
+    {
+      "name": "StringLights_12",
+      "label": "Гирлянда 12 студов",
+      "category": "decor",
+      "triangles": 2280,
+      "meshes": 2,
+      "bounds": [
+        [
+          -6.011,
+          6.011
+        ],
+        [
+          -0.15,
+          0.15
+        ],
+        [
+          7.9411,
+          10.0283
+        ]
+      ],
+      "anchors": {
+        "Left": [
+          -6,
+          0,
+          10
+        ],
+        "Right": [
+          6,
+          0,
+          10
+        ]
+      },
+      "colliders": []
+    },
+    {
+      "name": "Plaza_Paving",
+      "label": "Круглое мощение, радиус 41",
+      "category": "ground",
+      "triangles": 89060,
+      "meshes": 10,
+      "bounds": [
+        [
+          -41.449,
+          41.449
+        ],
+        [
+          -41.449,
+          41.449
+        ],
+        [
+          -1.15,
+          0.23
+        ]
+      ],
+      "anchors": {
+        "Center": [
+          0,
+          0,
+          0.08
+        ]
+      },
+      "colliders": [
+        {
+          "name": "Ground",
+          "shape": "cylinder",
+          "radius": 41,
+          "height": 1.1,
+          "center": [
+            0,
+            0,
+            -0.6
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Path_Segment_6",
+      "label": "Дорожка 6 × 6",
+      "category": "ground",
+      "triangles": 432,
+      "meshes": 1,
+      "bounds": [
+        [
+          -2.96,
+          2.96
+        ],
+        [
+          -2.96,
+          2.96
+        ],
+        [
+          -0.15,
+          0.15
+        ]
+      ],
+      "anchors": {
+        "Start": [
+          0,
+          -3,
+          0
+        ],
+        "End": [
+          0,
+          3,
+          0
+        ]
+      },
+      "colliders": []
+    }
+  ],
+  "layout": [
+    {
+      "asset": "Plaza_Paving",
+      "position": [
+        0,
+        0,
+        0
+      ],
+      "yaw": 0,
+      "scale": 1
+    },
+    {
+      "asset": "Pavilion_Weapons",
+      "position": [
+        -2,
+        26,
+        0.1
+      ],
+      "yaw": 0,
+      "scale": 1
+    },
+    {
+      "asset": "Pavilion_Brawler",
+      "position": [
+        13,
+        23,
+        0.1
+      ],
+      "yaw": -8,
+      "scale": 1
+    },
+    {
+      "asset": "Pavilion_Pets",
+      "position": [
+        28,
+        8,
+        0.1
+      ],
+      "yaw": -25,
+      "scale": 1
+    },
+    {
+      "asset": "Pavilion_Quests",
+      "position": [
+        -29,
+        0,
+        0.1
+      ],
+      "yaw": 25,
+      "scale": 1
+    },
+    {
+      "asset": "Pavilion_Rewards",
+      "position": [
+        -22,
+        -23,
+        0.1
+      ],
+      "yaw": 12,
+      "scale": 1
+    },
+    {
+      "asset": "Pavilion_Help",
+      "position": [
+        24,
+        -22,
+        0.1
+      ],
+      "yaw": -15,
+      "scale": 1
+    },
+    {
+      "asset": "Records_Pergola",
+      "position": [
+        -21,
+        26,
+        0.1
+      ],
+      "yaw": 12,
+      "scale": 1
+    },
+    {
+      "asset": "Champion_ImpStatue",
+      "position": [
+        -21,
+        23.9,
+        0.1
+      ],
+      "yaw": 12,
+      "scale": 1.35
+    },
+    {
+      "asset": "Slime_Fountain",
+      "position": [
+        0,
+        0,
+        0.1
+      ],
+      "yaw": 0,
+      "scale": 1
+    },
+    {
+      "asset": "Flowerbed_Curved",
+      "position": [
+        0,
+        0,
+        0.1
+      ],
+      "yaw": 45,
+      "scale": 1
+    },
+    {
+      "asset": "Flowerbed_Curved",
+      "position": [
+        0,
+        0,
+        0.1
+      ],
+      "yaw": 135,
+      "scale": 1
+    },
+    {
+      "asset": "Flowerbed_Curved",
+      "position": [
+        0,
+        0,
+        0.1
+      ],
+      "yaw": 225,
+      "scale": 1
+    },
+    {
+      "asset": "Flowerbed_Curved",
+      "position": [
+        0,
+        0,
+        0.1
+      ],
+      "yaw": 315,
+      "scale": 1
+    },
+    {
+      "asset": "Bench",
+      "position": [
+        -8,
+        -34,
+        0.1
+      ],
+      "yaw": -6,
+      "scale": 1
+    },
+    {
+      "asset": "Bench",
+      "position": [
+        8,
+        -34,
+        0.1
+      ],
+      "yaw": 6,
+      "scale": 1
+    },
+    {
+      "asset": "Lantern_Banner",
+      "position": [
+        -23.783141558401958,
+        -28.343644395402187,
+        0.1
+      ],
+      "yaw": -40,
+      "scale": 1
+    },
+    {
+      "asset": "Lantern",
+      "position": [
+        -9.576304668793272,
+        -35.73925557269553,
+        0.1
+      ],
+      "yaw": -15,
+      "scale": 1
+    },
+    {
+      "asset": "Lantern",
+      "position": [
+        9.576304668793266,
+        -35.73925557269553,
+        0.1
+      ],
+      "yaw": 15,
+      "scale": 1
+    },
+    {
+      "asset": "Lantern_Banner",
+      "position": [
+        26.16295090390226,
+        -26.162950903902257,
+        0.1
+      ],
+      "yaw": 45,
+      "scale": 1
+    },
+    {
+      "asset": "Lantern",
+      "position": [
+        34.76862696907861,
+        -12.654745303049742,
+        0.1
+      ],
+      "yaw": 70,
+      "scale": 1
+    },
+    {
+      "asset": "Lantern",
+      "position": [
+        24.6201938253052,
+        4.341204441673258,
+        0.1
+      ],
+      "yaw": 100,
+      "scale": 1
+    },
+    {
+      "asset": "Lantern",
+      "position": [
+        19.151111077974452,
+        16.06969024216348,
+        0.1
+      ],
+      "yaw": 130,
+      "scale": 1
+    },
+    {
+      "asset": "Lantern",
+      "position": [
+        8.55050358314172,
+        23.492315519647708,
+        0.1
+      ],
+      "yaw": 160,
+      "scale": 1
+    },
+    {
+      "asset": "Lantern",
+      "position": [
+        -8.550503583141717,
+        23.49231551964771,
+        0.1
+      ],
+      "yaw": 200,
+      "scale": 1
+    },
+    {
+      "asset": "Lantern_Banner",
+      "position": [
+        -21.65063509461097,
+        12.499999999999998,
+        0.1
+      ],
+      "yaw": 240,
+      "scale": 1
+    },
+    {
+      "asset": "Lantern",
+      "position": [
+        -24.90486745229364,
+        2.178893568691455,
+        0.1
+      ],
+      "yaw": 265,
+      "scale": 1
+    },
+    {
+      "asset": "Shrub_Cluster",
+      "position": [
+        -31,
+        8,
+        0.1
+      ],
+      "yaw": 136.61315317194982,
+      "scale": 0.9547489535527014
+    },
+    {
+      "asset": "Shrub_Cluster",
+      "position": [
+        -27,
+        12,
+        0.1
+      ],
+      "yaw": 300.59843712636126,
+      "scale": 0.8802608736227365
+    },
+    {
+      "asset": "Shrub_Cluster",
+      "position": [
+        -30,
+        -12,
+        0.1
+      ],
+      "yaw": 276.21599970366424,
+      "scale": 1.2037100093369608
+    },
+    {
+      "asset": "Shrub_Cluster",
+      "position": [
+        31,
+        -9,
+        0.1
+      ],
+      "yaw": 89.75680638120245,
+      "scale": 1.1790947335701534
+    },
+    {
+      "asset": "Shrub_Cluster",
+      "position": [
+        34,
+        13,
+        0.1
+      ],
+      "yaw": 58.42630771470966,
+      "scale": 1.0288433431679849
+    },
+    {
+      "asset": "Shrub_Cluster",
+      "position": [
+        -12,
+        -35,
+        0.1
+      ],
+      "yaw": 176.85174811113603,
+      "scale": 1.2200201090475622
+    },
+    {
+      "asset": "Shrub_Cluster",
+      "position": [
+        12,
+        -35,
+        0.1
+      ],
+      "yaw": 352.51625231289256,
+      "scale": 1.0423433910232123
+    },
+    {
+      "asset": "Shrub_Cluster",
+      "position": [
+        -3,
+        -35,
+        0.1
+      ],
+      "yaw": 188.23954764682674,
+      "scale": 0.9343418514874329
+    },
+    {
+      "asset": "Shrub_Cluster",
+      "position": [
+        3,
+        -35,
+        0.1
+      ],
+      "yaw": 229.48806610476916,
+      "scale": 0.9049209246491994
+    },
+    {
+      "asset": "Mushroom_Cluster",
+      "position": [
+        -30,
+        6,
+        0.1
+      ],
+      "yaw": 249.60119776343453,
+      "scale": 1
+    },
+    {
+      "asset": "Mushroom_Cluster",
+      "position": [
+        -32,
+        -9,
+        0.1
+      ],
+      "yaw": 73.35962627886866,
+      "scale": 1
+    },
+    {
+      "asset": "Mushroom_Cluster",
+      "position": [
+        32,
+        -10,
+        0.1
+      ],
+      "yaw": 299.1153776561642,
+      "scale": 1
+    },
+    {
+      "asset": "Mushroom_Cluster",
+      "position": [
+        12,
+        -36,
+        0.1
+      ],
+      "yaw": 341.33237483658075,
+      "scale": 1
+    },
+    {
+      "asset": "Planter_Box",
+      "position": [
+        -31,
+        2,
+        0.1
+      ],
+      "yaw": 0,
+      "scale": 1
+    },
+    {
+      "asset": "Planter_Box",
+      "position": [
+        -12,
+        25,
+        0.1
+      ],
+      "yaw": 0,
+      "scale": 1
+    },
+    {
+      "asset": "Planter_Box",
+      "position": [
+        -30,
+        29,
+        0.1
+      ],
+      "yaw": 0,
+      "scale": 1
+    },
+    {
+      "asset": "Planter_Box",
+      "position": [
+        35,
+        5,
+        0.1
+      ],
+      "yaw": 0,
+      "scale": 1
+    },
+    {
+      "asset": "Tree_Oak",
+      "position": [
+        -32,
+        29,
+        -0.1
+      ],
+      "yaw": 62.702570535934555,
+      "scale": 1.0191100839420213
+    },
+    {
+      "asset": "Tree_Oak",
+      "position": [
+        -12,
+        38,
+        -0.1
+      ],
+      "yaw": 308.35405625555813,
+      "scale": 0.9864820349524974
+    },
+    {
+      "asset": "Tree_Oak",
+      "position": [
+        10,
+        38,
+        -0.1
+      ],
+      "yaw": 301.4448063866932,
+      "scale": 0.9536914991926113
+    },
+    {
+      "asset": "Tree_Oak",
+      "position": [
+        35,
+        23,
+        -0.1
+      ],
+      "yaw": 145.06793405649057,
+      "scale": 1.0673863031599211
+    },
+    {
+      "asset": "Tree_Oak",
+      "position": [
+        -40,
+        -9,
+        -0.1
+      ],
+      "yaw": 176.72374809973272,
+      "scale": 1.0809393188558765
+    },
+    {
+      "asset": "Tree_Oak",
+      "position": [
+        39,
+        -18,
+        -0.1
+      ],
+      "yaw": 60.90286755528583,
+      "scale": 0.9779304553064221
+    },
+    {
+      "asset": "StringLights_12",
+      "position": [
+        5.4,
+        27,
+        0.35
+      ],
+      "yaw": -5,
+      "scale": 1.25
+    },
+    {
+      "asset": "StringLights_12",
+      "position": [
+        22,
+        17,
+        0.25
+      ],
+      "yaw": -33,
+      "scale": 1.2
+    },
+    {
+      "asset": "Path_Segment_6",
+      "position": [
+        -44.599998474121094,
+        -2.7309623356811365e-15,
+        0.0
+      ],
+      "yaw": -90,
+      "scale": 1
+    },
+    {
+      "asset": "Path_Segment_6",
+      "position": [
+        -50.619998931884766,
+        -3.0995811216890778e-15,
+        0.0
+      ],
+      "yaw": -90,
+      "scale": 1
+    },
+    {
+      "asset": "Path_Segment_6",
+      "position": [
+        -56.63999938964844,
+        -3.468199907697019e-15,
+        0.0
+      ],
+      "yaw": -90,
+      "scale": 1
+    },
+    {
+      "asset": "Path_Segment_6",
+      "position": [
+        0.0,
+        -44.599998474121094,
+        0.0
+      ],
+      "yaw": 0,
+      "scale": 1
+    },
+    {
+      "asset": "Path_Segment_6",
+      "position": [
+        0.0,
+        -50.619998931884766,
+        0.0
+      ],
+      "yaw": 0,
+      "scale": 1
+    },
+    {
+      "asset": "Path_Segment_6",
+      "position": [
+        0.0,
+        -56.63999938964844,
+        0.0
+      ],
+      "yaw": 0,
+      "scale": 1
+    },
+    {
+      "asset": "Path_Segment_6",
+      "position": [
+        44.599998474121094,
+        -2.7309623356811365e-15,
+        0.0
+      ],
+      "yaw": 90,
+      "scale": 1
+    },
+    {
+      "asset": "Path_Segment_6",
+      "position": [
+        50.619998931884766,
+        -3.0995811216890778e-15,
+        0.0
+      ],
+      "yaw": 90,
+      "scale": 1
+    },
+    {
+      "asset": "Path_Segment_6",
+      "position": [
+        56.63999938964844,
+        -3.468199907697019e-15,
+        0.0
+      ],
+      "yaw": 90,
+      "scale": 1
+    },
+    {
+      "asset": "Path_Segment_6",
+      "position": [
+        5.461924671362273e-15,
+        44.599998474121094,
+        0.0
+      ],
+      "yaw": 180,
+      "scale": 1
+    },
+    {
+      "asset": "Path_Segment_6",
+      "position": [
+        6.1991622433781556e-15,
+        50.619998931884766,
+        0.0
+      ],
+      "yaw": 180,
+      "scale": 1
+    },
+    {
+      "asset": "Path_Segment_6",
+      "position": [
+        6.936399815394038e-15,
+        56.63999938964844,
+        0.0
+      ],
+      "yaw": 180,
+      "scale": 1
+    }
+  ]
+}
