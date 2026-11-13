@@ -476,10 +476,58 @@ local function buildPlot(w,i)
  local function at(x,z,y) return base*CFrame.new(x,y or LAWN_TOP,z) end
  local function deco(asset,x,z,scale) return Art.Spawn(asset,m,at(x,z),{scale=scale or 1}) end
  solid(m,'Lawn',Vector3.new(2*H,1,2*H),at(0,0,LAWN_TOP-.5))
- -- Cemetery, back left: a stone-rimmed purple patch with the crypt at its back
+ -- Cemetery, back left: a stone-rimmed purple patch with the crypt at its back (a little bigger since 2026-11-12;
+ -- its size follows PlacementConfig.Cemetery). No stepping stones cross it any more.
  local cb=PC.Cemetery
  local cemetery=Instance.new('Model');cemetery.Name='Cemetery';cemetery.Parent=m
  Art.Spawn('W_Graveyard',cemetery,at((cb.MinX+cb.MaxX)/2,(cb.MinZ+cb.MaxZ)/2,LAWN_TOP+.03),{scale=Vector3.new((cb.MaxX-cb.MinX+1)/26,.35,(cb.MaxZ-cb.MinZ+1)/24),tints={Main=Color3.fromRGB(173,145,204)}})
+ -- Dressing (owner, 2026-11-13: "liven the cemetery up"). All of it keeps to the edges, so graves still go anywhere
+ -- inside, and none of it is solid: torches at the entrance, a dead tree in the far corner by the fence, hanging
+ -- lanterns along the fence, glowing jack-o'-lanterns, hands out of the ground, skulls, toadstools, a rune stone,
+ -- fallen leaves, a low mist over the ground and pale wisps rising round the crypt.
+ do
+  local WA=require(S.WorldArt)
+  local function spooky(asset,x,z,scale,yaw)
+   local parts=Art.Spawn(asset,cemetery,at(x,z)*CFrame.Angles(0,math.rad(yaw or 0),0),{scale=scale or 1})
+   for _,q in parts do if typeof(q)=='Instance' and q:IsA('BasePart') then q.CanCollide=false;q.CanQuery=false;q.CanTouch=false end end
+   return parts
+  end
+  local function lamp(parts,color,range,height)
+   local main=parts and (parts.Main or parts.Bulb or select(2,next(parts)));if not main then return end
+   local anchor=P.Part(cemetery,'LampLight',Vector3.one*.1,CFrame.new(main.Position+Vector3.new(0,height or 0,0)),color)
+   anchor.Transparency=1;anchor.CanCollide=false;anchor.CanQuery=false;anchor.CanTouch=false;anchor.CastShadow=false
+   local l=Instance.new('PointLight');l.Color=color;l.Range=range or 8;l.Brightness=.55;l.Parent=anchor;WA.NightLight(l)
+  end
+  local x0,x1,z0,z1=cb.MinX,cb.MaxX,cb.MinZ,cb.MaxZ
+  -- the way in (the path from the yard ends at the near edge, by z0+6)
+  for _,z in {z0+3,z0+9} do lamp(spooky('MR_CultTorch',x0-1.2,z,1.1),Color3.fromHex('FF9A3D'),9,1.8) end
+  spooky('MR_TwistedTree',x1-3,z0+4.5,.62,30)
+  for _,z in {z0+15,z1-8} do lamp(spooky('MR_HangingLantern',x1+1.6,z,.8,90),Color3.fromHex('CDEBFF'),10,2.4) end
+  lamp(spooky('MR_HangingLantern',x0+12,z1+1.6,.8,0),Color3.fromHex('CDEBFF'),10,2.4)
+  for _,q in {{x0+1.5,z1-2,'W_Pumpkin1',.6,20},{x1-1.6,z0+17,'W_Pumpkin2',.55,-40},{x0+16,z0+1.2,'W_Pumpkin3',.5,10}} do lamp(spooky(q[3],q[1],q[2],q[4],q[5]),Color3.fromHex('FF8A1F'),7,.8) end
+  for _,q in {{x0+4,z0+1.2,-15},{x1-.8,z1-14,70},{x0+21,z1-.8,180},{x0+.9,z0+24,100}} do spooky('G_Hand',q[1],q[2],.55,q[3]) end
+  for _,q in {{x0+1,z1-.9,30},{x1-1,z1-1,-20},{x1-1,z0+9,90}} do spooky('MR_CultSkulls',q[1],q[2],1,q[3]) end
+  for _,q in {{x0+8,z1-.6,1},{x1-.7,z0+27,1.1},{x0+.8,z0+15,.9},{x1-9,z0+.8,.9}} do
+   local parts=spooky('MR_Mushrooms',q[1],q[2],q[3],math.random(0,359))
+   for _,p in parts do if typeof(p)=='Instance' and p:IsA('BasePart') then WA.NightGlow(p) end end
+  end
+  spooky('MR_RuneStone',x1-1.4,z1-4,1,-60)
+  for _,q in {{x0+3,z0+30},{x1-5,z0+2},{x0+26,z1-2},{x0+2.5,z0+6}} do spooky('MR_LeafLitter',q[1],q[2],1,math.random(0,359)) end
+  -- a low mist over the ground and pale wisps rising round the crypt
+  local mist=P.Part(cemetery,'CemeteryMist',Vector3.new(x1-x0,.2,z1-z0),at((x0+x1)/2,(z0+z1)/2,LAWN_TOP+.4),Color3.new(1,1,1))
+  mist.Transparency=1;mist.CanCollide=false;mist.CanQuery=false;mist.CanTouch=false;mist.CastShadow=false
+  local fog=Instance.new('ParticleEmitter');fog.Name='Mist';fog.Shape=Enum.ParticleEmitterShape.Box;fog.EmissionDirection=Enum.NormalId.Top
+  fog.Color=ColorSequence.new(Color3.fromHex('D9CCF2'));fog.Transparency=NumberSequence.new({NumberSequenceKeypoint.new(0,1),NumberSequenceKeypoint.new(.4,.82),NumberSequenceKeypoint.new(1,1)})
+  fog.Size=NumberSequence.new({NumberSequenceKeypoint.new(0,4),NumberSequenceKeypoint.new(1,7)});fog.Lifetime=NumberRange.new(5,8);fog.Rate=3;fog.Speed=NumberRange.new(.2,.5);fog.Rotation=NumberRange.new(0,360);fog.RotSpeed=NumberRange.new(-10,10)
+  fog.SpreadAngle=Vector2.new(60,60);fog.LightEmission=.1;fog.Parent=mist
+  local pc=PC.Crypt
+  local soul=P.Part(cemetery,'CryptWisps',Vector3.new(10,1,10),at(pc.X,pc.Z,LAWN_TOP+1),Color3.new(1,1,1))
+  soul.Transparency=1;soul.CanCollide=false;soul.CanQuery=false;soul.CanTouch=false;soul.CastShadow=false
+  local wisp=Instance.new('ParticleEmitter');wisp.Name='Wisps';wisp.Shape=Enum.ParticleEmitterShape.Box;wisp.EmissionDirection=Enum.NormalId.Top
+  wisp.Color=ColorSequence.new(Color3.fromHex('B7F5FF'),Color3.fromHex('C9A6FF'));wisp.LightEmission=1;wisp.Transparency=NumberSequence.new({NumberSequenceKeypoint.new(0,1),NumberSequenceKeypoint.new(.25,.2),NumberSequenceKeypoint.new(1,1)})
+  wisp.Size=NumberSequence.new({NumberSequenceKeypoint.new(0,.25),NumberSequenceKeypoint.new(.5,.65),NumberSequenceKeypoint.new(1,0)});wisp.Lifetime=NumberRange.new(3,5);wisp.Rate=2.6;wisp.Speed=NumberRange.new(.8,1.6)
+  wisp.SpreadAngle=Vector2.new(25,25);wisp.Acceleration=Vector3.new(0,.3,0);wisp.Parent=soul
+ end
  plot.Crypt=buildCrypt(m,base)
  local pc=PC.Crypt
  local cryptBase=at(pc.X,pc.Z)
@@ -532,7 +580,7 @@ local function buildPlot(w,i)
  local doorReach=(HC.Looks[1].D/2+2.5)/math.sqrt(2)
  path(0,-F,0,0);path(0,0,HC.RoomX+doorReach,HC.RoomZ-doorReach);path(0,-24,21,-24)
  local pcr=PC.Crypt;local cryptDoor=Vector3.new(pcr.X,0,pcr.Z)-Vector3.new(math.sin(math.rad(pcr.Yaw)),0,math.cos(math.rad(pcr.Yaw)))*(pcr.Door+1)
- path(0,-2,cb.MinX,6);path(cb.MinX,6,cryptDoor.X,cryptDoor.Z)
+ path(0,-2,cb.MinX,6) -- to the cemetery's edge only: no stones across it (owner, 2026-11-13)
  -- A softer cemetery edge: tufts, mushrooms and flowers round the patch
  for _,q in {{cb.MinX-1.5,cb.MaxZ-3,'W_Mushroom',1.2},{cb.MaxX+1.5,cb.MinZ+4,'W_Tuft',1.6},{cb.MaxX+1,cb.MaxZ+1,'W_Mushroom',1.4},{cb.MinX+4,cb.MaxZ+1.5,'W_Tuft',1.4},{cb.MaxX+1.5,(cb.MinZ+cb.MaxZ)/2,'W_Flowers',1.1},{cb.MinX-1.5,cb.MinZ+10,'W_Flowers',1}} do deco(q[3],q[1],q[2],q[4]) end
  local guideCemetery=P.Part(m,'GuideCemetery',Vector3.one,at((cb.MinX+cb.MaxX)/2,cb.MinZ+8,1),Color.Panel);guideCemetery.Transparency=1;guideCemetery.CanCollide=false;guideCemetery.CanQuery=false

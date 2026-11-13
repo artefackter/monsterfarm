@@ -4,7 +4,7 @@
 return {
  Snap=.5,GraveRadius=2.2,ZombieRadius=1.7,Overlap=.9,PlaceDistance=50,
  Yard={MinX=-40,MaxX=40,MinZ=-40,MaxZ=40},
- Cemetery={MinX=10,MaxX=37,MinZ=3,MaxZ=37}, -- a patch on the grass, not pressed into the corner
+ Cemetery={MinX=9.5,MaxX=38,MinZ=0,MaxZ=38}, -- a patch on the grass, a little bigger since 2026-11-12 (was 10..37 x 3..37)
  Pen={MinX=-40,MaxX=-14,MinZ=-36,MaxZ=-8},
  PenGate={From=-26,To=-20}, -- the opening in the pen's inner fence (x=MaxX)
  Blocked={

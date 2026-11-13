@@ -179,3 +179,7 @@ return {}
 -- FacepalmCat is everyone's starter (PetRules.Migrate adds it): no slot, can't be released, walks the fence top and
 -- facepalms with its tail. Pumpkins hatch DragonHead/BedBanker. Night raiders now come from MutantConfig.FarmRaiders
 -- (cultists, deer, stalkers, Verity, cave dwellers, parasites).
+-- Bushes only hide you from monsters that have not noticed you yet; one already chasing keeps after you into the
+-- bush until you leave its reach (RoadService pickTarget). The cemetery is a little bigger (9.5..38 x 0..38),
+-- keeps its W_Graveyard patch; the stepping stones no longer cross it, and it is dressed round the edges (torches,
+-- a dead tree, hanging lanterns, jack-o'-lanterns, hands, skulls, toadstools, a rune stone, leaves, mist, wisps).

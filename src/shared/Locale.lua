@@ -506,7 +506,7 @@ L.Rows.boardPetGain={"Pet slots: {a} → {b}","Слоты питомцев: {a} 
 L.Rows.boardPetMax={"Pet slots: {a}","Слоты питомцев: {a}"}
 L.Rows.placeFieldFull={"The farm is full: upgrade the house to place more monsters.","Ферма заполнена: улучши дом, чтобы ставить больше монстров."}
 -- Blood Moon and prestige (2026-11-12)
-L.Rows.bloodMoonRise={"🩸 BLOOD MOON! {boss} broke out of the ruins: kill it before it gets away! The road is shut.","🩸 КРОВАВАЯ ЛУНА! {boss} вырвался из заброшек: убейте его, пока он не ушёл! Дорога закрыта."}
+L.Rows.bloodMoonRise={"🩸 BLOOD MOON! {boss} broke out of the ruins: kill it before it gets away! The road is shut; on the farms it can't touch you.","🩸 КРОВАВАЯ ЛУНА! {boss} вырвался из заброшек: убейте его, пока он не ушёл! Дорога закрыта, на фермах он тебя не тронет."}
 L.Rows.bloodMoonWin={"{boss} is down! Final blow: {name}. Graves are falling from the sky!","{boss} повержен! Последний удар: {name}. С неба падают могилы!"}
 L.Rows.bloodMoonLost={"{boss} went back into the ruins. The road is open again.","{boss} ушёл в заброшки. Дорога снова открыта."}
 L.Rows.bloodMoonGrave={"Blood Moon grave: {grave}!","Могила Кровавой луны: {grave}!"}

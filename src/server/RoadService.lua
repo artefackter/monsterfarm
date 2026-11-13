@@ -331,7 +331,10 @@ local function pickTarget(a,runners,root)
  local best,bestDist
  for _,r in ipairs(runners) do
   local dist=(flat(r.pos,root.Y)-root).Magnitude;local ok
-  if r.hidden then ok=false -- in a bush: out of sight
+  -- In a bush you are out of sight, but only for monsters that have not noticed you yet: one already chasing you
+  -- keeps after you into the bush (owner, 2026-11-12). It lets go only when you get out of its reach.
+  if r.hidden and a.noticeTarget~=r.p then ok=false
+  elseif r.hidden and a.boss then ok=false
   elseif a.boss then ok=arenaDistance(a.arena,r.pos)<=Progression.ArenaRadius+30
   else ok=dist<=(r.carrying and C.AggroCarrier or C.Aggro) end
   if ok and (not bestDist or dist<bestDist or (r.carrying and not best.carrying)) then best,bestDist=r,dist end

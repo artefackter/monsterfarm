@@ -17,6 +17,8 @@ local function notice(p,key,args) RS.Remotes.Notice:FireClient(p,key,args) end
 local function noticeAll(key,args) RS.Remotes.Notice:FireAllClients(key,args) end
 local function flat(v,y) return Vector3.new(v.X,y or 0,v.Z) end
 local function rootOf(p) return p.Character and p.Character:FindFirstChild("HumanoidRootPart") end
+-- Farms are a refuge (owner, 2026-11-12): on any farm's ground the giant neither hunts you nor reaches you.
+local function onFarm(p) for _,plot in ipairs(P.Plots) do if P.Inside(p,plot) then return true end end;return false end
 
 function B.Start()
  if B.Active then return false end
@@ -70,7 +72,7 @@ local function target(A)
  local pos=A.a.model.PrimaryPart.Position;local best,bestDist
  for _,p in ipairs(Players:GetPlayers()) do
   local r=rootOf(p);local h=p.Character and p.Character:FindFirstChildOfClass("Humanoid")
-  if r and h and h.Health>0 and not p:GetAttribute("InHouse") and not p:GetAttribute("OnRoad") then
+  if r and h and h.Health>0 and not p:GetAttribute("InHouse") and not p:GetAttribute("OnRoad") and not onFarm(p) then
    local dist=(flat(r.Position,pos.Y)-pos).Magnitude
    if dist<400 and (not bestDist or dist<bestDist) then best,bestDist=p,dist end
   end
@@ -94,7 +96,7 @@ local function resolve(A,now)
  local Act=require(script.Parent.ActionService)
  for _,p in ipairs(Players:GetPlayers()) do
   local r=rootOf(p)
-  if r and not p:GetAttribute("InHouse") and (flat(r.Position)-flat(center)).Magnitude<=atk.Radius and r.Position.Y-center.Y<25 then
+  if r and not p:GetAttribute("InHouse") and not onFarm(p) and (flat(r.Position)-flat(center)).Magnitude<=atk.Radius and r.Position.Y-center.Y<25 then
    local away=flat(r.Position)-flat(center);if away.Magnitude<.5 then away=flat(a.model.PrimaryPart.CFrame.LookVector) end
    Act.Knockout(p,atk.Stun,away,atk.Fling)
   end
