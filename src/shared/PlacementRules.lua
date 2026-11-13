@@ -38,6 +38,12 @@ function R.InYard(point, radius)
 			return false
 		end
 	end
+	-- garden beds (the outer ring since 2026-11-13)
+	for _, b in C.Beds or {} do
+		if math.abs(point.x - b.X) < b.W / 2 + radius + .3 and math.abs(point.z - b.Z) < b.D / 2 + radius + .3 then
+			return false
+		end
+	end
  -- Turned buildings: the crypt and the house across the corner
  for _,box in {C.Crypt,table.unpack(C.Rotated or {})} do
   local yaw=math.rad(box.Yaw or 0)

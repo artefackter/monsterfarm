@@ -123,11 +123,11 @@ local function buildBoundary(w)
   body.CanTouch = false
   body.CastShadow = false
  end
- -- Round the island the wall you see is low and friendly: three courses of lilac blocks laid like bricks,
- -- a purple coping and battlements on top, a green tuft here and there.
- local stones = { Color3.fromHex("DCD2F2"), Color3.fromHex("CDC1EA"), Color3.fromHex("E7DEF7"), Color3.fromHex("C2B5E2") }
+ -- Round the island: weathered dark stone laid like bricks, a slate coping and battlements on top, moss here and
+ -- there. Taller and gloomier since 2026-11-13 (owner: "raise the wall round the world"; the farm was "too childish").
+ local stones = { Color3.fromHex("6A6276"), Color3.fromHex("5E5669"), Color3.fromHex("756D80"), Color3.fromHex("544D5E") }
  local course = 3.2
- local COURSES = 6 -- about 20 studs of wall: you can't see over it from the island
+ local COURSES = 11 -- about 36 studs of wall
  local rng = Random.new(77)
  local function voxel(name, size, cf, color)
   local q = P.Part(wall, name, size, cf, color)
@@ -160,12 +160,12 @@ local function buildBoundary(w)
    end
   end
   local top = bottom + 2.6 + COURSES * course
-  voxel("WallCoping", Vector3.new(cfg.Thickness + 0.8, 0.7, length + 0.2), cf * CFrame.new(0, top + 0.35, 0), Color3.fromHex("8C6BD6"))
+  voxel("WallCoping", Vector3.new(cfg.Thickness + 0.8, 0.7, length + 0.2), cf * CFrame.new(0, top + 0.35, 0), Color3.fromHex("3E3848"))
   for k = 0, count - 1, 2 do
    local z = -length / 2 + (k + 0.5) * block
-   voxel("WallMerlon", Vector3.new(cfg.Thickness + 0.4, 2, block * 0.8), cf * CFrame.new(0, top + 1.7, z), Color3.fromHex("A58BE6"))
+   voxel("WallMerlon", Vector3.new(cfg.Thickness + 0.4, 2, block * 0.8), cf * CFrame.new(0, top + 1.7, z), Color3.fromHex("4B4458"))
    if rng:NextNumber() < 0.25 then
-    local tuft = voxel("WallTuft", Vector3.new(1.4, 1.4, 1.4), cf * CFrame.new(rng:NextNumber(-0.6, 0.6), top + 3, z), Color3.fromHex("7BDC4B"))
+    local tuft = voxel("WallTuft", Vector3.new(1.4, 1.4, 1.4), cf * CFrame.new(rng:NextNumber(-0.6, 0.6), top + 3, z), Color3.fromHex("4E6B3A"))
     tuft.Shape = Enum.PartType.Ball
    end
   end
@@ -221,23 +221,23 @@ local function decoratePlaza(w)
 	local function disc(name,radius,height,y,color)
 		return deco(name,Vector3.new(height,radius*2,radius*2),CFrame.new(0,y,0)*CFrame.Angles(0,0,math.pi/2),color,Enum.PartType.Cylinder)
 	end
-	disc('StoneBed',41,.65,PLAZA_TOP-.38,'D5AE75')
+	disc('StoneBed',41,.65,PLAZA_TOP-.38,'8C7A66')
 	Garden.Promenade(Art,folder,PLAZA_TOP)
 	-- A flat shared collider lies beneath the lawn and paving; no raised lip to catch feet.
 	Garden.ApplyGrass(disc('HubLawn',24.4,.15,PLAZA_TOP+.075,'91A62E'))
 	for i=0,71 do
 		local a=(i+.5)*math.pi*2/72
 		local at=CFrame.new(math.sin(a)*40.8,PLAZA_TOP-.02,math.cos(a)*40.8)*CFrame.Angles(0,a,0)
-		deco('StoneKerb',Vector3.new(3.48,.75,1.35),at,i%3==0 and 'F4D8A3' or 'E9C489')
+		deco('StoneKerb',Vector3.new(3.48,.75,1.35),at,i%3==0 and 'A39684' or '8F8273')
 	end
-	local colors={'FF668C','FFD85D','83E88A','59CBF5','B388F5','FFA657'}
+	local colors={'8E2F3A','A8843A','3F6B5A','5A4A7A','7A4A2A','2F4A5E'} -- muted since 2026-11-13 (the farm read as "too childish")
 	local tops={}
 	-- Offset the poles from the farm paths; cords stay above jumping players.
 	for i=0,13 do
 		local a=(i+.5)*math.pi*2/14
 		local base=Vector3.new(math.sin(a)*40.1,PLAZA_TOP,math.cos(a)*40.1)
-		deco('FestivalPole',Vector3.new(.55,8.5,.55),CFrame.new(base+Vector3.new(0,4.25,0)),'7741BA')
-		deco('PoleFoot',Vector3.new(.35,1.5,1.5),CFrame.new(base+Vector3.new(0,.15,0))*CFrame.Angles(0,0,math.pi/2),'9655D6',Enum.PartType.Cylinder)
+		deco('FestivalPole',Vector3.new(.55,8.5,.55),CFrame.new(base+Vector3.new(0,4.25,0)),'4A3A30')
+		deco('PoleFoot',Vector3.new(.35,1.5,1.5),CFrame.new(base+Vector3.new(0,.15,0))*CFrame.Angles(0,0,math.pi/2),'3A2E26',Enum.PartType.Cylinder)
 		local bulb=require(S.WorldArt).NightGlow(deco('PoleLantern',Vector3.new(1.25,1.25,1.25),CFrame.new(base+Vector3.new(0,8.8,0)),'FFF18A',Enum.PartType.Ball,Enum.Material.Neon))
 		if i%2==0 then
 			local light=Instance.new('PointLight');light.Color=Color3.fromHex('FFE9AF');light.Range=17;light.Brightness=.65;light.Parent=bulb;require(S.WorldArt).NightLight(light)
@@ -248,7 +248,7 @@ local function decoratePlaza(w)
 		local b=tops[i%#tops+1];local previous=a
 		for j=1,8 do
 			local t=j/8;local point=a:Lerp(b,t)-Vector3.new(0,math.sin(t*math.pi)*.85,0)
-			deco('GarlandCord',Vector3.new(.07,.07,(point-previous).Magnitude),CFrame.lookAt((point+previous)/2,point),'FFF4D9')
+			deco('GarlandCord',Vector3.new(.07,.07,(point-previous).Magnitude),CFrame.lookAt((point+previous)/2,point),'4A4038')
 			local mid=(previous+point)/2
 			if j%2==0 then
 				require(S.WorldArt).NightGlow(deco('GarlandBulb',Vector3.new(.34,.48,.34),CFrame.new(mid-Vector3.new(0,.25,0)),'FFF09B',Enum.PartType.Ball,Enum.Material.Neon))
@@ -326,7 +326,7 @@ local function buildWorld(w)
 		end
 		return false
 	end
-	local function scatter(name, count, minR, maxR, minScale, maxScale)
+	local function scatter(name, count, minR, maxR, minScale, maxScale, tint)
 		local placed, tries = 0, 0
 		while placed < count and tries < count * 40 do
 			tries += 1
@@ -334,19 +334,25 @@ local function buildWorld(w)
 			local pos = Vector3.new(math.cos(a) * r, 0, math.sin(a) * r)
 			if not insidePlot(pos) then
 				local scale = rng:NextNumber(minScale, maxScale)
-				Art.Spawn(name, w, CFrame.new(pos.X, ISLAND_TOP - 0.05, pos.Z) * CFrame.Angles(0, rng:NextNumber(0, math.pi * 2), 0), { scale = scale })
+				Art.Spawn(name, w, CFrame.new(pos.X, ISLAND_TOP - 0.05, pos.Z) * CFrame.Angles(0, rng:NextNumber(0, math.pi * 2), 0), { scale = scale, tints = tint and { Main = tint } or nil })
 				placed += 1
 			end
 		end
 	end
 	local edge = 170 * grow - C.Boundary.Inset - 12
-	scatter("W_TreeA", 26, 60, edge, 0.85, 1.25)
-	scatter("W_TreeB", 15, 60, edge, 0.85, 1.2)
+	-- Gloomier since 2026-11-13 (owner: the island looked "too childish" next to the ruins): darker greens, dead
+	-- trees among the live ones, pumpkins, rocks and fallen leaves instead of most of the flowers.
+	scatter("W_TreeA", 22, 60, edge, 0.85, 1.25, Color3.fromRGB(120, 138, 112))
+	scatter("W_TreeB", 12, 60, edge, 0.85, 1.2, Color3.fromRGB(120, 132, 112))
+	scatter("MR_TwistedTree", 14, 60, edge, 0.55, 0.85)
 	task.wait()
-	scatter("W_Bush", 32, 50, edge, 0.8, 1.3)
+	scatter("W_Bush", 32, 50, edge, 0.8, 1.3, Color3.fromRGB(125, 135, 110))
 	scatter("W_Rock", 20, 55, edge, 0.7, 1.5)
 	scatter("W_Mushroom", 26, 48, edge, 0.8, 1.6)
-	scatter("W_Flowers", 38, 46, edge, 1.3, 2)
+	scatter("W_Flowers", 10, 46, edge, 1.3, 2)
+	scatter("W_Pumpkin1", 10, 50, edge, 0.5, 0.8)
+	scatter("MR_Rocks", 10, 55, edge, 0.6, 1.1)
+	scatter("MR_LeafLitter", 18, 46, edge, 1, 1.6)
 	task.wait()
 	scatter("W_Tuft", 64, 44, edge, 1, 1.8)
 	-- Friendly spooky trees: placed by hand so their faces look toward the plaza.
@@ -467,6 +473,104 @@ local function buildCrypt(m, base)
 	return { Model = model, Zone = zone, Door = c * CFrame.new(0, 3, -6.5) }
 end
 
+-- The farm's outer ring (owner, 2026-11-13: "make the farm a bit bigger and add garden beds, a livelier farm"):
+-- raised beds of planks and dark soil with cabbages, carrots, pumpkins, brain crops or withered stalks, two pumpkin
+-- patches behind the cemetery, a scarecrow and a well in the front corners, a cart and crates at the back, dead trees,
+-- glowing lamps on the fence and a low mist over the yard at night. None of it is solid; PlacementConfig keeps
+-- monsters off it.
+local function buildGarden(m,at,index,F)
+ local PC=require(S.Config.PlacementConfig);local WA=require(S.WorldArt)
+ local garden=Instance.new('Model');garden.Name='Garden';garden.Parent=m
+ local rng=Random.new(4100+index)
+ local WOOD,WOOD_DARK,SOIL=Color3.fromHex('5E4535'),Color3.fromHex('3B2B21'),Color3.fromHex('3A2A1F')
+ local function piece(name,size,cf,color,material,shape)
+  local q=P.Part(garden,name,size,cf,color,shape);q.Material=material or Enum.Material.SmoothPlastic
+  q.CanCollide,q.CanQuery,q.CanTouch=false,false,false;return q
+ end
+ local function prop(asset,x,z,scale,yaw,tints)
+  local parts=Art.Spawn(asset,garden,at(x,z)*CFrame.Angles(0,math.rad(yaw or 0),0),{scale=scale or 1,tints=tints})
+  for _,q in parts do if typeof(q)=='Instance' and q:IsA('BasePart') then q.CanCollide,q.CanQuery,q.CanTouch=false,false,false end end
+  return parts
+ end
+ local function ball(name,size,cf,color) return piece(name,size,cf,color,Enum.Material.SmoothPlastic,Enum.PartType.Ball) end
+ local CROPS={
+  Cabbage=function(cf)
+   ball('Cabbage',Vector3.new(1.05,.9,1.05),cf*CFrame.new(0,.42,0),Color3.fromHex('7E9A55'))
+   for k=0,2 do ball('CabbageLeaf',Vector3.new(1.1,.35,.7),cf*CFrame.Angles(0,k*2.1,0)*CFrame.new(0,.18,.35)*CFrame.Angles(.35,0,0),Color3.fromHex('4F6B3A')) end
+  end,
+  Carrot=function(cf)
+   ball('CarrotTop',Vector3.new(.4,.3,.4),cf*CFrame.new(0,.1,0),Color3.fromHex('C96A2A'))
+   for k=0,2 do piece('CarrotLeaf',Vector3.new(.12,.9,.3),cf*CFrame.Angles(0,k*2.1,0)*CFrame.new(0,.5,.12)*CFrame.Angles(-.35,0,0),Color3.fromHex('5D7F3A')) end
+  end,
+  Pumpkin=function(cf)
+   local s=rng:NextNumber(.85,1.2)
+   ball('Pumpkin',Vector3.new(1.25,.95,1.25)*s,cf*CFrame.new(0,.42*s,0),Color3.fromHex('C25E1C'))
+   piece('PumpkinStem',Vector3.new(.14,.4,.14),cf*CFrame.new(0,.95*s,0)*CFrame.Angles(.3,0,0),Color3.fromHex('4A3A20'))
+  end,
+  Dead=function(cf)
+   for k=0,2 do piece('DeadStalk',Vector3.new(.12,1.1+rng:NextNumber(0,.5),.12),cf*CFrame.Angles(0,k*2.1,0)*CFrame.new(0,.5,.15)*CFrame.Angles(rng:NextNumber(-.6,-.2),0,0),Color3.fromHex('6B5A45')) end
+  end,
+ }
+ CROPS.Brain=function(cf)
+  local parts=Art.Spawn('W_BrainCrop',garden,cf,{scale=.6})
+  for _,q in parts do if typeof(q)=='Instance' and q:IsA('BasePart') then q.CanCollide,q.CanQuery,q.CanTouch=false,false,false end end
+ end
+ for _,b in PC.Beds do
+  local c=at(b.X,b.Z)
+  if b.Crop=='Patch' then
+   -- a loose pumpkin patch: no frame, dark soil, big pumpkins among tufts, a lantern on a stake
+   piece('PatchSoil',Vector3.new(b.W,.12,b.D),c*CFrame.new(0,.06,0),SOIL,Enum.Material.Ground)
+   for k=1,3 do
+    local z=-b.D/2+b.D*(k-.5)/3
+    prop('W_Pumpkin'..((k+index)%3+1),b.X+rng:NextNumber(-.8,.8),b.Z+z,rng:NextNumber(.45,.6),rng:NextNumber(0,360))
+   end
+   prop('W_Tuft',b.X+1.4,b.Z-b.D/2+1,1.2,rng:NextNumber(0,360))
+  else
+   piece('BedSoil',Vector3.new(b.W-.5,.7,b.D-.5),c*CFrame.new(0,.35,0),SOIL,Enum.Material.Ground)
+   for _,sx in {-1,1} do piece('BedPlank',Vector3.new(.35,.9,b.D),c*CFrame.new(sx*(b.W/2-.18),.45,0),WOOD,Enum.Material.WoodPlanks) end
+   for _,sz in {-1,1} do piece('BedPlank',Vector3.new(b.W,.9,.35),c*CFrame.new(0,.45,sz*(b.D/2-.18)),WOOD,Enum.Material.WoodPlanks) end
+   for _,sx in {-1,1} do for _,sz in {-1,1} do piece('BedPeg',Vector3.new(.5,1.2,.5),c*CFrame.new(sx*(b.W/2-.18),.6,sz*(b.D/2-.18)),WOOD_DARK,Enum.Material.Wood) end end
+   -- rows along the bed's long side
+   local long=b.W>=b.D;local L,Sd=long and b.W or b.D,long and b.D or b.W
+   local rows=Sd>4 and 2 or 1;local per=math.max(2,math.floor((L-1.4)/1.7))
+   for r=1,rows do for k=1,per do
+    local u=-(L-2)/2+(k-1)*(L-2)/math.max(1,per-1);local v=rows==1 and 0 or (r==1 and -.95 or .95)
+    local x,z=long and u or v,long and v or u
+    CROPS[b.Crop](c*CFrame.new(x+rng:NextNumber(-.12,.12),.7,z+rng:NextNumber(-.12,.12))*CFrame.Angles(0,rng:NextNumber(0,math.pi*2),0))
+   end end
+  end
+ end
+ -- the front corners: a scarecrow on the left, a well on the right; the back: a cart and crates; dead trees
+ prop('W_Scarecrow',F-3.5,-F+3.5,.9,200,{Main=Color3.fromRGB(170,150,135)})
+ prop('MR_Well',-F+3.5,-F+3.8,.85,30)
+ prop('MR_Cart',-6,F-3,.9,80)
+ prop('V3_Crates',-16,F-2.6,.8,10,{Main=Color3.fromRGB(150,120,100)})
+ prop('MR_TwistedTree',F-3,21,.5,40);prop('MR_TwistedTree',F-3.5,F-3.5,.55,-20)
+ prop('MR_LeafLitter',F-4,-12,1,rng:NextNumber(0,360));prop('MR_LeafLitter',-F+4,8,1,rng:NextNumber(0,360))
+ -- lamps on the fence: a glowing bulb on a dark post every so often, real light only by the gate and the corners
+ local lit=0
+ local function lamp(x,z,light)
+  local post=piece('LampPost',Vector3.new(.45,4.6,.45),at(x,z,LAWN_TOP+2.3),WOOD_DARK,Enum.Material.Wood)
+  piece('LampCap',Vector3.new(1,.25,1),post.CFrame*CFrame.new(0,2.4,0),Color3.fromHex('2B2420'),Enum.Material.Metal)
+  local bulb=WA.NightGlow(ball('LampBulb',Vector3.new(.75,.75,.75),post.CFrame*CFrame.new(0,2.05,0),Color3.fromHex('FFB45C')))
+  if light then lit+=1;local l=Instance.new('PointLight');l.Color=Color3.fromHex('FFB45C');l.Range=13;l.Brightness=.6;l.Parent=bulb;WA.NightLight(l) end
+ end
+ for _,q in {{-8.6,-F-.6,true},{8.6,-F-.6,true},{F-.6,-F+.6,true},{-F+.6,-F+.6,true},{F-.6,F-.6,true},{F-.6,-16},{F-.6,16},{-F+.6,-18},{-F+.6,4},{-F+28,-F+.6},{F-28,-F+.6},{20,F-.6}} do lamp(q[1],q[2],q[3]) end
+ -- a low mist over the yard after dark (PlotService.SetNight turns it on and off with the lamps)
+ local mistPart=piece('YardMist',Vector3.new(2*F,.2,2*F),at(0,0,LAWN_TOP+.5),Color3.new(1,1,1));mistPart.Transparency=1;mistPart.CastShadow=false
+ local fog=Instance.new('ParticleEmitter');fog.Name='YardMist';fog.Shape=Enum.ParticleEmitterShape.Box;fog.EmissionDirection=Enum.NormalId.Top
+ fog.Color=ColorSequence.new(Color3.fromHex('B9B4D6'));fog.Transparency=NumberSequence.new({NumberSequenceKeypoint.new(0,1),NumberSequenceKeypoint.new(.4,.86),NumberSequenceKeypoint.new(1,1)})
+ fog.Size=NumberSequence.new({NumberSequenceKeypoint.new(0,6),NumberSequenceKeypoint.new(1,10)});fog.Lifetime=NumberRange.new(7,10);fog.Rate=2.5;fog.Speed=NumberRange.new(.2,.5)
+ fog.Rotation=NumberRange.new(0,360);fog.RotSpeed=NumberRange.new(-8,8);fog.SpreadAngle=Vector2.new(60,60);fog.LightEmission=.05;fog.Parent=mistPart
+ CollectionService:AddTag(fog,'NightLight');fog.Enabled=workspace:GetAttribute('IsNight')==true
+ -- fireflies drifting over the beds at night
+ local flies=Instance.new('ParticleEmitter');flies.Name='Fireflies';flies.Shape=Enum.ParticleEmitterShape.Box;flies.Color=ColorSequence.new(Color3.fromHex('D6FF7A'));flies.LightEmission=1
+ flies.Size=NumberSequence.new({NumberSequenceKeypoint.new(0,0),NumberSequenceKeypoint.new(.5,.22),NumberSequenceKeypoint.new(1,0)});flies.Lifetime=NumberRange.new(3,5);flies.Rate=4;flies.Speed=NumberRange.new(.3,.8)
+ flies.SpreadAngle=Vector2.new(180,180);flies.Acceleration=Vector3.new(0,.2,0);flies.Parent=mistPart
+ CollectionService:AddTag(flies,'NightLight');flies.Enabled=workspace:GetAttribute('IsNight')==true
+ return garden
+end
+
 local function buildPlot(w,i)
  local H=C.FarmHalf;local F=H-1
  local PC=require(S.Config.PlacementConfig)
@@ -536,12 +640,16 @@ local function buildPlot(w,i)
  plot.Crypt.Model:PivotTo(cryptFacing)
  local zone=plot.Crypt.Zone;zone.Size=Vector3.one;zone.CFrame=cryptFacing*CFrame.new(0,.15,-pc.Door);zone:SetAttribute('Radius',3.2)
  plot.Crypt.Door=cryptFacing*CFrame.new(0,1.65,-3.9)
- -- Wooden rails and stone posts; the income area remains an open lawn.
+ -- Weathered rails and posts (owner, 2026-11-13: the farm looked "too childish" next to the ruins): the fence mesh is
+ -- tinted old grey wood. FenceService adds the upgrade looks along the same lines (plot.FenceLines, farm-local).
+ local FENCE_TINT=Color3.fromRGB(150,126,108)
+ plot.FenceLines={}
  local function fence(a,b)
   local v=b-a;local length=v.Magnitude;local center=(a+b)/2
   if length<.5 then return end
+  table.insert(plot.FenceLines,{a,b})
   local n=math.max(1,math.ceil(length/8))
-  for j=1,n do local q=a:Lerp(b,(j-.5)/n);Art.Spawn('W_Fence',m,base*CFrame.lookAt(q+Vector3.new(0,LAWN_TOP,0),q+Vector3.new(v.Z,LAWN_TOP,-v.X)),{scale=Vector3.new(length/n/8,1,1)}) end
+  for j=1,n do local q=a:Lerp(b,(j-.5)/n);Art.Spawn('W_Fence',m,base*CFrame.lookAt(q+Vector3.new(0,LAWN_TOP,0),q+Vector3.new(v.Z,LAWN_TOP,-v.X)),{scale=Vector3.new(length/n/8,1,1),tints={Main=FENCE_TINT}}) end
   solid(m,'Fence',Vector3.new(.6,3,length),base*CFrame.lookAt(center+Vector3.new(0,LAWN_TOP+1.5,0),b+Vector3.new(0,LAWN_TOP+1.5,0)))
  end
  local function seg(x1,z1,x2,z2) fence(Vector3.new(x1,0,z1),Vector3.new(x2,0,z2)) end
@@ -550,12 +658,13 @@ local function buildPlot(w,i)
  local cut=(HC.Looks[1].W+2)/math.sqrt(2)
  seg(7,-F,F,-F);seg(F,-F,F,F);seg(F,F,-F+cut,F);seg(-F,F-cut,-F,-F);seg(-F,-F,-7,-F)
  -- Each rail mesh includes its end post. Cap the two open starts only.
- deco('W_FencePost',7,-F);deco('W_FencePost',-F,F-cut)
+ for _,q in {{7,-F},{-F,F-cut},{-7,-F}} do Art.Spawn('W_FencePost',m,at(q[1],q[2]),{tints={Main=FENCE_TINT}}) end
  local pb=PC.Pen -- Preserve existing zombie income positions.
- -- Gate arch with the owner's name
+ -- Gate arch with the owner's name; its leaves are FenceService's (raiders break them at night)
  plot.Gate=P.Part(m,'Gate',Vector3.new(12,.1,5),at(0,-F+2,LAWN_TOP+.05),Color.Grass or Color3.fromHex('86CF4B'));plot.Gate.Transparency=1
  plot.Barrier=P.Part(m,'Barrier',Vector3.new(14,7,1),at(0,-F-1,3),Color.Pink);plot.Barrier.Material=Enum.Material.ForceField;plot.Barrier.Transparency=1;plot.Barrier.CanCollide=false
- deco('W_GateArch',0,-F,.85)
+ plot.GateFrame=at(0,-F);plot.FenceF=F
+ Art.Spawn('W_GateArch',m,at(0,-F),{scale=.85,tints={Main=Color3.fromRGB(128,98,90)}})
  plot.Label=signText(m,at(0,-F-.6,6.4),Vector3.new(8,1.5,.1),nil)
  plot.LabelBack=signText(m,at(0,-F+.6,6.4)*CFrame.Angles(0,math.pi,0),Vector3.new(8,1.5,.1),nil)
  plot.Label:SetAttribute('OwnerPlate',true);plot.LabelBack:SetAttribute('OwnerPlate',true)
@@ -573,7 +682,7 @@ local function buildPlot(w,i)
     table.insert(laidStones,v)
     local p=Vector3.new(v.X,LAWN_TOP+.035,v.Z)
     local parts=Art.Spawn('ENV_Tile'..(1+#laidStones%3),m,base*CFrame.lookAt(p,p+direction),{scale=Vector3.new(.94,.55,step*.97/3.8)})
-    for _,stone in parts do stone.Name='PathStone';stone.CastShadow=false end
+    for _,stone in parts do stone.Name='PathStone';stone.CastShadow=false;stone.Color=Color3.fromRGB(176,164,150) end -- worn, not bright
    end
   end
  end
@@ -584,7 +693,7 @@ local function buildPlot(w,i)
  -- A softer cemetery edge: tufts, mushrooms and flowers round the patch
  for _,q in {{cb.MinX-1.5,cb.MaxZ-3,'W_Mushroom',1.2},{cb.MaxX+1.5,cb.MinZ+4,'W_Tuft',1.6},{cb.MaxX+1,cb.MaxZ+1,'W_Mushroom',1.4},{cb.MinX+4,cb.MaxZ+1.5,'W_Tuft',1.4},{cb.MaxX+1.5,(cb.MinZ+cb.MaxZ)/2,'W_Flowers',1.1},{cb.MinX-1.5,cb.MinZ+10,'W_Flowers',1}} do deco(q[3],q[1],q[2],q[4]) end
  local guideCemetery=P.Part(m,'GuideCemetery',Vector3.one,at((cb.MinX+cb.MaxX)/2,cb.MinZ+8,1),Color.Panel);guideCemetery.Transparency=1;guideCemetery.CanCollide=false;guideCemetery.CanQuery=false
- for _,q in {{-38,38},{-20,38},{38,-38},{-38,-38+2},{12,-2},{-12,4}} do deco('W_Flowers',q[1],q[2],.8) end
+ buildGarden(m,at,i,F)
  local field=P.Part(m,'GuideField',Vector3.one,at((pb.MinX+pb.MaxX)/2,(pb.MinZ+pb.MaxZ)/2,1),Color.Panel);field.Transparency=1;field.CanCollide=false;field.CanQuery=false
  local guard=P.Part(m,'GuideGuard',Vector3.one,at(6,30,1),Color.Panel);guard.Transparency=1;guard.CanCollide=false;guard.CanQuery=false
  m:SetAttribute('BasePosition',base.Position);m:SetAttribute('BaseYaw',math.atan2(-base.LookVector.X,-base.LookVector.Z))

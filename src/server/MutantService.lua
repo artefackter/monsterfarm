@@ -33,7 +33,8 @@ function M.ChooseTarget(a)
 end
 function M.State(a,state,now)
  if state=="Running" and a.state=="Spawning" then a.model:SetAttribute("NoticedAt",workspace:GetServerTimeNow()) end
- a.state=state;a.since=now or os.clock();a.model:SetAttribute("State",state);a.model:SetAttribute("StateStartedAt",workspace:GetServerTimeNow())
+ -- hammering the farm gate looks like any other attack on the client
+ a.state=state;a.since=now or os.clock();a.model:SetAttribute("State",state=="Breaking" and "Attacking" or state);a.model:SetAttribute("StateStartedAt",workspace:GetServerTimeNow())
  if a.target then attributes(a.target.id) end
 end
 function M.Remove(a,reason)
@@ -159,9 +160,25 @@ function M.Tick(dt,now,night)
     M.AlarmTimes[a.owner]=now;rem.PetAlarm:FireClient(a.owner,nil,"mutant")
    end
   end
+  local Fence=require(script.Parent.FenceService)
   if a.state=="Spawning" then if now-a.since>=C.SpawnSeconds then M.State(a,"Running",now) end
   elseif now<(a.stunnedUntil or 0) then
   elseif a.state=="Stunned" then M.State(a,"Running",now)
+  -- The farm gate first (owner, 2026-11-13): walk round to it and hammer it until it breaks; only then go in.
+  elseif a.state=="Running" and not a.gateDone and not Fence.Open(plot) then
+   local spot=Fence.Front(plot,a);local goal=Vector3.new(spot.X,root.Position.Y,spot.Z)
+   if (root.Position-goal).Magnitude<=1.2 then M.State(a,"Breaking",now);a.nextStrike=now+.3 else move(a,goal,dt) end
+  elseif a.state=="Breaking" then
+   if Fence.Open(plot) then a.gateDone=true;M.State(a,"Running",now);continue end
+   local center=Fence.Center(plot);local face=Vector3.new(center.X,root.Position.Y,center.Z)
+   if (face-root.Position).Magnitude>.1 then root.CFrame=CFrame.lookAt(root.Position,face) end
+   if now>=(a.nextStrike or 0) then
+    a.nextStrike=now+1;a.model:SetAttribute("StrikeAt",workspace:GetServerTimeNow());fx("GateHit",a.id,center,a.owner.UserId)
+    if Fence.Hit(plot,Fence.Damage(a.kind)) then a.gateDone=true;M.State(a,"Running",now);continue end
+    -- a spiked fence hurts whoever hammers it; the owner gets the kill
+    local spikes=Fence.Spikes(plot);if spikes>0 then M.Damage(a,spikes,a.owner);if not M.Live[a.id] then continue end end
+   end
+   if now-a.since>=require(S.Config.FenceConfig).Patience then M.Flee(a,now) end -- it gives up
   elseif a.state=="Running" then
    local goal=M.Contact(a)
    if (root.Position-goal).Magnitude<=.9 and Navigation.Visible(root.Position,goal) then M.State(a,"Attacking",now);a.nextStrike=now+.24 else move(a,goal,dt) end

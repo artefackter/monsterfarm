@@ -20,6 +20,19 @@ local function execute(p,command,arg,value)
  elseif command=="treadmill" then
   local n=tonumber(arg);local RC=require(game.ReplicatedStorage.Shared.Config.RoadConfig);if not n or not RC.Treadmill[n] then return false end
   d.treadmill=n;require(script.Parent.HouseService).RefreshTreadmill(p,d);require(script.Parent.InterfaceService).Refresh(p)
+ elseif command=="raid" then
+  -- /raid [n]: send n night raiders at your farm now (needs /farm first)
+  local n=math.clamp(tonumber(arg) or 3,1,8);local M=require(script.Parent.MutantService);local ok=false
+  for _=1,n do if M.Spawn(p) then ok=true end end
+  return ok
+ elseif command=="fence" then
+  -- /fence n: the fence and gate at level n
+  local FC=require(game.ReplicatedStorage.Shared.Config.FenceConfig);local n=tonumber(arg);if not n or not FC.Levels[n] then return false end
+  d.fenceLevel=n;require(script.Parent.FenceService).Join(p,d);require(script.Parent.InterfaceService).Refresh(p)
+ elseif command=="kills" then
+  -- /kills i n: count n monsters killed in location i (guns unlock with them)
+  local i,n=tonumber(arg),tonumber(value);if not i or not n or not d.ruinKills or not d.ruinKills[i] then return false end
+  d.ruinKills[i]+=n;require(script.Parent.WeaponService).Join(p)
  elseif command=="farm" then
   -- /farm [n]: skip the tutorial and put n first-tier monsters out in the yard (night raids need a target)
   local Z=require(script.Parent.ZombieService);local Place=require(game.ReplicatedStorage.Shared.PlacementRules)

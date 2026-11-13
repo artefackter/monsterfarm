@@ -1,4 +1,5 @@
--- Bright all the time: day is sunny and saturated, night is a colourful cartoon purple rather than dark.
+-- Day is a hazy late afternoon and night a deep violet (moodier since 2026-11-13: the owner found the farm "too
+-- childish" next to the ruins); still bright enough to play, never pitch black.
 local C = require(game.ReplicatedStorage.Shared.Config.NightConfig)
 local Lighting = game:GetService("Lighting")
 local RunService = game:GetService("RunService")
@@ -7,16 +8,16 @@ local D = {}
 
 local LOOK = {
 	day = {
-		Clock = 14.3, Brightness = 1.35, Exposure = 0,
-		Ambient = Color3.fromRGB(118, 118, 135), Outdoor = Color3.fromRGB(128, 128, 146), Shift = Color3.fromRGB(255, 246, 232),
-		Fog = Color3.fromRGB(190, 232, 255), Density = 0.07, Haze = 0.2, AtmosphereColor = Color3.fromRGB(205, 235, 255),
-		Tint = Color3.new(1, 1, 1), Saturation = 0.12, Contrast = 0.06,
+		Clock = 16.2, Brightness = 1.05, Exposure = 0,
+		Ambient = Color3.fromRGB(92, 90, 108), Outdoor = Color3.fromRGB(102, 98, 118), Shift = Color3.fromRGB(255, 226, 196),
+		Fog = Color3.fromRGB(150, 156, 150), Density = 0.27, Haze = 1.6, AtmosphereColor = Color3.fromRGB(160, 164, 150),
+		Tint = Color3.fromRGB(240, 234, 224), Saturation = -0.14, Contrast = 0.16,
 	},
 	night = {
-		Clock = 23.6, Brightness = 1, Exposure = 0.05,
-		Ambient = Color3.fromRGB(135, 118, 190), Outdoor = Color3.fromRGB(150, 130, 210), Shift = Color3.fromRGB(180, 175, 255),
-		Fog = Color3.fromRGB(96, 76, 180), Density = 0.18, Haze = 0.9, AtmosphereColor = Color3.fromRGB(110, 90, 210),
-		Tint = Color3.fromRGB(235, 228, 255), Saturation = 0.2, Contrast = 0.05,
+		Clock = 23.6, Brightness = 0.9, Exposure = 0.02,
+		Ambient = Color3.fromRGB(104, 90, 150), Outdoor = Color3.fromRGB(112, 98, 160), Shift = Color3.fromRGB(170, 165, 240),
+		Fog = Color3.fromRGB(62, 48, 120), Density = 0.26, Haze = 1.2, AtmosphereColor = Color3.fromRGB(86, 66, 160),
+		Tint = Color3.fromRGB(228, 222, 250), Saturation = 0.05, Contrast = 0.1,
 	},
 	-- Blood Moon (BloodMoonService): the purple night turns crimson while the giant is out
 	blood = {

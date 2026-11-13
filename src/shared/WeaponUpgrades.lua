@@ -1,10 +1,10 @@
--- Weapon upgrades (owner, 2026-11-10): every owned gun has four stats that are raised one level at a time for
--- zombucks and mutagen. Mutagen drops, by chance, from monsters killed in the ruins: more often and in bigger
--- portions the deeper the location; the boss always drops a lot. Used by the server (truth) and the menu (preview).
+-- Weapon upgrades (owner, 2026-11-10): every owned gun has six stats (reload and range since 2026-11-13) that are
+-- raised one level at a time for zombucks and mutagen. Mutagen drops, by chance, from monsters killed in the ruins:
+-- more often and in bigger portions the deeper the location; the boss always drops a lot. Used by the server (truth) and the menu (preview).
 local C=require(script.Parent.Config.WeaponConfig)
 local U={
- Stats={"Damage","FireRate","Magazine","Crit"},Max=10,
- Step={Damage=.12,FireRate=.06,Magazine=.15}, -- share of the base value added per level
+ Stats={"Damage","FireRate","Magazine","Crit","Reload","Range"},Max=10,
+ Step={Damage=.12,FireRate=.06,Magazine=.15,Reload=.05,Range=.04}, -- share of the base value added per level (Reload: taken off)
  Crit={BaseChance=.05,ChancePerLevel=.03,BaseMult=2,MultPerLevel=.2},
  CoinBase={Deagle=500,Double=1000,AK=2500,MP5=6000,M4=12000,Pump=22000,M249=40000,AWP=60000},CoinGrowth=1.7,
  Drop={Chance={.10,.12,.14,.16,.18,.20},Amount={1,1,2,2,3,3},Boss=15},
@@ -30,13 +30,16 @@ function U.Value(id,stat,level)
  if stat=="Damage" then return math.floor(cfg.Damage*(1+U.Step.Damage*level)+.5)
  elseif stat=="FireRate" then return cfg.FireRate*(1+U.Step.FireRate*level)
  elseif stat=="Magazine" then return math.ceil(cfg.Magazine*(1+U.Step.Magazine*level)-1e-6)
+ elseif stat=="Reload" then return math.floor(cfg.Reload*(1-U.Step.Reload*level)*100+.5)/100 -- seconds
+ elseif stat=="Range" then return math.floor(cfg.Range*(1+U.Step.Range*level)*10+.5)/10 -- studs
  end
  return U.Crit.BaseChance+U.Crit.ChancePerLevel*level,U.Crit.BaseMult+U.Crit.MultPerLevel*level
 end
 -- Everything the gun does for this player right now.
 function U.Stats_(d,id)
  local chance,mult=U.Value(id,"Crit",U.Level(d,id,"Crit"))
- return {Damage=U.Value(id,"Damage",U.Level(d,id,"Damage")),FireRate=U.Value(id,"FireRate",U.Level(d,id,"FireRate")),Magazine=U.Value(id,"Magazine",U.Level(d,id,"Magazine")),CritChance=chance,CritMult=mult}
+ return {Damage=U.Value(id,"Damage",U.Level(d,id,"Damage")),FireRate=U.Value(id,"FireRate",U.Level(d,id,"FireRate")),Magazine=U.Value(id,"Magazine",U.Level(d,id,"Magazine")),CritChance=chance,CritMult=mult,
+  Reload=U.Value(id,"Reload",U.Level(d,id,"Reload")),Range=U.Value(id,"Range",U.Level(d,id,"Range"))}
 end
 -- Price of the step from `level` to the next: zombucks, mutagen.
 function U.Cost(id,stat,level)

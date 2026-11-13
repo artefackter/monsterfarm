@@ -4,7 +4,8 @@ function R.Best(d) for i=#C.Order,1,-1 do local id=C.Order[i];if d.shovels and d
 function R.Migrate(d)
  d.shovels=d.shovels or {};d.shovels.Rusty=true
  if not d.equippedShovel or not d.shovels[d.equippedShovel] or not C[d.equippedShovel] then d.equippedShovel=R.Best(d) end
- d.activeSlot=(d.activeSlot==2 or d.activeSlot==3 or d.activeSlot==4) and d.activeSlot or 1;d.showRanges=d.showRanges~=false;d.slowMode=d.slowMode==true
+ -- 0 is empty hands (2026-11-13)
+ d.activeSlot=(d.activeSlot==0 or d.activeSlot==2 or d.activeSlot==3 or d.activeSlot==4) and d.activeSlot or 1;d.showRanges=d.showRanges~=false;d.slowMode=d.slowMode==true
  return d
 end
 function R.InRadius(origin,target,range)

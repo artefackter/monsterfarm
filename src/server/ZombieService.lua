@@ -80,7 +80,9 @@ function Z.Hold(p,d,id)
  if Z.Holding[p] then Z.Drop(p) end
  if z.zone~="Crypt" then z.zone="Crypt";z.slot=Z.Slot(d,"Crypt") or 0;z.pos=nil;Z.Remove(z.id) end
  local model=heldVisual(p,z);if not model then return false end
- Z.Holding[p]={id=z.id,model=model};p:SetAttribute("HoldingZombie",z.id);return true
+ Z.Holding[p]={id=z.id,model=model};p:SetAttribute("HoldingZombie",z.id)
+ require(script.Parent.ActionService).Empty(p) -- a monster in your arms, nothing else in your hands
+ return true
 end
 function Z.Place(p,d,x,zz)
  local h=Z.Holding[p];local plot=P.Assigned[p];if not h or not plot or not P.Inside(p,plot) then return false end

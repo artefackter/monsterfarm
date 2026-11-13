@@ -462,7 +462,8 @@ function A.BuildEntrance(world, at, C, P)
 	end
 
 	-- Towers: block rows like the island wall, battlements, a purple spire with a pennant
-	local T, tall = 16, 38
+	-- Taller since 2026-11-13 (owner: "make the gate to the ruins higher"): towers 56 high, the bridge at 40.
+	local T, tall = 16, 56
 	for _, side in { -1, 1 } do
 		local x = side * (half + T / 2 - 1)
 		local core = P.Solid(m, "TowerCore", Vector3.new(T - 0.6, tall, T - 0.6), at(2, x, tall / 2))
@@ -487,9 +488,9 @@ function A.BuildEntrance(world, at, C, P)
 				piece("TowerMerlon", Vector3.new(3.4, 3, 1.6), at(2, x, tall + 2.7) * CFrame.Angles(0, face * math.pi / 2, 0) * CFrame.new(k * 4.6, 0, -T / 2 - 0.2), merlonColor)
 			end
 			-- arrow slits and a glowing window on every face
-			piece("TowerSlit", Vector3.new(1, 4.5, 0.4), at(2, x, 14) * CFrame.Angles(0, face * math.pi / 2, 0) * CFrame.new(0, 0, -T / 2 - 0.1), iron)
-			piece("TowerWindow", Vector3.new(3.2, 4.4, 0.3), at(2, x, 27) * CFrame.Angles(0, face * math.pi / 2, 0) * CFrame.new(0, 0, -T / 2 - 0.12), hex("FFD98A"), Enum.Material.Neon)
-			piece("TowerWindowArch", Vector3.new(4.2, 0.8, 0.5), at(2, x, 29.5) * CFrame.Angles(0, face * math.pi / 2, 0) * CFrame.new(0, 0, -T / 2 - 0.15), coping)
+			piece("TowerSlit", Vector3.new(1, 4.5, 0.4), at(2, x, 20) * CFrame.Angles(0, face * math.pi / 2, 0) * CFrame.new(0, 0, -T / 2 - 0.1), iron)
+			piece("TowerWindow", Vector3.new(3.2, 4.4, 0.3), at(2, x, 40) * CFrame.Angles(0, face * math.pi / 2, 0) * CFrame.new(0, 0, -T / 2 - 0.12), hex("FFD98A"), Enum.Material.Neon)
+			piece("TowerWindowArch", Vector3.new(4.2, 0.8, 0.5), at(2, x, 42.5) * CFrame.Angles(0, face * math.pi / 2, 0) * CFrame.new(0, 0, -T / 2 - 0.15), coping)
 		end
 		-- spire: stacked discs narrowing upwards
 		for k, r in { 15, 12.4, 9.8, 7.2, 4.8, 2.6 } do
@@ -506,23 +507,46 @@ function A.BuildEntrance(world, at, C, P)
 			piece("TorchCup", Vector3.new(1.4, 1.2, 1.4), face * CFrame.new(0, 0.7, 0), iron)
 			flame(face * CFrame.new(0, 1.8, 0), 1.6, 20)
 		end
-		-- the gate leaf stands open against the tower, along the road edge
+		-- The shutter (owner, 2026-11-13: "on a Blood Moon, gate shutters that close the way to the ruins"): a great
+		-- leaf of planks and iron, hinged at the tower. It is built shut, across its half of the road, then swung open
+		-- against the road's edge; FarmGateVisuals swings it shut on the client while workspace.RoadClosed is set.
+		-- Only a picture: the Blood Moon barrier (RoadService.SetClosed) is what stops people.
 		local hinge = 2 + T / 2
-		local leafLen, leafTall = 14, 17
-		local leafX = side * (half - 1.8)
-		for _, y in { 1.2, leafTall / 2, leafTall - 0.6 } do
-			piece("GateRail", Vector3.new(0.6, 0.7, leafLen), at(hinge + leafLen / 2, leafX, y), iron, Enum.Material.Metal)
+		local leafLen, leafTall = half - 1.2, 26
+		local shutter = Instance.new("Model")
+		shutter.Name = "RuinsShutter"
+		shutter:SetAttribute("Side", side)
+		local pivot = piece("Hinge", Vector3.one * 0.3, at(hinge, side * (half - 1.2), 0), iron)
+		pivot.Transparency = 1
+		pivot.Parent = shutter
+		shutter.PrimaryPart = pivot
+		local function onLeaf(t, y, z) return pivot.CFrame * CFrame.new(-side * t, y, z or 0) end -- t runs from the hinge inward
+		local planks = math.ceil(leafLen / 4.6)
+		for k = 0, planks - 1 do
+			local w = leafLen / planks
+			piece("ShutterPlank", Vector3.new(w - 0.12, leafTall - (k % 2) * 0.8, 1.2), onLeaf((k + 0.5) * w, 0.4 + (leafTall - (k % 2) * 0.8) / 2), k % 2 == 0 and wood or hex("5A3478"), Enum.Material.WoodPlanks).Parent = shutter
 		end
-		for k = 0, 7 do
-			local s = hinge + 0.6 + k * (leafLen - 1.2) / 7
-			piece("GateBar", Vector3.new(0.35, leafTall, 0.35), at(s, leafX, leafTall / 2), iron, Enum.Material.Metal)
-			piece("GateSpike", Vector3.new(0.8, 0.8, 0.8), at(s, leafX, leafTall + 0.5), gold, Enum.Material.Metal, Enum.PartType.Ball)
+		for _, y in { 3, leafTall / 2, leafTall - 2.5 } do
+			piece("ShutterBand", Vector3.new(leafLen - 0.4, 1.1, 1.5), onLeaf(leafLen / 2, y), iron, Enum.Material.Metal).Parent = shutter
+			for k = 1, 7 do
+				piece("ShutterRivet", Vector3.new(0.6, 0.6, 1.7), onLeaf(k * leafLen / 8, y), gold, Enum.Material.Metal).Parent = shutter
+			end
 		end
+		-- a diagonal brace and a top row of spikes
+		local brace = piece("ShutterBrace", Vector3.new(1.4, math.sqrt(leafLen ^ 2 + (leafTall - 7) ^ 2), 1.4), onLeaf(leafLen / 2, leafTall / 2, -0.5), iron, Enum.Material.Metal)
+		brace.CFrame = brace.CFrame * CFrame.Angles(0, 0, side * math.atan2(leafLen, leafTall - 7))
+		brace.Parent = shutter
+		for k = 0, planks - 1 do
+			piece("ShutterSpike", Vector3.new(1, 1, 1), onLeaf((k + 0.5) * leafLen / planks, leafTall + 0.7) * CFrame.Angles(0, 0, math.pi / 4), iron, Enum.Material.Metal).Parent = shutter
+		end
+		piece("ShutterSkull", Vector3.new(3, 3, 1.8), onLeaf(leafLen - 3, leafTall / 2 + 4, -0.8), hex("F3EBDD"), Enum.Material.SmoothPlastic, Enum.PartType.Ball).Parent = shutter
+		shutter.Parent = m
+		shutter:PivotTo(pivot.CFrame * CFrame.Angles(0, -side * math.pi / 2, 0)) -- open: along the road's edge
 	end
 
 	-- The bridge between the towers: a stone span with battlements on both edges and a dark arch band underneath
 	local span = C.Width - 1
-	local y0, depth = 26, 8
+	local y0, depth = 40, 8
 	local seg = span / 20
 	for k = 0, 19 do
 		local x = -span / 2 + seg * (k + 0.5)
@@ -540,7 +564,7 @@ function A.BuildEntrance(world, at, C, P)
 	end
 
 	-- The sign: a framed purple board on two chains, the name on both faces (home side and ruins side)
-	local signY, signW, signH = 18.5, 64, 9
+	local signY, signW, signH = 30, 64, 9
 	piece("SignBoard", Vector3.new(signW, signH, 1.2), at(2, 0, signY), wood, Enum.Material.WoodPlanks)
 	for _, e in { -1, 1 } do
 		piece("SignFrame", Vector3.new(signW + 1.6, 0.9, 1.6), at(2, 0, signY + e * (signH / 2 + 0.2)), gold, Enum.Material.Metal)

@@ -183,3 +183,19 @@ return {}
 -- bush until you leave its reach (RoadService pickTarget). The cemetery is a little bigger (9.5..38 x 0..38),
 -- keeps its W_Graveyard patch; the stepping stones no longer cross it, and it is dressed round the edges (torches,
 -- a dead tree, hanging lanterns, jack-o'-lanterns, hands, skulls, toadstools, a rune stone, leaves, mist, wisps).
+-- Revision 2026-11-13 (owner's list of 15):
+-- Farm 96x96 (FarmHalf 48, PlotRadius 145); the house moved 6 studs into its corner; the new outer ring holds raised
+-- beds (PlacementConfig.Beds, blocked for placement), pumpkin patches, a scarecrow, a well, a cart, crates, fence
+-- lamps, a night mist and fireflies. Moodier look: olive lawn, hazy desaturated day, deep violet night, dark stone
+-- island wall (11 courses, 42-stud collider), muted plaza colours, dead trees among the island scatter.
+-- FenceService: a two-leaf gate on every farm. Night raiders walk to it and hammer it (FenceConfig.Damage) until it
+-- breaks, then go in; they give up after Patience s. Fence board by the gate: 5 levels (gate HP 150..3500, spikes
+-- from 4). A broken gate mends after Repair s, at dusk/dawn, or by its owner's prompt. Prestige resets the fence.
+-- Online income goes straight to the wallet; only offline earnings wait on the heap (hidden when empty).
+-- Guns are earned, not bought: WeaponConfig.Unlock (kills per ruins location, d.ruinKills). Upgrades gained Reload
+-- (-5%/level) and Range (+4%/level); WeaponDamage/WeaponRange/WeaponReloadTime attributes feed the client.
+-- Hotbar: 6 slots: 5 = the monster in your arms (portrait; empty hands lists the crypt), 6 = empty hands (slot 0).
+-- Taking a monster empties your hands. Screen buttons for the daily gift (dot when ready) and quests (claimable
+-- anywhere); the language switch sits by Settings. Merge: an empty cell opens a picker of portrait cards.
+-- Ruins gate: towers 56, bridge 40; RuinsShutter leaves swing shut while the Blood Moon has the road closed.
+-- Boss arenas: while a boss stands, monsters of other locations neither chase into its arena nor cross it.

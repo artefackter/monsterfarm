@@ -26,12 +26,12 @@ function Pr.Do(p)
  d.graves={{type="Wooden",slot=1,plantedAt=os.time()-GC.Wooden.Seconds,starter=true}}
  d.graveInventory={};d.vouchers={};d.selectedGrave=nil;p:SetAttribute("SelectedGrave",nil)
  d.coins=SC.StartingCoins;d.farmBank=0;d.offlinePending=0
- d.houseLevel=1;d.houseEnds=nil;d.treadmill=1;d.upgrades={}
+ d.houseLevel=1;d.houseEnds=nil;d.treadmill=1;d.upgrades={};d.fenceLevel=1
  d.prestige=PR.Level(d)+1
  -- redraw everything that showed the old farm
  G.Render(p,d);Z.Render(p,d);require(script.Parent.SlotService).Render(p,d)
  require(script.Parent.BankService).Add(p,d,0)
- require(script.Parent.HouseService).Refresh(p,d)
+ require(script.Parent.HouseService).Refresh(p,d);require(script.Parent.FenceService).Join(p,d)
  D.Save(p)
  local n=d.prestige;local mult=PR.Mult(d)
  notice(p,"prestigeDone",{n=n,m=mult})

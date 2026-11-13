@@ -263,8 +263,9 @@ function Road.SetClosed(on)
  if Road.Barrier then Road.Barrier:Destroy();Road.Barrier=nil end
  if not on then return end
  local m=Instance.new("Model");m.Name="BloodBarrier"
- local wall=P.Solid(m,"BloodWall",Vector3.new(C.Width+6,34,1.5),at(7,0,17));wall.CanQuery=false
- wall.Transparency,wall.Color,wall.Material,wall.CastShadow=.3,Color3.fromHex("C0102E"),Enum.Material.ForceField,false
+ local wall=P.Solid(m,"BloodWall",Vector3.new(C.Width+6,44,1.5),at(7,0,22));wall.CanQuery=false
+ -- a faint red shimmer: the shutters closing behind it (RoadArt, FarmGateVisuals) are what you see
+ wall.Transparency,wall.Color,wall.Material,wall.CastShadow=.72,Color3.fromHex("C0102E"),Enum.Material.ForceField,false
  for _,face in {math.pi,0} do
   local label=P.SignText(m,at(7,0,10)*CFrame.Angles(0,face,0)*CFrame.new(0,0,-1),Vector3.new(60,6,.1),"roadClosedSign",Color3.fromHex("FFE7A3"))
   label.Parent.PixelsPerStud=15;local st=Instance.new("UIStroke");st.Color=Color3.fromHex("4A0010");st.Thickness=3;st.Parent=label
@@ -326,11 +327,26 @@ local function spawnAgent(cfg,s,x,biome,variant,kind)
  end
  return a
 end
+-- While a boss stands, its arena is its own fight (owner, 2026-11-13: "during a boss fight the next location's monsters
+-- must not barge in"): a monster of another location neither chases a runner into it nor crosses it; it waits on its
+-- own side. The boss's own location (and what the boss summons) may still go in.
+local function foreignArena(a,s)
+ if a.boss or (a.cfg and a.cfg.Minion) then return nil end
+ local i=Progression.ArenaAt(s,6)
+ if i and i~=a.biome and Road.BossAlive(i) then return i end
+ return nil
+end
+local function keepOut(a,s)
+ local i=foreignArena(a,s);if not i then return s end
+ local d=Progression.Districts[i]
+ return (a.biome or 1)>i and math.max(s,d.ArenaTo+10) or math.min(s,d.ArenaFrom-10)
+end
 -- Whom to chase: the nearest runner in reach (carriers first). A boss only looks around its own arena.
 local function pickTarget(a,runners,root)
  local best,bestDist
  for _,r in ipairs(runners) do
   local dist=(flat(r.pos,root.Y)-root).Magnitude;local ok
+  if not a.boss and foreignArena(a,(toRoad(r.pos))) then continue end
   -- In a bush you are out of sight, but only for monsters that have not noticed you yet: one already chasing you
   -- keeps after you into the bush (owner, 2026-11-12). It lets go only when you get out of its reach.
   if r.hidden and a.noticeTarget~=r.p then ok=false
@@ -372,6 +388,7 @@ local function startAttack(a,atk,best,root,now)
   local dir=target-root;dir=dir.Magnitude>.1 and dir.Unit or a.model.PrimaryPart.CFrame.LookVector
   local s,x=toRoad(root+dir*atk.Distance)
   if a.boss then s,x=clampToArena(a.arena,s,x,leash(a)) end
+  if not a.boss then s=keepOut(a,s) end
   s,x=onRoad(s,x);attack.goal=flat(at(s,x,0).Position,root.Y);attack.pos=attack.goal
  else attack.pos=root end -- Self, Scream, Summon
  a.attack=attack;M.State(a,"Windup",now)
@@ -458,6 +475,7 @@ local function tickAgent(a,cfg,dt,now,runners)
  local s,x
  if best then s,x=toRoad(best.pos) else s,x=cfg.S,cfg.X end
  if a.boss then s,x=clampToArena(a.arena,s,x,leash(a)) end
+ if not a.boss then s=keepOut(a,s) end
  s,x=onRoad(s,x)
  local goal=at(s,x,MC.RootHeight).Position
  if not best and (flat(goal,root.Y)-root).Magnitude<2 then

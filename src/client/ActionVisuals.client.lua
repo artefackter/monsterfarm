@@ -55,7 +55,7 @@ local function range()
  local rp=RaycastParams.new();rp.FilterType=Enum.RaycastFilterType.Include;rp.FilterDescendantsInstances=include
  local function ground(point) local hit=workspace:Raycast(point+Vector3.new(0,7,0),Vector3.new(0,-20,0),rp);return hit and hit.Position+Vector3.new(0,.065,0) end
  local gun=p:GetAttribute('ActiveSlot')==2;local cfg=gun and Guns[p:GetAttribute('EquippedWeapon') or 'Deagle'] or Shovels[p:GetAttribute('EquippedShovel') or 'Rusty']
- local radius=cfg.Range;local half=gun and math.pi or math.rad(Shovels.HalfAngle);local menu=p.PlayerGui:FindFirstChild('DigUI');menu=menu and menu:FindFirstChild('Menu');local alpha=menu and menu.Visible and .88 or .4
+ local radius=gun and (p:GetAttribute('WeaponRange') or cfg.Range) or cfg.Range;local half=gun and math.pi or math.rad(Shovels.HalfAngle);local menu=p.PlayerGui:FindFirstChild('DigUI');menu=menu and menu:FindFirstChild('Menu');local alpha=menu and menu.Visible and .88 or .4
  local center=ground(root.Position);local previous
  for i=0,48 do local angle=-half+2*half*i/48;local at=ground((root.CFrame*CFrame.new(math.sin(angle)*radius,0,-math.cos(angle)*radius)).Position)
   if previous and at then line(lines[i],previous,at,alpha) end

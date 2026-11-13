@@ -46,8 +46,10 @@ function A.Knockout(p,duration,direction,distance)
  end)
  return true
 end
+-- Slot 0 is empty hands (owner, 2026-11-13). Picking any slot puts a monster you were carrying back in the crypt.
 function A.Select(p,slot)
- if not A.CanAct(p) or (slot~=1 and slot~=2 and slot~=3 and slot~=4) then return false end
+ if not A.CanAct(p) or (slot~=0 and slot~=1 and slot~=2 and slot~=3 and slot~=4) then return false end
+ local Z=require(script.Parent.ZombieService);if Z.Holding[p] then Z.Drop(p) end
  local d=D.Profiles[p];if d.activeSlot==slot then return true end
  require(script.Parent.RoadService).CancelPickup(p);local s=A.State(p);s.switch=os.clock()+C.Switch
  -- Slot 3 holds graves, slot 4 traps: each has its own key and button.
@@ -55,6 +57,14 @@ function A.Select(p,slot)
  elseif d.selectedItem=='trap' then d.selectedItem=nil;p:SetAttribute('SelectedItem',nil) end
  d.activeSlot=slot;p:SetAttribute('WeaponDrawUntil',workspace:GetServerTimeNow()+C.Switch);p:SetAttribute('CombatAimUntil',0)
  local W=require(script.Parent.WeaponService);W.Session(p).holstered=slot~=2;W.Push(p);A.Push(p);return true
+end
+-- Taking a monster in your arms empties your hands (ZombieService.Hold): the gun goes on your back.
+function A.Empty(p)
+ local d=D.Profiles[p];if not d or d.activeSlot==0 then return end
+ require(script.Parent.RoadService).CancelPickup(p)
+ if d.selectedItem=='trap' then d.selectedItem=nil;p:SetAttribute('SelectedItem',nil) end
+ d.activeSlot=0;p:SetAttribute('CombatAimUntil',0)
+ local W=require(script.Parent.WeaponService);W.Session(p).holstered=true;W.Push(p);A.Push(p)
 end
 function A.ChooseShovel(p,id,buy)
  local d=D.Profiles[p];local cfg=C[id];if not A.CanAct(p) or not cfg or not table.find(C.Order,id) or not require(script.Parent.InterfaceService).NearZone(p,"traps") then return false end

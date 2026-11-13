@@ -44,7 +44,7 @@ local function add(m)
  end
  local function refresh()
   local amount=m:GetAttribute("Amount") or 0;local radius=m:GetAttribute("Radius") or 1
-  t.Text=money(amount)
+  t.Text=money(amount);b.Enabled=amount>=1 -- online income goes to the wallet: only offline earnings wait here
   b.StudsOffsetWorldSpace=Vector3.new(0,radius+1.4,0)
   if pile.home then pile.home.StudsOffsetWorldSpace=Vector3.new(0,radius*.45,0) end
   if amount>pile.amount then pop(pile,amount-pile.amount) end

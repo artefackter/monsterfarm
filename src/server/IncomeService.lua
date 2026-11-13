@@ -11,7 +11,8 @@ function I.Offline(d)
  d.farmBank=bank+earned+carried;d.offlinePending=0;d.lastSeenAt=os.time()
  return earned+carried
 end
--- Income goes to the heap on the farm (BankService), not to the wallet: the owner collects it there.
+-- While the owner plays, income goes straight into the wallet (owner, 2026-11-13: "money should drip onto the
+-- account, not pile up by the house"). Only what the farm made while they were away waits on the heap (BankService).
 -- The newcomer's boost (NewbieConfig): the multiplier now and the played seconds until it steps down or ends.
 function I.Boost(d)
  local played=d.playTime or 0
@@ -20,5 +21,5 @@ function I.Boost(d)
  end
  return 1,0
 end
-function I.Tick(d) local n=Z.Income(d)*I.Boost(d);d.farmBank=(d.farmBank or 0)+n;d.playTime+=1;d.lastSeenAt=os.time();return n end
+function I.Tick(d) local n=Z.Income(d)*I.Boost(d);d.coins+=n;d.playTime+=1;d.lastSeenAt=os.time();return n end
 return I

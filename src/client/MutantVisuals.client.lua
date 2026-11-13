@@ -182,6 +182,11 @@ RS:WaitForChild("Remotes"):WaitForChild("MutantFX").OnClientEvent:Connect(functi
  elseif kind=="BossCue" then
   if extra=="Dash" then Sfx.play("BossCharge",.5,Sfx.at(pos,30,180)) end
  elseif kind=="Bite" then Sfx.play("ImpBite",.5,Sfx.at(pos,20,C.AnimateDistance))
+ -- the farm gate (FenceService): splinters on every blow, a burst of smoke and a thud when it gives way
+ elseif kind=="GateHit" then splash(pos,Color3.fromHex("8A6A4E"),1.6);Sfx.play("ImpBite",.4,Sfx.at(pos,20,C.AnimateDistance))
+ elseif kind=="GateBreak" then
+  shockwave(pos,Color3.fromHex("8A6A4E"),7,.45);splash(pos,Color3.fromHex("6B4E3A"),4);smoke(pos);shake(pos,10,.5)
+  Sfx.play("BossCharge",.5,Sfx.at(pos,30,160))
  elseif kind=="Shovel" then
   local q=dot(pos,Color3.fromHex("C9D6EA"),.65,.25);q.Shape=Enum.PartType.Block;q.Size=Vector3.new(.8,.2,1.8);Tween:Create(q,TweenInfo.new(.25),{Position=value,Orientation=Vector3.new(360,0,90)}):Play()
  end

@@ -183,7 +183,7 @@ topGui.ResetOnSpawn = false
 topGui.ScreenInsets = Enum.ScreenInsets.TopbarSafeInsets
 topGui.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
 topGui.Parent = p:WaitForChild("PlayerGui")
-local TOP_HEIGHT, TOP_ICONS, HUD_WIDTH = 58, 3, 134
+local TOP_HEIGHT, TOP_ICONS, HUD_WIDTH = 58, 4, 134
 local topScaled = {}
 local function topScale(frame)
 	local s = Instance.new("UIScale")
@@ -288,7 +288,7 @@ local tutorialText = ""
 local nav = scaledBy(Instance.new("Frame"))
 nav.Name = "Nav"
 nav.AnchorPoint = Vector2.new(0, 1) -- sits just above the middle of the screen; the slow-mode switch is just below
-nav.Size = UDim2.fromOffset(84, 84)
+nav.Size = UDim2.fromOffset(176, 176) -- two columns: the Monsterdex and the daily gift, then the quests (2026-11-13)
 nav.Position = UDim2.new(0, 10, 0.5, -8)
 nav.BackgroundTransparency = 1
 nav.Parent = gui
@@ -382,6 +382,7 @@ local function refreshModal()
  Notifications.Guide("Tutorial", tutorialText, "guide", tutorialWanted and not opened, 0)
 end
 panel:GetPropertyChangedSignal('Visible'):Connect(refreshModal)
+panel:GetPropertyChangedSignal('Visible'):Connect(function() if not panel.Visible then panel:SetAttribute('MergePicker',nil) end end)
 p.PlayerGui:GetAttributeChangedSignal('UpgradeModalOpen'):Connect(refreshModal)
 p.PlayerGui.ChildAdded:Connect(function(child) if child.Name=='TouchGui' then refreshModal() end end)
 gui.ChildAdded:Connect(function() refreshModal() end)
@@ -665,7 +666,11 @@ local function mergeCard(parent, x, width, z, color, tap)
 	c.Position = UDim2.fromOffset(x, 8)
 	c.Parent = parent
 	if not z then
-		label(c, "?", UDim2.fromScale(1, 1), nil, { title = true, textSize = 56 })
+		label(c, tap and "+" or "?", UDim2.fromScale(1, 1), nil, { title = true, textSize = 56 })
+		if tap then -- an empty cell opens the picker
+			local b = Instance.new("TextButton");b.Size = UDim2.fromScale(1, 1);b.BackgroundTransparency = 1;b.Text = "";b.AutoLocalize = false;b.ZIndex = 3;b.Parent = c
+			b.Activated:Connect(function() Sfx.play("Click");tap() end)
+		end
 		return c
 	end
 	zombieStage(c, z, UDim2.fromOffset(width-12, 170), UDim2.fromOffset(6, 6))
@@ -948,11 +953,15 @@ local function renderMerge()
 	local top = Style.ModalRow(row(222, Pal.PanelDark))
 	for i = 1, 3 do
 		local z = sel[i]
+		-- a full cell gives its monster back; an empty one opens the picture picker (owner, 2026-11-13)
 		mergeCard(top, 6 + (i - 1) * 174, 142, z, z and Pal.Panel or Pal.PanelDark, z and function()
 			Sfx.play("Click")
 			table.remove(mergeSel, i)
 			render()
-		end or nil)
+		end or function()
+			panel:SetAttribute("MergePicker", true)
+			render()
+		end)
 	end
 	for _,x in ipairs({148,322}) do label(top,"+",UDim2.fromOffset(32,206),UDim2.fromOffset(x,8),{title=true,textSize=40}) end
  Style.ModalArrow(top,UDim2.fromOffset(40,40),UDim2.fromOffset(496,91))
@@ -978,51 +987,67 @@ local function renderMerge()
  local controls=Style.ModalRow(row(54))
  button(controls,t("mergeClear"),function() mergeSel={};render() end,UDim2.new(.5,-8,0,44),UDim2.fromOffset(4,4),Pal.Sky2)
  button(controls,"← "..t("crypt"),function() menu="crypt";scroll.CanvasPosition=Vector2.zero;render() end,UDim2.new(.5,-8,0,44),UDim2.new(.5,4,0,4),Pal.Mint)
- if sel[1] then
-		for _, z in ipairs(state.zombies) do
-			if Merge.Free(z) and Merge.Match(sel[1], z) and not table.find(mergeSel, z.id) then
-				local f = row(72)
-				label(f, ICON[z.type] or "🧟", UDim2.fromOffset(60, 72), UDim2.fromOffset(6, 0), { textSize = 40 })
-				label(f, t(z.type), UDim2.fromOffset(190, 72), UDim2.fromOffset(72, 0), { title = true, textSize = 22, align = LEFT })
-				if z.mutation ~= "None" then
-					badge(f, t(z.mutation), mutationColor(z.mutation), UDim2.fromOffset(268, 22), 104)
-				end
-				label(f, (ICON[z.zone] or "") .. " " .. t(z.zone), UDim2.fromOffset(170, 72), UDim2.fromOffset(380, 0), { textSize = 18, align = LEFT })
-				if #mergeSel < 3 then
-					button(f, t("mergePick"), function()
-						table.insert(mergeSel, z.id)
-						render()
-					end, UDim2.fromOffset(150, 56), UDim2.new(1, -160, 0, 8), Pal.Mint)
-				end
-			end
-		end
-	else
-		local groups = Merge.Groups(state.zombies)
-		if #groups == 0 then
-			label(row(70), t("mergeNone"), UDim2.fromScale(1, 1), nil, { title = true, textSize = 22 })
-		end
-		for _, g in ipairs(groups) do
-			local n = #g.members
-			local f = row(76, n >= 3 and Pal.Accent or nil)
-			label(f, ICON[g.type] or "🧟", UDim2.fromOffset(60, 76), UDim2.fromOffset(6, 0), { textSize = 40 })
-			label(f, t(g.type), UDim2.fromOffset(200, 40), UDim2.fromOffset(72, 6), { title = true, textSize = 22, align = LEFT })
-			starRow(f, g.stars, 22, UDim2.fromOffset(72, 46))
-			badge(f, t(ZC.Tiers[g.tier]), Pal[ZC.Tiers[g.tier]], UDim2.fromOffset(280, 25), 120)
-			label(f, "× " .. n, UDim2.fromOffset(90, 76), UDim2.fromOffset(410, 0), { title = true, textSize = 28 })
-			if n >= 3 then
-				button(f, t("mergePick"), function()
-					mergeSel = {}
-					for _, z in ipairs(Merge.Pick(g.members)) do
-						table.insert(mergeSel, z.id)
-					end
-					render()
-				end, UDim2.fromOffset(190, 60), UDim2.new(1, -200, 0, 8), Pal.Mint)
-			else
-				label(f, t("mergeNeed", { n = 3 - n }), UDim2.fromOffset(190, 76), UDim2.new(1, -200, 0, 0), { textSize = 20 })
-			end
-		end
+	-- The choices are picture cards (owner, 2026-11-13: "show a choice of monster icons, not a list"): with a monster
+	-- chosen, every one that matches it; before that, one card per kind that can still gain a star, and a tap on a
+	-- kind with three or more fills all three cells. The same cards fill the picker that an empty cell opens.
+	local function pick(z)
+		table.insert(mergeSel, z.id)
+		panel:SetAttribute("MergePicker", nil)
+		render()
 	end
-
+	local function fill(grid)
+		local n = 0
+		local function mutationMark(z)
+			return z.mutation ~= "None" and (z.mutation == "Golden" and "✨" or z.mutation == "Lunar" and "🌙" or "🌈") or nil
+		end
+		if sel[1] then
+			for _, z in ipairs(Merge.SortByIncome(state.zombies)) do
+				if Merge.Free(z) and Merge.Match(sel[1], z) and not table.find(mergeSel, z.id) then
+					n += 1
+					local tierName = ZC.Tiers[z.tier]
+					tile(grid, { order = n, name = "MergePick_" .. z.id, title = t(z.type), color = Pal[tierName], rarity = tierName,
+						art = function(f) zombieStage(f, z, UDim2.fromScale(1, 1));starRow(f, Merge.Stars(z), 16, UDim2.new(0, 1, 1, -17)) end,
+						corner = mutationMark(z), badge = t(z.zone), badgeWidth = 84,
+						action = #mergeSel < 3 and { text = t("mergePick"), callback = function() pick(z) end } or { text = "✓", enabled = false, callback = function() end } })
+				end
+			end
+		else
+			for _, g in ipairs(Merge.Groups(state.zombies)) do
+				n += 1
+				local count, tierName = #g.members, ZC.Tiers[g.tier]
+				local look = { type = g.type, tier = g.tier, stars = g.stars, mutation = "None" }
+				tile(grid, { order = n, name = "MergeKind_" .. g.type .. g.tier .. g.stars, title = t(g.type), color = Pal[tierName], rarity = tierName,
+					selected = count >= 3,
+					art = function(f) zombieStage(f, look, UDim2.fromScale(1, 1));starRow(f, g.stars, 16, UDim2.new(0, 1, 1, -17)) end,
+					badge = "× " .. count, badgeWidth = 64,
+					action = count >= 3 and { text = t("mergePick"), callback = function()
+						mergeSel = {}
+						for _, z in ipairs(Merge.Pick(g.members)) do table.insert(mergeSel, z.id) end
+						panel:SetAttribute("MergePicker", nil)
+						render()
+					end } or { text = t("mergeNeed", { n = 3 - count }), enabled = false, reason = t("mergeNeed", { n = 3 - count }), callback = function() end } })
+			end
+		end
+		return n
+	end
+	if fill(tileGrid(150, 236)) == 0 then
+		label(row(70), t("mergeNone"), UDim2.fromScale(1, 1), nil, { title = true, textSize = 22 })
+	end
+	-- The picker over the window, opened by an empty cell
+	if panel:GetAttribute("MergePicker") then
+		local o = Style.ModalSurface(Instance.new("Frame"), Style.ModalColors.Blue, 18)
+		o.Name = "MergePicker";o.Size = UDim2.new(1, -36, 1, -110);o.Position = UDim2.fromOffset(18, 94);o.ZIndex = 20;o.Active = true;o.Parent = panel
+		label(o, t("mergeChoose"), UDim2.new(1, -90, 0, 42), UDim2.fromOffset(16, 8), { title = true, textSize = 28, color = Pal.Text, stroke = true, align = LEFT })
+		local x = button(o, "×", function() panel:SetAttribute("MergePicker", nil);render() end, UDim2.fromOffset(46, 46), UDim2.new(1, -56, 0, 6), Pal.Red)
+		Style.ModalClose(x)
+		local sf = Instance.new("ScrollingFrame")
+		sf.BackgroundTransparency = 1;sf.BorderSizePixel = 0;sf.Size = UDim2.new(1, -16, 1, -64);sf.Position = UDim2.fromOffset(8, 58)
+		sf.AutomaticCanvasSize = Enum.AutomaticSize.Y;sf.CanvasSize = UDim2.new();sf.ScrollBarThickness = 8;sf.ScrollBarImageColor3 = Pal.Violet;sf.Parent = o
+		local holder = Instance.new("Frame");holder.BackgroundTransparency = 1;holder.Size = UDim2.new(1, -10, 0, 0);holder.AutomaticSize = Enum.AutomaticSize.Y;holder.Parent = sf
+		local g = Instance.new("UIGridLayout");g.CellSize = UDim2.fromOffset(150, 236);g.CellPadding = UDim2.fromOffset(10, 10);g.SortOrder = Enum.SortOrder.LayoutOrder
+		g.HorizontalAlignment = Enum.HorizontalAlignment.Center;g.Parent = holder
+		if fill(holder) == 0 then label(o, t("mergeNone"), UDim2.new(1, -24, 0, 60), UDim2.fromOffset(12, 120), { title = true, textSize = 24, color = Pal.Text, stroke = true }) end
+	end
 end
 
 -- Monsterdex v2 (owner, 2026-11-12: "refactor it visually, use the 2D icons"). Picture cards: every monster is its
@@ -1132,6 +1157,8 @@ render = function()
 			c:Destroy()
 		end
 	end
+ local oldPicker=panel:FindFirstChild("MergePicker");if oldPicker then oldPicker:Destroy() end
+ if menu~="merge" then panel:SetAttribute("MergePicker",nil) end
  local isShop=menu=="weapons" or menu=="pumpkins" or menu=="traps"
  -- Each stall sells one thing now, so the window is all tiles: no category column.
  local single=menu=="weapons" or menu=="pumpkins" or menu=="weaponSkins"
@@ -1226,10 +1253,16 @@ elseif menu=="pets" then
  elseif menu=="weapons" then
 
  local grid=tileGrid()
+ -- Guns are earned, not bought (owner, 2026-11-13): each one comes with enough kills in its ruins location.
+ local districts=require(S.Config.WorldConfig).Districts
  for i,id in ipairs(WeaponC.Order) do local cfg=WeaponC[id];local owned=weaponState and weaponState.owned[id];local equipped=weaponState and weaponState.equipped==id
+  local unlock=WeaponC.Unlock[id];local place=unlock and districts[unlock.Location]
+  local have=unlock and weaponState and weaponState.kills and weaponState.kills[unlock.Location] or 0
   tile(grid,{order=i,name="Weapon_"..id,title=t(id),color=Style.ModalColors.Blue,selected=equipped,art=function(f) Style.ModalArt(f,'weapon',id,nil,nil,weaponState and weaponState.skins and weaponState.skins[id]) end,badge="⚔ "..cfg.Damage*(cfg.Pellets or 1),badgeWidth=70,
+   corner=not owned and place and place.Emoji or nil,
    action=owned and {text=equipped and t("inHand") or t("choose"),color=equipped and Pal.Accent or Pal.Mint,callback=function() if not equipped then rem.WeaponAction:FireServer("equip",id) end end}
-    or {text="$"..short(cfg.Price),enabled=state.coins>=cfg.Price,reason=t("petNoCoins"),callback=function() rem.WeaponAction:FireServer("buy",id) end}})
+    or unlock and have>=unlock.Kills and {text=t("weaponTake"),color=Pal.Orange,callback=function() rem.WeaponAction:FireServer("buy",id) end}
+    or {text="💀 "..math.min(have,unlock and unlock.Kills or 0).."/"..(unlock and unlock.Kills or 0),enabled=false,reason=place and t("weaponNeedKills",{n=unlock.Kills,place=t(place.Title)}) or "",callback=function() end}})
  end
  local footer=Style.ModalRow(row(48));footer.LayoutOrder=1000
  local upgrade=button(footer,t("weaponUpgrade"),function()
@@ -1325,10 +1358,10 @@ elseif menu=="pets" then
 	elseif menu == "rewards" then
 		-- Offline income is no longer claimed here: it piles up on the farm heap (IncomeService.Offline).
 		local grid = tileGrid(162, 208)
-		local today = state.dailyStreak
+		local today = state.dailyNext or state.dailyStreak
 		for i, prize in ipairs(RC.Daily) do
    if i==5 then grid=tileGrid(162,208) end
-			local claimable = i == today and state.dailyReady ~= false
+			local claimable = i == today and state.dailyReady == true
 			tile(grid, {
 				order = i,
 				name = "Day" .. i,
@@ -1345,7 +1378,7 @@ elseif menu=="pets" then
 				badge = prize.Coins and ("$" .. short(prize.Coins)) or ("×" .. prize.Count),
 				badgeWidth = 80,
 				action = claimable and { text = t("claim"), callback = function() send("daily") end }
-					or { text = i < today and "✓" or t("daily", { n = i }), enabled = false, reason = t("dailyLater"), callback = function() end },
+					or { text = (i < today or i == today and state.dailyReady ~= true) and "✓" or t("daily", { n = i }), enabled = false, reason = t("dailyLater"), callback = function() end },
 			})
 		end
 	end
@@ -1373,7 +1406,18 @@ local BIG, SMALL = UDim2.fromOffset(84,84), UDim2.fromOffset(TOP_HEIGHT,TOP_HEIG
 -- The Monsterdex button is its book icon only, like the buttons on the right (owner, 2026-11-12: no caption).
 local dex=menuIcon(nav,'dex',BIG,1)
 navButtons.invite=iconButton(topRight,'invite',invite,SMALL);navButtons.invite.LayoutOrder=1
-menuIcon(topRight,'settings',SMALL,2);menuIcon(topRight,'top',SMALL,3)
+menuIcon(topRight,'settings',SMALL,2);menuIcon(topRight,'top',SMALL,4)
+-- The language switch sits in the row with the settings (owner, 2026-11-13): a tap flips Russian and English.
+navButtons.language=button(topRight,'',function()
+ local now=state and state.language or (isRussian and 'ru' or 'en')
+ if now=='auto' then now=isRussian and 'ru' or 'en' end
+ send('language',now=='ru' and 'en' or 'ru')
+end,SMALL);navButtons.language.Name='Nav_language';navButtons.language.LayoutOrder=3
+navButtons.language.UITextSizeConstraint.MaxTextSize=24
+local function languageText() navButtons.language.Text=isRussian and 'RU' or 'EN' end
+languageText()
+-- Daily gift and quests on the screen, so nobody has to walk to the chest or the board (owner, 2026-11-13)
+menuIcon(nav,'rewards',BIG,2);menuIcon(nav,'quests',BIG,3)
 menuIcon(rightBox,'pets',BIG,1);menuIcon(rightBox,'crypt',BIG,2)
 navButtons.home=iconButton(rightBox,'house',function() rem.InterfaceAction:FireServer('home') end,BIG);navButtons.home.Name='Nav_home';navButtons.home.LayoutOrder=3
 -- Reference look: saturated fills, a darker thick outline, a soft top-to-bottom shine
@@ -1386,7 +1430,9 @@ paint(dex,Color3.fromRGB(47,205,255),Color3.fromRGB(20,90,170))
 paint(navButtons.pets,Color3.fromRGB(255,150,40),Color3.fromRGB(150,70,10))
 paint(navButtons.crypt,Color3.fromRGB(160,95,255),Color3.fromRGB(70,30,140))
 paint(navButtons.home,Color3.fromRGB(90,220,90),Color3.fromRGB(25,110,40))
-for _,key in {'invite','settings','top'} do local b=navButtons[key];if b then b.BackgroundColor3=Color3.fromRGB(28,30,44);b.BackgroundTransparency=.25;local st=b:FindFirstChildOfClass('UIStroke');if st then st.Color=Color3.fromRGB(70,74,96);st.Thickness=2 end;local g=b:FindFirstChildOfClass('UIGradient');if g then g.Enabled=false end;local c=b:FindFirstChildOfClass('UICorner');if c then c.CornerRadius=UDim.new(1,0) end end end
+paint(navButtons.rewards,Color3.fromRGB(255,110,160),Color3.fromRGB(150,30,80))
+paint(navButtons.quests,Color3.fromRGB(255,200,60),Color3.fromRGB(150,95,10))
+for _,key in {'invite','settings','language','top'} do local b=navButtons[key];if b then b.BackgroundColor3=Color3.fromRGB(28,30,44);b.BackgroundTransparency=.25;local st=b:FindFirstChildOfClass('UIStroke');if st then st.Color=Color3.fromRGB(70,74,96);st.Thickness=2 end;local g=b:FindFirstChildOfClass('UIGradient');if g then g.Enabled=false end;local c=b:FindFirstChildOfClass('UICorner');if c then c.CornerRadius=UDim.new(1,0) end end end
 RunService.Heartbeat:Connect(function() navButtons.home.BackgroundColor3=p:GetAttribute('HomeReason') and Pal.Common or navButtons.home:GetAttribute('Fill') end)
 local menuBridge=Instance.new('BindableEvent');menuBridge.Name='ZoneMenu';menuBridge.Parent=gui
 menuBridge.Event:Connect(function(key,opening)
@@ -1421,10 +1467,13 @@ questDot.TextColor3 = Pal.Text
 questDot.AutoLocalize = false
 questDot.Visible = false
 questDot.UIStroke.Thickness = 2.5
-questDot.Parent = nil
+questDot.Parent = navButtons.quests
 local mergeDot = questDot:Clone()
 mergeDot.Name = "MergeDot"
 mergeDot.Parent = navButtons.crypt
+local dailyDot = questDot:Clone()
+dailyDot.Name = "DailyDot";dailyDot.Text = "!"
+dailyDot.Parent = navButtons.rewards
 
 -- Health stays visible everywhere; the grave indicator follows the carrying state.
 local function refreshRoadHud()
@@ -1458,6 +1507,7 @@ p:GetAttributeChangedSignal("Language"):Connect(function()
 	lang = L.lang()
  coins.Text=COIN_PREFIX..short(coinDisplay.Value)
 	isRussian = string.sub(lang, 1, 2) == "ru"
+	languageText()
 	FONT_TITLE = isRussian and Enum.Font.GothamBlack or Enum.Font.FredokaOne
 	FONT_BODY = isRussian and Enum.Font.BuilderSansExtraBold or Enum.Font.FredokaOne
 	for _, root in ipairs({ gui, topGui }) do
@@ -1534,6 +1584,7 @@ rem.State.OnClientEvent:Connect(function(s)
 	local readyToMerge = Merge.Ready(s.zombies)
 	mergeDot.Text = tostring(readyToMerge)
 	mergeDot.Visible = readyToMerge > 0
+	dailyDot.Visible = s.dailyReady == true
 	local questSig = ""
 	if s.quests then
 		local claimable = QuestRules.Claimable(s.quests)
@@ -1553,7 +1604,7 @@ rem.State.OnClientEvent:Connect(function(s)
 			questTimer.Text = resetText()
 		end
 	end
-	local sig = game.HttpService:JSONEncode({ s.zombies, s.upgrades, s.dailyStreak, s.offline, s.stock, questSig, s.language, s.vouchers, s.house, (s.houseLeft or 0) > 0, s.treadmill,s.equippedShovel,s.shovels,s.showRanges,s.settings,s.dex,s.dexClaims,s.freeGiftClaimed })
+	local sig = game.HttpService:JSONEncode({ s.zombies, s.upgrades, s.dailyStreak, s.dailyReady, s.offline, s.stock, questSig, s.language, s.vouchers, s.house, (s.houseLeft or 0) > 0, s.treadmill,s.equippedShovel,s.shovels,s.showRanges,s.settings,s.dex,s.dexClaims,s.freeGiftClaimed })
 	if sig ~= signature and panel.Visible then
 		signature = sig
 		render()
@@ -1654,7 +1705,7 @@ promptService.PromptTriggered:Connect(function(pr)
 	end
 end)
 promptService.PromptShown:Connect(function(pr)
-	local key=({DigPrompt="dig",StealGrave="stealGrave",PlantGrave="plant",ShooPrompt="shoo",LockPrompt="lock",ExpandPrompt="expand",HouseEnter="houseEnter",HouseExit="houseExit",RoadGrab="roadGrab"})[pr.Name] or (pr.Name=="HouseMenu" and "house_"..tostring(pr:GetAttribute("Menu")))
+	local key=({DigPrompt="dig",StealGrave="stealGrave",PlantGrave="plant",ShooPrompt="shoo",LockPrompt="lock",ExpandPrompt="expand",HouseEnter="houseEnter",HouseExit="houseExit",RoadGrab="roadGrab",RepairGate="repairGate"})[pr.Name] or (pr.Name=="HouseMenu" and "house_"..tostring(pr:GetAttribute("Menu")))
  if not key then return end
  pr.AutoLocalize=false
  pr.ActionText=t(key)
@@ -1672,7 +1723,7 @@ end)
 -- Prompts are tracked as they appear: scanning the now much richer world twice a second would be wasteful.
 local prompts = {}
 local function trackPrompt(d)
-	if d:IsA("ProximityPrompt") and (d.Name == "StealGrave" or d.Name=="DigPrompt" or d.Name=="PlantGrave" or d.Name == "ShooPrompt" or d.Name == "LockPrompt" or d.Name == "ExpandPrompt" or d.Name == "HouseEnter" or d.Name == "RoadGrab") then
+	if d:IsA("ProximityPrompt") and (d.Name == "StealGrave" or d.Name=="RepairGate" or d.Name=="DigPrompt" or d.Name=="PlantGrave" or d.Name == "ShooPrompt" or d.Name == "LockPrompt" or d.Name == "ExpandPrompt" or d.Name == "HouseEnter" or d.Name == "RoadGrab") then
 		prompts[d] = true
 	end
 end
@@ -1692,6 +1743,7 @@ task.spawn(function()
 					pr.Enabled = owner ~= p.UserId and state ~= nil and state.night and not m:GetAttribute("Starter") and not p:GetAttribute("CarryingGrave")
 				elseif pr.Name=="DigPrompt" then pr.Enabled=pr.Parent.Parent:GetAttribute("Owner")==p.UserId
                 elseif pr.Name=="PlantGrave" then pr.Enabled=game.UserInputService.GamepadEnabled and owner==p.UserId and p:GetAttribute("ActiveSlot")==3 and p:GetAttribute("SelectedGrave")~=nil
+                elseif pr.Name=="RepairGate" then pr.Enabled=owner==p.UserId and pr:GetAttribute("Needed")==true
                 elseif pr.Name == "RoadGrab" then
 					pr.Enabled = not p:GetAttribute("CarryingGrave") and not p:GetAttribute("CarryingZombie") and workspace:GetServerTimeNow()>=(p:GetAttribute("RoadStunnedUntil") or 0)
 				else

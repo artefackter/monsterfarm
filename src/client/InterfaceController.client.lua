@@ -48,6 +48,9 @@ local function board(part)
    local RC=require(game.ReplicatedStorage.Shared.Config.RoadConfig);local now,after=RC.Treadmill[n],RC.Treadmill[n+1]
    gain.Text=t(max and 'boardTreadmillMax' or 'boardTreadmillGain',{a=L.compact(now and now.Rate or 0,L.lang()),b=L.compact(after and after.Rate or 0,L.lang())})
   elseif key=='PetSlots' then gain.Text=t(max and 'boardPetMax' or 'boardPetGain',{a=n,b=n+1})
+  elseif key=='Fence' then
+   local FC=require(game.ReplicatedStorage.Shared.Config.FenceConfig);local now,after=FC.Levels[n],FC.Levels[n+1]
+   gain.Text=t(max and 'boardFenceMax' or 'boardFenceGain',{a=now and now.Hp or 0,b=after and after.Hp or 0})
   elseif key=='Prestige' then
    local PR=require(game.ReplicatedStorage.Shared.PrestigeRules)
    level.Text=t('boardPrestigeLevel',{n=n,next=n+1});gain.Text=t('boardPrestigeGain',{a=L.number(PR.MultAt(n),L.lang(),1),b=L.number(PR.MultAt(n+1),L.lang(),1)})

@@ -46,6 +46,9 @@ local function build(p,plot)
 end
 local function show(p,d,pile)
  local amount=math.floor(d.farmBank or 0)
+ -- online income goes to the wallet now: the heap only shows while offline earnings wait on it
+ local empty=amount<1
+ if pile.empty~=empty then pile.empty=empty;for _,q in pile.model:GetDescendants() do if q:IsA("BasePart") then q.Transparency=empty and 1 or 0 elseif q:IsA("SurfaceGui") then q.Enabled=not empty end end end
  local radius=B.Radius(amount,Z.Income(d,true))
  local scale=radius/UNIT
  if math.abs(scale-pile.scale)>pile.scale*.02 then pile.scale=scale;pile.model:ScaleTo(scale) end

@@ -10,5 +10,8 @@ return {
  MP5={ArtAsset="GunMP5",Price=75000,Damage=6,Pellets=1,FireRate=12,Range=34,Spread=3.5,Magazine=30,Reload=1.65,Automatic=true,Recoil=.25,Muzzle=Vector3.new(0,.174,-1.747),Color=Color3.fromHex("76889C")},
  Pump={ArtAsset="GunPump",Price=350000,Damage=14,Pellets=8,FireRate=1.05,Range=29,Spread=6,Magazine=6,Reload=2.8,Automatic=false,Recoil=1.2,Muzzle=Vector3.new(0,.204,-2.352),Color=Color3.fromHex("B97A4A")},
  M249={ArtAsset="GunM249",Price=650000,Damage=10,Pellets=1,FireRate=10,Range=43,Spread=4,Magazine=100,Reload=4.2,Automatic=true,Recoil=.5,Muzzle=Vector3.new(0,.205,-2.322),Color=Color3.fromHex("939861")},
+ -- Guns are no longer bought (owner, 2026-11-13: "not for money, but for hunting the ruins' monsters"): each one comes
+ -- free once you have killed Kills monsters in the location numbered Location (RoadProgression). Price is unused.
+ Unlock={Double={Location=1,Kills=15},AK={Location=2,Kills=25},MP5={Location=3,Kills=35},M4={Location=4,Kills=45},Pump={Location=5,Kills=55},M249={Location=6,Kills=70},AWP={Location=6,Kills=150}},
  AWP={Price=1000000,Damage=90,Pellets=1,FireRate=.7,Range=75,Spread=.3,Magazine=5,Reload=3,Automatic=false,Recoil=1.2,Muzzle=Vector3.new(0,.18,-2.32),Color=Color3.fromHex("4D704C")},
 }

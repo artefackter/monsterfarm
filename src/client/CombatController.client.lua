@@ -8,7 +8,7 @@ local poses={};local heldModels={};local currentTarget;local targetSince=0;local
 local font=L.lang():sub(1,2)=="ru" and Enum.Font.GothamBlack or Enum.Font.FredokaOne
 local function t(k,args) return L.text(k,L.lang(),args) end
 local gui=Instance.new("ScreenGui");gui.Name="CombatUI";gui.ZIndexBehavior=Enum.ZIndexBehavior.Sibling;gui.DisplayOrder=22;gui.ResetOnSpawn=false;gui.ScreenInsets=Enum.ScreenInsets.CoreUISafeInsets;gui.Parent=p:WaitForChild("PlayerGui")
-local control=Instance.new("Frame",gui);control.Name="Hotbar";control.Size=UDim2.fromOffset(344,84);control.AnchorPoint=Vector2.new(.5,1);control.Position=UDim2.new(.5,0,1,-8);control.BackgroundTransparency=1
+local control=Instance.new("Frame",gui);control.Name="Hotbar";control.Size=UDim2.fromOffset(508,84);control.AnchorPoint=Vector2.new(.5,1);control.Position=UDim2.new(.5,0,1,-8);control.BackgroundTransparency=1
 local scale=Instance.new("UIScale",control)
 local function text(parent,name,label,size,pos,color)
  local b=Style.Panel(Instance.new("TextButton"),color or Pal.Panel);b.Name=name;b.Text=label;b.Size=size;b.Position=pos;b.TextColor3=Pal.Ink;b.Font=font;b.TextScaled=true;b.TextWrapped=true;b.AutoLocalize=false;b.Parent=parent;return b
@@ -71,6 +71,38 @@ local cooldown=badgeText(selectShovel,'Cooldown')
 local itemCount=badgeText(itemTile,'Count')
 local trapCount=badgeText(trapTile,'Count')
 local ammo=badgeText(weaponTile,'Ammo')
+-- Two more slots (owner, 2026-11-13): 5 is the monster in your hands - its portrait while you carry one, a tap puts it
+-- back; with empty hands a tap lists the crypt's monsters to take out - and 6 is empty hands. One table keeps this
+-- script under Luau's 200 locals.
+local extra={}
+do
+ local function heldType() local m=p.Character and p.Character:FindFirstChild('HeldZombie');return m and m:GetAttribute('Type') end
+ local function free(z) return z.zone=='Crypt' and not z.carriedBy and not z.pendingTransfer end
+ extra.chooseMonsters=function()
+  if strip.Visible and stripKind=='monsters' then strip.Visible=false;return end;clearStrip('monsters')
+  local n=0
+  for _,z in require(S.MergeRules).SortByIncome(itemsState and itemsState.zombies or {}) do
+   if free(z) and n<30 then n+=1;choice('monster',z.type,string.rep('★',require(S.MergeRules).Stars(z)),function() rem.Intent:FireServer('move',z.id,'Field') end) end
+  end
+  if n==0 then strip.Visible=false;require(S.Notifications).Show(t('cryptNothing'),'error',3) end
+ end
+ extra.press=function()
+  if p:GetAttribute('HoldingZombie') then rem.Intent:FireServer('dropZombie');strip.Visible=false else extra.chooseMonsters() end
+ end
+ extra.monster=slotButton('Slot5',344,extra.press)
+ extra.hand=slotButton('Slot6',430,function() equipment:FireServer('slot','0');strip.Visible=false end)
+ for i,b in {[5]=extra.monster,[6]=extra.hand} do local n=Style.Text(b,tostring(i),UDim2.fromOffset(18,18),UDim2.fromOffset(4,2));n.TextColor3=Color3.new(1,1,1);n.TextXAlignment=Enum.TextXAlignment.Left;n.ZIndex=4 end
+ local hand=Style.Text(extra.hand,'✋',UDim2.fromOffset(56,52),UDim2.fromOffset(11,8));hand.UITextSizeConstraint.MaxTextSize=40;hand.ZIndex=3
+ local portrait=Instance.new('ImageLabel');portrait.Name='MonsterPortrait';portrait.BackgroundTransparency=1;portrait.ScaleType=Enum.ScaleType.Fit
+ portrait.Size=UDim2.fromOffset(62,56);portrait.Position=UDim2.fromOffset(8,6);portrait.ZIndex=3;portrait.Parent=extra.monster
+ local count=badgeText(extra.monster,'Count')
+ extra.refresh=function()
+  local held=heldType()
+  portrait.Image=held and Icons['modal_monster_'..held] or Icons.crypt or '';portrait.ImageTransparency=held and 0 or .3
+  local n=0;for _,z in itemsState and itemsState.zombies or {} do if free(z) then n+=1 end end
+  count.Text=held and '' or tostring(n)
+ end
+end
 local weaponIcon=Instance.new('ImageLabel');local dotFor={};local rangeLabel=Instance.new('TextLabel')
 local previewId;local preview
 local function showWeapon(id) local finish=state and state.skins and state.skins[id] or "Default";local key=id..":"..finish;if previewId==key then return end;previewId=key;if preview then preview:Destroy() end;preview=Style.ModalArt(weaponTile,'weapon',id,UDim2.fromOffset(74,52),UDim2.fromOffset(2,6),finish) end
@@ -92,14 +124,22 @@ local function resize()
  scale.Scale=f;ars.Scale=f;slowScale.Scale=f
  local full=p.PlayerGui:FindFirstChild('MobileStats')
  local centerShift=UIS.TouchEnabled and full and (full.AbsolutePosition.Y-gui.AbsolutePosition.Y+(full.AbsoluteSize.Y-v.Y)/2+13*f) or 0
- slow.Position=UDim2.new(0,14,.5,8+centerShift);control.Position=UDim2.new(.5,0,1,-8)
+ slow.Position=UDim2.new(0,14,.5,8+centerShift)
+ -- Six slots are wide (2026-11-13): the bar sits in the gap between the stats bottom-left and the day clock
+ -- bottom-right, shrinking if that gap is narrower than the bar.
+ local dig=p.PlayerGui:FindFirstChild('DigUI');local clock=dig and dig:FindFirstChild('DayClock')
+ local ms=math.clamp(math.min(workspace.CurrentCamera.ViewportSize.X/1280,workspace.CurrentCamera.ViewportSize.Y/720),.48,1.25)
+ local left=16+250*ms;local right=clock and clock.AbsoluteSize.X>0 and clock.AbsolutePosition.X-gui.AbsolutePosition.X-6 or v.X-12-300*f
+ local k=math.clamp((right-left)/508,.4,f);scale.Scale=k
+ control.Position=UDim2.new(0,math.clamp((left+right)/2,254*k+4,v.X-254*k-4),1,-8)
 end
 workspace.CurrentCamera:GetPropertyChangedSignal("ViewportSize"):Connect(resize);gui:GetPropertyChangedSignal("AbsoluteSize"):Connect(resize);resize()
+task.spawn(function() local dig=p.PlayerGui:WaitForChild('DigUI',15);local c=dig and dig:WaitForChild('DayClock',15);if c then c:GetPropertyChangedSignal('AbsolutePosition'):Connect(resize);resize() end end)
 p.PlayerGui.ChildAdded:Connect(function(c) if c.Name=='MobileStats' then c:GetPropertyChangedSignal('AbsoluteSize'):Connect(resize);task.defer(resize) end end)
 local function menuOpen() if upgradeWindow and upgradeWindow.Visible then return true end;local dig=p.PlayerGui:FindFirstChild("DigUI");local menu=dig and dig:FindFirstChild("Menu");return dig and (dig:GetAttribute("ModalOpen")==true or menu and menu.Visible or dig:FindFirstChild("Reveal")~=nil or dig:FindFirstChild("PetHatch")~=nil) end
 -- Round buttons to the right of the hotbar: drop the grave you carry (key G) and, on phones, reload (R on keyboards).
 local function roundButton(name,y,color,callback)
- local b=Instance.new('TextButton');b.Name=name;b.Text='';b.AutoButtonColor=false;b.Size=UDim2.fromOffset(78,78);b.Position=UDim2.fromOffset(352,y);b.BackgroundColor3=color;b.Visible=false;b.Parent=control
+ local b=Instance.new('TextButton');b.Name=name;b.Text='';b.AutoButtonColor=false;b.Size=UDim2.fromOffset(78,78);b.Position=UDim2.fromOffset(516,y);b.BackgroundColor3=color;b.Visible=false;b.Parent=control
  Instance.new('UICorner',b).CornerRadius=UDim.new(1,0)
  local st=Instance.new('UIStroke',b);st.Color=Color3.fromRGB(28,26,40);st.Thickness=3;st.ApplyStrokeMode=Enum.ApplyStrokeMode.Border
  local pop=Instance.new('UIScale',b);b.Activated:Connect(function() Style.Pop(pop,1);Sfx.play('Click');callback() end)
@@ -123,7 +163,7 @@ do -- its own scope: this script is close to Luau's limit of 200 locals
 -- green button with the price in zombucks and mutagen. Opened from the weapon strip or the mutagen chip.
 local Up=require(S.WeaponUpgrades)
 local MC=Style.ModalColors
-local STAT_ICON={Damage='pistol',FireRate='auto_on',Magazine='reload',Crit='star'}
+local STAT_ICON={Damage='pistol',FireRate='auto_on',Magazine='rifle',Crit='star',Reload='reload'} -- Range has no picture: a target emoji
 local benchWeapon
 local function vial(parent,size,pos)
  if Icons.modal_mutagen then local art=Style.ModalArt(parent,'mutagen',nil,size,pos);art.ZIndex=7;return art end
@@ -140,11 +180,13 @@ local function vial(parent,size,pos)
 end
 local function fmt(stat,a,b)
  if stat=='FireRate' then return string.format('%.1f',a)
- elseif stat=='Crit' then return string.format('%d%% x%.1f',math.floor(a*100+.5),b) end
+ elseif stat=='Crit' then return string.format('%d%% x%.1f',math.floor(a*100+.5),b)
+ elseif stat=='Reload' then return t('upSeconds',{n=string.format('%.2f',a)})
+ elseif stat=='Range' then return t('upStuds',{n=string.format('%.1f',a)}) end
  return L.compact(a,L.lang())
 end
 local function buildBench()
- local w=Style.ModalWindow(Instance.new('Frame'));w.Name='UpgradeBench';w.AnchorPoint=Vector2.new(.5,.5);w.Size=UDim2.fromOffset(980,608);w.Visible=false;w.ZIndex=20;w.Active=true;w.Parent=gui
+ local w=Style.ModalWindow(Instance.new('Frame'));w.Name='UpgradeBench';w.AnchorPoint=Vector2.new(.5,.5);w.Size=UDim2.fromOffset(1140,628);w.Visible=false;w.ZIndex=20;w.Active=true;w.Parent=gui
  local sc=Instance.new('UIScale',w);sc.Name='Fit'
  local header=Style.ModalHeader(Instance.new('Frame'),true);header.Size=UDim2.new(1,-24,0,62);header.Position=UDim2.fromOffset(12,0);header.Parent=w
  local title=Style.ModalText(Style.Text(header,'',UDim2.new(1,-90,0,44),UDim2.fromOffset(24,10)),true);title.Name='Title';title.TextXAlignment=Enum.TextXAlignment.Left;title.UITextSizeConstraint.MaxTextSize=36;title.ZIndex=3
@@ -153,7 +195,7 @@ local function buildBench()
  local body=Instance.new('Frame');body.Name='Body';body.BackgroundTransparency=1;body.Position=UDim2.fromOffset(26,78);body.Size=UDim2.new(1,-52,1,-100);body.ZIndex=2;body.Parent=w
  upgradeWindow=w
  local function fit()
-  local v=gui.AbsoluteSize;local k=math.max(.1,math.min(1.3,(v.X-40)/1028,(v.Y-24)/668));sc.Scale=k;w.Position=UDim2.new(.5,0,.5,24*k)
+  local v=gui.AbsoluteSize;local k=math.max(.1,math.min(1.3,(v.X-40)/1188,(v.Y-24)/688));sc.Scale=k;w.Position=UDim2.new(.5,0,.5,24*k)
  end
  w:GetPropertyChangedSignal('Visible'):Connect(function() p.PlayerGui:SetAttribute('UpgradeModalOpen',w.Visible) end)
  gui:GetPropertyChangedSignal('AbsoluteSize'):Connect(fit);fit()
@@ -194,13 +236,14 @@ upgradeRefresh=function(force)
  local fake={weaponUpgrades=state.upgrades or {},weapons=state.owned,coins=coins,mutagen=mutagen}
  for i,stat in Up.Stats do
   local level=levels[stat] or 0
-  local tile=Style.ModalSurface(Instance.new('Frame'),MC.Blue,14);tile.Name='Stat_'..stat;tile.Size=UDim2.new(.25,-9,0,310);tile.Position=UDim2.new((i-1)/4,4,0,164);tile.ZIndex=3;tile.Parent=body
-  local icon=Instance.new('ImageLabel');icon.BackgroundTransparency=1;icon.Size=UDim2.fromOffset(54,54);icon.Position=UDim2.new(.5,-27,0,9);icon.Image=Icons[STAT_ICON[stat]] or '';icon.ZIndex=5;icon.Parent=tile
+  local tile=Style.ModalSurface(Instance.new('Frame'),MC.Blue,14);tile.Name='Stat_'..stat;tile.Size=UDim2.new(1/#Up.Stats,-8,0,330);tile.Position=UDim2.new((i-1)/#Up.Stats,4,0,164);tile.ZIndex=3;tile.Parent=body
+  local icon=Instance.new('ImageLabel');icon.BackgroundTransparency=1;icon.Size=UDim2.fromOffset(54,54);icon.Position=UDim2.new(.5,-27,0,9);icon.Image=Icons[STAT_ICON[stat] or ''] or '';icon.ZIndex=5;icon.Parent=tile
+  if icon.Image=='' then local e=Style.Text(icon,'🎯',UDim2.fromScale(1,1));e.ZIndex=6;e.UITextSizeConstraint.MaxTextSize=46 end
   caption(tile,t('up_'..stat),UDim2.new(1,-12,0,28),UDim2.fromOffset(6,64)).UITextSizeConstraint.MaxTextSize=25
   local levelChip=Style.ModalSurface(Instance.new('Frame'),Color3.fromRGB(220,180,207),10,false);levelChip.Size=UDim2.fromOffset(72,22);levelChip.Position=UDim2.new(.5,-36,0,96);levelChip.ZIndex=4;levelChip.Parent=tile
   caption(levelChip,level..'/'..Up.Max,UDim2.fromScale(1,1))
   for n=1,Up.Max do
-   local pip=Instance.new('Frame');pip.Size=UDim2.fromOffset(13,13);pip.Position=UDim2.new(.5,-85+(n-1)*17.5,0,128);pip.BackgroundColor3=n<=level and MC.Green or Color3.fromRGB(196,170,180);pip.ZIndex=5;pip.Parent=tile
+   local pip=Instance.new('Frame');pip.Size=UDim2.fromOffset(11,11);pip.Position=UDim2.new(.5,-68+(n-1)*14,0,128);pip.BackgroundColor3=n<=level and MC.Green or Color3.fromRGB(196,170,180);pip.ZIndex=5;pip.Parent=tile
    Instance.new('UICorner',pip).CornerRadius=UDim.new(1,0);local st=Instance.new('UIStroke',pip);st.Color=MC.Ink;st.Thickness=1.5
   end
   local a1,a2=Up.Value(benchWeapon,stat,level)
@@ -231,7 +274,7 @@ upgradeRefresh=function(force)
    Style.Pop(pop,1);Sfx.play('Buy',.2);rem.WeaponAction:FireServer('upgrade',benchWeapon..':'..stat)
   end)
  end
- caption(body,t('mutagenHint'),UDim2.new(1,0,0,24),UDim2.fromOffset(0,482)).UITextSizeConstraint.MaxTextSize=20
+ caption(body,t('mutagenHint'),UDim2.new(1,0,0,24),UDim2.fromOffset(0,502)).UITextSizeConstraint.MaxTextSize=20
 end
 openUpgrades=function()
  local w=upgradeWindow or buildBench()
@@ -296,7 +339,7 @@ local function aimPoint()
  for _,m in ipairs(f and f:GetChildren() or {}) do if m.PrimaryPart and (m:GetAttribute("Health") or 0)>0 and m:GetAttribute("State")~="Spawning" then
   table.insert(include,m.PrimaryPart)
   local dist=(m.PrimaryPart.Position-head.Position).Magnitude
-  if dist<=C[state.equipped].Range then table.insert(targets,{model=m,dist=dist}) end
+  if dist<=(state.range or C[state.equipped].Range) then table.insert(targets,{model=m,dist=dist}) end
  end end
  table.sort(targets,function(a,b) if a.model==currentTarget and b.model~=currentTarget then return true elseif b.model==currentTarget and a.model~=currentTarget then return false end;return a.dist<b.dist end)
  local params=RaycastParams.new();params.FilterType=Enum.RaycastFilterType.Include;params.FilterDescendantsInstances=include
@@ -310,7 +353,7 @@ local function shoot()
  if not head or not root or not h or h.Health<=0 then return end
  local aim,target=aimPoint();if not aim or target~=currentTarget then return end
  local delta=aim-head.Position;local flat=Vector3.new(delta.X,0,delta.Z)
- if delta.Magnitude<.01 or delta.Magnitude>C[state.equipped].Range or (flat.Magnitude>.1 and root.CFrame.LookVector:Dot(flat.Unit)<math.cos(C.UpperBodyYaw)) then return end
+ if delta.Magnitude<.01 or delta.Magnitude>(state.range or C[state.equipped].Range) or (flat.Magnitude>.1 and root.CFrame.LookVector:Dot(flat.Unit)<math.cos(C.UpperBodyYaw)) then return end
  local cfg=C[state.equipped]
  if not auto and not cfg.Automatic and manualSpent then return end
  if state.reloadLeft>0 then return end
@@ -335,13 +378,14 @@ UIS.InputBegan:Connect(function(input,processed)
   elseif input.KeyCode==Enum.KeyCode.LeftShift or input.KeyCode==Enum.KeyCode.RightShift then if p:GetAttribute("ShiftSlow")~=false then equipment:FireServer("slow") end
  elseif input.KeyCode==Enum.KeyCode.R then rem.WeaponAction:FireServer("reload")
  elseif input.KeyCode==Enum.KeyCode.G then if p:GetAttribute("CarryingGrave") then roadAction("dropGrave") end
- else local n=({[Enum.KeyCode.One]=1,[Enum.KeyCode.Two]=2,[Enum.KeyCode.Three]=3,[Enum.KeyCode.Four]=4})[input.KeyCode];if n then equipment:FireServer("slot",tostring(n));if n==3 then chooseItems() end end end
+ else local n=({[Enum.KeyCode.One]=1,[Enum.KeyCode.Two]=2,[Enum.KeyCode.Three]=3,[Enum.KeyCode.Four]=4,[Enum.KeyCode.Five]=5,[Enum.KeyCode.Six]=6})[input.KeyCode]
+  if n==5 then extra.press() elseif n==6 then equipment:FireServer("slot","0");strip.Visible=false elseif n then equipment:FireServer("slot",tostring(n));if n==3 then chooseItems() end end end
 end)
 UIS.InputEnded:Connect(function(input) if input.UserInputType==Enum.UserInputType.MouseButton1 then held=false end end)
 UIS.WindowFocusReleased:Connect(function() focused=false;held=false end)
 UIS.WindowFocused:Connect(function() focused=true end)
 rem:WaitForChild("WeaponState").OnClientEvent:Connect(function(s)
- state=s;rangeLabel.Text="↔ "..C[s.equipped].Range;weaponIcon.Image="";weaponTile.Text="";showWeapon(s.equipped)
+ state=s;rangeLabel.Text="↔ "..(s.range or C[s.equipped].Range);weaponIcon.Image="";weaponTile.Text="";showWeapon(s.equipped)
  local count=0;for _,id in ipairs(C.Order) do if s.owned[id] then count+=1 end end
  for id,d in pairs(dotFor) do d.Visible=count>1 and s.owned[id]==true;d.BackgroundColor3=id==s.equipped and C[id].Color or Pal.Common end
  if s.reloadLeft>0 and not reloadWas then Sfx.play("Reload"..s.equipped,.3) end;reloadWas=s.reloadLeft>0
@@ -392,7 +436,7 @@ Run.PreAnimation:Connect(function()
    local ik=h:FindFirstChild('SupportHandIK')
    if not ik then ik=Instance.new('IKControl');ik.Name='SupportHandIK';ik.Type=Enum.IKControlType.Position;ik.ChainRoot=arm;ik.EndEffector=hand;ik.SmoothTime=.04;ik.Priority=20;ik.Parent=h end
    local active=gun and gun.model.Parent and not gun.onBack and h.Health>0 and now>=(player:GetAttribute('RoadBatUntil') or 0) and now>=(player:GetAttribute('KnockedOutUntil') or 0)
-   local reloadProgress=gun and now<(player:GetAttribute('WeaponReloadUntil') or 0) and math.clamp(1-((player:GetAttribute('WeaponReloadUntil') or 0)-now)/C[gun.id].Reload,0,1) or nil
+   local reloadProgress=gun and now<(player:GetAttribute('WeaponReloadUntil') or 0) and math.clamp(1-((player:GetAttribute('WeaponReloadUntil') or 0)-now)/(player:GetAttribute('WeaponReloadTime') or C[gun.id].Reload),0,1) or nil
    local reloadTilt=reloadProgress and WeaponAnimation.Sample(gun.id,100,reloadProgress).tilt or 0
    ik.Target=active and (reloadProgress and reloadProgress>.1 and reloadProgress<.83 and gun.model:FindFirstChild('Magazine') or gun.model.PrimaryPart:FindFirstChild('SupportHand')) or nil;ik.Enabled=active==true or typeof(active)=='Instance';ik.Weight=ik.Enabled and 1 or 0
    ch:SetAttribute('SupportIKActive',ik.Enabled)
@@ -447,7 +491,7 @@ Run.PreSimulation:Connect(function(dt)
    pose.held=heldModels[player] -- CombatPose places both hands on it (GunArms)
    pose:Step(dt,aim,id,reloadActive,math.max(0,(player:GetAttribute("RoadBatUntil") or 0)-now),player:GetAttribute("Training"),math.clamp(((player:GetAttribute("WeaponDrawUntil") or 0)-now)/.45,0,1))
    local gun=heldModels[player]
-   if gun then local reload=reloadActive and math.clamp(1-((player:GetAttribute('WeaponReloadUntil') or now)-now)/C[id].Reload,0,1) or nil;WeaponAnimation.Step(gun.model,gun.id,os.clock()-(gun.shotAt or -100),reload) end
+   if gun then local reload=reloadActive and math.clamp(1-((player:GetAttribute('WeaponReloadUntil') or now)-now)/(player:GetAttribute('WeaponReloadTime') or C[id].Reload),0,1) or nil;WeaponAnimation.Step(gun.model,gun.id,os.clock()-(gun.shotAt or -100),reload) end
    ch:SetAttribute("CombatPoseWeight",pose.weight) -- local diagnostic, no gameplay authority
   end
  end
@@ -473,7 +517,7 @@ Run.RenderStepped:Connect(function(dt)
    local ch=player.Character;local root=ch and ch:FindFirstChild("HumanoidRootPart")
    local now=workspace:GetServerTimeNow();local aim=player==p and currentAim or (now<(player:GetAttribute("CombatAimUntil") or 0) and player:GetAttribute("CombatAim") or nil)
    local reloading=now<(player:GetAttribute("WeaponReloadUntil") or 0)
-   local reloadProgress=reloading and math.clamp(1-((player:GetAttribute("WeaponReloadUntil") or 0)-now)/C[heldGun.id].Reload,0,1) or nil
+   local reloadProgress=reloading and math.clamp(1-((player:GetAttribute("WeaponReloadUntil") or 0)-now)/(player:GetAttribute("WeaponReloadTime") or C[heldGun.id].Reload),0,1) or nil
    local tilt=reloadProgress and WeaponAnimation.Sample(heldGun.id,100,reloadProgress).tilt or 0
    if root then
     local goal=aim or (hand.Position+root.CFrame.LookVector*10-Vector3.new(0,4,0))
@@ -500,7 +544,8 @@ Run.RenderStepped:Connect(function(dt)
  local now=workspace:GetServerTimeNow();local slot=p:GetAttribute('ActiveSlot') or 1
  local left=math.max(0,(p:GetAttribute('RoadBatReadyAt') or 0)-now)
  cooldown.Text=left>0 and string.format('%.1f',left) or ''
- for i,b in slots do local on=i==slot;b.Outline.Color=on and Color3.new(1,1,1) or Color3.fromRGB(70,74,96);b.Outline.Thickness=on and 3 or 2;b.BackgroundTransparency=on and .1 or .25 end
+ local holding=p:GetAttribute('HoldingZombie')~=nil;extra.refresh()
+ for i,b in {slots[1],slots[2],slots[3],slots[4],extra.monster,extra.hand} do local on=holding and i==5 or not holding and (i==slot or slot==0 and i==6);b.Outline.Color=on and Color3.new(1,1,1) or Color3.fromRGB(70,74,96);b.Outline.Thickness=on and 3 or 2;b.BackgroundTransparency=on and .1 or .25 end
  local count=0;if itemsState then count+=#(itemsState.graveInventory or {});for _,n in itemsState.vouchers or {} do count+=n end end;itemCount.Text=tostring(count);trapCount.Text='×'..tostring(p:GetAttribute('RoadTraps') or 0)
  local slowOn=p:GetAttribute('SlowMode')==true;slowLabel.Text=t('slowMode');knob.Position=slowOn and UDim2.fromOffset(59,5) or UDim2.fromOffset(5,5);track.BackgroundColor3=slowOn and Color3.fromRGB(60,140,50) or Color3.fromRGB(60,58,74);slow.Visible=not menuOpen()
  control.Visible=not menuOpen()
