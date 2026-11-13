@@ -63,10 +63,11 @@ function W.Action(p,op,id)
  else return false end
  W.Push(p);return true
 end
-function W.Raycast(origin,delta)
+-- What a shot (or a line of sight) hits first: the map's solid parts and, unless wallsOnly, the monsters' hitboxes.
+function W.Raycast(origin,delta,wallsOnly)
  local include={}
  for part in pairs(W.Colliders) do if part.Parent and part.CanCollide and part.CanQuery then table.insert(include,part) end end
- for _,a in pairs(M.Live) do if a.model.PrimaryPart then table.insert(include,a.model.PrimaryPart) end end
+ if not wallsOnly then for _,a in pairs(M.Live) do if a.model.PrimaryPart then table.insert(include,a.model.PrimaryPart) end end end
  local params=RaycastParams.new();params.FilterType=Enum.RaycastFilterType.Include;params.FilterDescendantsInstances=include;params.RespectCanCollide=false
  return workspace:Raycast(origin,delta,params)
 end

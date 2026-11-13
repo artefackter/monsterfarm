@@ -1,6 +1,7 @@
 -- Client-side life for the monsters on the farms. Purely local: the server only places each model at rest.
 -- A working monster lives a little life of its own: it stands and breathes, looks around, strolls a few steps
--- around its spot (legs and arms really walk), turns to the player who comes close and waves, hops when it earns.
+-- around its spot (legs and arms really walk), turns to the player who comes close and waves. A coin pops over it
+-- when it earns, with no hop since 2026-11-13: every monster earns on the same beat, so the whole yard jumped at once.
 -- Over its head: its name, what it earns per second and how rare it is. Far from the camera everything holds still.
 local RunService = game:GetService("RunService")
 local Pal = require(game.ReplicatedStorage.Shared.Palette)
@@ -24,17 +25,17 @@ local JOINTS = {
 -- the King waves like a king).
 local Collection = require(game.ReplicatedStorage.Shared.MonsterCollection)
 local STYLE = {
-	Deer = { speed = 1.25, gait = 7, bob = 0.1, lean = -0.04, sway = 0.02, jitter = 0, emotes = { "rear", "rear", "hop", "spin" } },
-	Parasite = { speed = 1.9, gait = 11.5, bob = 0.12, lean = 0.12, sway = 0.05, jitter = 0.035, emotes = { "shiver", "shiver", "hop" } },
-	Stalker = { speed = 1.05, gait = 6, bob = 0.2, lean = 0.22, sway = 0.015, jitter = 0, emotes = { "peek", "peek", "spin" } },
-	Verity = { speed = 1.5, gait = 8.5, bob = 0.1, lean = 0.02, sway = 0.02, jitter = 0, emotes = { "glitch", "glitch", "hop" } },
-	RingMaw = { speed = 2.3, gait = 13, bob = 0.06, lean = 0.06, sway = 0.05, jitter = 0.01, emotes = { "maw", "maw", "skitter" } },
-	CaveDweller = { speed = 0.95, gait = 5.5, bob = 0.22, lean = 0.1, sway = 0.035, jitter = 0, emotes = { "stretch", "stretch", "hop" } },
+	Deer = { speed = 1.25, gait = 7, bob = 0.1, lean = -0.04, sway = 0.02, jitter = 0, emotes = { "rear", "rear", "spin" } },
+	Parasite = { speed = 1.9, gait = 11.5, bob = 0.12, lean = 0.12, sway = 0.05, jitter = 0.035, emotes = { "shiver", "shiver", "skitter" } },
+	Stalker = { speed = 1.05, gait = 6, bob = 0.1, lean = 0.22, sway = 0.015, jitter = 0, emotes = { "peek", "peek", "spin" } },
+	Verity = { speed = 1.5, gait = 8.5, bob = 0.1, lean = 0.02, sway = 0.02, jitter = 0, emotes = { "glitch", "glitch", "spin" } },
+	RingMaw = { speed = 2.3, gait = 13, bob = 0.06, lean = 0.06, sway = 0.05, jitter = 0.01, emotes = { "snap", "snap", "skitter" } },
+	CaveDweller = { speed = 0.95, gait = 5.5, bob = 0.12, lean = 0.1, sway = 0.035, jitter = 0, emotes = { "stretch", "stretch", "spin" } },
 	SirenHead = { speed = 0.85, gait = 4.5, bob = 0.08, lean = 0, sway = 0.03, jitter = 0, emotes = { "siren", "siren", "spin" } },
 }
 local DEFAULT_STYLE = { speed = 1.5, gait = 8.5, bob = 0.14, lean = 0, sway = 0, jitter = 0, emotes = { "hop", "spin" } }
 local OUTFIT_EMOTE = { Miner = "dig", Knight = "salute", King = "regal" }
-local EMOTE_TIME = { hop = 1.1, spin = 1.1, wave = 1.7, rear = 1.4, shiver = 1.0, peek = 2.0, glitch = 0.9, maw = 1.8, skitter = 0.8, stretch = 1.8, siren = 1.4, dig = 1.8, salute = 1.6, regal = 2.0 }
+local EMOTE_TIME = { hop = 1.1, spin = 1.1, wave = 1.7, rear = 1.4, shiver = 1.0, peek = 2.0, glitch = 0.9, snap = 1.2, skitter = 1.4, stretch = 1.8, siren = 1.4, dig = 1.8, salute = 1.6, regal = 2.0 }
 local function styleOf(m, data)
 	if not data.style then
 		local id = m:GetAttribute("Type") or ""
@@ -82,7 +83,6 @@ local function floatIncome(m, data, now)
 		return
 	end
 	data.last = now
-	data.joyAt = now
 	local b = Instance.new("BillboardGui")
 	b.Size = UDim2.fromOffset(130, 42)
 	b.StudsOffset = Vector3.new(0, (m:GetAttribute("MonsterLabelHeight") or 4.4)*(m:GetAttribute("VisualSize") or 1), 0)
@@ -271,25 +271,21 @@ RunService.RenderStepped:Connect(function(dt)
 					elseif e == "rear" then -- the deer rears up
 						pitch, jump = 0.38 * env, 0.35 * env
 					elseif e == "shiver" then
-						ox, roll = math.sin(now * 61) * 0.07 * env, math.sin(now * 47) * 0.1 * env
-					elseif e == "glitch" then -- jumps from spot to spot like a broken video
-						local r = Random.new(math.floor(now * 11) + math.floor(data.phase * 1000))
-						ox, oz, turnBy = r:NextNumber(-0.35, 0.35) * env, r:NextNumber(-0.35, 0.35) * env, r:NextNumber(-0.5, 0.5) * env
-					elseif e == "skitter" then -- four quick turns on the spot
-						turnBy, jump = math.floor(math.clamp(emoteT / 0.8, 0, 0.999) * 4) * math.pi / 2, math.abs(math.sin(emoteT * math.pi * 5)) * 0.15
+						ox, roll = math.sin(now * 9) * 0.03 * env, math.sin(now * 7) * 0.05 * env -- a slow shudder, nothing sharp
+					elseif e == "glitch" then -- drifts off its spot and back, like a picture slipping
+						ox, oz = math.noise(now * 1.3, data.phase) * 0.3 * env, math.noise(now * 1.3, data.phase + 5) * 0.3 * env
+						turnBy = math.noise(now * 1.1, data.phase + 9) * 0.45 * env
+					elseif e == "skitter" then -- a quick shuffle left and right on the spot
+						turnBy = math.sin(emoteT * math.pi * 2 / 1.4) * 0.6 * env
 					elseif e == "stretch" then
 						pitch, jump = 0.14 * env, 0.18 * env
-					elseif e == "maw" then -- leans in as the head splits open
-						pitch, roll = -0.12 * env, math.sin(now * 30) * 0.025 * env
+					elseif e == "snap" then -- the RingMaw lunges in to snap its jaws
+						pitch = -0.12 * env
 					elseif e == "dig" then
 						pitch = -0.1 * env
 					end
-					local joy = now - (data.joyAt or -10)
-					if joy < 0.35 then
-						jump += math.sin(joy / 0.35 * math.pi) * 0.3
-					end
 					local spin = e == "spin" and math.clamp(emoteT / 1.0, 0, 1) * math.pi * 2 or 0
-					local twitch = st.jitter > 0 and math.noise(now * 7, data.phase) * st.jitter * 2 or 0
+					local twitch = st.jitter > 0 and math.noise(now * 1.5, data.phase) * st.jitter * 2 or 0
 					body = CFrame.new(data.x + ox, (math.abs(math.sin(data.gait)) * st.bob * w + math.sin(t * 1.8) * 0.035 * (1 - w) + jump) * m:GetScale(), data.z + oz)
 						* CFrame.Angles(0, data.yaw + spin + turnBy, 0)
 						* CFrame.Angles(-(st.lean + 0.1 * w) + pitch + math.sin(t * 1.8) * 0.015 + twitch, 0, math.sin(data.gait) * 0.05 * w + math.sin(t * 0.9) * st.sway * (1 - w) + roll + twitch)
@@ -317,27 +313,22 @@ RunService.RenderStepped:Connect(function(dt)
 				if e == "peek" then
 					hy, hr = 0.5 * env, 0.6 * env
 				elseif e == "siren" then
-					hy = math.sin(now * 14) * 0.55 * env
+					hy = math.sin(now * 3) * 0.4 * env -- a slow sweep, as if listening
 				elseif e == "rear" then
 					hp = 0.3 * env
 				elseif e == "glitch" then
-					local r = Random.new(math.floor(now * 13) + 7)
-					hr, hy = r:NextNumber(-0.6, 0.6) * env, r:NextNumber(-0.6, 0.6) * env
+					hr, hy = math.noise(now * 1.4, data.phase + 2) * 0.35 * env, math.noise(now * 1.2, data.phase + 4) * 0.35 * env
 				elseif e == "shiver" then
-					hr = math.sin(now * 53) * 0.12 * env
+					hr = math.sin(now * 6) * 0.06 * env
 				elseif e == "regal" then
 					hp = 0.18 * env
-				elseif e == "maw" then
-					hp = -0.1 * env
+				elseif e == "snap" then -- the head thrusts forward and back, unhurried
+					hp = -(0.12 + (0.5 + 0.5 * math.sin(now * 4)) * 0.1) * env
 				end
 				if alive and data.style and data.style.jitter > 0 then
-					hr += math.noise(now * 9, data.phase + 3) * data.style.jitter * 3
+					hr += math.noise(now * 1.8, data.phase + 3) * data.style.jitter * 3
 				end
 				local head = around(joint("Head",NECK) * k, CFrame.Angles(math.sin(t * 2.6) * 0.07 + 0.06 * w - hp, headYaw + hy, math.sin(t * 1.9) * 0.06 + hr))
-				-- the RingMaw's head halves breathe a crack open, and split wide for its "maw" emote
-				local open = 0.06 + math.sin(t * 1.3) * 0.04 + (e == "maw" and 0.95 * env or 0)
-				local mawL = head * around(joint("MawL", Vector3.zero) * k, CFrame.Angles(0, open, 0)) -- the left half is on -X
-				local mawR = head * around(joint("MawR", Vector3.zero) * k, CFrame.Angles(0, -open, 0))
 				local swing = zone == "Diggers" and 0.75 or 0.12
 				local jArmL, jArmR = joint("ArmL",JOINTS.ArmL), joint("ArmR",JOINTS.ArmR)
 				local armL = around(jArmL * k, CFrame.Angles(math.sin(t * (zone == "Diggers" and 6 or 1.6)) * swing * (1 - w) - gaitSwing * 0.6 * w, 0, 0))
@@ -346,8 +337,8 @@ RunService.RenderStepped:Connect(function(dt)
 				if alive and data.emote == "wave" then
 					-- one arm up and out, wiggling hello
 					local side = jArmR.X >= 0 and 1 or -1
-					armR = around(jArmR * k, CFrame.Angles(0, 0, side * (2.45 + math.sin(now * 13) * 0.35)))
-				elseif alive and (data.emote == "hop" or now - (data.joyAt or -10) < 0.35) then
+					armR = around(jArmR * k, CFrame.Angles(0, 0, side * (2.45 + math.sin(now * 6) * 0.3)))
+				elseif alive and data.emote == "hop" then
 					local sideL, sideR = jArmL.X >= 0 and 1 or -1, jArmR.X >= 0 and 1 or -1
 					armL = around(jArmL * k, CFrame.Angles(0, 0, sideL * 2.6))
 					armR = around(jArmR * k, CFrame.Angles(0, 0, sideR * 2.6))
@@ -357,7 +348,7 @@ RunService.RenderStepped:Connect(function(dt)
 					armL = around(jArmL * k, CFrame.Angles(forward, 0, sideL * up))
 					armR = around(jArmR * k, CFrame.Angles(forward, 0, sideR * up))
 				elseif e == "dig" then -- the Miner's pickaxe comes down, again and again
-					armR = around(jArmR * k, CFrame.Angles((1.4 + math.sin((now - data.emoteAt) * 8) * 1.2) * env, 0, 0))
+					armR = around(jArmR * k, CFrame.Angles((1.4 + math.sin((now - data.emoteAt) * 5) * 1.1) * env, 0, 0))
 				elseif e == "salute" then
 					local sideR = jArmR.X >= 0 and 1 or -1
 					armR = around(jArmR * k, CFrame.Angles(2.3 * env, 0, -sideR * 0.5 * env))
@@ -365,8 +356,8 @@ RunService.RenderStepped:Connect(function(dt)
 					local sideR = jArmR.X >= 0 and 1 or -1
 					armR = around(jArmR * k, CFrame.Angles(1.2 * env, 0, sideR * (0.35 + math.sin(now * 4) * 0.25) * env))
 				elseif e == "shiver" then
-					armL = armL * CFrame.new(0, math.sin(now * 57) * 0.05 * k * env, 0)
-					armR = armR * CFrame.new(0, math.sin(now * 51) * 0.05 * k * env, 0)
+					armL = armL * CFrame.new(0, math.sin(now * 8) * 0.03 * k * env, 0)
+					armR = armR * CFrame.new(0, math.sin(now * 7) * 0.03 * k * env, 0)
 				end
 				if floating then
 					armL=CFrame.new(.12*math.sin(t*1.4)*k,.18*math.sin(t*2+1)*k,0)*around(jArmL*k,CFrame.Angles(.08,0,.10))
@@ -379,7 +370,6 @@ RunService.RenderStepped:Connect(function(dt)
 					local group = data.groups[i]
 					local extra = group == "Head" and head or group == "ArmL" and armL or group == "ArmR" and armR
 						or group == "LegL" and legL or group == "LegR" and legR
-						or group == "MawL" and mawL or group == "MawR" and mawR
 						or (group == "TendrilL" or group == "TendrilR") and around(joint(group,Vector3.zero)*k,CFrame.Angles(math.sin(t*1.8+(group=="TendrilL" and 0 or 2))*.14,0,math.sin(t*1.2)*.10))
 						or group == "WingL" and around(JOINTS.WingL * k, CFrame.Angles(0, -wing, 0))
 						or group == "WingR" and around(JOINTS.WingR * k, CFrame.Angles(0, wing, 0)) or nil

@@ -28,6 +28,10 @@ function A.Build(world, at, C, districts, P)
 	-- itself, and a wider stretch for buildings and props so they never stand in the way in.
 	local skipS, skipSide, skipGap
 	local function skipped(s, x)
+		-- nothing of the road's scenery stands inside a boss arena (they are big since 2026-11-13: radius 100)
+		if x and Progression.PocketAt(s, x, 12) and math.abs(x) > half - 1 then
+			return true
+		end
 		if not skipS or not x or x * skipSide < 15 then
 			return false
 		end
@@ -56,10 +60,7 @@ function A.Build(world, at, C, districts, P)
 		q.Parent = parent
 		return q
 	end
-	local function inGap(s, margin)
-		return s + margin > C.Gap.From and s - margin < C.Gap.To
-	end
-	-- Keep scenery off the graves, the rubble and the jump.
+	-- Keep scenery off the graves and the rubble.
 	local function busy(s, x, r)
 		for _, spot in C.Spots do
 			if math.abs(spot.S - s) < r + 6 and math.abs(spot.X - x) < r + 6 then
@@ -71,7 +72,7 @@ function A.Build(world, at, C, districts, P)
 				return true
 			end
 		end
-		return inGap(s, r + 4)
+		return false
 	end
 
 	-- The amphitheatre at the end of every location ------------------------------------------------------------------
@@ -141,7 +142,7 @@ function A.Build(world, at, C, districts, P)
 			sandFloor.Material, sandInner.Material = Enum.Material.Concrete, Enum.Material.Concrete
 		end
 		-- The stands: the old fourth and fifth tiers, now right behind the floor's edge
-		local segments = 56
+		local segments = math.max(56, math.floor(R * 0.8))
 		local rows = { { r = R + 5, seat = 17.2 }, { r = R + 12.6, seat = 20.6 } }
 		for k, row in rows do
 			local r, height = row.r, row.seat + 14
@@ -169,8 +170,9 @@ function A.Build(world, at, C, districts, P)
 		local rTop = R + 17
 		local topY = 20.6
 		local bone = hex("E6DCC4")
-		for n = 0, 23 do
-			local t = (n + 0.5) / 24 * math.pi * 2
+		local columns = math.max(24, math.floor(R * 0.36))
+		for n = 0, columns - 1 do
+			local t = (n + 0.5) / columns * math.pi * 2
 			local ds, dx = math.sin(t) * rTop, math.cos(t) * rTop
 			if not facesRoad(ds, dx, 20) then
 				local tall = theme.motif == "gourds" and 16 or 12
@@ -210,8 +212,9 @@ function A.Build(world, at, C, districts, P)
 			end
 		end
 		-- Round the floor: brass shells for the Dealer, skulls for the Priest, bones for the Horned One
-		for n = 0, 9 do
-			local t = (n + 0.5) / 10 * math.pi * 2
+		local props = math.max(10, math.floor(R * 0.16))
+		for n = 0, props - 1 do
+			local t = (n + 0.5) / props * math.pi * 2
 			local ds, dx = math.sin(t) * (R - 3), math.cos(t) * (R - 3)
 			if not facesRoad(ds, dx, 10) then
 				local spot = at(c + ds, px + dx, 0)
@@ -230,8 +233,9 @@ function A.Build(world, at, C, districts, P)
 			end
 		end
 		-- Braziers round the floor, away from the way in
-		for n = 0, 5 do
-			local t = (n + 0.5) / 6 * math.pi * 2
+		local braziers = math.max(6, math.floor(R * 0.1))
+		for n = 0, braziers - 1 do
+			local t = (n + 0.5) / braziers * math.pi * 2
 			local ds, dx = math.sin(t) * (R - 6), math.cos(t) * (R - 6)
 			if not facesRoad(ds, dx, 10) then
 				piece("BrazierStand", Vector3.new(1.4, 5, 1.4), at(c + ds, px + dx, 2.5), dark)
@@ -321,11 +325,9 @@ function A.Build(world, at, C, districts, P)
 		local pathColor = hex(d.Path)
 		for a = d.From, d.To - 1, 40 do
 			local b = math.min(a + 40, d.To)
-			if not (a < C.Gap.To and b > C.Gap.From) then
-				part(folder, "Path", Vector3.new(18, 0.06, b - a), at((a + b) / 2, 0, 0.03), pathColor)
-				for _, side in { -1, 1 } do
-					part(folder, "PathEdge", Vector3.new(1.4, 0.07, b - a), at((a + b) / 2, side * 9.4, 0.035), pathColor:Lerp(Color3.new(0, 0, 0), 0.18))
-				end
+			part(folder, "Path", Vector3.new(18, 0.06, b - a), at((a + b) / 2, 0, 0.03), pathColor)
+			for _, side in { -1, 1 } do
+				part(folder, "PathEdge", Vector3.new(1.4, 0.07, b - a), at((a + b) / 2, side * 9.4, 0.035), pathColor:Lerp(Color3.new(0, 0, 0), 0.18))
 			end
 		end
 
@@ -396,7 +398,7 @@ function A.Build(world, at, C, districts, P)
 			-- A tiled courtyard between white blocks with a teal stripe; hospital buildings stand behind them
 			for s = d.From + 6, d.To - 6, 12 do
 				for x = -half + 6, half - 6, 12 do
-					if (math.floor(s / 12) + math.floor(x / 12)) % 2 == 0 and not inGap(s, 6) then
+					if (math.floor(s / 12) + math.floor(x / 12)) % 2 == 0 then
 						part(folder, "Tile", Vector3.new(11.9, 0.04, 11.9), at(s, x, 0.02), hex("C6CCC4"))
 					end
 				end
@@ -431,7 +433,7 @@ function A.Build(world, at, C, districts, P)
 			-- Paved square, timbered houses on both sides, a well and carts
 			for s = d.From + 4, d.To - 4, 8 do
 				for x = -half + 4, half - 4, 8 do
-					if rng:NextNumber() < 0.22 and not inGap(s, 4) then
+					if rng:NextNumber() < 0.22 then
 						part(folder, "Flagstone", Vector3.new(7.6, 0.05, 7.6), at(s, x, 0.025), hex(d.Floor):Lerp(Color3.new(1, 1, 1), rng:NextNumber(0.05, 0.16)))
 					end
 				end
@@ -481,9 +483,7 @@ function A.Build(world, at, C, districts, P)
 		elseif d.Name == "roadFactory" then
 			-- Concrete, yellow lines, brick factory halls, boilers, tanks, barrels and pipes along the walls
 			for s = d.From + 5, d.To - 5, 14 do
-				if not inGap(s, 7) then
-					part(folder, "LaneDash", Vector3.new(1, 0.07, 7), at(s, 0, 0.04), hex("FFD23F"))
-				end
+				part(folder, "LaneDash", Vector3.new(1, 0.07, 7), at(s, 0, 0.04), hex("FFD23F"))
 			end
 			for _, side in { -1, 1 } do
 				strip("LaneEdge", 1, 0.07, side * 30, 0.04, hex("FFD23F"))

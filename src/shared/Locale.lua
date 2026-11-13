@@ -60,7 +60,7 @@ guideFieldTitle={"2. Earn Zombucks","2. Зарабатывай зомбуксы"
 guideShopTitle={"3. The shop","3. Лавка"},guideShop={"Visit the central shop to buy wood and stone graves, weapons, pets and traps. Choose a category on the left.","У лавки на площади покупай деревянные и каменные могилы, оружие, питомцев и капканы. Категории — слева."},
 guideHomeTitle={"4. House and merging","4. Дом и слияние"},guideHome={"Merge three matching zombies at the table on the central plaza. Walk into your house freely; house upgrades unlock more farm slots.","Объединяй трёх одинаковых зомби у стола на центральной площади. В дом можно зайти пешком; улучшение дома открывает новые места на ферме."},
 guideTrainTitle={"5. Run faster","5. Беги быстрее"},guideTrain={"Stand on your treadmill to increase your speed. Training works only while you are in the game. Use the upgrade board beside it.","Встань на беговую дорожку, чтобы повысить скорость. Тренировка идёт только в игре. Улучшай дорожку на табличке рядом."},
-guideRoadTitle={"6. Graves on the road","6. Могилы на дороге"},guideRoad={"Hold Take beside a road grave, carry it back through the gate. Rare graves lie farther away. Dodge mutants, slime and gaps.","Удерживай «Забрать» у могилы на дороге и вернись через ворота. Редкие могилы — дальше. Обходи мутантов, слизь и провалы."},
+guideRoadTitle={"6. Graves on the road","6. Могилы на дороге"},guideRoad={"Hold Take beside a road grave, carry it back through the gate. Rare graves lie farther away. Dodge mutants and slime.","Удерживай «Забрать» у могилы на дороге и вернись через ворота. Редкие могилы — дальше. Обходи мутантов и слизь."},
 guideCombatTitle={"7. Auto fire and weapons","7. Автострельба и оружие"},guideCombat={"A drawn weapon aims and fires at nearby visible mutants. Keep moving! Select slot 2 to draw it, or another slot to put it away. Reload with R; auto fire can be toggled in settings.","Достанное оружие само целится в ближайших видимых мутантов. Продолжай двигаться! Слот 2 — достать, другой слот — убрать. Перезарядка — R. Автострельба переключается в настройках."},
 guideBatTitle={"8. Shovel and traps","8. Лопата и капканы"},guideBat={"On the road, swing your shovel with empty hands to knock back a player and interrupt digging. Select a trap in slot 3 and tap the ground to place it. A trapped carrier drops the grave for anyone to pick up.","На дороге удар лопатой без могилы в руках отталкивает игрока и сбивает выкапывание. Выбери капкан в слоте 3 и нажми на землю. Попавший в капкан роняет могилу — её может подобрать любой."},
 guideNightTitle={"9. Night and pets","9. Ночь и питомцы"},guideNight={"At night, protect your farm from raiders and theft. Equip pets from the paw menu for bonuses. Check quests and daily rewards for extra Zombucks.","Ночью защищай ферму от налётчиков и краж. Экипируй питомцев в меню с лапкой ради бонусов. Задания и ежедневные награды дают зомбуксы."},
@@ -88,7 +88,7 @@ trapStockFull={"You already carry 10 traps.","В запасе уже 10 капк
 trapPlacedFull={"You already have 3 active traps.","На дороге уже стоят 3 твоих капкана."},
 trapNoCoins={"Not enough Zombucks for a trap.","Не хватает зомбуксов на капкан."},
 trapEmpty={"No traps left. Buy more at the shop.","Капканы закончились. Купи ещё в лавке."},
-trapBadSpot={"Find clear ground away from the gate, gaps and other traps.","Нужно свободное место подальше от ворот, ямы и других капканов."},
+trapBadSpot={"Find clear ground away from the gate and other traps.","Нужно свободное место подальше от ворот и других капканов."},
 roadGearDenied={"Use on the road with free hands.","Используется на дороге, когда руки свободны."},
 
 signRoad={"ROAD TO THE RUINS","ДОРОГА В ЗАБРОШКИ"},
@@ -572,10 +572,21 @@ L.Rows.stealNewbie={"Newcomers can't steal graves while their boost lasts.","П�
 L.Rows.shovePenalty={"You shoved a player: for {n} s graves lift slower, and the monsters come for you!","Ты толкнул игрока: {n} с могилы поднимаются дольше, а монстры идут за тобой!"}
 L.Rows.workbench={"WORKBENCH","ВЕРСТАК"}
 L.Rows.portalHome={"Home","Домой"}
-L.Rows.portalOpen={"You beat the boss! A portal home stands in the arena for {n} s (a grave carried through it loses 1 rarity).","Босс повержен! Портал домой открыт в арене на {n} с (могила, пронесённая через него, теряет 1 редкость)."}
+L.Rows.portalOpen={"You beat the boss! Its main grave is open to its winners, and a portal home stands in the arena for {n} s (an ordinary grave carried through loses 1 rarity, the main one doesn't).","Босс повержен! Главная могила открыта для победителей, а портал домой стоит в арене {n} с (обычная могила в портале теряет 1 редкость, главная — нет)."}
 L.Rows.portalUsed={"Home through the portal!","Ты дома — через портал!"}
 L.Rows.bossEnraged={"{boss} is enraged: faster and angrier!","{boss} в ярости: быстрее и злее!"}
 L.Rows.bloodArenaSign={"BLOOD MOON ARENA","АРЕНА КРОВАВОЙ ЛУНЫ"}
 L.Rows.portalDowngrade={"Through the portal your {from} grave became {to}.","Через портал могила «{from}» стала «{to}»."}
 L.Rows.portalPenalty={"A carried grave loses 1 rarity","Несомая могила потеряет 1 редкость"}
+-- Sleeping bosses (2026-11-13): steal from the hoard and run, or wake it and fight in the shut arena
+L.Rows.bossAsleep={"{boss} is asleep. Dig a grave from its hoard and run for the gate: it gives chase! Hit it and the arena shuts: a fight to the end.","{boss} спит. Выкопай могилу из его клада и беги к воротам — он погонится! Ударишь его — арена закроется, бой до конца."}
+L.Rows.bossWoke={"{boss} woke up! Run for the gate!","{boss} проснулся! Беги к воротам!"}
+L.Rows.bossCaught={"{boss} caught you! The grave went back to its hoard.","{boss} догнал тебя! Могила вернулась в его клад."}
+L.Rows.bossEscaped={"You got away: {boss} is left with nothing!","Ты убежал: {boss} остался ни с чем!"}
+L.Rows.bossFightLocked={"{boss}: the arena is shut, a fight to the end!","{boss}: арена закрыта, бой до конца!"}
+L.Rows.bossSleepsAgain={"{boss} won and went back to sleep.","{boss} победил и снова уснул."}
+L.Rows.bossGraveWinners={"Only those who beat the boss can take this grave.","Эту могилу могут взять только победители босса."}
+L.Rows.bossFightSign={"⚔ BOSS FIGHT IN PROGRESS","⚔ ИДЁТ БОЙ С БОССОМ"}
+L.Rows.bossMainGrave={"BOSS'S MAIN GRAVE","ГЛАВНАЯ МОГИЛА БОССА"}
+L.Rows.bossChaseBar={"CHASE!","ПОГОНЯ!"}
 return L
