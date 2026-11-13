@@ -1067,7 +1067,7 @@ local dexPage='None';local dexSelected='DeerFarmer'
 local DEX_PAGE_COLOR={None=Style.ModalColors.Cream,Golden=Color3.fromRGB(255,206,84),Lunar=Color3.fromRGB(176,150,255),Rainbow=Color3.fromRGB(255,140,200)}
 local DEX_TINT={Golden=Color3.fromRGB(255,215,120),Lunar=Color3.fromRGB(185,170,255)}
 local function dexPortrait(parent,id,known,page,size,pos)
- if not require(S.MonsterCollection).Icon(id,Icons) then -- the new rotation and the rebuilt RingMaw show their 3D model
+ if not require(S.MonsterCollection).Icon(id,Icons) then -- the new rotation shows its 3D model
   local v=require(S.MonsterPortrait).Create(parent,{id=id,type=id,tier=1,mutation='None'},size,pos,{silhouette=not known});v.Name='DexPortrait';v.ZIndex=3
   if known and DEX_TINT[page] then v.ImageColor3=DEX_TINT[page] end
   return v

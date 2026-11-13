@@ -43,9 +43,9 @@ return {
     {Name="Scream",Shape="Scream",Range=30,Windup=1.3,Cooldown=7,Radius=30,Damage=1,Fx="Scream"},
     {Name="Stomp",Shape="Target",Range=40,MinRange=8,Windup=.9,Cooldown=3.5,Radius=7.5,Damage=2,Fx="Slam"},
    }},
-  -- The second boss (owner, 2026-11-13): the RingMaw. It pounces across the arena, splits its head open and roars,
-  -- and spits a fan of its seeds.
-  BossRingMaw={Boss=true,Health=400,Speed=12,Scale=1.7,SpeedFactor=.8,RewardMult=12,Model="RingMaw_Boss",Color=Color3.fromHex("C8692A"),
+  -- The second boss (owner, 2026-11-13): the RingMaw, in its own painted mesh (the part-built one was taken back the
+  -- same day). It pounces across the arena, roars, and spits a fan of its seeds.
+  BossRingMaw={Boss=true,Health=400,Speed=12,Scale=1.8,SpeedFactor=.8,RewardMult=12,Model="RingMaw_Assassin_Aggressive",Color=Color3.fromHex("967A83"),
    Attacks={
     {Name="Leap",Shape="Dash",Range=44,MinRange=10,Windup=.8,Cooldown=4.5,Radius=7,Speed=70,Distance=46,Damage=2,Fx="Leap"},
     {Name="Scream",Shape="Scream",Range=26,Windup=1.2,Cooldown=7,Radius=26,Damage=1,Fx="Scream"},

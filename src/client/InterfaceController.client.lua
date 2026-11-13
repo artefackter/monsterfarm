@@ -152,7 +152,8 @@ Run.Heartbeat:Connect(function(dt)
  for _,who in Players:GetPlayers() do
   local h=overheadFor(who);if h then
    local slow=math.max(0,(who:GetAttribute('MutantSlowUntil') or 0)-workspace:GetServerTimeNow());local ko=math.max(0,(who:GetAttribute('KnockedOutUntil') or 0)-workspace:GetServerTimeNow())
-   h.gui.Enabled=who~=p or slow>0
+   -- nobody sees the tag of someone hiding in a bush (RoadService HiddenInBush)
+   h.gui.Enabled=(who~=p and not who:GetAttribute("HiddenInBush")) or (who==p and slow>0)
    h.text.Text=(who~=p and (((who:GetAttribute('NewbieBoost') or 1)>1 and '🛡 ' or '')..((who:GetAttribute('Prestige') or 0)>0 and ('⭐'..who:GetAttribute('Prestige')..'  ') or '')..t('incomeShort',{n=L.compact(who:GetAttribute('IncomeRate') or 0,L.lang())})..'  ·  '..L.compact(who:GetAttribute('SpeedPoints') or 0,L.lang())..' 👟') or '')..(slow>0 and string.format('\n◷ %.1f',slow) or ko>0 and '  ★' or '')
    h.text.TextColor3=slow>0 and Pal.Red or Pal.Text
   end

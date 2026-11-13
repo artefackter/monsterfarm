@@ -98,7 +98,7 @@ do
   local held=heldType()
   local icon=held and require(S.MonsterCollection).Icon(held,Icons)
   portrait.Image=held and (icon or '') or Icons.crypt or '';portrait.ImageTransparency=held and 0 or .3
-  local model3d=extra.monster:FindFirstChild('MonsterModel') -- no painting yet (the rotation, the RingMaw): its 3D model
+  local model3d=extra.monster:FindFirstChild('MonsterModel') -- no painting yet (the rotation): its 3D model
   if held and not icon then
    if not model3d or model3d:GetAttribute('Type')~=held then
     if model3d then model3d:Destroy() end

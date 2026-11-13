@@ -115,18 +115,20 @@ function A.Step(model, data, dt)
 	-- What the family does standing still: head, lean, roll, arm offsets
 	local lookYaw, lookPitch, lookRoll, idleLean, idleRoll, idleArm, idleArmOut = 0, 0, 0, 0, 0, 0, 0
 	if g.idle == "alert" then
-		-- deer-like: freezes, then snaps its head to a new direction
+		-- deer-like: holds still, then turns its head to a new direction (smoothly since 2026-11-13: no sharp moves)
 		local slot = math.floor(now * 0.7 + data.seed)
 		local target = math.noise(slot * 1.31, data.seed) * 2.2
-		data.look += (target - data.look) * (1 - math.exp(-dt * 16))
-		lookYaw, lookPitch = data.look, math.noise(slot * 0.77, data.seed + 3) * 0.3
+		local ease = 1 - math.exp(-dt * 4)
+		data.look += (target - data.look) * ease
+		data.lookPitch = (data.lookPitch or 0) + (math.noise(slot * 0.77, data.seed + 3) * 0.3 - (data.lookPitch or 0)) * ease
+		lookYaw, lookPitch = data.look, data.lookPitch
 		idleArm = 0.35
 	elseif g.idle == "twitch" then
 		local spasm = math.max(0, math.noise(now * 1.7, data.seed * 3) - 0.2) * 3
-		lookYaw = math.sin(now * 0.6 + data.seed) * 0.4 + spasm * math.sin(now * 37) * 0.35
-		lookRoll = spasm * math.sin(now * 29) * 0.4 + 0.15
-		idleRoll = spasm * math.sin(now * 23) * 0.12
-		idleArm = spasm * math.sin(now * 31) * 0.5
+		lookYaw = math.sin(now * 0.6 + data.seed) * 0.4 + spasm * math.sin(now * 5) * 0.2
+		lookRoll = spasm * math.sin(now * 4) * 0.2 + 0.15
+		idleRoll = spasm * math.sin(now * 3) * 0.06
+		idleArm = spasm * math.sin(now * 4) * 0.3
 	elseif g.idle == "sniff" then
 		lookPitch = 0.3 + math.sin(now * 9 + data.seed) * 0.07
 		lookYaw = math.sin(now * 0.8 + data.seed) * 0.5
@@ -151,6 +153,11 @@ function A.Step(model, data, dt)
 	lookYaw *= idle
 	lookPitch *= idle
 	lookRoll *= idle
+	-- A sleeping boss (RoadService, 2026-11-13): curled up in its bed, head down, breathing slowly
+	local asleep = state == "Sleeping"
+	if asleep then
+		lookYaw, lookPitch, lookRoll, idleLean, idleRoll, idleArm, idleArmOut = 0, 0.5, 0.25, -0.22, 0, 0, 0
+	end
 
 	-- Per-attack body motion: crouches, dives, lean-backs
 	local crouch, rise, leanAdd, yawAdd, rollAdd = 0, 0, 0, 0, 0
@@ -167,7 +174,7 @@ function A.Step(model, data, dt)
 		rollAdd += windup * math.sin(now * 18) * 0.05 -- pawing the ground
 	elseif attack == "Scream" then
 		leanAdd += 0.4 * windup - 0.3 * strike
-		rollAdd += strike * math.sin(now * 40) * 0.08
+		rollAdd += strike * math.sin(now * 10) * 0.05
 	elseif attack == "Spit" or attack == "Curse" then
 		leanAdd += 0.35 * windup - 0.55 * strike
 	elseif attack == "Summon" then
@@ -200,6 +207,18 @@ function A.Step(model, data, dt)
 	end
 	if stunned then
 		body = body * CFrame.Angles(math.sin(now * 4) * 0.1, 0, math.sin(now * 6) * 0.16)
+	end
+	if asleep then
+		-- the root stands RootHeight (6) above the floor; a slow breath lifts the body a little
+		local breath = math.sin(now * 1.2 + data.seed) * 0.05 * scale
+		if quadruped or floating then
+			-- belly down, the legs folded away under it
+			body = CFrame.new(0, -6 * scale * 0.55 + breath, 0) * CFrame.Angles(-0.2, 0, 0) -- its head drops to the floor
+		else
+			-- on its side: rolled over round its middle and let down until its flank lies on the floor
+			data.sleepHalf = data.sleepHalf or ((model:FindFirstChild("Body", true) or root).Size.X / 2)
+			body = CFrame.new(0, -(6 * scale - data.sleepHalf) + breath, 0) * CFrame.Angles(0, 0, 1.45)
+		end
 	end
 	-- Upper body only: hunch, lean into the run, the attack's lean, rock back when hit
 	local lean = -g.hunch * (0.6 + 0.4 * moving) - g.lean * moving + leanAdd + 0.35 * flinch + breathe * 0.02 * idle + idleLean * idle
@@ -331,7 +350,7 @@ function A.Step(model, data, dt)
 		if attack == "Charge" then
 			pose = pose * CFrame.Angles(0.55 * math.max(windup, dashing and 1 or 0), 0, 0) -- head down, horns first
 		elseif attack == "Scream" then
-			pose = CFrame.Angles(-0.7 * windup + 0.25 * strike, math.sin(now * 30) * 0.12 * strike, math.sin(now * 33) * 0.1 * strike)
+			pose = CFrame.Angles(-0.7 * windup + 0.25 * strike, math.sin(now * 9) * 0.1 * strike, math.sin(now * 8) * 0.06 * strike)
 		elseif attack == "Spit" or attack == "Curse" then
 			pose = CFrame.Angles(-0.45 * windup + 0.55 * strike, 0, 0)
 		elseif attack == "Summon" then
@@ -341,7 +360,7 @@ function A.Step(model, data, dt)
 			pose = pose * CFrame.Angles(math.sin(phase * 2 + 0.6) * 0.12 * moving, 0, 0)
 		end
 		if biting then
-			pose = quadruped and CFrame.Angles(0.45 + math.sin(now * 16) * 0.3, 0, 0) or CFrame.Angles(0.25 + math.sin(now * 18) * 0.2, 0, 0)
+			pose = quadruped and CFrame.Angles(0.45 + math.sin(now * 8) * 0.2, 0, 0) or CFrame.Angles(0.25 + math.sin(now * 8) * 0.15, 0, 0)
 		end
 		if stunned then
 			pose = CFrame.Angles(0.25, math.sin(now * 3) * 0.5, math.sin(now * 4) * 0.2)
@@ -371,13 +390,6 @@ function A.Step(model, data, dt)
 				if name == "ParasiteHead" then
 					pose = pose * CFrame.new(0, math.sin(now * 4 + data.seed) * 0.12 * scale, 0)
 				end
-			elseif name == "MawL" or name == "MawR" then
-				-- The RingMaw's head halves ride the head and swing open on their hinge to bite, roar and spit. The head
-				-- turns round the neck, so its pose is moved from the neck to the hinge first.
-				local hj = root:FindFirstChild("Head")
-				local neck = hj and hj:IsA("Motor6D") and hj.C0.Position or j.C0.Position
-				local open = 0.08 + math.sin(now * 1.7 + data.seed) * 0.05 + 0.9 * math.max(windup, strike) + (biting and 0.55 + math.sin(now * 16) * 0.25 or 0)
-				pose = CFrame.new(neck - j.C0.Position) * head * CFrame.new(j.C0.Position - neck) * CFrame.Angles(0, (name == "MawL" and 1 or -1) * open, 0) -- the left half is on -X
 			elseif name == "TendrilL" or name == "TendrilR" then
 				local sign = name == "TendrilL" and 1 or -1
 				local agitated = 1 + windup * 2 + moving + strike

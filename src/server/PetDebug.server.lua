@@ -37,7 +37,39 @@ local function execute(p,command,arg,value)
   -- /boss n: finish off the boss of location n as this player (to see the win and the portal home)
   local Road=require(script.Parent.RoadService);local cfg=Road.BossCfg[tonumber(arg) or 0];local a=cfg and cfg.Live
   if not a then return false end
+  a.canHurt=nil -- from anywhere, asleep or not
   return require(script.Parent.MutantService).Damage(a,a.hp,p)
+ elseif command=="traps" then
+  -- /traps n: n traps in the bag
+  local n=tonumber(arg);if not n then return false end
+  d.traps=n;require(script.Parent.RoadGearService).Push(p)
+ elseif command=="carry" then
+  -- /carry Stone: a grave of that kind on your back, as if dug on the road
+  require(script.Parent.RoadService).Carry(p,arg or "Stone")
+ elseif command=="trapself" then
+  -- /trapself on|off: your own traps catch you too (a trap only ever catches someone else carrying a grave)
+  require(script.Parent.RoadGearService).CatchOwner=arg~="off"
+ elseif command=="hearts" then
+  -- /hearts n: n hearts on the road (to test without the road's monsters getting in the way)
+  local n=tonumber(arg);if not n then return false end
+  require(script.Parent.RoadService).Hearts[p]=n;p:SetAttribute("RoadHearts",n)
+ elseif command=="steal" then
+  -- /steal n: dig a grave out of boss n's hoard at once (it wakes and gives chase)
+  local Road=require(script.Parent.RoadService);local i=tonumber(arg) or 1
+  for _,spot in Road.Spots do
+   if spot.Guard==i and spot.Model and p.Character then
+    p.Character:PivotTo(CFrame.new(Road.SpotPosition(spot,4)));task.wait(.3)
+    return Road.Take(p,spot)
+   end
+  end
+  return false
+ elseif command=="hitboss" then
+  -- /hitboss n: step into boss n's arena and hit it once (the arena shuts: the fight starts)
+  local Road=require(script.Parent.RoadService);local cfg=Road.BossCfg[tonumber(arg) or 0];local a=cfg and cfg.Live
+  local d=require(game.ReplicatedStorage.Shared.Config.RoadProgression).Districts[tonumber(arg) or 0]
+  if not a or not d or not p.Character then return false end
+  p.Character:PivotTo(Road.At(d.PocketS,d.PocketX-d.PocketSide*40,4));task.wait(.3)
+  return require(script.Parent.MutantService).Damage(a,1,p)
  elseif command=="farm" then
   -- /farm [n]: skip the tutorial and put n first-tier monsters out in the yard (night raids need a target)
   local Z=require(script.Parent.ZombieService);local Place=require(game.ReplicatedStorage.Shared.PlacementRules)

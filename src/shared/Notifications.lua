@@ -14,11 +14,11 @@ N.Colors = {
 local types = {}
 local groups = {
  success = {"ok","gateRepaired","portalUsed","roadStored","roadDelivered","trapBought","trapPlaced","houseDone","mutantNewbie"},
- reward = {"questDone","portalOpen","inviteReward","inviteWelcome","killToast","chiefGraveDropped","bossGraveDropped","petDug","offlineHeap","bloodMoonGrave","prestigeDone","petsRefunded"},
+ reward = {"questDone","portalOpen","bossEscaped","inviteReward","inviteWelcome","killToast","chiefGraveDropped","bossGraveDropped","petDug","offlineHeap","bloodMoonGrave","prestigeDone","petsRefunded"},
  rare = {"rare","weaponUnlocked","starRare","petRare","roadRare","bossDefeated","bloodMoonWin","prestigeAll"},
- warning = {"bossArena","bossEnraged","portalDowngrade","shovePenalty","gateAttacked","gateBroken","mutantWave","mutantStolen","petAlarm","caught","roadDropped","roadLost","roadFaint","roadFell","roadNight","roadPickupInterrupted","trapCaught","trapCaughtDrop","bloodMoonRise","bloodMoonLost","roadClosed","bloodMoonEnough"},
+ warning = {"bossArena","bossAsleep","bossWoke","bossCaught","bossFightLocked","bossSleepsAgain","bossEnraged","portalDowngrade","shovePenalty","gateAttacked","gateBroken","mutantWave","mutantStolen","petAlarm","caught","roadDropped","roadLost","roadFaint","roadFell","roadNight","roadPickupInterrupted","trapCaught","trapCaughtDrop","bloodMoonRise","bloodMoonLost","roadClosed","bloodMoonEnough"},
  guide = {"giftHint","petStarter","placeHint","placeCemetery","placeWorker","placeDefender","roadBatHint","mergeHint"},
- error = {"error","takeOnFarm","stealNewbie","prestigeBusy","petStarterStays","weaponDenied","inviteUnavailable","mergeNeedThree","giftGroupRequired","roadGearDenied","roadBossFirst","batCarryDenied","trapEmpty","trapFull","trapPlacedFull","trapVisitShop","trapStockFull","trapNoCoins","trapBadSpot","petBusy","petUnequipFirst","petSlotsFull","petShopDistance","petNightOnly","petMaxSlots","petNoCoins","petFull","placeFar","placeCrowded","placeGravesFull","placeOutside","placeGuardsFull","placeBad","placeNoGrave","placeFieldFull","homeKO","homeTrap","homeCooldown","homeDig","homeCarry","homeUnavailable","homeRoad"},
+ error = {"error","bossGraveWinners","takeOnFarm","stealNewbie","prestigeBusy","petStarterStays","weaponDenied","inviteUnavailable","mergeNeedThree","giftGroupRequired","roadGearDenied","roadBossFirst","batCarryDenied","trapEmpty","trapFull","trapPlacedFull","trapVisitShop","trapStockFull","trapNoCoins","trapBadSpot","petBusy","petUnequipFirst","petSlotsFull","petShopDistance","petNightOnly","petMaxSlots","petNoCoins","petFull","placeFar","placeCrowded","placeGravesFull","placeOutside","placeGuardsFull","placeBad","placeNoGrave","placeFieldFull","homeKO","homeTrap","homeCooldown","homeDig","homeCarry","homeUnavailable","homeRoad"},
 }
 for kind, keys in pairs(groups) do for _, key in ipairs(keys) do types[key] = kind end end
 function N.Type(key) return types[key] or "info" end

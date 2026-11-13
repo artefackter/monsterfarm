@@ -80,7 +80,7 @@ function N.Move(agent,goal,speed,dt)
  if hit then
   step=step.Unit*math.max(0,hit.Distance-.12)
  end
- -- No stepping off the island/road or into the jump gap.
+ -- No stepping off the island or the road.
  local nextPos=pos+step
  local floor=workspace:Raycast(nextPos+Vector3.new(0,1,0),Vector3.new(0,-heightOffset-4,0),params)
  if not floor or floor.Normal.Y<.6 then agent.model:SetAttribute('NavigationStatus','NoFloor');return end

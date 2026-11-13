@@ -83,10 +83,9 @@ do
   return pos[a]<pos[b]
  end)
 end
--- The painted 2D portrait, or nil when the monster shows its 3D model instead: the new rotation has no paintings
--- yet, and the RingMaw was rebuilt (RingMawModel), so its old paintings no longer match it.
+-- The painted 2D portrait, or nil when the monster shows its 3D model instead: the new rotation has no paintings yet.
 function C.Icon(id,icons)
- if C.Outfits[id] or C.Family(id)=="RingMaw" then return nil end
+ if C.Outfits[id] then return nil end
  return icons["modal_monster_"..id]
 end
 -- Saves from before the rotation keep their monsters but take the new look of their rarity: an Uncommon Farmer

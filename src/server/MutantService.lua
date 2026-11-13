@@ -44,8 +44,11 @@ function M.Remove(a,reason)
 end
 function M.Damage(a,damage,killer,crit)
  if not a or not M.Live[a.id] or a.hp<=0 or a.state=="Spawning" then return false end
+ -- A sleeping boss is woken only from inside its arena, and a shut arena's fight is its fighters' (RoadService)
+ if a.canHurt and killer and not a.canHurt(a,killer) then return false end
  a.model:SetAttribute("HitAt",workspace:GetServerTimeNow())
  a.hp=math.max(0,a.hp-damage);a.model:SetAttribute("Health",a.hp)
+ if a.onHurt and killer and a.hp>0 then a.onHurt(a,killer) end
  -- Everyone who hits a boss shares the win, not only the last shot.
  if a.boss and killer then a.damagers=a.damagers or {};a.damagers[killer]=true end
  fx("Hit",a.id,a.model.PrimaryPart.Position,damage,crit==true)

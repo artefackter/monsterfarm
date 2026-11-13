@@ -25,12 +25,6 @@ for name,parts in Manifest do
 end
 local Collection=require(script.Parent.MonsterCollection)
 local Rig=require(script.Parent.MonsterRig)
--- The RingMaw is built from parts now (RingMawModel): its looks replace the old meshes, its joints join the rig.
-do
- local RingMaw=require(script.Parent.RingMawModel)
- for name,parts in RingMaw.Assets do Manifest[name]=parts end
- for name,joints in RingMaw.Rig do Rig[name]=joints end
-end
 local Art = {}
 
 -- Studio's glTF importer turns the mesh data 180 degrees around Y (+Z forward to -Z forward).
@@ -82,7 +76,7 @@ function Art.Preload()
 	for assetName, parts in pairs(Manifest) do
 		for _, meta in ipairs(parts) do
 			local key = assetName .. "." .. meta.part
-			if meta.id and not lib:FindFirstChild(key) then
+			if not lib:FindFirstChild(key) then
 				pending += 1
 				task.spawn(function()
 					if not createTemplate(key, meta.id, lib) then
@@ -119,7 +113,7 @@ function Art.Bounds(assetName)
  local lo=Vector3.new(math.huge,math.huge,math.huge);local hi=-lo
  for _,p in Manifest[assetName] or {} do
   if p.transparency<1 then
-  local box=p.box or p.size;local a,b=p.offset-box*.5,p.offset+box*.5
+  local a,b=p.offset-p.size*.5,p.offset+p.size*.5
   lo=Vector3.new(math.min(lo.X,a.X),math.min(lo.Y,a.Y),math.min(lo.Z,a.Z))
   hi=Vector3.new(math.max(hi.X,b.X),math.max(hi.Y,b.Y),math.max(hi.Z,b.Z))
   end
@@ -136,18 +130,8 @@ function Art.Spawn(assetName, parent, cf, opts)
 	local lib, scale, out = library(), opts.scale or 1, {}
 	for _, meta in ipairs(parts) do
 		if not (opts.skip and opts.skip[meta.part]) then
-			local template = meta.id and lib:FindFirstChild(assetName .. "." .. meta.part)
+			local template = lib:FindFirstChild(assetName .. "." .. meta.part)
 			local p = template and template:Clone() or Instance.new("Part")
-			if meta.procedural then -- built from a primitive (RingMawModel): its shape first, so the size sticks
-				if meta.shape == "Cylinder" or meta.shape == "Ball" then
-					p.Shape = Enum.PartType[meta.shape]
-				elseif meta.shape == "Ellipsoid" then
-					local mesh = Instance.new("SpecialMesh")
-					mesh.MeshType = Enum.MeshType.Sphere
-					mesh.Parent = p
-				end
-				p.TopSurface, p.BottomSurface = Enum.SurfaceType.Smooth, Enum.SurfaceType.Smooth
-			end
 			p.Name = (opts.prefix or "") .. meta.part
             p:SetAttribute("ArtAsset",assetName)
 			p.Anchored = true
@@ -156,10 +140,10 @@ function Art.Spawn(assetName, parent, cf, opts)
 			p.CanQuery = opts.collide == true
 			p.Massless = true
 			p.CastShadow = meta.cast
-			p.Material = (template or meta.procedural) and Enum.Material[meta.material] or Enum.Material.SmoothPlastic
+			p.Material = template and Enum.Material[meta.material] or Enum.Material.SmoothPlastic
 			p.Transparency = meta.transparency
 			p.Size = meta.size * scale
-			p.CFrame = cf * CFrame.new(meta.offset * scale) * (meta.procedural and (meta.rot or CFrame.identity) or Art.ImportRotation)
+			p.CFrame = cf * CFrame.new(meta.offset * scale) * Art.ImportRotation
 			if meta.yaw then
 				p.CFrame *= CFrame.Angles(0, meta.yaw, 0)
 			end
@@ -208,7 +192,7 @@ end
 -- The rotation's outfits (owner, 2026-11-13): the Miner, the Knight and the King wear the Farmer's, the Punk's and the
 -- Assassin's bodies with pieces built on top. Each piece rides the limb it belongs to (Attach), so it walks, waves
 -- and hops with the monster. Sizes follow the head, so every family's outfit fits its own build.
-local HAT_SINK = { Deer = 0.4, Parasite = 0.14, Stalker = 0.12, Verity = 0.14, RingMaw = -0.05, CaveDweller = 0.16 } -- antlers make the deer's head box tall
+local HAT_SINK = { Deer = 0.4, Parasite = 0.14, Stalker = 0.12, Verity = 0.14, RingMaw = 0.15, CaveDweller = 0.16 } -- antlers make the deer's head box tall
 local function piece(model, name, attach, size, cf, color, material, shape)
 	local p = Instance.new("Part")
 	p.Name = "Outfit_" .. name
@@ -236,7 +220,7 @@ function Art.Dress(model, outfit, parts, feet, family)
 		return arm.Position - up * arm.Size.Y * 0.42
 	end
 	local ball, cyl, metal = Enum.PartType.Ball, Enum.PartType.Cylinder, Enum.Material.Metal
-	if family == "RingMaw" then -- its "arms" are spider legs: the hat and the body pieces only
+	if family == "RingMaw" then -- it walks on all fours, its "arms" are front legs: the hat and the body pieces only
 		armR, armL = nil, nil
 	end
 	local flat = CFrame.Angles(0, 0, math.pi / 2) -- a cylinder standing up

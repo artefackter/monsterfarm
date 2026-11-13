@@ -230,13 +230,40 @@ return {}
 -- (ArtKit.Dress: a hard hat with a lamp and a pickaxe; a helmet, a shield and a sword; a crown, a cape and a sceptre),
 -- each piece riding its limb. Old saves are moved over on load (MonsterCollection.Promote): an Uncommon Farmer becomes
 -- a Miner, an Epic Punk a Knight, a Mythic Assassin a King. The dex reads family by family. Monsters without a
--- painted portrait (the rotation, the RingMaw) show their 3D model everywhere (MonsterCollection.Icon).
+-- painted portrait (the rotation) show their 3D model everywhere (MonsterCollection.Icon). The starter is a Deer Miner.
 -- Rarer monsters are much bigger: RaritySize 1 / 1.15 / 1.32 / 1.52 / 1.75 / 2.05, times the stars' size.
 -- Farm animations by family (ZombieVisuals STYLE): the deer struts and rears up, the parasite scuttles and shivers,
--- the stalker creeps hunched and peeks, Verity glitches from spot to spot, the RingMaw skitters and splits its head
--- open, the cave dweller lumbers and stretches, Siren Head shakes its sirens. The Miner digs, the Knight salutes, the
+-- the stalker creeps hunched and peeks, Verity glitches from spot to spot, the RingMaw skitters and snaps its jaws,
+-- the cave dweller lumbers and stretches, Siren Head shakes its sirens. The Miner digs, the Knight salutes, the
 -- King waves like a king.
--- The RingMaw is rebuilt from parts (RingMawModel): a ribbed gourd head that splits into two halves on a hinge at the
--- back, rings of teeth round a glowing throat, a hunched body on six long spider legs. It is the second boss now
--- (BossRingMaw: a pounce, a roar with the head split wide, a fan of seeds), in a dark-forest pocket with carved
--- gourds on the columns; Siren Head is no longer a boss. The merge window keeps its scroll position when it redraws.
+-- The RingMaw is the second boss now (BossRingMaw: a pounce, a roar, a fan of seeds), in a dark-forest pocket with
+-- carved gourds on the columns; Siren Head is no longer a boss. The merge window keeps its scroll position when it
+-- redraws. A RingMaw rebuilt from parts (a gourd head splitting on a hinge, six spider legs) was tried the same day
+-- and taken back (owner: "doesn't meet expectations"): the RingMaw, the boss included, wears its painted mesh again.
+-- Farm monsters no longer hop each time they earn: they all earned on one beat, so the whole yard jumped together,
+-- and the bigger sizes made it loud. The hop is now a rare emote of the families with no style of their own.
+-- Sleeping bosses (owner, 2026-11-13: "like Steal the Egg"). Every boss arena is as big as the Blood Moon's (radius
+-- 100, RoadProgression.PocketRadius; its middle PocketRadius before the location's end). The boss sleeps in its bed
+-- in the middle (lying on its side; quadrupeds belly down; 💤 over it) on a ring of six of the location's best graves
+-- (RoadConfig.Boss.Hoard), free to dig. Dig one and it wakes with a roar and chases the thief (Chase: a little slower
+-- than the location's monsters, so a thief needs more than the recommended speed with a grave on their back) all the
+-- way to the ruins gate; if it catches them they die and the grave goes back to its ring; delivered at the gate, the
+-- chase is over. Either way it is soon back in its bed asleep (a boss far off down the road sinks away and is home).
+-- Hit it from inside its arena and the arena shuts behind everyone in it (a red wall with "boss fight" across the
+-- opening): nobody gets in or out until it or all of them fall. A lost fight heals it and it goes back to sleep. Its
+-- main grave (Boss.Main: Marble, Golden, Golden, Lunar, Lunar, Lunar; the last may promise the Chief) lies behind its
+-- bed, locked until it falls, then only for its winners; carried through the portal it does not lose a rarity. The old
+-- two treasure graves and the boss's chance drop are gone. Studio: /hearts n, /steal n, /hitboss n, /boss n.
+-- The win portal is calmer: a stone ring with four dim crystals and a tinted glass core instead of glaring neon.
+-- No sharp moves (owner: "the monsters shake their heads like a seizure"): every farm emote moves slowly and smoothly
+-- (no more random jumps of the head or body, no fast shakes), and on the road the deer turns its head instead of
+-- snapping it, Verity's twitch and the head shake of a roar are slower.
+-- The pit across the road in the village (RoadConfig.Gap, s 1660-1667) is gone (owner, 2026-11-13: "adding it was a
+-- mistake"): one flat floor all the way, and nothing (scenery, bushes, traps, dropped graves) steps round it any more.
+-- Traps could hardly ever be set (owner, 2026-11-13: "traps don't work"): the check that nothing stands between you and
+-- the spot counted the monsters' hitboxes as walls, and on the road a monster is nearly always close. Only walls count
+-- now (WeaponService.Raycast wallsOnly). A trap still catches only someone else carrying a grave. Studio: /traps n,
+-- /carry Kind, /trapself on|off (your own traps catch you, to test alone).
+-- Traps on monsters were tried the same day and taken back (owner: "only players carrying a grave"): a trap catches
+-- only someone else carrying a grave, and is set on the road (not in the boss arenas) or on your own farm.
+-- In a bush (HiddenInBush) your name over your head and your income tag are hidden from everyone.

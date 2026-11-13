@@ -23,9 +23,11 @@ end
 -- beside the road near the location's end, left and right in turn, reached through an opening in the road wall.
 -- The old marks (Arena, ArenaFrom, ArenaTo) stay: the regular stretch still ends before them.
 P.RoadHalf=70 -- half the road's width (RoadConfig.Width / 2)
-P.PocketRadius=56;P.PocketGap=26;P.PocketNeck=8 -- the round floor; the opening in the wall; the passage to the round
+-- As big as the Blood Moon arena since 2026-11-13 (owner: "make the boss fight as big as the Blood Moon arena"):
+-- radius 100, its middle PocketRadius before the location's end so the round stays beside its own location.
+P.PocketRadius=100;P.PocketGap=26;P.PocketNeck=8 -- the round floor; the opening in the wall; the passage to the round
 for i,d in P.Districts do
- d.PocketSide=i%2==1 and 1 or -1;d.PocketS=d.To-60;d.PocketX=d.PocketSide*(P.RoadHalf+P.PocketNeck+P.PocketRadius)
+ d.PocketSide=i%2==1 and 1 or -1;d.PocketS=d.To-P.PocketRadius;d.PocketX=d.PocketSide*(P.RoadHalf+P.PocketNeck+P.PocketRadius)
 end
 -- Which location's pocket (round or passage) the road-local point s, x is in, or nil.
 function P.PocketAt(s,x,margin)

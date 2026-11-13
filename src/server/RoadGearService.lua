@@ -12,6 +12,7 @@ local A=require(script.Parent.AnalyticsTracker)
 local Models=require(RS.Shared.RoadGearModel)
 local Actions=require(script.Parent.ActionService);local Shovels=require(RS.Shared.Config.ShovelConfig);local ActionRules=require(RS.Shared.ActionRules)
 local Gear={Traps={},NextBat={},Requests={},Previous={}}
+-- Gear.CatchOwner: Studio only (PetDebug /trapself), so a lone tester can be caught by their own trap.
 local rem
 local function root(p) return p.Character and p.Character:FindFirstChild("HumanoidRootPart") end
 local function notice(p,key) rem.Notice:FireClient(p,key) end
@@ -104,7 +105,7 @@ function Gear.Place(p,target)
  if typeof(ahead)~="Vector3" or ahead.X~=ahead.X or ahead.Y~=ahead.Y or ahead.Z~=ahead.Z or (ahead-r.Position).Magnitude>12 then return false,"trapBadSpot" end
  local s,x=Road.ToRoad(ahead)
  local onRoad=Road.IsOnRoad(p)
- if onRoad and (s<C.GateLine+12 or s>C.Length-5 or math.abs(x)>C.Width/2-4 or (s>C.Gap.From-4 and s<C.Gap.To+4)) then return false,"trapBadSpot" end
+ if onRoad and (s<C.GateLine+12 or s>C.Length-5 or math.abs(x)>C.Width/2-4) then return false,"trapBadSpot" end
  local floors={};local area=onRoad and P.World.Road or P.Assigned[p].Model
  for _,part in area:GetDescendants() do if part:IsA('BasePart') and part.CanCollide and part.CanQuery then table.insert(floors,part) end end
  local params=RaycastParams.new();params.FilterType=Enum.RaycastFilterType.Include;params.FilterDescendantsInstances=floors
@@ -112,8 +113,10 @@ function Gear.Place(p,target)
  if not hit then return false,"trapBadSpot" end
  local pos=hit.Position
  if not onRoad then local localPos=P.Assigned[p].Base:PointToObjectSpace(pos);local half=require(RS.Shared.Config.ZoneConfig).FarmHalf-2;if math.abs(localPos.X)>half or math.abs(localPos.Z)>half or math.abs(pos.Y-P.PlazaTop)>2 then return false,"trapBadSpot" end end
- -- Must be reachable on the ground; no throwing through walls or placing while jumping.
- if math.abs(r.Position.Y-pos.Y)>5 or W.Raycast(r.Position,Vector3.new(pos.X,r.Position.Y,pos.Z)-r.Position) then return false,"trapBadSpot" end
+ -- Must be reachable on the ground; no throwing through walls or placing while jumping. Only walls block the way:
+ -- a monster standing in between (on the road there nearly always is one) did too, and no trap could be set
+ -- (owner, 2026-11-13: "traps don't work").
+ if math.abs(r.Position.Y-pos.Y)>5 or W.Raycast(r.Position,Vector3.new(pos.X,r.Position.Y,pos.Z)-r.Position,true) then return false,"trapBadSpot" end
  local overlap=OverlapParams.new();overlap.FilterType=Enum.RaycastFilterType.Include;overlap.FilterDescendantsInstances={P.World};overlap.RespectCanCollide=true
  if #workspace:GetPartBoundsInBox(CFrame.new(pos+Vector3.new(0,1.6,0)),Vector3.new(5,3,5),overlap)>0 then return false,"trapBadSpot" end
  for t in pairs(Gear.Traps) do if (t.pos-pos).Magnitude<C.Trap.Spacing then return false,"trapBadSpot" end end
@@ -123,7 +126,7 @@ function Gear.Place(p,target)
  d.traps-=1;Gear.Traps[t]=true;Gear.Push(p);Road.CancelPickup(p);notice(p,"trapPlaced");return true,t
 end
 function Gear.Trigger(t,p)
- if not Gear.Traps[t] or os.clock()<t.armedAt or os.clock()>=t.expires or t.owner==p or not Road.Carriers[p] or not Actions.CanAct(p) or os.clock()<(Actions.State(p).immune or 0) then return false end
+ if not Gear.Traps[t] or os.clock()<t.armedAt or os.clock()>=t.expires or (t.owner==p and not Gear.CatchOwner) or not Road.Carriers[p] or not Actions.CanAct(p) or os.clock()<(Actions.State(p).immune or 0) then return false end
  local r=root(p);local pos=r and r.Position
  if not pos then return false end
  -- Contact is checked in Tick; this function has no remote entry point.
@@ -140,7 +143,7 @@ function Gear.Tick()
    if not t.model:GetAttribute("Armed") then t.model:SetAttribute("Armed",true);Models.ArmTrap(t.model) end
    for _,p in ipairs(Players:GetPlayers()) do
     local r=root(p)
-    if r and p~=t.owner and Road.Carriers[p] and Actions.CanAct(p) then
+    if r and (p~=t.owner or Gear.CatchOwner) and Road.Carriers[p] and Actions.CanAct(p) then
      local pos=r.Position;local prev=Gear.Previous[p] or pos
      if (pos-prev).Magnitude>24 then prev=pos end -- do not sweep teleports
      local delta=Vector3.new(pos.X-prev.X,0,pos.Z-prev.Z)

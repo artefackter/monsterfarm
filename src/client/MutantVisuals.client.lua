@@ -276,6 +276,8 @@ Run.Heartbeat:Connect(function(dt)
     local flat=Vector3.new(root.Position.X-center.X,0,root.Position.Z-center.Z)
     if flat.Magnitude<=Progression.PocketRadius+6 and math.abs(root.Position.Y-center.Y)<40 then found=m;break end -- in its pocket
    end
+   -- a boss chasing you (sleeping bosses, 2026-11-13) shows its bar wherever you run
+   if m.Parent and m:GetAttribute("ChaseUserId")==p.UserId and (m:GetAttribute("Health") or 0)>0 then found=m;break end
   end
  end
  bossGui.Enabled=found~=nil
@@ -286,7 +288,7 @@ Run.Heartbeat:Connect(function(dt)
   local left=math.max(0,(found:GetAttribute("GiantEndsAt") or 0)-workspace:GetServerTimeNow())
   bossTitle.Text="🩸 "..L.text("bloodMoonBar",L.lang()).." · "..L.text(found:GetAttribute("BossName") or "Chief",L.lang())..string.format(" · %d:%02d",math.floor(left/60),math.floor(left%60))
  else
-  bossTitle.Text="☠ "..L.text("bossBar",L.lang()).." · "..L.text(found:GetAttribute("BossName") or "Chief",L.lang())..(found:GetAttribute("Enraged") and " 🌙" or "")
+  bossTitle.Text="☠ "..L.text("bossBar",L.lang()).." · "..L.text(found:GetAttribute("BossName") or "Chief",L.lang())..(found:GetAttribute("Enraged") and " 🌙" or "")..(found:GetAttribute("Asleep") and " 💤" or "")..(found:GetAttribute("ChaseUserId")==p.UserId and " · "..L.text("bossChaseBar",L.lang()) or "")
  end
  bossFill.Size=UDim2.fromScale(frac,1);bossFill.Visible=frac>0
  bossShown=frac<bossShown and bossShown+(frac-bossShown)*(1-math.exp(-dt*3)) or frac
