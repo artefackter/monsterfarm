@@ -165,134 +165,36 @@ Run.Heartbeat:Connect(function()
  reloadButton.Visible=UIS.TouchEnabled and not open and p:GetAttribute('ActiveSlot')==2 and cfg~=nil and not state.holstered and (state.reloadLeft or 0)<=0 and (state.ammo or 0)<(state.magazine or cfg.Magazine)
 end)
 do -- its own scope: this script is close to Luau's limit of 200 locals
--- Upgrade bench (WeaponUpgrades): one tile per stat with its picture, level, what the next level gives and a
--- green button with the price in zombucks and mutagen. Opened from the weapon strip or the mutagen chip.
-local Up=require(S.WeaponUpgrades)
-local MC=Style.ModalColors
-local STAT_ICON={Damage='pistol',FireRate='auto_on',Magazine='rifle',Crit='star',Reload='reload'} -- Range has no picture: a target emoji
-local benchWeapon
-local function vial(parent,size,pos)
- if Icons.modal_mutagen then local art=Style.ModalArt(parent,'mutagen',nil,size,pos);art.ZIndex=7;return art end
- -- a little flask of green mutagen, drawn from frames so it needs no image
- local f=Instance.new('Frame');f.Name='Vial';f.BackgroundTransparency=1;f.Size=size;f.Position=pos;f.Parent=parent
- local body=Instance.new('Frame');body.AnchorPoint=Vector2.new(.5,1);body.Position=UDim2.fromScale(.5,1);body.Size=UDim2.fromScale(.72,.66);body.BackgroundColor3=Color3.fromRGB(96,240,90);body.Parent=f
- Instance.new('UICorner',body).CornerRadius=UDim.new(.45,0);local st=Instance.new('UIStroke',body);st.Color=Color3.fromRGB(20,70,24);st.Thickness=2
- local neck=Instance.new('Frame');neck.AnchorPoint=Vector2.new(.5,0);neck.Position=UDim2.fromScale(.5,.06);neck.Size=UDim2.fromScale(.3,.36);neck.BackgroundColor3=Color3.fromRGB(190,255,190);neck.Parent=f
- local st2=Instance.new('UIStroke',neck);st2.Color=Color3.fromRGB(20,70,24);st2.Thickness=2
- local cork=Instance.new('Frame');cork.AnchorPoint=Vector2.new(.5,0);cork.Position=UDim2.fromScale(.5,0);cork.Size=UDim2.fromScale(.44,.14);cork.BackgroundColor3=Color3.fromRGB(170,110,60);cork.Parent=f
- Instance.new('UICorner',cork).CornerRadius=UDim.new(.4,0)
- for _,c in f:GetChildren() do c.ZIndex=7 end -- above the window's skin, or the flask is hidden
- return f
-end
-local function fmt(stat,a,b)
- if stat=='FireRate' then return string.format('%.1f',a)
- elseif stat=='Crit' then return string.format('%d%% x%.1f',math.floor(a*100+.5),b)
- elseif stat=='Reload' then return t('upSeconds',{n=string.format('%.2f',a)})
- elseif stat=='Range' then return t('upStuds',{n=string.format('%.1f',a)}) end
- return L.compact(a,L.lang())
-end
-local function buildBench()
- local w=Style.ModalWindow(Instance.new('Frame'));w.Name='UpgradeBench';w.AnchorPoint=Vector2.new(.5,.5);w.Size=UDim2.fromOffset(1140,628);w.Visible=false;w.ZIndex=20;w.Active=true;w.Parent=gui
- local sc=Instance.new('UIScale',w);sc.Name='Fit'
- local header=Style.ModalHeader(Instance.new('Frame'),true);header.Size=UDim2.new(1,-24,0,62);header.Position=UDim2.fromOffset(12,0);header.Parent=w
- local title=Style.ModalText(Style.Text(header,'',UDim2.new(1,-90,0,44),UDim2.fromOffset(24,10)),true);title.Name='Title';title.TextXAlignment=Enum.TextXAlignment.Left;title.UITextSizeConstraint.MaxTextSize=36;title.ZIndex=3
- local close=Instance.new('TextButton');close.Name='Close';close.Position=UDim2.new(1,-66,0,8);close.Size=UDim2.fromOffset(48,48);close.ZIndex=4;close.Parent=w
- Style.ModalButton(close,MC.Red);Style.ModalClose(close);close.Activated:Connect(function() Sfx.play('Click');w.Visible=false end)
- local body=Instance.new('Frame');body.Name='Body';body.BackgroundTransparency=1;body.Position=UDim2.fromOffset(26,78);body.Size=UDim2.new(1,-52,1,-100);body.ZIndex=2;body.Parent=w
- upgradeWindow=w
- local function fit()
-  local v=gui.AbsoluteSize;local k=math.max(.1,math.min(1.3,(v.X-40)/1188,(v.Y-24)/688));sc.Scale=k;w.Position=UDim2.new(.5,0,.5,24*k)
- end
- w:GetPropertyChangedSignal('Visible'):Connect(function() p.PlayerGui:SetAttribute('UpgradeModalOpen',w.Visible) end)
- gui:GetPropertyChangedSignal('AbsoluteSize'):Connect(fit);fit()
- return w
-end
-local benchSig
-upgradeRefresh=function(force)
- local w=upgradeWindow;if not w or not w.Visible or not state then return end
- if not benchWeapon then benchWeapon=state.equipped end
- local levels=state.upgrades and state.upgrades[benchWeapon] or {}
- local coins=state.coins or itemsState and itemsState.coins or 0;local mutagen=state.mutagen or 0
- local sig=L.lang()..benchWeapon..math.floor(coins)..':'..mutagen
- for _,stat in Up.Stats do sig..=':'..(levels[stat] or 0) end
- for _,id in C.Order do sig..=state.owned[id] and '1' or '0' end
- if sig==benchSig and not force then return end;benchSig=sig
- local body=w.Body;body:ClearAllChildren();w:FindFirstChild('Title',true).Text=t('weaponUpgrade')
- local function caption(parent,value,size,pos,light)
-  local l=Style.ModalText(Style.Text(parent,value,size,pos),light);l.ZIndex=5;return l
- end
- local summary=Style.ModalSurface(Instance.new('Frame'),MC.Cream,14,false);summary.Name='Summary';summary.Size=UDim2.new(1,0,0,64);summary.ZIndex=3;summary.Parent=body
- caption(summary,t(benchWeapon),UDim2.fromOffset(160,48),UDim2.fromOffset(8,8))
- Style.ModalArt(summary,'weapon',benchWeapon,UDim2.fromOffset(230,60),UDim2.fromOffset(170,2),state.skins and state.skins[benchWeapon]).ZIndex=4
- local function currency(parent,kind,value,size,pos)
-  local f=Style.ModalSurface(Instance.new('Frame'),MC.Cream,12,false);f.Size=size;f.Position=pos;f.ZIndex=4;f.Parent=parent
-  if kind=='cash' then Style.ModalArt(f,'cash',nil,UDim2.fromOffset(36,36),UDim2.fromOffset(5,5)).ZIndex=5 else vial(f,UDim2.fromOffset(32,40),UDim2.fromOffset(5,3)) end
-  caption(f,value,UDim2.new(1,-45,1,-4),UDim2.fromOffset(42,2));return f
- end
- currency(summary,'cash','$'..L.compact(coins,L.lang()),UDim2.fromOffset(200,48),UDim2.new(1,-360,0,8))
- currency(summary,'mutagen',tostring(mutagen),UDim2.fromOffset(138,48),UDim2.new(1,-148,0,8))
- for i,id in C.Order do
-  local tab=Style.ModalSurface(Instance.new('TextButton'),MC.Cream,12,false);tab.Name='Gun_'..id;tab.Text='';tab.Size=UDim2.new(1/#C.Order,-7,0,76);tab.Position=UDim2.new((i-1)/#C.Order,3,0,76);tab.ZIndex=3;tab.Parent=body
-  local art=Style.ModalArt(tab,'weapon',id,UDim2.new(1,-12,0,44),UDim2.fromOffset(6,4),state.skins and state.skins[id]);art.ZIndex=4
-  caption(tab,t(id),UDim2.new(1,-6,0,24),UDim2.fromOffset(3,48)).UITextSizeConstraint.MaxTextSize=20
-  if id==benchWeapon then Style.ModalSelected(tab) end
-  if not state.owned[id] then art.ImageTransparency=.45 end
-  tab.Activated:Connect(function() Sfx.play('Click');benchWeapon=id;upgradeRefresh(true) end)
- end
- local fake={weaponUpgrades=state.upgrades or {},weapons=state.owned,coins=coins,mutagen=mutagen}
- for i,stat in Up.Stats do
-  local level=levels[stat] or 0
-  local tile=Style.ModalSurface(Instance.new('Frame'),MC.Blue,14);tile.Name='Stat_'..stat;tile.Size=UDim2.new(1/#Up.Stats,-8,0,330);tile.Position=UDim2.new((i-1)/#Up.Stats,4,0,164);tile.ZIndex=3;tile.Parent=body
-  local icon=Instance.new('ImageLabel');icon.BackgroundTransparency=1;icon.Size=UDim2.fromOffset(54,54);icon.Position=UDim2.new(.5,-27,0,9);icon.Image=Icons[STAT_ICON[stat] or ''] or '';icon.ZIndex=5;icon.Parent=tile
-  if icon.Image=='' then local e=Style.Text(icon,'🎯',UDim2.fromScale(1,1));e.ZIndex=6;e.UITextSizeConstraint.MaxTextSize=46 end
-  caption(tile,t('up_'..stat),UDim2.new(1,-12,0,28),UDim2.fromOffset(6,64)).UITextSizeConstraint.MaxTextSize=25
-  local levelChip=Style.ModalSurface(Instance.new('Frame'),Color3.fromRGB(220,180,207),10,false);levelChip.Size=UDim2.fromOffset(72,22);levelChip.Position=UDim2.new(.5,-36,0,96);levelChip.ZIndex=4;levelChip.Parent=tile
-  caption(levelChip,level..'/'..Up.Max,UDim2.fromScale(1,1))
-  for n=1,Up.Max do
-   local pip=Instance.new('Frame');pip.Size=UDim2.fromOffset(11,11);pip.Position=UDim2.new(.5,-68+(n-1)*14,0,128);pip.BackgroundColor3=n<=level and MC.Green or Color3.fromRGB(196,170,180);pip.ZIndex=5;pip.Parent=tile
-   Instance.new('UICorner',pip).CornerRadius=UDim.new(1,0);local st=Instance.new('UIStroke',pip);st.Color=MC.Ink;st.Thickness=1.5
-  end
-  local a1,a2=Up.Value(benchWeapon,stat,level)
-  local now=caption(tile,fmt(stat,a1,a2),UDim2.new(1,-12,0,30),UDim2.fromOffset(6,150))
-  if level<Up.Max then
-   local b1,b2=Up.Value(benchWeapon,stat,level+1)
-   if stat=='Crit' then
-    Style.ModalArrow(tile,UDim2.fromOffset(20,16),UDim2.new(.5,-10,0,182)).ZIndex=5;tile.MergeArrow.Rotation=90
-    caption(tile,fmt(stat,b1,b2),UDim2.new(1,-12,0,28),UDim2.fromOffset(6,198)).TextColor3=Color3.fromRGB(25,135,18)
-   else
-    now.Size=UDim2.new(.4,0,0,46);now.Position=UDim2.fromOffset(4,161)
-    Style.ModalArrow(tile,UDim2.fromOffset(28,24),UDim2.new(.5,-14,0,173)).ZIndex=5
-    caption(tile,fmt(stat,b1,b2),UDim2.new(.4,0,0,46),UDim2.new(.6,-4,0,161)).TextColor3=Color3.fromRGB(25,135,18)
-   end
-  end
-  local why=Up.Check(fake,benchWeapon,stat)
-  if level<Up.Max then
-   local price,need=Up.Cost(benchWeapon,stat,level)
-   currency(tile,'cash','$'..L.compact(price,L.lang()),UDim2.new(.61,-8,0,40),UDim2.fromOffset(7,228))
-   currency(tile,'mutagen',tostring(need),UDim2.new(.39,-8,0,40),UDim2.new(.61,1,0,228))
-  end
-  local buy=Instance.new('TextButton');buy.Name='Buy';buy.Text=t(why=='max' and 'upMax' or why=='bad' and 'upLocked' or why and 'upInsufficient' or 'upgradeTile');buy.Font=Style.Font();buy.TextScaled=true;buy.Size=UDim2.new(1,-16,0,32);buy.Position=UDim2.new(0,8,1,-39);buy.ZIndex=5;buy.Parent=tile
-  Style.ModalButton(buy,why=='max' and MC.Gold or why and Color3.fromRGB(155,157,163) or MC.Green)
-  buy.AutoButtonColor=why==nil
-  local pop=Instance.new('UIScale',buy)
-  buy.Activated:Connect(function()
-   if why then Sfx.play('Error',.3);return end
-   Style.Pop(pop,1);Sfx.play('Buy',.2);rem.WeaponAction:FireServer('upgrade',benchWeapon..':'..stat)
-  end)
- end
- caption(body,t('mutagenHint'),UDim2.new(1,0,0,24),UDim2.fromOffset(0,502)).UITextSizeConstraint.MaxTextSize=20
+-- The illustrated workshop keeps its rendering separate from combat input and server authority.
+local workshop=require(S.WeaponUpgradeView).Create(gui,{
+ buy=function(id,stat) Sfx.play('Buy',.2);rem.WeaponAction:FireServer('upgrade',id..':'..stat) end,
+ select=function() Sfx.play('Click') end,
+ close=function() Sfx.play('Click') end,
+})
+upgradeWindow=workshop.Root
+upgradeWindow:GetPropertyChangedSignal('Visible'):Connect(function()
+ p.PlayerGui:SetAttribute('UpgradeModalOpen',upgradeWindow.Visible)
+end)
+upgradeRefresh=function()
+ if not upgradeWindow.Visible or not state then return end
+ workshop:Update(state)
 end
 openUpgrades=function()
- local w=upgradeWindow or buildBench()
- if w.Visible then w.Visible=false;return end
- benchWeapon=state and state.equipped;w.Visible=true;upgradeRefresh(true)
- local sc=w.Fit;local base=sc.Scale;sc.Scale=base*.9;Tween:Create(sc,TweenInfo.new(.16,Enum.EasingStyle.Back),{Scale=base}):Play()
+ if upgradeWindow.Visible then upgradeWindow.Visible=false;return end
+ strip.Visible=false;held=false
+ workshop:Open(state)
+ rem.WeaponAction:FireServer('sync')
+ local sc=upgradeWindow.Fit;local base=sc.Scale;sc.Scale=base*.94
+ Tween:Create(sc,TweenInfo.new(.16,Enum.EasingStyle.Back),{Scale=base}):Play()
 end
+UIS.InputBegan:Connect(function(input)
+ if upgradeWindow.Visible and (input.KeyCode==Enum.KeyCode.Escape or input.KeyCode==Enum.KeyCode.ButtonB) then upgradeWindow.Visible=false end
+end)
 local bridge=Instance.new('BindableEvent');bridge.Name='OpenUpgrades';bridge.Parent=gui;bridge.Event:Connect(openUpgrades)
 -- Mutagen chip over the weapon slot: how much there is; a tap opens the bench.
 local chip=Instance.new('TextButton');chip.Name='MutagenChip';chip.Text='';chip.AutoButtonColor=false;chip.Size=UDim2.fromOffset(78,26);chip.Position=UDim2.fromOffset(86,-28);chip.BackgroundColor3=Color3.fromRGB(28,30,44);chip.BackgroundTransparency=.2;chip.Visible=false;chip.Parent=control
 Instance.new('UICorner',chip).CornerRadius=UDim.new(0,9);do local st=Instance.new('UIStroke',chip);st.Color=Color3.fromRGB(96,240,90);st.Thickness=2;st.ApplyStrokeMode=Enum.ApplyStrokeMode.Border end
-vial(chip,UDim2.fromOffset(16,20),UDim2.fromOffset(6,3))
+Style.ModalArt(chip,'mutagen',nil,UDim2.fromOffset(16,20),UDim2.fromOffset(6,3))
 local chipText=Style.Text(chip,'0',UDim2.fromOffset(50,22),UDim2.fromOffset(25,2));chipText.TextColor3=Color3.fromRGB(190,255,180);chipText.TextXAlignment=Enum.TextXAlignment.Left
 chip.Activated:Connect(function() Sfx.play('Click');openUpgrades() end)
 -- moved to the HUD metrics at the bottom left (owner, 2026-11-12); the bench opens from the weapon strip

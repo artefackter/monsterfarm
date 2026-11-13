@@ -21,48 +21,83 @@ end
 
 local gui=Instance.new("ScreenGui");gui.Name="HelpUI";gui.ResetOnSpawn=false;gui.DisplayOrder=15;gui.ScreenInsets=Enum.ScreenInsets.CoreUISafeInsets;gui.Parent=p.PlayerGui
 
--- Night card ------------------------------------------------------------------------------------------------------------
-local card=Instance.new("Frame");card.Name="NightCard";card.AnchorPoint=Vector2.new(.5,0);card.Position=UDim2.new(.5,0,0,86);card.Size=UDim2.fromOffset(760,214)
-card.BackgroundColor3=Color3.fromRGB(34,28,74);card.BackgroundTransparency=.06;card.Visible=false;card.Parent=gui;round(card,20)
-local cardStroke=Instance.new("UIStroke");cardStroke.Color=Color3.fromRGB(150,130,255);cardStroke.Thickness=4;cardStroke.Parent=card
-local cardScale=Instance.new("UIScale");cardScale.Parent=card
-image(card,"moon",UDim2.fromOffset(46,46),UDim2.fromOffset(16,8))
-local title=text(card,UDim2.new(1,-140,0,46),UDim2.fromOffset(70,8),30,Color3.fromRGB(255,226,110));title.TextXAlignment=Enum.TextXAlignment.Left;title.TextWrapped=false
-local close=Instance.new("TextButton");close.Name="Close";close.AnchorPoint=Vector2.new(1,0);close.Position=UDim2.new(1,-10,0,10);close.Size=UDim2.fromOffset(44,44);close.BackgroundColor3=Color3.fromRGB(255,84,104);close.Text="X";close.Font=Enum.Font.GothamBlack;close.TextSize=26;close.TextColor3=Color3.new(1,1,1);close.AutoLocalize=false;close.Parent=card;round(close,12)
-local tiles={}
-for i,spec in ipairs({{icon="pistol",key="nightCard1",color=Color3.fromRGB(255,110,110)},{icon="lock",key="nightCard2",color=Color3.fromRGB(120,190,255)},{icon="star",key="nightCard3",color=Color3.fromRGB(190,140,255)}}) do
- local tile=Instance.new("Frame");tile.Size=UDim2.fromOffset(236,142);tile.Position=UDim2.fromOffset(14+(i-1)*248,60);tile.BackgroundColor3=Color3.fromRGB(20,16,48);tile.Parent=card;round(tile,14)
- local st=Instance.new("UIStroke");st.Color=spec.color;st.Thickness=3;st.Parent=tile
- image(tile,spec.icon,UDim2.fromOffset(54,54),UDim2.fromOffset(91,6))
- local l=text(tile,UDim2.new(1,-14,0,76),UDim2.fromOffset(7,62),17);l.TextYAlignment=Enum.TextYAlignment.Top
- tiles[i]={label=l,key=spec.key}
+-- Night information: native live controls over separately painted artwork. --------------------------------------------
+local playerGui=p.PlayerGui
+local now=workspace:GetServerTimeNow();local nightConfig=require(S.Config.NightConfig)
+local night=workspace:GetAttribute("IsNight")==true
+local phase={night=night,endsAt=now+math.max(0,(night and nightConfig.Day+nightConfig.Night or nightConfig.Day)-now%(nightConfig.Day+nightConfig.Night))}
+local firstPhasePacket=true
+local pendingNight=false
+local preference=p:GetAttribute("ShowNightInfo")~=false
+local preferenceRevision=0
+local view
+local function hideCard()
+ view:SetVisible(false);playerGui:SetAttribute("NightHelpOpen",false);gui.DisplayOrder=15
 end
-local shownAt=0
-local function fit()
- local v=gui.AbsoluteSize;cardScale.Scale=math.clamp(math.min(v.X/900,v.Y/520),.5,1.1)
+local function showCard()
+ if dig:GetAttribute("OtherModalOpen")==true or (dig:GetAttribute("ModalOpen")==true and not view.Root.Visible) then return false end
+ view:Update(phase.night,math.max(0,phase.endsAt-workspace:GetServerTimeNow()))
+ view:SetDontShow(not preference);gui.DisplayOrder=35;view:SetVisible(true)
+ playerGui:SetAttribute("NightHelpOpen",true);return true
 end
-gui:GetPropertyChangedSignal("AbsoluteSize"):Connect(fit);fit()
-local function hideCard() card.Visible=false end
-local function showCard(seconds)
- title.Text=t(workspace:GetAttribute("IsNight") and "nightCardTitle" or "nightCardDay")
- for _,tile in tiles do tile.label.Text=t(tile.key) end
- card.Visible=true;local base=cardScale.Scale;fit();base=cardScale.Scale;cardScale.Scale=base*.85
- Tween:Create(cardScale,TweenInfo.new(.2,Enum.EasingStyle.Back),{Scale=base}):Play()
- shownAt=os.clock();local mine=shownAt
- if seconds then task.delay(seconds,function() if shownAt==mine then hideCard() end end) end
+view=require(S:WaitForChild("NightInfoView")).Create(gui,{
+ close=hideCard,
+ preference=function(dontShow)
+  preference=not dontShow;preferenceRevision+=1;local revision=preferenceRevision
+  if dontShow then pendingNight=false end
+  -- Coalesce fast clicks so the existing settings remote's rate limit never loses the final choice.
+  task.delay(.25,function()
+   if revision==preferenceRevision then rem.InterfaceAction:FireServer("setting","ShowNightInfo",preference) end
+  end)
+ end,
+})
+local function tryPending()
+ if pendingNight and preference and phase.night and not view.Root.Visible then
+  if showCard() then pendingNight=false end
+ end
 end
-close.Activated:Connect(hideCard)
--- the day clock is the "what is this?" button; a small "?" on it says so
+local function phaseChanged(night,left)
+ local wasNight=phase.night
+ phase.night=night;phase.endsAt=workspace:GetServerTimeNow()+math.max(0,left)
+ if night and not wasNight then pendingNight=not view.Root.Visible end
+ if not night then pendingNight=false;if wasNight and view.Root.Visible then hideCard() end end
+ tryPending()
+end
+rem:WaitForChild("State").OnClientEvent:Connect(function(s)
+ if type(s)=="table" and type(s.night)=="boolean" and type(s.left)=="number" then
+  if firstPhasePacket then pendingNight=s.night;firstPhasePacket=false end
+  phaseChanged(s.night,s.left)
+ end
+end)
+workspace:GetAttributeChangedSignal("IsNight"):Connect(function()
+ local night=workspace:GetAttribute("IsNight")==true
+ if night~=phase.night then
+  local cfg=require(S.Config.NightConfig);phaseChanged(night,night and cfg.Night or cfg.Day)
+ end
+end)
+p:GetAttributeChangedSignal("ShowNightInfo"):Connect(function()
+ preference=p:GetAttribute("ShowNightInfo")~=false;view:SetDontShow(not preference)
+ if not preference then pendingNight=false end
+end)
+dig:GetAttributeChangedSignal("OtherModalOpen"):Connect(function()
+ if dig:GetAttribute("OtherModalOpen")==true then
+  if view.Root.Visible then hideCard() end
+ else tryPending() end
+end)
+dig:GetAttributeChangedSignal("ModalOpen"):Connect(tryPending)
+p:GetAttributeChangedSignal("Language"):Connect(function() view:Refresh() end)
+-- Manual access remains available even after automatic reminders were disabled.
 local ask=Instance.new("TextButton");ask.Name="NightHelp";ask.BackgroundTransparency=1;ask.Size=UDim2.fromScale(1,1);ask.Text="";ask.ZIndex=5;ask.Parent=clock
 local badge=Instance.new("TextLabel");badge.Name="Hint";badge.Size=UDim2.fromOffset(24,24);badge.Position=UDim2.fromOffset(44,-4);badge.BackgroundColor3=Color3.fromRGB(255,196,64);badge.Text="?";badge.Font=Enum.Font.GothamBlack;badge.TextSize=18;badge.TextColor3=INK;badge.ZIndex=6;badge.AutoLocalize=false;badge.Parent=clock;round(badge,12)
-ask.Activated:Connect(function() if card.Visible then hideCard() else showCard(nil) end end)
-local nights=0
-workspace:GetAttributeChangedSignal("IsNight"):Connect(function()
- if workspace:GetAttribute("IsNight") then
-  nights+=1
-  -- the first nights explain themselves at length; later ones only flash the reminder
-  if dig:GetAttribute("ModalOpen")~=true then showCard(nights<=3 and 10 or 4) end
- elseif card.Visible then hideCard() end
+ask.Activated:Connect(function() if view.Root.Visible then hideCard() else pendingNight=false;showCard() end end)
+game:GetService("UserInputService").InputBegan:Connect(function(input,processed)
+ if view.Root.Visible and not processed and (input.KeyCode==Enum.KeyCode.Escape or input.KeyCode==Enum.KeyCode.ButtonB) then hideCard() end
+end)
+task.spawn(function()
+ while gui.Parent do
+  if view.Root.Visible then view:Update(phase.night,math.max(0,phase.endsAt-workspace:GetServerTimeNow())) end
+  task.wait(.2)
+ end
 end)
 
 -- Finished quests -------------------------------------------------------------------------------------------------------

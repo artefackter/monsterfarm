@@ -1,0 +1,63 @@
+{
+  "prompts": [
+    {
+      "id": "StalkerMiner",
+      "prompt": "Edit this monster portrait into the same monster's MINER outfit. Preserve the turquoise humanoid, pink side gills, tall rectangular screaming black mouth with pink border, small white rectangular eyes, long fingers and toes, body proportions and confident full-body pose, bold dark plum contour and clean colourful polished 2D mobile-game shading. Replace the straw hat with a yellow miner hard hat with bright round headlamp. Replace the rake with a single metal pickaxe on an orange wooden handle, remove the seed bag. Keep blue denim overalls with yellow clasps. One monster only, entire figure and pickaxe comfortably inside the canvas, isolated genuine transparent background. No text, no scene, no ground shadow or floor.",
+      "referenceImages": [
+        "/Users/wingman/Documents/Codex/GrowAMonster-Git-2026-11-12/art/ui/modal-refresh/StalkerFarmer.png"
+      ],
+      "transparent_background": true,
+      "mode": "built-in image_gen"
+    },
+    {
+      "id": "DeerKnight",
+      "prompt": "Image 1 is the character identity to edit: deer monster. Image 2 is only the KNIGHT OUTFIT AND 2D ART STYLE reference, not the character to reproduce. Make a full-body 2D portrait of DeerKnight: keep image 1's branching antlers, brown slender deer body, big startled white eyes, very long oval open screaming black mouth, ears, hoof feet and long claw fingers. Remove mohawk and punk street clothes. Equip polished silver medieval open-face helmet with red plume fitting around antlers without concealing the monster's face, dark plum tunic and silver shoulder armor, blue shield with gold rim and pale cross, short silver sword. Outfit follows image 2's cartoon knight style. Strong clean plum outline, saturated highlights, polished hand-painted mobile-game asset. Single entire figure, sword and antlers fully inside canvas, genuine transparent background, no words, no badge frame, no floor.",
+      "referenceImages": [
+        "/Users/wingman/Documents/Codex/GrowAMonster-Git-2026-11-12/art/ui/modal-refresh/DeerPunk.png",
+        "/Users/wingman/Documents/Codex/GrowAMonster-Git-2026-11-12/lastgen/ChatGPT Image Nov 13, 2026, 06_26_31 PM.png"
+      ],
+      "transparent_background": true,
+      "mode": "built-in image_gen"
+    },
+    {
+      "id": "ParasiteKnight",
+      "prompt": "Image 1 is the monster identity to edit: Parasite, a stocky red/maroon blocky humanoid with two raised kinked stalk appendages, tiny glowing eyes above an enormous rectangular open mouth with broad yellow square teeth. Image 2 is ONLY the KNIGHT outfit/style reference. Make ParasiteKnight, preserving image 1's stocky silhouette, red body, two stalks, unmistakable big square toothed mouth and boots. Remove punk mohawk and streetwear. Add shiny silver open-face medieval helmet with red plume, keep mouth and eyes unobscured and the two stalks visible, plum tunic with metal pauldrons, blue shield with gold border and pale cross in one hand, silver short sword in the other. Match image 2's clean polished colourful 2D game icon shading and bold plum outline. Entire single full-body character, weapons and stalks fully inside canvas. Genuine transparent background, no scenery or text.",
+      "referenceImages": [
+        "/Users/wingman/Documents/Codex/GrowAMonster-Git-2026-11-12/art/ui/modal-refresh/ParasitePunk.png",
+        "/Users/wingman/Documents/Codex/GrowAMonster-Git-2026-11-12/lastgen/ChatGPT Image Nov 13, 2026, 06_26_31 PM.png"
+      ],
+      "transparent_background": true,
+      "mode": "built-in image_gen"
+    },
+    {
+      "id": "StalkerKnight",
+      "prompt": "Edit image 1 into the KNIGHT version of the SAME monster. Image 2 is ONLY a knight outfit and rendering style reference. Keep image 1's identity: turquoise humanoid, vivid pink side gills, rectangular black screaming mouth with pink border, white rectangular eyes and long turquoise fingers. Preserve recognizable face, build, silhouette and colours. Remove mohawk and punk clothing; equip silver medieval open-face helmet with a flowing red plume leaving ALL the recognizable face visible, silver pauldrons, dark plum tunic, gold-edged blue shield with pale cross and short silver sword. Match the clean bold plum contours, glossy colourful hand-painted 2D mobile game portrait style of image 2. One full-body character only, generous margin so feet, weapon, plume and claws are never clipped. Genuine transparent alpha background, no lettering, no ground or shadow, no decorative frame.",
+      "referenceImages": [
+        "/Users/wingman/Documents/Codex/GrowAMonster-Git-2026-11-12/art/ui/modal-refresh/StalkerPunk.png",
+        "/Users/wingman/Documents/Codex/GrowAMonster-Git-2026-11-12/lastgen/ChatGPT Image Nov 13, 2026, 06_26_31 PM.png"
+      ],
+      "transparent_background": true,
+      "mode": "built-in image_gen"
+    },
+    {
+      "id": "VerityKnight",
+      "prompt": "Edit image 1 into the KNIGHT version of the SAME monster. Image 2 is ONLY a knight outfit and rendering style reference. Keep image 1's identity: pale cream skeletal humanoid, squared skull head, deep black square eyes with small glowing yellow pupils, broad row of many fine teeth in a huge grin, long bony limbs. Preserve recognizable face, build, silhouette and colours. Remove mohawk and punk clothing; equip silver medieval open-face helmet with a flowing red plume leaving ALL the recognizable face visible, silver pauldrons, dark plum tunic, gold-edged blue shield with pale cross and short silver sword. Match the clean bold plum contours, glossy colourful hand-painted 2D mobile game portrait style of image 2. One full-body character only, generous margin so feet, weapon, plume and claws are never clipped. Genuine transparent alpha background, no lettering, no ground or shadow, no decorative frame.",
+      "referenceImages": [
+        "/Users/wingman/Documents/Codex/GrowAMonster-Git-2026-11-12/art/ui/modal-refresh/VerityPunk.png",
+        "/Users/wingman/Documents/Codex/GrowAMonster-Git-2026-11-12/lastgen/ChatGPT Image Nov 13, 2026, 06_26_31 PM.png"
+      ],
+      "transparent_background": true,
+      "mode": "built-in image_gen"
+    },
+    {
+      "id": "CaveDwellerKnight",
+      "prompt": "Edit image 1 into the KNIGHT version of the SAME monster. Image 2 is ONLY a knight outfit and rendering style reference. Keep image 1's identity: extremely tall slender dark-purple humanoid, rectangular cuboid head, tiny white square eyes, extremely long narrow vertical toothed mouth, lanky arms and pointed claws. Preserve recognizable face, build, silhouette and colours. Remove mohawk and punk clothing; equip silver medieval open-face helmet with a flowing red plume leaving ALL the recognizable face visible, silver pauldrons, dark plum tunic, gold-edged blue shield with pale cross and short silver sword. Match the clean bold plum contours, glossy colourful hand-painted 2D mobile game portrait style of image 2. One full-body character only, generous margin so feet, weapon, plume and claws are never clipped. Genuine transparent alpha background, no lettering, no ground or shadow, no decorative frame.",
+      "referenceImages": [
+        "/Users/wingman/Documents/Codex/GrowAMonster-Git-2026-11-12/art/ui/modal-refresh/CaveDwellerPunk.png",
+        "/Users/wingman/Documents/Codex/GrowAMonster-Git-2026-11-12/lastgen/ChatGPT Image Nov 13, 2026, 06_26_31 PM.png"
+      ],
+      "transparent_background": true,
+      "mode": "built-in image_gen"
+    }
+  ]
+}

@@ -1,0 +1,295 @@
+{
+  "creatorId": "11935827585",
+  "placeId": "81381444846939",
+  "files": [
+    {
+      "id": "DeerMiner",
+      "file": "DeerMiner.png",
+      "iconKey": "modal_monster_DeerMiner",
+      "source": "lastgen/ChatGPT Image Nov 13, 2026, 06_25_55 PM.png",
+      "sha256": "fe89fa2ff25e36d99072fc1a74071f71a243a57b0d0ba13ca3d4c02fdde51a50",
+      "size": [
+        1122,
+        1402
+      ],
+      "status": "uploaded",
+      "operationPath": "operations/73138bfc-d457-47a2-907e-61d87bc3eee2",
+      "assetId": "128735919503733",
+      "texture": "rbxassetid://128735919503733",
+      "moderation": "Approved"
+    },
+    {
+      "id": "DeerKnight",
+      "file": "DeerKnight.png",
+      "iconKey": "modal_monster_DeerKnight",
+      "source": "built-in image_gen",
+      "sha256": "dd3f8112cadfd1e56da8fceb47ec6c48e953be18111fd895c21fc1631b94992b",
+      "size": [
+        1086,
+        1448
+      ],
+      "status": "uploaded",
+      "operationPath": "operations/fb4be3f6-d92c-4c75-89a4-0bfce90d9779",
+      "assetId": "135869683077925",
+      "texture": "rbxassetid://135869683077925",
+      "moderation": "Approved"
+    },
+    {
+      "id": "DeerKing",
+      "file": "DeerKing.png",
+      "iconKey": "modal_monster_DeerKing",
+      "source": "lastgen/ChatGPT Image Nov 13, 2026, 06_26_28 PM.png",
+      "sha256": "0944ba945e8c4b228b22699d1eed7fa2bd895d56ddff323c83174d9c24a7ddc9",
+      "size": [
+        1145,
+        1374
+      ],
+      "status": "uploaded",
+      "operationPath": "operations/9ae9e058-ebee-4a62-9907-1756db4165a4",
+      "assetId": "102729921002412",
+      "texture": "rbxassetid://102729921002412",
+      "moderation": "Approved"
+    },
+    {
+      "id": "ParasiteMiner",
+      "file": "ParasiteMiner.png",
+      "iconKey": "modal_monster_ParasiteMiner",
+      "source": "lastgen/ChatGPT Image Nov 13, 2026, 06_26_02 PM.png",
+      "sha256": "d895bd838edcb1ec01b9427dd1b524909c933aa13d0f064660a1098e7b7217ab",
+      "size": [
+        1217,
+        1293
+      ],
+      "status": "uploaded",
+      "operationPath": "operations/2dd84ba2-c47c-487e-8703-7ec3644ad36e",
+      "assetId": "74607236116785",
+      "texture": "rbxassetid://74607236116785",
+      "moderation": "Approved"
+    },
+    {
+      "id": "ParasiteKnight",
+      "file": "ParasiteKnight.png",
+      "iconKey": "modal_monster_ParasiteKnight",
+      "source": "built-in image_gen",
+      "sha256": "6ab2cb90ad97168c9d03f71c53510b066338a1ca4ab33af98e664937fde1ed89",
+      "size": [
+        1312,
+        1199
+      ],
+      "status": "uploaded",
+      "operationPath": "operations/58c59323-8939-48a4-ae44-b4c09abbb1f0",
+      "assetId": "105043969578540",
+      "texture": "rbxassetid://105043969578540",
+      "moderation": "Approved"
+    },
+    {
+      "id": "ParasiteKing",
+      "file": "ParasiteKing.png",
+      "iconKey": "modal_monster_ParasiteKing",
+      "source": "lastgen/ChatGPT Image Nov 13, 2026, 06_26_38 PM.png",
+      "sha256": "1f8e687ec8ac537af4b08f72c3b6cf19b7b2ec6f786c6214727656a351d6710d",
+      "size": [
+        1312,
+        1199
+      ],
+      "status": "uploaded",
+      "operationPath": "operations/d4b9c71a-8516-4ea1-831b-3312d0cc7d2d",
+      "assetId": "107084055014091",
+      "texture": "rbxassetid://107084055014091",
+      "moderation": "Approved"
+    },
+    {
+      "id": "StalkerMiner",
+      "file": "StalkerMiner.png",
+      "iconKey": "modal_monster_StalkerMiner",
+      "source": "built-in image_gen",
+      "sha256": "03c70dfc5c482ff2ed12588665e8466cdb8f3e6cfe95c38662c221ca8376782b",
+      "size": [
+        1086,
+        1448
+      ],
+      "status": "uploaded",
+      "operationPath": "operations/1a287fbf-e7d5-4e24-a32a-c0a2ab1e696a",
+      "assetId": "73663699489614",
+      "texture": "rbxassetid://73663699489614",
+      "moderation": "Approved"
+    },
+    {
+      "id": "StalkerKnight",
+      "file": "StalkerKnight.png",
+      "iconKey": "modal_monster_StalkerKnight",
+      "source": "built-in image_gen",
+      "sha256": "c2d5f0f1aebfed33226fba95e5b389c36d02de4b4c012ac48e0f67f6b33f9b73",
+      "size": [
+        1107,
+        1421
+      ],
+      "status": "uploaded",
+      "operationPath": "operations/8d5ce0ad-34ad-457b-8796-53291de07860",
+      "assetId": "131682624950230",
+      "texture": "rbxassetid://131682624950230",
+      "moderation": "Approved"
+    },
+    {
+      "id": "StalkerKing",
+      "file": "StalkerKing.png",
+      "iconKey": "modal_monster_StalkerKing",
+      "source": "lastgen/ChatGPT Image Nov 13, 2026, 06_26_35 PM.png",
+      "sha256": "4ffbfab6e0b881ecec7b51aa10f858851ab746b4583bcec813ed1bec770c5534",
+      "size": [
+        1199,
+        1312
+      ],
+      "status": "uploaded",
+      "operationPath": "operations/51a82573-5bba-4298-acb7-c9399545a45b",
+      "assetId": "101350774521433",
+      "texture": "rbxassetid://101350774521433",
+      "moderation": "Approved"
+    },
+    {
+      "id": "VerityMiner",
+      "file": "VerityMiner.png",
+      "iconKey": "modal_monster_VerityMiner",
+      "source": "lastgen/ChatGPT Image Nov 13, 2026, 06_26_08 PM.png",
+      "sha256": "e4674dc2754ebbeb2ca96ab97694eb6f268e0a0ca2815e009488031a1562b01f",
+      "size": [
+        1024,
+        1536
+      ],
+      "status": "uploaded",
+      "operationPath": "operations/e5c1a407-b367-4b01-8fcd-14db1f2b310c",
+      "assetId": "79413472132609",
+      "texture": "rbxassetid://79413472132609",
+      "moderation": "Approved"
+    },
+    {
+      "id": "VerityKnight",
+      "file": "VerityKnight.png",
+      "iconKey": "modal_monster_VerityKnight",
+      "source": "built-in image_gen",
+      "sha256": "053faa53e5e568e3ab7478b3b314b5107048b43966b0b1f85238a0a71020070b",
+      "size": [
+        1086,
+        1448
+      ],
+      "status": "uploaded",
+      "operationPath": "operations/e55c38fe-3fbf-4069-b9df-be7eb5d08657",
+      "assetId": "130166230496242",
+      "texture": "rbxassetid://130166230496242",
+      "moderation": "Approved"
+    },
+    {
+      "id": "VerityKing",
+      "file": "VerityKing.png",
+      "iconKey": "modal_monster_VerityKing",
+      "source": "lastgen/ChatGPT Image Nov 13, 2026, 06_26_46 PM.png",
+      "sha256": "83738097bd38a82778b81e22a113f393548e1f9d66cf2696d9fc40b21d39f362",
+      "size": [
+        1086,
+        1448
+      ],
+      "status": "uploaded",
+      "operationPath": "operations/904646e5-e788-4255-8f02-8a1ace89aafa",
+      "assetId": "135689095777412",
+      "texture": "rbxassetid://135689095777412",
+      "moderation": "Approved"
+    },
+    {
+      "id": "RingMawMiner",
+      "file": "RingMawMiner.png",
+      "iconKey": "modal_monster_RingMawMiner",
+      "source": "lastgen/ChatGPT Image Nov 13, 2026, 06_26_19 PM.png",
+      "sha256": "b81e1ff23d93dd7274ab992d267492bf715191266d6bf71210f3e5ac9537e3b3",
+      "size": [
+        1359,
+        1157
+      ],
+      "status": "uploaded",
+      "operationPath": "operations/4a9dc8e3-196b-4505-95f6-fd012fa34bc2",
+      "assetId": "135615417669528",
+      "texture": "rbxassetid://135615417669528",
+      "moderation": "Approved"
+    },
+    {
+      "id": "RingMawKnight",
+      "file": "RingMawKnight.png",
+      "iconKey": "modal_monster_RingMawKnight",
+      "source": "lastgen/ChatGPT Image Nov 13, 2026, 06_26_31 PM.png",
+      "sha256": "b96c9d504225db18d96a0b3a9af3d20e0e8ac9dde1199d9241e6dd2ae0f050fd",
+      "size": [
+        1312,
+        1199
+      ],
+      "status": "uploaded",
+      "operationPath": "operations/81ce7a7e-3274-4a64-be28-abfcdd82285f",
+      "assetId": "95860420788882",
+      "texture": "rbxassetid://95860420788882",
+      "moderation": "Approved"
+    },
+    {
+      "id": "RingMawKing",
+      "file": "RingMawKing.png",
+      "iconKey": "modal_monster_RingMawKing",
+      "source": "lastgen/ChatGPT Image Nov 13, 2026, 06_26_49 PM.png",
+      "sha256": "319fb8ad6644921f4b30f56bd55d82209303f570f603a5c423f08cbe617b11ec",
+      "size": [
+        1448,
+        1086
+      ],
+      "status": "uploaded",
+      "operationPath": "operations/9ef569f2-f6c9-4d09-adac-f94033b8cac6",
+      "assetId": "125602936818572",
+      "texture": "rbxassetid://125602936818572",
+      "moderation": "Approved"
+    },
+    {
+      "id": "CaveDwellerMiner",
+      "file": "CaveDwellerMiner.png",
+      "iconKey": "modal_monster_CaveDwellerMiner",
+      "source": "lastgen/ChatGPT Image Nov 13, 2026, 06_26_15 PM.png",
+      "sha256": "52d874c5ce1eccd339ddb3d949e62a646fefdc2ebb163acef74bcf20f9bdcb0f",
+      "size": [
+        1024,
+        1536
+      ],
+      "status": "uploaded",
+      "operationPath": "operations/818c48d6-fce1-43e4-8b3a-cbe0874025d5",
+      "assetId": "104350890205628",
+      "texture": "rbxassetid://104350890205628",
+      "moderation": "Approved"
+    },
+    {
+      "id": "CaveDwellerKnight",
+      "file": "CaveDwellerKnight.png",
+      "iconKey": "modal_monster_CaveDwellerKnight",
+      "source": "built-in image_gen",
+      "sha256": "6c13e55b8212c591f30329beac23cdc7dc971584de7c0544904428099872057a",
+      "size": [
+        1024,
+        1536
+      ],
+      "status": "uploaded",
+      "operationPath": "operations/12dcc23b-b4c4-460d-ba23-7841c14f7de7",
+      "assetId": "122337105223318",
+      "texture": "rbxassetid://122337105223318",
+      "moderation": "Approved"
+    },
+    {
+      "id": "CaveDwellerKing",
+      "file": "CaveDwellerKing.png",
+      "iconKey": "modal_monster_CaveDwellerKing",
+      "source": "lastgen/ChatGPT Image Nov 13, 2026, 06_26_42 PM.png",
+      "sha256": "7ce07bf28c68b558da3bc55aa731533faaea70b0e7c29bac4c6165cd19096900",
+      "size": [
+        1024,
+        1536
+      ],
+      "status": "uploaded",
+      "operationPath": "operations/3e57c610-153a-45eb-be62-cafd1d7c9b04",
+      "assetId": "126344211385780",
+      "texture": "rbxassetid://126344211385780",
+      "moderation": "Approved"
+    }
+  ],
+  "uploadAuthorized": true
+}

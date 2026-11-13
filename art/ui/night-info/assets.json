@@ -1,0 +1,67 @@
+{
+  "creatorId": "11935827585",
+  "placeId": "81381444846939",
+  "files": [
+    {
+      "id": "night_frame",
+      "iconKey": "night_frame",
+      "file": "night_frame.png",
+      "sha256": "5e0e11bc77530133b560a733d02e4eddcb76a03ff6bb7644403c891e0a3441da",
+      "size": [
+        1672,
+        941
+      ],
+      "status": "uploaded",
+      "operationPath": "operations/a910797e-1905-4c85-b239-138e1004bfd5",
+      "assetId": "114312486626963",
+      "texture": "rbxassetid://114312486626963",
+      "moderation": "Approved"
+    },
+    {
+      "id": "night_defend",
+      "iconKey": "night_defend",
+      "file": "night_defend.png",
+      "sha256": "550991013e704c2d022ac49492e5fd3e6ba664ff36a01156517abe2006636348",
+      "size": [
+        1448,
+        1086
+      ],
+      "status": "uploaded",
+      "operationPath": "operations/6a59fa2d-b640-4d57-84b5-77be8af7b102",
+      "assetId": "86911369982454",
+      "texture": "rbxassetid://86911369982454",
+      "moderation": "Approved"
+    },
+    {
+      "id": "night_lock",
+      "iconKey": "night_lock",
+      "file": "night_lock.png",
+      "sha256": "8a9a6c8839d903a88fec2803c3ac7caf7cf192036959776e57e4361f9565c196",
+      "size": [
+        1448,
+        1086
+      ],
+      "status": "uploaded",
+      "operationPath": "operations/1063e74c-d74a-45a1-9ebb-3ebc055ed1bb",
+      "assetId": "71107031254599",
+      "texture": "rbxassetid://71107031254599",
+      "moderation": "Approved"
+    },
+    {
+      "id": "night_ruins",
+      "iconKey": "night_ruins",
+      "file": "night_ruins.png",
+      "sha256": "5a3e34bb87c4607d61f6c0fe9830173e665b6639eb4b6844232a0b598a5b2f90",
+      "size": [
+        1448,
+        1086
+      ],
+      "status": "uploaded",
+      "operationPath": "operations/70a3a50e-0da0-4f94-b5a1-d64897686247",
+      "assetId": "135245440392404",
+      "texture": "rbxassetid://135245440392404",
+      "moderation": "Approved"
+    }
+  ],
+  "uploadAuthorized": true
+}

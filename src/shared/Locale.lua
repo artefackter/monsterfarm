@@ -265,6 +265,17 @@ LunarPumpkin={"Lunar Pumpkin","Лунная тыква"},
  signShop={"GRAVE SHOP","ЛАВКА МОГИЛ"},signFeed={"DO NOT FEED THE ZOMBIES. THEY MANAGE.","НЕ КОРМИТЬ ЗОМБИ. ОНИ САМИ."},signBio={"ORGANIC BRAINS. FREE RANGE.","БИО-МОЗГИ. ВЫРАЩЕНО БЕЗ ГОЛОВЫ."},signQuiet={"QUIET! SOME OF US ARE STILL DEAD.","ТИШЕ! НЕ ВСЕ ЕЩЁ ВСТАЛИ."},signOuthouse={"OCCUPIED SINCE 1784","ЗАНЯТО С 1784"},signCrypt={"PLEASE KNOCK","СТУЧАТЬ!"},signMat={"WELCOME! NO RETURNS","ДОБРО ПОЖАЛОВАТЬ! ВОЗВРАТА НЕТ"},signFountain={"SLIME FOUNTAIN. DO NOT DRINK. AGAIN.","ФОНТАН СЛИЗИ. НЕ ПИТЬ. СНОВА."},epitaph1={"HERE LIES STEVE. FOR NOW.","ТУТ ЛЕЖИТ ВАСЯ. ПОКА ЧТО."},epitaph2={"BACK IN 5 MINUTES","ВЕРНУСЬ ЧЕРЕЗ 5 МИНУТ"},epitaph3={"I TOLD YOU I WAS SICK","Я ЖЕ ГОВОРИЛ, ЧТО БОЛЕЮ"},epitaph4={"DO NOT WAKE BEFORE LUNCH","НЕ БУДИТЬ ДО ОБЕДА"},epitaph5={"GONE DIGGING","УШЁЛ КОПАТЬ"},epitaph6={"RENT DUE: NEVER","АРЕНДА: НИКОГДА"},epitaph7={"SPOT TAKEN","МЕСТО ЗАНЯТО"},epitaph8={"JUST RESTING MY EYES","ПРОСТО ПРИЛЁГ"},nice={"Nice!","Ура!"},reveal={"You dug up:","Ты выкопал:"},title={"DIG A ZOMBIE","ВЫКОПАЙ ЗОМБИ"},shop={"Equipment","Снаряжение"},crypt={"Crypt","Склеп"},dex={"Zombiedex","Зомбидекс"},rewards={"Daily rewards","Награды"},close={"Close","Закрыть"},dig={"Dig up!","Выкопай!"},steal={"Steal grave","Украсть могилу"},shoo={"Shoo!","Шугнуть!"},lock={"Lock gates","Запереть ворота"},Field={"Beds","Грядки"},Diggers={"Diggers","Копатели"},Guards={"Guards","Сторожа"},Crypt={"Crypt","Склеп"},Graves={"Graves","Могилы"},sell={"Sell","Продать"},claim={"Claim","Забрать"},buy={"Buy / plant","Купить / посадить"},upgrade={"Add space","Добавить место"},day={"☀️ Day","☀️ День"},night={"🌙 Night","🌙 Ночь"},coins={"Zombucks: {n}","Зомбуксы: {n}"},income={"Income: {n}/s","Доход: {n}/с"},offline={"While away: {n} Zombucks","Пока тебя не было: {n} зомбуксов"},refresh={"New stock in {n}s","Обновление через {n} с"},graveInfo={"{price} Zombucks · {time}s · stock {stock}","{price} зомбуксов · {time} с · осталось {stock}"},chances={"C/U/R/E/L/M: {n}%","О/Н/Р/Э/Л/М: {n}%"},ready={"Ready!","Созрела!"},waiting={"Growing: {n}s","Созреет через {n} с"},empty={"No zombies yet. Dig your first grave!","Пока пусто. Выкопай первую могилу!"},error={"Action unavailable. Check distance, Zombucks, space or protection.","Недоступно: проверь расстояние, зомбуксы, места и защиту."},ok={"Done!","Готово!"},rare={"{name} dug up {rarity} {type}!","{name} выкопал: {rarity} {type}!"},tutorialDig={"① Walk to your grave and hold E / tap Dig","① Подойди к могиле и удерживай «Выкопать»"},tutorialField={"② Take a zombie at the crypt and put it in your yard","② Возьми зомби в склепе и поставь во дворе"},tutorialShop={"③ Visit the central shop and buy Wooden","③ Купи деревянную могилу в магазине на площади"},tutorialDone={"Grow your collection. Protect it at night!","Собирай зомби и защищай их ночью!"},all={"All","Все"},None={"Normal","Обычный"},Golden={"Golden","Золотой"},Lunar={"Lunar","Лунный"},Rainbow={"Rainbow","Радужный"},Wooden={"Wooden","Деревянная"},Stone={"Stone","Каменная"},Marble={"Marble","Мраморная"},Common={"Common","Обычный"},Uncommon={"Uncommon","Необычный"},Rare={"Rare","Редкий"},Epic={"Epic","Эпический"},Legendary={"Legendary","Легендарный"},Mythic={"Mythic","Мифический"},Pajama={"Pajama","Соня"},Gardener={"Gardener","Садовник"},Postman={"Postman","Почтальон"},Skater={"Skater","Скейтер"},Pirate={"Pirate","Пират"},Cowboy={"Cowboy","Ковбой"},Knight={"Knight","Рыцарь"},DJ={"DJ","Диджей"},King={"King","Король"},Astronaut={"Astronaut","Космонавт"},Dragon={"Dragon","Дракон"},loadError={"Could not safely load your farm. Please rejoin.","Не удалось безопасно загрузить ферму. Перезайди."},savingError={"Farm save unavailable. Please rejoin later.","Сохранение недоступно. Зайди позже."},busy={"This farm is open on another server. Try again shortly.","Ферма открыта на другом сервере. Попробуй позже."},owner={"{name}'s farm","Ферма: {name}"},unclaimed={"Available farm","Свободный участок"},protection={"Newbie shield: {n}s","Защита новичка: {n} с"},daily={"Day {n}","День {n}"},voucher={"Vouchers: {n}","Могилы в запасе: {n}"},found={"Collection: {n}/44","Коллекция: {n}/44"}}
 -- Locale is resolved per viewer; server-owned shared signs never choose one player's language.
 -- Help cards, quest reminder, empty farms, the heap, weapon upgrades (2026-11-10)
+L.Rows.nightDefendTitle={"Protect your farm","Защити ферму"}
+L.Rows.nightDefendBody={"Monsters break gates and steal Zombucks.","Монстры ломают ворота и крадут зомбуксы."}
+L.Rows.nightLockTitle={"Lock your gates","Закрой ворота"}
+L.Rows.nightLockBody={"At night, players can steal your graves.","Ночью игроки могут украсть могилы."}
+L.Rows.nightRuinsTitle={"Explore the ruins","Исследуй заброшки"}
+L.Rows.nightRuinsBody={"Rewards ×2 and lunar graves. Stronger monsters.","Награды ×2 и лунные могилы. Монстры сильнее."}
+L.Rows.nightUntilDawn={"Until dawn  {time}","До рассвета  {time}"}
+L.Rows.nightUntilDusk={"Until night  {time}","До ночи  {time}"}
+L.Rows.nightUnderstood={"Got it","Понятно"}
+L.Rows.nightDontShowAgain={"Don't show again","Больше не показывать"}
+L.Rows.ShowNightInfo={"Show night reminders","Показывать подсказку о ночи"}
 L.Rows.nightCardTitle={"Night has come!","Наступила ночь!"}
 L.Rows.nightCardDay={"What happens at night","Что бывает ночью"}
 L.Rows.nightCard1={"Monsters raid the farm: they break the gate, then steal Zombucks. Shoot them and upgrade the fence!","Монстры идут на ферму: ломают ворота и крадут зомбуксы. Стреляй и улучшай забор!"}
@@ -275,6 +286,15 @@ L.Rows.inviteFriend={"Invite a friend","Позвать друга"}
 L.Rows.emptyFarm={"Free farm","Свободная ферма"}
 L.Rows.guardLabel={"Guard","Охранник"}
 L.Rows.inviteUnavailable=L.Rows.inviteUnavailable or {"Invites are unavailable right now.","Приглашения сейчас недоступны."}
+L.Rows.referenceQuest_road={"Bring graves\nfrom the road","Принеси могилы\nс дороги"}
+L.Rows.referenceQuest_rare={"Dig up an Uncommon\nmonster or better","Выкопай необычного\nмонстра или круче"}
+L.Rows.referenceGravePrize={"{name} grave","{name} могила"}
+L.Rows.referenceClaimed={"Claimed","Получено"}
+L.Rows.referenceAllQuests={"All quests","Все задания"}
+L.Rows.referenceDailyRewards={"Daily rewards","Ежедневные награды"}
+L.Rows.referenceSpecialReward={"Special reward","Особая награда"}
+L.Rows.weaponWorkshop={"Weapon workshop","Мастерская оружия"}
+L.Rows.weaponWorkshopHint={"Mutagen drops in the ruins.","Мутаген выпадает в заброшках."}
 L.Rows.weaponUpgrade={"Weapon upgrades","Улучшение оружия"}
 L.Rows.up_Damage={"Damage","Урон"}
 L.Rows.up_FireRate={"Fire rate","Темп стрельбы"}

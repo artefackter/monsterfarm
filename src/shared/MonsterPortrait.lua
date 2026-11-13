@@ -24,7 +24,7 @@ function P.Create(parent,z,size,pos,options)
 		v.LightColor = Color3.new(0, 0, 0)
 	end
 	-- One built model per look; each portrait is a clone of it (the dex and the merge window re-render often, and
-	-- the rotation's monsters are 3D portraits).
+	-- any missing painted portrait keeps the 3D fallback).
 	local key = table.concat({ tostring(z.type), tostring(z.form), tostring(z.tier), tostring(Merge.Stars(z)) }, "|")
 	local template = cache[key]
 	if not template then

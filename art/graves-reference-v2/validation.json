@@ -1,0 +1,32 @@
+[
+  {
+    "file": "Grave_Wooden.glb",
+    "triangles": 12084,
+    "valid": true,
+    "bytes": 267388
+  },
+  {
+    "file": "Grave_Stone.glb",
+    "triangles": 11268,
+    "valid": true,
+    "bytes": 245792
+  },
+  {
+    "file": "Grave_Marble.glb",
+    "triangles": 11300,
+    "valid": true,
+    "bytes": 247684
+  },
+  {
+    "file": "Grave_Golden.glb",
+    "triangles": 11236,
+    "valid": true,
+    "bytes": 244248
+  },
+  {
+    "file": "Grave_Lunar.glb",
+    "triangles": 12520,
+    "valid": true,
+    "bytes": 269472
+  }
+]

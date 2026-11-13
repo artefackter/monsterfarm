@@ -255,6 +255,17 @@ topList.SortOrder = Enum.SortOrder.LayoutOrder
 topList.Padding = UDim.new(0, 6)
 topList.Parent = topRight
 
+-- TopbarSafeInsets starts this row after Roblox's system buttons.
+local topLeft = topScale(Instance.new("Frame"))
+topLeft.Name = "TopLeft"
+topLeft.BackgroundTransparency = 1
+topLeft.AnchorPoint = Vector2.new(0, 0.5)
+topLeft.Size = UDim2.fromOffset(TOP_HEIGHT * 2 + 6, TOP_HEIGHT)
+topLeft.Position = UDim2.new(0, 8, 0.5, 0)
+topLeft.Parent = topGui
+local leftTopList = topList:Clone()
+leftTopList.Parent = topLeft
+
 local Notifications = require(S:WaitForChild("Notifications"))
 local function flash(text, isError, duration, kind, key)
  Notifications.Show(text, isError and "error" or kind or "info", duration, key)
@@ -288,7 +299,7 @@ local tutorialText = ""
 local nav = scaledBy(Instance.new("Frame"))
 nav.Name = "Nav"
 nav.AnchorPoint = Vector2.new(0, 1) -- sits just above the middle of the screen; the slow-mode switch is just below
-nav.Size = UDim2.fromOffset(84, 268) -- one column (owner, 2026-11-13): the Monsterdex, the daily gift, the quests
+nav.Size = UDim2.fromOffset(84, 176) -- quests, then Monsterdex; slow mode stays just below
 nav.Position = UDim2.new(0, 10, 0.5, -8)
 nav.BackgroundTransparency = 1
 nav.Parent = gui
@@ -369,7 +380,9 @@ local function fitModal(frame)
 end
 local savedTouchGuiEnabled
 local function refreshModal()
- local opened=panel.Visible or p.PlayerGui:GetAttribute("UpgradeModalOpen")==true or gui:FindFirstChild('Reveal')~=nil or gui:FindFirstChild('PetHatch')~=nil
+ local otherOpened=panel.Visible or p.PlayerGui:GetAttribute("UpgradeModalOpen")==true or gui:FindFirstChild('Reveal')~=nil or gui:FindFirstChild('PetHatch')~=nil
+ gui:SetAttribute("OtherModalOpen",otherOpened)
+ local opened=otherOpened or p.PlayerGui:GetAttribute("NightHelpOpen")==true
  gui:SetAttribute('ModalOpen',opened);shade.Visible=opened
  local touchGui=p.PlayerGui:FindFirstChild('TouchGui')
  if touchGui then
@@ -378,12 +391,13 @@ local function refreshModal()
    touchGui.Enabled=false
   elseif savedTouchGuiEnabled~=nil then touchGui.Enabled=savedTouchGuiEnabled;savedTouchGuiEnabled=nil end
  end
- metrics.Visible=not opened;nav.Visible=not opened;rightBox.Visible=not opened;topRight.Visible=not opened;dayClock.Visible=not opened
+ metrics.Visible=not opened;nav.Visible=not opened;rightBox.Visible=not opened;topRight.Visible=not opened;topLeft.Visible=not opened;dayClock.Visible=not opened
  Notifications.Guide("Tutorial", tutorialText, "guide", tutorialWanted and not opened, 0)
 end
 panel:GetPropertyChangedSignal('Visible'):Connect(refreshModal)
 panel:GetPropertyChangedSignal('Visible'):Connect(function() if not panel.Visible then panel:SetAttribute('MergePicker',nil) end end)
 p.PlayerGui:GetAttributeChangedSignal('UpgradeModalOpen'):Connect(refreshModal)
+p.PlayerGui:GetAttributeChangedSignal('NightHelpOpen'):Connect(refreshModal)
 p.PlayerGui.ChildAdded:Connect(function(child) if child.Name=='TouchGui' then refreshModal() end end)
 gui.ChildAdded:Connect(function() refreshModal() end)
 gui.ChildRemoved:Connect(function(child) modalLayouts[child]=nil;refreshModal() end)
@@ -632,7 +646,7 @@ local function petSend(op,id) rem:WaitForChild(op):FireServer(id) end
 
 local LEFT = Enum.TextXAlignment.Left
 local RIGHT = Enum.TextXAlignment.Right
-local MENU_ICON = { rewards="daily", inventory="backpack", weapons="modal_weapon_Deagle", pumpkins="modal_pumpkin_Pumpkin", traps="modal_shovel_Steel", info="quests", zombieCard="dex", freeGift="daily" }
+local MENU_ICON = { quests="quests", rewards="daily", inventory="backpack", weapons="modal_weapon_Deagle", pumpkins="modal_pumpkin_Pumpkin", traps="modal_shovel_Steel", info="quests", zombieCard="dex", freeGift="daily" }
 local function rateText(z)
 	local rate = Merge.Rate(z)
 	return L.number(rate, lang, rate % 1 == 0 and 0 or 1)
@@ -738,7 +752,7 @@ local function renderInventory()
 	end
 end
 local function renderSettings()
- for _,key in {'AutoFire','GuideArrows','ShiftSlow','CameraShake'} do
+ for _,key in {'AutoFire','GuideArrows','ShiftSlow','CameraShake','ShowNightInfo'} do
  local value=p:GetAttribute(key)~=false
  button(row(58),t(key)..(value and ' ✓' or ' —'),function() rem.InterfaceAction:FireServer('setting',key,not value) end,UDim2.new(1,-12,1,-12),UDim2.fromOffset(6,6),value and Pal.Mint or Pal.Common)
  end
@@ -758,6 +772,7 @@ local function renderSettings()
 	end
 end
 local questBars = {}
+local referenceView
 local questTimer
 local function progressText(item)
 	return short(QuestRules.Show(item, item.progress)) .. " / " .. short(QuestRules.Show(item, item.goal))
@@ -1067,7 +1082,7 @@ local dexPage='None';local dexSelected='DeerFarmer'
 local DEX_PAGE_COLOR={None=Style.ModalColors.Cream,Golden=Color3.fromRGB(255,206,84),Lunar=Color3.fromRGB(176,150,255),Rainbow=Color3.fromRGB(255,140,200)}
 local DEX_TINT={Golden=Color3.fromRGB(255,215,120),Lunar=Color3.fromRGB(185,170,255)}
 local function dexPortrait(parent,id,known,page,size,pos)
- if not require(S.MonsterCollection).Icon(id,Icons) then -- the new rotation shows its 3D model
+ if not require(S.MonsterCollection).Icon(id,Icons) then -- missing painted assets keep the 3D fallback
   local v=require(S.MonsterPortrait).Create(parent,{id=id,type=id,tier=1,mutation='None'},size,pos,{silhouette=not known});v.Name='DexPortrait';v.ZIndex=3
   if known and DEX_TINT[page] then v.ImageColor3=DEX_TINT[page] end
   return v
@@ -1185,6 +1200,13 @@ render = function()
 			c:Destroy()
 		end
 	end
+ headingIcon.Size=UDim2.fromOffset(92,92);headingIcon.Position=UDim2.fromOffset(6,-12)
+ local oldReference=panel:FindFirstChild('ReferenceContent');if oldReference then oldReference:Destroy() end
+ referenceView=nil
+ scroll.Visible=true
+ header.Position=UDim2.fromOffset(16,8);header.Size=UDim2.new(1,-32,0,76);header.ZIndex=1
+ header.MarketCanopy.Position=UDim2.fromOffset(-24,-72);header.MarketCanopy.Size=UDim2.new(1,48,0,174);header.MarketCanopy.ZIndex=1
+ panel.MarketSkin.ZIndex=1;heading.ZIndex=3;headingIcon.ZIndex=3;closeButton.ZIndex=1
  local oldPicker=panel:FindFirstChild("MergePicker")
  if oldPicker then local sf=oldPicker:FindFirstChildWhichIsA("ScrollingFrame");panel:SetAttribute("MergePickerY",sf and sf.CanvasPosition.Y or 0);oldPicker:Destroy() else panel:SetAttribute("MergePickerY",0) end
  if menu~="merge" then panel:SetAttribute("MergePicker",nil) end
@@ -1221,6 +1243,19 @@ render = function()
  heading.Size=UDim2.new(1,menu=="weapons" and -360 or -178,1,0)
  if menu=="weapons" then
   local purse=badge(header,"$"..short(state.coins),Pal.Violet,UDim2.new(1,-248,0,20),170);purse.Name="ShopPurse";purse.Size=UDim2.fromOffset(170,38);purse.ZIndex=3
+ end
+ if menu=='quests' or menu=='rewards' then
+  panel.Size=UDim2.fromOffset(850,820);fitModal(panel);scroll.Visible=false
+  panel.MarketSkin.ZIndex=11;header.ZIndex=12
+  header.Position=UDim2.fromOffset(16,55);header.Size=UDim2.new(1,-32,0,90)
+  header.MarketCanopy.Position=UDim2.fromOffset(-24,-87);header.MarketCanopy.Size=UDim2.new(1,48,0,190);header.MarketCanopy.ZIndex=13
+  heading.Position=UDim2.fromOffset(120,0);heading.Size=UDim2.new(1,-210,1,0);heading.ZIndex=15
+  heading.UITextSizeConstraint.MaxTextSize=64;heading.TextScaled=true
+  headingIcon.Position=UDim2.fromOffset(12,-12);headingIcon.Size=UDim2.fromOffset(100,100);headingIcon.ZIndex=15
+  closeButton.ZIndex=16
+  for _,o in closeButton:GetDescendants() do if o:IsA('GuiObject') then o.ZIndex=17 end end
+  referenceView=require(S.QuestRewardView).Create(panel,menu,state,send,lang)
+  return
  end
  if menu=="zombieCard" then
   local selected;for _,z in state.zombies do if z.id==cardId then selected=z end end
@@ -1433,7 +1468,7 @@ local function menuIcon(parent, key, size, order)
 end
 local BIG, SMALL = UDim2.fromOffset(84,84), UDim2.fromOffset(TOP_HEIGHT,TOP_HEIGHT)
 -- The Monsterdex button is its book icon only, like the buttons on the right (owner, 2026-11-12: no caption).
-local dex=menuIcon(nav,'dex',BIG,1)
+local dex=menuIcon(nav,'dex',BIG,2)
 navButtons.invite=iconButton(topRight,'invite',invite,SMALL);navButtons.invite.LayoutOrder=1
 menuIcon(topRight,'settings',SMALL,2);menuIcon(topRight,'top',SMALL,4)
 -- The language switch sits in the row with the settings (owner, 2026-11-13): a tap flips Russian and English.
@@ -1444,10 +1479,10 @@ navButtons.language=button(topRight,'',function()
 end,SMALL);navButtons.language.Name='Nav_language';navButtons.language.LayoutOrder=3
 navButtons.language.UITextSizeConstraint.MaxTextSize=24
 navButtons.language.Text=isRussian and 'RU' or 'EN'
--- Daily gift and quests on the screen, so nobody has to walk to the chest or the board (owner, 2026-11-13)
-menuIcon(nav,'rewards',BIG,2);menuIcon(nav,'quests',BIG,3)
+-- Gifts and home follow Roblox's buttons; quests lead the left column.
+menuIcon(topLeft,'rewards',SMALL,1);menuIcon(nav,'quests',BIG,1)
 menuIcon(rightBox,'pets',BIG,1);menuIcon(rightBox,'crypt',BIG,2)
-navButtons.home=iconButton(rightBox,'house',function() rem.InterfaceAction:FireServer('home') end,BIG);navButtons.home.Name='Nav_home';navButtons.home.LayoutOrder=3
+navButtons.home=iconButton(topLeft,'house',function() rem.InterfaceAction:FireServer('home') end,SMALL);navButtons.home.Name='Nav_home';navButtons.home.LayoutOrder=2
 -- Reference look: saturated fills, a darker thick outline, a soft top-to-bottom shine
 local function paint(b,fill,edge)
  b.BackgroundColor3=fill;local st=b:FindFirstChildOfClass('UIStroke');if st then st.Color=edge;st.Thickness=4 end
@@ -1639,6 +1674,7 @@ rem.State.OnClientEvent:Connect(function(s)
 			questTimer.Text = resetText()
 		end
 	end
+ if referenceView and referenceView.Root.Parent then referenceView:Update(s) end
 	local sig = game.HttpService:JSONEncode({ s.zombies, s.upgrades, s.dailyStreak, s.dailyReady, s.offline, s.stock, questSig, s.language, s.vouchers, s.house, (s.houseLeft or 0) > 0, s.treadmill,s.equippedShovel,s.shovels,s.showRanges,s.settings,s.dex,s.dexClaims,s.freeGiftClaimed })
 	if sig ~= signature and panel.Visible then
 		signature = sig

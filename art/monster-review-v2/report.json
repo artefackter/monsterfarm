@@ -1,0 +1,23 @@
+{
+  "Parasite_Before": {
+    "asset": "Parasite_Root_Aggressive",
+    "recolored_vertices": 0,
+    "geometry": "unchanged"
+  },
+  "Parasite_Proposed": {
+    "asset": "Parasite_Root_Aggressive",
+    "recolored_vertices": 3896,
+    "geometry": "unchanged",
+    "objects": 9,
+    "triangles": 2492
+  },
+  "RingMaw_Source": {
+    "asset": "RingMaw_Aggressive",
+    "recolored_vertices": 0,
+    "geometry": "unchanged"
+  },
+  "RingMaw_Proposed": {
+    "objects": 37,
+    "triangles": 4509
+  }
+}

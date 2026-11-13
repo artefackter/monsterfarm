@@ -83,9 +83,9 @@ do
   return pos[a]<pos[b]
  end)
 end
--- The painted 2D portrait, or nil when the monster shows its 3D model instead: the new rotation has no paintings yet.
+-- Use a painted portrait whenever it is registered, including Miner/Knight/King outfits.
+-- A missing asset keeps the existing 3D fallback.
 function C.Icon(id,icons)
- if C.Outfits[id] then return nil end
  return icons["modal_monster_"..id]
 end
 -- Saves from before the rotation keep their monsters but take the new look of their rarity: an Uncommon Farmer

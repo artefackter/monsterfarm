@@ -1,0 +1,40 @@
+{
+  "prompts": [
+    {
+      "id": "night_frame",
+      "prompt": "Edit target: supplied night-info game UI reference. Create a production reusable EMPTY UI FRAME, front-on, wide landscape 16:9, isolated with genuine transparent alpha outside the board. Preserve the reference's hand-painted polished mobile-game style: chunky dark wooden posts, warm golden brackets, purple shingle roof, two glowing yellow hanging lanterns, small green vines, cream parchment interior. Keep the top central dark purple ornate sign with large gold crescent moon and stars above it, but REMOVE EVERY WORD and digit from the entire image, leaving its main title plaque blank. Keep a small BLANK purple/gold timer capsule below the main title plaque. Remove ALL three cards and their artwork, every card frame, all text, the green button, close X button, and checkbox: the entire parchment interior below the timer must be clean empty cream parchment, ready for separate live UI elements. No baked lettering or fake glyphs anywhere. No scenery behind or through the parchment, no background scene, no black rectangle. All exterior background transparent; parchment interior opaque. High quality crisp game UI art matching the reference.",
+      "referenceImages": [
+        "/var/folders/g0/p39b0rv17qv4_m_fxvnm1zkr0000gn/T/codex-clipboard-2612fe43-1e58-4082-aeac-3793beee680b.png"
+      ],
+      "transparent_background": true,
+      "mode": "built-in image_gen"
+    },
+    {
+      "id": "night_defend",
+      "prompt": "Use the FIRST/LEFT illustrated card of this game UI reference as visual guidance. Generate ONLY that story illustration as a standalone wide landscape 4:3 game UI artwork, no panel, no border, no lettering, no text or UI controls. A fierce but cartoonish teal monster with yellow glowing eyes, large fangs and turquoise spikes climbs over and smashes a wooden farm fence; planks splinter at a small bright yellow impact at right. Purple nocturnal farm backdrop with silhouettes of trees and a windmill, small starry sky. Close foreground emphasis on monster hands and wooden fence. Rich purple, teal and warm amber hand-painted glossy mobile-game art exactly matching supplied reference. Opaque illustrated background fills entire rectangle; no transparent areas.",
+      "referenceImages": [
+        "/var/folders/g0/p39b0rv17qv4_m_fxvnm1zkr0000gn/T/codex-clipboard-2612fe43-1e58-4082-aeac-3793beee680b.png"
+      ],
+      "transparent_background": false,
+      "mode": "built-in image_gen"
+    },
+    {
+      "id": "night_lock",
+      "prompt": "Use the CENTER illustrated card of the supplied night game UI reference as visual guidance. Generate ONLY its story illustration as a standalone wide landscape 4:3 game UI artwork, no panel, no border, NO words or letters, no timer or controls. A sturdy closed rounded-top double wooden gate with dark iron strap hinges, a large shiny golden padlock with a black keyhole at its center; a friendly grey skull gravestone and tuft of green grass to the lower right. Deep purple moonlit forest silhouettes behind the gate. Polished chunky shapes, golden highlights, crisp dark plum outlines, colourful hand-painted mobile-game illustration exactly matching the reference. Opaque purple background fills rectangle.",
+      "referenceImages": [
+        "/var/folders/g0/p39b0rv17qv4_m_fxvnm1zkr0000gn/T/codex-clipboard-2612fe43-1e58-4082-aeac-3793beee680b.png"
+      ],
+      "transparent_background": false,
+      "mode": "built-in image_gen"
+    },
+    {
+      "id": "night_ruins",
+      "prompt": "Use the RIGHT illustrated card of the supplied game UI reference as visual guidance. Generate ONLY the story illustration, standalone wide landscape 4:3 image, NO UI card frame, banner, buttons or words. A spooky abandoned small stone cottage with wonky purple tiled roof and boarded windows in a moonlit purple forest; luminous pink-purple full moon above, one small purple crescent-marked lunar gravestone and a blue crystal beside a green path. Large golden coin in the foreground at bottom right bears the simple symbol ×2 ONLY (this reward multiplier is part of the illustration, no other letters). Warm golden glow from coin, vivid purple magic and friendly stylized spooky tone. Clean highly polished hand-painted mobile game art matching the reference. Opaque illustration fills rectangle.",
+      "referenceImages": [
+        "/var/folders/g0/p39b0rv17qv4_m_fxvnm1zkr0000gn/T/codex-clipboard-2612fe43-1e58-4082-aeac-3793beee680b.png"
+      ],
+      "transparent_background": false,
+      "mode": "built-in image_gen"
+    }
+  ]
+}
