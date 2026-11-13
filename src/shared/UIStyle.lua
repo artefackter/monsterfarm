@@ -102,6 +102,9 @@ function U.ModalShelf(parent)
  local g=Instance.new('UIGradient',shelf);g.Rotation=90;g.Color=ColorSequence.new(Color3.fromRGB(255,241,180),Color3.fromRGB(177,85,23))
 end
 function U.ModalArt(parent,kind,id,size,pos,finish)
+ if kind=="monster" and id and not require(script.Parent.MonsterCollection).Icon(id,require(script.Parent.Icons)) then -- the rotation and the RingMaw: 3D
+  local v=require(script.Parent.MonsterPortrait).Create(parent,{id=id,type=id,tier=1},size or UDim2.fromScale(1,1),pos);v.Name="Art_monster";return v
+ end
  if kind=="weapon" and (finish and finish~="Default" or not require(script.Parent.Icons)["modal_weapon_"..tostring(id)]) then return U.Icon(parent,kind,id,size,pos,finish) end
  local icons=require(script.Parent.Icons)
  local key=kind=='cash' and 'hudZombucks' or kind=='shoe' and 'hudSpeed' or kind=='coffin' and 'hudCoffin' or kind=='crypt' and 'crypt' or kind=='grave' and (id=='Golden' and 'modal_grave_Golden' or 'modal_grave_Stone') or 'modal_'..kind..(id and '_'..id or '')

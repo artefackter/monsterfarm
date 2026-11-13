@@ -274,7 +274,7 @@ Run.Heartbeat:Connect(function(dt)
    local center=m.Parent and m:GetAttribute("ArenaCenter")
    if typeof(center)=="Vector3" and (m:GetAttribute("Health") or 0)>0 then
     local flat=Vector3.new(root.Position.X-center.X,0,root.Position.Z-center.Z)
-    if flat.Magnitude<=Progression.ArenaRadius+30 and math.abs(root.Position.Y-center.Y)<40 then found=m;break end
+    if flat.Magnitude<=Progression.PocketRadius+6 and math.abs(root.Position.Y-center.Y)<40 then found=m;break end -- in its pocket
    end
   end
  end

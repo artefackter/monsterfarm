@@ -371,6 +371,13 @@ function A.Step(model, data, dt)
 				if name == "ParasiteHead" then
 					pose = pose * CFrame.new(0, math.sin(now * 4 + data.seed) * 0.12 * scale, 0)
 				end
+			elseif name == "MawL" or name == "MawR" then
+				-- The RingMaw's head halves ride the head and swing open on their hinge to bite, roar and spit. The head
+				-- turns round the neck, so its pose is moved from the neck to the hinge first.
+				local hj = root:FindFirstChild("Head")
+				local neck = hj and hj:IsA("Motor6D") and hj.C0.Position or j.C0.Position
+				local open = 0.08 + math.sin(now * 1.7 + data.seed) * 0.05 + 0.9 * math.max(windup, strike) + (biting and 0.55 + math.sin(now * 16) * 0.25 or 0)
+				pose = CFrame.new(neck - j.C0.Position) * head * CFrame.new(j.C0.Position - neck) * CFrame.Angles(0, (name == "MawL" and 1 or -1) * open, 0) -- the left half is on -X
 			elseif name == "TendrilL" or name == "TendrilR" then
 				local sign = name == "TendrilL" and 1 or -1
 				local agitated = 1 + windup * 2 + moving + strike

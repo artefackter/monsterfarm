@@ -21,7 +21,7 @@ function M.Try(d,ids)
    local _,i=Z.Find(d,z.id);table.remove(d.zombies,i);D.Claims[z.id]=nil
   end
  end
- keeper.stars=R.Stars(keeper)+1;keeper.zone=zone;keeper.slot=slot
+ local result=R.Result(list);keeper.tier=result.tier;keeper.stars=result.stars;keeper.zone=zone;keeper.slot=slot
  return keeper
 end
 return M

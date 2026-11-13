@@ -8,7 +8,7 @@ local poses={};local heldModels={};local currentTarget;local targetSince=0;local
 local font=L.lang():sub(1,2)=="ru" and Enum.Font.GothamBlack or Enum.Font.FredokaOne
 local function t(k,args) return L.text(k,L.lang(),args) end
 local gui=Instance.new("ScreenGui");gui.Name="CombatUI";gui.ZIndexBehavior=Enum.ZIndexBehavior.Sibling;gui.DisplayOrder=22;gui.ResetOnSpawn=false;gui.ScreenInsets=Enum.ScreenInsets.CoreUISafeInsets;gui.Parent=p:WaitForChild("PlayerGui")
-local control=Instance.new("Frame",gui);control.Name="Hotbar";control.Size=UDim2.fromOffset(508,84);control.AnchorPoint=Vector2.new(.5,1);control.Position=UDim2.new(.5,0,1,-8);control.BackgroundTransparency=1
+local control=Instance.new("Frame",gui);control.Name="Hotbar";control.Size=UDim2.fromOffset(446,84);control.AnchorPoint=Vector2.new(.5,1);control.Position=UDim2.new(.5,0,1,-8);control.BackgroundTransparency=1
 local scale=Instance.new("UIScale",control)
 local function text(parent,name,label,size,pos,color)
  local b=Style.Panel(Instance.new("TextButton"),color or Pal.Panel);b.Name=name;b.Text=label;b.Size=size;b.Position=pos;b.TextColor3=Pal.Ink;b.Font=font;b.TextScaled=true;b.TextWrapped=true;b.AutoLocalize=false;b.Parent=parent;return b
@@ -28,15 +28,6 @@ local function choice(kind,id,count,callback)
  Style.ModalArt(b,kind,id,UDim2.new(1,-8,1,-22),UDim2.fromOffset(4,2))
  if count then local n=Style.Text(b,tostring(count),UDim2.fromOffset(80,22),UDim2.fromOffset(6,65));n.ZIndex=3 end
 end
-local function chooseWeapons()
- if strip.Visible and stripKind=='weapons' then strip.Visible=false;return end;clearStrip('weapons')
- for _,id in C.Order do if state and state.owned[id] then choice('weapon',id,nil,function() rem.WeaponAction:FireServer('equip',id) end) end end
- -- the last tile opens the upgrade bench
- local up=Style.Button(strip,'Upgrade',UDim2.fromOffset(92,90),UDim2.new(),function() strip.Visible=false;openUpgrades() end,Color3.fromRGB(120,230,90))
- choiceOrder+=1;up.LayoutOrder=choiceOrder
- local arrow=Instance.new('ImageLabel');arrow.BackgroundTransparency=1;arrow.Size=UDim2.fromOffset(50,50);arrow.Position=UDim2.fromOffset(21,4);arrow.Image=Icons.hudDamage or '';arrow.Parent=up
- local cap=Style.Text(up,t('upgradeTile'),UDim2.fromOffset(86,24),UDim2.fromOffset(3,62));cap.ZIndex=3
-end
 local function chooseItems()
  if strip.Visible and stripKind=='items' then strip.Visible=false;return end;clearStrip('items')
  local n=0
@@ -54,12 +45,22 @@ local function slotButton(name,x,callback)
  local pop=Instance.new('UIScale',b);b.Activated:Connect(function() Style.Pop(pop,1);Sfx.play('Click');callback() end)
  return b
 end
-local selectShovel=slotButton('Slot1',0,function() equipment:FireServer('slot','1');strip.Visible=false end)
-local weaponTile=slotButton('Slot2',86,function() if p:GetAttribute('ActiveSlot')==2 then chooseWeapons() else equipment:FireServer('slot','2');strip.Visible=false end end)
-local itemTile=slotButton('Slot3',172,function() equipment:FireServer('slot','3');chooseItems() end)
-local trapTile=slotButton('Slot4',258,function() equipment:FireServer('slot','4');strip.Visible=false end)
-local slots={selectShovel,weaponTile,itemTile,trapTile}
-for i,b in slots do local n=Style.Text(b,tostring(i),UDim2.fromOffset(18,18),UDim2.fromOffset(4,2));n.TextColor3=Color3.new(1,1,1);n.TextXAlignment=Enum.TextXAlignment.Left;n.ZIndex=4 end
+-- Hotbar v3 (owner, 2026-11-13): 1 shovel, 2 gun, 3 trap, a gap, 4 graves, 5 the crypt's monsters. A second press on
+-- the slot in your hands empties them. One gun is carried at a time: it is changed at the gun shop, not here.
+-- The server keeps its own numbers: 1 shovel, 2 gun, 3 graves, 4 trap (0 = empty hands).
+local function pressSlot(n)
+ strip.Visible=false
+ if p:GetAttribute('ActiveSlot')==n and not p:GetAttribute('HoldingZombie') then equipment:FireServer('slot','0') else equipment:FireServer('slot',tostring(n)) end
+end
+local function pressGraves()
+ if p:GetAttribute('ActiveSlot')==3 and not p:GetAttribute('HoldingZombie') then pressSlot(3) else equipment:FireServer('slot','3');chooseItems() end
+end
+local selectShovel=slotButton('Slot1',0,function() pressSlot(1) end)
+local weaponTile=slotButton('Slot2',86,function() pressSlot(2) end)
+local trapTile=slotButton('Slot3',172,function() pressSlot(4) end)
+local itemTile=slotButton('Slot4',282,pressGraves)
+local slots={selectShovel,weaponTile,itemTile,trapTile} -- indexed by the server's slot numbers
+for b,i in {[selectShovel]=1,[weaponTile]=2,[trapTile]=3,[itemTile]=4} do local n=Style.Text(b,tostring(i),UDim2.fromOffset(18,18),UDim2.fromOffset(4,2));n.TextColor3=Color3.new(1,1,1);n.TextXAlignment=Enum.TextXAlignment.Left;n.ZIndex=4 end
 local shovelIcon=Style.ModalArt(selectShovel,'shovel',p:GetAttribute('EquippedShovel') or 'Rusty',UDim2.fromOffset(62,58),UDim2.fromOffset(8,6))
 Style.ModalArt(itemTile,'grave',nil,UDim2.fromOffset(56,52),UDim2.fromOffset(11,6))
 Style.ModalArt(trapTile,'trap',nil,UDim2.fromOffset(56,52),UDim2.fromOffset(11,6))
@@ -71,9 +72,8 @@ local cooldown=badgeText(selectShovel,'Cooldown')
 local itemCount=badgeText(itemTile,'Count')
 local trapCount=badgeText(trapTile,'Count')
 local ammo=badgeText(weaponTile,'Ammo')
--- Two more slots (owner, 2026-11-13): 5 is the monster in your hands - its portrait while you carry one, a tap puts it
--- back; with empty hands a tap lists the crypt's monsters to take out - and 6 is empty hands. One table keeps this
--- script under Luau's 200 locals.
+-- Slot 5 (owner, 2026-11-13) is the monster in your arms: its portrait while you carry one (a tap puts it back), else
+-- a tap lists the crypt's monsters to take out. One table keeps this script under Luau's 200 locals.
 local extra={}
 do
  local function heldType() local m=p.Character and p.Character:FindFirstChild('HeldZombie');return m and m:GetAttribute('Type') end
@@ -89,16 +89,22 @@ do
  extra.press=function()
   if p:GetAttribute('HoldingZombie') then rem.Intent:FireServer('dropZombie');strip.Visible=false else extra.chooseMonsters() end
  end
- extra.monster=slotButton('Slot5',344,extra.press)
- extra.hand=slotButton('Slot6',430,function() equipment:FireServer('slot','0');strip.Visible=false end)
- for i,b in {[5]=extra.monster,[6]=extra.hand} do local n=Style.Text(b,tostring(i),UDim2.fromOffset(18,18),UDim2.fromOffset(4,2));n.TextColor3=Color3.new(1,1,1);n.TextXAlignment=Enum.TextXAlignment.Left;n.ZIndex=4 end
- local hand=Style.Text(extra.hand,'✋',UDim2.fromOffset(56,52),UDim2.fromOffset(11,8));hand.UITextSizeConstraint.MaxTextSize=40;hand.ZIndex=3
+ extra.monster=slotButton('Slot5',368,extra.press)
+ for i,b in {[5]=extra.monster} do local n=Style.Text(b,tostring(i),UDim2.fromOffset(18,18),UDim2.fromOffset(4,2));n.TextColor3=Color3.new(1,1,1);n.TextXAlignment=Enum.TextXAlignment.Left;n.ZIndex=4 end
  local portrait=Instance.new('ImageLabel');portrait.Name='MonsterPortrait';portrait.BackgroundTransparency=1;portrait.ScaleType=Enum.ScaleType.Fit
  portrait.Size=UDim2.fromOffset(62,56);portrait.Position=UDim2.fromOffset(8,6);portrait.ZIndex=3;portrait.Parent=extra.monster
  local count=badgeText(extra.monster,'Count')
  extra.refresh=function()
   local held=heldType()
-  portrait.Image=held and Icons['modal_monster_'..held] or Icons.crypt or '';portrait.ImageTransparency=held and 0 or .3
+  local icon=held and require(S.MonsterCollection).Icon(held,Icons)
+  portrait.Image=held and (icon or '') or Icons.crypt or '';portrait.ImageTransparency=held and 0 or .3
+  local model3d=extra.monster:FindFirstChild('MonsterModel') -- no painting yet (the rotation, the RingMaw): its 3D model
+  if held and not icon then
+   if not model3d or model3d:GetAttribute('Type')~=held then
+    if model3d then model3d:Destroy() end
+    local v=require(S.MonsterPortrait).Create(extra.monster,{id=held,type=held,tier=1},UDim2.fromOffset(62,56),UDim2.fromOffset(8,6));v.Name='MonsterModel';v.ZIndex=3;v:SetAttribute('Type',held)
+   end
+  elseif model3d then model3d:Destroy() end
   local n=0;for _,z in itemsState and itemsState.zombies or {} do if free(z) then n+=1 end end
   count.Text=held and '' or tostring(n)
  end
@@ -125,13 +131,13 @@ local function resize()
  local full=p.PlayerGui:FindFirstChild('MobileStats')
  local centerShift=UIS.TouchEnabled and full and (full.AbsolutePosition.Y-gui.AbsolutePosition.Y+(full.AbsoluteSize.Y-v.Y)/2+13*f) or 0
  slow.Position=UDim2.new(0,14,.5,8+centerShift)
- -- Six slots are wide (2026-11-13): the bar sits in the gap between the stats bottom-left and the day clock
+ -- Five slots and a gap are wide (2026-11-13): the bar sits in the gap between the stats bottom-left and the day clock
  -- bottom-right, shrinking if that gap is narrower than the bar.
  local dig=p.PlayerGui:FindFirstChild('DigUI');local clock=dig and dig:FindFirstChild('DayClock')
  local ms=math.clamp(math.min(workspace.CurrentCamera.ViewportSize.X/1280,workspace.CurrentCamera.ViewportSize.Y/720),.48,1.25)
  local left=16+250*ms;local right=clock and clock.AbsoluteSize.X>0 and clock.AbsolutePosition.X-gui.AbsolutePosition.X-6 or v.X-12-300*f
- local k=math.clamp((right-left)/508,.4,f);scale.Scale=k
- control.Position=UDim2.new(0,math.clamp((left+right)/2,254*k+4,v.X-254*k-4),1,-8)
+ local k=math.clamp((right-left)/446,.4,f);scale.Scale=k
+ control.Position=UDim2.new(0,math.clamp((left+right)/2,223*k+4,v.X-223*k-4),1,-8)
 end
 workspace.CurrentCamera:GetPropertyChangedSignal("ViewportSize"):Connect(resize);gui:GetPropertyChangedSignal("AbsoluteSize"):Connect(resize);resize()
 task.spawn(function() local dig=p.PlayerGui:WaitForChild('DigUI',15);local c=dig and dig:WaitForChild('DayClock',15);if c then c:GetPropertyChangedSignal('AbsolutePosition'):Connect(resize);resize() end end)
@@ -139,7 +145,7 @@ p.PlayerGui.ChildAdded:Connect(function(c) if c.Name=='MobileStats' then c:GetPr
 local function menuOpen() if upgradeWindow and upgradeWindow.Visible then return true end;local dig=p.PlayerGui:FindFirstChild("DigUI");local menu=dig and dig:FindFirstChild("Menu");return dig and (dig:GetAttribute("ModalOpen")==true or menu and menu.Visible or dig:FindFirstChild("Reveal")~=nil or dig:FindFirstChild("PetHatch")~=nil) end
 -- Round buttons to the right of the hotbar: drop the grave you carry (key G) and, on phones, reload (R on keyboards).
 local function roundButton(name,y,color,callback)
- local b=Instance.new('TextButton');b.Name=name;b.Text='';b.AutoButtonColor=false;b.Size=UDim2.fromOffset(78,78);b.Position=UDim2.fromOffset(516,y);b.BackgroundColor3=color;b.Visible=false;b.Parent=control
+ local b=Instance.new('TextButton');b.Name=name;b.Text='';b.AutoButtonColor=false;b.Size=UDim2.fromOffset(78,78);b.Position=UDim2.fromOffset(454,y);b.BackgroundColor3=color;b.Visible=false;b.Parent=control
  Instance.new('UICorner',b).CornerRadius=UDim.new(1,0)
  local st=Instance.new('UIStroke',b);st.Color=Color3.fromRGB(28,26,40);st.Thickness=3;st.ApplyStrokeMode=Enum.ApplyStrokeMode.Border
  local pop=Instance.new('UIScale',b);b.Activated:Connect(function() Style.Pop(pop,1);Sfx.play('Click');callback() end)
@@ -378,8 +384,8 @@ UIS.InputBegan:Connect(function(input,processed)
   elseif input.KeyCode==Enum.KeyCode.LeftShift or input.KeyCode==Enum.KeyCode.RightShift then if p:GetAttribute("ShiftSlow")~=false then equipment:FireServer("slow") end
  elseif input.KeyCode==Enum.KeyCode.R then rem.WeaponAction:FireServer("reload")
  elseif input.KeyCode==Enum.KeyCode.G then if p:GetAttribute("CarryingGrave") then roadAction("dropGrave") end
- else local n=({[Enum.KeyCode.One]=1,[Enum.KeyCode.Two]=2,[Enum.KeyCode.Three]=3,[Enum.KeyCode.Four]=4,[Enum.KeyCode.Five]=5,[Enum.KeyCode.Six]=6})[input.KeyCode]
-  if n==5 then extra.press() elseif n==6 then equipment:FireServer("slot","0");strip.Visible=false elseif n then equipment:FireServer("slot",tostring(n));if n==3 then chooseItems() end end end
+ else local n=({[Enum.KeyCode.One]=1,[Enum.KeyCode.Two]=2,[Enum.KeyCode.Three]=3,[Enum.KeyCode.Four]=4,[Enum.KeyCode.Five]=5})[input.KeyCode]
+  if n==1 or n==2 then pressSlot(n) elseif n==3 then pressSlot(4) elseif n==4 then pressGraves() elseif n==5 then extra.press() end end
 end)
 UIS.InputEnded:Connect(function(input) if input.UserInputType==Enum.UserInputType.MouseButton1 then held=false end end)
 UIS.WindowFocusReleased:Connect(function() focused=false;held=false end)
@@ -403,7 +409,7 @@ local function updateGun(player)
  local ch=player.Character;local hand=ch and (ch:FindFirstChild("RightHand") or ch:FindFirstChild("Right Arm"));local id=player:GetAttribute("EquippedWeapon")
  local skin=player:GetAttribute("EquippedWeaponSkin") or "Default"
  local onBack=player:GetAttribute("ActiveSlot")~=2 or player:GetAttribute("WeaponHolstered") or player:GetAttribute("Training") or player:GetAttribute("DiggingGrave")
- if onBack then hand=ch and (ch:FindFirstChild("UpperTorso") or ch:FindFirstChild("Torso")) end
+ if onBack then hand=nil end -- one weapon at a time (owner, 2026-11-13): a gun out of your hands is not shown on the back
  local old=heldModels[player];local from=old and old.model.PrimaryPart and old.model.PrimaryPart.CFrame
  if old and (not hand or old.hand~=hand or old.id~=id or old.skin~=skin or old.onBack~=onBack or not old.model.Parent) then old.model:Destroy();heldModels[player]=nil;old=nil end
  if hand and C[id or ""] and not old then
@@ -545,7 +551,7 @@ Run.RenderStepped:Connect(function(dt)
  local left=math.max(0,(p:GetAttribute('RoadBatReadyAt') or 0)-now)
  cooldown.Text=left>0 and string.format('%.1f',left) or ''
  local holding=p:GetAttribute('HoldingZombie')~=nil;extra.refresh()
- for i,b in {slots[1],slots[2],slots[3],slots[4],extra.monster,extra.hand} do local on=holding and i==5 or not holding and (i==slot or slot==0 and i==6);b.Outline.Color=on and Color3.new(1,1,1) or Color3.fromRGB(70,74,96);b.Outline.Thickness=on and 3 or 2;b.BackgroundTransparency=on and .1 or .25 end
+ for i,b in {slots[1],slots[2],slots[3],slots[4],extra.monster} do local on=holding and i==5 or not holding and i==slot;b.Outline.Color=on and Color3.new(1,1,1) or Color3.fromRGB(70,74,96);b.Outline.Thickness=on and 3 or 2;b.BackgroundTransparency=on and .1 or .25 end
  local count=0;if itemsState then count+=#(itemsState.graveInventory or {});for _,n in itemsState.vouchers or {} do count+=n end end;itemCount.Text=tostring(count);trapCount.Text='×'..tostring(p:GetAttribute('RoadTraps') or 0)
  local slowOn=p:GetAttribute('SlowMode')==true;slowLabel.Text=t('slowMode');knob.Position=slowOn and UDim2.fromOffset(59,5) or UDim2.fromOffset(5,5);track.BackgroundColor3=slowOn and Color3.fromRGB(60,140,50) or Color3.fromRGB(60,58,74);slow.Visible=not menuOpen()
  control.Visible=not menuOpen()

@@ -288,14 +288,14 @@ local tutorialText = ""
 local nav = scaledBy(Instance.new("Frame"))
 nav.Name = "Nav"
 nav.AnchorPoint = Vector2.new(0, 1) -- sits just above the middle of the screen; the slow-mode switch is just below
-nav.Size = UDim2.fromOffset(176, 176) -- two columns: the Monsterdex and the daily gift, then the quests (2026-11-13)
+nav.Size = UDim2.fromOffset(84, 268) -- one column (owner, 2026-11-13): the Monsterdex, the daily gift, the quests
 nav.Position = UDim2.new(0, 10, 0.5, -8)
 nav.BackgroundTransparency = 1
 nav.Parent = gui
 local navList = Instance.new("UIGridLayout")
 navList.CellSize = UDim2.fromOffset(84, 84)
 navList.CellPadding = UDim2.fromOffset(8, 8)
-navList.FillDirectionMaxCells = 2
+navList.FillDirectionMaxCells = 1
 navList.SortOrder = Enum.SortOrder.LayoutOrder
 navList.Parent = nav
 
@@ -967,8 +967,7 @@ local function renderMerge()
  Style.ModalArrow(top,UDim2.fromOffset(40,40),UDim2.fromOffset(496,91))
 	local result
 	if sel[1] then
-		result = table.clone(Merge.Keeper(sel))
-		result.stars = Merge.Stars(result) + 1
+		result = Merge.Result(sel)
 	end
 	local card = mergeCard(top, 542, 162, result, Pal.Accent)
 	if result then
@@ -1047,6 +1046,16 @@ local function renderMerge()
 		local g = Instance.new("UIGridLayout");g.CellSize = UDim2.fromOffset(150, 236);g.CellPadding = UDim2.fromOffset(10, 10);g.SortOrder = Enum.SortOrder.LayoutOrder
 		g.HorizontalAlignment = Enum.HorizontalAlignment.Center;g.Parent = holder
 		if fill(holder) == 0 then label(o, t("mergeNone"), UDim2.new(1, -24, 0, 60), UDim2.fromOffset(12, 120), { title = true, textSize = 24, color = Pal.Text, stroke = true }) end
+		local keepY = panel:GetAttribute("MergePickerY") or 0
+		if keepY > 0 then -- the picker is rebuilt with the window: keep its place too
+			task.spawn(function()
+				for _ = 1, 4 do
+					if not sf.Parent then return end
+					sf.CanvasPosition = Vector2.new(0, keepY)
+					game:GetService("RunService").Heartbeat:Wait()
+				end
+			end)
+		end
 	end
 end
 
@@ -1058,6 +1067,11 @@ local dexPage='None';local dexSelected='DeerFarmer'
 local DEX_PAGE_COLOR={None=Style.ModalColors.Cream,Golden=Color3.fromRGB(255,206,84),Lunar=Color3.fromRGB(176,150,255),Rainbow=Color3.fromRGB(255,140,200)}
 local DEX_TINT={Golden=Color3.fromRGB(255,215,120),Lunar=Color3.fromRGB(185,170,255)}
 local function dexPortrait(parent,id,known,page,size,pos)
+ if not require(S.MonsterCollection).Icon(id,Icons) then -- the new rotation and the rebuilt RingMaw show their 3D model
+  local v=require(S.MonsterPortrait).Create(parent,{id=id,type=id,tier=1,mutation='None'},size,pos,{silhouette=not known});v.Name='DexPortrait';v.ZIndex=3
+  if known and DEX_TINT[page] then v.ImageColor3=DEX_TINT[page] end
+  return v
+ end
  local img=Instance.new('ImageLabel');img.Name='DexPortrait';img.BackgroundTransparency=1;img.ScaleType=Enum.ScaleType.Fit;img.Active=false
  img.Image=Icons['modal_monster_'..id] or '';img.Size=size;img.Position=pos or UDim2.new();img.ZIndex=3;img.Parent=parent
  if not known then
@@ -1152,12 +1166,27 @@ render = function()
 	if not state then
 		return
 	end
+	-- A re-render on a state tick keeps the reader's place (owner, 2026-11-13: "scrolling the merge window throws you
+	-- back to the top"): the window is rebuilt, so the canvas shrinks for a frame and the position snaps to zero.
+	-- A deliberate jump (a new tab, a filter) zeroes CanvasPosition before calling render, so nothing is kept then.
+	local keep = scroll:GetAttribute("RenderedMenu") == menu and scroll.CanvasPosition or Vector2.zero
+	scroll:SetAttribute("RenderedMenu", menu)
+	if keep.Y > 0 then
+		task.spawn(function()
+			for _ = 1, 4 do
+				if scroll:GetAttribute("RenderedMenu") ~= menu then return end
+				scroll.CanvasPosition = keep
+				game:GetService("RunService").Heartbeat:Wait()
+			end
+		end)
+	end
 	for _, c in ipairs(scroll:GetChildren()) do
 		if c:IsA("GuiObject") then
 			c:Destroy()
 		end
 	end
- local oldPicker=panel:FindFirstChild("MergePicker");if oldPicker then oldPicker:Destroy() end
+ local oldPicker=panel:FindFirstChild("MergePicker")
+ if oldPicker then local sf=oldPicker:FindFirstChildWhichIsA("ScrollingFrame");panel:SetAttribute("MergePickerY",sf and sf.CanvasPosition.Y or 0);oldPicker:Destroy() else panel:SetAttribute("MergePickerY",0) end
  if menu~="merge" then panel:SetAttribute("MergePicker",nil) end
  local isShop=menu=="weapons" or menu=="pumpkins" or menu=="traps"
  -- Each stall sells one thing now, so the window is all tiles: no category column.
@@ -1414,8 +1443,7 @@ navButtons.language=button(topRight,'',function()
  send('language',now=='ru' and 'en' or 'ru')
 end,SMALL);navButtons.language.Name='Nav_language';navButtons.language.LayoutOrder=3
 navButtons.language.UITextSizeConstraint.MaxTextSize=24
-local function languageText() navButtons.language.Text=isRussian and 'RU' or 'EN' end
-languageText()
+navButtons.language.Text=isRussian and 'RU' or 'EN'
 -- Daily gift and quests on the screen, so nobody has to walk to the chest or the board (owner, 2026-11-13)
 menuIcon(nav,'rewards',BIG,2);menuIcon(nav,'quests',BIG,3)
 menuIcon(rightBox,'pets',BIG,1);menuIcon(rightBox,'crypt',BIG,2)
@@ -1436,6 +1464,13 @@ for _,key in {'invite','settings','language','top'} do local b=navButtons[key];i
 RunService.Heartbeat:Connect(function() navButtons.home.BackgroundColor3=p:GetAttribute('HomeReason') and Pal.Common or navButtons.home:GetAttribute('Fill') end)
 local menuBridge=Instance.new('BindableEvent');menuBridge.Name='ZoneMenu';menuBridge.Parent=gui
 menuBridge.Event:Connect(function(key,opening)
+ -- the farm's workbench (PlotService) opens the weapon upgrade bench, which lives in CombatController
+ if key=='upgrades' then
+  local combat=p.PlayerGui:FindFirstChild('CombatUI');local open=combat and combat:FindFirstChild('OpenUpgrades');local bench=combat and combat:FindFirstChild('UpgradeBench')
+  if opening then panel.Visible=false;if open and not (bench and bench.Visible) then open:Fire() end;gui:SetAttribute('ZoneMenuKey',key)
+  elseif gui:GetAttribute('ZoneMenuKey')==key then if bench then bench.Visible=false end;gui:SetAttribute('ZoneMenuKey',nil) end
+  return
+ end
  if opening then openMenu(key);gui:SetAttribute('ZoneMenuKey',key)
  elseif gui:GetAttribute('ZoneMenuKey')==key then panel.Visible=false;gui:SetAttribute('ZoneMenuKey',nil) end
 end)
@@ -1507,7 +1542,7 @@ p:GetAttributeChangedSignal("Language"):Connect(function()
 	lang = L.lang()
  coins.Text=COIN_PREFIX..short(coinDisplay.Value)
 	isRussian = string.sub(lang, 1, 2) == "ru"
-	languageText()
+	navButtons.language.Text = isRussian and "RU" or "EN"
 	FONT_TITLE = isRussian and Enum.Font.GothamBlack or Enum.Font.FredokaOne
 	FONT_BODY = isRussian and Enum.Font.BuilderSansExtraBold or Enum.Font.FredokaOne
 	for _, root in ipairs({ gui, topGui }) do
@@ -1689,7 +1724,8 @@ rem.Notice.OnClientEvent:Connect(function(key, args)
 	else
 		if key == "starRare" then args.type=t(args.type) end
 		if key == "roadRare" or key == "roadDelivered" or key == "roadStored" or key == "bloodMoonGrave" then args.grave=t("grave_"..args.grave) end
-		if (key == "bossArena" or key == "bossDefeated" or key == "bloodMoonRise" or key == "bloodMoonWin" or key == "bloodMoonLost") and args.boss then args.boss=t(args.boss) end
+		if key == "portalDowngrade" then args.from=t("grave_"..tostring(args.from));args.to=t("grave_"..tostring(args.to)) end
+		if (key == "bossArena" or key == "bossEnraged" or key == "bossDefeated" or key == "bloodMoonRise" or key == "bloodMoonWin" or key == "bloodMoonLost") and args.boss then args.boss=t(args.boss) end
 		if key == "petDug" then args.rarity=t(args.rarity);args.type=t(args.type) elseif key=="petRare" then args.rarity=t(args.rarity);args.species=t(args.species) elseif key == "rare" then
 			args.rarity = t(args.rarity)
 			args.type = t(args.type)
@@ -1705,7 +1741,7 @@ promptService.PromptTriggered:Connect(function(pr)
 	end
 end)
 promptService.PromptShown:Connect(function(pr)
-	local key=({DigPrompt="dig",StealGrave="stealGrave",PlantGrave="plant",ShooPrompt="shoo",LockPrompt="lock",ExpandPrompt="expand",HouseEnter="houseEnter",HouseExit="houseExit",RoadGrab="roadGrab",RepairGate="repairGate"})[pr.Name] or (pr.Name=="HouseMenu" and "house_"..tostring(pr:GetAttribute("Menu")))
+	local key=({DigPrompt="dig",StealGrave="stealGrave",PlantGrave="plant",ShooPrompt="shoo",LockPrompt="lock",ExpandPrompt="expand",HouseEnter="houseEnter",HouseExit="houseExit",RoadGrab="roadGrab",RepairGate="repairGate",PortalHome="portalHome"})[pr.Name] or (pr.Name=="HouseMenu" and "house_"..tostring(pr:GetAttribute("Menu")))
  if not key then return end
  pr.AutoLocalize=false
  pr.ActionText=t(key)
@@ -1713,6 +1749,7 @@ promptService.PromptShown:Connect(function(pr)
   local grave=t("grave_" .. tostring(pr:GetAttribute("Grave")))
   pr.ObjectText=pr.Parent.Parent:GetAttribute("Dropped") and t("roadDroppedObject",{grave=grave}) or grave
  end
+ if pr.Name == "PortalHome" then pr.ObjectText = p:GetAttribute("CarryingGrave") and t("portalPenalty") or "" end
  if pr.Name == "ExpandPrompt" then pr.ObjectText = t(pr:GetAttribute("Zone")) .. " · 💰 " .. short(pr:GetAttribute("Price") or 0) end
 	if pr.Name == "DigPrompt" then
 		local m = pr.Parent.Parent
@@ -1723,7 +1760,7 @@ end)
 -- Prompts are tracked as they appear: scanning the now much richer world twice a second would be wasteful.
 local prompts = {}
 local function trackPrompt(d)
-	if d:IsA("ProximityPrompt") and (d.Name == "StealGrave" or d.Name=="RepairGate" or d.Name=="DigPrompt" or d.Name=="PlantGrave" or d.Name == "ShooPrompt" or d.Name == "LockPrompt" or d.Name == "ExpandPrompt" or d.Name == "HouseEnter" or d.Name == "RoadGrab") then
+	if d:IsA("ProximityPrompt") and (d.Name == "StealGrave" or d.Name=="RepairGate" or d.Name=="PortalHome" or d.Name=="DigPrompt" or d.Name=="PlantGrave" or d.Name == "ShooPrompt" or d.Name == "LockPrompt" or d.Name == "ExpandPrompt" or d.Name == "HouseEnter" or d.Name == "RoadGrab") then
 		prompts[d] = true
 	end
 end
@@ -1732,6 +1769,12 @@ for _, d in ipairs(workspace:GetDescendants()) do
 	trackPrompt(d)
 end
 task.spawn(function()
+	-- After shoving someone on the road, lifting graves takes longer (RoadConfig.HitPenalty): the prompt's hold stretches.
+	local function slowHold(pr)
+		local base = pr:GetAttribute("BaseHold") or pr.HoldDuration
+		pr:SetAttribute("BaseHold", base)
+		pr.HoldDuration = base * (workspace:GetServerTimeNow() < (p:GetAttribute("PickupSlowUntil") or 0) and RoadC.HitPenalty.Hold or 1)
+	end
 	while task.wait(0.5) do
 		for pr in pairs(prompts) do
 			if not pr.Parent then
@@ -1740,12 +1783,15 @@ task.spawn(function()
 				local owner = pr:GetAttribute("Owner")
 				if pr.Name == "StealGrave" then
 					local m = pr.Parent.Parent
-					pr.Enabled = owner ~= p.UserId and state ~= nil and state.night and not m:GetAttribute("Starter") and not p:GetAttribute("CarryingGrave")
+					pr.Enabled = owner ~= p.UserId and state ~= nil and state.night and not m:GetAttribute("Starter") and not p:GetAttribute("CarryingGrave") and (p:GetAttribute("NewbieBoost") or 1) <= 1 -- newcomers don't steal
+					slowHold(pr)
 				elseif pr.Name=="DigPrompt" then pr.Enabled=pr.Parent.Parent:GetAttribute("Owner")==p.UserId
                 elseif pr.Name=="PlantGrave" then pr.Enabled=game.UserInputService.GamepadEnabled and owner==p.UserId and p:GetAttribute("ActiveSlot")==3 and p:GetAttribute("SelectedGrave")~=nil
                 elseif pr.Name=="RepairGate" then pr.Enabled=owner==p.UserId and pr:GetAttribute("Needed")==true
+                elseif pr.Name=="PortalHome" then pr.Enabled=p:GetAttribute("PortalBoss")==pr:GetAttribute("Boss") -- only for those who beat the boss
                 elseif pr.Name == "RoadGrab" then
 					pr.Enabled = not p:GetAttribute("CarryingGrave") and not p:GetAttribute("CarryingZombie") and workspace:GetServerTimeNow()>=(p:GetAttribute("RoadStunnedUntil") or 0)
+					slowHold(pr)
 				else
 					pr.Enabled = owner == p.UserId
 				end

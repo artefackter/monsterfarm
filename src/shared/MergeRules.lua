@@ -11,7 +11,9 @@ function R.Rate(z) return C.Income[z.tier]*(C.Mutations[z.mutation] or 1)*C.Star
 function R.Power(z) return z.tier*C.Stars.Power[R.Stars(z)] end
 local function mutation(z) return C.Mutations[z.mutation] or 1 end
 function R.Free(z) return not z.carriedBy and not z.pendingTransfer end
-function R.Match(a,b) return a.type==b.type and a.tier==b.tier and R.Stars(a)==R.Stars(b) end
+-- Same monster, same stars (owner, 2026-11-13: "monsters don't stack"): the tiers 1/2, 3/4 and 5/6 of a kind look and
+-- are named alike, so they stack; the merged one keeps the best tier of the three (R.Result).
+function R.Match(a,b) return a.type==b.type and R.Stars(a)==R.Stars(b) end
 function R.Check(list)
  if type(list)~="table" or #list~=3 then return false end
  local a,b,c=list[1],list[2],list[3]
@@ -24,6 +26,12 @@ function R.Keeper(list)
  local best=list[1]
  for _,z in ipairs(list) do if mutation(z)>mutation(best) then best=z end end
  return best
+end
+-- What the three become: the keeper with the best tier among them and one star more.
+function R.Result(list)
+ local z=table.clone(R.Keeper(list));local tier=z.tier
+ for _,x in ipairs(list) do tier=math.max(tier,x.tier) end
+ z.tier=tier;z.stars=R.Stars(z)+1;return z
 end
 -- The result stands where the most useful of the three stood, so merging never empties a working spot.
 function R.Place(list)
@@ -47,9 +55,10 @@ function R.Groups(zombies)
  local map,list={},{}
  for _,z in ipairs(zombies) do
   if R.Free(z) and R.Stars(z)<C.Stars.Max then
-   local key=z.type..":"..z.tier..":"..R.Stars(z)
+   local key=z.type..":"..R.Stars(z)
    local g=map[key]
    if not g then g={type=z.type,tier=z.tier,stars=R.Stars(z),members={}};map[key]=g;table.insert(list,g) end
+   g.tier=math.max(g.tier,z.tier)
    table.insert(g.members,z)
   end
  end

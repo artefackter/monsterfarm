@@ -1,9 +1,10 @@
 -- Blood Moon (owner, 2026-11-12; BloodMoonConfig). On a Blood Moon night the road shuts, the sky turns crimson and a
--- giant ruins boss walks out through the barrier onto the island. It hunts the nearest player outside a house:
+-- giant ruins boss appears in its own arena across the island from the road (2026-11-13), and never leaves it. It
+-- hunts the nearest player inside the arena:
 -- a Roar around itself, a Stomp when you are close, a Smash where you stand when you keep your distance. Every blow
 -- is telegraphed on the ground and knocks you down and away; nothing is lost. Everyone who hits it is paid when it
 -- falls (MutantService.Damage) and graves rain down round the body, a few for each player. If the time runs out
--- (or dawn comes) it walks back into the ruins. Studio: /bloodmoon starts one now.
+-- (or dawn comes) it sinks away. Studio: /bloodmoon starts one now.
 local Players=game:GetService("Players");local RS=game.ReplicatedStorage;local S=RS.Shared
 local C=require(S.Config.BloodMoonConfig);local NC=require(S.Config.NightConfig)
 local Rules=require(S.RoadMonsterRules);local RR=require(S.RoadRules);local Art=require(S.ArtKit);local Pal=require(S.Palette)
@@ -11,21 +12,19 @@ local M=require(script.Parent.MutantService);local Day=require(script.Parent.Day
 local D=require(script.Parent.DataService);local P=require(script.Parent.PlotService);local G=require(script.Parent.GraveService)
 local B={Active=nil,LastCycle=nil,Graves={},Taken={}}
 local rng=Random.new()
-local GROUND=-.5 -- the island lawn
+local GROUND=-.42 -- the arena floor (a touch above the island lawn)
 local function road() return require(script.Parent.RoadService) end
 local function notice(p,key,args) RS.Remotes.Notice:FireClient(p,key,args) end
 local function noticeAll(key,args) RS.Remotes.Notice:FireAllClients(key,args) end
 local function flat(v,y) return Vector3.new(v.X,y or 0,v.Z) end
 local function rootOf(p) return p.Character and p.Character:FindFirstChild("HumanoidRootPart") end
--- Farms are a refuge (owner, 2026-11-12): on any farm's ground the giant neither hunts you nor reaches you.
-local function onFarm(p) for _,plot in ipairs(P.Plots) do if P.Inside(p,plot) then return true end end;return false end
 
 function B.Start()
  if B.Active then return false end
  local boss=Rules.Bosses[rng:NextInteger(1,#Rules.Bosses)]
  local Road=road();Road.SetClosed(true)
- -- it appears a little way down the road and walks out through the barrier
- local feet=Road.At(36,0,0)*CFrame.Angles(0,math.pi,0)
+ -- it appears in the middle of its arena, facing the way in
+ local center=C.ArenaCenter();local feet=CFrame.lookAt(Vector3.new(center.X,GROUND,center.Z),Vector3.new(0,GROUND,0))
  local a=M.SpawnGiant(boss.Kind,feet,boss,C.Height)
  if not a then Road.SetClosed(false);return false end
  local hp=math.min(C.MaxHealth,C.HealthPerPlayer+C.ExtraPlayerHealth*math.max(0,#Players:GetPlayers()-1))
@@ -33,7 +32,7 @@ function B.Start()
  local m=a.model;m:SetAttribute("Health",hp);m:SetAttribute("MaxHealth",hp);m:SetAttribute("BossName",boss.Name)
  m:SetAttribute("GiantEndsAt",workspace:GetServerTimeNow()+C.Duration);m:SetAttribute("Enraged",true)
  local glow=Instance.new("Highlight");glow.Name="BloodGlow";glow.FillTransparency=1;glow.OutlineColor=Color3.fromRGB(255,40,70);glow.OutlineTransparency=.1;glow.DepthMode=Enum.HighlightDepthMode.Occluded;glow.Parent=m
- B.Active={a=a,boss=boss,endsAt=os.clock()+C.Duration,cooldowns={},entering=true,entry=Road.At(-40,0,0).Position}
+ B.Active={a=a,boss=boss,endsAt=os.clock()+C.Duration,cooldowns={},center=Vector3.new(center.X,0,center.Z)}
  B.Taken={}
  Day.SetBlood(true);workspace:SetAttribute("BloodMoon",true);M.PauseWaves=true
  noticeAll("bloodMoonRise",{boss=boss.Name})
@@ -53,17 +52,14 @@ function B.Escape()
  B.Finish()
 end
 
--- Walks straight over fences and houses (it is ten times your height) but stays on the island.
+-- Walks about its arena but never out of it (its middle stays C.Keep inside the wall).
+local function inArena(A,pos,margin) return (flat(pos)-A.center).Magnitude<=C.Arena.Radius+(margin or 0) end
 local function walk(A,goal,dt)
  local root=A.a.model.PrimaryPart;local pos=root.Position
  local to=flat(goal,pos.Y)-pos;if to.Magnitude<1 then return false end
  local nextPos=pos+to.Unit*math.min(to.Magnitude,C.Speed*dt)
- local r=flat(nextPos)
- if A.entering then
-  if r.Magnitude<=C.IslandRadius then A.entering=false end
- elseif r.Magnitude>C.IslandRadius then
-  r=r.Unit*C.IslandRadius;nextPos=Vector3.new(r.X,pos.Y,r.Z)
- end
+ local off=flat(nextPos)-A.center;local limit=C.Arena.Radius-C.Keep
+ if off.Magnitude>limit then off=off.Unit*limit;nextPos=Vector3.new(A.center.X+off.X,pos.Y,A.center.Z+off.Z) end
  root.CFrame=CFrame.lookAt(nextPos,nextPos+to.Unit)
  return true
 end
@@ -72,7 +68,7 @@ local function target(A)
  local pos=A.a.model.PrimaryPart.Position;local best,bestDist
  for _,p in ipairs(Players:GetPlayers()) do
   local r=rootOf(p);local h=p.Character and p.Character:FindFirstChildOfClass("Humanoid")
-  if r and h and h.Health>0 and not p:GetAttribute("InHouse") and not p:GetAttribute("OnRoad") and not onFarm(p) then
+  if r and h and h.Health>0 and inArena(A,r.Position,4) and r.Position.Y<GROUND+30 then -- only those who came into its arena
    local dist=(flat(r.Position,pos.Y)-pos).Magnitude
    if dist<400 and (not bestDist or dist<bestDist) then best,bestDist=p,dist end
   end
@@ -96,7 +92,7 @@ local function resolve(A,now)
  local Act=require(script.Parent.ActionService)
  for _,p in ipairs(Players:GetPlayers()) do
   local r=rootOf(p)
-  if r and not p:GetAttribute("InHouse") and not onFarm(p) and (flat(r.Position)-flat(center)).Magnitude<=atk.Radius and r.Position.Y-center.Y<25 then
+  if r and inArena(A,r.Position,6) and (flat(r.Position)-flat(center)).Magnitude<=atk.Radius and r.Position.Y-center.Y<25 then
    local away=flat(r.Position)-flat(center);if away.Magnitude<.5 then away=flat(a.model.PrimaryPart.CFrame.LookVector) end
    Act.Knockout(p,atk.Stun,away,atk.Fling)
   end
@@ -116,7 +112,6 @@ function B.Tick(dt)
  if os.clock()>=A.endsAt or not night then B.Escape();return end
  local now=os.clock()
  if a.state=="Spawning" then if now-a.since>=1.2 then M.State(a,"Running",now) end;return end
- if A.entering then walk(A,A.entry,dt);if a.state~="Running" then M.State(a,"Running",now) end;return end
  if A.attack then if now>=A.attack.ends then resolve(A,now) end;return end
  if a.state=="Recovering" and now-a.since<.9 then return end
  local p,dist=target(A)
@@ -125,7 +120,7 @@ function B.Tick(dt)
    if now>=(A.cooldowns[atk.Name] or 0) and dist<=atk.Range and dist>=(atk.MinRange or 0) then begin(A,atk,p,now);return end
   end
  end
- local goal=p and dist>C.Reach and rootOf(p).Position or not p and Vector3.zero or nil
+ local goal=p and dist>C.Reach and rootOf(p).Position or not p and A.center or nil
  if goal and walk(A,goal,dt) then
   if a.state~="Running" then M.State(a,"Running",now) end
  elseif a.state~="Idle" then M.State(a,"Idle",now) end
@@ -163,7 +158,8 @@ function B.Rain(center,count)
  for i=1,count do
   local angle=i/count*math.pi*2+rng:NextNumber(-.25,.25);local r=rng:NextNumber(9,24)
   local spot=Vector3.new(center.X+math.cos(angle)*r,GROUND,center.Z+math.sin(angle)*r)
-  local f=flat(spot);if f.Magnitude>185 then f=f.Unit*185;spot=Vector3.new(f.X,GROUND,f.Z) end
+  local A=B.Active;local c=A and A.center or C.ArenaCenter()
+  local f=flat(spot)-flat(c);if f.Magnitude>C.Arena.Radius-8 then f=f.Unit*(C.Arena.Radius-8);spot=Vector3.new(c.X+f.X,GROUND,c.Z+f.Z) end
   task.delay(i*.18,grave,spot,RR.Roll(C.Graves.Pool,rng:NextNumber()))
  end
 end

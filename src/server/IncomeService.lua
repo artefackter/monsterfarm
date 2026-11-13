@@ -21,5 +21,8 @@ function I.Boost(d)
  end
  return 1,0
 end
+-- A newcomer (owner, 2026-11-13): while the boost lasts nobody can shove them with a shovel, and they can't steal graves
+-- or shove anyone themselves. Counted in played time, so it is kept across leaving and coming back.
+function I.IsNewbie(d) return d~=nil and I.Boost(d)>1 end
 function I.Tick(d) local n=Z.Income(d)*I.Boost(d);d.coins+=n;d.playTime+=1;d.lastSeenAt=os.time();return n end
 return I

@@ -14,7 +14,8 @@ local function look(level) return C.Levels[level].Look end
 -- beacon; a third, set-back floor with more of the showcase; a golden crown. Everything above the ground floor
 -- fades while you are inside (HouseRoof), as the old roof did. Same footprint and doorway as the cottage.
 local COL={wall=Color3.fromHex("2F2A3D"),wallDark=Color3.fromHex("231F2E"),pillar=Color3.fromHex("EDE6F7"),trim=Color3.fromHex("CFC3E6"),
- neon=Color3.fromHex("B45CFF"),neonPink=Color3.fromHex("FF5FB4"),glass=Color3.fromHex("9FD8FF"),floor=Color3.fromHex("E2B985"),
+ neon=Color3.fromHex("FFE3A3"),neonPink=Color3.fromHex("FFC27A"), -- warm lamps; the purple and pink neon read as odd glows (2026-11-13)
+ glass=Color3.fromHex("9FD8FF"),floor=Color3.fromHex("E2B985"),
  plinth=Color3.fromHex("6B5F86"),awningA=Color3.fromHex("8C4BFF"),awningB=Color3.fromHex("FFF0D4"),gold=Color3.fromHex("FFD34D"),
  bush=Color3.fromHex("5FCB4A"),lamp=Color3.fromHex("FFE58D"),show=Color3.fromHex("3B3352"),wood=Color3.fromHex("A8754A"),metal=Color3.fromHex("8E88A6")}
 local SMOOTH=Enum.Material.SmoothPlastic
@@ -28,7 +29,8 @@ function H.Building(plot,index)
   q.CanCollide=solid==true;q.CanQuery=solid==true;q.CanTouch=false;return q
  end
  local function up(q) q:SetAttribute("HouseRoof",true);return q end
- local function neon(name,size,cf,color) local q=part(name,size,cf,color or COL.neon,Enum.Material.Neon);q.CastShadow=false;return q end
+ -- lit strips glow only after dark (WorldArt.NightGlow); by day they are plain warm-white trim
+ local function neon(name,size,cf,color) local q=part(name,size,cf,color or COL.neon,Enum.Material.Neon);q.CastShadow=false;return WA.NightGlow(q) end
  local trimColor=Lk.Gold and COL.gold or COL.trim
  local base=.8;local top=base+Hh;local dw,dh=6,8
  -- Plinth down to the lawn, the floor, a two-step stoop
@@ -75,7 +77,7 @@ function H.Building(plot,index)
  for _,side in {-1,1} do
   local x=side*(W/2-4.2);local z=-Dp/2+3.6
   part("ShowPlinth",Vector3.new(3.2,1.4,3.2),CFrame.new(x,base+.9,z),COL.show,SMOOTH,true)
-  neon("ShowPlinthGlow",Vector3.new(3.3,.2,3.3),CFrame.new(x,base+1.65,z),COL.neon)
+  part("ShowPlinthTop",Vector3.new(3.3,.2,3.3),CFrame.new(x,base+1.65,z),COL.trim)
   table.insert(slots,{cf=hb*CFrame.new(x,base+1.75,z),height=4.6,upper=false})
  end
  -- Neon strips: along the header and down the front pillars
@@ -103,28 +105,57 @@ function H.Building(plot,index)
   end
  end
  -- Upper floors: showrooms. Each a slab, dark walls, three big front windows with lit plinths behind them.
+ -- Stairs (owner, 2026-11-13: "you can't get up to the second floor"): along a side wall of the floor below runs an
+ -- invisible ramp with wooden steps drawn over it; above it the slab has a hole, railed off except at the top.
  local y=top
+ local lowerTop=base+.2 -- where you walk on the floor below
+ local function rect(name,x0,x1,z0_,z1,yc,solid,color)
+  if x1-x0>.05 and z1-z0_>.05 then return up(part(name,Vector3.new(x1-x0,.8,z1-z0_),CFrame.new((x0+x1)/2,yc,(z0_+z1)/2),color or COL.wallDark,SMOOTH,solid)) end
+ end
  for f=2,floors do
   local inset=f>=3 and 3 or 0;local w,dp=W-inset*2,Dp-inset*2;local z0=inset*.6
-  up(part("FloorSlab",Vector3.new(w+.6,.8,dp+.6),CFrame.new(0,y+.4,z0),COL.wallDark,SMOOTH,true))
-  if f==3 then up(part("Terrace",Vector3.new(W+.6,.8,Dp+.6),CFrame.new(0,y+.4,0),COL.wallDark)) end
+  local s=f==2 and 1 or -1;local sx=s*(w/2-2.8);local run=18
+  local zEnd=z0+dp/2-1.4;local zStart=zEnd-run;local rise=y+.8-lowerTop
+  -- this floor's slab, with the stairwell cut out of it
+  local hx0,hx1,hz0,hz1=sx-1.8,sx+1.8,zStart,zEnd+.2
+  local ex,ezA,ezB=(w+.6)/2,z0-(dp+.6)/2,z0+(dp+.6)/2
+  rect("FloorSlab",-ex,hx0,ezA,ezB,y+.4,true);rect("FloorSlab",hx1,ex,ezA,ezB,y+.4,true)
+  rect("FloorSlab",hx0,hx1,ezA,hz0,y+.4,true);rect("FloorSlab",hx0,hx1,hz1,ezB,y+.4,true)
+  if f==3 then -- the terrace round the set-back top floor: a ring, so it doesn't cover the stairwell
+   local ox,oz=(W+.6)/2,(Dp+.6)/2
+   rect("Terrace",-ox,-ex,-oz,oz,y+.4);rect("Terrace",ex,ox,-oz,oz,y+.4);rect("Terrace",-ex,ex,-oz,ezA,y+.4);rect("Terrace",-ex,ex,ezB,oz,y+.4)
+  end
+  local ramp=Instance.new("WedgePart");ramp.Name="StairRamp";ramp.Size=Vector3.new(3.4,rise,run) -- a wedge rises towards +Z
+  ramp.CFrame=hb*CFrame.new(sx,lowerTop+rise/2,(zStart+zEnd)/2);ramp.Anchored=true;ramp.Transparency=1
+  ramp.CanCollide,ramp.CanQuery,ramp.CanTouch,ramp.CastShadow=true,true,false,false;ramp.Parent=m
+  local steps=math.max(6,math.floor(rise/.8+.5))
+  for k=1,steps do
+   local h=rise*k/steps
+   local step=part("Stair",Vector3.new(3.4,h,run/steps),CFrame.new(sx,lowerTop+h/2,zStart+run*(k-.5)/steps),k%2==0 and COL.floor or COL.wood,Enum.Material.WoodPlanks)
+   if f>2 then up(step) end
+  end
   local b=y+.8
-  up(part("UpperBack",Vector3.new(w,FH,1),CFrame.new(0,b+FH/2,z0+dp/2-.5),COL.wall))
+  local railX=sx-s*1.95;local len=zEnd-3.4-zStart
+  up(part("StairRail",Vector3.new(.3,3,len),CFrame.new(railX,b+1.5,zStart+len/2),COL.metal,Enum.Material.Metal,true))
+  up(part("StairRailTop",Vector3.new(.5,.3,len+.2),CFrame.new(railX,b+3.1,zStart+len/2),COL.wood,Enum.Material.Wood))
+  up(part("StairRail",Vector3.new(3.9,3,.3),CFrame.new(sx,b+1.5,zStart),COL.metal,Enum.Material.Metal,true))
+  lowerTop=b
+  up(part("UpperBack",Vector3.new(w,FH,1),CFrame.new(0,b+FH/2,z0+dp/2-.5),COL.wall,SMOOTH,true))
   for _,side in {-1,1} do
-   up(part("UpperSide",Vector3.new(1,FH,dp),CFrame.new(side*(w/2-.5),b+FH/2,z0),COL.wall))
+   up(part("UpperSide",Vector3.new(1,FH,dp),CFrame.new(side*(w/2-.5),b+FH/2,z0),COL.wall,SMOOTH,true))
    up(part("UpperPillar",Vector3.new(1.8,FH+.2,1.8),CFrame.new(side*w/2,b+FH/2,z0-dp/2),COL.pillar))
    up(part("UpperPillar",Vector3.new(1.8,FH+.2,1.8),CFrame.new(side*w/2,b+FH/2,z0+dp/2),COL.pillar))
   end
-  up(part("UpperSill",Vector3.new(w,1.4,1),CFrame.new(0,b+.7,z0-dp/2+.5),COL.wallDark))
+  up(part("UpperSill",Vector3.new(w,1.4,1),CFrame.new(0,b+.7,z0-dp/2+.5),COL.wallDark,SMOOTH,true))
   up(part("UpperHeader",Vector3.new(w,1.6,1),CFrame.new(0,b+FH-.8,z0-dp/2+.5),COL.wall))
   local pane=(w-2)/3
   for k=-1,1 do
    local x=k*pane
-   local glass=up(part("ShowWindow",Vector3.new(pane-.5,FH-3,.35),CFrame.new(x,b+1.4+(FH-3)/2,z0-dp/2+.55),COL.glass,Enum.Material.Glass));glass.Transparency=.5
+   local glass=up(part("ShowWindow",Vector3.new(pane-.5,FH-3,.35),CFrame.new(x,b+1.4+(FH-3)/2,z0-dp/2+.55),COL.glass,Enum.Material.Glass,true));glass.Transparency=.5
    up(part("ShowMullion",Vector3.new(.6,FH-3,.6),CFrame.new(x+pane/2,b+1.4+(FH-3)/2,z0-dp/2+.5),COL.pillar))
    local plinth=CFrame.new(x,b+.7,z0-dp/2+3.4)
    up(part("ShowPlinth",Vector3.new(3,1.4,3),plinth,COL.show))
-   up(neon("ShowPlinthGlow",Vector3.new(3.1,.2,3.1),plinth*CFrame.new(0,.75,0),COL.neon))
+   up(part("ShowPlinthTop",Vector3.new(3.1,.2,3.1),plinth*CFrame.new(0,.75,0),COL.trim))
    table.insert(slots,{cf=hb*plinth*CFrame.new(0,.85,0),height=FH-3.4,upper=true})
   end
   -- the showroom's back wall glows, so the figures stand out against it

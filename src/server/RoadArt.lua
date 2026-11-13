@@ -3,9 +3,8 @@
 -- each with its own look, each a little darker. The walls are the island's block wall, recoloured
 -- per location. Physical floors and gameplay colliders belong to RoadService; everything here is decoration
 -- except a few solid building blocks that players (not mutants) bump into.
--- Revision 4 (owner, 2026-11-12): every location ends in an amphitheatre, its boss's arena. The regular dressing
--- keeps clear of it; the arena gets a sand floor, a low podium wall, curved stands rising outside the corridor
--- walls and a gate with the boss's name at each end.
+-- Revision 5 (owner, 2026-11-13): every location's boss waits in a round pocket beside the road near its end (left and
+-- right in turn), through an arched opening in the road wall with the boss's name over it; the road runs on past it.
 local S = game.ReplicatedStorage.Shared
 local Art = require(S.ArtKit)
 local WA = require(S.WorldArt)
@@ -19,23 +18,28 @@ end
 function A.Build(world, at, C, districts, P)
 	local root = Instance.new("Model")
 	root.Name = "RoadArt"
-	root:SetAttribute("Revision", 4)
+	root:SetAttribute("Revision", 5)
 	root.Parent = world
 	local rng = Random.new(9032)
 	local W = C.Width
 	local half = W / 2
 	local toLocal = at(0, 0, 0):Inverse()
-	-- The arena of the location being dressed: regular scenery whose centre falls in it is left out.
-	local skipFrom, skipTo
-	local function skipped(s)
-		return skipFrom ~= nil and s > skipFrom and s < skipTo
+	-- Round the opening to the boss pocket (on its side of the road only) scenery is left out: the wall over the opening
+	-- itself, and a wider stretch for buildings and props so they never stand in the way in.
+	local skipS, skipSide, skipGap
+	local function skipped(s, x)
+		if not skipS or not x or x * skipSide < 15 then
+			return false
+		end
+		return math.abs(s - skipS) < (x * skipSide >= half - 1 and skipGap or skipGap + 28)
 	end
-	local function alongOf(cf)
-		return -(toLocal * cf).Position.Z
+	local function localOf(cf)
+		local v = (toLocal * cf).Position
+		return -v.Z, v.X
 	end
 
 	local function part(parent, name, size, cf, color, material, shape)
-		if skipped(alongOf(cf)) then
+		if skipped(localOf(cf)) then
 			return nil
 		end
 		local q = Instance.new("Part")
@@ -74,83 +78,188 @@ function A.Build(world, at, C, districts, P)
 	-- Floor: sand in a dark rim with a ring and the seal. Sides: a low podium wall on the corridor line, then an oval
 	-- bowl of stepped stands that rises outside the walls (only the parts beyond the corridor are built, so both ends
 	-- stay open for the road). Gates with the boss's name close the arena at both ends.
-	local function buildArena(d, parent)
+	-- v5 (owner, 2026-11-13): the arena is a round pocket beside the road (RoadProgression.PocketAt), not across it. Sand
+	-- floor with the seal, a full bowl of stands round it (open only towards the road), columns with fire, braziers,
+	-- and an arch over the opening in the road wall with the boss's name on it.
+	local function buildPocket(d, parent)
+		local pd = Progression.Districts[d.Index]
 		local model = Instance.new("Model")
-		model.Name = "Amphitheatre"
+		model.Name = "BossPocket"
 		model:SetAttribute("Boss", d.Index)
 		model.Parent = parent
-		local c, R = d.Arena, Progression.ArenaRadius
+		local side, c, px, R, gap = pd.PocketSide, pd.PocketS, pd.PocketX, Progression.PocketRadius, Progression.PocketGap / 2
 		local stone = hex(d.Wall[1])
 		local dark = stone:Lerp(Color3.new(0, 0, 0), 0.4)
 		local sand = hex(d.Path):Lerp(hex("E8D3A4"), 0.45)
+		local function piece(name, size, cf, color, material, shape)
+			local q = Instance.new("Part")
+			q.Name = name
+			q.Size = size
+			q.CFrame = cf
+			q.Color = color
+			q.Material = material or Enum.Material.SmoothPlastic
+			q.Anchored, q.CanCollide, q.CanQuery, q.CanTouch = true, false, false, false
+			q.TopSurface, q.BottomSurface = Enum.SurfaceType.Smooth, Enum.SurfaceType.Smooth
+			if shape then
+				q.Shape = shape
+			end
+			q.Parent = model
+			return q
+		end
 		local function disc(name, radius, y, color, material)
-			local q = part(model, name, Vector3.new(0.06, radius * 2, radius * 2), at(c, 0, y) * CFrame.Angles(0, 0, math.pi / 2), color, material, Enum.PartType.Cylinder)
+			local q = piece(name, Vector3.new(0.06, radius * 2, radius * 2), at(c, px, y) * CFrame.Angles(0, 0, math.pi / 2), color, material, Enum.PartType.Cylinder)
 			q.CastShadow = false
 			return q
 		end
-		disc("ArenaRim", R + 2.5, 0.04, dark)
-		disc("ArenaSand", R, 0.05, sand, Enum.Material.Sand)
+		disc("ArenaRim", R + 2, 0.04, dark)
+		local sandFloor = disc("ArenaSand", R, 0.05, sand, Enum.Material.Sand)
 		disc("ArenaLine", R * 0.58, 0.06, dark)
-		disc("ArenaSandInner", R * 0.58 - 0.9, 0.07, sand, Enum.Material.Sand)
-		Art.Spawn("MR_ArenaSeal", model, at(c, 0, 0.06), { scale = Vector3.new(4.2, 0.4, 4.2) })
-
-		-- Podium wall on the corridor line: low, so the stands behind it show
-		for _, side in { -1, 1 } do
-			local x = side * (half + 1.5)
-			local s = d.ArenaFrom - 6
-			while s < d.ArenaTo + 6 - 0.5 do
-				local len = math.min(8, d.ArenaTo + 6 - s)
-				part(model, "PodiumWall", Vector3.new(3, 6, len - 0.15), at(s + len / 2, x, 3), math.floor(s / 8) % 2 == 0 and stone or stone:Lerp(dark, 0.25))
-				s += 8
-			end
-			part(model, "PodiumCoping", Vector3.new(4, 0.8, d.ArenaTo - d.ArenaFrom + 12), at(c, x, 6.4), hex(d.Cap))
+		local sandInner = disc("ArenaSandInner", R * 0.58 - 0.9, 0.07, sand, Enum.Material.Sand)
+		Art.Spawn("MR_ArenaSeal", model, at(c, px, 0.06), { scale = Vector3.new(3.2, 0.4, 3.2) })
+		-- the passage floor from the road into the round
+		piece("PocketPath", Vector3.new(Progression.PocketNeck + 10, 0.06, gap * 2 - 2), at(c, side * (half + Progression.PocketNeck / 2 + 3), 0.05), sand, Enum.Material.Sand)
+		local function facesRoad(ds, dx, margin)
+			return dx * side < 0 and math.abs(ds) < gap + (margin or 4)
 		end
-
-		-- The stands: six tiers of an oval bowl, each a ring of blocks standing from below the road up to its seat
-		local tiers, segments = 6, 64
-		for k = 0, tiers - 1 do
-			local a, b = 80 + k * 7, 62 + k * 9
-			local top = 7 + k * 3.4
-			local height = top + 14
-			local color = k % 2 == 0 and stone or stone:Lerp(dark, 0.2)
+		-- Each boss's own look (owner, 2026-11-13: "style the amphitheatres after the boss; drop steps 1-3, keep 4 and 5"):
+		-- only the two tall back tiers stand round the floor now, in the boss's colours, with its emblem on the columns.
+		local THEMES = {
+			{ stand = { "5E6B45", "4D5A3A" }, cap = "8A6A3F", sand = "B9A27A", motif = "antlers" }, -- the Horned One: mossy stone, antlers
+			{ stand = { "3E3A2E", "332F26" }, cap = "C8692A", sand = "5E5240", motif = "gourds" }, -- the RingMaw: dark forest bark, carved gourds
+			{ stand = { "E9ECEE", "DDE2E4" }, cap = "7FC6B6", sand = "CFD6D2", motif = "crosses" }, -- Patient Zero: white tiles, teal, red crosses
+			{ stand = { "3A2A2A", "5A1E22" }, cap = "D9B44A", sand = "2E6B3F", motif = "cards" }, -- the Dealer: green felt, card suits, brass shells
+			{ stand = { "4A3F52", "3A3042" }, cap = "8E1F35", sand = "6C6170", motif = "cult" }, -- the Priest: dark stone, red banners, candles
+			{ stand = { "6E6A64", "5A5650" }, cap = "FFD23F", sand = "7E7A74", motif = "factory" }, -- the Chief: concrete, hazard stripes, pipes
+		}
+		local theme = THEMES[d.Index] or THEMES[1]
+		local capColor = hex(theme.cap)
+		sandFloor.Color = hex(theme.sand)
+		sandInner.Color = hex(theme.sand)
+		if theme.motif == "cards" then
+			sandFloor.Material, sandInner.Material = Enum.Material.Fabric, Enum.Material.Fabric
+		elseif theme.motif == "crosses" or theme.motif == "factory" then
+			sandFloor.Material, sandInner.Material = Enum.Material.Concrete, Enum.Material.Concrete
+		end
+		-- The stands: the old fourth and fifth tiers, now right behind the floor's edge
+		local segments = 56
+		local rows = { { r = R + 5, seat = 17.2 }, { r = R + 12.6, seat = 20.6 } }
+		for k, row in rows do
+			local r, height = row.r, row.seat + 14
 			for n = 0, segments - 1 do
 				local t0, t1 = n / segments * math.pi * 2, (n + 1) / segments * math.pi * 2
-				local x0, u0 = a * math.cos(t0), b * math.sin(t0)
-				local x1, u1 = a * math.cos(t1), b * math.sin(t1)
-				local xm, um = (x0 + x1) / 2, (u0 + u1) / 2
-				if math.abs(xm) >= half + 5 then
-					local p0, p1 = at(c + u0, x0, 0).Position, at(c + u1, x1, 0).Position
-					local mid = at(c + um, xm, top - height / 2).Position
-					part(model, "Stand", Vector3.new(7.6, height, (p1 - p0).Magnitude + 0.5), CFrame.lookAt(mid, mid + (p1 - p0)), color)
+				local tm = (t0 + t1) / 2
+				local ds, dx = math.sin(tm) * r, math.cos(tm) * r
+				if not facesRoad(ds, dx, 6 + k * 3) then
+					local p0, p1 = at(c + math.sin(t0) * r, px + math.cos(t0) * r, 0).Position, at(c + math.sin(t1) * r, px + math.cos(t1) * r, 0).Position
+					local mid = at(c + ds, px + dx, row.seat - height / 2).Position
+					local look = CFrame.lookAt(mid, mid + (p1 - p0))
+					piece("Stand", Vector3.new(7.6, height, (p1 - p0).Magnitude + 0.5), look, hex(theme.stand[k]))
+					piece("StandTrim", Vector3.new(7.8, 0.6, (p1 - p0).Magnitude + 0.5), look * CFrame.new(0, height / 2 + 0.3, 0), capColor)
+					if theme.motif == "factory" and k == 1 then -- hazard stripes along the inner face
+						piece("Hazard", Vector3.new(0.2, 1.4, (p1 - p0).Magnitude + 0.5), look * CFrame.new(-3.85, height / 2 - 3, 0), n % 2 == 0 and hex("FFD23F") or hex("1E1E1E"))
+					elseif theme.motif == "crosses" and k == 1 then -- a teal stripe, as on the hospital's walls
+						piece("Stripe", Vector3.new(0.2, 0.9, (p1 - p0).Magnitude + 0.5), look * CFrame.new(-3.85, height / 2 - 4, 0), hex("7FC6B6"))
+					elseif theme.motif == "cards" and k == 1 then -- gold rail round the felt
+						piece("Rail", Vector3.new(0.3, 0.5, (p1 - p0).Magnitude + 0.5), look * CFrame.new(-3.9, height / 2 - 2.5, 0), hex("D9B44A"), Enum.Material.Metal)
+					end
 				end
 			end
 		end
-		-- Columns with fire bowls along the top row
-		local a, b = 80 + tiers * 7, 62 + tiers * 9
-		local topY = 7 + (tiers - 1) * 3.4
-		for n = 0, 27 do
-			local t = (n + 0.5) / 28 * math.pi * 2
-			local x, u = a * math.cos(t), b * math.sin(t)
-			if math.abs(x) >= half + 8 then
-				part(model, "Column", Vector3.new(2.6, 12, 2.6), at(c + u, x, topY + 6), stone:Lerp(Color3.new(1, 1, 1), 0.15))
-				part(model, "ColumnCap", Vector3.new(3.8, 1, 3.8), at(c + u, x, topY + 12.5), hex(d.Cap))
-				if n % 2 == 0 then
-					part(model, "ColumnFlame", Vector3.new(1.8, 1.8, 1.8), at(c + u, x, topY + 13.6), hex("FF8A3D"), Enum.Material.Neon, Enum.PartType.Ball)
+		-- Columns along the top with the boss's emblem
+		local rTop = R + 17
+		local topY = 20.6
+		local bone = hex("E6DCC4")
+		for n = 0, 23 do
+			local t = (n + 0.5) / 24 * math.pi * 2
+			local ds, dx = math.sin(t) * rTop, math.cos(t) * rTop
+			if not facesRoad(ds, dx, 20) then
+				local tall = theme.motif == "gourds" and 16 or 12
+				local base = at(c + ds, px + dx, topY + tall / 2)
+				piece("Column", Vector3.new(2.6, tall, 2.6), base, theme.motif == "factory" and hex("8D9AA3") or hex(theme.stand[1]):Lerp(Color3.new(1, 1, 1), 0.2), theme.motif == "factory" and Enum.Material.Metal or nil)
+				local headY = topY + tall
+				piece("ColumnCap", Vector3.new(3.8, 1, 3.8), at(c + ds, px + dx, headY + 0.5), capColor)
+				local headAt = at(c + ds, px + dx, headY + 1).Position
+				local head = CFrame.lookAt(headAt, at(c, px, headY + 1).Position) -- -Z looks into the arena
+				if theme.motif == "antlers" then
+					piece("Skull", Vector3.new(2, 1.8, 2.2), head * CFrame.new(0, 1, 0), bone, nil, Enum.PartType.Ball)
+					for _, e in { -1, 1 } do
+						piece("Antler", Vector3.new(0.5, 4, 0.5), head * CFrame.new(e * 1.2, 3, 0) * CFrame.Angles(0, 0, -e * 0.5), bone)
+						piece("AntlerTine", Vector3.new(0.4, 2, 0.4), head * CFrame.new(e * 2.2, 4.4, 0) * CFrame.Angles(0, 0, e * 0.4), bone)
+					end
+				elseif theme.motif == "gourds" then
+					-- a carved gourd on every column, its round toothed mouth turned to the floor
+					piece("Gourd", Vector3.new(3.4, 3.4, 3.4), head * CFrame.new(0, 1.9, 0), hex(n % 2 == 0 and "D9772B" or "C4621E"), nil, Enum.PartType.Ball)
+					piece("GourdTeeth", Vector3.new(0.3, 2.3, 2.3), head * CFrame.new(0, 1.8, -1.45) * CFrame.Angles(0, math.pi / 2, 0), hex("EDE3C6"), nil, Enum.PartType.Cylinder)
+					piece("GourdMouth", Vector3.new(0.35, 1.5, 1.5), head * CFrame.new(0, 1.8, -1.55) * CFrame.Angles(0, math.pi / 2, 0), hex("FF6A2A"), Enum.Material.Neon, Enum.PartType.Cylinder)
+					piece("GourdStem", Vector3.new(0.5, 1.2, 0.5), head * CFrame.new(0, 3.9, 0.2) * CFrame.Angles(0.3, 0, 0), hex("4E3B22"), Enum.Material.Wood)
+				elseif theme.motif == "crosses" then
+					piece("CrossV", Vector3.new(1, 3.4, 0.5), head * CFrame.new(0, 1.8, -1.4), hex("D6303F"))
+					piece("CrossH", Vector3.new(3.4, 1, 0.5), head * CFrame.new(0, 1.8, -1.4), hex("D6303F"))
+				elseif theme.motif == "cards" then
+					local red = n % 2 == 0
+					piece("Card", Vector3.new(2.6, 3.6, 0.2), head * CFrame.new(0, 2, -1.4), hex("F4F0E6"))
+					piece("Suit", Vector3.new(1.1, 1.1, 0.25), head * CFrame.new(0, 2, -1.55) * CFrame.Angles(0, 0, math.pi / 4), red and hex("C8202E") or hex("1E1E1E"))
+				elseif theme.motif == "cult" then
+					piece("Banner", Vector3.new(3, 8, 0.3), head * CFrame.new(0, -5, -1.6), hex("8E1F35"))
+					piece("Sigil", Vector3.new(1.4, 1.4, 0.35), head * CFrame.new(0, -4, -1.8) * CFrame.Angles(0, 0, math.pi / 4), hex("E4B34A"))
+					piece("Candle", Vector3.new(0.6, 1.6, 0.6), head * CFrame.new(0, 0.8, 0), hex("EDE3C8"))
+				elseif theme.motif == "factory" then
+					piece("Gear", Vector3.new(0.5, 3.4, 3.4), head * CFrame.new(0, 2, -0.8) * CFrame.Angles(0, math.pi / 2, 0), hex("8D9AA3"), Enum.Material.Metal, Enum.PartType.Cylinder)
+					piece("GearHub", Vector3.new(0.7, 1.2, 1.2), head * CFrame.new(0, 2, -1.1) * CFrame.Angles(0, math.pi / 2, 0), hex("FFD23F"), Enum.Material.Metal, Enum.PartType.Cylinder)
 				end
 			end
 		end
-		-- Fire bowls at the four corners of the floor
-		for _, q in { { -1, -1 }, { -1, 1 }, { 1, -1 }, { 1, 1 } } do
-			local s, x = c + q[1] * (R - 14), q[2] * (half - 3)
-			part(model, "BrazierStand", Vector3.new(1.4, 5, 1.4), at(s, x, 2.5), dark)
-			part(model, "BrazierBowl", Vector3.new(1.2, 3.6, 3.6), at(s, x, 5.4) * CFrame.Angles(0, 0, math.pi / 2), dark, nil, Enum.PartType.Cylinder)
-			local flame = part(model, "BrazierFlame", Vector3.new(2.2, 2.2, 2.2), at(s, x, 6.6), hex("FF8A3D"), Enum.Material.Neon, Enum.PartType.Ball)
+		-- Round the floor: brass shells for the Dealer, skulls for the Priest, bones for the Horned One
+		for n = 0, 9 do
+			local t = (n + 0.5) / 10 * math.pi * 2
+			local ds, dx = math.sin(t) * (R - 3), math.cos(t) * (R - 3)
+			if not facesRoad(ds, dx, 10) then
+				local spot = at(c + ds, px + dx, 0)
+				if theme.motif == "cards" then
+					for k = 0, 2 do
+						piece("Shell", Vector3.new(1.6, 0.6, 0.6), spot * CFrame.new(k * 0.9 - 0.9, 0.3, k * 0.4) * CFrame.Angles(0, k, 0), hex("C9A13F"), Enum.Material.Metal, Enum.PartType.Cylinder)
+					end
+				elseif theme.motif == "cult" then
+					Art.Spawn("MR_CultSkulls", model, spot * CFrame.Angles(0, t, 0), { scale = 1.3 })
+				elseif theme.motif == "antlers" then
+					piece("Bones", Vector3.new(0.5, 0.5, 3), spot * CFrame.new(0, 0.25, 0) * CFrame.Angles(0, t, 0), bone)
+				elseif theme.motif == "gourds" then -- gourds in the grass, glowing from inside
+					piece("FloorGourd", Vector3.new(2.2, 2.2, 2.2), spot * CFrame.new(0, 0.9, 0), hex(n % 2 == 0 and "C8692A" or "A4561F"), nil, Enum.PartType.Ball)
+					piece("FloorGourdGlow", Vector3.new(0.3, 0.9, 0.9), spot * CFrame.Angles(0, t + math.pi / 2, 0) * CFrame.new(-1.0, 1, 0), hex("FF6A2A"), Enum.Material.Neon, Enum.PartType.Cylinder)
+				end
+			end
+		end
+		-- Braziers round the floor, away from the way in
+		for n = 0, 5 do
+			local t = (n + 0.5) / 6 * math.pi * 2
+			local ds, dx = math.sin(t) * (R - 6), math.cos(t) * (R - 6)
+			if not facesRoad(ds, dx, 10) then
+				piece("BrazierStand", Vector3.new(1.4, 5, 1.4), at(c + ds, px + dx, 2.5), dark)
+				piece("BrazierBowl", Vector3.new(1.2, 3.6, 3.6), at(c + ds, px + dx, 5.4) * CFrame.Angles(0, 0, math.pi / 2), dark, nil, Enum.PartType.Cylinder)
+				local flame = piece("BrazierFlame", Vector3.new(2.2, 2.2, 2.2), at(c + ds, px + dx, 6.6), hex("FF8A3D"), Enum.Material.Neon, Enum.PartType.Ball)
+				local light = Instance.new("PointLight")
+				light.Color, light.Range, light.Brightness, light.Shadows = hex("FFA34D"), 26, 1.1, false
+				light.Parent = flame
+			end
+		end
+		-- The arch over the opening in the road wall, with the boss's name facing the road
+		local ax = side * (half + 2)
+		for _, e in { -1, 1 } do
+			piece("ArchPillar", Vector3.new(6, 26, 6), at(c + e * (gap + 3), ax, 13), stone:Lerp(dark, 0.15))
+			piece("ArchPillarCap", Vector3.new(7.4, 1.4, 7.4), at(c + e * (gap + 3), ax, 26.7), hex(d.Cap))
+			local torch = piece("ArchTorch", Vector3.new(1.6, 1.6, 1.6), at(c + e * (gap + 3), ax - side * 3.4, 15), hex("FF8A3D"), Enum.Material.Neon, Enum.PartType.Ball)
 			local light = Instance.new("PointLight")
-			light.Color, light.Range, light.Brightness, light.Shadows = hex("FFA34D"), 28, 1.1, false
-			light.Parent = flame
+			light.Color, light.Range, light.Brightness, light.Shadows = hex("FFA34D"), 22, 1, false
+			light.Parent = torch
 		end
-
-		-- No gates across the road (owner, 2026-11-12: "remove the other gates"): the stands alone mark the arena.
+		piece("ArchBeam", Vector3.new(6, 5, gap * 2 + 12), at(c, ax, 23.5), stone:Lerp(dark, 0.3))
+		piece("ArchCoping", Vector3.new(7, 1, gap * 2 + 13), at(c, ax, 26.5), hex(d.Cap))
+		local boss = require(S.RoadMonsterRules).Bosses[d.Index]
+		local label = P.SignText(model, at(c, ax - side * 3.05, 23.5) * CFrame.Angles(0, side * math.pi / 2, 0), Vector3.new(gap * 2 + 8, 4, 0.1), boss and boss.Name or "Chief", hex("FFE7A3"))
+		label.Parent.PixelsPerStud = 18
+		local stroke = Instance.new("UIStroke")
+		stroke.Color, stroke.Thickness = hex("2A1240"), 3
+		stroke.Parent = label
 	end
 
 	for i, d in districts do
@@ -159,25 +268,27 @@ function A.Build(world, at, C, districts, P)
 		folder:SetAttribute("RecommendedSpeed", d.RecommendedSpeed)
 		folder.Parent = root
 		local length = d.To - d.From
-		skipFrom, skipTo = d.ArenaFrom - 6, d.ArenaTo + 6
+		local pd = Progression.Districts[i]
+		skipS, skipSide, skipGap = pd.PocketS, pd.PocketSide, Progression.PocketGap / 2 + 1
 		local function put(asset, s, x, scale, yaw, y)
-			if skipped(s) then
+			if skipped(s, x) then
 				return {}
 			end
 			return Art.Spawn(asset, folder, at(s, x, y or 0) * CFrame.Angles(0, math.rad(yaw or 0), 0), { scale = scale or 1 })
 		end
 		-- A solid block inside a building: players bump into it, mutants (not queried) path past it.
 		local function block(s, x, size)
-			if skipped(s) then
+			if skipped(s, x) then
 				return nil
 			end
 			local q = P.Solid(folder, "BuildingBlock", size, at(s, x, size.Y / 2))
 			q.CanQuery = false
 			return q
 		end
-		-- Long strips (coping, pipes, lane lines) run in two pieces, either side of the arena.
+		-- Long strips (coping, pipes, lane lines) run in two pieces either side of the pocket's opening, on its side.
 		local function strip(name, width, height, x, y, color, material, shape, rotate)
-			for _, span in { { d.From, skipFrom }, { skipTo, d.To } } do
+			local spans = x * skipSide >= 15 and { { d.From, skipS - skipGap }, { skipS + skipGap, d.To } } or { { d.From, d.To } }
+			for _, span in spans do
 				local a, b = math.max(span[1], d.From), math.min(span[2], d.To)
 				if b - a > 0.5 then
 					local cf = at((a + b) / 2, x, y)
@@ -185,10 +296,10 @@ function A.Build(world, at, C, districts, P)
 						cf *= rotate
 					end
 					local size = rotate and Vector3.new(b - a, height, width) or Vector3.new(width, height, b - a)
-					local saved = skipFrom
-					skipFrom = nil
+					local saved = skipS
+					skipS = nil
 					part(folder, name, size, cf, color, material, shape)
-					skipFrom = saved
+					skipS = saved
 				end
 			end
 		end
@@ -401,8 +512,8 @@ function A.Build(world, at, C, districts, P)
 				end
 			end
 		end
-		skipFrom, skipTo = nil, nil
-		buildArena(d, folder)
+		skipS = nil
+		buildPocket(d, folder)
 		task.wait()
 	end
 

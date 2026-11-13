@@ -28,6 +28,7 @@ function D.Load(p)
  local allowed=not seen[z.id] and not D.Claims[z.id]
  if allowed and not memory then local ok,owner=retry(function() return owners:GetAsync(z.id) end);if not ok then p:Kick(L.text("loadError",p.LocaleId));return end;allowed=(owner==p.UserId) or (not owner and not z.pendingTransfer) end
  if z.stars~=2 and z.stars~=3 then z.stars=nil end
+ require(game.ReplicatedStorage.Shared.MonsterCollection).Promote(z,data.zombiedex)
  if allowed then seen[z.id]=true;z.carriedBy=nil;z.pendingTransfer=nil;table.insert(clean,z) end end
  data.zombies=clean;data.vouchers=data.vouchers or {};data.shopUsed=data.shopUsed or {};data.tutorialStep=data.tutorialStep or (data.tutorialDone and 3 or 0)
  for _,z in ipairs(clean) do D.Claims[z.id]=p.UserId end

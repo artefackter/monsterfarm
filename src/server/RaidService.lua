@@ -8,20 +8,25 @@ local function road() return require(script.Parent.RoadService) end
 local function root(p) return p.Character and p.Character:FindFirstChild("HumanoidRootPart") end
 function R.CanStart(p,owner,g)
  local td,od=D.Profiles[p],D.Profiles[owner];local night,_,cycle=Day.State()
+ if require(script.Parent.IncomeService).IsNewbie(td) then return false end
  if not td or not od or p==owner or not night or R.Carriers[p] or p:GetAttribute("CarryingGrave") or road().Blocked(p) or g.starter or g.carriedBy or g.pendingTransfer or not table.find(od.graves,g) or od.playTime<C.Newbie or R.Shields[owner]==cycle or (R.Cooldown[p] or 0)>os.clock() or (R.Locks[owner] or 0)>os.clock() then return false end
  for _,r in R.Active do if r.owner==owner then return false end end
  local h=p.Character and p.Character:FindFirstChildOfClass("Humanoid")
  return h and h.Health>0 and P.Near(p,P.Position(owner,"Graves",g.slot).Position,C.Distance) and not P.InHouse(p)
 end
+-- Newcomers (the boost, IncomeService.IsNewbie) can't steal graves (owner, 2026-11-13).
+local function newbie(p) return require(script.Parent.IncomeService).IsNewbie(D.Profiles[p]) end
 function R.Begin(p,owner,g)
+ if newbie(p) then game.ReplicatedStorage.Remotes.Notice:FireClient(p,"stealNewbie");return false end
  if not R.CanStart(p,owner,g) then return false end
- R.Pending[p]={owner=owner,g=g,began=os.clock()};require(script.Parent.ActionService).Dig(p,C.StealHold);return true
+ local need=road().HoldFor(p,C.StealHold) -- slower after shoving someone on the road
+ R.Pending[p]={owner=owner,g=g,began=os.clock(),need=need};require(script.Parent.ActionService).Dig(p,need);return true
 end
 function R.Cancel(p) R.Pending[p]=nil;require(script.Parent.ActionService).CancelDig(p) end
 function R.End(p) local h=R.Pending[p];if h then h.ended=os.clock() end end
 function R.Complete(p,owner,g)
  local h=R.Pending[p];R.Cancel(p)
- if not h or h.owner~=owner or h.g~=g or (h.ended or os.clock())-h.began<C.StealHold-.15 or (h.ended and os.clock()-h.ended>.2) then return false end
+ if not h or h.owner~=owner or h.g~=g or (h.ended or os.clock())-h.began<(h.need or C.StealHold)-.15 or (h.ended and os.clock()-h.ended>.2) then return false end
  return R.Start(p,owner,g)
 end
 function R.Adopt(p,r)

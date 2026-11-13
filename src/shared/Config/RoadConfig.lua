@@ -17,10 +17,18 @@ local config={
  Announce={Marble=true,Golden=true,Lunar=true},
  -- Boss of every amphitheatre: respawn after a defeat, the grave it may drop, how long its arena graves stay open.
  -- Kind is kept for the final boss (the Chief), whose grave hatches the DeerChief.
+ -- Harder since 2026-11-13: HealthMult and DamageMult on top of the location's; below Enrage.At of its health a boss
+ -- turns red, moves Enrage.Speed times faster and attacks Enrage.Rate times as often. After a win a portal home stands
+ -- in the pocket for PortalSeconds, for everyone who hit the boss.
  Boss={Kind="Chief",Respawn=90,GraveChance=.10,GraveLifetime=300,Leash=6,RegenAfter=4,RegenRate=.12,
+  HealthMult=2.4,DamageMult=1.5,Enrage={At=.5,Speed=1.35,Rate=1.6},PortalSeconds=75,
   Graves={{Kind="Stone",Chance=.6},{Kind="Marble",Chance=.4},{Kind="Marble",Chance=.6},{Kind="Golden",Chance=.35},{Kind="Golden",Chance=.5},{Kind="Golden",Chance=.10,MonsterType="DeerChief"}}},
  Night={GraveRolls=2,KillReward=2,Speed=1.12,AttackRate=1.2,Health=1.5,Damage=2},
  Population={MaxLive=64,SpawnBudget=2,ActiveDistance=430,SpawnJitter=18,RespawnMin=12,RespawnMax=22},
+ -- Shoving another player on the road (owner, 2026-11-13): for HitPenalty.Seconds the bully lifts graves HitPenalty.Hold
+ -- times slower, and the road's monsters within Provoke.Radius turn on them for Provoke.Seconds. A monster hit by
+ -- a shovel turns on whoever hit it the same way.
+ HitPenalty={Seconds=30,Hold=2.5},Provoke={Seconds=8,Radius=70},
  ImpRespawn=18,Aggro=100,AggroCarrier=145,BiteRange=4.5,BiteEvery=1.2,ImpsIdleAfter=30,
  Gap={From=1660,To=1667},
  Slime={{From=560,To=580,X=-24,Width=32},{From=2300,To=2325,X=22,Width=36}},SlimeSpeed=.6,
@@ -51,13 +59,14 @@ for i,d in Progression.Districts do
  local count=math.max(2,math.ceil(length/180))
  for n=1,count do table.insert(config.Spots,{S=from+length*n/(count+1),X=n%2==0 and 33 or -33,Pool=pools[i]}) end
  -- Treasure behind the boss, on the far side of the arena.
- for _,x in {-34,34} do table.insert(config.Spots,{S=d.Arena+30,X=x,Pool=arenaPools[i],Arena=i}) end
+ -- the arena's two treasure graves wait at the back of its pocket (RoadProgression)
+ for _,ds in {-14,14} do table.insert(config.Spots,{S=d.PocketS+ds,X=d.PocketX+d.PocketSide*26,Pool=arenaPools[i],Arena=i}) end
  local enemies=MonsterRules.Count(length)
  for n=1,enemies do
   table.insert(config.Imps,{S=from+length*(n-.3)/(enemies+.5),X=n%2==0 and 24 or -24,Kind="Imp",Speed=14,Biome=i,RandomVariant=true,MinS=from+12,MaxS=to-4})
  end
  local boss=MonsterRules.Bosses[i]
- table.insert(config.Imps,1,{S=d.Arena,X=0,Kind=boss.Kind,Speed=14,Biome=i,Boss=i,Variant=boss})
+ table.insert(config.Imps,1,{S=d.PocketS,X=d.PocketX,Kind=boss.Kind,Speed=14,Biome=i,Boss=i,Variant=boss})
 end
 -- Bushes: every BushSpacing studs, on the first of four lanes that keeps clear of graves, logs, slime and the jump.
 local function clear(s,x)

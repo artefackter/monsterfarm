@@ -57,7 +57,7 @@ function I.Buy(p,key)
 end
 function I.HomeReason(p)
  local road=require(script.Parent.RoadService);local a=Act.State(p)
- local root=p.Character and p.Character:FindFirstChild('HumanoidRootPart');local onRoad=false;if root then local along,x=road.ToRoad(root.Position);local rc=require(S.Config.RoadConfig);onRoad=along>rc.GateLine and along<rc.Length and math.abs(x)<rc.Width/2 end
+ local root=p.Character and p.Character:FindFirstChild('HumanoidRootPart');local onRoad=false;if root then local along,x=road.ToRoad(root.Position);local rc=require(S.Config.RoadConfig);onRoad=along>rc.GateLine and along<rc.Length and road.InRuins(along,x,0) end
  return Rules.HomeReason({alive=p.Character~=nil and p.Character:FindFirstChildOfClass("Humanoid")~=nil and p.Character.Humanoid.Health>0 and P.Assigned[p]~=nil,road=onRoad,carry=road.Carriers[p]~=nil or require(script.Parent.RaidService).Carriers[p]~=nil,dig=a.dig~=nil,knockout=Act.Blocked(p),trap=road.Blocked(p),cooldown=math.max(0,(I.HomeReady[p] or 0)-os.clock())})
 end
 function I.Home(p)

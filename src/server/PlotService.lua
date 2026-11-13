@@ -123,9 +123,10 @@ local function buildBoundary(w)
   body.CanTouch = false
   body.CastShadow = false
  end
- -- Round the island: weathered dark stone laid like bricks, a slate coping and battlements on top, moss here and
- -- there. Taller and gloomier since 2026-11-13 (owner: "raise the wall round the world"; the farm was "too childish").
- local stones = { Color3.fromHex("6A6276"), Color3.fromHex("5E5669"), Color3.fromHex("756D80"), Color3.fromHex("544D5E") }
+ -- Round the island the wall is friendly: lilac blocks laid like bricks, a purple coping and battlements on top, a
+ -- green tuft here and there. Taller since 2026-11-13 (owner: "raise the wall round the world"); a darker stone was
+ -- tried the same day and taken back (owner: "bring back the old wall, at the new height").
+ local stones = { Color3.fromHex("DCD2F2"), Color3.fromHex("CDC1EA"), Color3.fromHex("E7DEF7"), Color3.fromHex("C2B5E2") }
  local course = 3.2
  local COURSES = 11 -- about 36 studs of wall
  local rng = Random.new(77)
@@ -160,12 +161,12 @@ local function buildBoundary(w)
    end
   end
   local top = bottom + 2.6 + COURSES * course
-  voxel("WallCoping", Vector3.new(cfg.Thickness + 0.8, 0.7, length + 0.2), cf * CFrame.new(0, top + 0.35, 0), Color3.fromHex("3E3848"))
+  voxel("WallCoping", Vector3.new(cfg.Thickness + 0.8, 0.7, length + 0.2), cf * CFrame.new(0, top + 0.35, 0), Color3.fromHex("8C6BD6"))
   for k = 0, count - 1, 2 do
    local z = -length / 2 + (k + 0.5) * block
-   voxel("WallMerlon", Vector3.new(cfg.Thickness + 0.4, 2, block * 0.8), cf * CFrame.new(0, top + 1.7, z), Color3.fromHex("4B4458"))
+   voxel("WallMerlon", Vector3.new(cfg.Thickness + 0.4, 2, block * 0.8), cf * CFrame.new(0, top + 1.7, z), Color3.fromHex("A58BE6"))
    if rng:NextNumber() < 0.25 then
-    local tuft = voxel("WallTuft", Vector3.new(1.4, 1.4, 1.4), cf * CFrame.new(rng:NextNumber(-0.6, 0.6), top + 3, z), Color3.fromHex("4E6B3A"))
+    local tuft = voxel("WallTuft", Vector3.new(1.4, 1.4, 1.4), cf * CFrame.new(rng:NextNumber(-0.6, 0.6), top + 3, z), Color3.fromHex("7BDC4B"))
     tuft.Shape = Enum.PartType.Ball
    end
   end
@@ -173,19 +174,167 @@ local function buildBoundary(w)
  local function point(angle)
   return (dir * math.cos(angle) + right * math.sin(angle)) * radius
  end
- for i = 1, cfg.Segments do
-  local a = opening + (2 * math.pi - 2 * opening) * (i - 1) / cfg.Segments
-  local b = opening + (2 * math.pi - 2 * opening) * i / cfg.Segments
-  segment(point(a), point(b), true)
+ -- A second opening right across from the road (2026-11-13): the walled bridge to the Blood Moon arena.
+ local BM = require(S.Config.BloodMoonConfig)
+ local g = BM.Arena.Gap + cfg.Thickness / 2
+ local gapA = math.asin(g / radius)
+ for _, range in { { opening, math.pi - gapA }, { math.pi + gapA, 2 * math.pi - opening } } do
+  local n = math.max(1, math.round(cfg.Segments * (range[2] - range[1]) / (2 * math.pi)))
+  for i = 1, n do
+   segment(point(range[1] + (range[2] - range[1]) * (i - 1) / n), point(range[1] + (range[2] - range[1]) * i / n), true)
+  end
  end
+ -- the bridge's walls and the arena's round wall, open only towards the island
+ local center = BM.ArenaCenter()
+ local ring = BM.Arena.Radius + cfg.Thickness / 2
+ local reach = center.Magnitude - math.sqrt(ring * ring - g * g)
+ for _, side in ipairs({ -1, 1 }) do
+  segment(-dir * math.sqrt(radius * radius - g * g) + right * g * side, -dir * reach + right * g * side, true)
+ end
+ local gb = math.asin(g / ring)
+ local arenaSegments = 40
+ for i = 1, arenaSegments do
+  local a = gb + (2 * math.pi - 2 * gb) * (i - 1) / arenaSegments
+  local b = gb + (2 * math.pi - 2 * gb) * i / arenaSegments
+  -- colliders only: the arena's look is its amphitheatre of stands (buildBloodArena)
+  segment(center + (dir * math.cos(a) + right * math.sin(a)) * ring, center + (dir * math.cos(b) + right * math.sin(b)) * ring, false)
+ end
+ wall:SetAttribute("BloodArena", center)
  local join = math.sqrt(radius * radius - half * half)
  local finish = road.Rim + road.Length + cfg.Thickness / 2
  for _, side in ipairs({-1, 1}) do
   -- Visible up to the road's first buildings, so there is no gap; past them the road's own walls show
   segment(dir * join + right * half * side, dir * road.Rim + right * half * side, true)
-  segment(dir * road.Rim + right * half * side, dir * finish + right * half * side, false)
+  -- Along the road: colliders in pieces. One 3900-stud part was clipped by Roblox to 2048 and, lying across the
+  -- middle locations, shut the boss pockets there (owner, 2026-11-13: "you can't get to Patient Zero"); now each
+  -- piece stays short, and there is a gap at every pocket on this side.
+  local Pr = require(S.Config.RoadProgression)
+  local cuts = {}
+  for _, d in Pr.Districts do
+   if d.PocketSide == side then table.insert(cuts, { d.PocketS - Pr.PocketGap / 2, d.PocketS + Pr.PocketGap / 2 }) end
+  end
+  table.sort(cuts, function(a, b) return a[1] < b[1] end)
+  local s0 = 0
+  local function run(a, b)
+   local pieces = math.max(1, math.ceil((b - a) / 600))
+   for k = 0, pieces - 1 do
+    local p0, p1 = a + (b - a) * k / pieces, a + (b - a) * (k + 1) / pieces
+    segment(dir * (road.Rim + p0) + right * half * side, dir * (road.Rim + p1) + right * half * side, false)
+   end
+  end
+  for _, cut in cuts do
+   if cut[1] > s0 then run(s0, cut[1]) end
+   s0 = cut[2]
+  end
+  run(s0, finish - road.Rim)
  end
  segment(dir * finish - right * half, dir * finish + right * half, false)
+end
+
+-- The Blood Moon arena (owner, 2026-11-13): an amphitheatre of dark stone beyond the island wall, across from the
+-- ruins road, reached over a cobbled bridge through a slot in its stands. A blood-red sand floor with the seal and
+-- bone spikes round its edge, six tiers of stands rising all round, pale columns on top, and an arch over the
+-- opening in the island wall with the arena's name. No lamps: the Blood Moon's own light is enough. Its colliders are
+-- buildBoundary's; the giant appears in the middle and never leaves.
+local function buildBloodArena(w)
+ local BM = require(S.Config.BloodMoonConfig)
+ local center = BM.ArenaCenter()
+ local road = require(S.Config.RoadConfig)
+ local dir = road.Dir.Unit
+ local R, gap, tiers = BM.Arena.Radius, BM.Arena.Gap, BM.Arena.Tiers or 6
+ local m = Instance.new("Model")
+ m.Name = "BloodArena"
+ m.Parent = w
+ local function deco(name, size, cf, color, material, shape)
+  local q = P.Part(m, name, size, cf, color, shape)
+  q.Material = material or Enum.Material.SmoothPlastic
+  q.CanCollide, q.CanQuery, q.CanTouch = false, false, false
+  return q
+ end
+ local facing = CFrame.lookAt(center, center + dir) -- -Z looks back at the island
+ local function at(x, y, z) return facing * CFrame.new(x, y, z) end
+ -- The floors you walk on (solid, so navigation and grave drops find them). The bridge sits a little above the
+ -- island's lawn surface: level with it, the two flickered against each other.
+ local wallR = 170 * C.IslandScale - C.Boundary.Inset
+ local from, to = wallR - 6, center.Magnitude - R + 4
+ local bridge = P.Part(m, "BloodBridge", Vector3.new(gap * 2 + 4, 4, to - from), CFrame.lookAt(-dir * (from + to) / 2 + Vector3.new(0, ISLAND_TOP - 1.92, 0), -dir * to + Vector3.new(0, ISLAND_TOP - 1.92, 0)), Color3.fromHex("4A3F52"))
+ bridge.Material = Enum.Material.Cobblestone
+ local floor = solidDisc(m, "BloodFloor", R + 4, 4, CFrame.new(center.X, ISLAND_TOP - 1.92, center.Z))
+ floor.Transparency = 0
+ floor.Color = Color3.fromHex("3E2A33")
+ floor.Material = Enum.Material.Slate
+ local top = ISLAND_TOP + 0.08
+ local function disc(name, radius, y, color, material)
+  return deco(name, Vector3.new(0.06, radius * 2, radius * 2), CFrame.new(center.X, top + y, center.Z) * CFrame.Angles(0, 0, math.pi / 2), color, material, Enum.PartType.Cylinder)
+ end
+ disc("BloodRim", R + 2, 0.03, Color3.fromHex("2A1A22"))
+ disc("BloodSand", R - 1, 0.05, Color3.fromHex("6B2A33"), Enum.Material.Sand)
+ disc("BloodLine", R * 0.55, 0.06, Color3.fromHex("2A1A22"))
+ disc("BloodSandInner", R * 0.55 - 1, 0.07, Color3.fromHex("7A303A"), Enum.Material.Sand)
+ Art.Spawn("MR_ArenaSeal", m, CFrame.new(center.X, top + 0.08, center.Z), { scale = Vector3.new(6.5, 0.4, 6.5), tints = { Main = Color3.fromRGB(190, 60, 70) } })
+ -- the way in faces the island (local -Z); stands and props keep out of it
+ local function wayIn(x, z, margin)
+  return z < 0 and math.abs(x) < gap + (margin or 4)
+ end
+ -- bone spikes in little clumps round the edge of the floor
+ for k = 0, 13 do
+  local a = (k + 0.5) / 14 * math.pi * 2
+  local sx, sz = math.sin(a) * (R - 3), math.cos(a) * (R - 3)
+  if not wayIn(sx, sz, 8) then
+   for n = 0, 2 do
+    deco("BoneSpike", Vector3.new(1.4, 8 - n * 1.8, 1.4), at(sx + (n - 1) * 1.8, top + (8 - n * 1.8) / 2, sz) * CFrame.Angles(0, 0, (n - 1) * 0.25), Color3.fromHex("E6DCC4"))
+   end
+  end
+ end
+ -- The stands: tiers of a round bowl, each a ring of blocks from below the floor up to its seat
+ local stoneA, stoneB, cap = Color3.fromHex("4B3A55"), Color3.fromHex("3E2F48"), Color3.fromHex("6E2233")
+ local segments = 64
+ for k = 0, tiers - 1 do
+  local r = R + 7 + k * 8
+  local seat = 6 + k * 4
+  local height = seat + 6
+  for n = 0, segments - 1 do
+   local t0, t1 = n / segments * math.pi * 2, (n + 1) / segments * math.pi * 2
+   local tm = (t0 + t1) / 2
+   local x, z = math.sin(tm) * r, math.cos(tm) * r
+   if not wayIn(x, z, 3 + k * 1.5) then
+    local p0, p1 = at(math.sin(t0) * r, 0, math.cos(t0) * r).Position, at(math.sin(t1) * r, 0, math.cos(t1) * r).Position
+    local mid = at(x, top + seat - height / 2, z).Position
+    deco("Stand", Vector3.new(8.6, height, (p1 - p0).Magnitude + 0.6), CFrame.lookAt(mid, mid + (p1 - p0)), k % 2 == 0 and stoneA or stoneB, Enum.Material.Slate)
+    if n % 2 == 0 then
+     local edge = at(math.sin(tm) * (r - 4.1), top + seat + 0.15, math.cos(tm) * (r - 4.1)).Position
+     deco("StandEdge", Vector3.new(0.5, 0.3, (p1 - p0).Magnitude * 2 + 0.6), CFrame.lookAt(edge, edge + (p1 - p0)), cap)
+    end
+   end
+  end
+ end
+ -- pale columns along the top row, a dark cap on each
+ local rTop = R + 7 + tiers * 8
+ local seatTop = 6 + (tiers - 1) * 4
+ for n = 0, 31 do
+  local t = (n + 0.5) / 32 * math.pi * 2
+  local x, z = math.sin(t) * rTop, math.cos(t) * rTop
+  if not wayIn(x, z, 14) then
+   deco("Column", Vector3.new(3, 14, 3), at(x, top + seatTop + 7, z), Color3.fromHex("D9CFC0"), Enum.Material.Slate)
+   deco("ColumnCap", Vector3.new(4.4, 1.2, 4.4), at(x, top + seatTop + 14.6, z), cap)
+  end
+ end
+ -- the arch over the opening in the island wall, its name facing the island; set back from the wall so no face
+ -- lies on a wall face (those flickered)
+ local archAt = -dir * (wallR - 4.3)
+ local archCF = CFrame.lookAt(archAt + Vector3.new(0, ISLAND_TOP, 0), archAt + dir + Vector3.new(0, ISLAND_TOP, 0)) -- -Z faces the island
+ local stone, red = Color3.fromHex("4B3A55"), Color3.fromHex("8E1F35")
+ for _, e in ipairs({ -1, 1 }) do
+  deco("ArchTower", Vector3.new(8, 40, 8), archCF * CFrame.new(e * (gap + 6.3), 20, 0), stone, Enum.Material.Slate)
+  deco("ArchTowerCap", Vector3.new(9.6, 1.6, 9.6), archCF * CFrame.new(e * (gap + 6.3), 40.8, 0), red)
+  deco("ArchBanner", Vector3.new(5, 14, 0.3), archCF * CFrame.new(e * (gap + 6.3), 24, -4.2), red)
+ end
+ deco("ArchBeam", Vector3.new(gap * 2 + 20.6, 6, 8), archCF * CFrame.new(0, 34, 0), stone, Enum.Material.Slate)
+ local label = signText(m, archCF * CFrame.new(0, 34, -4.06), Vector3.new(gap * 2 + 16, 4.4, 0.1), "bloodArenaSign", Color3.fromHex("FFD2D8"))
+ label.Parent.PixelsPerStud = 16
+ local stroke = Instance.new("UIStroke")
+ stroke.Color, stroke.Thickness = Color3.fromHex("3A0010"), 3
+ stroke.Parent = label
 end
 
 -- Voxel bump overlay on a face of a part (works on invisible parts too). The owner wants the play area
@@ -287,6 +436,7 @@ local function buildWorld(w)
 	decoratePlaza(w)
 	solidDisc(w, "Plaza", 41, 2, CFrame.new(0, PLAZA_TOP - 1, 0))
 	buildBoundary(w)
+	buildBloodArena(w)
 
 
 
@@ -309,6 +459,10 @@ local function buildWorld(w)
 		end
 		if roadAlong > RoadC.Rim - 40 and lateral < RoadC.Width / 2 + 8 then
 			return true -- the clearing in front of the gate
+		end
+		local bloodAlong = -roadAlong -- the way to the Blood Moon arena, across from the road
+		if bloodAlong > 150 and (pos + roadDir * bloodAlong).Magnitude < 24 then
+			return true
 		end
 		for i = 1, 6 do
 			local a = math.rad(C.PlotAngles[i])
@@ -543,6 +697,37 @@ local function buildGarden(m,at,index,F)
  -- the front corners: a scarecrow on the left, a well on the right; the back: a cart and crates; dead trees
  prop('W_Scarecrow',F-3.5,-F+3.5,.9,200,{Main=Color3.fromRGB(170,150,135)})
  prop('MR_Well',-F+3.5,-F+3.8,.85,30)
+ -- The workbench (owner, 2026-11-13: "a bench on the farm to upgrade guns"; first in the far corner, then "too deep"):
+ -- just inside the gate on the right, by the path, so it is seen on the way in. A heavy table with a vice, an anvil,
+ -- a pegboard of tools and a rifle on it; its spinning circle opens the weapon upgrades.
+ local bench=Instance.new('Model');bench.Name='Workbench';bench.Parent=garden
+ local corner=at(-13,-31)*CFrame.Angles(0,math.rad(-45),0) -- facing the path and the gate, clear of the open gate leaf
+ local function block(name,size,cf,color,material,shape)
+  local q=P.Part(bench,name,size,corner*cf,color,shape);q.Material=material or Enum.Material.SmoothPlastic
+  q.CanCollide,q.CanQuery,q.CanTouch=false,false,false;return q
+ end
+ local IRON,STEEL=Color3.fromHex('3A3A44'),Color3.fromHex('8C8C96')
+ block('BenchTop',Vector3.new(7,.5,3.2),CFrame.new(0,3.1,0),WOOD,Enum.Material.WoodPlanks)
+ for _,x in {-3.1,3.1} do for _,z in {-1.2,1.2} do block('BenchLeg',Vector3.new(.5,2.9,.5),CFrame.new(x,1.45,z),WOOD_DARK,Enum.Material.Wood) end end
+ block('BenchShelf',Vector3.new(6.6,.3,2.6),CFrame.new(0,.9,0),WOOD_DARK,Enum.Material.WoodPlanks)
+ block('Pegboard',Vector3.new(7,3.6,.3),CFrame.new(0,5.2,1.55),WOOD:Lerp(WOOD_DARK,.4),Enum.Material.WoodPlanks)
+ for k=0,4 do block('Tool',Vector3.new(.25,1.4+(k%2)*.5,.2),CFrame.new(-2.6+k*1.3,5.3,1.35)*CFrame.Angles(0,0,(k%2==0 and .3 or -.2)),k%2==0 and STEEL or IRON,Enum.Material.Metal) end
+ block('Vice',Vector3.new(1,.9,1.1),CFrame.new(2.7,3.8,-.6),IRON,Enum.Material.Metal);block('ViceJaw',Vector3.new(.9,.5,.3),CFrame.new(2.7,4.1,-1.25),STEEL,Enum.Material.Metal)
+ block('Anvil',Vector3.new(1.8,.9,1),CFrame.new(2.6,.45,-2.6),IRON,Enum.Material.Metal);block('AnvilTop',Vector3.new(2.4,.5,1.1),CFrame.new(2.6,1.15,-2.6),STEEL,Enum.Material.Metal)
+ -- a rifle laid on the table, from blocks so it never depends on a mesh
+ block('GunBody',Vector3.new(2.6,.35,.35),CFrame.new(-.6,3.55,-.3)*CFrame.Angles(0,.15,0),IRON,Enum.Material.Metal)
+ block('GunStock',Vector3.new(1.2,.5,.4),CFrame.new(-2.2,3.55,-.5)*CFrame.Angles(0,.15,0),WOOD,Enum.Material.Wood)
+ block('GunBarrel',Vector3.new(1.6,.16,.16),CFrame.new(1.4,3.6,0)*CFrame.Angles(0,.15,0),STEEL,Enum.Material.Metal)
+ block('GunMag',Vector3.new(.3,.6,.3),CFrame.new(-.4,3.25,-.25)*CFrame.Angles(0,.15,.2),IRON,Enum.Material.Metal)
+ local vial=block('MutagenVial',Vector3.new(.6,.9,.6),CFrame.new(1.2,3.8,.6),Color3.fromHex('8CFF6A'),Enum.Material.Neon,Enum.PartType.Ball)
+ local glow=Instance.new('PointLight');glow.Color=vial.Color;glow.Range=8;glow.Brightness=.5;glow.Parent=vial;WA.NightLight(glow)
+ local lampBulb=WA.NightGlow(block('BenchLamp',Vector3.new(.7,.7,.7),CFrame.new(-2.8,7.3,1.2),Color3.fromHex('FFB45C'),Enum.Material.SmoothPlastic,Enum.PartType.Ball))
+ local light=Instance.new('PointLight');light.Color=lampBulb.Color;light.Range=12;light.Brightness=.6;light.Parent=lampBulb;WA.NightLight(light)
+ local title=P.SignText(bench,corner*CFrame.new(0,7.6,1.35),Vector3.new(5,1.1,.1),'workbench',Color3.fromHex('FFE7A3'))
+ title.Parent.PixelsPerStud=30;local st=Instance.new('UIStroke');st.Color=Color3.fromHex('2A1240');st.Thickness=2;st.Parent=title
+ local benchZone=P.Part(bench,'WorkbenchZone',Vector3.one,corner*CFrame.new(0,.15,-6),Color3.fromHex('8CFF6A'))
+ benchZone.Transparency,benchZone.CanCollide,benchZone.CanQuery,benchZone.CanTouch=1,false,false,false
+ benchZone:SetAttribute('MenuZone','upgrades');benchZone:SetAttribute('Radius',3.4);benchZone:SetAttribute('Owner',-1)
  prop('MR_Cart',-6,F-3,.9,80)
  prop('V3_Crates',-16,F-2.6,.8,10,{Main=Color3.fromRGB(150,120,100)})
  prop('MR_TwistedTree',F-3,21,.5,40);prop('MR_TwistedTree',F-3.5,F-3.5,.55,-20)
@@ -568,7 +753,7 @@ local function buildGarden(m,at,index,F)
  flies.Size=NumberSequence.new({NumberSequenceKeypoint.new(0,0),NumberSequenceKeypoint.new(.5,.22),NumberSequenceKeypoint.new(1,0)});flies.Lifetime=NumberRange.new(3,5);flies.Rate=4;flies.Speed=NumberRange.new(.3,.8)
  flies.SpreadAngle=Vector2.new(180,180);flies.Acceleration=Vector3.new(0,.2,0);flies.Parent=mistPart
  CollectionService:AddTag(flies,'NightLight');flies.Enabled=workspace:GetAttribute('IsNight')==true
- return garden
+ return garden,benchZone
 end
 
 local function buildPlot(w,i)
@@ -693,7 +878,7 @@ local function buildPlot(w,i)
  -- A softer cemetery edge: tufts, mushrooms and flowers round the patch
  for _,q in {{cb.MinX-1.5,cb.MaxZ-3,'W_Mushroom',1.2},{cb.MaxX+1.5,cb.MinZ+4,'W_Tuft',1.6},{cb.MaxX+1,cb.MaxZ+1,'W_Mushroom',1.4},{cb.MinX+4,cb.MaxZ+1.5,'W_Tuft',1.4},{cb.MaxX+1.5,(cb.MinZ+cb.MaxZ)/2,'W_Flowers',1.1},{cb.MinX-1.5,cb.MinZ+10,'W_Flowers',1}} do deco(q[3],q[1],q[2],q[4]) end
  local guideCemetery=P.Part(m,'GuideCemetery',Vector3.one,at((cb.MinX+cb.MaxX)/2,cb.MinZ+8,1),Color.Panel);guideCemetery.Transparency=1;guideCemetery.CanCollide=false;guideCemetery.CanQuery=false
- buildGarden(m,at,i,F)
+ plot.BenchZone=select(2,buildGarden(m,at,i,F))
  local field=P.Part(m,'GuideField',Vector3.one,at((pb.MinX+pb.MaxX)/2,(pb.MinZ+pb.MaxZ)/2,1),Color.Panel);field.Transparency=1;field.CanCollide=false;field.CanQuery=false
  local guard=P.Part(m,'GuideGuard',Vector3.one,at(6,30,1),Color.Panel);guard.Transparency=1;guard.CanCollide=false;guard.CanQuery=false
  m:SetAttribute('BasePosition',base.Position);m:SetAttribute('BaseYaw',math.atan2(-base.LookVector.X,-base.LookVector.Z))
@@ -738,6 +923,7 @@ function P.Assign(p)
 			P.Assigned[p] = plot
 			plot.Model:SetAttribute("Owner", p.UserId)
 			if plot.Crypt then plot.Crypt.Zone:SetAttribute("Owner", p.UserId) end
+			if plot.BenchZone then plot.BenchZone:SetAttribute("Owner", p.UserId) end
 			plot.Label:SetAttribute("OwnerName", p.DisplayName)
 			plot.LabelBack:SetAttribute("OwnerName", p.DisplayName)
 			return plot
@@ -751,6 +937,7 @@ function P.Release(p)
 		plot.Owner = nil
 		plot.Model:SetAttribute("Owner", nil)
 		if plot.Crypt then plot.Crypt.Zone:SetAttribute("Owner", -1) end
+		if plot.BenchZone then plot.BenchZone:SetAttribute("Owner", -1) end
 		plot.Label:SetAttribute("OwnerName", nil)
 		plot.LabelBack:SetAttribute("OwnerName", nil)
 		for _, x in ipairs(plot.Model:GetChildren()) do

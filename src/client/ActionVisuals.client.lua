@@ -72,7 +72,8 @@ Run.PreSimulation:Connect(function(dt)
   if root and hand then
    if not data then local b,t=label(root,'ActionStatus');local f,segments=clock(b);data={ch=ch,status=b,text=t,clock=f,segments=segments,phase=0};characters[who]=data end
    local ko=now<(who:GetAttribute('KnockedOutUntil') or 0);local dig=who:GetAttribute('DiggingGrave');local id=who:GetAttribute('EquippedShovel') or 'Rusty'
-   local show=not ko and not who:GetAttribute('Training')
+   -- only what is in the hands shows (owner, 2026-11-13: one weapon at a time): no shovel on the back
+   local show=not ko and not who:GetAttribute('Training') and ShovelMotion.ForPlayer(who,now)~=nil
    if data.shovel and (not show or id~=data.id or not data.shovel.Parent) then data.shovel:Destroy();data.shovel=nil end
    if show and not data.shovel then
     local m=Shovel.Build(id,ch);local w=Instance.new('Weld',m.PrimaryPart);w.Name='ShovelGrip';w.Part1=m.PrimaryPart;data.shovel=m;data.grip=w;data.id=id;data.mode=nil;data.origin=m:GetPivot():ToObjectSpace(m.PrimaryPart.CFrame)

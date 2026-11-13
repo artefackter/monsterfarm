@@ -24,7 +24,7 @@ local R={Districts={
 -- One boss per location. Kind holds its health and attacks (MutantConfig.Types), Name its locale key.
 Bosses={
  {Id="BossHorned",Kind="BossHorned",Asset="Deer_Assassin_Aggressive",Family="Deer",Name="bossHorned"},
- {Id="BossSiren",Kind="BossSiren",Asset="SirenHead_Aggressive",Family="SirenHead",Name="bossSiren"},
+ {Id="BossRingMaw",Kind="BossRingMaw",Asset="RingMaw_Boss",Family="RingMaw",Name="bossRingMaw"}, -- was Siren Head until 2026-11-13
  {Id="BossPatient",Kind="BossPatient",Asset="Parasite_Assassin_Aggressive",Family="Parasite",Name="bossPatient"},
  {Id="BuckshotDealer",Kind="BossDealer",Asset="BuckshotDealer_Aggressive",Family="BuckshotDealer",Name="bossDealer",Floating=true},
  {Id="BossPriest",Kind="BossPriest",Asset="Cultist_Parasite",Family="Cultist",Name="bossPriest"},

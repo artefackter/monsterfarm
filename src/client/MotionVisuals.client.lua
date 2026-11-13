@@ -13,7 +13,8 @@ end
 -- Training numbers burst out of the treadmill (owner's reference): a sneaker and a pink "+N", three per half-second
 -- step, each flung out fast in its own direction. The three always add up to what the step really gave.
 local SHOE=require(S.Icons).hudSpeed
-local function flyGain(origin,amount)
+local function flyGain(origin,amount,flight)
+ flight=flight or .7
  local q=part('TrainingGain',Vector3.one*.1,Color3.new());q.Transparency=1;q.Position=origin
  local b=Instance.new('BillboardGui');b.Size=UDim2.fromOffset(170,46);b.MaxDistance=90;b.LightInfluence=0;b.AlwaysOnTop=true;b.Parent=q
  local holder=Instance.new('Frame');holder.BackgroundTransparency=1;holder.Size=UDim2.fromScale(1,1);holder.Parent=b
@@ -24,21 +25,24 @@ local function flyGain(origin,amount)
  local st=Instance.new('UIStroke');st.Color=Color3.fromRGB(46,10,34);st.Thickness=3;st.LineJoinMode=Enum.LineJoinMode.Round;st.Parent=t
  local angle=math.random()*math.pi*2
  local out=Vector3.new(math.cos(angle),0,math.sin(angle))*(3.5+math.random()*4)+Vector3.new(0,2+math.random()*3.5,0)
- Tween:Create(q,TweenInfo.new(.7,Enum.EasingStyle.Quart,Enum.EasingDirection.Out),{Position=origin+out}):Play()
+ Tween:Create(q,TweenInfo.new(flight,Enum.EasingStyle.Quart,Enum.EasingDirection.Out),{Position=origin+out}):Play()
  Tween:Create(pop,TweenInfo.new(.16,Enum.EasingStyle.Back,Enum.EasingDirection.Out),{Scale=1}):Play()
- task.delay(.42,function()
+ task.delay(flight*.6,function()
   if not q.Parent then return end
   local fade=TweenInfo.new(.28)
   Tween:Create(t,fade,{TextTransparency=1}):Play();Tween:Create(st,fade,{Transparency=1}):Play();Tween:Create(icon,fade,{ImageTransparency=1}):Play()
  end)
- Debris:AddItem(q,.75)
+ Debris:AddItem(q,flight+.05)
 end
-local function floatGain(root,gain)
+-- The better the treadmill (owner, 2026-11-13), the faster the numbers pour out: more of them per step, closer
+-- together and flung quicker. They still add up to what the step gave.
+local function floatGain(root,gain,level)
  gain=math.max(0,math.floor(gain+.5));if gain<=0 then return end
- local each=math.floor(gain/3)
- for i=1,3 do
-  local amount=i<3 and each or gain-each*2
-  if amount>0 then task.delay((i-1)*.16,function() if root.Parent then flyGain(root.Position+Vector3.new(0,1.5,0),amount) end end) end
+ level=math.clamp(level or 1,1,7)
+ local n=math.min(gain,2+level);local each=math.floor(gain/n);local gap=.42/n;local flight=math.max(.35,.75-.06*level)
+ for i=1,n do
+  local amount=i<n and each or gain-each*(n-1)
+  if amount>0 then task.delay((i-1)*gap,function() if root.Parent then flyGain(root.Position+Vector3.new(0,1.5,0),amount,flight) end end) end
  end
 end
 local function add(q)
@@ -78,7 +82,7 @@ Run.RenderStepped:Connect(function(dt)
     Tween:Create(q,TweenInfo.new(.22),{CFrame=q.CFrame*CFrame.new(0,0,3),Transparency=1}):Play();Debris:AddItem(q,.23)
    end
    if now<(who:GetAttribute('MutantSlowUntil') or 0) and now>d.slime then d.slime=now+.14;puff(root.Position+Vector3.new(math.random()-.5,-2.1,math.random()-.5),Color3.fromRGB(156,222,64),true) end
-   local step=who:GetAttribute('TrainingStepAt');if step and step~=d.step then d.step=step;floatGain(root,who:GetAttribute('TrainingStepGain') or 0);if who==p then pulse=1 end end
+   local step=who:GetAttribute('TrainingStepAt');if step and step~=d.step then d.step=step;floatGain(root,who:GetAttribute('TrainingStepGain') or 0,who:GetAttribute('TreadmillLevel'));if who==p then pulse=1 end end
   elseif d and #d.stars>0 then for _,q in d.stars do q:Destroy() end;table.clear(d.stars) end
  end
  for model,d in belts do

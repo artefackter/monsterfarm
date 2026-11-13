@@ -33,6 +33,11 @@ local function execute(p,command,arg,value)
   -- /kills i n: count n monsters killed in location i (guns unlock with them)
   local i,n=tonumber(arg),tonumber(value);if not i or not n or not d.ruinKills or not d.ruinKills[i] then return false end
   d.ruinKills[i]+=n;require(script.Parent.WeaponService).Join(p)
+ elseif command=="boss" then
+  -- /boss n: finish off the boss of location n as this player (to see the win and the portal home)
+  local Road=require(script.Parent.RoadService);local cfg=Road.BossCfg[tonumber(arg) or 0];local a=cfg and cfg.Live
+  if not a then return false end
+  return require(script.Parent.MutantService).Damage(a,a.hp,p)
  elseif command=="farm" then
   -- /farm [n]: skip the tutorial and put n first-tier monsters out in the yard (night raids need a target)
   local Z=require(script.Parent.ZombieService);local Place=require(game.ReplicatedStorage.Shared.PlacementRules)
@@ -40,6 +45,18 @@ local function execute(p,command,arg,value)
   for gz=-4,32,7 do for gx=-34,34,7 do
    if placed<n then local z=Z.Roll({100},false,false,1);local point=Place.Point(gx,gz)
     if not Place.Check(d,"Zombie",point,z) then z.zone="Field";z.slot=placed+1;z.pos=point;table.insert(d.zombies,z);placed+=1 end
+   end
+  end end
+  Z.Render(p,d)
+ elseif command=="give" then
+  -- /give DeerMiner,RingMawKing: put those monsters out in the yard, at their catalog rarity (to look at the art)
+  local Z=require(script.Parent.ZombieService);local Place=require(game.ReplicatedStorage.Shared.PlacementRules);local Col=require(game.ReplicatedStorage.Shared.MonsterCollection)
+  local tierOf={};for _,e in Col.Catalog do tierOf[e.Id]=e.Tier end
+  d.tutorialDone=true;local queue=string.split(arg or "",",");local placed=0
+  for gz=-4,40,9 do for gx=-36,36,9 do
+   local id=queue[placed+1]
+   if id and tierOf[id] then local z=Z.Roll({100},false,false,1);z.type=id;z.tier=tierOf[id];local point=Place.Point(gx,gz)
+    if not Place.Check(d,"Zombie",point,z) then z.zone="Field";z.slot=#d.zombies+1;z.pos=point;table.insert(d.zombies,z);placed+=1 end
    end
   end end
   Z.Render(p,d)

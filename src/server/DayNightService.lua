@@ -1,5 +1,5 @@
--- Day is a hazy late afternoon and night a deep violet (moodier since 2026-11-13: the owner found the farm "too
--- childish" next to the ruins); still bright enough to play, never pitch black.
+-- Day is a soft afternoon and night a violet blue: a touch moodier than the old cartoon look (2026-11-13: the farm
+-- was "too childish"), but the first, darker try made the world too dark, so it stays bright enough to play.
 local C = require(game.ReplicatedStorage.Shared.Config.NightConfig)
 local Lighting = game:GetService("Lighting")
 local RunService = game:GetService("RunService")
@@ -8,16 +8,16 @@ local D = {}
 
 local LOOK = {
 	day = {
-		Clock = 16.2, Brightness = 1.05, Exposure = 0,
-		Ambient = Color3.fromRGB(92, 90, 108), Outdoor = Color3.fromRGB(102, 98, 118), Shift = Color3.fromRGB(255, 226, 196),
-		Fog = Color3.fromRGB(150, 156, 150), Density = 0.27, Haze = 1.6, AtmosphereColor = Color3.fromRGB(160, 164, 150),
-		Tint = Color3.fromRGB(240, 234, 224), Saturation = -0.14, Contrast = 0.16,
+		Clock = 15.2, Brightness = 1.3, Exposure = 0,
+		Ambient = Color3.fromRGB(114, 112, 128), Outdoor = Color3.fromRGB(126, 122, 142), Shift = Color3.fromRGB(255, 238, 216),
+		Fog = Color3.fromRGB(178, 190, 186), Density = 0.15, Haze = 0.7, AtmosphereColor = Color3.fromRGB(190, 204, 200),
+		Tint = Color3.fromRGB(252, 248, 240), Saturation = -0.04, Contrast = 0.09,
 	},
 	night = {
-		Clock = 23.6, Brightness = 0.9, Exposure = 0.02,
-		Ambient = Color3.fromRGB(104, 90, 150), Outdoor = Color3.fromRGB(112, 98, 160), Shift = Color3.fromRGB(170, 165, 240),
-		Fog = Color3.fromRGB(62, 48, 120), Density = 0.26, Haze = 1.2, AtmosphereColor = Color3.fromRGB(86, 66, 160),
-		Tint = Color3.fromRGB(228, 222, 250), Saturation = 0.05, Contrast = 0.1,
+		Clock = 23.6, Brightness = 1, Exposure = 0.05,
+		Ambient = Color3.fromRGB(126, 110, 178), Outdoor = Color3.fromRGB(138, 120, 195), Shift = Color3.fromRGB(176, 170, 250),
+		Fog = Color3.fromRGB(84, 66, 160), Density = 0.2, Haze = 0.95, AtmosphereColor = Color3.fromRGB(100, 80, 195),
+		Tint = Color3.fromRGB(234, 228, 255), Saturation = 0.12, Contrast = 0.06,
 	},
 	-- Blood Moon (BloodMoonService): the purple night turns crimson while the giant is out
 	blood = {

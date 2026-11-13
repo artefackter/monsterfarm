@@ -58,6 +58,48 @@ C.Floating={BuckshotDealer=true}
 for _,row in {{"SirenHead",4},{"BuckshotDealer",5}} do
  local id,tier=table.unpack(row);C.Forms[id]={Passive=id.."_Passive",Aggressive=id.."_Aggressive"};C.Models[id]=id.."_Passive";table.insert(C.Catalog,{Id=id,Tier=tier})
 end
+-- The rotation (owner, 2026-11-13): the Miner wears the Farmer's body, the Knight the Punk's, the King the Assassin's,
+-- each with an outfit on top (ArtKit.Dress): a hard hat and a pickaxe; a helmet, a shield and a sword; a crown and a cape.
+C.Outfits={};C.Base={}
+C.Families={"Deer","Parasite","Stalker","Verity","RingMaw","CaveDweller"}
+for _,family in C.Families do
+ for _,row in {{"Miner","Farmer",2},{"Knight","Punk",4},{"King","Assassin",6}} do
+  local id,from=family..row[1],family..row[2]
+  C.Models[id]=C.Models[from];C.Forms[id]=C.Forms[from];C.FarmForms[id]=C.FarmForms[from];C.Outfits[id]=row[1];C.Base[id]=from
+  table.insert(C.Catalog,{Id=id,Tier=row[3]})
+ end
+end
+function C.Family(id)
+ for _,f in C.Families do if id:sub(1,#f)==f then return f end end
+ return id
+end
+-- The dex reads family by family, rarity by rarity (the specials last).
+do
+ local order,pos={},{};for i,f in C.Families do order[f]=i end;for i,e in C.Catalog do pos[e]=i end
+ table.sort(C.Catalog,function(a,b)
+  local fa,fb=order[C.Family(a.Id)] or 99,order[C.Family(b.Id)] or 99
+  if fa~=fb then return fa<fb end
+  if a.Tier~=b.Tier then return a.Tier<b.Tier end
+  return pos[a]<pos[b]
+ end)
+end
+-- The painted 2D portrait, or nil when the monster shows its 3D model instead: the new rotation has no paintings
+-- yet, and the RingMaw was rebuilt (RingMawModel), so its old paintings no longer match it.
+function C.Icon(id,icons)
+ if C.Outfits[id] or C.Family(id)=="RingMaw" then return nil end
+ return icons["modal_monster_"..id]
+end
+-- Saves from before the rotation keep their monsters but take the new look of their rarity: an Uncommon Farmer
+-- becomes a Miner, an Epic Punk a Knight, a Mythic Assassin a King (and is known in the dex as such).
+local PROMOTE={[2]={"Farmer","Miner"},[4]={"Punk","Knight"},[6]={"Assassin","King"}}
+function C.Promote(z,dex)
+ local row=PROMOTE[z.tier];if not row or type(z.type)~="string" then return end
+ local family=C.Family(z.type)
+ if z.type==family..row[1] and C.Models[family..row[2]] then
+  z.type=family..row[2]
+  if dex then dex[z.type..":"..(z.mutation or "None")]=true end
+ end
+end
 function C.Asset(id,form)
  local pair=C.Forms[id];local state=form=="Aggressive" and "Aggressive" or form=="Passive" and "Passive" or C.FarmForms[id] or "Passive"
  return pair and pair[state] or C.Models[id]

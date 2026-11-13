@@ -43,6 +43,14 @@ return {
     {Name="Scream",Shape="Scream",Range=30,Windup=1.3,Cooldown=7,Radius=30,Damage=1,Fx="Scream"},
     {Name="Stomp",Shape="Target",Range=40,MinRange=8,Windup=.9,Cooldown=3.5,Radius=7.5,Damage=2,Fx="Slam"},
    }},
+  -- The second boss (owner, 2026-11-13): the RingMaw. It pounces across the arena, splits its head open and roars,
+  -- and spits a fan of its seeds.
+  BossRingMaw={Boss=true,Health=400,Speed=12,Scale=1.7,SpeedFactor=.8,RewardMult=12,Model="RingMaw_Boss",Color=Color3.fromHex("C8692A"),
+   Attacks={
+    {Name="Leap",Shape="Dash",Range=44,MinRange=10,Windup=.8,Cooldown=4.5,Radius=7,Speed=70,Distance=46,Damage=2,Fx="Leap"},
+    {Name="Scream",Shape="Scream",Range=26,Windup=1.2,Cooldown=7,Radius=26,Damage=1,Fx="Scream"},
+    {Name="Spit",Shape="Volley",Count=4,Spread=10,Range=36,MinRange=8,Windup=1,Cooldown=5,Radius=5,Damage=1,Fx="Acid"},
+   }},
   BossPatient={Boss=true,Health=450,Speed=11,Scale=1.6,SpeedFactor=.75,RewardMult=12,Model="Parasite_Assassin_Aggressive",Color=Color3.fromHex("9C5A7A"),
    Attacks={
     {Name="Spit",Shape="Volley",Count=3,Spread=9,Range=38,MinRange=6,Windup=1,Cooldown=4.5,Radius=5.5,Damage=1,Fx="Acid"},

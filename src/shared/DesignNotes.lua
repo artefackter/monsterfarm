@@ -186,8 +186,8 @@ return {}
 -- Revision 2026-11-13 (owner's list of 15):
 -- Farm 96x96 (FarmHalf 48, PlotRadius 145); the house moved 6 studs into its corner; the new outer ring holds raised
 -- beds (PlacementConfig.Beds, blocked for placement), pumpkin patches, a scarecrow, a well, a cart, crates, fence
--- lamps, a night mist and fireflies. Moodier look: olive lawn, hazy desaturated day, deep violet night, dark stone
--- island wall (11 courses, 42-stud collider), muted plaza colours, dead trees among the island scatter.
+-- lamps, a night mist and fireflies. Moodier look (toned back the same day: too dark): a softer lawn, a gently
+-- muted day, a violet night; the island wall keeps its lilac blocks, now 11 courses high (42-stud collider), muted plaza colours, dead trees among the island scatter.
 -- FenceService: a two-leaf gate on every farm. Night raiders walk to it and hammer it (FenceConfig.Damage) until it
 -- breaks, then go in; they give up after Patience s. Fence board by the gate: 5 levels (gate HP 150..3500, spikes
 -- from 4). A broken gate mends after Repair s, at dusk/dawn, or by its owner's prompt. Prestige resets the fence.
@@ -199,3 +199,44 @@ return {}
 -- anywhere); the language switch sits by Settings. Merge: an empty cell opens a picker of portrait cards.
 -- Ruins gate: towers 56, bridge 40; RuinsShutter leaves swing shut while the Blood Moon has the road closed.
 -- Boss arenas: while a boss stands, monsters of other locations neither chase into its arena nor cross it.
+-- Later on 2026-11-13: newcomers (IncomeService.IsNewbie: the boost, counted in played time and so kept across
+-- sessions) can't steal graves and can neither shove nor be shoved with a shovel; others see a 🛡 over them. Shoving
+-- a player on the road (Road.Punish) slows the bully's grave lifting (RoadConfig.HitPenalty) and turns nearby monsters
+-- on them (Provoke); a monster hit by a shovel turns on whoever hit it. No bites land on a knocked-down player.
+-- Treadmill numbers pour out faster with its level. Workbench in the farm's front-right corner (its circle opens the
+-- weapon upgrades); the well moved to the back. GraveConfig.MinTier: Marble gives at least a punk, Golden tier 4,
+-- Lunar an assassin. Merging matches kind and stars only (tiers 1/2, 3/4, 5/6 look alike); the result keeps the best
+-- tier. House: warm night-only lamps instead of purple neon; stairs (an invisible ramp under drawn steps) up to every
+-- floor through a railed stairwell; upper walls are solid; only what is above you fades. Hotbar v3: 1 shovel, 2 gun,
+-- 3 trap, gap, 4 graves, 5 monsters; a second press empties your hands; one gun, changed at the shop; only the item in
+-- hand is shown. The left menu buttons stand in one column.
+-- Boss arenas v5 (2026-11-13): each location's boss waits in a round pocket beside the road near its end (left and
+-- right in turn, RoadProgression.PocketAt), through an arched opening in the road wall with its name; the fight starts
+-- when you walk in, and the boss never leaves. Bosses are tougher (RoadConfig.Boss: x2.4 health, x1.5 damage, enrage
+-- below half health). A win opens a portal home in the pocket for everyone who hit it (a carried grave is stored).
+-- The Blood Moon giant has its own walled arena across the island from the road, over a bridge through a second
+-- opening in the island wall (BloodMoonConfig.Arena); it appears there and never leaves it, and only hunts players
+-- inside. The workbench moved inside the gate on the right; menu circles now appear once their farm is handed out.
+-- Same day, later: the Blood Moon arena is an amphitheatre (radius 100, six tiers of stands, pale columns, bone
+-- spikes, no lamps), its bridge a touch above the lawn so the two no longer flicker; a grave carried through a boss
+-- portal comes home one rarity lower (RoadService stow).
+-- Boss pockets are a little bigger (PocketRadius 56) and dressed after their boss (RoadArt THEMES): only the two tall
+-- back tiers remain, in the boss's colours, with its emblem on the columns (antlers, loudspeakers, red crosses, cards,
+-- banners and candles, gears and hazard stripes). The road-side boundary collider is cut into short pieces with a gap
+-- at every pocket: as one 3900-stud part Roblox clipped it to 2048, and it shut the middle pockets.
+-- The rotation up to the King (owner, 2026-11-13). Six rarities, one look each: Farmer (Common), Miner (Uncommon),
+-- Punk (Rare), Knight (Epic), Assassin (Legendary), King (Mythic), for all six families (ZombieConfig.Types). The
+-- Miner, the Knight and the King wear the Farmer's, the Punk's and the Assassin's bodies with an outfit built on top
+-- (ArtKit.Dress: a hard hat with a lamp and a pickaxe; a helmet, a shield and a sword; a crown, a cape and a sceptre),
+-- each piece riding its limb. Old saves are moved over on load (MonsterCollection.Promote): an Uncommon Farmer becomes
+-- a Miner, an Epic Punk a Knight, a Mythic Assassin a King. The dex reads family by family. Monsters without a
+-- painted portrait (the rotation, the RingMaw) show their 3D model everywhere (MonsterCollection.Icon).
+-- Rarer monsters are much bigger: RaritySize 1 / 1.15 / 1.32 / 1.52 / 1.75 / 2.05, times the stars' size.
+-- Farm animations by family (ZombieVisuals STYLE): the deer struts and rears up, the parasite scuttles and shivers,
+-- the stalker creeps hunched and peeks, Verity glitches from spot to spot, the RingMaw skitters and splits its head
+-- open, the cave dweller lumbers and stretches, Siren Head shakes its sirens. The Miner digs, the Knight salutes, the
+-- King waves like a king.
+-- The RingMaw is rebuilt from parts (RingMawModel): a ribbed gourd head that splits into two halves on a hinge at the
+-- back, rings of teeth round a glowing throat, a hunched body on six long spider legs. It is the second boss now
+-- (BossRingMaw: a pounce, a roar with the head split wide, a fan of seeds), in a dark-forest pocket with carved
+-- gourds on the columns; Siren Head is no longer a boss. The merge window keeps its scroll position when it redraws.

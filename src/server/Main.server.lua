@@ -26,7 +26,7 @@ local function dig(p,slot,source,petId)
  local d=D.Profiles[p];if source~="pet" and not require(script.Parent.ActionService).CanAct(p) then return end;if not d or (source~="pet" and not allowed(p)) then return end
  for i,g in ipairs(d.graves) do if g.slot==slot and not g.carriedBy and G.Remaining(d,g)==0 and (source=="pet" and not G.IsHeld(p,slot) or source~="pet" and P.Near(p,P.Position(p,"Graves",slot).Position,SC.DigDistance)) then
  local free=Z.Slot(d,"Crypt");if not free then notice(p,"error");return end
- local z=Z.Roll(GC[g.type].Weights,Day.State(),g.starter,Pets.GetBonuses(p).luckMult);if g.monsterType=="DeerChief" then z.type="DeerChief";z.tier=6 end;z.slot=free;table.remove(d.graves,i);table.insert(d.zombies,z);D.Claims[z.id]=p.UserId;d.zombiedex[z.type..":"..z.mutation]=true;Q.Track(p,"dig",1);if z.tier>=2 then Q.Track(p,"rare",1) end
+ local z=Z.Roll(GC[g.type].Weights,Day.State(),g.starter,Pets.GetBonuses(p).luckMult,GC[g.type].MinTier);if g.monsterType=="DeerChief" then z.type="DeerChief";z.tier=6 end;z.slot=free;table.remove(d.graves,i);table.insert(d.zombies,z);D.Claims[z.id]=p.UserId;d.zombiedex[z.type..":"..z.mutation]=true;Q.Track(p,"dig",1);if z.tier>=2 then Q.Track(p,"rare",1) end
  if d.tutorialStep==0 then d.tutorialStep=1;A.Step(p,1) end
  G.Render(p,d);Z.Render(p,d);if source=="pet" then rem.Notice:FireClient(p,"petDug",{rarity=require(S.Config.ZombieConfig).Tiers[z.tier],type=z.type}) else rem.Notice:FireClient(p,"reveal",z) end
  if z.tier>=3 then rem.Notice:FireAllClients("rare",{name=p.DisplayName,rarity=require(S.Config.ZombieConfig).Tiers[z.tier],type=z.type}) end;push(p);return z end end

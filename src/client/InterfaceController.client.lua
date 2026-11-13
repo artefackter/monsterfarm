@@ -107,7 +107,20 @@ Run.RenderStepped:Connect(function(dt)
  end
  if #parts>0 then workspace:BulkMoveTo(parts,frames,Enum.BulkMoveMode.FireCFrameChanged) end
 end)
-local function track(q) if q:IsA('BasePart') then board(q);zone(q) end end
+-- A farm's circles get their owner only once the farm is handed out, which can be after this script first saw them:
+-- watch the Owner attribute so the circle shows up (or goes) when it changes.
+local watchedOwner={}
+local function track(q)
+ if not q:IsA('BasePart') then return end
+ board(q);zone(q)
+ if q:GetAttribute('MenuZone') and not watchedOwner[q] then
+  watchedOwner[q]=true
+  q:GetAttributeChangedSignal('Owner'):Connect(function()
+   local z=zones[q];if z and q:GetAttribute('Owner')~=p.UserId then z.ring:Destroy();zones[q]=nil end
+   zone(q)
+  end)
+ end
+end
 workspace.DescendantAdded:Connect(function(q) task.defer(track,q) end)
 workspace.DescendantRemoving:Connect(function(q)
  local b=boards[q];if b then b.connection:Disconnect();b.gui:Destroy();boards[q]=nil end
@@ -140,7 +153,7 @@ Run.Heartbeat:Connect(function(dt)
   local h=overheadFor(who);if h then
    local slow=math.max(0,(who:GetAttribute('MutantSlowUntil') or 0)-workspace:GetServerTimeNow());local ko=math.max(0,(who:GetAttribute('KnockedOutUntil') or 0)-workspace:GetServerTimeNow())
    h.gui.Enabled=who~=p or slow>0
-   h.text.Text=(who~=p and (((who:GetAttribute('Prestige') or 0)>0 and ('⭐'..who:GetAttribute('Prestige')..'  ') or '')..t('incomeShort',{n=L.compact(who:GetAttribute('IncomeRate') or 0,L.lang())})..'  ·  '..L.compact(who:GetAttribute('SpeedPoints') or 0,L.lang())..' 👟') or '')..(slow>0 and string.format('\n◷ %.1f',slow) or ko>0 and '  ★' or '')
+   h.text.Text=(who~=p and (((who:GetAttribute('NewbieBoost') or 1)>1 and '🛡 ' or '')..((who:GetAttribute('Prestige') or 0)>0 and ('⭐'..who:GetAttribute('Prestige')..'  ') or '')..t('incomeShort',{n=L.compact(who:GetAttribute('IncomeRate') or 0,L.lang())})..'  ·  '..L.compact(who:GetAttribute('SpeedPoints') or 0,L.lang())..' 👟') or '')..(slow>0 and string.format('\n◷ %.1f',slow) or ko>0 and '  ★' or '')
    h.text.TextColor3=slow>0 and Pal.Red or Pal.Text
   end
  end

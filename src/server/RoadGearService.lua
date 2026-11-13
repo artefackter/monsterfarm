@@ -33,6 +33,8 @@ local function insideHouse(p)
 end
 function Gear.CanHitPlayer(p,other)
  if p==other or insideHouse(p) or insideHouse(other) then return false end
+ -- a newcomer under the boost can neither be shoved nor shove anyone (owner, 2026-11-13)
+ local I=require(script.Parent.IncomeService);if I.IsNewbie(D.Profiles[other]) or I.IsNewbie(D.Profiles[p]) then return false end
  if Road.IsOnRoad(p) and Road.IsOnRoad(other) then return true end
  if not require(script.Parent.DayNightService).State() then return false end
  local r=Raid.Carriers[other] or Raid.Pending[other]
@@ -75,11 +77,13 @@ function Gear.Bat(p)
    elseif entry.mutant then
     -- a monster is knocked out where it stands (only players are sent flying)
     target.attack=nil;target.stunnedUntil=os.clock()+cfg.Knockout;target.model:SetAttribute('StunnedUntil',workspace:GetServerTimeNow()+cfg.Knockout);M.State(target,'Stunned');M.Damage(target,cfg.Damage,p)
+    if target.road then target.provokedBy=p;target.provokedUntil=os.clock()+cfg.Knockout+C.Provoke.Seconds end -- it comes for whoever hit it
    else
     local rr=root(target)
     if rr then
      local direction=rr.Position-r.Position
      local farm=not Road.IsOnRoad(target);if farm then Raid.Return(target) else Road.Drop(target) end
+     if not farm then Road.Punish(p) end -- shoving people on the road: slow lifting, and the monsters turn on you
      Road.CancelPickup(target);target:SetAttribute('RoadPickupInterruptedAt',workspace:GetServerTimeNow());Actions.Knockout(target,cfg.Knockout,direction,cfg.Distance)
     end
    end

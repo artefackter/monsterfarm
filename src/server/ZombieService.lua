@@ -9,9 +9,10 @@ function Z.Find(d,id) for i,z in ipairs(d.zombies) do if z.id==id then return z,
 function Z.Bonus(d) local types={} for key in pairs(d.zombiedex) do types[string.split(key,":")[1]]=true end;local count=0;for _ in pairs(types) do count+=1 end;return 1+count*R.DexBonus end
 function Z.Rate(z) return require(S.MergeRules).Rate(z) end
 function Z.Income(d,ignoreSuppression) local v=0;for _,z in ipairs(d.zombies) do if z.zone=="Field" and not z.carriedBy and not z.pendingTransfer and (ignoreSuppression or not Z.IsIncomeBlocked or not Z.IsIncomeBlocked(d,z)) then v+=Z.Rate(z) end end;return v*Z.Bonus(d)*(1+require(script.Parent.PetService).ForData(d).incomePct)*require(script.Parent.PetService).ForData(d).incomeMult*require(S.PrestigeRules).Mult(d) end
-function Z.Roll(weights,night,starter,luck)
+function Z.Roll(weights,night,starter,luck,minTier)
  luck=luck or 1
  local tier=1;local roll=rng:NextNumber()*100;for i,w in ipairs(weights) do roll-=w;if roll<=0 then tier=i;break end end
+ tier=math.max(tier,minTier or 1) -- the grave's floor (GraveConfig.MinTier)
  local mut="None";if rng:NextNumber()<C.RainbowChance*luck then mut="Rainbow" elseif night and rng:NextNumber()<C.LunarChance*luck then mut="Lunar" elseif rng:NextNumber()<C.GoldenChance*luck then mut="Golden" end
  local types=C.Types[tier];return {id=game.HttpService:GenerateGUID(false),type=starter and "DeerFarmer" or types[rng:NextInteger(1,#types)],tier=starter and 2 or tier,mutation=starter and "None" or mut,zone="Crypt",slot=0}
 end

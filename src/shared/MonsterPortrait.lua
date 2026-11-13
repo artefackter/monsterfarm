@@ -3,9 +3,10 @@ local Icons=require(script.Parent.Icons)
 local Art=require(script.Parent.ArtKit)
 local Merge=require(script.Parent.MergeRules)
 local P={}
+local cache={}
 function P.Create(parent,z,size,pos,options)
  options=options or {};local silhouette=options.silhouette
- local texture=Icons["modal_monster_"..z.type]
+ local texture=require(script.Parent.MonsterCollection).Icon(z.type,Icons)
  if texture and not silhouette and not options.prefer3D then
   local image=Instance.new("ImageLabel");image.Name="MonsterIllustration";image.BackgroundTransparency=1;image.Image=texture;image.ScaleType=Enum.ScaleType.Fit;image.Size=size;image.Position=pos or UDim2.new();image.Parent=parent
   return image
@@ -22,14 +23,23 @@ function P.Create(parent,z,size,pos,options)
 		v.Ambient = Color3.new(0, 0, 0)
 		v.LightColor = Color3.new(0, 0, 0)
 	end
-	local model = Instance.new("Model")
-	model.Name = "Zombie"
-	Art.BuildZombie(model, CFrame.new(), z)
-	local ring = model:FindFirstChild("Ring")
-	if ring then
-		ring:Destroy()
+	-- One built model per look; each portrait is a clone of it (the dex and the merge window re-render often, and
+	-- the rotation's monsters are 3D portraits).
+	local key = table.concat({ tostring(z.type), tostring(z.form), tostring(z.tier), tostring(Merge.Stars(z)) }, "|")
+	local template = cache[key]
+	if not template then
+		template = Instance.new("Model")
+		template.Name = "Zombie"
+		Art.BuildZombie(template, CFrame.new(), z)
+		local ring = template:FindFirstChild("Ring")
+		if ring then
+			ring:Destroy()
+		end
+		template:ScaleTo(Merge.Size(z))
+		cache[key] = template
 	end
-	model:ScaleTo(Merge.Size(z));model.Parent = v
+	local model = template:Clone()
+	model.Parent = v
 	local camera = Instance.new("Camera")
 	camera.FieldOfView = 30
  local bounds,size3=model:GetBoundingBox();local target=bounds.Position;local radius=math.max(size3.X,size3.Y,size3.Z)

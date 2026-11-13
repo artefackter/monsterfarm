@@ -16,11 +16,14 @@ local function notice(p,key,args) RS.Remotes.Notice:FireClient(p,key,args) end
 local function at(s,x,y) return base*CFrame.new(x,y or 0,-s) end
 local function toRoad(pos) local v=base:PointToObjectSpace(pos);return -v.Z,v.X,pos.Y end
 Road.At=function(s,x,y) return at(s,x,y) end;Road.ToRoad=function(pos) return toRoad(pos) end
+-- The road itself, or one of the boss pockets beside it (RoadProgression.PocketAt).
+local function inRuins(s,x,margin) return math.abs(x)<C.Width/2+(margin or 0) or Progression.PocketAt(s,x,margin)~=nil end
+Road.InRuins=inRuins
 function Road.IsOnRoad(p)
  local ch=p.Character;local root=ch and ch:FindFirstChild("HumanoidRootPart");local h=ch and ch:FindFirstChildOfClass("Humanoid")
  if not root or not h or h.Health<=0 or P.InHouse(p) then return false end
  local s,x,y=toRoad(root.Position)
- return s>C.GateLine and s<C.Length and math.abs(x)<C.Width/2-1 and y>=P.PlazaTop-1 and y<P.PlazaTop+10
+ return s>C.GateLine and s<C.Length and inRuins(s,x,-1) and y>=P.PlazaTop-1 and y<P.PlazaTop+10
 end
 function Road.Blocked(p) return require(script.Parent.ActionService).Blocked(p) or os.clock()<(Road.BlockedUntil[p] or 0) end
 function Road.CancelPickup(p) Road.Holds[p]=nil;Raid.Cancel(p);require(script.Parent.ActionService).CancelDig(p) end
@@ -47,30 +50,46 @@ function Road.ArenaOpen(i)
  local cfg=Road.BossCfg[i];return cfg~=nil and cfg.DefeatedAt~=nil and not Road.BossAlive(i)
 end
 function Road.BossLocked(spot) return spot~=nil and not spot.Dropped and spot.Arena~=nil and not Road.ArenaOpen(spot.Arena) end
--- Arena geometry: a circle across the road, centred on the location's Arena mark.
-local function arenaCenter(i,y) return at(Progression.Districts[i].Arena,0,y or 0).Position end
+-- Arena geometry: the round pocket beside the road near the location's end (RoadProgression, since 2026-11-13).
+local function arenaCenter(i,y) local d=Progression.Districts[i];return at(d.PocketS,d.PocketX,y or 0).Position end
 local function arenaDistance(i,pos)
- local s,x=toRoad(pos);local ds=s-Progression.Districts[i].Arena;return math.sqrt(ds*ds+x*x)
+ local d=Progression.Districts[i];local s,x=toRoad(pos);local ds,dx=s-d.PocketS,x-d.PocketX;return math.sqrt(ds*ds+dx*dx)
 end
 local function clampToArena(i,s,x,margin)
- local d=Progression.Districts[i];local ds=s-d.Arena;local r=math.sqrt(ds*ds+x*x);local limit=Progression.ArenaRadius-(margin or 8)
- if r>limit then ds,x=ds*limit/r,x*limit/r end
- return d.Arena+ds,x
+ local d=Progression.Districts[i];local ds,dx=s-d.PocketS,x-d.PocketX;local r=math.sqrt(ds*ds+dx*dx);local limit=Progression.PocketRadius-(margin or 8)
+ if r>limit then ds,dx=ds*limit/r,dx*limit/r end
+ return d.PocketS+ds,d.PocketX+dx
 end
 Road.ArenaDistance=arenaDistance
+-- Shoving another player on the road (RoadGearService, owner 2026-11-13): for a while the bully lifts graves slower
+-- (the client stretches its prompt by the PickupSlowUntil attribute) and nearby monsters turn on them.
+Road.SlowUntil={}
+function Road.HoldFor(p,base) return (base or C.Hold)*(os.clock()<(Road.SlowUntil[p] or 0) and C.HitPenalty.Hold or 1) end
+function Road.Punish(p)
+ Road.SlowUntil[p]=os.clock()+C.HitPenalty.Seconds
+ p:SetAttribute("PickupSlowUntil",workspace:GetServerTimeNow()+C.HitPenalty.Seconds)
+ RS.Remotes.Notice:FireClient(p,"shovePenalty",{n=C.HitPenalty.Seconds})
+ local root=p.Character and p.Character:FindFirstChild("HumanoidRootPart");if not root then return end
+ for _,a in pairs(M.Live) do
+  if a.road and not a.boss and a.model.PrimaryPart and (a.model.PrimaryPart.Position-root.Position).Magnitude<=C.Provoke.Radius then
+   a.provokedBy=p;a.provokedUntil=os.clock()+C.Provoke.Seconds
+  end
+ end
+end
 function Road.BeginPickup(p,spot)
  if Road.BossLocked(spot) then RS.Remotes.Notice:FireClient(p,"roadBossFirst");return false end
  local root=p.Character and p.Character:FindFirstChild("HumanoidRootPart")
  if not require(script.Parent.ActionService).CanAct(p) or not D.Profiles[p] or not root or not spot.Model or (not spot.WorldPosition and not Road.IsOnRoad(p)) or P.InHouse(p) or Road.Blocked(p) or Road.Carriers[p] or Raid.Carriers[p] then return false end
  if (root.Position-Road.SpotPosition(spot,2)).Magnitude>11 then return false end
- Road.Holds[p]={spot=spot,began=os.clock()};require(script.Parent.ActionService).Dig(p,C.Hold);return true
+ local need=Road.HoldFor(p)
+ Road.Holds[p]={spot=spot,began=os.clock(),need=need};require(script.Parent.ActionService).Dig(p,need);return true
 end
 function Road.EndPickup(p,spot)
  local hold=Road.Holds[p];if hold and hold.spot==spot then hold.ended=os.clock() end
 end
 function Road.CompletePickup(p,spot)
  local hold=Road.Holds[p];Road.Holds[p]=nil;require(script.Parent.ActionService).CancelDig(p)
- if not hold or hold.spot~=spot or (hold.ended or os.clock())-hold.began<C.Hold-.15 or (hold.ended and os.clock()-hold.ended>.2) then return false end
+ if not hold or hold.spot~=spot or (hold.ended or os.clock())-hold.began<(hold.need or C.Hold)-.15 or (hold.ended and os.clock()-hold.ended>.2) then return false end
  return Road.Take(p,spot)
 end
 -- The road ---------------------------------------------------------------------------------------------------------------
@@ -99,9 +118,34 @@ local function buildRoad()
    -- A shallow pit catches jumps; no opening to the void under the obstacle.
    floor(C.Gap.From,C.Gap.To,-3)
   else floor(d.From,d.To) end
-  -- Gameplay walls only: RoadArt dresses them as ruined facades.
+  -- Gameplay walls only: RoadArt dresses them as ruined facades. On the boss pocket's side the wall has an opening.
+  local wallColor=Color3.fromHex(type(d.Wall)=='table' and d.Wall[1] or d.Wall)
+  local function wall(name,size,cf) local body=block(name,size,cf,wallColor);body.Parent=model;body.Transparency=1;body.CastShadow=false;return body end
+  local pd=Progression.Districts[i];local gap=Progression.PocketGap/2
   for _,side in {-1,1} do
-   local body=block('RoadWall',Vector3.new(4,44,d.To-d.From+.2),at((d.From+d.To)/2,side*(w/2+2),20),Color3.fromHex(type(d.Wall)=='table' and d.Wall[1] or d.Wall));body.Parent=model;body.Transparency=1;body.CastShadow=false
+   if side==pd.PocketSide then
+    for _,span in {{d.From,pd.PocketS-gap},{pd.PocketS+gap,d.To}} do wall('RoadWall',Vector3.new(4,44,span[2]-span[1]+.2),at((span[1]+span[2])/2,side*(w/2+2),20)) end
+   else wall('RoadWall',Vector3.new(4,44,d.To-d.From+.2),at((d.From+d.To)/2,side*(w/2+2),20)) end
+  end
+  -- The boss pocket (2026-11-13): a short passage through the wall into a round floor ringed by a wall.
+  do
+   local side,ps,px,R,neck=pd.PocketSide,pd.PocketS,pd.PocketX,Progression.PocketRadius,Progression.PocketNeck
+   local floorColor=Color3.fromHex(d.Floor)
+   local inner=w/2-1;local outer=w/2+neck+6 -- the passage overlaps the road floor and the round
+   local passage=block('PocketFloor',Vector3.new(outer-inner,1,gap*2+.2),at(ps,side*(inner+outer)/2,-.5),floorColor);passage.Parent=model
+   local round=block('PocketFloor',Vector3.new(1,(R+4)*2,(R+4)*2),at(ps,px,-.5)*CFrame.Angles(0,0,math.pi/2),floorColor);round.Shape=Enum.PartType.Cylinder;round.Parent=model
+   for _,e in {-1,1} do wall('PocketWall',Vector3.new(outer-inner-2,44,4),at(ps+e*(gap+2),side*(w/2+(neck+6)/2+2),20)) end
+   -- the ring: wall segments all round, except where the passage comes in
+   local segments=40
+   for k=0,segments-1 do
+    local a0,a1=k/segments*math.pi*2,(k+1)/segments*math.pi*2;local am=(a0+a1)/2
+    local ds,dx=math.sin(am)*(R+2),math.cos(am)*(R+2)
+    if not (dx*side<0 and math.abs(ds)<gap+2) then -- the side facing the road, where the passage is
+     local len=2*(R+2)*math.sin((a1-a0)/2)+.6
+     local cf=at(ps+ds,px+dx,20);local look=at(ps+ds+math.cos(am),px+dx-math.sin(am),20)
+     local q=wall('PocketWall',Vector3.new(4,44,len),CFrame.lookAt(cf.Position,look.Position))
+    end
+   end
   end
   task.wait()
  end
@@ -246,7 +290,7 @@ Road.Closed=false
 local closedNotice={}
 local function evacuate(p)
  local root=p.Character and p.Character:FindFirstChild("HumanoidRootPart");if not root then return end
- local s,x,y=toRoad(root.Position);if s<=C.GateLine-1 or math.abs(x)>C.Width/2+6 or y<=C.DropBelow then return end
+ local s,x,y=toRoad(root.Position);if s<=C.GateLine-1 or not inRuins(s,x,6) or y<=C.DropBelow then return end
  local c=Road.Carriers[p]
  if c then
   if c.farm then Raid.Return(p) else
@@ -256,6 +300,60 @@ local function evacuate(p)
  Road.CancelPickup(p)
  p.Character:PivotTo(at(-14,math.clamp(x,-40,40),4)*CFrame.Angles(0,math.pi,0))
  if os.clock()-(closedNotice[p] or -10)>4 then closedNotice[p]=os.clock();notice(p,"roadClosed") end
+end
+-- The way home after a boss win (owner, 2026-11-13): a portal stands in the pocket for a while, for everyone who hit
+-- the boss. A grave carried through it is stored at home just as if it had been walked back through the gate.
+Road.Portals={}
+-- The shortcut has a price (owner, 2026-11-13): a grave carried through the portal comes home one rarity lower
+-- (Lunar becomes Golden ... Stone becomes Wooden; a grave promising a particular monster loses that promise).
+local function stow(p)
+ local c=Road.Carriers[p]
+ if c then
+  if c.farm then Raid.Return(p) else
+   local order=require(S.Config.GraveConfig).Order;local k=table.find(order,c.grave) or 1
+   local kind=order[math.max(1,k-1)];local monster=k>1 and nil or c.monsterType
+   if kind~=c.grave then notice(p,"portalDowngrade",{from=c.grave,to=kind}) end
+   release(p);local item=G.New(kind);item.monsterType=monster;item.fromRoad=true;G.Store(p,item)
+   require(script.Parent.QuestService).Track(p,"road",1);notice(p,"roadStored",{grave=kind})
+  end
+ end
+ Road.CancelPickup(p)
+end
+function Road.ClosePortal(i)
+ local q=Road.Portals[i];Road.Portals[i]=nil
+ if not q then return end
+ q.model:Destroy()
+ for p in pairs(q.allowed) do if p.Parent and p:GetAttribute("PortalBoss")==i then p:SetAttribute("PortalBoss",nil) end end
+end
+function Road.OpenPortal(i,allowed)
+ Road.ClosePortal(i)
+ local d=Progression.Districts[i];local side=d.PocketSide
+ local cf=at(d.PocketS,d.PocketX+side*16,0)*CFrame.Angles(0,side*math.pi/2,0) -- at the back, facing the way in
+ local m=Instance.new("Model");m.Name="HomePortal";m:SetAttribute("Boss",i)
+ local function piece(name,size,at_,color,material,shape)
+  local q=P.Part(m,name,size,cf*at_,color,shape);q.Material=material or Enum.Material.Neon;q.CanCollide,q.CanQuery,q.CanTouch,q.CastShadow=false,false,false,false;return q
+ end
+ local glow=Color3.fromHex("7CFFC4")
+ for k=0,15 do
+  local a=k/16*math.pi*2
+  piece("PortalRing",Vector3.new(.9,2.2,.9),CFrame.new(math.cos(a)*5.2,6+math.sin(a)*5.2,0)*CFrame.Angles(0,0,a),glow)
+ end
+ local disc=piece("PortalCore",Vector3.new(.2,9.6,9.6),CFrame.new(0,6,0)*CFrame.Angles(0,math.pi/2,0),Color3.fromHex("9B6BFF"),Enum.Material.Neon,Enum.PartType.Cylinder);disc.Transparency=.35
+ piece("PortalBase",Vector3.new(8,.6,3),CFrame.new(0,.3,0),Color3.fromHex("3B3150"),Enum.Material.Slate)
+ local light=Instance.new("PointLight");light.Color=glow;light.Range=24;light.Brightness=2;light.Parent=disc
+ local swirl=Instance.new("ParticleEmitter");swirl.Name="Swirl";swirl.Color=ColorSequence.new(glow,Color3.fromHex("C9A6FF"));swirl.LightEmission=1
+ swirl.Size=NumberSequence.new({NumberSequenceKeypoint.new(0,.2),NumberSequenceKeypoint.new(1,0)});swirl.Lifetime=NumberRange.new(.8,1.4);swirl.Rate=30
+ swirl.Speed=NumberRange.new(1,3);swirl.SpreadAngle=Vector2.new(180,180);swirl.Parent=disc
+ local pr=Instance.new("ProximityPrompt");pr.Name="PortalHome";pr.ActionText="portalHome";pr.HoldDuration=.4;pr.MaxActivationDistance=12;pr.RequiresLineOfSight=false
+ pr:SetAttribute("Boss",i);pr.Parent=disc
+ pr.Triggered:Connect(function(p)
+  local q=Road.Portals[i];if not q or q.model~=m or not q.allowed[p] or not Road.IsOnRoad(p) then return end
+  stow(p);P.Home(p);notice(p,"portalUsed")
+ end)
+ m.Parent=world
+ Road.Portals[i]={model=m,allowed=allowed}
+ for p in pairs(allowed) do if p.Parent then p:SetAttribute("PortalBoss",i);notice(p,"portalOpen",{n=C.Boss.PortalSeconds}) end end
+ task.delay(C.Boss.PortalSeconds,function() local q=Road.Portals[i];if q and q.model==m then Road.ClosePortal(i) end end)
 end
 function Road.SetClosed(on)
  if Road.Closed==on then return end
@@ -274,6 +372,8 @@ function Road.SetClosed(on)
  for _,p in ipairs(Players:GetPlayers()) do evacuate(p) end
 end
 function Road.Bite(p,damage)
+ -- nobody is hit while lying knocked down, nor while getting up (owner, 2026-11-13)
+ if workspace:GetServerTimeNow()<(p:GetAttribute("KnockedOutUntil") or 0)+.8 then return end
  require(script.Parent.ActionService).Slow(p)
  local left=(Road.Hearts[p] or C.Hearts)-((damage or 1)*(Road.Night() and C.Night.Damage or 1));Road.Hearts[p]=left;p:SetAttribute("RoadHearts",left)
  if left<=0 then Road.Faint(p) end
@@ -314,6 +414,7 @@ local function spawnAgent(cfg,s,x,biome,variant,kind)
  a.speed=Progression.EnemySpeed(biome,R)*(spec.SpeedFactor or 1);a.damage=C.BiomeDamage[biome]
  local night=Road.Night()
  local hp=math.floor(a.hp*C.BiomeHealth[biome]*(night and C.Night.Health or 1))
+ if cfg.Boss then hp=math.floor(hp*C.Boss.HealthMult);a.damage*=C.Boss.DamageMult end -- tougher bosses (2026-11-13)
  setHealth(a,hp,hp);m:SetAttribute("Biome",biome)
  if night then
   a.night=true;m:SetAttribute("Enraged",true)
@@ -330,28 +431,37 @@ end
 -- While a boss stands, its arena is its own fight (owner, 2026-11-13: "during a boss fight the next location's monsters
 -- must not barge in"): a monster of another location neither chases a runner into it nor crosses it; it waits on its
 -- own side. The boss's own location (and what the boss summons) may still go in.
-local function foreignArena(a,s)
+local function foreignArena(a,s,x)
  if a.boss or (a.cfg and a.cfg.Minion) then return nil end
- local i=Progression.ArenaAt(s,6)
+ local i=Progression.PocketAt(s,x,6)
  if i and i~=a.biome and Road.BossAlive(i) then return i end
  return nil
 end
-local function keepOut(a,s)
- local i=foreignArena(a,s);if not i then return s end
- local d=Progression.Districts[i]
- return (a.biome or 1)>i and math.max(s,d.ArenaTo+10) or math.min(s,d.ArenaFrom-10)
+-- a goal inside a foreign arena is moved back out onto the road
+local function keepOut(a,s,x)
+ if not foreignArena(a,s,x) then return s,x end
+ return s,math.clamp(x,-C.Width/2+8,C.Width/2-8)
 end
 -- Whom to chase: the nearest runner in reach (carriers first). A boss only looks around its own arena.
 local function pickTarget(a,runners,root)
  local best,bestDist
+ -- provoked: it goes for whoever shoved a player or hit it with a shovel (Road.Punish, RoadGearService), if near
+ if a.provokedBy and os.clock()<(a.provokedUntil or 0) and not a.boss then
+  for _,r in ipairs(runners) do
+   if r.p==a.provokedBy and not foreignArena(a,toRoad(r.pos)) then
+    local dist=(flat(r.pos,root.Y)-root).Magnitude
+    if dist<=C.AggroCarrier*1.5 then return r,dist end
+   end
+  end
+ end
  for _,r in ipairs(runners) do
   local dist=(flat(r.pos,root.Y)-root).Magnitude;local ok
-  if not a.boss and foreignArena(a,(toRoad(r.pos))) then continue end
+  if not a.boss and foreignArena(a,toRoad(r.pos)) then continue end
   -- In a bush you are out of sight, but only for monsters that have not noticed you yet: one already chasing you
   -- keeps after you into the bush (owner, 2026-11-12). It lets go only when you get out of its reach.
   if r.hidden and a.noticeTarget~=r.p then ok=false
   elseif r.hidden and a.boss then ok=false
-  elseif a.boss then ok=arenaDistance(a.arena,r.pos)<=Progression.ArenaRadius+30
+  elseif a.boss then ok=arenaDistance(a.arena,r.pos)<=Progression.PocketRadius+4 -- the fight starts when you walk in
   else ok=dist<=(r.carrying and C.AggroCarrier or C.Aggro) end
   if ok and (not bestDist or dist<bestDist or (r.carrying and not best.carrying)) then best,bestDist=r,dist end
  end
@@ -372,7 +482,11 @@ local function chooseAttack(a,spec,best,bestDist,now,root)
  end
  return nil
 end
-local function onRoad(s,x) return math.clamp(s,14,C.Length-4),math.clamp(x,-C.Width/2+5,C.Width/2-5) end
+-- Keeps a goal on the floor: on the road, or inside a boss pocket if it is in one.
+local function onRoad(s,x)
+ if Progression.PocketAt(s,x) then return s,x end
+ return math.clamp(s,14,C.Length-4),math.clamp(x,-C.Width/2+5,C.Width/2-5)
+end
 -- How far inside the arena's edge a boss's centre must stay: big bosses keep their bulk off the walls.
 local function leash(a) return math.max(C.Boss.Leash+2,(a.model:GetAttribute("NavigationRadius") or 2)*a.model:GetScale()+3) end
 local function startAttack(a,atk,best,root,now)
@@ -388,7 +502,7 @@ local function startAttack(a,atk,best,root,now)
   local dir=target-root;dir=dir.Magnitude>.1 and dir.Unit or a.model.PrimaryPart.CFrame.LookVector
   local s,x=toRoad(root+dir*atk.Distance)
   if a.boss then s,x=clampToArena(a.arena,s,x,leash(a)) end
-  if not a.boss then s=keepOut(a,s) end
+  if not a.boss then s,x=keepOut(a,s,x) end
   s,x=onRoad(s,x);attack.goal=flat(at(s,x,0).Position,root.Y);attack.pos=attack.goal
  else attack.pos=root end -- Self, Scream, Summon
  a.attack=attack;M.State(a,"Windup",now)
@@ -402,7 +516,7 @@ local function startAttack(a,atk,best,root,now)
  if a.boss then M.FX("BossCue",a.id,root,0,atk.Shape) end
 end
 local function finishAttack(a,atk,now)
- a.attack=nil;local rate=Road.Night() and C.Night.AttackRate or 1
+ a.attack=nil;local rate=(Road.Night() and C.Night.AttackRate or 1)*(a.enraged and C.Boss.Enrage.Rate or 1)
  a.cooldowns[atk.Name]=now+atk.Cooldown/rate
  a.nextSpecial=now+(a.boss and 1.2 or atk.Cooldown)/rate
  M.State(a,"Recovering",now)
@@ -453,6 +567,14 @@ local function tickAgent(a,cfg,dt,now,runners)
  if now<(a.stunnedUntil or 0) then return end -- the shovel's knockout (bosses are immune: RoadGearService)
  if a.state=="Spawning" then if now-a.since>=MC.SpawnSeconds then M.State(a,"Running",now) end;return end
  local root=a.model.PrimaryPart.Position
+ -- Enrage (2026-11-13): below half its health a boss turns red, roars, moves faster and attacks more often.
+ if a.boss and not a.enraged and a.hp<=(a.maxHp or a.hp)*C.Boss.Enrage.At then
+  a.enraged=true;a.speed*=C.Boss.Enrage.Speed;a.model:SetAttribute("BossEnraged",true)
+  local glow=Instance.new("Highlight");glow.Name="BossRage";glow.FillColor=Color3.fromRGB(255,40,60);glow.FillTransparency=.75
+  glow.OutlineColor=Color3.fromRGB(255,60,90);glow.OutlineTransparency=0;glow.DepthMode=Enum.HighlightDepthMode.Occluded;glow.Parent=a.model
+  M.FX("Scream",a.id,root,18)
+  for _,r in ipairs(runners) do if arenaDistance(a.arena,r.pos)<=Progression.PocketRadius+6 then notice(r.p,"bossEnraged",{boss=bossName(a.cfg)}) end end
+ end
  local best,bestDist=pickTarget(a,runners,root)
  if best and a.noticeTarget~=best.p then a.noticeTarget=best.p;a.model:SetAttribute('NoticedAt',workspace:GetServerTimeNow()) elseif not best then a.noticeTarget=nil end
  if a.boss then
@@ -475,7 +597,7 @@ local function tickAgent(a,cfg,dt,now,runners)
  local s,x
  if best then s,x=toRoad(best.pos) else s,x=cfg.S,cfg.X end
  if a.boss then s,x=clampToArena(a.arena,s,x,leash(a)) end
- if not a.boss then s=keepOut(a,s) end
+ if not a.boss then s,x=keepOut(a,s,x) end
  s,x=onRoad(s,x)
  local goal=at(s,x,MC.RootHeight).Position
  if not best and (flat(goal,root.Y)-root).Magnitude<2 then
@@ -490,7 +612,7 @@ local inArena={}
 local function announceArenas(runners)
  local seen={}
  for _,r in ipairs(runners) do
-  local i=Progression.ArenaAt((toRoad(r.pos)),4);seen[r.p]=true
+  local s,x=toRoad(r.pos);local i=Progression.PocketAt(s,x,2);seen[r.p]=true
   if i~=inArena[r.p] then
    inArena[r.p]=i
    if i and Road.BossAlive(i) then notice(r.p,"bossArena",{boss=bossName(Road.BossCfg[i])}) end
@@ -571,8 +693,8 @@ function Road.Tick()
    if h.Health<=0 then p:SetAttribute("Training",false);if Road.Carriers[p] then Road.Drop(p,true);notice(p,"roadDropped") end
    else
     local s,x,y=toRoad(root.Position)
-    if Road.Closed and s>C.GateLine-1 and s<C.Length+6 and math.abs(x)<C.Width/2+6 and y>C.DropBelow then evacuate(p);s,x,y=toRoad(root.Position) end
-    local over=s>0 and s<C.Length+6 and math.abs(x)<C.Width/2+6
+    if Road.Closed and s>C.GateLine-1 and s<C.Length+6 and inRuins(s,x,6) and y>C.DropBelow then evacuate(p);s,x,y=toRoad(root.Position) end
+    local over=s>0 and s<C.Length+6 and inRuins(s,x,6)
     local on=over and y>C.DropBelow
     if over and y<=C.DropBelow and y>C.DropBelow-60 then Road.Faint(p,"roadFell");on=false end
     if p:GetAttribute("OnRoad")~=on then
@@ -607,6 +729,7 @@ function Road.Tick()
  tickImps(dt,now,runners)
 end
 function Road.Forget(p)
+ Road.SlowUntil[p]=nil
  Road.Drop(p);release(p);Road.Hearts[p]=nil;Road.Holds[p]=nil;Road.BlockedUntil[p]=nil;Road.RevealedUntil[p]=nil
 end
 function Road.Init()
@@ -623,6 +746,8 @@ function Road.Init()
   RS.Remotes.Notice:FireAllClients("bossDefeated",{boss=bossName(cfg),name=killer.DisplayName})
   local loot=C.Boss.Graves[i]
   if loot and rng:NextNumber()<loot.Chance and Road.SpawnBossGrave(pos,i) then notice(killer,loot.MonsterType=="DeerChief" and "chiefGraveDropped" or "bossGraveDropped") end
+  local allowed={};for p in pairs(a.damagers or {}) do allowed[p]=true end;if killer then allowed[killer]=true end
+  Road.OpenPortal(i,allowed) -- the way home for the winners
  end
  for i,q in ipairs(C.Spots) do Road.Spots[i]={S=q.S,X=q.X,Pool=q.Pool,Arena=q.Arena} end
  task.spawn(function()

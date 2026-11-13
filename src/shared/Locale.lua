@@ -472,6 +472,18 @@ L.Rows.offlineHeap={"While you were away, your farm earned ${n}. Collect it from
 -- Location bosses and their amphitheatres (2026-11-12)
 L.Rows.bossHorned={"Horned Alpha","Рогатый вожак"}
 L.Rows.bossSiren={"Siren Head","Сиреноголовый"}
+-- The rotation (owner, 2026-11-13): Miner (Uncommon), Knight (Epic), King (Mythic) for every family.
+for family,names in {Deer={"Deer","Олень",true},Parasite={"Parasite","Паразит",true},Stalker={"Stalker","Сталкер",true},Verity={"Verity","Верити",true},RingMaw={"RingMaw","Кольцевик",false},CaveDweller={"CaveDweller","Пещерник",false}} do
+ local en,ru,hyphen=names[1],names[2],names[3]
+ for _,look in {{"Miner","шахтёр","Шахтёр"},{"Knight","рыцарь","Рыцарь"},{"King","король","Король"}} do
+  if hyphen then
+   L.Rows[family..look[1]]={look[1].." "..en,ru.."-"..look[2]}
+  else
+   L.Rows[family..look[1]]={en.." "..look[1],ru.." "..look[3]}
+  end
+ end
+end
+L.Rows.bossRingMaw={"RingMaw","Кольцевик"}
 L.Rows.bossPatient={"Patient Zero","Нулевой пациент"}
 L.Rows.bossDealer={"The Dealer","Дилер"}
 L.Rows.bossPriest={"High Priest","Верховный жрец"}
@@ -506,9 +518,9 @@ L.Rows.boardPetGain={"Pet slots: {a} → {b}","Слоты питомцев: {a} 
 L.Rows.boardPetMax={"Pet slots: {a}","Слоты питомцев: {a}"}
 L.Rows.placeFieldFull={"The farm is full: upgrade the house to place more monsters.","Ферма заполнена: улучши дом, чтобы ставить больше монстров."}
 -- Blood Moon and prestige (2026-11-12)
-L.Rows.bloodMoonRise={"🩸 BLOOD MOON! {boss} broke out of the ruins: kill it before it gets away! The road is shut; on the farms it can't touch you.","🩸 КРОВАВАЯ ЛУНА! {boss} вырвался из заброшек: убейте его, пока он не ушёл! Дорога закрыта, на фермах он тебя не тронет."}
+L.Rows.bloodMoonRise={"🩸 BLOOD MOON! {boss} waits in the Blood Moon arena across the island from the ruins road: go and kill it before it gets away! The road is shut.","🩸 КРОВАВАЯ ЛУНА! {boss} ждёт на арене Кровавой луны — напротив дороги в заброшки, за стеной острова. Убей его, пока он не ушёл! Дорога в заброшки закрыта."}
 L.Rows.bloodMoonWin={"{boss} is down! Final blow: {name}. Graves are falling from the sky!","{boss} повержен! Последний удар: {name}. С неба падают могилы!"}
-L.Rows.bloodMoonLost={"{boss} went back into the ruins. The road is open again.","{boss} ушёл в заброшки. Дорога снова открыта."}
+L.Rows.bloodMoonLost={"{boss} sank away. The road is open again.","{boss} ушёл. Дорога снова открыта."}
 L.Rows.bloodMoonGrave={"Blood Moon grave: {grave}!","Могила Кровавой луны: {grave}!"}
 L.Rows.bloodMoonEnough={"You already took {n} Blood Moon graves: leave some for the others!","Ты уже забрал {n} могилы Кровавой луны: оставь другим!"}
 L.Rows.bloodMoonBar={"BLOOD MOON","КРОВАВАЯ ЛУНА"}
@@ -556,4 +568,14 @@ L.Rows.upStuds={"{n} studs","{n} ст."}
 L.Rows.cryptNothing={"No monsters waiting in the crypt.","В склепе нет свободных монстров."}
 L.Rows.takeOnFarm={"Take monsters out on your own farm.","Взять монстра можно только на своей ферме."}
 L.Rows.mergeChoose={"Choose a monster","Выбери монстра"}
+L.Rows.stealNewbie={"Newcomers can't steal graves while their boost lasts.","Пока действует буст новичка, красть могилы нельзя."}
+L.Rows.shovePenalty={"You shoved a player: for {n} s graves lift slower, and the monsters come for you!","Ты толкнул игрока: {n} с могилы поднимаются дольше, а монстры идут за тобой!"}
+L.Rows.workbench={"WORKBENCH","ВЕРСТАК"}
+L.Rows.portalHome={"Home","Домой"}
+L.Rows.portalOpen={"You beat the boss! A portal home stands in the arena for {n} s (a grave carried through it loses 1 rarity).","Босс повержен! Портал домой открыт в арене на {n} с (могила, пронесённая через него, теряет 1 редкость)."}
+L.Rows.portalUsed={"Home through the portal!","Ты дома — через портал!"}
+L.Rows.bossEnraged={"{boss} is enraged: faster and angrier!","{boss} в ярости: быстрее и злее!"}
+L.Rows.bloodArenaSign={"BLOOD MOON ARENA","АРЕНА КРОВАВОЙ ЛУНЫ"}
+L.Rows.portalDowngrade={"Through the portal your {from} grave became {to}.","Через портал могила «{from}» стала «{to}»."}
+L.Rows.portalPenalty={"A carried grave loses 1 rarity","Несомая могила потеряет 1 редкость"}
 return L
