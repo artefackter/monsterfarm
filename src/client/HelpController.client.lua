@@ -86,6 +86,32 @@ dig:GetAttributeChangedSignal("OtherModalOpen"):Connect(function()
 end)
 dig:GetAttributeChangedSignal("ModalOpen"):Connect(tryPending)
 p:GetAttributeChangedSignal("Language"):Connect(function() view:Refresh() end)
+-- The grave-heist tutorial (owner, 2026-11-14): walking into a sleeping boss's arena (the server's "bossAsleep"
+-- notice) opens the same window with the boss's three choices, until "Don't show again" is ticked.
+do
+ local heistPreference=p:GetAttribute("ShowHeistInfo")~=false;local heistRevision=0
+ local heist
+ local function hideHeist() heist:SetVisible(false);playerGui:SetAttribute("HeistHelpOpen",false);gui.DisplayOrder=15 end
+ heist=require(S:WaitForChild("NightInfoView")).Create(gui,{
+  close=hideHeist,
+  preference=function(dontShow)
+   heistPreference=not dontShow;heistRevision+=1;local revision=heistRevision
+   task.delay(.25,function() if revision==heistRevision then rem.InterfaceAction:FireServer("setting","ShowHeistInfo",heistPreference) end end)
+  end,
+ },{name="HeistInfoModal",title="heistTitle",noTimer=true,specs={
+  {image="heist_sleep",fallback="moon",title="heistSleepTitle",body="heistSleepBody"},
+  {image="heist_run",fallback="crypt",title="heistRunTitle",body="heistRunBody"},
+  {image="heist_fight",fallback="pistol",title="heistFightTitle",body="heistFightBody"},
+ }})
+ rem:WaitForChild("Notice").OnClientEvent:Connect(function(key,args)
+  if key~="bossAsleep" or not heistPreference or heist.Root.Visible or view.Root.Visible then return end
+  if dig:GetAttribute("OtherModalOpen")==true or dig:GetAttribute("ModalOpen")==true then return end
+  heist:SetSubtitle(type(args)=="table" and type(args.boss)=="string" and "heistArena" or nil,{boss=type(args)=="table" and args.boss or nil})
+  heist:SetDontShow(false);gui.DisplayOrder=35;heist:SetVisible(true);playerGui:SetAttribute("HeistHelpOpen",true)
+ end)
+ p:GetAttributeChangedSignal("ShowHeistInfo"):Connect(function() heistPreference=p:GetAttribute("ShowHeistInfo")~=false;heist:SetDontShow(not heistPreference) end)
+ p:GetAttributeChangedSignal("Language"):Connect(function() heist:Refresh() end)
+end
 -- Manual access remains available even after automatic reminders were disabled.
 local ask=Instance.new("TextButton");ask.Name="NightHelp";ask.BackgroundTransparency=1;ask.Size=UDim2.fromScale(1,1);ask.Text="";ask.ZIndex=5;ask.Parent=clock
 local badge=Instance.new("TextLabel");badge.Name="Hint";badge.Size=UDim2.fromOffset(24,24);badge.Position=UDim2.fromOffset(44,-4);badge.BackgroundColor3=Color3.fromRGB(255,196,64);badge.Text="?";badge.Font=Enum.Font.GothamBlack;badge.TextSize=18;badge.TextColor3=INK;badge.ZIndex=6;badge.AutoLocalize=false;badge.Parent=clock;round(badge,12)

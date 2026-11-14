@@ -75,7 +75,7 @@ for i,d in Progression.Districts do
   table.insert(config.Spots,{S=d.PocketS+math.sin(t)*hoard.Radius,X=d.PocketX+math.cos(t)*hoard.Radius,Pool=arenaPools[i],Guard=i,Respawn=hoard.Respawn})
  end
  local main=config.Boss.Main[i]
- table.insert(config.Spots,{S=d.PocketS,X=d.PocketX+d.PocketSide*hoard.MainBehind,Pool={[main.Kind]=100},Arena=i,Main=true,Chief=main.Chief})
+ table.insert(config.Spots,{S=d.PocketS+d.DirS*hoard.MainBehind,X=d.PocketX+d.DirX*hoard.MainBehind,Pool={[main.Kind]=100},Arena=i,Main=true,Chief=main.Chief})
  local enemies=MonsterRules.Count(length)
  for n=1,enemies do
   table.insert(config.Imps,{S=from+length*(n-.3)/(enemies+.5),X=n%2==0 and 24 or -24,Kind="Imp",Speed=14,Biome=i,RandomVariant=true,MinS=from+12,MaxS=to-4})

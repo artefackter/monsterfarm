@@ -752,7 +752,7 @@ local function renderInventory()
 	end
 end
 local function renderSettings()
- for _,key in {'AutoFire','GuideArrows','ShiftSlow','CameraShake','ShowNightInfo'} do
+ for _,key in {'AutoFire','GuideArrows','ShiftSlow','CameraShake','ShowNightInfo','ShowHeistInfo'} do
  local value=p:GetAttribute(key)~=false
  button(row(58),t(key)..(value and ' ✓' or ' —'),function() rem.InterfaceAction:FireServer('setting',key,not value) end,UDim2.new(1,-12,1,-12),UDim2.fromOffset(6,6),value and Pal.Mint or Pal.Common)
  end
@@ -1761,7 +1761,7 @@ rem.Notice.OnClientEvent:Connect(function(key, args)
 		if key == "starRare" then args.type=t(args.type) end
 		if key == "roadRare" or key == "roadDelivered" or key == "roadStored" or key == "bloodMoonGrave" then args.grave=t("grave_"..args.grave) end
 		if key == "portalDowngrade" then args.from=t("grave_"..tostring(args.from));args.to=t("grave_"..tostring(args.to)) end
-		if (key == "bossArena" or key == "bossEnraged" or key == "bossDefeated" or key == "bloodMoonRise" or key == "bloodMoonWin" or key == "bloodMoonLost") and args.boss then args.boss=t(args.boss) end
+		if type(args) == "table" and type(args.boss) == "string" then args.boss=t(args.boss) end -- every boss notice (sleeping-boss ones too)
 		if key == "petDug" then args.rarity=t(args.rarity);args.type=t(args.type) elseif key=="petRare" then args.rarity=t(args.rarity);args.species=t(args.species) elseif key == "rare" then
 			args.rarity = t(args.rarity)
 			args.type = t(args.type)

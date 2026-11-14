@@ -211,7 +211,7 @@ local function buildBoundary(w)
   local Pr = require(S.Config.RoadProgression)
   local cuts = {}
   for _, d in Pr.Districts do
-   if d.PocketSide == side then table.insert(cuts, { d.PocketS - Pr.PocketGap / 2, d.PocketS + Pr.PocketGap / 2 }) end
+   if d.PocketSide == side then table.insert(cuts, { d.DoorS - Pr.DoorWidth / 2, d.DoorS + Pr.DoorWidth / 2 }) end
   end
   table.sort(cuts, function(a, b) return a[1] < b[1] end)
   local s0 = 0

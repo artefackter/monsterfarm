@@ -611,4 +611,14 @@ L.Rows.bossMainGrave={"BOSS'S MAIN GRAVE","ГЛАВНАЯ МОГИЛА БОСС�
 L.Rows.bossChaseBar={"CHASE!","ПОГОНЯ!"}
 L.Rows.autoFireOn={"AUTO","АВТО"}
 L.Rows.autoFireOff={"MANUAL","РУЧН."}
+-- The grave-heist tutorial, shown on walking into a sleeping boss's arena (2026-11-14)
+L.Rows.heistTitle={"Steal the graves","Похищай могилы"}
+L.Rows.heistSleepTitle={"The boss sleeps","Босс спит"}
+L.Rows.heistSleepBody={"The boss is fast asleep.","Босс крепко спит."}
+L.Rows.heistRunTitle={"Grab and run!","Хватай и беги!"}
+L.Rows.heistRunBody={"Steal a grave and get away from it.","Своруй могилу и убеги от него."}
+L.Rows.heistFightTitle={"Be the boss!","Стань боссом!"}
+L.Rows.heistFightBody={"Or show it who the real boss is: start a fight.","Либо покажи ему, кто здесь настоящий босс, начав драку."}
+L.Rows.heistArena={"Arena: {boss}","Арена: {boss}"}
+L.Rows.ShowHeistInfo={"Show the boss arena tip","Показывать подсказку у арены босса"}
 return L

@@ -117,10 +117,27 @@ function A.Build(world, at, C, districts, P)
 		disc("ArenaLine", R * 0.58, 0.06, dark)
 		local sandInner = disc("ArenaSandInner", R * 0.58 - 0.9, 0.07, sand, Enum.Material.Sand)
 		Art.Spawn("MR_ArenaSeal", model, at(c, px, 0.06), { scale = Vector3.new(3.2, 0.4, 3.2) })
-		-- the passage floor from the road into the round
-		piece("PocketPath", Vector3.new(Progression.PocketNeck + 10, 0.06, gap * 2 - 2), at(c, side * (half + Progression.PocketNeck / 2 + 3), 0.05), sand, Enum.Material.Sand)
-		local function facesRoad(ds, dx, margin)
-			return dx * side < 0 and math.abs(ds) < gap + (margin or 4)
+		-- the slanted corridor's floor from the road into the round (RoadProgression.DoorPoint)
+		do
+			local s0, x0 = Progression.DoorPoint(d.Index, -2, 0)
+			local s1, x1 = Progression.DoorPoint(d.Index, Progression.PocketNeck + 6, 0)
+			local p0, p1 = at(s0, x0, 0.05).Position, at(s1, x1, 0.05).Position
+			piece("PocketPath", Vector3.new(gap * 2 - 2, 0.06, (p1 - p0).Magnitude), CFrame.lookAt((p0 + p1) / 2, p1), sand, Enum.Material.Sand)
+			-- low stone walls along both sides, from the road wall to the round (the colliders are RoadService's)
+			local c0, n0 = pd.DirS, math.abs(pd.DirX)
+			for _, e in { -1, 1 } do
+				local across = e * (gap + 2)
+				local a0 = (2 - across * c0) / n0
+				local sa0, xa0 = Progression.DoorPoint(d.Index, a0, across)
+				local sa1, xa1 = Progression.DoorPoint(d.Index, Progression.PocketNeck + 3, across)
+				local q0, q1 = at(sa0, xa0, 5).Position, at(sa1, xa1, 5).Position
+				local frame = CFrame.lookAt((q0 + q1) / 2, q1)
+				piece("CorridorWall", Vector3.new(4, 10, (q1 - q0).Magnitude), frame, stone:Lerp(dark, 0.2))
+				piece("CorridorCap", Vector3.new(4.6, 0.8, (q1 - q0).Magnitude + 0.4), frame * CFrame.new(0, 5.4, 0), hex(d.Cap))
+			end
+		end
+		local function facesRoad(ds, dx, margin) -- towards the corridor
+			return Progression.FacesDoor(d.Index, ds, dx, margin or 4)
 		end
 		-- Each boss's own look (owner, 2026-11-13: "style the amphitheatres after the boss; drop steps 1-3, keep 4 and 5"):
 		-- only the two tall back tiers stand round the floor now, in the boss's colours, with its emblem on the columns.
@@ -248,18 +265,19 @@ function A.Build(world, at, C, districts, P)
 		end
 		-- The arch over the opening in the road wall, with the boss's name facing the road
 		local ax = side * (half + 2)
+		local door, dw = pd.DoorS, Progression.DoorWidth / 2 -- the opening sits where the slanted corridor meets the wall
 		for _, e in { -1, 1 } do
-			piece("ArchPillar", Vector3.new(6, 26, 6), at(c + e * (gap + 3), ax, 13), stone:Lerp(dark, 0.15))
-			piece("ArchPillarCap", Vector3.new(7.4, 1.4, 7.4), at(c + e * (gap + 3), ax, 26.7), hex(d.Cap))
-			local torch = piece("ArchTorch", Vector3.new(1.6, 1.6, 1.6), at(c + e * (gap + 3), ax - side * 3.4, 15), hex("FF8A3D"), Enum.Material.Neon, Enum.PartType.Ball)
+			piece("ArchPillar", Vector3.new(6, 26, 6), at(door + e * (dw + 3), ax, 13), stone:Lerp(dark, 0.15))
+			piece("ArchPillarCap", Vector3.new(7.4, 1.4, 7.4), at(door + e * (dw + 3), ax, 26.7), hex(d.Cap))
+			local torch = piece("ArchTorch", Vector3.new(1.6, 1.6, 1.6), at(door + e * (dw + 3), ax - side * 3.4, 15), hex("FF8A3D"), Enum.Material.Neon, Enum.PartType.Ball)
 			local light = Instance.new("PointLight")
 			light.Color, light.Range, light.Brightness, light.Shadows = hex("FFA34D"), 22, 1, false
 			light.Parent = torch
 		end
-		piece("ArchBeam", Vector3.new(6, 5, gap * 2 + 12), at(c, ax, 23.5), stone:Lerp(dark, 0.3))
-		piece("ArchCoping", Vector3.new(7, 1, gap * 2 + 13), at(c, ax, 26.5), hex(d.Cap))
+		piece("ArchBeam", Vector3.new(6, 5, dw * 2 + 12), at(door, ax, 23.5), stone:Lerp(dark, 0.3))
+		piece("ArchCoping", Vector3.new(7, 1, dw * 2 + 13), at(door, ax, 26.5), hex(d.Cap))
 		local boss = require(S.RoadMonsterRules).Bosses[d.Index]
-		local label = P.SignText(model, at(c, ax - side * 3.05, 23.5) * CFrame.Angles(0, side * math.pi / 2, 0), Vector3.new(gap * 2 + 8, 4, 0.1), boss and boss.Name or "Chief", hex("FFE7A3"))
+		local label = P.SignText(model, at(door, ax - side * 3.05, 23.5) * CFrame.Angles(0, side * math.pi / 2, 0), Vector3.new(dw * 2 + 8, 4, 0.1), boss and boss.Name or "Chief", hex("FFE7A3"))
 		label.Parent.PixelsPerStud = 18
 		local stroke = Instance.new("UIStroke")
 		stroke.Color, stroke.Thickness = hex("2A1240"), 3
@@ -273,7 +291,7 @@ function A.Build(world, at, C, districts, P)
 		folder.Parent = root
 		local length = d.To - d.From
 		local pd = Progression.Districts[i]
-		skipS, skipSide, skipGap = pd.PocketS, pd.PocketSide, Progression.PocketGap / 2 + 1
+		skipS, skipSide, skipGap = pd.DoorS, pd.PocketSide, Progression.DoorWidth / 2 + 1
 		local function put(asset, s, x, scale, yaw, y)
 			if skipped(s, x) then
 				return {}

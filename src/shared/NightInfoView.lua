@@ -22,10 +22,12 @@ local function rect(o,x,y,w,h) o.Position=UDim2.fromOffset(x,y);o.Size=UDim2.fro
 local function art(parent,name,key,z)
  local o=Instance.new("ImageLabel");o.Name=name;o.BackgroundTransparency=1;o.Image=Icons[key] or "";o.ZIndex=z or 2;o.Parent=parent;return o
 end
-function V.Create(parent,callbacks)
- callbacks=callbacks or {}
+-- opts (2026-11-14, the grave-heist tutorial reuses this window): specs (three cards), title (a Locale key),
+-- noTimer, name.
+function V.Create(parent,callbacks,opts)
+ callbacks=callbacks or {};opts=opts or {}
  local view={night=false,left=0,dontShow=false,locale=nil}
- local root=frame(parent,"NightInfoModal",Color3.new(0,0,0),1);root.Size=UDim2.fromScale(1,1);root.BackgroundTransparency=1;root.Visible=false
+ local root=frame(parent,opts.name or "NightInfoModal",Color3.new(0,0,0),1);root.Size=UDim2.fromScale(1,1);root.BackgroundTransparency=1;root.Visible=false
  local shade=Instance.new("TextButton");shade.Name="Shade";shade.Size=UDim2.fromScale(1,1);shade.BackgroundColor3=Color3.fromRGB(12,6,25);shade.BackgroundTransparency=.32;shade.BorderSizePixel=0;shade.Text="";shade.AutoButtonColor=false;shade.Active=true;shade.Modal=true;shade.ZIndex=1;shade.Parent=root
  local board=frame(root,"NightCard",C.Cream,2);board.BackgroundTransparency=1;board.Active=true;board.AnchorPoint=Vector2.new(.5,.5);board.Position=UDim2.fromScale(.5,.5)
  local scale=Instance.new("UIScale");scale.Parent=board
@@ -40,7 +42,7 @@ function V.Create(parent,callbacks)
   local line=frame(close,"Cross",C.Cream,7);line.AnchorPoint=Vector2.new(.5,.5);line.Position=UDim2.fromScale(.5,.5);line.Size=UDim2.fromScale(.63,.14);line.Rotation=angle;corner(line,5)
  end
  local cards={}
- for i,spec in SPECS do
+ for i,spec in opts.specs or SPECS do
   local tile=frame(board,"Card_"..i,C.Cream,4);corner(tile,15);stroke(tile,C.Gold,3)
   local picture=art(tile,"Illustration",spec.image,5);picture.BackgroundColor3=C.Purple;picture.BackgroundTransparency=0;picture.ScaleType=Enum.ScaleType.Crop;corner(picture,12)
   local backup=art(picture,"FallbackIcon",spec.fallback,6);backup.AnchorPoint=Vector2.new(.5,.5);backup.Position=UDim2.fromScale(.5,.5);backup.Size=UDim2.fromScale(.55,.65);backup.ScaleType=Enum.ScaleType.Fit;backup.Visible=picture.Image==""
@@ -67,12 +69,17 @@ function V.Create(parent,callbacks)
  function view:SetDontShow(value) self.dontShow=value==true;check.Visible=self.dontShow end
  function view:Refresh()
   local lang=self.locale or L.lang();local function t(k,a) return L.text(k,lang,a) end
-  title.Text=t(self.night and "nightCardTitle" or "nightCardDay")
+  title.Text=opts.title and t(opts.title) or t(self.night and "nightCardTitle" or "nightCardDay")
+  if opts.noTimer then -- no countdown: the plaque under the title carries a line of its own (SetSubtitle), if any
+   local args={};for k,v in self.subtitleArgs or {} do args[k]=t(v) end
+   timer.Visible=self.subtitleKey~=nil;timer.Text=self.subtitleKey and t(self.subtitleKey,args) or ""
+  end
   local seconds=math.max(0,math.ceil(self.left));local time=string.format("%02d:%02d",math.floor(seconds/60),seconds%60)
-  timer.Text=t(self.night and "nightUntilDawn" or "nightUntilDusk",{time='<font color="#FFE14A">'..time..'</font>'})
+  if not opts.noTimer then timer.Text=t(self.night and "nightUntilDawn" or "nightUntilDusk",{time='<font color="#FFE14A">'..time..'</font>'}) end
   for _,row in cards do row.heading.Text=t(row.spec.title);row.body.Text=t(row.spec.body) end
   ackText.Text=t("nightUnderstood");preferenceText.Text=t("nightDontShowAgain")
  end
+ function view:SetSubtitle(key,args) self.subtitleKey=key;self.subtitleArgs=args;self:Refresh() end
  function view:Update(night,left,locale) self.night=night==true;self.left=left or 0;self.locale=locale;self:Refresh() end
  function view:Fit(viewport)
   local portrait=viewport.X<viewport.Y*.95

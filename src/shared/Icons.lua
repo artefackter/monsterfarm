@@ -2,6 +2,10 @@
 return {
  -- Night help and the complete Miner / Knight / King portrait set.
  night_frame="rbxassetid://114312486626963",
+ -- the grave-heist tutorial cards (art/ui/grave-heist, cut from the approved mockup; 2026-11-14)
+ heist_sleep="rbxassetid://87644443730619",
+ heist_run="rbxassetid://117324610477693",
+ heist_fight="rbxassetid://124826353901570",
  night_defend="rbxassetid://86911369982454",
  night_lock="rbxassetid://71107031254599",
  night_ruins="rbxassetid://135245440392404",

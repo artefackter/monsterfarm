@@ -124,26 +124,38 @@ local function buildRoad()
   -- Gameplay walls only: RoadArt dresses them as ruined facades. On the boss pocket's side the wall has an opening.
   local wallColor=Color3.fromHex(type(d.Wall)=='table' and d.Wall[1] or d.Wall)
   local function wall(name,size,cf) local body=block(name,size,cf,wallColor);body.Parent=model;body.Transparency=1;body.CastShadow=false;return body end
-  local pd=Progression.Districts[i];local gap=Progression.PocketGap/2
+  local pd=Progression.Districts[i];local half=Progression.DoorWidth/2
   for _,side in {-1,1} do
    if side==pd.PocketSide then
-    for _,span in {{d.From,pd.PocketS-gap},{pd.PocketS+gap,d.To}} do wall('RoadWall',Vector3.new(4,44,span[2]-span[1]+.2),at((span[1]+span[2])/2,side*(w/2+2),20)) end
+    for _,span in {{d.From,pd.DoorS-half},{pd.DoorS+half,d.To}} do wall('RoadWall',Vector3.new(4,44,span[2]-span[1]+.2),at((span[1]+span[2])/2,side*(w/2+2),20)) end
    else wall('RoadWall',Vector3.new(4,44,d.To-d.From+.2),at((d.From+d.To)/2,side*(w/2+2),20)) end
   end
-  -- The boss pocket (2026-11-13): a short passage through the wall into a round floor ringed by a wall.
+  -- The boss pocket: a slanted corridor (RoadProgression, 2026-11-14: about 70 degrees to the road) from the opening
+  -- in the wall to a round floor ringed by a wall.
   do
    local side,ps,px,R,neck=pd.PocketSide,pd.PocketS,pd.PocketX,Progression.PocketRadius,Progression.PocketNeck
-   local floorColor=Color3.fromHex(d.Floor)
-   local inner=w/2-1;local outer=w/2+neck+6 -- the passage overlaps the road floor and the round
-   local passage=block('PocketFloor',Vector3.new(outer-inner,1,gap*2+.2),at(ps,side*(inner+outer)/2,-.5),floorColor);passage.Parent=model
+   local floorColor=Color3.fromHex(d.Floor);local width=Progression.PocketGap
+   -- a frame on the corridor between two "along" marks, its -Z running along it, and its length
+   local function run(a0,a1,across,y)
+    local s0,x0=Progression.DoorPoint(i,a0,across);local s1,x1=Progression.DoorPoint(i,a1,across)
+    local p0,p1=at(s0,x0,y).Position,at(s1,x1,y).Position
+    return CFrame.lookAt((p0+p1)/2,p1),(p1-p0).Magnitude
+   end
+   local cf,len=run(-8,neck+6,0,-.5) -- the floor overlaps the road's and the round's
+   local passage=block('PocketFloor',Vector3.new(width+.2,1,len),cf,floorColor);passage.Parent=model
    local round=block('PocketFloor',Vector3.new(1,(R+4)*2,(R+4)*2),at(ps,px,-.5)*CFrame.Angles(0,0,math.pi/2),floorColor);round.Shape=Enum.PartType.Cylinder;round.Parent=model
-   for _,e in {-1,1} do wall('PocketWall',Vector3.new(outer-inner-2,44,4),at(ps+e*(gap+2),side*(w/2+(neck+6)/2+2),20)) end
-   -- the ring: wall segments all round, except where the passage comes in
+   -- the corridor's side walls, each from where it meets the road wall's line to the round
+   local c,n=pd.DirS,math.abs(pd.DirX)
+   for _,e in {-1,1} do
+    local across=e*(width/2+2);local start=(2-across*c)/n
+    local wcf,wlen=run(start,neck+4,across,20);wall('PocketWall',Vector3.new(4,44,wlen),wcf)
+   end
+   -- the ring: wall segments all round, except where the corridor comes in
    local segments=40
    for k=0,segments-1 do
     local a0,a1=k/segments*math.pi*2,(k+1)/segments*math.pi*2;local am=(a0+a1)/2
     local ds,dx=math.sin(am)*(R+2),math.cos(am)*(R+2)
-    if not (dx*side<0 and math.abs(ds)<gap+2) then -- the side facing the road, where the passage is
+    if not Progression.FacesDoor(i,ds,dx,2) then -- where the corridor comes in
      local len=2*(R+2)*math.sin((a1-a0)/2)+.6
      local cf=at(ps+ds,px+dx,20);local look=at(ps+ds+math.cos(am),px+dx-math.sin(am),20)
      local q=wall('PocketWall',Vector3.new(4,44,len),CFrame.lookAt(cf.Position,look.Position))
@@ -336,7 +348,9 @@ end
 function Road.OpenPortal(i,allowed)
  Road.ClosePortal(i)
  local d=Progression.Districts[i];local side=d.PocketSide
- local cf=at(d.PocketS,d.PocketX+side*(Progression.PocketRadius-26),0)*CFrame.Angles(0,side*math.pi/2,0) -- at the back, facing the way in
+ -- at the back of the round, straight across from the corridor, facing the way in
+ local back=at(d.PocketS+d.DirS*(Progression.PocketRadius-26),d.PocketX+d.DirX*(Progression.PocketRadius-26),0).Position
+ local cf=CFrame.lookAt(back,Vector3.new(arenaCenter(i).X,back.Y,arenaCenter(i).Z)) -- the ring's face looks at the middle
  local m=Instance.new("Model");m.Name="HomePortal";m:SetAttribute("Boss",i)
  local function piece(name,size,at_,color,material,shape)
   local q=P.Part(m,name,size,cf*at_,color,shape);q.Material=material or Enum.Material.Neon;q.CanCollide,q.CanQuery,q.CanTouch,q.CastShadow=false,false,false,false;return q
@@ -599,7 +613,7 @@ function Road.Sleep(a)
  a.speed=a.baseSpeed or a.speed;a.damagers=nil
  setHealth(a,a.maxHp or a.hp);M.State(a,"Sleeping")
  -- in bed, facing the way in
- local d=Progression.Districts[i];local root=a.model.PrimaryPart;local door=at(d.PocketS,d.PocketX-d.PocketSide*10,0).Position
+ local d=Progression.Districts[i];local root=a.model.PrimaryPart;local door=at(d.PocketS-d.DirS*10,d.PocketX-d.DirX*10,0).Position
  a.model:PivotTo(CFrame.lookAt(a.home,Vector3.new(door.X,a.home.Y,door.Z)))
  local gui=root:FindFirstChild("SleepZzz")
  if not gui then
@@ -632,10 +646,10 @@ end
 local function shutArena(i)
  local d=Progression.Districts[i];local side=d.PocketSide
  local m=Instance.new("Model");m.Name="ArenaBarrier";m:SetAttribute("Boss",i)
- local wall=P.Solid(m,"ArenaBarrierWall",Vector3.new(4,44,Progression.PocketGap+4),at(d.PocketS,side*(C.Width/2+2),20));wall.CanQuery=true
+ local wall=P.Solid(m,"ArenaBarrierWall",Vector3.new(4,44,Progression.DoorWidth+4),at(d.DoorS,side*(C.Width/2+2),20));wall.CanQuery=true
  wall.Transparency,wall.Color,wall.Material,wall.CastShadow=.25,Color3.fromHex("C0102E"),Enum.Material.ForceField,false
  for _,face in {math.pi/2,-math.pi/2} do
-  local label=P.SignText(m,at(d.PocketS,side*(C.Width/2+2),9)*CFrame.Angles(0,face,0)*CFrame.new(0,0,-2.2),Vector3.new(Progression.PocketGap,4,.1),"bossFightSign",Color3.fromHex("FFE7A3"))
+  local label=P.SignText(m,at(d.DoorS,side*(C.Width/2+2),9)*CFrame.Angles(0,face,0)*CFrame.new(0,0,-2.2),Vector3.new(Progression.PocketGap,4,.1),"bossFightSign",Color3.fromHex("FFE7A3"))
   label.Parent.PixelsPerStud=18;local st=Instance.new("UIStroke");st.Color=Color3.fromHex("4A0010");st.Thickness=3;st.Parent=label
  end
  m.Parent=world;return m
@@ -685,9 +699,9 @@ local function routeTo(a,goal)
  local inBoss,inGoal=Progression.PocketAt(bs,bx)==i,Progression.PocketAt(gs,gx)==i
  if inBoss~=inGoal then
   -- the two ends of the passage: just inside the round, and out on the road in front of the opening
-  local door=at(d.PocketS,d.PocketX-d.PocketSide*(Progression.PocketRadius-14),0).Position
-  local mouth=at(d.PocketS,d.PocketSide*(C.Width/2-14),0).Position
-  local lined=math.abs(bs-d.PocketS)<=Progression.PocketGap/2-4
+  local door=at(d.PocketS-d.DirS*(Progression.PocketRadius-14),d.PocketX-d.DirX*(Progression.PocketRadius-14),0).Position
+  local mouth=at(Progression.DoorPoint(i,-14,0)).Position
+  local _,across=Progression.DoorFrame(i,bs,bx);local lined=math.abs(across)<=Progression.PocketGap/2-4 -- on the corridor's line
   if inBoss then return lined and mouth or door end -- out: line up with the passage, then through it
   return lined and door or mouth -- in: to the opening first, then through
  end

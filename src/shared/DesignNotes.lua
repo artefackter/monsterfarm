@@ -283,3 +283,9 @@ return {}
 -- as models in ReplicatedStorage.ArtModels (Grave_V3_<kind>, RingMaw_V2, Parasite_V2); ArtKit turns each into an
 -- asset. Graves everywhere are Grave_V3_<kind> (no mound, no painted epitaph); the road RingMaw and the RingMaw boss
 -- use RingMaw_V2, the road Parasite Parasite_V2 (the farm's outfit variants keep their old meshes). /graves in Studio.
+-- 2026-11-14: every boss arena is entered through a slanted corridor (RoadProgression: PocketNeck 26 studs at
+-- PocketAngle 70 degrees to the road, leaning forward; DoorPoint / DoorFrame / FacesDoor give its frame) with low
+-- stone walls; the arch, the shut-arena barrier, the boundary cut and the boss's way out all follow it. Walking into
+-- a sleeping boss's arena opens the grave-heist tutorial ("Steal the graves": the boss sleeps / grab and run / be the
+-- boss), the night card's window (NightInfoView opts) with cards cut from art/ui/grave-heist, and the arena's boss
+-- under the title; "Don't show again" is the ShowHeistInfo setting. Boss notices now show the boss's name, not its key.

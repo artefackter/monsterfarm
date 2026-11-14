@@ -2,7 +2,7 @@
 return {
  GroupId=0,FreeGift={Speed=10000,Grave="Marble"},
  HomeCooldown=5,BoardDistance=16,ZoneRadius=7,ZoneDelay=.2,RemoteInterval=.2,
- Settings={ShowNightInfo=true,AutoFire=true,ShowRanges=true,GuideArrows=true,ShiftSlow=true,CameraShake=true,MusicVolume=.7,SfxVolume=1},
+ Settings={ShowNightInfo=true,ShowHeistInfo=true,AutoFire=true,ShowRanges=true,GuideArrows=true,ShiftSlow=true,CameraShake=true,MusicVolume=.7,SfxVolume=1},
  Pages={"None","Golden","Lunar","Rainbow"},Thresholds={1,3,4},
  DexCoins={5000,50000,500000,5000000},DexSpeed={5000,50000,500000,5000000},DexShovels={"Bone","Golden","Lunar","Rainbow"},
  -- Each product buys one persistent upgrade credit. A credit waits safely if a house limit blocks use.
