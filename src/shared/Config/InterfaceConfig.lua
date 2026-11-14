@@ -20,6 +20,6 @@ return {
  },
  -- Upgrade boards, spread out: the four place boards stand in a row along the right fence facing the yard.
  -- Prestige stands across the house's doorway from the House board (2026-11-12). The farm grew on 2026-11-13: the house
- -- moved 6 studs into the corner and its two boards with it; the Fence board stands by the gate across from Lock.
- Boards={House={X=-3,Z=15,Yaw=-45},Prestige={X=-15,Z=3,Yaw=45},Treadmill={X=37,Z=-24,Yaw=90},PetSlots={X=7,Z=45},Lock={X=-12,Z=-45},Fence={X=12,Z=-45}}, -- no place boards: graves and pen zombies are unlimited
+ -- moved 6 studs into the corner and its two boards with it; the Fence board stands by the gate (the Lock board went with grave theft, 2026-11-13).
+ Boards={House={X=-3,Z=15,Yaw=-45},Prestige={X=-11,Z=-1,Yaw=45},Treadmill={X=37,Z=-24,Yaw=90},PetSlots={X=7,Z=45},Fence={X=12,Z=-45}}, -- no place boards: graves and pen zombies are unlimited
 }

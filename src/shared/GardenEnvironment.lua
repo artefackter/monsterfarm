@@ -9,8 +9,7 @@ function Garden.ApplyGrass(part)
  -- Cylinders use their local X axis; PlotService turns +X upward.
  texture.Face = Enum.NormalId.Right
  texture.StudsPerTileU, texture.StudsPerTileV = 16, 16
- -- a softer, slightly olive lawn (2026-11-13: the bright green read as "too childish", the first darker try as too dark)
- texture.Color3 = Color3.fromRGB(176, 186, 150)
+ -- the lawn texture in its own bright green (owner, 2026-11-13: the olive tint made the farm look dark)
  texture.Parent = part
  return part
 end

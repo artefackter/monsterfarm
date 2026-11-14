@@ -39,6 +39,13 @@ local function execute(p,command,arg,value)
   if not a then return false end
   a.canHurt=nil -- from anywhere, asleep or not
   return require(script.Parent.MutantService).Damage(a,a.hp,p)
+ elseif command=="graves" then
+  -- /graves Wooden,Stone,Marble,Golden,Lunar: plant those graves in the first grave spots (to look at the art)
+  local G=require(script.Parent.GraveService);d.tutorialDone=true
+  for i,kind in string.split(arg or "",",") do
+   local g=G.New(kind);table.insert(d.graveInventory,g);d.selectedItem="grave";d.selectedGrave=g.id;G.Plant(p,i)
+  end
+  G.Render(p,d)
  elseif command=="traps" then
   -- /traps n: n traps in the bag
   local n=tonumber(arg);if not n then return false end

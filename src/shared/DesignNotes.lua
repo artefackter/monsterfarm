@@ -267,3 +267,19 @@ return {}
 -- Traps on monsters were tried the same day and taken back (owner: "only players carrying a grave"): a trap catches
 -- only someone else carrying a grave, and is set on the road (not in the boss arenas) or on your own farm.
 -- In a bush (HiddenInBush) your name over your head and your income tag are hidden from everyone.
+-- Owner's list of 2026-11-13 (evening):
+-- Brighter again ("still dark"): a clear day with little haze (Brightness 2.2, exposure +0.2), a light violet night,
+-- the lawn texture in its own green. The outfits keep their hats, crowns and capes but nothing in the hands (no
+-- pickaxe, sword, shield, sceptre). Grave theft between farms is gone: no "Steal" prompt on graves, no Lock board at
+-- the gate (RaidService only returns graves still in flight). An auto-fire switch sits right of the hotbar (green
+-- AUTO / grey MANUAL, the same setting as in Settings). Road monsters walk to the server's newest position at their own
+-- pace (MutantVisuals: the positions arrive in uneven bursts), and their stride is read from that smooth path. Sleeping bosses sit on the floor with
+-- their legs out and their head on their chest; the RingMaw lies on its belly; the Dealer sinks and rests its hands.
+-- The weapon workbench is the approved model (WorkbenchModel, 101 plain parts) against the house front, right of the
+-- door as you face it (the house stands on its corner's diagonal), its circle in front, the Prestige board moved
+-- aside.
+-- 2026-11-14: the V3 cartoon graves (art/graves-reference-v3) and the reviewed RingMaw and Parasite
+-- (art/monster-review-v2, vertex colours converted to sRGB in models/roblox) were uploaded through Open Cloud and live
+-- as models in ReplicatedStorage.ArtModels (Grave_V3_<kind>, RingMaw_V2, Parasite_V2); ArtKit turns each into an
+-- asset. Graves everywhere are Grave_V3_<kind> (no mound, no painted epitaph); the road RingMaw and the RingMaw boss
+-- use RingMaw_V2, the road Parasite Parasite_V2 (the farm's outfit variants keep their old meshes). /graves in Studio.

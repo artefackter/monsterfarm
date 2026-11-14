@@ -194,7 +194,7 @@ local function spawnGrave(spot)
  local m=Instance.new("Model");m.Name=spot.Dropped and "DroppedGrave" or "RoadGrave"
  m:SetAttribute("MonsterType",spot.MonsterType);m:SetAttribute("Dropped",spot.Dropped==true);m:SetAttribute("DropBornAt",workspace:GetServerTimeNow());m:SetAttribute("DropExpiresAt",spot.Dropped and workspace:GetServerTimeNow()+(spot.Lifetime or C.DropLifetime) or nil)
  local cf=CFrame.new(spotPosition(spot,.25))
- Art.Spawn("G_Mound",m,cf);Art.Spawn("G_"..kind,m,cf)
+ Art.Spawn("Grave_V3_"..kind,m,cf) -- the cartoon V3 grave (2026-11-14)
  local ring=decal("RoadGlow",Vector3.new(.14,9,9),cf*CFrame.new(0,-.1,0)*CFrame.Angles(0,0,math.pi/2),RARITY[kind],.25);ring.Shape=Enum.PartType.Cylinder;ring.Material=Enum.Material.Neon;ring.Parent=m
  local spotPart=decal("RoadGrabSpot",Vector3.new(4,4,4),cf*CFrame.new(0,2,0),Pal.Panel,1);spotPart.Parent=m
  local pr=Instance.new("ProximityPrompt");pr.Name="RoadGrab";pr.ActionText="roadGrab";pr.HoldDuration=C.Hold;pr.MaxActivationDistance=10;pr.RequiresLineOfSight=false;pr:SetAttribute("Grave",kind);pr.Parent=spotPart
@@ -217,8 +217,8 @@ end
 local function attach(p,kind)
  local root=p.Character and p.Character:FindFirstChild("HumanoidRootPart");if not root then return nil end
  local m=Instance.new("Model");m.Name="CarriedGrave";m:SetAttribute("GraveType",kind)
- local parts=Art.Spawn("G_"..kind,m,root.CFrame*CFrame.new(0,-1.1,1.15),{scale=.7})
- local main=next(parts) and select(2,next(parts));if not main then m:Destroy();return end;m.PrimaryPart=main
+ local parts=Art.Spawn("Grave_V3_"..kind,m,root.CFrame*CFrame.new(0,-2.4,1.25),{scale=.6})
+ local main=parts.Headstone or (next(parts) and select(2,next(parts)));if not main then m:Destroy();return end;m.PrimaryPart=main
  for _,part in pairs(parts) do part.Anchored=false;part.CanCollide=false;part.CanQuery=false;part.CanTouch=false;part.Massless=true;if part~=main then local w=Instance.new('WeldConstraint',part);w.Part0=main;w.Part1=part end end
  local grip=Instance.new('Motor6D');grip.Name='CarrierGrip';grip.Part0=root;grip.Part1=main;grip.C0=root.CFrame:ToObjectSpace(main.CFrame);grip.Parent=root
  m.Destroying:Connect(function() grip:Destroy() end)

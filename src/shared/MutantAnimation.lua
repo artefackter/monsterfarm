@@ -51,9 +51,11 @@ function A.Step(model, data, dt)
 	local floating = model:GetAttribute("Floating") == true
 	local boss = model:GetAttribute("Boss") ~= nil
 	local weight = boss and 1.35 or 1
-	-- Speed from actual displacement, sampled so the server's 10 Hz updates don't make it stutter
-	local delta = root.Position - data.last
-	data.last = root.Position
+	-- Speed from actual displacement: the smoothed position MutantVisuals draws (renderPos) when there is one, so the
+	-- stride doesn't pulse with the server's 10 Hz steps; sampled over a tenth of a second
+	local at = data.renderPos or root.Position
+	local delta = at - data.last
+	data.last = at
 	local distance = Vector3.new(delta.X, 0, delta.Z).Magnitude
 	if distance > 12 * scale then
 		distance = 0 -- a teleport or a spawn is not a stride
@@ -70,7 +72,7 @@ function A.Step(model, data, dt)
 	-- A stride covers the family's step times the size; Verity stutters, capped so legs stay readable
 	local rate = data.speed / (g.stride * scale * (boss and 1.15 or 1)) * math.pi
 	if g.jitter then
-		rate *= 1 + 0.7 * math.noise(now * 2.3, data.seed)
+		rate *= 1 + 0.25 * math.noise(now * 1.2, data.seed) -- a slight stutter only (2026-11-13: no jerky moves)
 	end
 	data.phase += dt * math.clamp(rate, 0, 22)
 	local phase = data.phase
@@ -156,7 +158,8 @@ function A.Step(model, data, dt)
 	-- A sleeping boss (RoadService, 2026-11-13): curled up in its bed, head down, breathing slowly
 	local asleep = state == "Sleeping"
 	if asleep then
-		lookYaw, lookPitch, lookRoll, idleLean, idleRoll, idleArm, idleArmOut = 0, 0.5, 0.25, -0.22, 0, 0, 0
+		-- head down on its chest, slumped forward a little (a quadruped lies flat: no slump)
+		lookYaw, lookPitch, lookRoll, idleLean, idleRoll, idleArm, idleArmOut = 0, 0.85, 0.15, quadruped and 0 or -0.3, 0, 0, 0
 	end
 
 	-- Per-attack body motion: crouches, dives, lean-backs
@@ -209,15 +212,25 @@ function A.Step(model, data, dt)
 		body = body * CFrame.Angles(math.sin(now * 4) * 0.1, 0, math.sin(now * 6) * 0.16)
 	end
 	if asleep then
-		-- the root stands RootHeight (6) above the floor; a slow breath lifts the body a little
-		local breath = math.sin(now * 1.2 + data.seed) * 0.05 * scale
-		if quadruped or floating then
-			-- belly down, the legs folded away under it
-			body = CFrame.new(0, -6 * scale * 0.55 + breath, 0) * CFrame.Angles(-0.2, 0, 0) -- its head drops to the floor
+		-- A sleeping boss (owner, 2026-11-13: "a real sleep, not just turned on its side"): a biped sits down on the
+		-- floor with its legs out in front; a quadruped lies on its belly, front legs forward and hind legs back. The
+		-- root stands RootHeight (6) above the floor, the hips data.hipY below the root; a slow breath lifts the body.
+		if not data.hipY then
+			for _, j in root:GetChildren() do
+				if j:IsA("Motor6D") and (j:GetAttribute("PoseGroup") or j.Name) == "LegL" then
+					data.hipY = j.C0.Position.Y
+				end
+			end
+			data.hipY = data.hipY or -2.5 * scale
+		end
+		local hips = math.max(0, 6 * scale + data.hipY)
+		local breath = (math.sin(now * 1.1 + data.seed) * 0.5 + 0.5) * 0.08 * scale
+		if floating then
+			body = CFrame.new(0, -0.6 * scale, 0)
+		elseif quadruped then
+			body = CFrame.new(0, -hips * 0.8 + breath, 0)
 		else
-			-- on its side: rolled over round its middle and let down until its flank lies on the floor
-			data.sleepHalf = data.sleepHalf or ((model:FindFirstChild("Body", true) or root).Size.X / 2)
-			body = CFrame.new(0, -(6 * scale - data.sleepHalf) + breath, 0) * CFrame.Angles(0, 0, 1.45)
+			body = CFrame.new(0, -(hips - 0.45 * scale) + breath, 0)
 		end
 	end
 	-- Upper body only: hunch, lean into the run, the attack's lean, rock back when hit
@@ -310,6 +323,9 @@ function A.Step(model, data, dt)
 		if flinch > 0 then
 			pose = pose * CFrame.Angles(-0.45 * flinch, 0, -sign * 0.45 * flinch)
 		end
+		if asleep then -- resting: on its thighs while it sits, stretched forward when it lies
+			pose = quadruped and CFrame.Angles(1.25, 0, -sign * 0.15) or CFrame.Angles(0.6, 0, -sign * 0.15)
+		end
 		if stunned then
 			pose = CFrame.Angles(0.2 + math.sin(now * 5 + sign) * 0.35, 0, -sign * (0.55 + math.sin(now * 3) * 0.2))
 		end
@@ -337,6 +353,9 @@ function A.Step(model, data, dt)
 			pose = pose:Lerp(CFrame.Angles(-0.1, 0, 0), strike)
 		elseif windup > 0 then
 			pose = pose * CFrame.Angles(0.3 * windup * sign, 0, -sign * 0.08 * windup) -- feet apart, braced
+		end
+		if asleep then -- out in front while it sits, stretched back while it lies
+			pose = quadruped and CFrame.Angles(-1.25, 0, sign * 0.1) or CFrame.Angles(1.45, 0, -sign * 0.12)
 		end
 		if stunned then
 			pose = CFrame.Angles(math.sin(now * 5 + sign) * 0.15, 0, -sign * 0.12)
@@ -429,6 +448,14 @@ function A.Step(model, data, dt)
 				end
 				if stunned then
 					frame *= CFrame.Angles(0, math.sin(now * 3) * 0.06, math.sin(now * 5) * 0.08)
+				end
+				if asleep then -- sunk low, the head drooping, the hands resting on the floor
+					frame = CFrame.new(0, (-0.7 + math.sin(now * 1.1 + data.seed) * 0.04) * scale, 0)
+					if name == "Head" then
+						pose = CFrame.Angles(0.5, 0, 0.1)
+					elseif name == "ArmL" or name == "ArmR" then
+						pose = CFrame.new(0, -1.1 * scale, -0.4 * scale)
+					end
 				end
 			end
 			-- body movement in root space, moved into the joint's own pivot frame, then the joint's pose

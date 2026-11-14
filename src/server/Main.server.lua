@@ -33,13 +33,7 @@ local function dig(p,slot,source,petId)
  notice(p,"error")
 end
 G.OnDig=dig;G.Dig=dig
-G.OnModel=function(owner,g,m,head)
- if g.starter then return end
- local pr=Instance.new("ProximityPrompt");pr.Name="StealGrave";pr.ActionText="stealGrave";pr.HoldDuration=NC.StealHold;pr.MaxActivationDistance=NC.Distance;pr.RequiresLineOfSight=false;pr:SetAttribute("Owner",owner.UserId);pr.Parent=head
- pr.PromptButtonHoldBegan:Connect(function(p) Raid.Begin(p,owner,g) end)
- pr.PromptButtonHoldEnded:Connect(Raid.End)
- pr.Triggered:Connect(function(p) if not Raid.Complete(p,owner,g) then notice(p,"error") end end)
-end
+-- No stealing graves from other players' farms any more (owner, 2026-11-13): graves get no "Steal" prompt.
 local function action(p,op,arg,zone)
  if type(op)~="string" or (arg~=nil and type(arg)~="string") or (zone~=nil and type(zone)~="string") or (arg and #arg>100) or not allowed(p) then return end
  local d=D.Profiles[p];if not d then return end;local before=d.coins;local ok,reason=false,nil
@@ -74,7 +68,7 @@ local function action(p,op,arg,zone)
  elseif op=="enterHouse" then if not House.Enter(p) then notice(p,"error") end;push(p);return
  elseif op=="leaveHouse" then if not House.Leave(p) then notice(p,"error") end;push(p);return
  elseif op=="language" and (arg=="auto" or arg=="en" or arg=="ru") then d.language=arg~="auto" and arg or nil;p:SetAttribute("Language",d.language);ok=true
- elseif op=="lock" then ok=UI.Buy(p,"Lock") end
+ end
  if d.coins~=before and op~="upgrade" and op~="houseUpgrade" and op~="treadmill" then A.Economy(p,d.coins-before,d.coins,op) end
  if ok then G.Render(p,d);Z.Render(p,d);Slots.Render(p,d) end;notice(p,ok and "ok" or reason or "error");push(p)
 end

@@ -698,34 +698,24 @@ local function buildGarden(m,at,index,F)
  prop('W_Scarecrow',F-3.5,-F+3.5,.9,200,{Main=Color3.fromRGB(170,150,135)})
  prop('MR_Well',-F+3.5,-F+3.8,.85,30)
  -- The workbench (owner, 2026-11-13: "a bench on the farm to upgrade guns"; first in the far corner, then "too deep"):
- -- just inside the gate on the right, by the path, so it is seen on the way in. A heavy table with a vice, an anvil,
- -- a pegboard of tools and a rifle on it; its spinning circle opens the weapon upgrades.
+ -- since 2026-11-13 (owner: "put the workbench to the right of the house door") against the house front, right of the
+ -- door as you face it, turned to the path. The approved bench (WorkbenchModel, 2026-11-13): a heavy oak table with a
+ -- vice, a rifle on a mat, mutagen bottles, a lantern and a tool rack; its spinning circle opens the weapon upgrades.
  local bench=Instance.new('Model');bench.Name='Workbench';bench.Parent=garden
- local corner=at(-13,-31)*CFrame.Angles(0,math.rad(-45),0) -- facing the path and the gate, clear of the open gate leaf
- local function block(name,size,cf,color,material,shape)
-  local q=P.Part(bench,name,size,corner*cf,color,shape);q.Material=material or Enum.Material.SmoothPlastic
-  q.CanCollide,q.CanQuery,q.CanTouch=false,false,false;return q
+ -- The house stands on the diagonal of its corner (HouseService): its door at (-15.5, 15.5) here, the front running
+ -- along (1, 1) and facing (1, -1). Facing the door, its right is towards (-1, -1): the bench stands there, 7.5 studs
+ -- from the door along the front and 2.4 out from it, turned the way the door looks.
+ local corner=at(-19.1,8.5)*CFrame.Angles(0,math.rad(-45),0)
+ -- the approved model (WorkbenchModel) faces +Z: turned round so its front faces the path like the corner's -Z
+ local art=require(S.WorkbenchModel).Build(bench,corner*CFrame.Angles(0,math.pi,0))
+ for _,q in art:GetDescendants() do
+  if q:IsA('BasePart') and (q.Name=='LanternGlow' or q.Name=='MutagenLiquid') then
+   local l=Instance.new('PointLight');l.Color=q.Color;l.Range=q.Name=='LanternGlow' and 12 or 7;l.Brightness=q.Name=='LanternGlow' and .6 or .4;l.Parent=q;WA.NightLight(l)
+  end
  end
- local IRON,STEEL=Color3.fromHex('3A3A44'),Color3.fromHex('8C8C96')
- block('BenchTop',Vector3.new(7,.5,3.2),CFrame.new(0,3.1,0),WOOD,Enum.Material.WoodPlanks)
- for _,x in {-3.1,3.1} do for _,z in {-1.2,1.2} do block('BenchLeg',Vector3.new(.5,2.9,.5),CFrame.new(x,1.45,z),WOOD_DARK,Enum.Material.Wood) end end
- block('BenchShelf',Vector3.new(6.6,.3,2.6),CFrame.new(0,.9,0),WOOD_DARK,Enum.Material.WoodPlanks)
- block('Pegboard',Vector3.new(7,3.6,.3),CFrame.new(0,5.2,1.55),WOOD:Lerp(WOOD_DARK,.4),Enum.Material.WoodPlanks)
- for k=0,4 do block('Tool',Vector3.new(.25,1.4+(k%2)*.5,.2),CFrame.new(-2.6+k*1.3,5.3,1.35)*CFrame.Angles(0,0,(k%2==0 and .3 or -.2)),k%2==0 and STEEL or IRON,Enum.Material.Metal) end
- block('Vice',Vector3.new(1,.9,1.1),CFrame.new(2.7,3.8,-.6),IRON,Enum.Material.Metal);block('ViceJaw',Vector3.new(.9,.5,.3),CFrame.new(2.7,4.1,-1.25),STEEL,Enum.Material.Metal)
- block('Anvil',Vector3.new(1.8,.9,1),CFrame.new(2.6,.45,-2.6),IRON,Enum.Material.Metal);block('AnvilTop',Vector3.new(2.4,.5,1.1),CFrame.new(2.6,1.15,-2.6),STEEL,Enum.Material.Metal)
- -- a rifle laid on the table, from blocks so it never depends on a mesh
- block('GunBody',Vector3.new(2.6,.35,.35),CFrame.new(-.6,3.55,-.3)*CFrame.Angles(0,.15,0),IRON,Enum.Material.Metal)
- block('GunStock',Vector3.new(1.2,.5,.4),CFrame.new(-2.2,3.55,-.5)*CFrame.Angles(0,.15,0),WOOD,Enum.Material.Wood)
- block('GunBarrel',Vector3.new(1.6,.16,.16),CFrame.new(1.4,3.6,0)*CFrame.Angles(0,.15,0),STEEL,Enum.Material.Metal)
- block('GunMag',Vector3.new(.3,.6,.3),CFrame.new(-.4,3.25,-.25)*CFrame.Angles(0,.15,.2),IRON,Enum.Material.Metal)
- local vial=block('MutagenVial',Vector3.new(.6,.9,.6),CFrame.new(1.2,3.8,.6),Color3.fromHex('8CFF6A'),Enum.Material.Neon,Enum.PartType.Ball)
- local glow=Instance.new('PointLight');glow.Color=vial.Color;glow.Range=8;glow.Brightness=.5;glow.Parent=vial;WA.NightLight(glow)
- local lampBulb=WA.NightGlow(block('BenchLamp',Vector3.new(.7,.7,.7),CFrame.new(-2.8,7.3,1.2),Color3.fromHex('FFB45C'),Enum.Material.SmoothPlastic,Enum.PartType.Ball))
- local light=Instance.new('PointLight');light.Color=lampBulb.Color;light.Range=12;light.Brightness=.6;light.Parent=lampBulb;WA.NightLight(light)
- local title=P.SignText(bench,corner*CFrame.new(0,7.6,1.35),Vector3.new(5,1.1,.1),'workbench',Color3.fromHex('FFE7A3'))
+ local title=P.SignText(bench,corner*CFrame.new(0,6.6,1.35),Vector3.new(5,1.1,.1),'workbench',Color3.fromHex('FFE7A3'))
  title.Parent.PixelsPerStud=30;local st=Instance.new('UIStroke');st.Color=Color3.fromHex('2A1240');st.Thickness=2;st.Parent=title
- local benchZone=P.Part(bench,'WorkbenchZone',Vector3.one,corner*CFrame.new(0,.15,-6),Color3.fromHex('8CFF6A'))
+ local benchZone=P.Part(bench,'WorkbenchZone',Vector3.one,corner*CFrame.new(0,.15,-3.8),Color3.fromHex('8CFF6A'))
  benchZone.Transparency,benchZone.CanCollide,benchZone.CanQuery,benchZone.CanTouch=1,false,false,false
  benchZone:SetAttribute('MenuZone','upgrades');benchZone:SetAttribute('Radius',3.4);benchZone:SetAttribute('Owner',-1)
  prop('MR_Cart',-6,F-3,.9,80)

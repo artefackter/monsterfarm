@@ -5,7 +5,6 @@ function V.IsHeld(p,slot) local h=V.Held[p];return h and h[slot] and os.clock()-
 local timers=setmetatable({},{__mode="k"})
 -- Where the epitaph sits on each headstone: height, depth, width and height of the text area.
 local SCALE=.72 -- twelve graves share the plot now
-local EPITAPH={Wooden={1.72,1.72,2.2,1.2},Stone={2.0,1.4,2.5,1.6,-5},Marble={2.2,1.56,2.3,1.9},Golden={2.15,1.52,2.5,1.9}}
 function V.Boost(d) return math.min(require(S.Config.PetConfig).GraveCap,require(script.Parent.PetService).ForData(d).graveSpeedPct) end
 function V.Progress(d,g) return math.clamp((os.time()-g.plantedAt)/math.max(1,G[g.type].Seconds*(1-V.Boost(d))),0,1) end
 function V.Remaining(d,g) return math.max(0,math.ceil(G[g.type].Seconds*(1-V.Boost(d))-(os.time()-g.plantedAt))) end
@@ -65,16 +64,11 @@ function V.Render(p,d)
  alive[g.slot]=true;local m=models[g.slot]
  if not m then
  m=Instance.new("Model");m.Name="Grave";local cf=P.Position(p,"Graves",g.slot)*CFrame.new(0,-.97,0)
- Art.Spawn("G_Mound",m,cf,{scale=SCALE})
- local stone=Art.Spawn("G_"..g.type,m,cf,{scale=SCALE})
+ -- the cartoon V3 graves (2026-11-14): stele, face, stone base and grass in one model; no mound under it
+ local stone=Art.Spawn("Grave_V3_"..g.type,m,cf,{scale=SCALE})
  local head=stone.Headstone
- local hand=Art.Spawn("G_Hand",m,cf*CFrame.new(.3*SCALE,-.1*SCALE,-1.1*SCALE),{tints={Hand=Pal.Skin},scale=SCALE}).Hand
+ local hand=Art.Spawn("G_Hand",m,cf*CFrame.new(.3*SCALE,-.1*SCALE,-1.8*SCALE),{tints={Hand=Pal.Skin},scale=SCALE}).Hand
  hand.Transparency=1;CollectionService:AddTag(hand,"ArtWave")
- local spot=EPITAPH[g.type]
- if spot then
-  local label=P.SignText(m,cf*CFrame.new(0,spot[1]*SCALE,spot[2]*SCALE)*CFrame.Angles(math.rad(spot[5] or 0),0,0),Vector3.new(spot[3]*SCALE,spot[4]*SCALE,.05),"epitaph"..((g.slot*3+g.plantedAt)%8+1),g.type=="Wooden" and Pal.Ink or Color3.fromHex("3C3350"))
-  label.Parent.LightInfluence=.6
- end
  if g.type=="Golden" then sparkle(head,Pal.Accent) elseif g.type=="Lunar" then
   sparkle(head,Color3.fromHex("BDA6FF"));local light=Instance.new("PointLight");light.Color=Color3.fromHex("BDA6FF");light.Range=16;light.Brightness=1.5;light.Parent=head
  end

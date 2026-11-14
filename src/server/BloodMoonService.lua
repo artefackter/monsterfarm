@@ -132,7 +132,7 @@ local function grave(spot,kind)
  local hit=workspace:Raycast(spot+Vector3.new(0,80,0),Vector3.new(0,-160,0),params)
  local final=CFrame.new((hit and hit.Position or spot)+Vector3.new(0,.25,0))*CFrame.Angles(0,rng:NextNumber(0,math.pi*2),0)
  local m=Instance.new("Model");m.Name="BloodMoonGrave";m:SetAttribute("Dropped",true);m:SetAttribute("GraveType",kind)
- Art.Spawn("G_Mound",m,final);Art.Spawn("G_"..kind,m,final)
+ Art.Spawn("Grave_V3_"..kind,m,final) -- the cartoon V3 grave (2026-11-14)
  local ring=Instance.new("Part");ring.Name="RoadGlow";ring.Shape=Enum.PartType.Cylinder;ring.Size=Vector3.new(.14,9,9);ring.CFrame=final*CFrame.new(0,-.1,0)*CFrame.Angles(0,0,math.pi/2);ring.Color=Color3.fromHex("FF3B5C");ring.Material=Enum.Material.Neon;ring.Transparency=.25;ring.Parent=m
  local spotPart=Instance.new("Part");spotPart.Name="RoadGrabSpot";spotPart.Size=Vector3.new(4,4,4);spotPart.CFrame=final*CFrame.new(0,2,0);spotPart.Transparency=1;spotPart.Parent=m
  for _,q in m:GetDescendants() do if q:IsA("BasePart") then q.Anchored=true;q.CanCollide=false;q.CanQuery=false;q.CanTouch=false;q.CastShadow=q.Name~="RoadGlow" end end

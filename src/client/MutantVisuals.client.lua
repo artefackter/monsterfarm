@@ -236,19 +236,37 @@ Run.PreSimulation:Connect(function(dt)
    local top=data.top*m:GetScale()/data.topScale+.9*m:GetScale()
    if (root.Position-cam).Magnitude<(m:GetAttribute("Giant") and 700 or C.AnimateDistance) then
     if not data.motion then data.motion=Animation.New(m) end
+    -- Smooth movement (owner, 2026-11-13: "monsters still move in jerks"): the server's positions arrive in uneven
+    -- bursts (every 6 to 14 frames, ~3 studs each). The drawn monster walks to the newest position at its usual pace
+    -- (data.pace: studs a second over the last few updates), a little faster only when it falls behind, so it never
+    -- dashes and stops; it turns smoothly.
+    local target=root.CFrame
+    if data.snapCF==nil or target~=data.snapCF then
+     if data.snapCF and data.snapAt then
+      local gap=math.clamp(now-data.snapAt,.03,.5);local moved=(target.Position-data.snapCF.Position).Magnitude
+      if moved>40 then data.renderCF=target end -- a teleport
+      data.gap=data.gap and data.gap*.75+gap*.25 or gap
+      data.pace=data.pace and data.pace*.7+(moved/gap)*.3 or moved/gap
+     end
+     data.snapAt=now;data.snapCF=target
+    end
+    data.renderCF=data.renderCF or target
+    local from,to=data.renderCF.Position,target.Position;local dist=(to-from).Magnitude
+    local pace=data.pace or 0;local lag=pace*(data.gap or .1)
+    local speed=pace*(dist>lag*1.5 and math.min(2,dist/math.max(lag,.01)) or 1)
+    if dist<lag*.5 and lag>0 then speed=pace*math.max(.35,dist/(lag*.5)) end -- nearly there: ease off until the next update
+    if speed<1 then speed=dist*8 end -- nothing known yet: ease in
+    local step=math.min(dist,speed*dt)
+    data.renderCF=CFrame.new(dist>1e-3 and from+(to-from)*(step/dist) or to)*data.renderCF.Rotation:Lerp(target.Rotation,1-math.exp(-dt*10))
+    data.motion.renderPos=data.renderCF.Position -- the stride follows the smooth path, not the server's steps
     Animation.Step(m,data.motion,dt)
-    local target=root.CFrame;data.renderCF=data.renderCF or target
-    local gap=(target.Position-data.renderCF.Position).Magnitude
-    local alpha=1-math.exp(-math.min(dt,.1)*18)
-    if gap>40 then alpha=1 elseif gap>0 then alpha=math.min(alpha,1.4/gap) end
-    data.renderCF=data.renderCF:Lerp(target,alpha)
     local offset=target:ToObjectSpace(data.renderCF)
     for _,joint in root:GetChildren() do if joint:IsA('Motor6D') then joint.Transform=joint.C0:Inverse()*offset*joint.C0*joint.Transform end end
     m:SetAttribute('RenderedPosition',data.renderCF.Position)
     m:SetAttribute("AnimationSpeed",data.motion.speed)
     data.gui.StudsOffsetWorldSpace=data.renderCF.Position-target.Position+Vector3.new(0,top,0)
    else
-    if data.motion then data.motion.last=root.Position;data.motion.speed=0 end;data.renderCF=nil
+    if data.motion then data.motion.last=root.Position;data.motion.speed=0;data.motion.renderPos=nil end;data.renderCF=nil;data.snapCF=nil
     data.gui.StudsOffsetWorldSpace=Vector3.new(0,top,0)
    end
   end

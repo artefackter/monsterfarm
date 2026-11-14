@@ -23,6 +23,30 @@ for name,parts in Manifest do
   Manifest[name]=visible
  end
 end
+-- Models built in Studio from uploaded GLBs (ReplicatedStorage.ArtModels, 2026-11-14: the V3 graves, the reviewed
+-- RingMaw and Parasite): each is an asset whose parts are cloned straight from the model, with their own colours and
+-- full orientation; the model's pivot is the asset's origin (on the ground, facing -Z).
+do
+ local models=ReplicatedStorage:FindFirstChild("ArtModels") or (RunService:IsClient() and ReplicatedStorage:WaitForChild("ArtModels",10)) or nil
+ for _,model in models and models:GetChildren() or {} do
+  if model:IsA("Model") then
+   local origin=model:GetPivot();local parts={}
+   for _,p in model:GetChildren() do
+    if p:IsA("BasePart") then
+     local rel=origin:ToObjectSpace(p.CFrame);local h=p.Size/2;local r=rel.Rotation
+     local x,y,z=r.RightVector*h.X,r.UpVector*h.Y,r.LookVector*h.Z
+     local box=Vector3.new(math.abs(x.X)+math.abs(y.X)+math.abs(z.X),math.abs(x.Y)+math.abs(y.Y)+math.abs(z.Y),math.abs(x.Z)+math.abs(y.Z)+math.abs(z.Z))*2
+     table.insert(parts,{part=p.Name,source=p,offset=rel.Position,rot=r,size=p.Size,box=box,material=p.Material.Name,transparency=p.Transparency,cast=p.CastShadow,attach=p:GetAttribute("Attach"),avg=p.Color:ToHex()})
+    end
+   end
+   Manifest[model.Name]=parts
+  end
+ end
+ -- the reviewed looks replace the old road meshes and the RingMaw boss (owner, 2026-11-14); the rigs stay the same
+ for old,new in {RingMaw_Aggressive="RingMaw_V2",RingMaw_Passive="RingMaw_V2",Parasite_Root_Aggressive="Parasite_V2"} do
+  if Manifest[new] then Manifest[old]=Manifest[new] end
+ end
+end
 local Collection=require(script.Parent.MonsterCollection)
 local Rig=require(script.Parent.MonsterRig)
 local Art = {}
@@ -76,7 +100,7 @@ function Art.Preload()
 	for assetName, parts in pairs(Manifest) do
 		for _, meta in ipairs(parts) do
 			local key = assetName .. "." .. meta.part
-			if not lib:FindFirstChild(key) then
+			if meta.id and not lib:FindFirstChild(key) then
 				pending += 1
 				task.spawn(function()
 					if not createTemplate(key, meta.id, lib) then
@@ -113,7 +137,7 @@ function Art.Bounds(assetName)
  local lo=Vector3.new(math.huge,math.huge,math.huge);local hi=-lo
  for _,p in Manifest[assetName] or {} do
   if p.transparency<1 then
-  local a,b=p.offset-p.size*.5,p.offset+p.size*.5
+  local box=p.box or p.size;local a,b=p.offset-box*.5,p.offset+box*.5
   lo=Vector3.new(math.min(lo.X,a.X),math.min(lo.Y,a.Y),math.min(lo.Z,a.Z))
   hi=Vector3.new(math.max(hi.X,b.X),math.max(hi.Y,b.Y),math.max(hi.Z,b.Z))
   end
@@ -130,7 +154,7 @@ function Art.Spawn(assetName, parent, cf, opts)
 	local lib, scale, out = library(), opts.scale or 1, {}
 	for _, meta in ipairs(parts) do
 		if not (opts.skip and opts.skip[meta.part]) then
-			local template = lib:FindFirstChild(assetName .. "." .. meta.part)
+			local template = meta.source or (meta.id and lib:FindFirstChild(assetName .. "." .. meta.part))
 			local p = template and template:Clone() or Instance.new("Part")
 			p.Name = (opts.prefix or "") .. meta.part
             p:SetAttribute("ArtAsset",assetName)
@@ -143,12 +167,12 @@ function Art.Spawn(assetName, parent, cf, opts)
 			p.Material = template and Enum.Material[meta.material] or Enum.Material.SmoothPlastic
 			p.Transparency = meta.transparency
 			p.Size = meta.size * scale
-			p.CFrame = cf * CFrame.new(meta.offset * scale) * Art.ImportRotation
+			p.CFrame = cf * CFrame.new(meta.offset * scale) * (meta.rot or Art.ImportRotation)
 			if meta.yaw then
 				p.CFrame *= CFrame.Angles(0, meta.yaw, 0)
 			end
 			local tint = opts.tints and opts.tints[meta.part]
-			p.Color = tint or (template and Color3.new(1, 1, 1)) or Color3.fromHex(meta.avg)
+			p.Color = tint or (meta.source and meta.source.Color) or (template and Color3.new(1, 1, 1)) or Color3.fromHex(meta.avg)
 			if meta.attach then
 				p:SetAttribute("Attach", meta.attach)
 			end
@@ -209,20 +233,15 @@ local function piece(model, name, attach, size, cf, color, material, shape)
 	return p
 end
 function Art.Dress(model, outfit, parts, feet, family)
-	local head, body, armR, armL = parts.Head, parts.Body, parts.ArmR, parts.ArmL
+	-- headwear and body pieces only: nothing in the hands (owner, 2026-11-13: "remove the pickaxes, staffs and so on")
+	local head, body = parts.Head, parts.Body
 	if not (head and body) then
 		return
 	end
 	local rot, up, look = feet.Rotation, feet.UpVector, feet.LookVector
 	local w = math.min(head.Size.X, head.Size.Z)
 	local top = head.Position + up * head.Size.Y * (0.5 - (HAT_SINK[family] or 0.15))
-	local function hand(arm)
-		return arm.Position - up * arm.Size.Y * 0.42
-	end
 	local ball, cyl, metal = Enum.PartType.Ball, Enum.PartType.Cylinder, Enum.Material.Metal
-	if family == "RingMaw" then -- it walks on all fours, its "arms" are front legs: the hat and the body pieces only
-		armR, armL = nil, nil
-	end
 	local flat = CFrame.Angles(0, 0, math.pi / 2) -- a cylinder standing up
 	if outfit == "Miner" then
 		piece(model, "HatDome", "Head", Vector3.new(w * 0.95, w * 0.55, w * 0.95), CFrame.new(top + up * w * 0.12) * rot, "E8B52A", nil, ball)
@@ -230,30 +249,11 @@ function Art.Dress(model, outfit, parts, feet, family)
 		local lamp = CFrame.new(top + up * w * 0.14) * rot * CFrame.new(0, 0, -w * 0.46)
 		piece(model, "HatLampRim", "Head", Vector3.new(w * 0.14, w * 0.3, w * 0.3), lamp * CFrame.Angles(0, math.pi / 2, 0), "5A5148", metal, cyl)
 		piece(model, "HatLamp", "Head", Vector3.new(w * 0.06, w * 0.22, w * 0.22), lamp * CFrame.new(0, 0, -w * 0.06) * CFrame.Angles(0, math.pi / 2, 0), "FFF2B0", Enum.Material.Neon, cyl)
-		if armR then
-			local grip = CFrame.new(hand(armR)) * rot * CFrame.Angles(-0.55, 0, 0)
-			piece(model, "PickHandle", "ArmR", Vector3.new(w * 0.11, w * 1.5, w * 0.11), grip * CFrame.new(0, w * 0.45, 0), "6B4A2E", Enum.Material.Wood)
-			piece(model, "PickHead", "ArmR", Vector3.new(w * 0.13, w * 0.16, w * 1.1), grip * CFrame.new(0, w * 1.15, 0) * CFrame.Angles(0.12, 0, 0), "8D939A", metal)
-		end
 	elseif outfit == "Knight" then
 		piece(model, "Helmet", "Head", Vector3.new(w * 1.02, w * 0.78, w * 1.02), CFrame.new(top + up * w * 0.05) * rot, "A9B0B8", metal, ball)
 		piece(model, "HelmetBand", "Head", Vector3.new(w * 0.16, w * 1.06, w * 1.06), CFrame.new(top - up * w * 0.12) * rot * flat, "7E868F", metal, cyl)
 		piece(model, "Visor", "Head", Vector3.new(w * 0.62, w * 0.12, w * 0.08), CFrame.new(top - up * w * 0.05) * rot * CFrame.new(0, 0, -w * 0.5), "1E1E24", metal)
 		piece(model, "Plume", "Head", Vector3.new(w * 0.14, w * 0.5, w * 0.7), CFrame.new(top + up * w * 0.5) * rot * CFrame.new(0, 0, w * 0.1), "B3202C", Enum.Material.Fabric)
-		if armL then
-			local side = (armL.Position - body.Position):Dot(feet.RightVector) >= 0 and 1 or -1
-			local at = CFrame.new(armL.Position + feet.RightVector * side * (armL.Size.X * 0.5 + w * 0.08)) * rot
-			piece(model, "Shield", "ArmL", Vector3.new(w * 0.12, w * 1.25, w * 0.95), at, "3D4A6B", metal)
-			piece(model, "ShieldRim", "ArmL", Vector3.new(w * 0.1, w * 1.35, w * 1.05), at * CFrame.new(-side * w * 0.02, 0, 0), "C9A646", metal)
-			piece(model, "ShieldCrossV", "ArmL", Vector3.new(w * 0.04, w * 0.9, w * 0.18), at * CFrame.new(side * w * 0.07, 0, 0), "D9D2BE", metal)
-			piece(model, "ShieldCrossH", "ArmL", Vector3.new(w * 0.04, w * 0.18, w * 0.62), at * CFrame.new(side * w * 0.07, w * 0.12, 0), "D9D2BE", metal)
-		end
-		if armR then
-			local grip = CFrame.new(hand(armR)) * rot * CFrame.Angles(-0.4, 0, 0)
-			piece(model, "SwordGrip", "ArmR", Vector3.new(w * 0.1, w * 0.36, w * 0.1), grip, "3B2A1E", Enum.Material.Wood)
-			piece(model, "SwordGuard", "ArmR", Vector3.new(w * 0.14, w * 0.1, w * 0.62), grip * CFrame.new(0, w * 0.2, 0), "C9A646", metal)
-			piece(model, "SwordBlade", "ArmR", Vector3.new(w * 0.06, w * 1.55, w * 0.2), grip * CFrame.new(0, w * 1.0, 0), "D8DEE4", metal)
-		end
 	elseif outfit == "King" then
 		local crown = CFrame.new(top + up * w * 0.12) * rot
 		piece(model, "CrownBand", "Head", Vector3.new(w * 0.3, w * 0.86, w * 0.86), crown * flat, "E4B83A", metal, cyl)
@@ -267,11 +267,6 @@ function Art.Dress(model, outfit, parts, feet, family)
 		piece(model, "Cape", nil, Vector3.new(body.Size.X * 1.05, body.Size.Y * 1.05, w * 0.07), CFrame.new(back - up * body.Size.Y * 0.08) * rot * CFrame.Angles(-0.08, 0, 0), "7A1630", Enum.Material.Fabric)
 		piece(model, "CapeCollar", nil, Vector3.new(body.Size.X * 1.1, w * 0.22, w * 0.32), CFrame.new(back + up * body.Size.Y * 0.44) * rot, "F2EEE6", Enum.Material.Fabric)
 		piece(model, "Medallion", nil, Vector3.new(w * 0.06, w * 0.3, w * 0.3), CFrame.new(body.Position + look * body.Size.Z * 0.5 + up * body.Size.Y * 0.2) * rot * CFrame.Angles(0, math.pi / 2, 0), "E4B83A", metal, cyl)
-		if armR then
-			local grip = CFrame.new(hand(armR)) * rot * CFrame.Angles(-0.35, 0, 0)
-			piece(model, "Sceptre", "ArmR", Vector3.new(w * 0.1, w * 1.5, w * 0.1), grip * CFrame.new(0, w * 0.4, 0), "E4B83A", metal)
-			piece(model, "SceptreOrb", "ArmR", Vector3.new(w * 0.3, w * 0.3, w * 0.3), grip * CFrame.new(0, w * 1.2, 0), "8C4BFF", Enum.Material.Neon, ball)
-		end
 	end
 end
 

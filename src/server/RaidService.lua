@@ -1,4 +1,5 @@
--- Grave-only theft; recipient intent and the existing ownership journal survive interrupted transfers.
+-- Grave theft between farms was taken out (owner, 2026-11-13): nothing starts a raid any more; what is left returns
+-- graves still in flight from older servers and backs the shared carry checks (Raid.Carriers). Grave-only theft; recipient intent and the existing ownership journal survive interrupted transfers.
 local S=game.ReplicatedStorage.Shared
 local D=require(script.Parent.DataService);local P=require(script.Parent.PlotService);local G=require(script.Parent.GraveService);local Day=require(script.Parent.DayNightService)
 local C=require(S.Config.NightConfig);local Zone=require(S.Config.ZoneConfig);local Rules=require(S.RoadRules)
@@ -17,6 +18,7 @@ end
 -- Newcomers (the boost, IncomeService.IsNewbie) can't steal graves (owner, 2026-11-13).
 local function newbie(p) return require(script.Parent.IncomeService).IsNewbie(D.Profiles[p]) end
 function R.Begin(p,owner,g)
+ do return false end -- theft between farms is off (2026-11-13)
  if newbie(p) then game.ReplicatedStorage.Remotes.Notice:FireClient(p,"stealNewbie");return false end
  if not R.CanStart(p,owner,g) then return false end
  local need=road().HoldFor(p,C.StealHold) -- slower after shoving someone on the road
@@ -71,10 +73,6 @@ function R.Transfer(p,r)
  G.Select(p,copy.id);G.Render(r.owner,od);require(script.Parent.SlotService).Forget(r.owner)
  D.Save(p);D.Save(r.owner);return true
 end
-function R.Lock(p)
- local plot=P.Assigned[p];if not plot or (R.LockCooldown[p] or 0)>os.clock() or not P.Near(p,plot.Gate.Position,C.Distance) then return false end
- R.Locks[p]=os.clock()+C.LockDuration;R.LockCooldown[p]=os.clock()+C.LockCooldown;return true
-end
 function R.GuardChance(owner)
  local d=D.Profiles[owner];if not d then return 0 end
  local chance=0 -- Collection monsters produce income; pet bonuses still apply.
@@ -102,10 +100,6 @@ function R.Tick()
     if R.Carriers[p] and P.Near(p,P.Assigned[p].Gate.Position,Zone.GateRadius) then task.spawn(R.Transfer,p,r) end
    end
   end
- end
- for owner,plot in P.Assigned do
-  local locked=(R.Locks[owner] or 0)>now;plot.Barrier.Transparency=locked and .35 or 1
-  if locked then for p in D.Profiles do if p~=owner and P.Inside(p,plot) then R.Return(p);R.Cancel(p);P.Home(p) end end end
  end
 end
 function R.Leave(p)

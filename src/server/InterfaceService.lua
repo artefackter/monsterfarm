@@ -28,7 +28,6 @@ function I.Quote(p,key)
  elseif key=='Treadmill' then level=RR.Level(d);local n=RR.Next(d);max=not n;price=n and n.Price or 0
  elseif key=='PetSlots' then level=PC.StartSlots+d.petSlots;max=level>=PC.MaxSlots;price=UC.PetSlots.Price*UC.PetSlots.Factor^d.petSlots
  elseif key=='Fence' then local FC=require(S.Config.FenceConfig);level=FC.Level(d);local n=FC.Levels[level+1];max=not n;price=n and n.Price or 0
- elseif key=='Lock' then local raid=require(script.Parent.RaidService);level=1;price=math.max(0,math.ceil((raid.LockCooldown[p] or 0)-os.clock()));if price>0 then reason='lockWait' end
  elseif key=='Prestige' then
   local PR=require(S.PrestigeRules);level=PR.Level(d);price=PR.Cost(d)
   if HR.Level(d)<PR.House then reason='prestigeHouse' end
@@ -38,13 +37,12 @@ function I.Quote(p,key)
   local need=HR.Need(d,key);if need then reason='houseLimit' end
  else return end
  local credit=(d.upgradeCredits[key] or 0)>0
- return {price=math.floor(price),level=level,next=level+(key=='Crypt' and 10 or 1),max=max,reason=reason,credit=credit,afford=not max and not reason and (credit or key=='Lock' or d.coins>=price)}
+ return {price=math.floor(price),level=level,next=level+(key=='Crypt' and 10 or 1),max=max,reason=reason,credit=credit,afford=not max and not reason and (credit or d.coins>=price)}
 end
 function I.Buy(p,key)
  local d=D.Profiles[p];if not d or key=='Prestige' or not Act.CanAct(p) or not I.NearBoard(p,key) then return false end -- prestige only through its confirmation
  local q=I.Quote(p,key);if not q or not q.afford then return false end
  local before=d.coins
- if key=='Lock' then return require(script.Parent.RaidService).Lock(p) end
  if q.credit then d.upgradeCredits[key]-=1 else d.coins-=q.price end
  if key=='House' then d.houseEnds=os.time()+HR.Next(d).Seconds
  elseif key=='Treadmill' then d.treadmill=RR.Level(d)+1;require(script.Parent.HouseService).RefreshTreadmill(p,d)

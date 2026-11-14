@@ -157,8 +157,18 @@ local dropButton=roundButton('DropGraveButton',-83,Color3.fromRGB(255,110,110),f
 Style.ModalArt(dropButton,'coffin',nil,UDim2.fromOffset(46,44),UDim2.fromOffset(16,4))
 local dropLabel=Style.Text(dropButton,'',UDim2.fromOffset(70,22),UDim2.fromOffset(4,48));dropLabel.Name='Label';dropLabel.TextColor3=Color3.new(1,1,1);dropLabel.ZIndex=4
 local dropStroke=Instance.new('UIStroke',dropLabel);dropStroke.Color=Color3.fromRGB(20,14,40);dropStroke.Thickness=2
+-- Auto-fire on/off (owner, 2026-11-13: "an icon to switch auto-fire off, on the right"): the same setting as in
+-- Settings. Green while it fires on its own, grey when you shoot by clicking; it sits above the grave button.
+local autoUI={};autoUI.button=roundButton('AutoFireButton',-83,Color3.fromRGB(110,220,90),function() rem.InterfaceAction:FireServer('setting','AutoFire',p:GetAttribute('AutoFire')==false) end)
+autoUI.icon=Instance.new('ImageLabel');autoUI.icon.Name='Icon';autoUI.icon.BackgroundTransparency=1;autoUI.icon.Size=UDim2.fromOffset(46,46);autoUI.icon.Position=UDim2.fromOffset(16,6);autoUI.icon.ScaleType=Enum.ScaleType.Fit;autoUI.icon.Parent=autoUI.button
+autoUI.label=Style.Text(autoUI.button,'',UDim2.fromOffset(70,22),UDim2.fromOffset(4,50));autoUI.label.Name='Label';autoUI.label.TextColor3=Color3.new(1,1,1);autoUI.label.ZIndex=4
+do local st=Instance.new('UIStroke',autoUI.label);st.Color=Color3.fromRGB(20,14,40);st.Thickness=2 end
 Run.Heartbeat:Connect(function()
  local open=menuOpen()
+ local on=p:GetAttribute('AutoFire')~=false
+ autoUI.button.Visible=not open;autoUI.button.Position=UDim2.fromOffset(454,-169) -- above the grave button, clear of the clock's pills
+ autoUI.button.BackgroundColor3=on and Color3.fromRGB(110,220,90) or Color3.fromRGB(120,118,136)
+ autoUI.icon.Image=on and Icons.auto_on or Icons.auto_off;autoUI.label.Text=t(on and 'autoFireOn' or 'autoFireOff')
  dropButton.Visible=p:GetAttribute('CarryingGrave')==true and not open
  dropLabel.Text=t('dropGrave')
  local cfg=state and C[state.equipped]

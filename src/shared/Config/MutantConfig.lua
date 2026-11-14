@@ -45,7 +45,7 @@ return {
    }},
   -- The second boss (owner, 2026-11-13): the RingMaw, in its own painted mesh (the part-built one was taken back the
   -- same day). It pounces across the arena, roars, and spits a fan of its seeds.
-  BossRingMaw={Boss=true,Health=400,Speed=12,Scale=1.8,SpeedFactor=.8,RewardMult=12,Model="RingMaw_Assassin_Aggressive",Color=Color3.fromHex("967A83"),
+  BossRingMaw={Boss=true,Health=400,Speed=12,Scale=1.8,SpeedFactor=.8,RewardMult=12,Model="RingMaw_Aggressive",Color=Color3.fromHex("967A83"),
    Attacks={
     {Name="Leap",Shape="Dash",Range=44,MinRange=10,Windup=.8,Cooldown=4.5,Radius=7,Speed=70,Distance=46,Damage=2,Fx="Leap"},
     {Name="Scream",Shape="Scream",Range=26,Windup=1.2,Cooldown=7,Radius=26,Damage=1,Fx="Scream"},

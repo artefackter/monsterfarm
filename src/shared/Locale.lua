@@ -63,7 +63,7 @@ guideTrainTitle={"5. Run faster","5. Беги быстрее"},guideTrain={"Stan
 guideRoadTitle={"6. Graves on the road","6. Могилы на дороге"},guideRoad={"Hold Take beside a road grave, carry it back through the gate. Rare graves lie farther away. Dodge mutants and slime.","Удерживай «Забрать» у могилы на дороге и вернись через ворота. Редкие могилы — дальше. Обходи мутантов и слизь."},
 guideCombatTitle={"7. Auto fire and weapons","7. Автострельба и оружие"},guideCombat={"A drawn weapon aims and fires at nearby visible mutants. Keep moving! Select slot 2 to draw it, or another slot to put it away. Reload with R; auto fire can be toggled in settings.","Достанное оружие само целится в ближайших видимых мутантов. Продолжай двигаться! Слот 2 — достать, другой слот — убрать. Перезарядка — R. Автострельба переключается в настройках."},
 guideBatTitle={"8. Shovel and traps","8. Лопата и капканы"},guideBat={"On the road, swing your shovel with empty hands to knock back a player and interrupt digging. Select a trap in slot 3 and tap the ground to place it. A trapped carrier drops the grave for anyone to pick up.","На дороге удар лопатой без могилы в руках отталкивает игрока и сбивает выкапывание. Выбери капкан в слоте 3 и нажми на землю. Попавший в капкан роняет могилу — её может подобрать любой."},
-guideNightTitle={"9. Night and pets","9. Ночь и питомцы"},guideNight={"At night, protect your farm from raiders and theft. Equip pets from the paw menu for bonuses. Check quests and daily rewards for extra Zombucks.","Ночью защищай ферму от налётчиков и краж. Экипируй питомцев в меню с лапкой ради бонусов. Задания и ежедневные награды дают зомбуксы."},
+guideNightTitle={"9. Night and pets","9. Ночь и питомцы"},guideNight={"At night, protect your farm from raiders. Equip pets from the paw menu for bonuses. Check quests and daily rewards for extra Zombucks.","Ночью защищай ферму от налётчиков. Экипируй питомцев в меню с лапкой ради бонусов. Задания и ежедневные награды дают зомбуксы."},
 
 weaponHolster={"Holster","Убрать оружие"},weaponDraw={"Draw weapon","Достать оружие"},
 batCarryDenied={"Put down the grave to use the bat.","С могилой в руках нельзя использовать биту."},
@@ -267,8 +267,8 @@ LunarPumpkin={"Lunar Pumpkin","Лунная тыква"},
 -- Help cards, quest reminder, empty farms, the heap, weapon upgrades (2026-11-10)
 L.Rows.nightDefendTitle={"Protect your farm","Защити ферму"}
 L.Rows.nightDefendBody={"Monsters break gates and steal Zombucks.","Монстры ломают ворота и крадут зомбуксы."}
-L.Rows.nightLockTitle={"Lock your gates","Закрой ворота"}
-L.Rows.nightLockBody={"At night, players can steal your graves.","Ночью игроки могут украсть могилы."}
+L.Rows.nightLockTitle={"Strengthen the gate","Укрепи ворота"}
+L.Rows.nightLockBody={"Upgrade the fence: monsters take longer to break in.","Улучшай забор: монстрам дольше ломать ворота."}
 L.Rows.nightRuinsTitle={"Explore the ruins","Исследуй заброшки"}
 L.Rows.nightRuinsBody={"Rewards ×2 and lunar graves. Stronger monsters.","Награды ×2 и лунные могилы. Монстры сильнее."}
 L.Rows.nightUntilDawn={"Until dawn  {time}","До рассвета  {time}"}
@@ -279,7 +279,7 @@ L.Rows.ShowNightInfo={"Show night reminders","Показывать подска�
 L.Rows.nightCardTitle={"Night has come!","Наступила ночь!"}
 L.Rows.nightCardDay={"What happens at night","Что бывает ночью"}
 L.Rows.nightCard1={"Monsters raid the farm: they break the gate, then steal Zombucks. Shoot them and upgrade the fence!","Монстры идут на ферму: ломают ворота и крадут зомбуксы. Стреляй и улучшай забор!"}
-L.Rows.nightCard2={"Players can steal your graves. Lock the gate!","Игроки могут украсть твои могилы. Закрой ворота!"}
+L.Rows.nightCard2={"Dragonhead patrols your farm at night and burns the raiders.","Дракоголовый ночью патрулирует ферму и сжигает налётчиков."}
 L.Rows.nightCard3={"In the ruins: double rewards and lunar graves, angrier monsters","В заброшках: награды ×2 и лунные могилы, но монстры злее"}
 L.Rows.questReady={"Quest done! Take the reward with the Quests button ({n})","Задание выполнено! Забери награду кнопкой «Задания» ({n})"}
 L.Rows.inviteFriend={"Invite a friend","Позвать друга"}
@@ -609,4 +609,6 @@ L.Rows.bossGraveWinners={"Only those who beat the boss can take this grave.","Э
 L.Rows.bossFightSign={"⚔ BOSS FIGHT IN PROGRESS","⚔ ИДЁТ БОЙ С БОССОМ"}
 L.Rows.bossMainGrave={"BOSS'S MAIN GRAVE","ГЛАВНАЯ МОГИЛА БОССА"}
 L.Rows.bossChaseBar={"CHASE!","ПОГОНЯ!"}
+L.Rows.autoFireOn={"AUTO","АВТО"}
+L.Rows.autoFireOff={"MANUAL","РУЧН."}
 return L

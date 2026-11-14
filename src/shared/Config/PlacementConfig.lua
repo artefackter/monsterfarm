@@ -14,7 +14,7 @@ return {
   {MinX=-16,MaxX=-8,MinZ=-48,MaxZ=-41}, {MinX=8,MaxX=16,MinZ=-48,MaxZ=-41}, -- the Lock and Fence boards by the gate
   {MinX=-11,MaxX=-1,MinZ=41.5,MaxZ=48}, {MinX=-20,MaxX=-12,MinZ=41.5,MaxZ=48}, -- the cart and the crates at the back
   {MinX=40.5,MaxX=48,MinZ=-48,MaxZ=-38.5}, {MinX=-48,MaxX=-40.5,MinZ=-48,MaxZ=-38.5}, -- the scarecrow and the well in the front corners
-  {MinX=-18,MaxX=-5,MinZ=-39,MaxZ=-27}, -- the workbench inside the gate on the right
+  {MinX=-24.5,MaxX=-13.5,MinZ=3,MaxZ=14}, -- the workbench by the house door, on its right (2026-11-13)
   {MinX=-18.5,MaxX=-5.5,MinZ=-28.5,MaxZ=-15.5}, -- the zombucks heap (Bank)
  },
  Bank={X=-12,Z=-22}, -- where income piles up until the owner collects it
