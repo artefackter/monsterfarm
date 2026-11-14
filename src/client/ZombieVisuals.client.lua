@@ -84,7 +84,9 @@ local function floatIncome(m, data, now)
 	end
 	data.last = now
 	local b = Instance.new("BillboardGui")
-	b.Size = UDim2.fromOffset(130, 42)
+	local v = workspace.CurrentCamera.ViewportSize
+	local k = math.clamp(math.min(v.X / 1000, v.Y / 560), 0.62, 1) -- smaller on phones
+	b.Size = UDim2.fromOffset(130 * k, 42 * k)
 	b.StudsOffset = Vector3.new(0, (m:GetAttribute("MonsterLabelHeight") or 4.4)*(m:GetAttribute("VisualSize") or 1), 0)
 	b.Parent = m.PrimaryPart
 	local l = Instance.new("TextLabel")
@@ -95,7 +97,7 @@ local function floatIncome(m, data, now)
 	l.TextStrokeColor3 = Pal.Stroke
 	l.TextStrokeTransparency = 0
 	l.Font = Enum.Font.GothamBlack
-	l.TextSize = 24
+	l.TextSize = math.floor(24 * k)
 	l.Parent = b
 	game.TweenService:Create(b, TweenInfo.new(1.5, Enum.EasingStyle.Quad, Enum.EasingDirection.Out), { StudsOffset = Vector3.new(0, (m:GetAttribute("MonsterLabelHeight") or 4.4)*(m:GetAttribute("VisualSize") or 1)+2.6, 0) }):Play()
 	game.TweenService:Create(l, TweenInfo.new(1.5), { TextTransparency = 1, TextStrokeTransparency = 1 }):Play()
@@ -105,6 +107,11 @@ end
 
 -- Name, income per second and rarity over a monster, in the bold outlined style of the owner's reference.
 local LABEL_RANGE = 50
+-- Phones have few screen points, so the labels over the monsters shrink there (owner, 2026-11-14).
+local function labelScale()
+	local v = workspace.CurrentCamera.ViewportSize
+	return math.clamp(math.min(v.X / 1000, v.Y / 560), 0.62, 1)
+end
 local function line(parent, y, height, size, color)
 	local l = Instance.new("TextLabel")
 	l.BackgroundTransparency = 1
@@ -126,15 +133,16 @@ local MUTATION_COLOR = { Golden = Color3.fromRGB(255, 214, 64), Lunar = Color3.f
 local function label(m, data)
 	local b = Instance.new("BillboardGui")
 	b.Name = "MonsterStats"
-	b.Size = UDim2.fromOffset(260, 78)
+	local k = labelScale()
+	b.Size = UDim2.fromOffset(260 * k, 78 * k)
 	b.LightInfluence = 0
 	b.MaxDistance = LABEL_RANGE
 	b.Adornee = m.PrimaryPart
 	b.Parent = m.PrimaryPart
 	data.gui = b
-	data.nameLine = line(b, 0, 28, 24, Color3.new(1, 1, 1))
-	data.rateLine = line(b, 27, 28, 24, Color3.fromRGB(196, 255, 62))
-	data.rareLine = line(b, 54, 22, 18, Color3.new(1, 1, 1))
+	data.nameLine = line(b, 0, 28 * k, math.floor(24 * k), Color3.new(1, 1, 1))
+	data.rateLine = line(b, 27 * k, 28 * k, math.floor(24 * k), Color3.fromRGB(196, 255, 62))
+	data.rareLine = line(b, 54 * k, 22 * k, math.floor(18 * k), Color3.new(1, 1, 1))
 end
 local function fillLabel(m, data)
 	local lang = L.lang()

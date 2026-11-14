@@ -69,7 +69,7 @@ function V.Render(p,d)
  local head=stone.Headstone
  local hand=Art.Spawn("G_Hand",m,cf*CFrame.new(.3*SCALE,-.1*SCALE,-1.8*SCALE),{tints={Hand=Pal.Skin},scale=SCALE}).Hand
  hand.Transparency=1;CollectionService:AddTag(hand,"ArtWave")
- if g.type=="Golden" then sparkle(head,Pal.Accent) elseif g.type=="Lunar" then
+ if g.type=="Golden" then sparkle(head,Pal.Accent) elseif g.type=="Emo" then sparkle(head,Color3.fromHex("FF4FB3")) elseif g.type=="Ghost" then sparkle(head,Color3.fromHex("8FE8FF")) elseif g.type=="Lunar" then
   sparkle(head,Color3.fromHex("BDA6FF"));local light=Instance.new("PointLight");light.Color=Color3.fromHex("BDA6FF");light.Range=16;light.Brightness=1.5;light.Parent=head
  end
  local prompt=Instance.new("ProximityPrompt");prompt.Name="DigPrompt";prompt.ActionText="dig";prompt.ObjectText=g.type;prompt.HoldDuration=SC.DigHold;prompt.MaxActivationDistance=10;prompt.RequiresLineOfSight=false;prompt.Parent=head

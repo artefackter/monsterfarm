@@ -121,7 +121,8 @@ local lastPoint, lastReason
 Run.RenderStepped:Connect(function()
 	local kind = mode()
 	local lang = L.lang()
-	placementGuide(L.text("placeHint", lang), kind, kind ~= nil and not menuOpen())
+	-- no hint text while holding a grave (owner, 2026-11-14: visual noise); the ghost's colour says where it may go
+	placementGuide(L.text("placeHint", lang), kind, kind ~= nil and kind ~= "Grave" and not menuOpen())
 	if not kind or menuOpen() then
 		ghost.Parent = nil
 		lastPoint = nil
@@ -145,7 +146,7 @@ Run.RenderStepped:Connect(function()
 		ghost.Parent = nil
 		return
 	end
-	placementGuide(L.text(reason or (kind == "Grave" and "placeCemetery" or "placeHint"), lang), kind, true, reason ~= nil)
+	placementGuide(L.text(reason or "placeHint", lang), kind, kind ~= "Grave", reason ~= nil)
 	local color = reason and BAD or GOOD
 	local radius = Place.Radius(kind,heldObject())
 	ring.Size = Vector3.new(0.12, radius * 2, radius * 2)

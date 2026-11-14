@@ -7,6 +7,16 @@ local Pets=require(script.Parent.PetService)
 local Bank=require(script.Parent.BankService)
 local Q=require(script.Parent.QuestService);local Board=require(script.Parent.LeaderboardService);local Ref=require(script.Parent.ReferralService);local Slots=require(script.Parent.SlotService);local House=require(script.Parent.HouseService);local HouseRules=require(S.HouseRules);local Road=require(script.Parent.RoadService);local RoadRules=require(S.RoadRules)
 require(S.Locale).install()
+-- Streaming (owner, 2026-11-14: phones run hot; the place has StreamingEnabled on). Models that move or animate arrive
+-- and leave the client whole, never part by part: monsters, mutants, graves, gates, the zombucks heap, portals and
+-- arena barriers.
+do
+ local WHOLE={Grave=true,FarmGate=true,RoadGrave=true,DroppedGrave=true,BloodMoonGrave=true,MoneyPile=true,HomePortal=true,ArenaBarrier=true,BloodBarrier=true,House=true}
+ local function whole(m)
+  if m:IsA("Model") and (WHOLE[m.Name] or m:GetAttribute("ZombieId") or m:GetAttribute("MutantId")) then m.ModelStreamingMode=Enum.ModelStreamingMode.Atomic end
+ end
+ workspace.DescendantAdded:Connect(function(m) if m:IsA("Model") then whole(m);task.defer(function() if m.Parent then whole(m) end end) end end)
+end
 local rem=RS:FindFirstChild("Remotes") or Instance.new("Folder",RS);rem.Name="Remotes"
 for _,name in ipairs({"Intent","State","Notice","Merge"}) do if not rem:FindFirstChild(name) then local r=Instance.new("RemoteEvent");r.Name=name;r.Parent=rem end end
 local sounds=RS:FindFirstChild("Sounds") or Instance.new("Folder",RS);sounds.Name="Sounds"
@@ -26,7 +36,7 @@ local function dig(p,slot,source,petId)
  local d=D.Profiles[p];if source~="pet" and not require(script.Parent.ActionService).CanAct(p) then return end;if not d or (source~="pet" and not allowed(p)) then return end
  for i,g in ipairs(d.graves) do if g.slot==slot and not g.carriedBy and G.Remaining(d,g)==0 and (source=="pet" and not G.IsHeld(p,slot) or source~="pet" and P.Near(p,P.Position(p,"Graves",slot).Position,SC.DigDistance)) then
  local free=Z.Slot(d,"Crypt");if not free then notice(p,"error");return end
- local z=Z.Roll(GC[g.type].Weights,Day.State(),g.starter,Pets.GetBonuses(p).luckMult,GC[g.type].MinTier);if g.monsterType=="DeerChief" then z.type="DeerChief";z.tier=6 end;z.slot=free;table.remove(d.graves,i);table.insert(d.zombies,z);D.Claims[z.id]=p.UserId;d.zombiedex[z.type..":"..z.mutation]=true;Q.Track(p,"dig",1);if z.tier>=2 then Q.Track(p,"rare",1) end
+ local z=Z.Roll(GC[g.type].Weights,Day.State(),g.starter,Pets.GetBonuses(p).luckMult,GC[g.type].MinTier,g.location);if g.monsterType=="DeerChief" then z.type="DeerChief";z.tier=6 end;z.slot=free;table.remove(d.graves,i);table.insert(d.zombies,z);D.Claims[z.id]=p.UserId;d.zombiedex[z.type..":"..z.mutation]=true;Q.Track(p,"dig",1);if z.tier>=2 then Q.Track(p,"rare",1) end
  if d.tutorialStep==0 then d.tutorialStep=1;A.Step(p,1) end
  G.Render(p,d);Z.Render(p,d);if source=="pet" then rem.Notice:FireClient(p,"petDug",{rarity=require(S.Config.ZombieConfig).Tiers[z.tier],type=z.type}) else rem.Notice:FireClient(p,"reveal",z) end
  if z.tier>=3 then rem.Notice:FireAllClients("rare",{name=p.DisplayName,rarity=require(S.Config.ZombieConfig).Tiers[z.tier],type=z.type}) end;push(p);return z end end
@@ -45,6 +55,8 @@ local function action(p,op,arg,zone)
  elseif op=="holdZombie" then ok=Z.Hold(p,d,arg)
  elseif op=="placeZombie" then local x,z=spot(arg);ok,reason=Z.Place(p,d,x,z);if ok and d.tutorialStep==1 then d.tutorialStep=2;A.Step(p,2) end
  elseif op=="dropZombie" then Z.Drop(p);ok=true
+ elseif op=="placeBest" then Z.PlaceBest(p,d);ok=true -- the crypt's buttons (2026-11-14): nothing to do is not an error
+ elseif op=="storeAll" then Z.StoreAll(p,d);ok=true
  elseif op=="move" and zone=="Field" and not P.Inside(p,P.Assigned[p]) then reason="takeOnFarm" -- the hotbar can ask from anywhere
  elseif op=="move" or op=="sell" then
  local z,i=Z.Find(d,arg);if z and not z.carriedBy and not z.pendingTransfer and P.Inside(p,P.Assigned[p]) and not Raid.Carriers[p] then
@@ -113,5 +125,13 @@ task.spawn(function() while task.wait(NC.Poll) do Raid.Tick() end end)
 task.spawn(function() while task.wait(SC.Autosave) do for p in pairs(D.Profiles) do task.spawn(function() local gain=accumulated[p] or 0;if gain>0 then A.Economy(p,gain,D.Profiles[p].coins,"FarmIncome");accumulated[p]=0 end;if not D.Save(p) then p:Kick(require(S.Locale).text("savingError",require(S.Locale).lang(p))) end end) end end end)
 game:BindToClose(function() local pending=0;for p in pairs(D.Profiles) do pending+=1;task.spawn(function() Raid.Leave(p);Board.Flush(p);D.Save(p,true);pending-=1 end) end;while pending>0 do task.wait(.1) end end)
 workspace:SetAttribute("GameBuild","v3-stage6-motion-2026-11-07")
+-- Performance (owner, 2026-11-14: phones run hot): small scenery and anything invisible casts no shadow. The world had
+-- about 20,000 shadow casters; shadows from props smaller than a person add nothing you notice.
+do local n=0
+ for _,q in workspace.DigAZombie:GetDescendants() do
+  if q:IsA("BasePart") and q.CastShadow and (q.Transparency>=.95 or math.max(q.Size.X,q.Size.Y,q.Size.Z)<6) then q.CastShadow=false;n+=1 end
+ end
+ print("Shadows off for",n,"small parts")
+end
 print("DigAZombie ready; Studio memory:",D.Memory)
 

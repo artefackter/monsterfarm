@@ -289,3 +289,69 @@ return {}
 -- a sleeping boss's arena opens the grave-heist tutorial ("Steal the graves": the boss sleeps / grab and run / be the
 -- boss), the night card's window (NightInfoView opts) with cards cut from art/ui/grave-heist, and the arena's boss
 -- under the title; "Don't show again" is the ShowHeistInfo setting. Boss notices now show the boss's name, not its key.
+-- 2026-11-14 (owner's 11-point pass): the day is softer (DayNightService: brightness 1.7, less exposure and ambient).
+-- A sleeping boss never starts a fight by itself or from stray shots: a pulsing target over it (MutantVisuals,
+-- "FIGHT!") sends RoadAction "bossFight" and Road.Challenge shuts the arena; auto-fire skips sleepers. A hoard is
+-- at most 3 graves, all rarer-less than the boss's main grave. No "harder at night" notice in the ruins. HUD: the
+-- weapon hotbar is centred; slot 5 shows the last monster taken (a dark silhouette until one is held); reload sits
+-- where the auto-fire button was; auto-fire is the third icon of the right column (pets, crypt, auto). The day clock
+-- is just the sun/moon icon and a timer; no quest pill bottom right (the "!" over the board stays); the newbie boost
+-- sits top right above the right column; a kill's mutagen flies into its counter like the Zombucks. Phones get
+-- smaller HUD scales (x0.8 icons, x0.78 stats) and smaller monster labels. Modal shades no longer draw (the
+-- ModalBackdrop dims). The grave-heist tutorial is the owner's painted v2 window (Icons.heist_frame, its text
+-- erased and laid back on top), shown once. The workbench moved to the front corner by the well (-37, -35).
+-- 2026-11-14 performance pass (owner: phones run hot, frames drop). Measured in Studio: 22,013 parts, 20,382 shadow
+-- casters, 342 lights, StreamingEnabled off. Thinned: the island has about half the trees and bushes and no
+-- mushrooms, rocks, pumpkins or leaves; farms lost the garden beds (PlacementConfig.Beds is empty), well, crates, dead
+-- trees, leaves, yard mist and fireflies (scarecrow, cart, lamps, workbench stay); the cemetery keeps only its three
+-- hanging lanterns; the ruins have fewer trees, houses, props and lanterns. Main turns shadows off for parts under 6
+-- studs or invisible. After: 18,899 parts, 10,245 shadow casters, 267 lights, 7 particle emitters. The block walls
+-- (road 3,100 + island boundary 3,500 parts) and the arena stands are the biggest remaining counts.
+-- 2026-11-14, second pass: walls of big stones (island: 6 courses of one block per segment, was 11 of three; road:
+-- 2 courses of 10 x 20, was 4 of 5 x 10), arena bowls of 32 stand segments (was 80, and 64 at the Blood Moon arena)
+-- whose ends are kept clear of the way in, 16 columns, 8 floor props and 6 braziers with 3 lit; only every other road
+-- lantern or torch has a real light. Measured: 11,733 parts (from 22,013), 7,211 shadow casters, 190 lights.
+-- 2026-11-14: streaming is on (set on the place's Workspace, not in Rojo): StreamingTargetRadius 512, StreamingMinRadius
+-- 192, StreamOutBehavior Opportunistic, StreamingIntegrityMode MinimumRadiusPause. Main makes moving models atomic
+-- (monsters, mutants, graves, farm gates, the heap, houses, portals, barriers); P.Home asks for the farm to stream in
+-- before moving a player there. Measured in Studio: the client holds about 7,100 parts and 127 lights at home, 2,100
+-- parts and 21 lights at the far end of the ruins (the server has 11,700). Client code finds world parts through
+-- DescendantAdded, so streamed-in parts are picked up; never index a far part by path on the client.
+-- 2026-11-14, owner's 17-point list: no toasts for a grave brought home (a soft sound instead), the portal, "you got
+-- away", "the boss is asleep" (the heist window explains it once), the cemetery placement hint or a refused reload
+-- (a reload is never denied). A boss arena counts as its location, so walking out of it is not a new arrival. Gifts
+-- and home lead the top-right row; home hides out in the ruins. Monster health bars are red and small; the boss bar
+-- sits at the very top; the fight target is smaller and on the boss's body. The boss's main grave stands at the back
+-- of its arena, twice the size, in an iron cage (chains and a padlock until the boss falls, then the door is gone);
+-- the portal home stands off to one side. Hoard graves say "STEAL!". A stolen grave lost on the way stays where it
+-- fell and keeps its boss: whoever lifts it is chased (a boss going back to bed turns round). The portal no longer
+-- costs a grave a rarity. Bosses chase at 1.1x the location's monster speed (was .95) after a 1 s roar (was 1.6):
+-- measured ~27 studs/s in the forest against ~21 for a 240-point runner. Monsters may stand in one another when
+-- placed by hand (PlacementRules.Check; FindFree still spaces them). New graves Emo, Military and Ghost between Golden
+-- and Lunar (GraveConfig.Order), from the village on; they are V3 graves recoloured with a few extra parts (ArtKit
+-- DERIVED). Graves remember where they were dug (item.location) and hatch only that location's monsters
+-- (Config.LocationMonsters; the owner set the first four locations). The Monsterdex is a tab per location with its
+-- monsters, a found/total bar and a one-time reward per monster (InterfaceRules.ClaimMonster, "Claim all").
+-- The pen (farm expansion) was dropped by the owner.
+-- 2026-11-14, next pass: every farm's cemetery is its own fenced yard on the farm's +x side (PlacementConfig.Annex,
+-- graves inside Cemetery only; monsters stay in the Yard), reached by a short fenced passage from an opening in the
+-- +x fence; the crypt stayed in the yard. To make room the island grew (IslandScale 1.44, wall 240.8; RoadConfig.Rim
+-- follows it), the ring of farms moved out (PlotRadius 175) and two farms turned a little (PlotAngles -7, 67, 120, 173,
+-- 247, 300) so the Blood Moon bridge's wedge is as wide as the road's. Raiders come from the -x side. Layout v46
+-- moves graves left in the old patch. A boss win opens a 15 s window (Boss.AfterWin): the boss bar drains in numbers
+-- only, then the boss is back and winners still in the arena empty-handed go home; the portal stands as long. No text
+-- for the win or the portal. Arena doors sit DoorFromEnd (25) studs before a location's end; graves lie only at the
+-- bosses (hoards and main graves). The location banner sits in the top strip. Gifts and home are round; the top-right
+-- row has its own layer at the device's edge. The world home marker hides on the road. Phones: the menu window
+-- gets shorter instead of smaller (fitModal, ~0.78), quests and rewards use the tile lists there; the Monsterdex is
+-- one scrolling list of locations; the crypt has "Place best" and "Store all".
+-- 2026-11-14: no "the arena is shut" toast for a fight and no "X defeated the boss" toast for everyone (owner).
+-- 2026-11-14, models and images: every art mesh template (ArtLib, ArtModels) is meant to have CollisionFidelity Box
+-- (none of the art collides); the V3 graves leave out their dimples, grass blades, crack and tiny cubes (ArtKit
+-- GRAVE_TRIM: 36 parts down to about 22). 62 interface images were resized from Roblox's 1024 px (HUD counters to
+-- 256, portraits and item art to 512; art/ui/optimized) and uploaded again; Icons keeps the old id in a comment.
+-- Left as they are: the 256 px menu icons, the window frames and nine portraits whose local source differs.
+-- 2026-11-14: the phone layouts for the menu windows (a shorter window, then a full-screen one with a compact header,
+-- tiles for quests and rewards, a dex without tabs) were rolled back at the owner's request: the windows, the painted
+-- quest and reward boards are as they were before; the crypt keeps its two buttons; the Monsterdex stays one scrolling
+-- list of locations without tabs (owner: "no, remove the tabs").

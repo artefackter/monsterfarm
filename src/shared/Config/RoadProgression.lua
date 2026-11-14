@@ -30,12 +30,16 @@ P.PocketRadius=100;P.PocketGap=26 -- the round floor; the corridor's width
 -- studs long leaves the road at PocketAngle degrees, leaning forward along the road, and opens into the round.
 -- In road terms (s along the road, x across it) it runs along (DirS, DirX) from DoorS on the road wall; the opening
 -- in the wall is DoorWidth long (the corridor's width cut on the slant).
-P.PocketNeck=26;P.PocketAngle=70
+P.PocketNeck=26;P.PocketAngle=70;P.DoorFromEnd=25
 local ca,sa=math.cos(math.rad(P.PocketAngle)),math.sin(math.rad(P.PocketAngle))
 P.DoorWidth=P.PocketGap/sa
 for i,d in P.Districts do
- d.PocketSide=i%2==1 and 1 or -1;d.PocketS=d.To-P.PocketRadius
+ -- The way in is near the location's end (owner, 2026-11-14: "it was almost in the middle"): the opening in the wall
+ -- starts DoorFromEnd studs before the end, the round leaning on past it beside the next location. The last one stays
+ -- inside the road's length.
+ d.PocketSide=i%2==1 and 1 or -1
  d.DirS,d.DirX=ca,d.PocketSide*sa
+ d.PocketS=math.min(d.To-P.DoorFromEnd+(P.PocketNeck+P.PocketRadius)*ca,P.Length-P.PocketRadius)
  d.DoorS=d.PocketS-(P.PocketNeck+P.PocketRadius)*ca
  d.PocketX=d.PocketSide*(P.RoadHalf+(P.PocketNeck+P.PocketRadius)*sa)
 end

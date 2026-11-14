@@ -1,6 +1,6 @@
 local Run=game:GetService('RunService');local Lighting=game:GetService('Lighting')
 local S=game.ReplicatedStorage:WaitForChild('Shared');local C=require(S.Config.RoadConfig);local districts=require(S.Config.WorldConfig).Districts
-local L=require(S.Locale);local Notices=require(S.Notifications)
+local L=require(S.Locale);local Notices=require(S.Notifications);local Progression=require(S.Config.RoadProgression)
 local pending,enteredAt,announced
 local function announce(d)
  local lang=L.lang()
@@ -20,6 +20,8 @@ Run.Heartbeat:Connect(function(dt)
  local root=game.Players.LocalPlayer.Character and game.Players.LocalPlayer.Character:FindFirstChild('HumanoidRootPart')
  local v=root and base:PointToObjectSpace(root.Position);local selected
  if v and math.abs(v.X)<C.Width/2 and -v.Z>=0 and -v.Z<=C.Length then for _,d in districts do if -v.Z>=d.From and -v.Z<d.To then selected=d;break end end end
+ -- a boss arena (and its corridor) belongs to its location: stepping back out is not a new arrival (2026-11-14)
+ if v and not selected then local i=Progression.PocketAt(-v.Z,v.X,4);if i then selected=districts[i] end end
  local goal=selected and Color3.new(1,1,1):Lerp(Color3.fromHex(selected.Fog),.18) or Color3.new(1,1,1)
  tint.TintColor=tint.TintColor:Lerp(goal,1-math.exp(-dt*2));tint.Saturation=selected and .06 or 0
  if selected~=current then current=selected;mist.Rate=selected and selected.Density*40 or 0;if selected then mist.Color=ColorSequence.new(Color3.fromHex(selected.Fog)) else mist:Clear() end end

@@ -1,6 +1,6 @@
 local RS=game.ReplicatedStorage;local S=RS:WaitForChild("Shared");local C=require(S.Config.MutantConfig);local Sfx=require(S.Sfx);local L=require(S.Locale)
 local Run=game:GetService("RunService");local Tween=game:GetService("TweenService");local Debris=game:GetService("Debris");local p=game.Players.LocalPlayer
-local Animation=require(S.MutantAnimation)
+local Animation=require(S.MutantAnimation);local RoadC=require(S.Config.RoadConfig)
 local Style=require(S.UIStyle)
 local guardModels={};local models={};local folder=workspace:WaitForChild("Mutants")
 local function add(m)
@@ -207,15 +207,15 @@ local GREEN,YELLOW,RED=Color3.fromHex("7DF04A"),Color3.fromHex("FFD23F"),Color3.
 local function round(f,r) local c=Instance.new("UICorner");c.CornerRadius=UDim.new(r or 1,0);c.Parent=f end
 -- A health bar that floats over the head (not inside it) and follows the smoothed body, not the raw server hitbox.
 local function makeBar(m,root,data)
- local b=Instance.new("BillboardGui");b.Name="MutantHealth";b.Size=UDim2.fromOffset(84,14);b.LightInfluence=0;b.MaxDistance=C.AnimateDistance;b.Adornee=root;b.Parent=root
- local alert=Instance.new('TextLabel',b);alert.Name='Alert';alert.Size=UDim2.fromOffset(84,36);alert.Position=UDim2.fromOffset(0,-38);alert.BackgroundTransparency=1;alert.TextColor3=Color3.fromRGB(255,221,71);alert.TextStrokeTransparency=0;alert.Font=Enum.Font.GothamBlack;alert.TextSize=34;data.alert=alert
- local stars=Instance.new('Frame',b);stars.Name='StunStars';stars.Size=UDim2.fromOffset(78,26);stars.Position=UDim2.fromOffset(3,-30);stars.BackgroundTransparency=1;data.stars=stars
- for i=1,3 do local star=Instance.new('ImageLabel',stars);star.Size=UDim2.fromOffset(24,24);star.Position=UDim2.fromOffset((i-1)*27,0);star.BackgroundTransparency=1;star.Image=require(S.Icons).star end
+ local b=Instance.new("BillboardGui");b.Name="MutantHealth";b.Size=UDim2.fromOffset(62,9);b.LightInfluence=0;b.MaxDistance=C.AnimateDistance;b.Adornee=root;b.Parent=root
+ local alert=Instance.new('TextLabel',b);alert.Name='Alert';alert.Size=UDim2.fromOffset(62,30);alert.Position=UDim2.fromOffset(0,-32);alert.BackgroundTransparency=1;alert.TextColor3=Color3.fromRGB(255,221,71);alert.TextStrokeTransparency=0;alert.Font=Enum.Font.GothamBlack;alert.TextSize=34;data.alert=alert
+ local stars=Instance.new('Frame',b);stars.Name='StunStars';stars.Size=UDim2.fromOffset(62,22);stars.Position=UDim2.fromOffset(0,-26);stars.BackgroundTransparency=1;data.stars=stars
+ for i=1,3 do local star=Instance.new('ImageLabel',stars);star.Size=UDim2.fromOffset(20,20);star.Position=UDim2.fromOffset((i-1)*21,0);star.BackgroundTransparency=1;star.Image=require(S.Icons).star end
  local back=Instance.new("Frame",b);back.Name="Back";back.Size=UDim2.fromScale(1,1);back.BackgroundColor3=Color3.fromHex("2A1630");back.BorderSizePixel=0;round(back)
- local stroke=Instance.new("UIStroke",back);stroke.Color=Color3.fromHex("140A18");stroke.Thickness=2
+ local stroke=Instance.new("UIStroke",back);stroke.Color=Color3.fromHex("140A18");stroke.Thickness=1.5
  local lag=Instance.new("Frame",back);lag.Name="Lag";lag.Size=UDim2.fromScale(1,1);lag.BackgroundColor3=Color3.new(1,1,1);lag.BorderSizePixel=0;round(lag);data.lag=lag
- local fill=Instance.new("Frame",back);fill.Name="Fill";fill.Size=UDim2.fromScale(1,1);fill.BackgroundColor3=GREEN;fill.BorderSizePixel=0;round(fill);data.bar=fill
- local shine=Instance.new("Frame",fill);shine.Size=UDim2.new(1,-6,.35,0);shine.Position=UDim2.new(0,3,0,2);shine.BackgroundColor3=Color3.new(1,1,1);shine.BackgroundTransparency=.55;shine.BorderSizePixel=0;round(shine)
+ local fill=Instance.new("Frame",back);fill.Name="Fill";fill.Size=UDim2.fromScale(1,1);fill.BackgroundColor3=RED;fill.BorderSizePixel=0;round(fill);data.bar=fill
+ local shine=Instance.new("Frame",fill);shine.Size=UDim2.new(1,-4,.35,0);shine.Position=UDim2.new(0,2,0,1);shine.BackgroundColor3=Color3.new(1,1,1);shine.BackgroundTransparency=.55;shine.BorderSizePixel=0;round(shine)
  data.gui=b;data.top=topOf(m,root);data.topScale=m:GetScale();data.shown=1
  if m:GetAttribute("Giant") then b.Enabled=false end -- the giant has the big bar at the top of the screen
 end
@@ -230,7 +230,7 @@ Run.PreSimulation:Connect(function(dt)
    data.alert.Text=not stunned and notice<.8 and '!' or '';data.stars.Visible=stunned;data.stars.Rotation=math.sin(now*5)*8
    local frac=math.clamp((m:GetAttribute("Health") or 0)/math.max(1,m:GetAttribute("MaxHealth") or 30),0,1)
    data.bar.Size=UDim2.fromScale(frac,1);data.bar.Visible=frac>0
-   data.bar.BackgroundColor3=frac>.5 and GREEN or frac>.25 and YELLOW or RED
+   -- always red (owner, 2026-11-14: red and compact; it was green, yellow, then red as it emptied)
    data.shown=frac<data.shown and data.shown+(frac-data.shown)*(1-math.exp(-dt*4)) or frac
    data.lag.Size=UDim2.fromScale(data.shown,1)
    local top=data.top*m:GetScale()/data.topScale+.9*m:GetScale()
@@ -274,12 +274,13 @@ Run.PreSimulation:Connect(function(dt)
 end)
 -- The boss bar: a wide health bar at the top of the screen while you stand in a boss's amphitheatre.
 local Progression=require(S.Config.RoadProgression)
-local bossGui=Instance.new("ScreenGui");bossGui.Name="BossBar";bossGui.ResetOnSpawn=false;bossGui.IgnoreGuiInset=false;bossGui.DisplayOrder=4;bossGui.Enabled=false;bossGui.Parent=p:WaitForChild("PlayerGui")
-local bossFrame=Instance.new("Frame",bossGui);bossFrame.AnchorPoint=Vector2.new(.5,0);bossFrame.Position=UDim2.new(.5,0,0,64);bossFrame.Size=UDim2.new(.42,0,0,46);bossFrame.BackgroundTransparency=1
-local bossSize=Instance.new("UISizeConstraint",bossFrame);bossSize.MinSize=Vector2.new(260,40);bossSize.MaxSize=Vector2.new(560,46)
-local bossTitle=Instance.new("TextLabel",bossFrame);bossTitle.Size=UDim2.new(1,0,0,22);bossTitle.BackgroundTransparency=1;bossTitle.Font=Enum.Font.GothamBlack;bossTitle.TextSize=20;bossTitle.TextColor3=Color3.fromHex("FFE7A3");bossTitle.TextStrokeTransparency=0;bossTitle.AutoLocalize=false
-local bossBack=Instance.new("Frame",bossFrame);bossBack.Position=UDim2.fromOffset(0,24);bossBack.Size=UDim2.new(1,0,0,18);bossBack.BackgroundColor3=Color3.fromHex("2A1630");bossBack.BorderSizePixel=0;round(bossBack,.5)
-local bossStroke=Instance.new("UIStroke",bossBack);bossStroke.Color=Color3.fromHex("140A18");bossStroke.Thickness=2.5
+local bossGui=Instance.new("ScreenGui");bossGui.Name="BossBar";bossGui.ResetOnSpawn=false;bossGui.IgnoreGuiInset=true;bossGui.ScreenInsets=Enum.ScreenInsets.None;bossGui.DisplayOrder=4;bossGui.Enabled=false;bossGui.Parent=p:WaitForChild("PlayerGui")
+local bossFrame=Instance.new("Frame",bossGui);bossFrame.AnchorPoint=Vector2.new(.5,0);bossFrame.Position=UDim2.new(.5,0,0,4);bossFrame.Size=UDim2.new(.3,0,0,34);-- the very top, between Roblox's buttons and ours (owner, 2026-11-14)
+bossFrame.BackgroundTransparency=1
+local bossSize=Instance.new("UISizeConstraint",bossFrame);bossSize.MinSize=Vector2.new(200,30);bossSize.MaxSize=Vector2.new(420,34)
+local bossTitle=Instance.new("TextLabel",bossFrame);bossTitle.Size=UDim2.new(1,0,0,16);bossTitle.BackgroundTransparency=1;bossTitle.Font=Enum.Font.GothamBlack;bossTitle.TextSize=15;bossTitle.TextColor3=Color3.fromHex("FFE7A3");bossTitle.TextStrokeTransparency=0;bossTitle.AutoLocalize=false
+local bossBack=Instance.new("Frame",bossFrame);bossBack.Position=UDim2.fromOffset(0,18);bossBack.Size=UDim2.new(1,0,0,13);bossBack.BackgroundColor3=Color3.fromHex("2A1630");bossBack.BorderSizePixel=0;round(bossBack,.5)
+local bossStroke=Instance.new("UIStroke",bossBack);bossStroke.Color=Color3.fromHex("140A18");bossStroke.Thickness=2
 local bossLag=Instance.new("Frame",bossBack);bossLag.Size=UDim2.fromScale(1,1);bossLag.BackgroundColor3=Color3.new(1,1,1);bossLag.BorderSizePixel=0;round(bossLag,.5)
 local bossFill=Instance.new("Frame",bossBack);bossFill.Size=UDim2.fromScale(1,1);bossFill.BackgroundColor3=Color3.fromHex("E8364F");bossFill.BorderSizePixel=0;round(bossFill,.5)
 local bossShown,bossModel=1,nil
@@ -298,6 +299,18 @@ Run.Heartbeat:Connect(function(dt)
    if m.Parent and m:GetAttribute("ChaseUserId")==p.UserId and (m:GetAttribute("Health") or 0)>0 then found=m;break end
   end
  end
+ -- Just after a win (owner, 2026-11-14): the bar drains for the 15 s before the boss is back and the winners still in
+ -- the arena are sent home (RoadService BossWinUntil) — the time left, in numbers only.
+ local winLeft=(p:GetAttribute("BossWinUntil") or 0)-workspace:GetServerTimeNow()
+ if not found and winLeft>0 then
+  bossGui.Enabled=true;bossModel=nil
+  bossTitle.Text=string.format("⏱ %d",math.ceil(winLeft))
+  local k=math.clamp(winLeft/(RoadC.Boss.AfterWin or 15),0,1)
+  bossFill.Size=UDim2.fromScale(k,1);bossFill.Visible=true;bossLag.Size=UDim2.fromScale(k,1)
+  bossFill.BackgroundColor3=Color3.fromHex("7DF04A")
+  return
+ end
+ bossFill.BackgroundColor3=Color3.fromHex("E8364F")
  bossGui.Enabled=found~=nil
  if not found then bossModel=nil;return end
  local frac=math.clamp((found:GetAttribute("Health") or 0)/math.max(1,found:GetAttribute("MaxHealth") or 1),0,1)
@@ -312,3 +325,40 @@ Run.Heartbeat:Connect(function(dt)
  bossShown=frac<bossShown and bossShown+(frac-bossShown)*(1-math.exp(-dt*3)) or frac
  bossLag.Size=UDim2.fromScale(bossShown,1)
 end)
+-- The fight button (owner, 2026-11-14: "don't attack the boss on walking in; a pulsing target on the boss starts the
+-- fight"): while you stand inside a sleeping boss's arena, a big pulsing target floats over it; tapping it asks the
+-- server to start the fight (RoadGearService "bossFight" -> Road.Challenge), which shuts the arena.
+do
+ local Icons=require(S.Icons);local rem=RS:WaitForChild("Remotes")
+ local board=Instance.new("BillboardGui");board.Name="BossFightTarget";board.Size=UDim2.fromOffset(96,96);board.AlwaysOnTop=true;board.LightInfluence=0;board.Active=true;board.ResetOnSpawn=false;board.Enabled=false
+ board.Parent=p:WaitForChild("PlayerGui")
+ local button=Instance.new("ImageButton");button.Name="Target";button.BackgroundTransparency=1;button.AnchorPoint=Vector2.new(.5,.5);button.Position=UDim2.fromScale(.5,.4);button.Size=UDim2.fromOffset(56,56) -- smaller since 2026-11-14 (owner)
+ button.Image=Icons.auto_on or "";button.ImageColor3=Color3.fromRGB(255,80,80);button.Parent=board
+ local ring=Instance.new("Frame");ring.Name="Ring";ring.AnchorPoint=Vector2.new(.5,.5);ring.Position=UDim2.fromScale(.5,.5);ring.Size=UDim2.fromScale(1.15,1.15);ring.BackgroundTransparency=1;ring.Parent=button
+ Instance.new("UICorner",ring).CornerRadius=UDim.new(1,0);local ringStroke=Instance.new("UIStroke",ring);ringStroke.Color=Color3.fromRGB(255,90,90);ringStroke.Thickness=3
+ local caption=Instance.new("TextLabel");caption.Name="Caption";caption.BackgroundTransparency=1;caption.AnchorPoint=Vector2.new(.5,0);caption.Position=UDim2.new(.5,0,.74,0);caption.Size=UDim2.fromOffset(96,20)
+ caption.Font=Enum.Font.GothamBlack;caption.TextScaled=true;caption.TextColor3=Color3.fromRGB(255,240,200);caption.TextStrokeTransparency=0;caption.TextStrokeColor3=Color3.fromRGB(80,10,20);caption.AutoLocalize=false;caption.Parent=board
+ local scale=Instance.new("UIScale");scale.Parent=button
+ local busyUntil=0
+ button.Activated:Connect(function()
+  if os.clock()<busyUntil then return end;busyUntil=os.clock()+1
+  Sfx.play("Click");rem.RoadAction:FireServer("bossFight")
+ end)
+ Run.Heartbeat:Connect(function()
+  local root=p.Character and p.Character:FindFirstChild("HumanoidRootPart");local found
+  if root then
+   for m in pairs(models) do
+    local center=m.Parent and m:GetAttribute("ArenaCenter")
+    if m:GetAttribute("Asleep") and typeof(center)=="Vector3" and m.PrimaryPart then
+     local flat=Vector3.new(root.Position.X-center.X,0,root.Position.Z-center.Z)
+     if flat.Magnitude<=Progression.PocketRadius-2 and math.abs(root.Position.Y-center.Y)<40 then found=m;break end
+    end
+   end
+  end
+  board.Enabled=found~=nil
+  if not found then board.Adornee=nil;return end
+  if board.Adornee~=found.PrimaryPart then board.Adornee=found.PrimaryPart;board.StudsOffsetWorldSpace=Vector3.new(0,1,0) end -- on its body: higher up it hid behind the boss bar
+  local t=os.clock();scale.Scale=1+math.sin(t*4)*.12;ringStroke.Transparency=(t*1.2)%1;ring.Size=UDim2.fromScale(1.1+((t*1.2)%1)*.5,1.1+((t*1.2)%1)*.5)
+  caption.Text=L.text("bossFightButton",L.lang())
+ end)
+end

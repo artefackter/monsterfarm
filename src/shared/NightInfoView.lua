@@ -28,11 +28,17 @@ function V.Create(parent,callbacks,opts)
  callbacks=callbacks or {};opts=opts or {}
  local view={night=false,left=0,dontShow=false,locale=nil}
  local root=frame(parent,opts.name or "NightInfoModal",Color3.new(0,0,0),1);root.Size=UDim2.fromScale(1,1);root.BackgroundTransparency=1;root.Visible=false
- local shade=Instance.new("TextButton");shade.Name="Shade";shade.Size=UDim2.fromScale(1,1);shade.BackgroundColor3=Color3.fromRGB(12,6,25);shade.BackgroundTransparency=.32;shade.BorderSizePixel=0;shade.Text="";shade.AutoButtonColor=false;shade.Active=true;shade.Modal=true;shade.ZIndex=1;shade.Parent=root
+ -- only blocks taps: the full-screen ModalBackdrop dims (2026-11-14: a dimmer of its own, clipped to the safe area, showed as a dark box)
+ local shade=Instance.new("TextButton");shade.Name="Shade";shade.Size=UDim2.fromScale(1,1);shade.BackgroundColor3=Color3.fromRGB(12,6,25);shade.BackgroundTransparency=1;shade.BorderSizePixel=0;shade.Text="";shade.AutoButtonColor=false;shade.Active=true;shade.Modal=true;shade.ZIndex=1;shade.Parent=root
  local board=frame(root,"NightCard",C.Cream,2);board.BackgroundTransparency=1;board.Active=true;board.AnchorPoint=Vector2.new(.5,.5);board.Position=UDim2.fromScale(.5,.5)
  local scale=Instance.new("UIScale");scale.Parent=board
  local fallback=frame(board,"FallbackFrame",C.Cream,2);fallback.Position=UDim2.fromScale(.065,.08);fallback.Size=UDim2.fromScale(.87,.84);corner(fallback,20);stroke(fallback,Color3.fromRGB(129,64,30),10)
  local skin=art(board,"PaintedNightFrame","night_frame",3);skin.Size=UDim2.fromScale(1,1)
+ -- opts.skin: a whole painted window, card pictures, ribbons and button included; only the text is laid on top. It takes
+ -- over once its image has loaded (a fresh upload stays blank while Roblox reviews it); until then the night frame.
+ local painted=false
+ local paintedSkin=opts.skin and art(board,"PaintedSkin",opts.skin,3)
+ if paintedSkin then paintedSkin.Size=UDim2.fromScale(1,1);paintedSkin.Visible=false end
  fallback.Visible=skin.Image==""
  local header=frame(board,"FallbackHeader",C.Purple,3);corner(header,18);stroke(header,C.Gold,3);header.Visible=skin.Image==""
  local title=text(board,"Title",64,C.Gold,4);title.TextStrokeColor3=C.Ink;title.TextStrokeTransparency=0
@@ -59,6 +65,32 @@ function V.Create(parent,callbacks,opts)
  local checkBox=frame(preference,"Box",C.Cream,6);corner(checkBox,6);stroke(checkBox,C.Ink,3)
  local check=text(checkBox,"Check",33,C.Ink,7);check.Size=UDim2.fromScale(1,1);check.Text="✓";check.Visible=false
  local preferenceText=text(preference,"Caption",25,C.Ink,6);preferenceText.TextXAlignment=Enum.TextXAlignment.Left
+ preference.Visible=not opts.noDontShow
+ -- Painted: the window's own button, close cross, card frames and ribbons show through; ours turn into bare text and
+ -- invisible hit areas.
+ local function paint(on)
+  painted=on;paintedSkin.Visible=on;skin.Visible=not on
+  for _,row in cards do
+   row.tile.BackgroundTransparency=on and 1 or 0;row.tile:FindFirstChildOfClass("UIStroke").Enabled=not on;row.picture.Visible=not on
+   row.ribbon.BackgroundTransparency=on and 1 or 0;row.ribbon:FindFirstChildOfClass("UIStroke").Enabled=not on
+   row.heading:FindFirstChildOfClass("UITextSizeConstraint").MaxTextSize=on and 38 or 29
+  end
+  for _,o in {acknowledge,close} do
+   o.BackgroundTransparency=on and 1 or 0;o.AutoButtonColor=not on
+   for _,c in o:GetDescendants() do if c:IsA("UIStroke") then c.Enabled=not on elseif c:IsA("Frame") then c.Visible=not on end end
+  end
+  gradient.Enabled=not on
+  title.TextColor3=on and Color3.fromRGB(255,214,74) or C.Gold;title.TextStrokeColor3=on and Color3.fromRGB(92,14,10) or C.Ink
+  view:Fit(parent.AbsoluteSize)
+ end
+ local function tryPaint()
+  if not paintedSkin or painted then return end
+  task.spawn(function()
+   local ok=false
+   pcall(function() game:GetService("ContentProvider"):PreloadAsync({paintedSkin},function(_,status) ok=status==Enum.AssetFetchStatus.Success end) end)
+   if ok and not painted then paint(true) end
+  end)
+ end
  local function clicked() if callbacks.close then callbacks.close() else view:SetVisible(false) end end
  close.Activated:Connect(clicked);acknowledge.Activated:Connect(clicked)
  -- The backdrop blocks input; closing is explicit so the clock click cannot dismiss the newly opened modal.
@@ -72,7 +104,7 @@ function V.Create(parent,callbacks,opts)
   title.Text=opts.title and t(opts.title) or t(self.night and "nightCardTitle" or "nightCardDay")
   if opts.noTimer then -- no countdown: the plaque under the title carries a line of its own (SetSubtitle), if any
    local args={};for k,v in self.subtitleArgs or {} do args[k]=t(v) end
-   timer.Visible=self.subtitleKey~=nil;timer.Text=self.subtitleKey and t(self.subtitleKey,args) or ""
+   timer.Visible=self.subtitleKey~=nil and not painted;timer.Text=self.subtitleKey and t(self.subtitleKey,args) or ""
   end
   local seconds=math.max(0,math.ceil(self.left));local time=string.format("%02d:%02d",math.floor(seconds/60),seconds%60)
   if not opts.noTimer then timer.Text=t(self.night and "nightUntilDawn" or "nightUntilDusk",{time='<font color="#FFE14A">'..time..'</font>'}) end
@@ -82,10 +114,22 @@ function V.Create(parent,callbacks,opts)
  function view:SetSubtitle(key,args) self.subtitleKey=key;self.subtitleArgs=args;self:Refresh() end
  function view:Update(night,left,locale) self.night=night==true;self.left=left or 0;self.locale=locale;self:Refresh() end
  function view:Fit(viewport)
-  local portrait=viewport.X<viewport.Y*.95
+  local portrait=viewport.X<viewport.Y*.95 and not painted
   local w,h=portrait and 620 or 1280,portrait and 1120 or 720
   board.Size=UDim2.fromOffset(w,h)
   scale.Scale=math.max(.1,math.min(1.25,(viewport.X-16)/w,(viewport.Y-16)/h))
+  if painted then -- spots measured on the painted window (1672x941 mockup x .7656)
+   skin.ScaleType=Enum.ScaleType.Stretch
+   rect(title,354,88,579,76);timer.Visible=false;rect(close,1138,54,70,64)
+   local cardX,cardW={106,462,813},{342,340,362}
+   for i,row in cards do
+    rect(row.tile,cardX[i],195,cardW[i],360)
+    rect(row.ribbon,36,222,cardW[i]-72,48);rect(row.body,14,280,cardW[i]-28,74)
+   end
+   rect(acknowledge,448,572,372,72);rect(ackText,60,8,252,52)
+   header.Visible=false;self.Portrait=false;self.Scale=scale.Scale
+   return
+  end
   if portrait then
    skin.ScaleType=Enum.ScaleType.Slice;skin.SliceCenter=Rect.new(200,310,1470,810);skin.SliceScale=.50
    rect(header,87,72,446,86);rect(title,117,72,386,54);rect(timer,174,129,272,36);rect(close,530,46,52,52)
@@ -111,13 +155,14 @@ function V.Create(parent,callbacks,opts)
  function view:SetVisible(value)
   root.Visible=value==true
   if root.Visible then
+   tryPaint()
    self:Fit(parent.AbsoluteSize);self:Refresh()
    local target=scale.Scale;scale.Scale=target*.94;Tween:Create(scale,TweenInfo.new(.16,Enum.EasingStyle.Quad),{Scale=target}):Play()
   end
  end
  view.Root=root;view.Card=board;view.Timer=timer;view.Cards=cards;view.Checkbox=preference;view.Close=close;view.Acknowledge=acknowledge
  parent:GetPropertyChangedSignal("AbsoluteSize"):Connect(function() view:Fit(parent.AbsoluteSize) end)
- view:Fit(parent.AbsoluteSize);view:Refresh()
+ view:Fit(parent.AbsoluteSize);view:Refresh();tryPaint()
  return view
 end
 return V

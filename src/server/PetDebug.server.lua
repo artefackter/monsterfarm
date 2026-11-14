@@ -70,13 +70,21 @@ local function execute(p,command,arg,value)
    end
   end
   return false
+ elseif command=="grab" then
+  -- /grab: pick up the nearest grave lying on the road (a dropped one too) as if the prompt were held
+  local Road=require(script.Parent.RoadService);local root=p.Character and p.Character:FindFirstChild("HumanoidRootPart");if not root then return false end
+  local best,bestD
+  for spot in pairs(Road.Drops) do if spot.Model then local dd=(Road.SpotPosition(spot,2)-root.Position).Magnitude;if not bestD or dd<bestD then best,bestD=spot,dd end end end
+  if not best then return false end
+  p.Character:PivotTo(CFrame.new(Road.SpotPosition(best,4)));task.wait(.3)
+  return Road.Take(p,best)
  elseif command=="hitboss" then
   -- /hitboss n: step into boss n's arena and hit it once (the arena shuts: the fight starts)
   local Road=require(script.Parent.RoadService);local cfg=Road.BossCfg[tonumber(arg) or 0];local a=cfg and cfg.Live
   local d=require(game.ReplicatedStorage.Shared.Config.RoadProgression).Districts[tonumber(arg) or 0]
   if not a or not d or not p.Character then return false end
   p.Character:PivotTo(Road.At(d.PocketS,d.PocketX-d.PocketSide*40,4));task.wait(.3)
-  return require(script.Parent.MutantService).Damage(a,1,p)
+  return Road.Challenge(p) -- as the target button over the boss does
  elseif command=="farm" then
   -- /farm [n]: skip the tutorial and put n first-tier monsters out in the yard (night raids need a target)
   local Z=require(script.Parent.ZombieService);local Place=require(game.ReplicatedStorage.Shared.PlacementRules)

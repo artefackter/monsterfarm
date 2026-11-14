@@ -1,22 +1,23 @@
 -- Six progressively longer biomes. Recommendations are progression points, not studs/second.
 -- Locations v4 (owner, 2026-11-12): each location = a regular stretch with graves and its two monster kinds, then an
 -- arena with the location's boss asleep on its hoard of graves (Boss, below).
-local Progression=require(script.Parent.RoadProgression)
+local Progression=require(script.Parent.RoadProgression);local Zone=require(script.Parent.ZoneConfig)
 local MonsterRules=require(script.Parent.Parent.RoadMonsterRules)
 local config={
- Width=140,Length=Progression.Length,Dir=Vector3.new(.5,0,.866),Rim=208,GateLine=5,
+ Width=140,Length=Progression.Length,Dir=Vector3.new(.5,0,.866),Rim=170*Zone.IslandScale-Zone.Boundary.Inset-.5, -- the island wall (208 until 2026-11-14, when the island grew for the cemeteries)
+ GateLine=5,
  Hold=1.5,Respawn=40,DropBelow=-8,Hearts=5,
  Bat={Range=8,Cooldown=1.2},
  -- Traps catch only someone else carrying a grave: Stun s, and the grave drops (monsters walk over them; the owner
  -- tried traps on monsters on 2026-11-13 and took it back).
  Trap={Price=100,MaxStock=10,MaxPlaced=3,Arm=1.25,Lifetime=60,Radius=2.6,Stun=1.5,Spacing=7},
  DropLifetime=180,MaxDrops=32,
- Carry={Wooden=.9,Stone=.85,Marble=.8,Golden=.75,Lunar=.7},
+ Carry={Wooden=.9,Stone=.85,Marble=.8,Golden=.75,Emo=.74,Military=.73,Ghost=.72,Lunar=.7},
  Spots={},Imps={},NightOnly={Lunar=true},
  BiomeScale={1,1.12,1.25,1.4,1.55,1.75},
  BiomeHealth={1,1.5,2.2,3.2,4.5,6},
  BiomeDamage={1,1,1,2,2,2},
- Announce={Marble=true,Golden=true,Lunar=true},
+ Announce={Marble=true,Golden=true,Emo=true,Military=true,Ghost=true,Lunar=true},
  -- Boss of every arena: Respawn s after a defeat it is back (asleep) and its main grave locks again.
  -- Kind is kept for the final boss (the Chief), whose grave hatches the DeerChief.
  -- Harder since 2026-11-13: HealthMult and DamageMult on top of the location's; below Enrage.At of its health a boss
@@ -27,11 +28,15 @@ local config={
  -- after the thief at Chase.Speed times its location's monster speed, all the way to the ruins gate; if it gets within
  -- Chase.Catch of them they die and the grave goes back. It gives up Chase.GiveUp s after the chase ends and is back
  -- asleep in its bed. Hit it instead and its arena shuts on everyone inside: the fight goes on until it or they fall.
- -- The main grave (Main[i]) lies Hoard.MainBehind behind its bed, locked until it falls and then only for its winners.
- Boss={Kind="Chief",Respawn=90,Leash=6,RegenAfter=4,RegenRate=.12,
-  HealthMult=2.4,DamageMult=1.5,Enrage={At=.5,Speed=1.35,Rate=1.6},PortalSeconds=75,
-  Hoard={Count=6,Radius=30,Respawn=60,MainBehind=18},
-  Chase={Wake=1.6,Speed=.95,Catch=4,GiveUp=4,Stuck=1.2,Hop=16},
+ -- The main grave (Main[i]) stands caged Hoard.MainBehind behind its bed (at the back of the arena), locked until it
+ -- falls and then only for its winners.
+ Boss={Kind="Chief",Respawn=15,AfterWin=15, -- back 15 s after a win, winners left in the arena go home (2026-11-14; was 90)
+ Leash=6,RegenAfter=4,RegenRate=.12,
+  HealthMult=2.4,DamageMult=1.5,Enrage={At=.5,Speed=1.35,Rate=1.6},PortalSeconds=15,
+  Hoard={Count=3,Radius=30,Respawn=60,MainBehind=84}, -- the main grave's cage stands at the back of the arena (2026-11-14; was 18)
+  -- Faster since 2026-11-14 (owner: "at speed 240 I simply outrun it"): 1.1x the location's monster speed (was .95),
+  -- so only a runner trained well past the location's recommended speed gets away; a shorter roar (1 s, was 1.6).
+  Chase={Wake=1,Speed=1.1,Catch=4,GiveUp=4,Stuck=1.2,Hop=16},
   Main={{Kind="Marble"},{Kind="Golden"},{Kind="Golden"},{Kind="Lunar"},{Kind="Lunar"},{Kind="Lunar",Chief=.15}}},
  Night={GraveRolls=2,KillReward=2,Speed=1.12,AttackRate=1.2,Health=1.5,Damage=2},
  Population={MaxLive=64,SpawnBudget=2,ActiveDistance=430,SpawnJitter=18,RespawnMin=12,RespawnMax=22},
@@ -54,27 +59,33 @@ local config={
 }
 local pools={
  {Wooden=90,Stone=10},{Wooden=25,Stone=75},{Stone=65,Marble=35},
- {Stone=15,Marble=65,Golden=20},{Marble=40,Golden=50,Lunar=10},{Golden=65,Lunar=35},
+ -- Emo, Military and Ghost (2026-11-14) turn up from the village on, more of them further along
+ {Stone=15,Marble=60,Golden=20,Emo=5},{Marble=35,Golden=35,Emo=10,Military=7,Ghost=3,Lunar=10},{Golden=45,Emo=10,Military=10,Ghost=8,Lunar=27},
 }
 -- The hoard round a sleeping boss: the location's best graves.
 local arenaPools={
  {Stone=70,Marble=30},{Stone=20,Marble=80},{Marble=60,Golden=40},
- {Marble=20,Golden=80},{Golden=70,Lunar=30},{Golden=45,Lunar=55},
+ {Marble=20,Golden=70,Emo=10},{Golden=50,Emo=15,Military=10,Ghost=5,Lunar=20},{Golden=30,Emo=12,Military=12,Ghost=11,Lunar=35},
 }
 for i,d in Progression.Districts do
  -- The regular stretch: from the location's start to a little before its arena.
  local from,to=d.From,d.ArenaFrom-8
  local length=to-from
- local count=math.max(2,math.ceil(length/180))
- for n=1,count do table.insert(config.Spots,{S=from+length*n/(count+1),X=n%2==0 and 33 or -33,Pool=pools[i]}) end
+ -- No graves along the road any more (owner, 2026-11-14): only the bosses' hoards and main graves below. The pools
+ -- stay for the reference (and the Blood Moon has its own).
+ local _=length;local _=pools
  -- The sleeping boss's hoard: a ring of graves round its bed (free to steal, if you can outrun it), and behind the
  -- bed the main grave, locked until the boss falls (RoadService).
  local hoard=config.Boss.Hoard
+ -- at most three, and never as rare as the boss's own main grave (owner, 2026-11-14)
+ local main=config.Boss.Main[i];local order=require(script.Parent.GraveConfig).Order
+ local cap=table.find(order,main.Kind);local pool={}
+ for kind,w in arenaPools[i] do if table.find(order,kind)<cap then pool[kind]=w end end
+ if next(pool)==nil then pool={[order[math.max(1,cap-1)]]=100} end
  for n=1,hoard.Count do
   local t=(n-.5)/hoard.Count*math.pi*2
-  table.insert(config.Spots,{S=d.PocketS+math.sin(t)*hoard.Radius,X=d.PocketX+math.cos(t)*hoard.Radius,Pool=arenaPools[i],Guard=i,Respawn=hoard.Respawn})
+  table.insert(config.Spots,{S=d.PocketS+math.sin(t)*hoard.Radius,X=d.PocketX+math.cos(t)*hoard.Radius,Pool=pool,Guard=i,Respawn=hoard.Respawn})
  end
- local main=config.Boss.Main[i]
  table.insert(config.Spots,{S=d.PocketS+d.DirS*hoard.MainBehind,X=d.PocketX+d.DirX*hoard.MainBehind,Pool={[main.Kind]=100},Arena=i,Main=true,Chief=main.Chief})
  local enemies=MonsterRules.Count(length)
  for n=1,enemies do

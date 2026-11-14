@@ -174,11 +174,12 @@ function Gear.Init()
  rem=RS.Remotes
  local action=Instance.new("RemoteEvent");action.Name="RoadAction";action.Parent=rem
  action.OnServerEvent:Connect(function(p,op,target,...)
-  if select('#',...)~=0 or type(op)~="string" or (op~="bat" and op~="placeTrap" and op~="buyTrap" and op~="dropGrave") then return end
+  if select('#',...)~=0 or type(op)~="string" or (op~="bat" and op~="placeTrap" and op~="buyTrap" and op~="dropGrave" and op~="bossFight") then return end
   if target~=nil and (op~="placeTrap" or typeof(target)~="Vector3") then return end
   local now=os.clock();if now-(Gear.Requests[p] or -math.huge)<.2 then return end;Gear.Requests[p]=now
   if op=="placeTrap" then local d=D.Profiles[p];if not d or d.activeSlot~=4 then return end end
   local ok,reason
+  if op=="bossFight" then ok=Road.Challenge(p);return end
   if op=="dropGrave" then ok,reason=Gear.DropGrave(p) elseif op=="bat" then ok,reason=Gear.Bat(p) elseif op=="placeTrap" then ok,reason=Gear.Place(p,target) else ok,reason=Gear.Buy(p) end
   if not ok and type(reason)=="string" then notice(p,reason) end
  end)

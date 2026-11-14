@@ -94,17 +94,19 @@ do
  local portrait=Instance.new('ImageLabel');portrait.Name='MonsterPortrait';portrait.BackgroundTransparency=1;portrait.ScaleType=Enum.ScaleType.Fit
  portrait.Size=UDim2.fromOffset(62,56);portrait.Position=UDim2.fromOffset(8,6);portrait.ZIndex=3;portrait.Parent=extra.monster
  local count=badgeText(extra.monster,'Count')
+ -- Not holding one (owner, 2026-11-14): the silhouette of the last monster you took in your arms (or the crypt's first),
+ -- a dark 3D shape, instead of a crypt icon. In your arms it shows in full colour.
  extra.refresh=function()
-  local held=heldType()
-  local icon=held and require(S.MonsterCollection).Icon(held,Icons)
-  portrait.Image=held and (icon or '') or Icons.crypt or '';portrait.ImageTransparency=held and 0 or .3
-  local model3d=extra.monster:FindFirstChild('MonsterModel') -- no painting yet (the rotation): its 3D model
-  if held and not icon then
-   if not model3d or model3d:GetAttribute('Type')~=held then
-    if model3d then model3d:Destroy() end
-    local v=require(S.MonsterPortrait).Create(extra.monster,{id=held,type=held,tier=1},UDim2.fromOffset(62,56),UDim2.fromOffset(8,6));v.Name='MonsterModel';v.ZIndex=3;v:SetAttribute('Type',held)
-   end
-  elseif model3d then model3d:Destroy() end
+  local held=heldType();if held then extra.last=held end
+  if not extra.last then for _,z in itemsState and itemsState.zombies or {} do if free(z) then extra.last=z.type;break end end end
+  local shown=held or extra.last or 'DeerFarmer'
+  portrait.Image=''
+  local model3d=extra.monster:FindFirstChild('MonsterModel')
+  if not model3d or model3d:GetAttribute('Type')~=shown then
+   if model3d then model3d:Destroy() end
+   model3d=require(S.MonsterPortrait).Create(extra.monster,{id=shown,type=shown,tier=1},UDim2.fromOffset(62,56),UDim2.fromOffset(8,6));model3d.Name='MonsterModel';model3d.ZIndex=3;model3d:SetAttribute('Type',shown)
+  end
+  model3d.ImageColor3=held and Color3.new(1,1,1) or Color3.fromRGB(16,12,30);model3d.ImageTransparency=held and 0 or .15
   local n=0;for _,z in itemsState and itemsState.zombies or {} do if free(z) then n+=1 end end
   count.Text=held and '' or tostring(n)
  end
@@ -126,24 +128,24 @@ rem.State.OnClientEvent:Connect(function(s) itemsState=s end)
 p:GetAttributeChangedSignal('EquippedShovel'):Connect(function() shovelIcon:Destroy();shovelIcon=Style.ModalArt(selectShovel,'shovel',p:GetAttribute('EquippedShovel'),UDim2.fromOffset(62,58),UDim2.fromOffset(8,6)) end)
 local arrow=text(gui,"ThreatArrow","",UDim2.fromOffset(150,50),UDim2.fromScale(.5,.26),Pal.Red);arrow.AnchorPoint=Vector2.new(.5,.5);arrow.Active=false;arrow.Visible=false;local ars=Instance.new("UIScale",arrow)
 local function resize()
- local v=gui.AbsoluteSize;local f=math.clamp(math.min(v.X/1000,v.Y/560),.52,1.1)
+ local v=gui.AbsoluteSize;local touch=UIS.TouchEnabled;local f=math.clamp(math.min(v.X/1000,v.Y/560)*(touch and .8 or 1),touch and .44 or .52,1.1) -- as UIController: smaller on phones
  scale.Scale=f;ars.Scale=f;slowScale.Scale=f
  local full=p.PlayerGui:FindFirstChild('MobileStats')
  local centerShift=UIS.TouchEnabled and full and (full.AbsolutePosition.Y-gui.AbsolutePosition.Y+(full.AbsoluteSize.Y-v.Y)/2+13*f) or 0
  slow.Position=UDim2.new(0,14,.5,8+centerShift)
- -- Five slots and a gap are wide (2026-11-13): the bar sits in the gap between the stats bottom-left and the day clock
- -- bottom-right, shrinking if that gap is narrower than the bar.
+ -- The bar sits in the middle of the screen (owner, 2026-11-14), shrinking if it would reach the stats bottom-left or
+ -- the day clock bottom-right.
  local dig=p.PlayerGui:FindFirstChild('DigUI');local clock=dig and dig:FindFirstChild('DayClock')
- local ms=math.clamp(math.min(workspace.CurrentCamera.ViewportSize.X/1280,workspace.CurrentCamera.ViewportSize.Y/720),.48,1.25)
+ local ms=math.clamp(math.min(workspace.CurrentCamera.ViewportSize.X/1280,workspace.CurrentCamera.ViewportSize.Y/720)*(touch and .78 or 1),touch and .38 or .48,1.25)
  local left=16+250*ms;local right=clock and clock.AbsoluteSize.X>0 and clock.AbsolutePosition.X-gui.AbsolutePosition.X-6 or v.X-12-300*f
- local k=math.clamp((right-left)/446,.4,f);scale.Scale=k
- control.Position=UDim2.new(0,math.clamp((left+right)/2,223*k+4,v.X-223*k-4),1,-8)
+ local mid=v.X/2;local k=math.clamp(math.min(mid-left,right-mid)/223,.4,f);scale.Scale=k
+ control.Position=UDim2.new(0,mid,1,-8)
 end
 workspace.CurrentCamera:GetPropertyChangedSignal("ViewportSize"):Connect(resize);gui:GetPropertyChangedSignal("AbsoluteSize"):Connect(resize);resize()
 task.spawn(function() local dig=p.PlayerGui:WaitForChild('DigUI',15);local c=dig and dig:WaitForChild('DayClock',15);if c then c:GetPropertyChangedSignal('AbsolutePosition'):Connect(resize);resize() end end)
 p.PlayerGui.ChildAdded:Connect(function(c) if c.Name=='MobileStats' then c:GetPropertyChangedSignal('AbsoluteSize'):Connect(resize);task.defer(resize) end end)
 local function menuOpen() if upgradeWindow and upgradeWindow.Visible then return true end;local dig=p.PlayerGui:FindFirstChild("DigUI");local menu=dig and dig:FindFirstChild("Menu");return dig and (dig:GetAttribute("ModalOpen")==true or menu and menu.Visible or dig:FindFirstChild("Reveal")~=nil or dig:FindFirstChild("PetHatch")~=nil) end
--- Round buttons to the right of the hotbar: drop the grave you carry (key G) and, on phones, reload (R on keyboards).
+-- Round buttons to the right of the hotbar: drop the grave you carry (key G) and, above it, reload (also R).
 local function roundButton(name,y,color,callback)
  local b=Instance.new('TextButton');b.Name=name;b.Text='';b.AutoButtonColor=false;b.Size=UDim2.fromOffset(78,78);b.Position=UDim2.fromOffset(454,y);b.BackgroundColor3=color;b.Visible=false;b.Parent=control
  Instance.new('UICorner',b).CornerRadius=UDim.new(1,0)
@@ -151,28 +153,18 @@ local function roundButton(name,y,color,callback)
  local pop=Instance.new('UIScale',b);b.Activated:Connect(function() Style.Pop(pop,1);Sfx.play('Click');callback() end)
  return b
 end
-local reloadButton=roundButton('ReloadButton',3,Color3.fromRGB(255,196,64),function() rem.WeaponAction:FireServer('reload') end)
+local reloadButton=roundButton('ReloadButton',-169,Color3.fromRGB(255,196,64),function() rem.WeaponAction:FireServer('reload') end)
 local reloadIcon=Instance.new('ImageLabel');reloadIcon.Name='Icon';reloadIcon.BackgroundTransparency=1;reloadIcon.Size=UDim2.fromOffset(54,54);reloadIcon.Position=UDim2.fromOffset(12,12);reloadIcon.Image=Icons.reload;reloadIcon.ImageColor3=Color3.fromRGB(52,33,78);reloadIcon.Parent=reloadButton
 local dropButton=roundButton('DropGraveButton',-83,Color3.fromRGB(255,110,110),function() roadAction('dropGrave') end)
 Style.ModalArt(dropButton,'coffin',nil,UDim2.fromOffset(46,44),UDim2.fromOffset(16,4))
 local dropLabel=Style.Text(dropButton,'',UDim2.fromOffset(70,22),UDim2.fromOffset(4,48));dropLabel.Name='Label';dropLabel.TextColor3=Color3.new(1,1,1);dropLabel.ZIndex=4
 local dropStroke=Instance.new('UIStroke',dropLabel);dropStroke.Color=Color3.fromRGB(20,14,40);dropStroke.Thickness=2
--- Auto-fire on/off (owner, 2026-11-13: "an icon to switch auto-fire off, on the right"): the same setting as in
--- Settings. Green while it fires on its own, grey when you shoot by clicking; it sits above the grave button.
-local autoUI={};autoUI.button=roundButton('AutoFireButton',-83,Color3.fromRGB(110,220,90),function() rem.InterfaceAction:FireServer('setting','AutoFire',p:GetAttribute('AutoFire')==false) end)
-autoUI.icon=Instance.new('ImageLabel');autoUI.icon.Name='Icon';autoUI.icon.BackgroundTransparency=1;autoUI.icon.Size=UDim2.fromOffset(46,46);autoUI.icon.Position=UDim2.fromOffset(16,6);autoUI.icon.ScaleType=Enum.ScaleType.Fit;autoUI.icon.Parent=autoUI.button
-autoUI.label=Style.Text(autoUI.button,'',UDim2.fromOffset(70,22),UDim2.fromOffset(4,50));autoUI.label.Name='Label';autoUI.label.TextColor3=Color3.new(1,1,1);autoUI.label.ZIndex=4
-do local st=Instance.new('UIStroke',autoUI.label);st.Color=Color3.fromRGB(20,14,40);st.Thickness=2 end
 Run.Heartbeat:Connect(function()
  local open=menuOpen()
- local on=p:GetAttribute('AutoFire')~=false
- autoUI.button.Visible=not open;autoUI.button.Position=UDim2.fromOffset(454,-169) -- above the grave button, clear of the clock's pills
- autoUI.button.BackgroundColor3=on and Color3.fromRGB(110,220,90) or Color3.fromRGB(120,118,136)
- autoUI.icon.Image=on and Icons.auto_on or Icons.auto_off;autoUI.label.Text=t(on and 'autoFireOn' or 'autoFireOff')
  dropButton.Visible=p:GetAttribute('CarryingGrave')==true and not open
  dropLabel.Text=t('dropGrave')
  local cfg=state and C[state.equipped]
- reloadButton.Visible=UIS.TouchEnabled and not open and p:GetAttribute('ActiveSlot')==2 and cfg~=nil and not state.holstered and (state.reloadLeft or 0)<=0 and (state.ammo or 0)<(state.magazine or cfg.Magazine)
+ reloadButton.Visible=not open and p:GetAttribute('ActiveSlot')==2 and cfg~=nil and not state.holstered and (state.reloadLeft or 0)<=0 and (state.ammo or 0)<(state.magazine or cfg.Magazine)
 end)
 do -- its own scope: this script is close to Luau's limit of 200 locals
 -- The illustrated workshop keeps its rendering separate from combat input and server authority.
@@ -254,7 +246,7 @@ local function aimPoint()
  local ch=p.Character;local head=ch and ch:FindFirstChild("Head");if not head then return end
  local f=workspace:FindFirstChild("Mutants");local targets={};local include={}
  for x in pairs(blockers) do if x.Parent and x.CanCollide and x.CanQuery then table.insert(include,x) end end
- for _,m in ipairs(f and f:GetChildren() or {}) do if m.PrimaryPart and (m:GetAttribute("Health") or 0)>0 and m:GetAttribute("State")~="Spawning" then
+ for _,m in ipairs(f and f:GetChildren() or {}) do if m.PrimaryPart and (m:GetAttribute("Health") or 0)>0 and m:GetAttribute("State")~="Spawning" and not m:GetAttribute("Asleep") then -- a sleeping boss is only woken on purpose (its target button)
   table.insert(include,m.PrimaryPart)
   local dist=(m.PrimaryPart.Position-head.Position).Magnitude
   if dist<=(state.range or C[state.equipped].Range) then table.insert(targets,{model=m,dist=dist}) end

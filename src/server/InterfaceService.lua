@@ -172,12 +172,15 @@ function I.Init(push)
    if I.NearBoard(p,'Prestige') then local reason;ok,reason=require(script.Parent.PrestigeService).Do(p);if not ok and reason then notice(p,reason);I.Refresh(p);push(p);return end end
   elseif op=='setting' then ok=I.Settings(p,arg,value)
   elseif op=='dex' then local page,n=string.match(arg or '', '^(%a+):(%d+)$');if page then ok=Rules.ClaimDex(d,page,tonumber(n));Act.Push(p) end
+  elseif op=='dexMon' then ok=type(arg)=='string' and #arg<40 and Rules.ClaimMonster(d,arg);if ok then Act.Push(p) end -- one monster's reward (2026-11-14)
+  elseif op=='dexAll' then local i=tonumber(arg);ok=i~=nil and i%1==0 and Rules.ClaimLocation(d,i);if ok then Act.Push(p) end
   elseif op=='gift' then ok=I.Gift(p)
   elseif op=='trap' then ok=Act.Select(p,4)
   elseif op=='product' then local cfg=C.Products[arg];local q=I.Quote(p,arg);if cfg and cfg.Id>0 and I.NearBoard(p,arg) and q and not q.max and not q.reason then game:GetService('MarketplaceService'):PromptProductPurchase(p,cfg.Id);ok=true end
   end
   if op~='upgrade' and d.coins~=before then require(script.Parent.AnalyticsTracker).Economy(p,d.coins-before,d.coins,op) end
-  if op~='home' then notice(p,ok and 'ok' or 'error') end
+  -- the heist tutorial switches itself off after its one showing: no "Done!" toast over it (2026-11-14)
+  if op~='home' and not (op=='setting' and arg=='ShowHeistInfo' and ok) then notice(p,ok and 'ok' or 'error') end
   I.Refresh(p);push(p)
  end)
  game:GetService('MarketplaceService').ProcessReceipt=I.ProcessReceipt

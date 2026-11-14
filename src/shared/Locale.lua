@@ -249,7 +249,7 @@ LunarPumpkin={"Lunar Pumpkin","Лунная тыква"},
  grave_Stone={"Stone","Каменная"},
  grave_Marble={"Marble","Мраморная"},
  grave_Golden={"Golden","Золотая"},
- grave_Lunar={"Lunar","Лунная"},
+ grave_Lunar={"Lunar","Лунная"},grave_Emo={"Emo","Нефорская"},grave_Military={"Military","Военная"},grave_Ghost={"Ghost","Призрачная"},
  move_Field={"Take","Взять"},
  move_Diggers={"To graveyard","На кладбище"},
  move_Guards={"To gates","На ворота"},
@@ -526,6 +526,11 @@ L.Rows.roadBossLock={"🔒 Defeat the boss","🔒 Победи босса"}
 -- 2026-11-12, round 2: Monsterdex cards, hiding bushes, shovel stats, the entrance, house levels and the farm's cap.
 L.Rows.dexFindHint={"Not found yet","Ещё не найден"}
 L.Rows.dexUnlockedAll={"All pages: {n}/{total} found","Всего открыто: {n}/{total}"}
+L.Rows.dexRewards={"Rewards:","Награды:"}
+L.Rows.dexClaimAll={"Claim all ({n})!","Получить все ({n})!"}
+L.Rows.roadSteal={"STEAL!","УКРАДИ!"}
+L.Rows.cryptPlaceBest={"Place best","Поставить лучших"}
+L.Rows.cryptStoreAll={"Store all","Убрать всех"}
 L.Rows.bushHidden={"🌿 In a bush: unseen","🌿 В кустах: тебя не видят"}
 L.Rows.shovelStats={"⚔{d}  💫{s}s  ➜{m}","⚔{d}  💫{s}с  ➜{m}"}
 L.Rows.signRoadHome={"BACK TO THE FARMS","ОБРАТНО К ФЕРМАМ"}
@@ -599,7 +604,7 @@ L.Rows.bloodArenaSign={"BLOOD MOON ARENA","АРЕНА КРОВАВОЙ ЛУНЫ"
 L.Rows.portalDowngrade={"Through the portal your {from} grave became {to}.","Через портал могила «{from}» стала «{to}»."}
 L.Rows.portalPenalty={"A carried grave loses 1 rarity","Несомая могила потеряет 1 редкость"}
 -- Sleeping bosses (2026-11-13): steal from the hoard and run, or wake it and fight in the shut arena
-L.Rows.bossAsleep={"{boss} is asleep. Dig a grave from its hoard and run for the gate: it gives chase! Hit it and the arena shuts: a fight to the end.","{boss} спит. Выкопай могилу из его клада и беги к воротам — он погонится! Ударишь его — арена закроется, бой до конца."}
+L.Rows.bossAsleep={"{boss} is asleep. Dig a grave from its hoard and run for the gate: it gives chase! Tap the target over it and the arena shuts: a fight to the end.","{boss} спит. Выкопай могилу из его клада и беги к воротам — он погонится! Нажми прицел над ним — арена закроется, бой до конца."}
 L.Rows.bossWoke={"{boss} woke up! Run for the gate!","{boss} проснулся! Беги к воротам!"}
 L.Rows.bossCaught={"{boss} caught you! The grave went back to its hoard.","{boss} догнал тебя! Могила вернулась в его клад."}
 L.Rows.bossEscaped={"You got away: {boss} is left with nothing!","Ты убежал: {boss} остался ни с чем!"}
@@ -618,7 +623,8 @@ L.Rows.heistSleepBody={"The boss is fast asleep.","Босс крепко спи�
 L.Rows.heistRunTitle={"Grab and run!","Хватай и беги!"}
 L.Rows.heistRunBody={"Steal a grave and get away from it.","Своруй могилу и убеги от него."}
 L.Rows.heistFightTitle={"Be the boss!","Стань боссом!"}
-L.Rows.heistFightBody={"Or show it who the real boss is: start a fight.","Либо покажи ему, кто здесь настоящий босс, начав драку."}
+L.Rows.heistFightBody={"Or show it who the real boss is: tap the target over it and fight.","Либо покажи ему, кто здесь настоящий босс: нажми прицел над ним и начни драку."}
 L.Rows.heistArena={"Arena: {boss}","Арена: {boss}"}
 L.Rows.ShowHeistInfo={"Show the boss arena tip","Показывать подсказку у арены босса"}
+L.Rows.bossFightButton={"FIGHT!","В БОЙ!"}
 return L

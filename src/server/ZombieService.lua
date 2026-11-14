@@ -9,12 +9,12 @@ function Z.Find(d,id) for i,z in ipairs(d.zombies) do if z.id==id then return z,
 function Z.Bonus(d) local types={} for key in pairs(d.zombiedex) do types[string.split(key,":")[1]]=true end;local count=0;for _ in pairs(types) do count+=1 end;return 1+count*R.DexBonus end
 function Z.Rate(z) return require(S.MergeRules).Rate(z) end
 function Z.Income(d,ignoreSuppression) local v=0;for _,z in ipairs(d.zombies) do if z.zone=="Field" and not z.carriedBy and not z.pendingTransfer and (ignoreSuppression or not Z.IsIncomeBlocked or not Z.IsIncomeBlocked(d,z)) then v+=Z.Rate(z) end end;return v*Z.Bonus(d)*(1+require(script.Parent.PetService).ForData(d).incomePct)*require(script.Parent.PetService).ForData(d).incomeMult*require(S.PrestigeRules).Mult(d) end
-function Z.Roll(weights,night,starter,luck,minTier)
+function Z.Roll(weights,night,starter,luck,minTier,location) -- location: where the grave was dug (LocationMonsters)
  luck=luck or 1
  local tier=1;local roll=rng:NextNumber()*100;for i,w in ipairs(weights) do roll-=w;if roll<=0 then tier=i;break end end
  tier=math.max(tier,minTier or 1) -- the grave's floor (GraveConfig.MinTier)
  local mut="None";if rng:NextNumber()<C.RainbowChance*luck then mut="Rainbow" elseif night and rng:NextNumber()<C.LunarChance*luck then mut="Lunar" elseif rng:NextNumber()<C.GoldenChance*luck then mut="Golden" end
- local types=C.Types[tier];return {id=game.HttpService:GenerateGUID(false),type=starter and "DeerMiner" or types[rng:NextInteger(1,#types)],tier=starter and 2 or tier,mutation=starter and "None" or mut,zone="Crypt",slot=0}
+ local types=require(S.Config.LocationMonsters).Types(location,tier);return {id=game.HttpService:GenerateGUID(false),type=starter and "DeerMiner" or types[rng:NextInteger(1,#types)],tier=starter and 2 or tier,mutation=starter and "None" or mut,zone="Crypt",slot=0}
 end
 -- Both pen and yard share the same grass level.
 -- Bigger zombies are scaled around their middle, so the pivot rises to keep their feet on the ground.
@@ -84,6 +84,37 @@ function Z.Hold(p,d,id)
  Z.Holding[p]={id=z.id,model=model};p:SetAttribute("HoldingZombie",z.id)
  require(script.Parent.ActionService).Empty(p) -- a monster in your arms, nothing else in your hands
  return true
+end
+-- The crypt's two buttons (owner, 2026-11-14). "Place best": crypt monsters go out into free spots of the yard, the
+-- best earners first, until the yard is full. "Store all": every monster on the farm goes back into the crypt, while
+-- it has room.
+function Z.PlaceBest(p,d)
+ local Place=require(S.PlacementRules);local list={}
+ for _,z in ipairs(d.zombies) do if z.zone=="Crypt" and not z.carriedBy and not z.pendingTransfer then table.insert(list,z) end end
+ table.sort(list,function(a,b) return Z.Rate(a)>Z.Rate(b) end)
+ local placed=0
+ for _,z in ipairs(list) do
+  local count=0;for _,o in ipairs(d.zombies) do if o.zone=="Field" then count+=1 end end
+  if count>=Z.Cap(d,"Field") then break end
+  local point=Place.FindFree(d,"Worker",z);if not point then break end
+  if Z.Holding[p] and Z.Holding[p].id==z.id then Z.Drop(p) end
+  z.zone="Field";z.slot=Z.Slot(d,"Field") or count+1;z.pos=point;Z.Remove(z.id);placed+=1
+ end
+ if placed>0 then Z.Render(p,d) end
+ return placed>0
+end
+function Z.StoreAll(p,d)
+ local list={}
+ for _,z in ipairs(d.zombies) do if (z.zone=="Field" or z.zone=="Guards") and not z.carriedBy and not z.pendingTransfer then table.insert(list,z) end end
+ table.sort(list,function(a,b) return Z.Rate(a)>Z.Rate(b) end) -- the best go in first if the crypt runs out of room
+ local moved=0
+ for _,z in ipairs(list) do
+  local slot=Z.Slot(d,"Crypt");if not slot then break end
+  if Z.Holding[p] and Z.Holding[p].id==z.id then Z.Drop(p) end
+  z.zone="Crypt";z.slot=slot;z.pos=nil;Z.Remove(z.id);moved+=1
+ end
+ if moved>0 then Z.Render(p,d) end
+ return moved>0
 end
 function Z.Place(p,d,x,zz)
  local h=Z.Holding[p];local plot=P.Assigned[p];if not h or not plot or not P.Inside(p,plot) then return false end

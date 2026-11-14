@@ -20,7 +20,7 @@ local C={
   {Name="Smash",Pose="Slam",MinRange=16,Range=110,Radius=13,Windup=1.2,Cooldown=3.5,Stun=2,Fling=14},
  },
  -- The graves that rain down: PerPlayer for each player who hit it (within Min..Max), at most PerPickup each.
- Graves={PerPlayer=3,Min=4,Max=14,PerPickup=3,Lifetime=120,Pool={Stone=10,Marble=40,Golden=38,Lunar=12}},
+ Graves={PerPlayer=3,Min=4,Max=14,PerPickup=3,Lifetime=120,Pool={Stone=10,Marble=36,Golden=30,Emo=6,Military=4,Ghost=2,Lunar=12}},
 }
 -- The middle of the arena, on the island's level (y = 0): opposite the road, past the island wall and the bridge.
 function C.ArenaCenter()

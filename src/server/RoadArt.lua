@@ -159,7 +159,9 @@ function A.Build(world, at, C, districts, P)
 			sandFloor.Material, sandInner.Material = Enum.Material.Concrete, Enum.Material.Concrete
 		end
 		-- The stands: the old fourth and fifth tiers, now right behind the floor's edge
-		local segments = math.max(56, math.floor(R * 0.8))
+		-- Performance (2026-11-14): 32 stand segments, 16 columns, 8 floor props and 6 braziers (3 of them lit) per arena;
+		-- they were 80, 36, 16 and 10, all lit.
+		local segments = 32
 		local rows = { { r = R + 5, seat = 17.2 }, { r = R + 12.6, seat = 20.6 } }
 		for k, row in rows do
 			local r, height = row.r, row.seat + 14
@@ -167,7 +169,9 @@ function A.Build(world, at, C, districts, P)
 				local t0, t1 = n / segments * math.pi * 2, (n + 1) / segments * math.pi * 2
 				local tm = (t0 + t1) / 2
 				local ds, dx = math.sin(tm) * r, math.cos(tm) * r
-				if not facesRoad(ds, dx, 6 + k * 3) then
+				-- both ends and the middle stay clear of the way in (the segments are long since 2026-11-14)
+				local function clear(t) return not facesRoad(math.sin(t) * r, math.cos(t) * r, 6 + k * 3) end
+				if clear(t0) and clear(tm) and clear(t1) then
 					local p0, p1 = at(c + math.sin(t0) * r, px + math.cos(t0) * r, 0).Position, at(c + math.sin(t1) * r, px + math.cos(t1) * r, 0).Position
 					local mid = at(c + ds, px + dx, row.seat - height / 2).Position
 					local look = CFrame.lookAt(mid, mid + (p1 - p0))
@@ -187,7 +191,7 @@ function A.Build(world, at, C, districts, P)
 		local rTop = R + 17
 		local topY = 20.6
 		local bone = hex("E6DCC4")
-		local columns = math.max(24, math.floor(R * 0.36))
+		local columns = 16
 		for n = 0, columns - 1 do
 			local t = (n + 0.5) / columns * math.pi * 2
 			local ds, dx = math.sin(t) * rTop, math.cos(t) * rTop
@@ -229,7 +233,7 @@ function A.Build(world, at, C, districts, P)
 			end
 		end
 		-- Round the floor: brass shells for the Dealer, skulls for the Priest, bones for the Horned One
-		local props = math.max(10, math.floor(R * 0.16))
+		local props = 8
 		for n = 0, props - 1 do
 			local t = (n + 0.5) / props * math.pi * 2
 			local ds, dx = math.sin(t) * (R - 3), math.cos(t) * (R - 3)
@@ -250,7 +254,7 @@ function A.Build(world, at, C, districts, P)
 			end
 		end
 		-- Braziers round the floor, away from the way in
-		local braziers = math.max(6, math.floor(R * 0.1))
+		local braziers = 6
 		for n = 0, braziers - 1 do
 			local t = (n + 0.5) / braziers * math.pi * 2
 			local ds, dx = math.sin(t) * (R - 6), math.cos(t) * (R - 6)
@@ -258,9 +262,11 @@ function A.Build(world, at, C, districts, P)
 				piece("BrazierStand", Vector3.new(1.4, 5, 1.4), at(c + ds, px + dx, 2.5), dark)
 				piece("BrazierBowl", Vector3.new(1.2, 3.6, 3.6), at(c + ds, px + dx, 5.4) * CFrame.Angles(0, 0, math.pi / 2), dark, nil, Enum.PartType.Cylinder)
 				local flame = piece("BrazierFlame", Vector3.new(2.2, 2.2, 2.2), at(c + ds, px + dx, 6.6), hex("FF8A3D"), Enum.Material.Neon, Enum.PartType.Ball)
-				local light = Instance.new("PointLight")
-				light.Color, light.Range, light.Brightness, light.Shadows = hex("FFA34D"), 26, 1.1, false
-				light.Parent = flame
+				if n % 2 == 0 then
+					local light = Instance.new("PointLight")
+					light.Color, light.Range, light.Brightness, light.Shadows = hex("FFA34D"), 30, 1.2, false
+					light.Parent = flame
+				end
 			end
 		end
 		-- The arch over the opening in the road wall, with the boss's name facing the road
@@ -325,7 +331,13 @@ function A.Build(world, at, C, districts, P)
 				end
 			end
 		end
+		-- Only every other lantern and torch carries a real light (2026-11-14, performance); the rest just glow.
+		local lampCount = 0
 		local function lamp(s, x, y, color, range, always)
+			lampCount += 1
+			if lampCount % 2 == 0 then
+				return
+			end
 			local anchor = part(folder, "LampLight", Vector3.one * 0.2, at(s, x, y), hex("FFFFFF"))
 			if not anchor then
 				return
@@ -350,7 +362,8 @@ function A.Build(world, at, C, districts, P)
 		end
 
 		-- The island's block wall, recoloured for this location, with buttresses and a coping
-		local course, rows, blockLen = 5, 4, 10
+		-- Big blocks since 2026-11-14 (performance: the road wall was 3,100 parts): two courses of 10 x 20, was four of 5 x 10.
+		local course, rows, blockLen = 10, 2, 20
 		for _, side in { -1, 1 } do
 			local x = side * (half + 2)
 			for row = 0, rows - 1 do
@@ -385,28 +398,27 @@ function A.Build(world, at, C, districts, P)
 		end
 
 		if d.Name == "roadForest" then
-			-- A bright, friendly forest: round trees down both sides, rocks, mushrooms, a fallen log
-			for s = d.From + 10, d.To - 6, 18 do
+			-- A bright, friendly forest: round trees down both sides, grass and a fallen log (thinned 2026-11-14: trees
+			-- every 32 studs, not 18; no rocks or mushrooms; less grass)
+			for s = d.From + 10, d.To - 6, 32 do
 				for _, side in { -1, 1 } do
 					put("MR_ForestTree", s + rng:NextNumber(-5, 5), side * rng:NextNumber(48, 62), rng:NextNumber(2.3, 2.9), rng:NextInteger(0, 359))
 				end
 			end
-			scatter("MR_Rocks", 10, 14, 44, 1.6, 2.6)
-			scatter("MR_Mushrooms", 14, 12, 40, 1.8, 2.6)
-			scatter("MR_GrassClump", 50, 10, 66, 1.4, 2.4, 1)
+			scatter("MR_GrassClump", 20, 10, 66, 1.4, 2.4, 1)
 			put("MR_Log", d.From + 60, 22, 1.8, 80)
 		elseif d.Name == "roadDarkForest" then
-			-- Bare twisted trees, grey rocks and lanterns hanging over the path
-			for s = d.From + 12, d.To - 8, 22 do
+			-- Bare twisted trees, grey rocks and lanterns hanging over the path (thinned 2026-11-14 to about half)
+			for s = d.From + 12, d.To - 8, 36 do
 				for _, side in { -1, 1 } do
 					put("MR_TwistedTree", s + rng:NextNumber(-6, 6), side * rng:NextNumber(46, 62), rng:NextNumber(1.8, 2.4), rng:NextInteger(0, 359))
 				end
 			end
-			scatter("MR_TwistedTree", 5, 26, 40, 1.3, 1.7, 6)
-			scatter("MR_Rocks", 14, 14, 50, 1.6, 2.8)
-			scatter("MR_LeafLitter", 22, 10, 60, 2.2, 3.4, 1)
-			scatter("MR_GrassClump", 30, 10, 66, 1.2, 2, 1)
-			for s = d.From + 30, d.To - 10, 45 do
+			scatter("MR_TwistedTree", 2, 26, 40, 1.3, 1.7, 6)
+			scatter("MR_Rocks", 4, 14, 50, 1.6, 2.8)
+			scatter("MR_LeafLitter", 6, 10, 60, 2.2, 3.4, 1)
+			scatter("MR_GrassClump", 12, 10, 66, 1.2, 2, 1)
+			for s = d.From + 30, d.To - 10, 90 do
 				for _, side in { -1, 1 } do
 					put("MR_HangingLantern", s, side * 12, 1.7, side < 0 and 0 or 180)
 					lamp(s, side * 10.5, 10, hex("FFB146"), 24)
@@ -439,9 +451,9 @@ function A.Build(world, at, C, districts, P)
 					part(folder, "HelipadCore", Vector3.new(0.06, 10, 10), at(s, 0, 0.07) * CFrame.Angles(0, 0, math.pi / 2), hex("E9F2EF"), nil, Enum.PartType.Cylinder)
 				end
 			end
-			scatter("MR_Cart", 10, 16, 34, 1.4, 1.7)
-			scatter("MR_GrassClump", 30, 8, 36, 1, 1.6, 1)
-			for s = d.From + 30, d.To - 10, 60 do
+			scatter("MR_Cart", 4, 16, 34, 1.4, 1.7) -- thinned 2026-11-14
+			scatter("MR_GrassClump", 12, 8, 36, 1, 1.6, 1)
+			for s = d.From + 30, d.To - 10, 90 do
 				for _, side in { -1, 1 } do
 					put("MR_HangingLantern", s, side * 12, 1.6, side < 0 and 0 or 180)
 					lamp(s, side * 10.5, 9.5, hex("CFF5EC"), 22)
@@ -451,13 +463,13 @@ function A.Build(world, at, C, districts, P)
 			-- Paved square, timbered houses on both sides, a well and carts
 			for s = d.From + 4, d.To - 4, 8 do
 				for x = -half + 4, half - 4, 8 do
-					if rng:NextNumber() < 0.22 then
+					if rng:NextNumber() < 0.1 then
 						part(folder, "Flagstone", Vector3.new(7.6, 0.05, 7.6), at(s, x, 0.025), hex(d.Floor):Lerp(Color3.new(1, 1, 1), rng:NextNumber(0.05, 0.16)))
 					end
 				end
 			end
 			for _, side in { -1, 1 } do
-				for s = d.From + 30 + (side > 0 and 30 or 0), d.To - 25, 62 do
+				for s = d.From + 30 + (side > 0 and 55 or 0), d.To - 25, 110 do -- every 110 studs, not 62 (2026-11-14)
 					put("MR_VillageHouse", s, side * 55, rng:NextNumber(1.8, 2.1), side < 0 and -90 or 90)
 					block(s, side * 55, Vector3.new(26, 26, 28))
 				end
@@ -470,8 +482,8 @@ function A.Build(world, at, C, districts, P)
 					put("MR_Cart", s + 50, 28, 1.7, 25)
 				end
 			end
-			scatter("MR_GrassClump", 40, 8, 44, 1.2, 2, 1)
-			for s = d.From + 30, d.To - 10, 55 do
+			scatter("MR_GrassClump", 14, 8, 44, 1.2, 2, 1)
+			for s = d.From + 30, d.To - 10, 90 do
 				for _, side in { -1, 1 } do
 					put("MR_HangingLantern", s, side * 13, 1.6, side < 0 and 0 or 180)
 					lamp(s, side * 11.5, 9.5, hex("FFC46B"), 24)
@@ -480,7 +492,7 @@ function A.Build(world, at, C, districts, P)
 		elseif d.Name == "roadCave" then
 			-- Rock arches along the walls, skulls, rune stones, red banners and torches that always burn
 			for _, side in { -1, 1 } do
-				for s = d.From + 40 + (side > 0 and 45 or 0), d.To - 30, 90 do
+				for s = d.From + 40 + (side > 0 and 70 or 0), d.To - 30, 140 do -- every 140 studs, not 90 (2026-11-14)
 					put("MR_CultCave", s, side * 56, 2.4, side < 0 and -90 or 90)
 					block(s, side * 58, Vector3.new(12, 20, 40))
 				end
@@ -489,10 +501,10 @@ function A.Build(world, at, C, districts, P)
 					part(folder, "BannerSigil", Vector3.new(0.35, 2.4, 2.4), at(s, side * (half - 0.4), 12.5) * CFrame.Angles(math.rad(45), 0, 0), hex("E4B34A"))
 				end
 			end
-			scatter("MR_CultSkulls", 22, 12, 40, 1.8, 2.6)
-			scatter("MR_RuneStone", 14, 16, 46, 2, 2.8)
-			scatter("MR_Rocks", 18, 14, 60, 2, 3.4)
-			for s = d.From + 25, d.To - 10, 45 do
+			scatter("MR_CultSkulls", 8, 12, 40, 1.8, 2.6) -- thinned 2026-11-14
+			scatter("MR_RuneStone", 5, 16, 46, 2, 2.8)
+			scatter("MR_Rocks", 5, 14, 60, 2, 3.4)
+			for s = d.From + 25, d.To - 10, 70 do
 				for _, side in { -1, 1 } do
 					put("MR_CultTorch", s, side * 13, 2.2)
 					lamp(s, side * 13, 8, hex("FF8A3D"), 20, true)
@@ -514,16 +526,16 @@ function A.Build(world, at, C, districts, P)
 					part(folder, "PipeDrop", Vector3.new(14, 1.6, 1.6), at(s, side * (half - 1.5), 7) * CFrame.Angles(0, 0, math.pi / 2), hex("6E7A82"), Enum.Material.Metal, Enum.PartType.Cylinder)
 				end
 			end
-			scatter("MR_Boiler", 8, 34, 44, 1.6, 1.9, 6)
-			scatter("MR_RustTank", 8, 34, 44, 1.5, 1.8, 6)
-			for _ = 1, 26 do
+			scatter("MR_Boiler", 4, 34, 44, 1.6, 1.9, 6) -- thinned 2026-11-14
+			scatter("MR_RustTank", 4, 34, 44, 1.5, 1.8, 6)
+			for _ = 1, 10 do
 				local s = rng:NextNumber(d.From + 8, d.To - 8)
 				local x = (rng:NextNumber() < 0.5 and -1 or 1) * rng:NextNumber(32, 44)
 				if not busy(s, x, 3) then
 					part(folder, "Barrel", Vector3.new(3, 2.4, 2.4), at(s, x, 1.5) * CFrame.Angles(0, 0, math.pi / 2), hex(rng:NextNumber() < 0.5 and "4FAE5B" or "D9A62E"), nil, Enum.PartType.Cylinder)
 				end
 			end
-			for s = d.From + 40, d.To - 10, 70 do
+			for s = d.From + 40, d.To - 10, 100 do
 				for _, side in { -1, 1 } do
 					put("MR_HangingLantern", s, side * 13, 1.6, side < 0 and 0 or 180)
 					lamp(s, side * 11.5, 9.5, hex("FFE29A"), 26)
@@ -539,9 +551,9 @@ function A.Build(world, at, C, districts, P)
 	local cap = P.Solid(world, "RoadEndWall", Vector3.new(W + 8, 44, 4), at(C.Length + 2, 0, 20))
 	cap.CanQuery = true
 	local last = districts[#districts]
-	for row = 0, 3 do
-		for x = -half - 2, half + 2, 10 do
-			part(root, "WallBlock", Vector3.new(9.8, 4.85, 4), at(C.Length + 1, x + (row % 2) * 5, row * 5 + 2.5), hex(last.Wall[rng:NextInteger(1, #last.Wall)]))
+	for row = 0, 1 do
+		for x = -half - 2, half + 2, 20 do
+			part(root, "WallBlock", Vector3.new(19.8, 9.85, 4), at(C.Length + 1, x + (row % 2) * 10, row * 10 + 5), hex(last.Wall[rng:NextInteger(1, #last.Wall)]))
 		end
 	end
 	part(root, "WallCoping", Vector3.new(W + 10, 0.8, 4.8), at(C.Length + 1, 0, 20.4), hex(last.Cap))

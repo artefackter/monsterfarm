@@ -41,6 +41,9 @@ local function add(m)
   local h=Instance.new("BillboardGui");h.Name="HomeIcon";h.Adornee=heap;h.Size=UDim2.fromOffset(58,58);h.AlwaysOnTop=true;h.LightInfluence=0;h.MaxDistance=2000;h.ResetOnSpawn=false;h.Parent=p.PlayerGui
   local img=Instance.new("ImageLabel");img.BackgroundTransparency=1;img.Size=UDim2.fromScale(1,1);img.Image=Icons.house or "";img.Parent=h
   pile.home=h
+  -- not out in the ruins (owner, 2026-11-14: it hung in view all the way down the road)
+  local function shown() if h.Parent then h.Enabled=p:GetAttribute("OnRoad")~=true end end
+  p:GetAttributeChangedSignal("OnRoad"):Connect(shown);shown()
  end
  local function refresh()
   local amount=m:GetAttribute("Amount") or 0;local radius=m:GetAttribute("Radius") or 1

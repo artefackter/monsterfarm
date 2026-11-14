@@ -71,26 +71,32 @@ function R.Occupied(d, skip)
 	local list = {}
 	for _, g in d.graves or {} do
 		if g.pos and (skip == nil or g.id ~= skip) and not g.carriedBy then
-			table.insert(list, { g.pos, C.GraveRadius })
+			table.insert(list, { g.pos, C.GraveRadius, "Grave" })
 		end
 	end
 	for _, z in d.zombies or {} do
 		if (z.zone == "Field" or z.zone == "Guards") and z.pos and (skip == nil or z.id ~= skip) and not z.carriedBy then
-			table.insert(list, { z.pos, R.Radius("Zombie",z) })
+			table.insert(list, { z.pos, R.Radius("Zombie",z), "Zombie" })
 		end
 	end
 	return list
 end
 
--- nil when the spot is fine, otherwise a reason key for the player.
-function R.Check(d, kind, point, object)
+-- nil when the spot is fine, otherwise a reason key for the player. Monsters may stand in one another (owner,
+-- 2026-11-14: finding a free spot was too hard; they have no collisions either); `spaced` keeps them apart, for
+-- automatic placement (FindFree).
+function R.Check(d, kind, point, object, spaced)
 	if not point or not number(point.x) or not number(point.z) then
 		return "placeBad"
 	end
 	local radius = R.Radius(kind,object)
- if kind=="Grave" and not contains(C.Cemetery,point,radius) then return "placeCemetery" end
- if not R.InYard(point, radius) then return "placeOutside" end
+ if kind=="Grave" then -- graves: only in the cemetery yard beside the farm (2026-11-14)
+  if not contains(C.Cemetery,point,radius) then return "placeCemetery" end
+ elseif not R.InYard(point, radius) then return "placeOutside" end
 	for _, other in R.Occupied(d, object and object.id) do
+		if kind ~= "Grave" and other[3] == "Zombie" and not spaced then
+			continue
+		end
 		local dx, dz = point.x - other[1].x, point.z - other[1].z
 		if math.sqrt(dx * dx + dz * dz) < (radius + other[2]) * C.Overlap then
 			return "placeCrowded"
@@ -112,7 +118,13 @@ end
 
 -- Every planted grave and field zombie gets a spot; ones that no longer fit move to a free one.
 function R.Migrate(d)
- if d.farmLayoutVersion==45 then return d end -- Larger monsters need clear space around their silhouettes.
+ if d.farmLayoutVersion==46 then return d end
+ -- 46 (2026-11-14): the cemetery moved out to its own yard beside the farm; graves left in the old patch move there.
+ if d.farmLayoutVersion==45 then
+  for _,g in d.graves or {} do if not g.pos or R.Check(d,"Grave",g.pos,g) then g.pos=nil end end
+  for _,g in d.graves or {} do if not g.pos then g.pos=R.FindFree(d,"Grave",g) end end
+  d.farmLayoutVersion=46;return d
+ end
  local graves=d.graves or {};local zombies=d.zombies or {}
  if d.farmLayoutVersion~=43 and d.farmLayoutVersion~=44 then
  for _,g in graves do g.pos=nil end
@@ -131,7 +143,7 @@ function R.Migrate(d)
    if not z.pos then z.zone="Crypt";z.slot=0 end
   end
  end
- d.farmLayoutVersion=45
+ d.farmLayoutVersion=46
  return d
 end
 
@@ -147,7 +159,7 @@ function R.FindFree(d,kind,object)
  local y=C.Yard
  for z=y.MinZ+2,y.MaxZ-2,4.4 do for x=y.MinX+2,y.MaxX-2,4.4 do
   local p=R.Point(x,z)
-  if not R.Check(d,"Zombie",p,object) then return p end
+  if not R.Check(d,"Zombie",p,object,true) then return p end
  end end
 end
 return R

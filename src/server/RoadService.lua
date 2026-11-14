@@ -10,7 +10,7 @@ local Progression=require(S.Config.RoadProgression)
 local MonsterRules=require(S.RoadMonsterRules)
 local Road={Carriers={},Hearts={},Spots={},Drops={},Holds={},BlockedUntil={},Imps={},BossCfg={},Summons={},RevealedUntil={},Last=os.clock()}
 local rng=Random.new();local base;local world;local lastOccupied=-math.huge
-local RARITY={Wooden=Pal.Common,Stone=Pal.Uncommon,Marble=Pal.Rare,Golden=Pal.Legendary,Lunar=Pal.Epic}
+local RARITY={Wooden=Pal.Common,Stone=Pal.Uncommon,Marble=Pal.Rare,Golden=Pal.Legendary,Emo=Color3.fromHex("FF4FB3"),Military=Color3.fromHex("9DB55A"),Ghost=Color3.fromHex("8FE8FF"),Lunar=Pal.Epic}
 local EARTH,STONE,DUSK=Color3.fromHex("A98463"),Color3.fromHex("8E86A8"),Color3.fromHex("6A5A94")
 local function notice(p,key,args) RS.Remotes.Notice:FireClient(p,key,args) end
 local function at(s,x,y) return base*CFrame.new(x,y or 0,-s) end
@@ -189,6 +189,66 @@ end
 -- Graves lying out on the road ---------------------------------------------------------------------------------------------
 local function spotPosition(spot,y) return spot.WorldPosition and spot.WorldPosition+Vector3.new(0,y or 0,0) or at(spot.S,spot.X,y).Position end
 Road.SpotPosition=spotPosition
+-- The main grave's cage (owner, 2026-11-14: "make its worth show"): at the back of the arena, on a stone plinth, iron
+-- bars round the big grave, its door crossed with chains and a golden padlock, a warm glow inside. While the boss
+-- lives the door is shut (and solid); once it falls the door and the chains are gone (Road tick, cageOpen).
+local function buildCage(spot)
+ local base=spotPosition(spot,0);local center=arenaCenter(spot.Arena,0)
+ local face=CFrame.lookAt(base,Vector3.new(center.X,base.Y,center.Z)) -- -Z: the door, towards the middle
+ local m=Instance.new("Model");m.Name="MainGraveCage";m:SetAttribute("Boss",spot.Arena)
+ local IRON,GOLD,STONE=Color3.fromHex("34333D"),Color3.fromHex("E8B93A"),Color3.fromHex("4D4655")
+ local door,chains={}, {}
+ local function bar(name,size,cf,color,material,shape,group)
+  local q=P.Part(m,name,size,face*cf,color,shape);q.Material=material or Enum.Material.Metal
+  q.CanQuery,q.CanTouch=false,false -- solid for players only: monsters path through it
+  if group then table.insert(group,q) end;return q
+ end
+ local H,W=11,5.4 -- height; half width
+ bar("CagePlinth",Vector3.new(2*W+2,1,2*W+2),CFrame.new(0,.5,0),STONE,Enum.Material.Slate)
+ bar("CageRoof",Vector3.new(2*W+.8,.6,2*W+.8),CFrame.new(0,H+1.3,0),IRON)
+ bar("CageRoofTrim",Vector3.new(2*W+1.2,.3,2*W+1.2),CFrame.new(0,H+.95,0),GOLD)
+ for _,cx in {-W,W} do for _,cz in {-W,W} do
+  bar("CagePost",Vector3.new(.8,H,.8),CFrame.new(cx,1+H/2,cz),IRON)
+  bar("CageFinial",Vector3.new(.9,.9,.9),CFrame.new(cx,H+2.05,cz),GOLD,nil,Enum.PartType.Ball)
+ end end
+ local n=6
+ for side=0,3 do
+  local rot=CFrame.Angles(0,side*math.pi/2,0)
+  local group=side==0 and door or nil
+  for k=1,n do
+   local u=-W+2*W*k/(n+1)
+   bar(side==0 and "CageDoorBar" or "CageBar",Vector3.new(.32,H,.32),rot*CFrame.new(u,1+H/2,-W),IRON,nil,nil,group)
+  end
+  bar(side==0 and "CageDoorRail" or "CageRail",Vector3.new(2*W,.4,.4),rot*CFrame.new(0,1.6,-W),IRON,nil,nil,group)
+  bar(side==0 and "CageDoorRail" or "CageRail",Vector3.new(2*W,.4,.4),rot*CFrame.new(0,H*.62,-W),IRON,nil,nil,group)
+ end
+ -- two chains crossed over the door, a padlock where they meet
+ for _,e in {-1,1} do
+  local a,b=Vector3.new(-e*(W-.6),H-.6,-W-.45),Vector3.new(e*(W-.6),1.8,-W-.45)
+  local links=13
+  for k=0,links-1 do
+   local p=a:Lerp(b,(k+.5)/links)
+   local link=bar("CageChain",Vector3.new(.22,.75,.42),CFrame.lookAt(p,p+(b-a))*CFrame.Angles(0,0,k%2*math.pi/2)*CFrame.Angles(math.pi/2,0,0),Color3.fromHex("8C8A96"),Enum.Material.Metal,nil,chains)
+   link.CanCollide=false
+  end
+ end
+ local lock=bar("CagePadlock",Vector3.new(1.5,1.3,.5),CFrame.new(0,(H-.6+1.8)/2-.2,-W-.75),GOLD,Enum.Material.Metal,nil,chains);lock.CanCollide=false
+ local shackle=bar("CageShackle",Vector3.new(.25,1.1,1.1),CFrame.new(0,(H-.6+1.8)/2+.55,-W-.75)*CFrame.Angles(0,math.pi/2,0),Color3.fromHex("BFC3CC"),Enum.Material.Metal,Enum.PartType.Cylinder,chains);shackle.CanCollide=false
+ local glow=bar("CageGlow",Vector3.new(.2,.2,.2),CFrame.new(0,4,0),GOLD);glow.Transparency=1;glow.CanCollide=false
+ local light=Instance.new("PointLight");light.Color=Color3.fromHex("FFD27A");light.Range=16;light.Brightness=1.1;light.Shadows=false;light.Parent=glow
+ local sparkle=Instance.new("ParticleEmitter");sparkle.Name="Treasure";sparkle.Color=ColorSequence.new(GOLD);sparkle.LightEmission=.6;sparkle.Rate=4
+ sparkle.Size=NumberSequence.new({NumberSequenceKeypoint.new(0,.25),NumberSequenceKeypoint.new(1,0)});sparkle.Lifetime=NumberRange.new(1,1.6)
+ sparkle.Speed=NumberRange.new(.5,1.5);sparkle.SpreadAngle=Vector2.new(180,180);sparkle.Parent=glow
+ for _,q in m:GetDescendants() do if q:IsA("BasePart") then q.CastShadow=q.Name=="CagePost" or q.Name=="CageRoof" end end
+ m.Parent=world
+ return {model=m,door=door,chains=chains,open=nil}
+end
+local function cageOpen(cage,open)
+ if not cage or cage.open==open then return end;cage.open=open
+ for _,q in cage.door do q.Transparency=open and 1 or 0;q.CanCollide=not open end
+ for _,q in cage.chains do q.Transparency=open and 1 or 0 end
+end
+Road.CageOpen=cageOpen
 local function spawnGrave(spot)
  local kind=spot.Kind
  if not kind then
@@ -205,23 +265,31 @@ local function spawnGrave(spot)
  if spot.Main then spot.MonsterType=spot.Chief and rng:NextNumber()<spot.Chief and "DeerChief" or nil end
  local m=Instance.new("Model");m.Name=spot.Dropped and "DroppedGrave" or "RoadGrave"
  m:SetAttribute("MonsterType",spot.MonsterType);m:SetAttribute("Dropped",spot.Dropped==true);m:SetAttribute("DropBornAt",workspace:GetServerTimeNow());m:SetAttribute("DropExpiresAt",spot.Dropped and workspace:GetServerTimeNow()+(spot.Lifetime or C.DropLifetime) or nil)
- local cf=CFrame.new(spotPosition(spot,.25))
- Art.Spawn("Grave_V3_"..kind,m,cf) -- the cartoon V3 grave (2026-11-14)
- local ring=decal("RoadGlow",Vector3.new(.14,9,9),cf*CFrame.new(0,-.1,0)*CFrame.Angles(0,0,math.pi/2),RARITY[kind],.25);ring.Shape=Enum.PartType.Cylinder;ring.Material=Enum.Material.Neon;ring.Parent=m
+ if spot.Main and not spot.Cage then spot.Cage=buildCage(spot) end
+ local cf=CFrame.new(spotPosition(spot,spot.Main and 1.05 or .25))
+ Art.Spawn("Grave_V3_"..kind,m,cf,spot.Main and {scale=2} or nil) -- the cartoon V3 grave (2026-11-14); the main one twice the size
+ local ring=decal("RoadGlow",spot.Main and Vector3.new(.14,10,10) or Vector3.new(.14,9,9),cf*CFrame.new(0,-.1,0)*CFrame.Angles(0,0,math.pi/2),RARITY[kind],.25);ring.Shape=Enum.PartType.Cylinder;ring.Material=Enum.Material.Neon;ring.Parent=m
  local spotPart=decal("RoadGrabSpot",Vector3.new(4,4,4),cf*CFrame.new(0,2,0),Pal.Panel,1);spotPart.Parent=m
- local pr=Instance.new("ProximityPrompt");pr.Name="RoadGrab";pr.ActionText="roadGrab";pr.HoldDuration=C.Hold;pr.MaxActivationDistance=10;pr.RequiresLineOfSight=false;pr:SetAttribute("Grave",kind);pr.Parent=spotPart
+ local pr=Instance.new("ProximityPrompt");pr.Name="RoadGrab";pr.ActionText="roadGrab";pr.HoldDuration=C.Hold;pr.MaxActivationDistance=spot.Main and 12 or 10;pr.RequiresLineOfSight=false;pr:SetAttribute("Grave",kind);pr.Parent=spotPart
  pr.PromptButtonHoldBegan:Connect(function(p) Road.BeginPickup(p,spot) end)
  pr.PromptButtonHoldEnded:Connect(function(p) Road.EndPickup(p,spot) end)
  pr.Triggered:Connect(function(p) Road.CompletePickup(p,spot) end)
  if not spot.Dropped and spot.Arena then
   -- A padlock sign over the arena's graves; the road tick shows it until the boss falls.
-  local b=Instance.new("BillboardGui");b.Name="BossLock";b.Size=UDim2.fromScale(9,2.2);b.StudsOffsetWorldSpace=Vector3.new(0,5.5,0);b.LightInfluence=0;b.MaxDistance=120;b.Parent=spotPart
+  local b=Instance.new("BillboardGui");b.Name="BossLock";b.Size=UDim2.fromScale(9,2.2);b.StudsOffsetWorldSpace=Vector3.new(0,spot.Main and 12.5 or 5.5,0);b.LightInfluence=0;b.MaxDistance=120;b.Parent=spotPart
   local l=Instance.new("TextLabel");l.Size=UDim2.fromScale(1,1);l.BackgroundColor3=Color3.fromHex("FF5468");l.TextColor3=Color3.new(1,1,1);l.TextScaled=true;l.Font=Enum.Font.GothamBlack;l.Text="";l:SetAttribute("LocKey","roadBossLock");l.Parent=b
   Instance.new("UICorner",l).CornerRadius=UDim.new(0,10);local st=Instance.new("UIStroke",l);st.Color=Color3.fromHex("3A2366");st.Thickness=3;st.ApplyStrokeMode=Enum.ApplyStrokeMode.Border
  end
  if spot.MonsterType or spot.BossDrop or spot.Main then
-  local b=Instance.new("BillboardGui");b.Name="BossReward";b.Size=UDim2.fromOffset(200,38);b.StudsOffset=Vector3.new(0,4,0);b.MaxDistance=100;b.Parent=spotPart
+  local b=Instance.new("BillboardGui");b.Name="BossReward";b.Size=UDim2.fromOffset(200,38);b.StudsOffset=Vector3.new(0,spot.Main and 14.5 or 4,0);b.MaxDistance=100;b.Parent=spotPart
   local label=Instance.new("TextLabel");label.BackgroundTransparency=1;label.Size=UDim2.fromScale(1,1);label.TextColor3=Pal.Accent;label.Font=Enum.Font.GothamBlack;label.TextScaled=true;label.Text="";label:SetAttribute("LocKey",spot.MonsterType=="DeerChief" and "chiefGrave" or spot.Main and "bossMainGrave" or "bossGrave");label.Parent=b
+ end
+ if spot.Guard then
+  -- "STEAL!" over every grave of a sleeping boss's hoard, or one dropped from it (owner, 2026-11-14)
+  local b=Instance.new("BillboardGui");b.Name="StealTag";b.Size=UDim2.fromOffset(62,18);b.StudsOffset=Vector3.new(0,4.2,0);b.LightInfluence=0;b.MaxDistance=110;b.Parent=spotPart
+  local l=Instance.new("TextLabel");l.Size=UDim2.fromScale(1,1);l.BackgroundColor3=Color3.fromHex("5A1E2A");l.BackgroundTransparency=.35;l.TextColor3=Color3.fromHex("FFD9DE");l.TextTransparency=.1;l.TextScaled=true;l.Font=Enum.Font.GothamBold;l.Text="";l:SetAttribute("LocKey","roadSteal");l.Parent=b -- calmer since 2026-11-14 (owner: "too bright")
+  Instance.new("UICorner",l).CornerRadius=UDim.new(0,6);local st=Instance.new("UIStroke",l);st.Color=Color3.fromHex("2A0810");st.Thickness=1;st.Transparency=.4;st.ApplyStrokeMode=Enum.ApplyStrokeMode.Border
+  local pad=Instance.new("UIPadding",l);pad.PaddingLeft=UDim.new(0,4);pad.PaddingRight=UDim.new(0,4);pad.PaddingTop=UDim.new(0,1);pad.PaddingBottom=UDim.new(0,1)
  end
  m.Parent=world;spot.Model=m;spot.Kind=kind;spot.Prompt=pr
  if not spot.Dropped and not spot.Guard and not spot.Main and C.Announce[kind] then RS.Remotes.Notice:FireAllClients("roadRare",{grave=kind}) end
@@ -248,7 +316,8 @@ function Road.Take(p,spot)
  Road.Drops[spot]=nil;Road.CancelPickup(p)
  if farm then return Raid.Adopt(p,farm) end
  -- guard: dug from a sleeping boss's hoard (it wakes and gives chase); main: the beaten boss's own grave
- Road.Carriers[p]={grave=kind,monsterType=spot.MonsterType,taken=os.clock(),from=spot.S,model=attach(p,kind),guard=spot.Guard,spot=spot.Guard and spot or nil,main=spot.Main}
+ -- location: where it was dug, which decides the monsters it can give (LocationMonsters, 2026-11-14)
+ Road.Carriers[p]={grave=kind,monsterType=spot.MonsterType,taken=os.clock(),from=spot.S,model=attach(p,kind),guard=spot.Guard,spot=spot.Guard and spot or nil,main=spot.Main,location=spot.Location or spot.Guard or spot.Arena or Progression.Index(spot.S)}
  if not d.tutorialDone and d.tutorialStep==2 then d.tutorialStep=3 end
  p:SetAttribute("CarryingGrave",true)
  if spot.Guard then Road.WakeForThief(spot.Guard,p) end
@@ -260,28 +329,30 @@ local function release(p)
  Road.Carriers[p]=nil;if c.model then c.model:Destroy() end;p:SetAttribute("CarryingGrave",false);return c
 end
 Road.Release=release
--- A grave stolen from a boss's hoard that is lost on the way (the thief caught, fainted or dead) goes back to it.
+-- Unused since 2026-11-14 (a lost stolen grave stays where it fell, Road.Drop); kept for callers outside this file.
 function Road.ReturnStolen(p)
  local c=Road.Carriers[p];if not c or not c.guard then return false end
  release(p);if c.spot then c.spot.NextAt=math.min(c.spot.NextAt or 0,os.clock()+1) end;return true
 end
 function Road.Carry(p,kind,farm)
- Road.Carriers[p]={grave=kind,taken=os.clock(),from=0,model=attach(p,kind),monsterType=farm and farm.g.monsterType,farm=farm};p:SetAttribute("CarryingGrave",true)
+ Road.Carriers[p]={grave=kind,taken=os.clock(),from=0,model=attach(p,kind),monsterType=farm and farm.g.monsterType,location=farm and farm.g.location,farm=farm};p:SetAttribute("CarryingGrave",true)
 end
 -- Drops are independent of natural spawn timers and can be claimed only once.
 function Road.Drop(p,death)
  local c=Road.Carriers[p];local d=D.Profiles[p]
  if not c or not d then return false end
- if c.guard then Road.ReturnStolen(p);return false end -- never onto the road: back to its boss
+ -- A grave stolen from a boss's hoard stays where it falls (owner, 2026-11-14; it used to fly back to the hoard): it
+ -- keeps its boss, so whoever picks it up next is chased in turn.
  local root=p.Character and p.Character:FindFirstChild("HumanoidRootPart")
  local onRoad=root and Road.IsOnRoad(p);local farmPlot
  if root and not onRoad then for _,plot in P.Assigned do if P.Inside(p,plot) then farmPlot=plot;break end end end
  if not root or not onRoad and not farmPlot and not death then if c.farm then Raid.Return(p) else release(p) end;return false end
  local s,x=toRoad(root.Position)
  if not death and onRoad and not c.farm and not R.HonestTrip(math.abs(c.from-s),R.Speed(d),c.grave,os.clock()-c.taken) then release(p);return false end
+ local inPocket=onRoad and math.abs(x)>C.Width/2-5 -- in a boss arena (or its corridor): drop it right there
  s=math.clamp(s,C.GateLine+5,C.Length-5);x=math.clamp(x,-C.Width/2+5,C.Width/2-5)
  release(p)
- local spot={S=s,X=x,Kind=c.grave,MonsterType=c.monsterType,Dropped=true,Expires=os.clock()+C.DropLifetime,WorldPosition=not onRoad and Vector3.new(root.Position.X,farmPlot and farmPlot.Base.Position.Y+.5 or .5,root.Position.Z) or nil}
+ local spot={S=s,X=x,Kind=c.grave,MonsterType=c.monsterType,Location=c.location,Dropped=true,Guard=c.guard,Expires=os.clock()+C.DropLifetime,WorldPosition=(not onRoad or inPocket) and Vector3.new(root.Position.X,farmPlot and farmPlot.Base.Position.Y+.5 or .5,root.Position.Z) or nil}
  if c.farm then Raid.Detach(p,spot) end
  local count,oldest=0,nil
  for q in pairs(Road.Drops) do count+=1;if not oldest or q.Expires<oldest.Expires then oldest=q end end
@@ -295,8 +366,8 @@ function Road.Deliver(p)
  local honest=R.HonestTrip(c.from-C.GateLine,R.Speed(d),c.grave,os.clock()-c.taken)
  release(p)
  if not honest then warn("Road: impossible delivery by",p.UserId);return false end
- if c.guard then notice(p,"bossEscaped",{boss=bossName(Road.BossCfg[c.guard])}) end -- outran the boss
- local item=G.New(c.grave);item.monsterType=c.monsterType;item.fromRoad=true;if not d.tutorialDone and d.tutorialStep==2 then d.tutorialStep=3 end;G.Store(p,item);require(script.Parent.QuestService).Track(p,"road",1);notice(p,"roadStored",{grave=c.grave});return true
+ -- no "you got away" or "delivered" toasts (owner, 2026-11-14: visual noise); a soft sound says it arrived
+ local item=G.New(c.grave);item.monsterType=c.monsterType;item.location=c.location;item.fromRoad=true;if not d.tutorialDone and d.tutorialStep==2 then d.tutorialStep=3 end;G.Store(p,item);require(script.Parent.QuestService).Track(p,"road",1);notice(p,"roadStoredQuiet");return true
 end
 function Road.Faint(p,key)
  local lost=Road.Carriers[p];if lost then Road.Drop(p,true) end;Road.Hearts[p]=C.Hearts;p:SetAttribute("RoadHearts",C.Hearts)
@@ -313,7 +384,7 @@ local function evacuate(p)
  local c=Road.Carriers[p]
  if c then
   if c.farm then Raid.Return(p) else
-   release(p);local item=G.New(c.grave);item.monsterType=c.monsterType;item.fromRoad=true;G.Store(p,item);notice(p,"roadStored",{grave=c.grave})
+   release(p);local item=G.New(c.grave);item.monsterType=c.monsterType;item.location=c.location;item.fromRoad=true;G.Store(p,item)
   end
  end
  Road.CancelPickup(p)
@@ -323,18 +394,13 @@ end
 -- The way home after a boss win (owner, 2026-11-13): a portal stands in the pocket for a while, for everyone who hit
 -- the boss. A grave carried through it is stored at home just as if it had been walked back through the gate.
 Road.Portals={}
--- The shortcut has a price (owner, 2026-11-13): a grave carried through the portal comes home one rarity lower
--- (Lunar becomes Golden ... Stone becomes Wooden; a grave promising a particular monster loses that promise).
+-- A grave carried through the portal comes home as it is (owner, 2026-11-14; from 2026-11-13 it lost a rarity).
 local function stow(p)
  local c=Road.Carriers[p]
  if c then
   if c.farm then Raid.Return(p) else
-   local order=require(S.Config.GraveConfig).Order;local k=table.find(order,c.grave) or 1
-   -- the main grave of a beaten boss is the prize of the fight: it comes home whole
-   local kind=c.main and c.grave or order[math.max(1,k-1)];local monster=(c.main or k<=1) and c.monsterType or nil
-   if kind~=c.grave then notice(p,"portalDowngrade",{from=c.grave,to=kind}) end
-   release(p);local item=G.New(kind);item.monsterType=monster;item.fromRoad=true;G.Store(p,item)
-   require(script.Parent.QuestService).Track(p,"road",1);notice(p,"roadStored",{grave=kind})
+   release(p);local item=G.New(c.grave);item.monsterType=c.monsterType;item.location=c.location;item.fromRoad=true;G.Store(p,item)
+   require(script.Parent.QuestService).Track(p,"road",1);notice(p,"roadStoredQuiet")
   end
  end
  Road.CancelPickup(p)
@@ -348,8 +414,9 @@ end
 function Road.OpenPortal(i,allowed)
  Road.ClosePortal(i)
  local d=Progression.Districts[i];local side=d.PocketSide
- -- at the back of the round, straight across from the corridor, facing the way in
- local back=at(d.PocketS+d.DirS*(Progression.PocketRadius-26),d.PocketX+d.DirX*(Progression.PocketRadius-26),0).Position
+ -- towards the back of the round, off to one side of the main grave's cage (2026-11-14; it stood where the cage is now)
+ local deep,aside=Progression.PocketRadius-30,32
+ local back=at(d.PocketS+d.DirS*deep-d.DirX*aside,d.PocketX+d.DirX*deep+d.DirS*aside,0).Position
  local cf=CFrame.lookAt(back,Vector3.new(arenaCenter(i).X,back.Y,arenaCenter(i).Z)) -- the ring's face looks at the middle
  local m=Instance.new("Model");m.Name="HomePortal";m:SetAttribute("Boss",i)
  local function piece(name,size,at_,color,material,shape)
@@ -373,11 +440,11 @@ function Road.OpenPortal(i,allowed)
  pr:SetAttribute("Boss",i);pr.Parent=disc
  pr.Triggered:Connect(function(p)
   local q=Road.Portals[i];if not q or q.model~=m or not q.allowed[p] or not Road.IsOnRoad(p) then return end
-  stow(p);P.Home(p);notice(p,"portalUsed")
+  stow(p);P.Home(p)
  end)
  m.Parent=world
  Road.Portals[i]={model=m,allowed=allowed}
- for p in pairs(allowed) do if p.Parent then p:SetAttribute("PortalBoss",i);notice(p,"portalOpen",{n=C.Boss.PortalSeconds}) end end
+ for p in pairs(allowed) do if p.Parent then p:SetAttribute("PortalBoss",i) end end -- no "the boss is beaten, a portal..." text (owner, 2026-11-14)
  task.delay(C.Boss.PortalSeconds,function() local q=Road.Portals[i];if q and q.model==m then Road.ClosePortal(i) end end)
 end
 function Road.SetClosed(on)
@@ -627,16 +694,19 @@ local function awake(a,mode)
  a.mode=mode;a.modeAt=os.clock();a.model:SetAttribute("Asleep",nil)
  local gui=a.model.PrimaryPart:FindFirstChild("SleepZzz");if gui then gui.Enabled=false end
 end
--- Who may hurt a boss: a sleeping one only from inside its arena (that starts the fight), a shut arena's boss only
--- its fighters; awake on the road, anyone.
+-- Who may hurt a boss: nobody while it sleeps (owner, 2026-11-14: the fight starts only from the target button over
+-- it, Road.Challenge), a shut arena's boss only its fighters; awake on the road, anyone.
 function Road.BossCanHurt(a,p)
- if a.mode=="sleep" then local root=rootOf(p);return root~=nil and insideArena(a.arena,root.Position) end
+ if a.mode=="sleep" then return false end
  if a.mode=="fight" then local f=Road.Fights[a.arena];return f~=nil and f.fighters[p]==true end
  return true
 end
 function Road.BossHurt(a,p) if a.mode=="sleep" then Road.StartFight(a.arena,p) end end
 function Road.WakeForThief(i,p)
- local a=bossAgent(i);if not a or a.mode~="sleep" then return end
+ local a=bossAgent(i);if not a then return end
+ -- going back to bed: someone picked up a grave it lost, so it turns round after them (owner, 2026-11-14)
+ if a.mode=="return" then a.mode="chase";a.modeAt=os.clock();setChase(a,p);notice(p,"bossWoke",{boss=bossName(a.cfg)});return end
+ if a.mode~="sleep" then return end
  awake(a,"wake");setChase(a,p)
  M.State(a,"Windup");a.model:SetAttribute("AttackName","Scream");a.model:SetAttribute("AttackDuration",C.Boss.Chase.Wake)
  M.FX("BossSpawn",a.id,a.model.PrimaryPart.Position,i,bossName(a.cfg)) -- the roar
@@ -662,7 +732,16 @@ function Road.StartFight(i,starter)
  awake(a,"fight");setChase(a,nil);a.lastEngaged=os.clock();M.State(a,"Running")
  M.FX("BossSpawn",a.id,a.model.PrimaryPart.Position,i,bossName(a.cfg))
  Road.Fights[i]={fighters=fighters,barrier=shutArena(i)}
- for q in pairs(fighters) do notice(q,"bossFightLocked",{boss=bossName(a.cfg)}) end
+ -- no "the arena is shut" toast (owner, 2026-11-14): the red barrier across the way in says it
+end
+-- The target button over a sleeping boss (owner, 2026-11-14): from inside its arena, that starts the fight.
+function Road.Challenge(p)
+ local root=rootOf(p);if not root or not Road.IsOnRoad(p) then return false end
+ for i in Road.BossCfg do
+  local a=bossAgent(i)
+  if a and a.mode=="sleep" and insideArena(i,root.Position) then Road.StartFight(i,p);return true end
+ end
+ return false
 end
 function Road.EndFight(i)
  local f=Road.Fights[i];if not f then return end
@@ -721,7 +800,7 @@ end
 local function catch(a,p)
  local root=a.model.PrimaryPart.Position
  M.State(a,"Recovering");M.FX("Bite",a.id,root,0)
- Road.ReturnStolen(p)
+ -- the grave falls where the thief does (their death drops it: Main's Died handler, Road.Drop)
  notice(p,"bossCaught",{boss=bossName(a.cfg)})
  local h=p.Character and p.Character:FindFirstChildOfClass("Humanoid");if h then h.Health=0 end
 end
@@ -743,7 +822,9 @@ local function bossTick(a,cfg,dt,now,runners)
   moveImp(a,goal,dt,a.chaseSpeed);unstick(a,goal,now)
   return
  end
- -- return: back to bed; a boss far off along the road sinks away and is back in its bed
+ -- return: back to bed; a boss far off along the road sinks away and is back in its bed. Anyone carrying one of its
+ -- graves turns it round again.
+ do local r=thiefOf(a.arena,runners);if r then a.mode="chase";a.modeAt=now;setChase(a,r.p);notice(r.p,"bossWoke",{boss=bossName(cfg)});return end end
  local home=flat(a.home,root.Y)
  if (home-root).Magnitude<3 then Road.Sleep(a);return end
  if now-a.modeAt>=C.Boss.Chase.GiveUp and not insideArena(a.arena,root) then
@@ -806,7 +887,8 @@ local function announceArenas(runners)
   if i~=inArena[r.p] then
    inArena[r.p]=i
    local a=i and bossAgent(i)
-   if a and a.mode=="sleep" then notice(r.p,"bossAsleep",{boss=bossName(Road.BossCfg[i])}) end
+   -- the client opens the heist window the first time; no toast (owner, 2026-11-14)
+   if a and a.mode=="sleep" then notice(r.p,"bossAsleep",{boss=bossName(Road.BossCfg[i]),quiet=true}) end
   end
  end
  for p in pairs(inArena) do if not seen[p] then inArena[p]=nil end end
@@ -890,7 +972,7 @@ function Road.Tick()
     if over and y<=C.DropBelow and y>C.DropBelow-60 then Road.Faint(p,"roadFell");on=false end
     if p:GetAttribute("OnRoad")~=on then
      p:SetAttribute("OnRoad",on)
-     if on and Road.Night() then notice(p,"roadNight") end
+     -- (no "the ruins are harder at night" notice any more: owner, 2026-11-14)
      if not on then Road.Hearts[p]=C.Hearts end
      p:SetAttribute("RoadHearts",Road.Hearts[p] or C.Hearts)
     end
@@ -914,6 +996,7 @@ function Road.Tick()
  end
  for _,spot in ipairs(Road.Spots) do if not spot.Model and now>=(spot.NextAt or 0) then spawnGrave(spot) end end
  for _,spot in ipairs(Road.Spots) do
+  if spot.Cage then cageOpen(spot.Cage,Road.ArenaOpen(spot.Arena)) end -- the door and chains go when the boss falls
   if spot.Model and spot.Prompt and spot.Arena then
    local locked=not Road.ArenaOpen(spot.Arena)
    spot.Prompt.Enabled=not locked;spot.Model:SetAttribute("BossLocked",locked)
@@ -942,8 +1025,22 @@ function Road.Init()
   Road.EndFight(i)
   local cfg=Road.BossCfg[i];if cfg then cfg.DefeatedAt=os.clock();cfg.Winners=winners end
   M.FX("BossDeath",a.id,pos,i,0)
-  RS.Remotes.Notice:FireAllClients("bossDefeated",{boss=bossName(cfg),name=killer.DisplayName})
-  Road.OpenPortal(i,winners) -- the way home for the winners
+  -- no "X defeated the boss" toast for everyone (owner, 2026-11-14): the boss bar turns into the win window instead
+  Road.OpenPortal(i,winners) -- the way home for the winners, for the short window after the win
+  -- 15 s after the win (owner, 2026-11-14): the boss is back (C.Boss.Respawn) and every winner still standing in the
+  -- arena empty-handed is sent home; whoever took a grave runs it home as usual. The clients show the window draining
+  -- in the boss bar (BossWinUntil).
+  local untilAt=workspace:GetServerTimeNow()+C.Boss.AfterWin
+  for p in pairs(winners) do if p.Parent then p:SetAttribute("BossWinUntil",untilAt) end end
+  task.delay(C.Boss.AfterWin,function()
+   for p in pairs(winners) do
+    if p.Parent then
+     if p:GetAttribute("BossWinUntil")==untilAt then p:SetAttribute("BossWinUntil",nil) end
+     local root=p.Character and p.Character:FindFirstChild("HumanoidRootPart")
+     if root and not Road.Carriers[p] and insideArena(i,root.Position) then Road.CancelPickup(p);P.Home(p) end
+    end
+   end
+  end)
  end
  for i,q in ipairs(C.Spots) do Road.Spots[i]={S=q.S,X=q.X,Pool=q.Pool,Arena=q.Arena,Guard=q.Guard,Respawn=q.Respawn,Main=q.Main,Chief=q.Chief} end
  task.spawn(function()

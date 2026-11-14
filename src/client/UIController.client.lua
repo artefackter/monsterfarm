@@ -43,7 +43,7 @@ local ICON = {
 	pets="🐾", pumpkins="🎃", quests="📋", top="🏆", invite="👥", inventory="🎒", settings="⚙️", house="🏠", backpack="🎒", daily="🎁", shop = "🛒", crypt = "⚰️", dex = "📖", rewards = "🎁", lock = "🔒",
 	Pajama = "🛏️", Gardener = "🌱", Postman = "✉️", Skater = "🛹", Pirate = "🏴‍☠️", Cowboy = "🤠",
 	Knight = "🥖", DJ = "🎧", King = "👑", Astronaut = "🚀", Dragon = "🐲",
-	Wooden = "🌲", Stone = "🗿", Marble = "🏛️", Golden = "🏆", Lunar = "🌙",
+	Wooden = "🌲", Stone = "🗿", Marble = "🏛️", Golden = "🏆", Emo = "🖤", Military = "🎖️", Ghost = "👻", Lunar = "🌙",
 	Field = "🌾", Graves = "⚰️", Diggers = "⛏️", Guards = "🛡️", Crypt = "⚰️",
 }
 
@@ -183,7 +183,7 @@ topGui.ResetOnSpawn = false
 topGui.ScreenInsets = Enum.ScreenInsets.TopbarSafeInsets
 topGui.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
 topGui.Parent = p:WaitForChild("PlayerGui")
-local TOP_HEIGHT, TOP_ICONS, HUD_WIDTH = 58, 4, 134
+local TOP_HEIGHT, TOP_ICONS, HUD_WIDTH = 58, 6, 134 -- gifts and home joined the right row (2026-11-14)
 local topScaled = {}
 local function topScale(frame)
 	local s = Instance.new("UIScale")
@@ -197,9 +197,9 @@ local clockBox=candy(Instance.new('Frame'),Pal.Sky2,14);clockBox.Name='Clock';cl
 local clockIcon=iconImage(clockBox,'sun',UDim2.fromOffset(34,34),UDim2.fromOffset(5,6))
 local clock=label(clockBox,'',UDim2.new(1,-44,1,0),UDim2.fromOffset(42,0),{textSize=24})
 hud.Visible=false -- the day clock lives bottom-right now
-local dayClock=scaledBy(Instance.new('Frame'));dayClock.Name='DayClock';dayClock.Size=UDim2.fromOffset(300,64);dayClock.AnchorPoint=Vector2.new(1,1);dayClock.Position=UDim2.new(1,-12,1,-12);dayClock.BackgroundTransparency=1;dayClock.Parent=gui
+local dayClock=scaledBy(Instance.new('Frame'));dayClock.Name='DayClock';dayClock.Size=UDim2.fromOffset(170,64);dayClock.AnchorPoint=Vector2.new(1,1);dayClock.Position=UDim2.new(1,-12,1,-12);dayClock.BackgroundTransparency=1;dayClock.Parent=gui
 local dayIcon=iconImage(dayClock,'sun',UDim2.fromOffset(62,62),UDim2.fromOffset(0,1))
-local dayText=label(dayClock,'',UDim2.fromOffset(232,60),UDim2.fromOffset(68,2),{title=true,textSize=28,color=Pal.Text,align=Enum.TextXAlignment.Left})
+local dayText=label(dayClock,'',UDim2.fromOffset(102,60),UDim2.fromOffset(68,2),{title=true,textSize=28,color=Pal.Text,align=Enum.TextXAlignment.Left})
 do local st=Instance.new('UIStroke',dayText);st.Color=Color3.fromRGB(18,14,30);st.Thickness=3 end
 local metrics=scaledBy(Instance.new('Frame'));metrics.Name='Metrics';metrics.Size=UDim2.fromOffset(340,170);metrics.BackgroundTransparency=1;metrics.Parent=gui
 local COIN_PREFIX='$'
@@ -244,15 +244,23 @@ local topRight = topScale(Instance.new("Frame"))
 topRight.Name = "TopRight"
 topRight.BackgroundTransparency = 1
 topRight.AnchorPoint = Vector2.new(1, 0.5)
-topRight.Size = UDim2.fromOffset(TOP_ICONS * TOP_HEIGHT + (TOP_ICONS - 1) * 6, TOP_HEIGHT)
-topRight.Position = UDim2.new(1, -8, 0.5, 0)
-topRight.Parent = topGui
+topRight.Size = UDim2.fromOffset(TOP_ICONS * TOP_HEIGHT + (TOP_ICONS - 1) * 8, TOP_HEIGHT)
+-- Close to the screen's right edge (owner, 2026-11-14): its own layer inside the device's safe area only, since the
+-- topbar's safe area kept a wide empty margin on the right on phones; it stays level with Roblox's buttons (layoutTop).
+local topRightGui = Instance.new("ScreenGui")
+topRightGui.Name = "DigTopRight"
+topRightGui.ResetOnSpawn = false
+topRightGui.IgnoreGuiInset = true
+topRightGui.ScreenInsets = Enum.ScreenInsets.DeviceSafeInsets
+topRightGui.Parent = p:WaitForChild("PlayerGui")
+topRight.Position = UDim2.new(1, -6, 0, 0)
+topRight.Parent = topRightGui
 local topList = Instance.new("UIListLayout")
 topList.FillDirection = Enum.FillDirection.Horizontal
 topList.HorizontalAlignment = Enum.HorizontalAlignment.Left
 topList.VerticalAlignment = Enum.VerticalAlignment.Center
 topList.SortOrder = Enum.SortOrder.LayoutOrder
-topList.Padding = UDim.new(0, 6)
+topList.Padding = UDim.new(0, 8)
 topList.Parent = topRight
 
 -- TopbarSafeInsets starts this row after Roblox's system buttons.
@@ -299,13 +307,13 @@ local tutorialText = ""
 local nav = scaledBy(Instance.new("Frame"))
 nav.Name = "Nav"
 nav.AnchorPoint = Vector2.new(0, 1) -- sits just above the middle of the screen; the slow-mode switch is just below
-nav.Size = UDim2.fromOffset(84, 176) -- quests, then Monsterdex; slow mode stays just below
+nav.Size = UDim2.fromOffset(84, 192) -- quests, then Monsterdex; slow mode stays just below
 nav.Position = UDim2.new(0, 10, 0.5, -8)
 nav.BackgroundTransparency = 1
 nav.Parent = gui
 local navList = Instance.new("UIGridLayout")
 navList.CellSize = UDim2.fromOffset(84, 84)
-navList.CellPadding = UDim2.fromOffset(8, 8)
+navList.CellPadding = UDim2.fromOffset(24, 24) -- more room between the Monsterdex and the quests (owner, 2026-11-14)
 navList.FillDirectionMaxCells = 1
 navList.SortOrder = Enum.SortOrder.LayoutOrder
 navList.Parent = nav
@@ -357,6 +365,8 @@ scroll.ScrollBarImageColor3 = Pal.Violet
 scroll.AutomaticCanvasSize = Enum.AutomaticSize.Y
 scroll.CanvasSize = UDim2.new()
 scroll.Parent = panel
+-- The crypt's buttons at the window's foot (owner, 2026-11-14): "Place best" and "Store all"
+local cryptFooter=Instance.new("Frame");cryptFooter.Name="CryptFooter";cryptFooter.BackgroundTransparency=1;cryptFooter.Size=UDim2.new(1,-48,0,56);cryptFooter.Position=UDim2.new(0,24,1,-80);cryptFooter.Visible=false;cryptFooter.Parent=panel
 local shopTabs=Instance.new("Frame");shopTabs.Name="ShopCategories";shopTabs.Size=UDim2.fromOffset(98,430);shopTabs.Position=UDim2.fromOffset(10,78);shopTabs.BackgroundTransparency=1;shopTabs.Visible=false;shopTabs.Parent=panel
 local list = Instance.new("UIListLayout")
 list.SortOrder = Enum.SortOrder.LayoutOrder
@@ -371,6 +381,8 @@ local modalLayouts={}
 local tutorialWanted=true
 local backdrop=Instance.new('ScreenGui');backdrop.Name='ModalBackdrop';backdrop.ResetOnSpawn=false;backdrop.ScreenInsets=Enum.ScreenInsets.None;backdrop.ClipToDeviceSafeArea=false;backdrop.DisplayOrder=19;backdrop.Parent=p.PlayerGui
 local shade=Instance.new('TextButton');shade.Name='ModalShade';shade.Text='';shade.Size=UDim2.fromScale(1,1);shade.BackgroundColor3=Color3.new(0,0,0);shade.BackgroundTransparency=.4;shade.AutoButtonColor=false;shade.Visible=false;shade.Active=true;shade.ZIndex=1;shade.Parent=backdrop
+-- (A phone layout was tried on 2026-11-14 and rolled back the same day at the owner's request: the windows scale as
+-- they always did.)
 local function fitModal(frame)
  local v=gui.AbsoluteSize;local size=frame.Size
  local k=math.min(1.4,(v.X-40)/(size.X.Offset+48),(v.Y-24)/(size.Y.Offset+72))
@@ -382,7 +394,7 @@ local savedTouchGuiEnabled
 local function refreshModal()
  local otherOpened=panel.Visible or p.PlayerGui:GetAttribute("UpgradeModalOpen")==true or gui:FindFirstChild('Reveal')~=nil or gui:FindFirstChild('PetHatch')~=nil
  gui:SetAttribute("OtherModalOpen",otherOpened)
- local opened=otherOpened or p.PlayerGui:GetAttribute("NightHelpOpen")==true
+ local opened=otherOpened or p.PlayerGui:GetAttribute("NightHelpOpen")==true or p.PlayerGui:GetAttribute("HeistHelpOpen")==true
  gui:SetAttribute('ModalOpen',opened);shade.Visible=opened
  local touchGui=p.PlayerGui:FindFirstChild('TouchGui')
  if touchGui then
@@ -398,18 +410,19 @@ panel:GetPropertyChangedSignal('Visible'):Connect(refreshModal)
 panel:GetPropertyChangedSignal('Visible'):Connect(function() if not panel.Visible then panel:SetAttribute('MergePicker',nil) end end)
 p.PlayerGui:GetAttributeChangedSignal('UpgradeModalOpen'):Connect(refreshModal)
 p.PlayerGui:GetAttributeChangedSignal('NightHelpOpen'):Connect(refreshModal)
+p.PlayerGui:GetAttributeChangedSignal('HeistHelpOpen'):Connect(refreshModal)
 p.PlayerGui.ChildAdded:Connect(function(child) if child.Name=='TouchGui' then refreshModal() end end)
 gui.ChildAdded:Connect(function() refreshModal() end)
 gui.ChildRemoved:Connect(function(child) modalLayouts[child]=nil;refreshModal() end)
 local function responsive()
  local v=gui.AbsoluteSize;if v.X<1 or v.Y<1 then v=workspace.CurrentCamera.ViewportSize end
  local touch=game.UserInputService.TouchEnabled
- uiFactor=math.clamp(math.min(v.X/1000,v.Y/560),.52,1.1)
+ uiFactor=math.clamp(math.min(v.X/1000,v.Y/560)*(touch and .8 or 1),touch and .44 or .52,1.1) -- phones: smaller icons (owner, 2026-11-14)
  for _,scale in scaled do if scale.Parent then scale.Scale=uiFactor end end
  panel.Position=UDim2.fromScale(.5,.5);fitModal(panel)
  -- Metrics and road status share one scale and the same safe-area anchor.
  local viewport=workspace.CurrentCamera.ViewportSize
- local metricScale=math.clamp(math.min(viewport.X/1280,viewport.Y/720),.48,1.25)
+ local metricScale=math.clamp(math.min(viewport.X/1280,viewport.Y/720)*(touch and .78 or 1),touch and .38 or .48,1.25)
  metrics:FindFirstChildOfClass('UIScale').Scale=metricScale
  local statsParent=touch and mobileStats or gui
  if metrics.Parent~=statsParent then metrics.Parent=statsParent end
@@ -417,7 +430,7 @@ local function responsive()
  local centerShift=touch and (mobileStats.AbsolutePosition.Y-gui.AbsolutePosition.Y+(mobileStats.AbsoluteSize.Y-v.Y)/2) or 0
  nav.AnchorPoint=Vector2.new(0,1);nav.Position=UDim2.new(0,10,.5,-8+centerShift+(touch and 13*uiFactor or 0))
  rightBox.AnchorPoint=Vector2.new(1,.5);rightBox.Position=UDim2.new(1,-10,.5,centerShift)
- rightBox.Size=UDim2.fromOffset(84,288)
+ rightBox.Size=UDim2.fromOffset(84,288) -- pets, crypt, auto-fire
  rightList.FillDirection=Enum.FillDirection.Vertical;rightList.Padding=UDim.new(0,18)
  local clockRight=12
  if touch then
@@ -438,7 +451,9 @@ local function layoutTop()
 	for _, s in ipairs(topScaled) do
 		s.Scale = k
 	end
-	local iconsWidth = (TOP_ICONS * TOP_HEIGHT + (TOP_ICONS - 1) * 6) * k
+	local iconsWidth = (TOP_ICONS * TOP_HEIGHT + (TOP_ICONS - 1) * 8) * k
+	-- the right row: level with the middle of the topbar
+	topRight.Position = UDim2.new(1, -6, 0, topGui.AbsolutePosition.Y + area.Y / 2 - topRightGui.AbsolutePosition.Y)
 	local half = HUD_WIDTH * k / 2
 	hud.Position = UDim2.new(0, math.max(half, math.min(area.X / 2, area.X - iconsWidth - 10 - half)), 0.5, 0)
 end
@@ -446,7 +461,7 @@ workspace.CurrentCamera:GetPropertyChangedSignal("ViewportSize"):Connect(functio
 	responsive()
 	layoutTop()
 end)
-topGui:GetPropertyChangedSignal("AbsoluteSize"):Connect(layoutTop)
+topGui:GetPropertyChangedSignal("AbsoluteSize"):Connect(layoutTop);topGui:GetPropertyChangedSignal("AbsolutePosition"):Connect(layoutTop);topRightGui:GetPropertyChangedSignal("AbsoluteSize"):Connect(layoutTop)
 gui:GetPropertyChangedSignal("AbsoluteSize"):Connect(responsive)
 mobileStats:GetPropertyChangedSignal("AbsoluteSize"):Connect(responsive)
 game.UserInputService:GetPropertyChangedSignal("TouchEnabled"):Connect(function() responsive();layoutTop() end)
@@ -1113,69 +1128,55 @@ local function dexGlow(parent,size,pos,color)
  local gr=Instance.new('UIGradient',g);gr.Transparency=NumberSequence.new({NumberSequenceKeypoint.new(0,0),NumberSequenceKeypoint.new(.7,.35),NumberSequenceKeypoint.new(1,1)});gr.Rotation=90
  return g
 end
+-- The Monsterdex by location (owner, 2026-11-14, after the reference "pet list"; no tabs since the same day: "the
+-- scroll does it"): every location one after another, its card on the left (name, found/total, "Claim all") and the
+-- monsters it can give on the right (found ones in their rarity's colour, the rest a dark silhouette with "???"). A
+-- found monster's one-time reward is taken from its own card. Which monsters: LocationMonsters.
 local function renderDex()
- local catalog=require(S.MonsterCollection).Catalog;local count=#catalog
- local data={zombiedex=state.dex};local n=InterfaceRules.Count(data,dexPage);local total=0;for _,page in InterfaceC.Pages do total+=InterfaceRules.Count(data,page) end
- -- Pages: one tab per mutation, coloured like it
- local tabs=row(54);Style.ModalRow(tabs)
- for i,page in InterfaceC.Pages do
-  local b=button(tabs,t('dexPage_'..page),function() dexPage=page;render() end,UDim2.new(.25,-8,1,-8),UDim2.new((i-1)*.25,4,0,4),dexPage==page and Pal.Orange or Pal.Panel)
-  if dexPage~=page then b.BackgroundColor3=DEX_PAGE_COLOR[page] end
+ local LM=require(S.Config.LocationMonsters);local districts=require(S.Config.WorldConfig).Districts
+ local claims=state.dexClaims or {};local data={zombiedex=state.dex}
+ local width=math.max(400,scroll.AbsoluteSize.X/math.max(.1,panel:FindFirstChildOfClass('UIScale').Scale)-16)
+ local lw,cw,ch,gap=150,104,138,6
+ local cols=math.max(2,math.floor((width-lw-12)/(cw+gap)))
+ for li=1,#LM.Sets do
+  local dd=districts[li];local list=LM.Catalog(li)
+  local found,ready=0,0
+  for _,e in list do if InterfaceRules.Known(data,e.Id) then found+=1;if not claims['mon:'..e.Id] then ready+=1 end end end
+  local gridH=math.max(1,math.ceil(#list/cols))*(ch+gap)
+  local body=row(math.max(gridH+8,190));Style.ModalRow(body);body.Name='DexLocation_'..li
+  -- the location
+  local tint=dd and Color3.fromHex(dd.Fog) or Style.ModalColors.Blue
+  local place=Style.ModalSurface(Instance.new('Frame'),tint:Lerp(Color3.new(1,1,1),.15),14);place.Name='Location';place.Size=UDim2.new(0,lw,1,-8);place.Position=UDim2.fromOffset(4,4);place.Parent=body
+  label(place,dd and dd.Emoji or '',UDim2.new(1,0,0,46),UDim2.fromOffset(0,6),{textSize=40})
+  label(place,dd and t(dd.Title) or '',UDim2.new(1,-10,0,46),UDim2.fromOffset(5,52),{title=true,textSize=20})
+  local bar=candy(Instance.new('Frame'),Color3.fromRGB(30,24,40),8);bar.Name='Found';bar.Size=UDim2.new(1,-16,0,26);bar.Position=UDim2.fromOffset(8,104);bar.Parent=place
+  local fill=Instance.new('Frame',bar);fill.BorderSizePixel=0;fill.Size=UDim2.new(#list>0 and found/#list or 0,0,1,0);fill.BackgroundColor3=Pal.Mint;Instance.new('UICorner',fill).CornerRadius=UDim.new(0,8)
+  local tally=label(bar,found..'/'..#list,UDim2.fromScale(1,1),nil,{title=true,textSize=18,color=Color3.new(1,1,1)});tally.ZIndex=4
+  local ts=Instance.new('UIStroke',tally);ts.Color=Color3.fromRGB(20,14,30);ts.Thickness=2
+  if ready>0 then
+   button(place,t('dexClaimAll',{n=ready}),function() rem.InterfaceAction:FireServer('dexAll',tostring(li)) end,UDim2.new(1,-16,0,38),UDim2.fromOffset(8,138),Pal.Mint)
+  end
+  -- its monsters
+  for i,entry in list do
+   local id,tier=entry.Id,entry.Tier;local known=InterfaceRules.Known(data,id);local claimed=claims['mon:'..id]
+   local x,y=lw+12+((i-1)%cols)*(cw+gap),4+math.floor((i-1)/cols)*(ch+gap)
+   local rarity=Pal[ZC.Tiers[tier]] or Pal.Common
+   local card=Style.ModalSurface(Instance.new('Frame'),known and rarity:Lerp(Color3.new(1,1,1),.2) or rarity:Lerp(Color3.fromRGB(40,30,60),.55),14,false)
+   card.Name='DexCard_'..id;card.Size=UDim2.fromOffset(cw,ch);card.Position=UDim2.fromOffset(x,y);card.Parent=body
+   dexGlow(card,UDim2.fromOffset(78,78),UDim2.fromOffset(13,22),known and Color3.new(1,1,1) or Color3.fromRGB(70,52,104))
+   dexPortrait(card,id,known,'None',UDim2.fromOffset(86,86),UDim2.fromOffset(9,18))
+   if not known then dexMark(card,UDim2.fromOffset(40,46),UDim2.fromOffset(32,36)) end
+   local caption=label(card,known and t(id) or '???',UDim2.new(1,-6,0,20),UDim2.fromOffset(3,2),{title=true,textSize=15,color=Color3.new(1,1,1)});caption.ZIndex=4;caption.UITextSizeConstraint.MinTextSize=8
+   local cs=Instance.new('UIStroke',caption);cs.Color=Color3.fromRGB(30,18,46);cs.Thickness=2
+   local reward=InterfaceRules.MonsterReward(id) or {coins=0,speed=0}
+   if known and not claimed then
+    local b=button(card,'$'..short(reward.coins),function() rem.InterfaceAction:FireServer('dexMon',id) end,UDim2.new(1,-8,0,30),UDim2.new(0,4,1,-34),Pal.Mint);b.ZIndex=8
+    local gift=iconImage(card,'daily',UDim2.fromOffset(26,26),UDim2.new(1,-28,0,20));gift.ZIndex=8
+   elseif known then
+    local done=label(card,'✓',UDim2.fromOffset(26,26),UDim2.new(1,-28,1,-28),{title=true,textSize=22,color=Color3.fromRGB(150,255,90)});done.ZIndex=8
+   end
+  end
  end
- -- Progress: discovered on this page, the gifts marked on the bar
- local head=row(70)
- label(head,t('dexThreshold',{n=n,total=count}),UDim2.fromOffset(190,58),UDim2.fromOffset(12,6),{title=true,textSize=26,align=LEFT})
- local bar=candy(Instance.new('Frame'),Color3.fromRGB(64,40,92),10);bar.Name='DexProgress';bar.Size=UDim2.new(1,-232,0,26);bar.Position=UDim2.fromOffset(210,22);bar.Parent=head
- local fill=Instance.new('Frame',bar);fill.BorderSizePixel=0;fill.Size=UDim2.new(math.clamp(n/count,0,1),0,1,0);fill.BackgroundColor3=dexPage=='None' and Pal.Mint or DEX_PAGE_COLOR[dexPage];Instance.new('UICorner',fill).CornerRadius=UDim.new(0,10)
- for _,threshold in InterfaceC.Thresholds do
-  local reached=n>=threshold;local claimed=(state.dexClaims or {})[dexPage..':'..threshold]
-  local gift=iconImage(bar,'daily',UDim2.fromOffset(34,34),UDim2.new(threshold/count,-17,.5,-17));gift.ZIndex=4
-  gift.ImageColor3=claimed and Color3.fromRGB(150,150,150) or reached and Color3.new(1,1,1) or Color3.fromRGB(120,100,150)
- end
- -- The cards
- local cols,cw,ch=4,102,124
- local gridHeight=math.ceil(count/cols)*(ch+6)
- local body=row(math.max(gridHeight+12,480));Style.ModalRow(body)
- local selected
- for i,entry in catalog do
-  local id,tier=entry.Id,entry.Tier;local known=state.dex[id..':'..dexPage]==true
-  local x,y=((i-1)%cols)*(cw+6),math.floor((i-1)/cols)*(ch+6)
-  local rarity=Pal[ZC.Tiers[tier]] or Pal.Common
-  local card=Style.ModalSurface(Instance.new('Frame'),known and rarity:Lerp(Color3.new(1,1,1),.25) or Color3.fromRGB(122,108,150),14,false)
-  card.Name='DexCard_'..id;card.Size=UDim2.fromOffset(cw,ch);card.Position=UDim2.fromOffset(x+4,y+6);card.Parent=body
-  if dexSelected==id then Style.ModalSelected(card);card.UIStroke.Thickness=4 end
-  dexGlow(card,UDim2.fromOffset(78,78),UDim2.fromOffset(12,8),known and Color3.new(1,1,1) or Color3.fromRGB(70,52,104))
-  dexPortrait(card,id,known,dexPage,UDim2.fromOffset(88,88),UDim2.fromOffset(7,4))
-  if not known then dexMark(card,UDim2.fromOffset(44,50),UDim2.fromOffset(29,24)) end
-  local caption=label(card,known and t(id) or '???',UDim2.new(1,-8,0,26),UDim2.new(0,4,1,-30),{title=true,textSize=15,color=Pal.Text});caption.ZIndex=4;caption.UITextSizeConstraint.MinTextSize=8
-  local tap=Instance.new('TextButton');tap.Name='Tap';tap.Text='';tap.AutoLocalize=false;tap.BackgroundTransparency=1;tap.Size=UDim2.fromScale(1,1);tap.ZIndex=6;tap.Parent=card
-  tap.Activated:Connect(function() Sfx.play('Click');dexSelected=id;render() end)
-  if id==dexSelected then selected={id=id,type=id,tier=tier,mutation=dexPage,known=known} end
- end
- -- The big card on the right
- local px=cols*(cw+6)+12
- if selected then
-  local rarity=Pal[ZC.Tiers[selected.tier]] or Pal.Common
-  local big=Style.ModalSurface(Instance.new('Frame'),Style.ModalColors.Blue,16);big.Name='DexSelected';big.Size=UDim2.new(1,-px-6,0,272);big.Position=UDim2.fromOffset(px,6);big.Parent=body
-  dexGlow(big,UDim2.fromOffset(170,170),UDim2.new(.5,-85,0,14),selected.known and rarity:Lerp(Color3.new(1,1,1),.4) or Color3.fromRGB(150,130,190))
-  dexPortrait(big,selected.id,selected.known,dexPage,UDim2.fromOffset(186,186),UDim2.new(.5,-93,0,6))
-  if not selected.known then dexMark(big,UDim2.fromOffset(90,100),UDim2.new(.5,-45,0,50)) end
-  label(big,selected.known and t(selected.type) or '???',UDim2.new(1,-16,0,30),UDim2.fromOffset(8,192),{title=true,textSize=24})
-  badge(big,t(ZC.Tiers[selected.tier]),Style.ModalColors.Purple,UDim2.new(.5,-118,0,230),112).BackgroundColor3=rarity:Lerp(Color3.new(0,0,0),.15)
-  local rate=Merge.Rate({tier=selected.tier,mutation=dexPage})
-  badge(big,selected.known and t('incomeShort',{n=L.number(rate,lang,rate%1==0 and 0 or 1)}) or t('dexFindHint'),Style.ModalColors.Green,UDim2.new(.5,6,0,230),112)
- end
- -- Milestone gifts under the big card
- for i,threshold in InterfaceC.Thresholds do
-  local reward=InterfaceRules.DexReward(dexPage,threshold);local key=dexPage..':'..threshold;local claimed=(state.dexClaims or {})[key]
-  local f=Style.ModalSurface(Instance.new('Frame'),Style.ModalColors.Blue,12);f.Size=UDim2.new(1,-px-6,0,58);f.Position=UDim2.fromOffset(px,286+(i-1)*62);f.Parent=body
-  if reward.shovel then Style.ModalArt(f,'shovel',reward.shovel,UDim2.fromOffset(44,44),UDim2.fromOffset(6,7)) else Style.ModalArt(f,'cash',nil,UDim2.fromOffset(44,44),UDim2.fromOffset(6,7)) end
-  local description=threshold..'/'..count..' · '..(reward.shovel and t('shovel_'..reward.shovel) or L.compact(reward.coins,lang)..' $')..(reward.speed>0 and (' · +'..short(reward.speed)..' 👟') or '')
-  label(f,description,UDim2.new(1,-160,1,-8),UDim2.fromOffset(54,4),{textSize=15,align=LEFT})
-  button(f,t(claimed and 'dexClaimed' or n>=threshold and 'claim' or 'dexLocked'),function() if not claimed and n>=threshold then rem.InterfaceAction:FireServer('dex',key) end end,UDim2.fromOffset(100,40),UDim2.new(1,-106,0,9),not claimed and n>=threshold and Pal.Mint or Pal.Common)
- end
- local foot=row(44);Style.ModalRow(foot)
- label(foot,t('dexUnlockedAll',{n=total,total=count*#InterfaceC.Pages}),UDim2.fromScale(1,1),nil,{title=true,textSize=20})
 end
 render = function()
 	if not state then
@@ -1220,6 +1221,7 @@ render = function()
  TILE_H=menu=="weapons" and 212 or menu=="crypt" and 236 or single and 280 or 252;TILE_W=(isShop or menu=="crypt") and 172 or 166
  fitModal(panel)
  scroll.Position=UDim2.fromOffset(24,108);scroll.Size=UDim2.new(1,-48,1,-132)
+ cryptFooter.Visible=menu=="crypt";if menu=="crypt" then scroll.Size=UDim2.new(1,-48,1,-196) end
  shopTabs.Visible=false
  for _,c in ipairs(shopTabs:GetChildren()) do c:Destroy() end
  if false then
@@ -1350,6 +1352,12 @@ elseif menu=="pets" then
   tile(grid,{order=i,name="ShovelTile_"..id,title=t('shovel_'..id),color=Style.ModalColors.Blue,selected=selected,art=function(f) Style.ModalArt(f,'shovel',id) end,badge=t('shovelStats',{d=cfg.Damage,s=L.number(cfg.Knockout,lang,1),m=cfg.Distance}),badgeWidth=154,action=action})
  end
 	elseif menu == "crypt" then
+  if not cryptFooter:FindFirstChild("PlaceBest") then
+   local a=button(cryptFooter,"",function() send("placeBest") end,UDim2.new(.5,-6,1,0),UDim2.fromOffset(0,0),Pal.Mint);a.Name="PlaceBest"
+   local b=button(cryptFooter,"",function() send("storeAll") end,UDim2.new(.5,-6,1,0),UDim2.new(.5,6,0,0),Pal.Orange);b.Name="StoreAll"
+   for _,o in cryptFooter:GetDescendants() do if o:IsA("GuiObject") then o.ZIndex=math.max(o.ZIndex,scroll.ZIndex+1) end end
+  end
+  cryptFooter.PlaceBest.Text=t("cryptPlaceBest");cryptFooter.StoreAll.Text=t("cryptStoreAll")
   local chips = Style.ModalRow(row(48, Pal.Panel))
   local chipIcons = {all="dex", Field="house", Crypt="crypt"}
   for i, key in ipairs({"all", "Field", "Crypt"}) do
@@ -1479,10 +1487,13 @@ navButtons.language=button(topRight,'',function()
 end,SMALL);navButtons.language.Name='Nav_language';navButtons.language.LayoutOrder=3
 navButtons.language.UITextSizeConstraint.MaxTextSize=24
 navButtons.language.Text=isRussian and 'RU' or 'EN'
--- Gifts and home follow Roblox's buttons; quests lead the left column.
-menuIcon(topLeft,'rewards',SMALL,1);menuIcon(nav,'quests',BIG,1)
+-- Gifts and home lead the top-right row (owner, 2026-11-14; they followed Roblox's buttons before); quests lead the left column.
+menuIcon(topRight,'rewards',SMALL,-2);menuIcon(nav,'quests',BIG,1)
 menuIcon(rightBox,'pets',BIG,1);menuIcon(rightBox,'crypt',BIG,2)
-navButtons.home=iconButton(topLeft,'house',function() rem.InterfaceAction:FireServer('home') end,SMALL);navButtons.home.Name='Nav_home';navButtons.home.LayoutOrder=2
+navButtons.home=iconButton(topRight,'house',function() rem.InterfaceAction:FireServer('home') end,SMALL);navButtons.home.Name='Nav_home';navButtons.home.LayoutOrder=-1
+-- out in the ruins the way home is the gate or a portal: the button only gets in the way there (owner, 2026-11-14)
+local function homeShown() navButtons.home.Visible=p:GetAttribute('OnRoad')~=true end
+p:GetAttributeChangedSignal('OnRoad'):Connect(homeShown);homeShown()
 -- Reference look: saturated fills, a darker thick outline, a soft top-to-bottom shine
 local function paint(b,fill,edge)
  b.BackgroundColor3=fill;local st=b:FindFirstChildOfClass('UIStroke');if st then st.Color=edge;st.Thickness=4 end
@@ -1494,7 +1505,24 @@ paint(navButtons.pets,Color3.fromRGB(255,150,40),Color3.fromRGB(150,70,10))
 paint(navButtons.crypt,Color3.fromRGB(160,95,255),Color3.fromRGB(70,30,140))
 paint(navButtons.home,Color3.fromRGB(90,220,90),Color3.fromRGB(25,110,40))
 paint(navButtons.rewards,Color3.fromRGB(255,110,160),Color3.fromRGB(150,30,80))
+-- Gifts and home are round like the rest of the top-right row, in their own colours (owner, 2026-11-14)
+for _,b in {navButtons.home,navButtons.rewards} do
+ local c=b:FindFirstChildOfClass('UICorner') or Instance.new('UICorner',b);c.CornerRadius=UDim.new(1,0)
+ local st=b:FindFirstChildOfClass('UIStroke');if st then st.Thickness=2.5 end
+end
 paint(navButtons.quests,Color3.fromRGB(255,200,60),Color3.fromRGB(150,95,10))
+-- Auto-fire on/off (owner, 2026-11-14): the third button on the right, under the pets and the crypt; green while it
+-- fires on its own, grey when you shoot by tapping. The same setting as in Settings.
+do
+ local auto=iconButton(rightBox,'auto_on',function() rem.InterfaceAction:FireServer('setting','AutoFire',p:GetAttribute('AutoFire')==false) end,BIG)
+ auto.Name='Nav_autofire';auto.LayoutOrder=3;navButtons.autofire=auto
+ local function show()
+  local on=p:GetAttribute('AutoFire')~=false;local icon=auto:FindFirstChild('Icon')
+  if icon then icon.Image=Icons[on and 'auto_on' or 'auto_off'] or '' end
+  if on then paint(auto,Color3.fromRGB(110,220,90),Color3.fromRGB(30,110,30)) else paint(auto,Color3.fromRGB(150,148,166),Color3.fromRGB(70,68,90)) end
+ end
+ p:GetAttributeChangedSignal('AutoFire'):Connect(show);show()
+end
 for _,key in {'invite','settings','language','top'} do local b=navButtons[key];if b then b.BackgroundColor3=Color3.fromRGB(28,30,44);b.BackgroundTransparency=.25;local st=b:FindFirstChildOfClass('UIStroke');if st then st.Color=Color3.fromRGB(70,74,96);st.Thickness=2 end;local g=b:FindFirstChildOfClass('UIGradient');if g then g.Enabled=false end;local c=b:FindFirstChildOfClass('UICorner');if c then c.CornerRadius=UDim.new(1,0) end end end
 RunService.Heartbeat:Connect(function() navButtons.home.BackgroundColor3=p:GetAttribute('HomeReason') and Pal.Common or navButtons.home:GetAttribute('Fill') end)
 local menuBridge=Instance.new('BindableEvent');menuBridge.Name='ZoneMenu';menuBridge.Parent=gui
@@ -1638,7 +1666,7 @@ rem.State.OnClientEvent:Connect(function(s)
 	clockIcon.Image = Icons[s.night and "moon" or "sun"] or ""
 	clockBox.BackgroundColor3 = s.night and Pal.Violet or Pal.Sky2
 	dayIcon.Image = Icons[s.night and "sun" or "moon"] or ""
-	dayText.Text = t(s.night and "dayIn" or "nightIn", { t = string.format("%d:%02d", math.floor(s.left / 60), math.floor(s.left % 60)) })
+	dayText.Text = string.format("%d:%02d", math.floor(s.left / 60), math.floor(s.left % 60)) -- the sun or moon icon says which; no "night in" words (owner, 2026-11-14)
  tutorialText=t(({"tutorialDig","tutorialField","tutorialRoad","tutorialPlant"})[(s.step or 0)+1] or "tutorialDone")
  tutorialWanted=not s.tutorialDone;refreshModal()
  gui:SetAttribute("TutorialStep",s.tutorialDone and 4 or s.step)
@@ -1740,7 +1768,28 @@ end
 
 gui:GetAttributeChangedSignal("OpenCryptAt"):Connect(function() openMenu("crypt") end)
 rem.Notice.OnClientEvent:Connect(function(key, args)
+ -- Mutagen from a kill flies into the counter, as the Zombucks do (owner, 2026-11-14: no "+1 mutagen" text).
+ if key=="mutagenDrop" then
+ local pos=type(args)=="table" and typeof(args.pos)=="Vector3" and args.pos
+ local icon=metrics:FindFirstChild('MutagenIcon');if not icon then return end
+ local host=metrics.Parent
+ local target=icon.AbsolutePosition+icon.AbsoluteSize/2-host.AbsolutePosition
+ local start
+ if pos then local q,on=workspace.CurrentCamera:WorldToScreenPoint(pos);if on then start=Vector2.new(q.X,q.Y)-host.AbsolutePosition end end
+ start=start or host.AbsoluteSize/2
+ for i=1,math.clamp(math.floor(tonumber(args and args.n) or 1),1,6) do
+  local f=Style.ModalArt(host,'mutagen',nil,UDim2.fromOffset(34,38),UDim2.fromOffset(start.X+math.random(-30,30)-17,start.Y+math.random(-20,20)-19));f.Name='FlyingMutagen';f.ZIndex=30
+  TweenService:Create(f,TweenInfo.new(.6+i*.05,Enum.EasingStyle.Quad,Enum.EasingDirection.In),{Position=UDim2.fromOffset(target.X-8,target.Y-9),Size=UDim2.fromOffset(16,18)}):Play()
+  game:GetService("Debris"):AddItem(f,1.1)
+ end
+ task.delay(.65,function() local s=icon:FindFirstChildOfClass('UIScale') or Instance.new('UIScale',icon);s.Scale=1.25;TweenService:Create(s,TweenInfo.new(.25,Enum.EasingStyle.Back),{Scale=1}):Play() end)
+  return
+ end
  if key=="openCrypt" then openMenu("crypt");return elseif key=="zombieCard" then cardId=args.id;openMenu("zombieCard");return end
+ -- No toasts for these (owner, 2026-11-14: visual noise): a grave brought home only plays a soft hit; a sleeping
+ -- boss is explained once by the heist window (HelpController).
+ if key=="roadStoredQuiet" then Sfx.play("Reveal",1);return end
+ if key=="bossAsleep" then return end
 	if key == "error" then
 		Sfx.play("Error", 0.4)
 	elseif key == "caught" then
@@ -1813,7 +1862,8 @@ task.spawn(function()
 	end
 	while task.wait(0.5) do
 		for pr in pairs(prompts) do
-			if not pr.Parent then
+			-- with streaming a prompt can outlive its model on the client for a moment: drop it
+			if not pr.Parent or not pr.Parent.Parent or not pr:IsDescendantOf(workspace) then
 				prompts[pr] = nil
 			else
 				local owner = pr:GetAttribute("Owner")

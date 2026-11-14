@@ -22,6 +22,32 @@ function R.ClaimDex(d,page,threshold)
  if reward.shovel then d.shovels[reward.shovel]=true;d.equippedShovel=require(S.ActionRules).Best(d) end
  return true
 end
+-- The Monsterdex by location (owner, 2026-11-14, after the reference "pet list"): every monster pays once, the first
+-- time it is found (any mutation), in Zombucks and speed by its rarity. Claimed as dexClaims["mon:<id>"].
+R.MonsterCoins={200,800,3000,12000,50000,250000}
+R.MonsterSpeed={200,600,2000,6000,20000,80000}
+function R.Known(d,id)
+ local dex=d.zombiedex or {}
+ for _,page in C.Pages do if dex[id..":"..page]==true then return true end end
+ return false
+end
+function R.MonsterReward(id)
+ for _,e in require(S.MonsterCollection).Catalog do
+  if e.Id==id then return {coins=R.MonsterCoins[e.Tier] or 0,speed=R.MonsterSpeed[e.Tier] or 0} end
+ end
+end
+function R.ClaimMonster(d,id)
+ local reward=type(id)=="string" and R.MonsterReward(id);local key="mon:"..tostring(id)
+ if not reward or not R.Known(d,id) or d.dexClaims[key] then return false end
+ d.dexClaims[key]=true;d.coins+=reward.coins;d.speedPoints=(d.speedPoints or 0)+reward.speed
+ return true
+end
+-- Every found and unclaimed monster of one location at once ("Claim all").
+function R.ClaimLocation(d,location)
+ local any=false
+ for _,e in require(S.Config.LocationMonsters).Catalog(location) do if R.ClaimMonster(d,e.Id) then any=true end end
+ return any
+end
 function R.ClaimGift(d,groupId,isMember)
  if groupId<=0 or not isMember or d.freeGiftClaimed then return false end
  d.freeGiftClaimed=true;d.speedPoints+=C.FreeGift.Speed;d.vouchers[C.FreeGift.Grave]=(d.vouchers[C.FreeGift.Grave] or 0)+1;return true

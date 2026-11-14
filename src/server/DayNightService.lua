@@ -1,5 +1,5 @@
--- Bright (owner, 2026-11-13: "the game is still dark"): a clear sunny day with little haze, and a night that is a
--- light, colourful violet rather than dark. Brighter than the first cartoon look, on purpose.
+-- Bright but not glaring (owner, 2026-11-13: "still dark", then 2026-11-14: "now too bright"): a sunny day with a
+-- touch of haze and a colourful violet night, between the moody try and the over-bright one.
 local C = require(game.ReplicatedStorage.Shared.Config.NightConfig)
 local Lighting = game:GetService("Lighting")
 local RunService = game:GetService("RunService")
@@ -8,14 +8,14 @@ local D = {}
 
 local LOOK = {
 	day = {
-		Clock = 13.8, Brightness = 2.2, Exposure = 0.2,
-		Ambient = Color3.fromRGB(150, 150, 165), Outdoor = Color3.fromRGB(165, 165, 180), Shift = Color3.fromRGB(255, 248, 236),
-		Fog = Color3.fromRGB(200, 236, 255), Density = 0.05, Haze = 0, AtmosphereColor = Color3.fromRGB(215, 240, 255),
-		Tint = Color3.new(1, 1, 1), Saturation = 0.12, Contrast = 0.04,
+		Clock = 14.2, Brightness = 1.7, Exposure = 0.05,
+		Ambient = Color3.fromRGB(132, 132, 148), Outdoor = Color3.fromRGB(145, 144, 162), Shift = Color3.fromRGB(255, 244, 228),
+		Fog = Color3.fromRGB(195, 225, 240), Density = 0.08, Haze = 0.3, AtmosphereColor = Color3.fromRGB(205, 228, 240),
+		Tint = Color3.fromRGB(252, 250, 246), Saturation = 0.06, Contrast = 0.06,
 	},
 	night = {
-		Clock = 23.6, Brightness = 1.6, Exposure = 0.3,
-		Ambient = Color3.fromRGB(165, 150, 215), Outdoor = Color3.fromRGB(180, 165, 230), Shift = Color3.fromRGB(190, 185, 255),
+		Clock = 23.6, Brightness = 1.25, Exposure = 0.12,
+		Ambient = Color3.fromRGB(145, 130, 195), Outdoor = Color3.fromRGB(158, 142, 210), Shift = Color3.fromRGB(190, 185, 255),
 		Fog = Color3.fromRGB(120, 105, 200), Density = 0.12, Haze = 0.4, AtmosphereColor = Color3.fromRGB(135, 115, 220),
 		Tint = Color3.fromRGB(240, 236, 255), Saturation = 0.15, Contrast = 0.03,
 	},

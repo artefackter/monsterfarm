@@ -62,7 +62,7 @@ function M.Damage(a,damage,killer,crit)
     local reward=math.clamp(Z.Income(d)*C.RewardIncomeSeconds,C.RewardMin,C.RewardMax)*(a.night and require(S.Config.RoadConfig).Night.KillReward or 1)*(a.rewardMult or 1)
     d.coins+=reward;A.Economy(who,reward,d.coins,"MutantReward",pos);fx("Reward",a.id,pos,who.UserId,reward)
     if M.OnKill then M.OnKill(who) end
-    if (a.road or a.giant) and M.OnRoadKill then M.OnRoadKill(who,a) end -- mutagen
+    if (a.road or a.giant) and M.OnRoadKill then M.OnRoadKill(who,a,pos) end -- mutagen
    end
   end
   if a.road and a.boss and killer and D.Profiles[killer] and M.OnBossDefeated then M.OnBossDefeated(killer,pos,a) end
@@ -97,7 +97,7 @@ function M.Spawn(p,kind)
  local d=D.Profiles[p];local plot=P.Assigned[p];kind=kind or variant and variant.Kind or C.DefaultType
  if not d or not plot or not d.tutorialDone or not C.Types[kind] or M.Count()>=C.ServerLimit then return end
  M.Serial+=1;local id=tostring(M.Serial);local radius=rng:NextNumber(C.SpawnMin,C.SpawnMax);local side=rng:NextNumber(-C.SpawnSide,C.SpawnSide)
- local edge=require(S.Config.ZoneConfig).FarmHalf+6;local pos=(plot.Base*CFrame.new(rng:NextNumber()<.5 and -edge or edge,C.RootHeight,side)).Position
+ local edge=require(S.Config.ZoneConfig).FarmHalf+6;local pos=(plot.Base*CFrame.new(-edge,C.RootHeight,side)).Position -- the -x side only: the cemetery yard is on +x (2026-11-14)
  local cf=CFrame.lookAt(pos,Vector3.new(plot.Base.X,pos.Y,plot.Base.Z));local model=Model.Build(kind,cf,variant)
  local a={id=id,owner=p,profile=d,kind=kind,hp=C.Types[kind].Health,model=model,spawn=pos,alarmed=false}
  if not M.ChooseTarget(a) then model:Destroy();return end

@@ -31,7 +31,8 @@ function W.Join(p)
 end
 function W.Reload(p)
  local d=D.Profiles[p];if not d then return false end;local id=d.equippedWeapon;local s=W.Session(p);if not require(script.Parent.ActionService).Ready(p) or d.activeSlot~=2 then return false end
- if s.holstered or os.clock()<(s.drawUntil or 0) or s.reload[id] or s.ammo[id]>=magazine(p,id) then return false end
+ -- a reload is never "denied" (owner, 2026-11-14): a full magazine reloads anyway; holstered or busy just does nothing
+ if s.holstered or os.clock()<(s.drawUntil or 0) or s.reload[id] then return true end
  s.reload[id]=os.clock()+Up.Stats_(d,id).Reload;W.Push(p);return true -- upgraded guns reload faster
 end
 function W.Action(p,op,id)
@@ -114,11 +115,11 @@ function W.Init()
  rem.WeaponAction.OnServerEvent:Connect(function(p,op,id,...)
   if select("#",...)>0 or type(op)~="string" or #op>20 or (id~=nil and (type(id)~="string" or #id>20)) then return end
   local now=os.clock();if now-(W.ActionTimes[p] or -math.huge)<C.ActionInterval then return end;W.ActionTimes[p]=now
-  if not W.Action(p,op,id) then rem.Notice:FireClient(p,"weaponDenied") end
+  if not W.Action(p,op,id) and op~="reload" then rem.Notice:FireClient(p,"weaponDenied") end -- a reload never complains
  end)
  game.Players.PlayerRemoving:Connect(function(p) W.Sessions[p]=nil;W.ActionTimes[p]=nil end)
  -- Mutagen: a chance drop from every monster killed in the ruins (WeaponUpgrades.Drop)
- M.OnRoadKill=function(killer,a)
+ M.OnRoadKill=function(killer,a,pos)
   local d=D.Profiles[killer];if not d then return end
   -- the hunt that earns guns: every monster killed out on the road counts for its location
   if a.road and a.biome and d.ruinKills and d.ruinKills[a.biome] then
@@ -128,7 +129,7 @@ function W.Init()
   local amount=Up.DropFor(a.biome,a.boss==true,a.night==true,rng:NextNumber())
   if amount<=0 then return end
   d.mutagen=(d.mutagen or 0)+amount;killer:SetAttribute("Mutagen",d.mutagen)
-  rem.Notice:FireClient(killer,"mutagenDrop",{n=amount});W.Push(killer)
+  rem.Notice:FireClient(killer,"mutagenDrop",{n=amount,pos=pos}) -- the client flies vials from pos to the counter;W.Push(killer)
  end
  task.spawn(function() while task.wait(.25) do for p in pairs(W.Sessions) do W.Push(p) end end end)
 end

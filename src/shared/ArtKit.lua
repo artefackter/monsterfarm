@@ -147,13 +147,105 @@ end
 function Art.MonsterScale(assetName)
  local lo,hi=Art.Bounds(assetName);return require(script.Parent.Config.MonsterSize).MinimumHeight/(hi.Y-lo.Y),lo,hi
 end
+-- Graves without a model of their own (owner, 2026-11-14: Emo, Military and Ghost, between Golden and Lunar): a V3
+-- grave recoloured, with a few plain parts that say what it is — a pink star on a black stone, an army helmet and dog
+-- tags, a pale see-through stone with a wisp over it.
+local DERIVED = {
+	Grave_V3_Emo = { base = "Grave_V3_Marble", color = Color3.fromHex("2E2536"), accent = Color3.fromHex("FF4FB3") },
+	Grave_V3_Military = { base = "Grave_V3_Stone", color = Color3.fromHex("5F6E3B"), accent = Color3.fromHex("C9B27A") },
+	Grave_V3_Ghost = { base = "Grave_V3_Lunar", color = Color3.fromHex("CFF4FF"), accent = Color3.fromHex("8FE8FF"), ghost = true },
+}
+function Art.Has(assetName) -- (again: derived graves count too)
+	return Manifest[assetName] ~= nil or (DERIVED[assetName] ~= nil and Manifest[DERIVED[assetName].base] ~= nil)
+end
+local function extra(parent, out, name, size, cf, color, material, shape)
+	local q = Instance.new("Part")
+	q.Name = name
+	q.Size = size
+	q.CFrame = cf
+	q.Color = color
+	q.Material = material or Enum.Material.SmoothPlastic
+	q.Anchored, q.CanCollide, q.CanTouch, q.CanQuery, q.Massless, q.CastShadow = true, false, false, false, true, false
+	if shape then
+		q.Shape = shape
+	end
+	q.Parent = parent
+	out[name] = q
+	return q
+end
+local function spawnDerived(look, assetName, parent, cf, opts)
+	local out = Art.Spawn(look.base, parent, cf, opts)
+	-- the stone's extent in its own frame, to put the extras on it whatever its scale
+	local lo, hi = Vector3.new(math.huge, math.huge, math.huge), Vector3.new(-math.huge, -math.huge, -math.huge)
+	for name, p in out do
+		p:SetAttribute("ArtAsset", assetName)
+		-- the stone takes the new colour; the face, the grass and the little ornaments keep theirs
+		local stone = name:find("^Headstone") or name:find("^Stone") or name:find("rock")
+		if stone then
+			p.Color = look.color:Lerp(p.Color, 0.2)
+		end
+		if look.ghost and stone then
+			p.Material = Enum.Material.Glass
+			p.Transparency = math.max(p.Transparency, 0.35)
+		end
+		local c = cf:PointToObjectSpace(p.Position)
+		local h = p.Size / 2
+		lo = lo:Min(c - h)
+		hi = hi:Max(c + h)
+	end
+	if lo.X == math.huge then
+		return out
+	end
+	local w, top, front = hi.X - lo.X, hi.Y, lo.Z
+	local mid = cf * CFrame.new((lo.X + hi.X) / 2, 0, 0)
+	if assetName == "Grave_V3_Emo" then
+		extra(parent, out, "EmoStar", Vector3.new(w * 0.2, w * 0.2, 0.12), mid * CFrame.new(w * 0.26, top * 0.86, front - 0.04) * CFrame.Angles(0, 0, math.rad(45)), look.accent, Enum.Material.Neon)
+		extra(parent, out, "EmoBand", Vector3.new(w * 0.92, top * 0.08, 0.1), mid * CFrame.new(0, top * 0.32, front - 0.03), look.accent)
+	elseif assetName == "Grave_V3_Military" then
+		extra(parent, out, "Helmet", Vector3.new(w * 0.5, w * 0.5, w * 0.5), mid * CFrame.new(0, top + w * 0.02, (lo.Z + hi.Z) / 2), Color3.fromHex("4E5A2E"), Enum.Material.Metal, Enum.PartType.Ball)
+		extra(parent, out, "HelmetRim", Vector3.new(w * 0.07, w * 0.6, w * 0.6), mid * CFrame.new(0, top - w * 0.08, (lo.Z + hi.Z) / 2) * CFrame.Angles(0, 0, math.pi / 2), Color3.fromHex("3E4824"), Enum.Material.Metal, Enum.PartType.Cylinder)
+		for _, e in { -1, 1 } do
+			extra(parent, out, "DogTag", Vector3.new(w * 0.14, w * 0.2, 0.06), mid * CFrame.new(e * w * 0.09, top * 0.55, front - 0.05) * CFrame.Angles(0, 0, e * 0.15), look.accent, Enum.Material.Metal)
+		end
+	elseif assetName == "Grave_V3_Ghost" then
+		extra(parent, out, "Wisp", Vector3.new(w * 0.22, w * 0.22, w * 0.22), mid * CFrame.new(0, top + w * 0.3, (lo.Z + hi.Z) / 2), look.accent, Enum.Material.Neon, Enum.PartType.Ball).Transparency = 0.2
+	end
+	return out
+end
+
+-- Performance (owner, 2026-11-14: "optimise the models"): the V3 graves are 36 parts and 14k triangles each, and a
+-- farm holds many. Their smallest bits are left out: the two dimples (508-triangle spheres a tenth of a stud wide),
+-- the ten grass blades at the foot, the little crack and the tiny cubes. The eyes keep their glints.
+local GRAVE_TRIM = { "^Grass /", "dimple", "^Stone / little crack", "^Cube%.00[78]" }
+local trimmed = {}
+local function trim(assetName, part)
+	if not assetName:find("^Grave_V3_") then
+		return false
+	end
+	local key = assetName .. "|" .. part
+	if trimmed[key] == nil then
+		trimmed[key] = false
+		for _, pattern in GRAVE_TRIM do
+			if part:find(pattern) then
+				trimmed[key] = true
+				break
+			end
+		end
+	end
+	return trimmed[key]
+end
+
 function Art.Spawn(assetName, parent, cf, opts)
 	opts = opts or {}
+	local look = DERIVED[assetName]
+	if look and not Manifest[assetName] and Manifest[look.base] then
+		return spawnDerived(look, assetName, parent, cf, opts)
+	end
 	local parts = Manifest[assetName]
 	assert(parts, "Unknown art asset: " .. tostring(assetName))
 	local lib, scale, out = library(), opts.scale or 1, {}
 	for _, meta in ipairs(parts) do
-		if not (opts.skip and opts.skip[meta.part]) then
+		if not (opts.skip and opts.skip[meta.part]) and not trim(assetName, meta.part) then
 			local template = meta.source or (meta.id and lib:FindFirstChild(assetName .. "." .. meta.part))
 			local p = template and template:Clone() or Instance.new("Part")
 			p.Name = (opts.prefix or "") .. meta.part

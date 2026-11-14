@@ -111,7 +111,7 @@ function V.Create(parent,callbacks)
  local root=Style.ModalWindow(Instance.new('Frame'));root.Name='UpgradeBench';root.AnchorPoint=Vector2.new(.5,.5);root.Position=UDim2.fromScale(.5,.5);root.Size=UDim2.fromOffset(1600,900);root.ZIndex=20;root.Visible=false;root.Active=true;root.Parent=parent
  view.Root=root
  local fit=Instance.new('UIScale');fit.Name='Fit';fit.Parent=root
- local shade=Instance.new('TextButton');shade.Name='Shade';shade.Text='';shade.AutoButtonColor=false;shade.Active=true;shade.Modal=true;shade.BackgroundColor3=Color3.fromRGB(14,8,25);shade.BackgroundTransparency=.36;shade.Size=UDim2.fromScale(1,1);shade.ZIndex=19;shade.Visible=false;shade.Parent=parent
+ local shade=Instance.new('TextButton');shade.Name='Shade';shade.Text='';shade.AutoButtonColor=false;shade.Active=true;shade.Modal=true;shade.BackgroundColor3=Color3.fromRGB(14,8,25);shade.BackgroundTransparency=1;shade.Size=UDim2.fromScale(1,1);shade.ZIndex=19;shade.Visible=false;shade.Parent=parent
  root:GetPropertyChangedSignal('Visible'):Connect(function() shade.Visible=root.Visible end)
  local header=Instance.new('ImageLabel');header.Name='Canopy';header.BackgroundTransparency=1;header.Image=Icons.market_canopy or '';rect(header,0,-12,1600,170);header.ZIndex=3;header.Parent=root
  local title=label(root,'Title','',270,71,1060,68,51,true)

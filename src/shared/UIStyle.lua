@@ -114,7 +114,7 @@ function U.ModalArt(parent,kind,id,size,pos,finish)
  if (kind=='grave' and id~='Golden' or kind=='coffin') and U.GraveTint[id] then image.ImageColor3=U.GraveTint[id] end
  return image
 end
-U.GraveTint={Wooden=Color3.fromRGB(226,170,118),Stone=Color3.new(1,1,1),Marble=Color3.fromRGB(255,247,238),Golden=Color3.fromRGB(255,214,92),Lunar=Color3.fromRGB(192,166,255)}
+U.GraveTint={Wooden=Color3.fromRGB(226,170,118),Stone=Color3.new(1,1,1),Marble=Color3.fromRGB(255,247,238),Golden=Color3.fromRGB(255,214,92),Emo=Color3.fromRGB(120,90,130),Military=Color3.fromRGB(150,170,100),Ghost=Color3.fromRGB(170,235,255),Lunar=Color3.fromRGB(192,166,255)}
 
 -- Code-native original icons: no imported image IDs or unavailable assets.
 function U.Icon(parent,kind,id,size,pos,finish)
@@ -135,7 +135,7 @@ function U.Icon(parent,kind,id,size,pos,finish)
    part('Sole',Vector3.new(2.9,.28,1.1),Vector3.new(0,0,0),'FFFFFF');part('Toe',Vector3.new(1.8,.65,1),Vector3.new(-.45,.4,0),'4CC9FF');part('Heel',Vector3.new(1,1.4,1),Vector3.new(.9,.8,0),'1675CF')
    for i=0,2 do part('Lace',Vector3.new(.16,.09,1.03),Vector3.new(-.3+i*.3,.76,0),'FFFFFF') end
   else
-   part('Grave',Vector3.new(1.8,2.5,.7),Vector3.new(0,1.3,0),({Wooden='A3754B',Stone='9AA6AC',Marble='F4E8DE',Golden='FFD34D',Lunar='B08CFF'})[id or ''] or 'AE9FD1');part('Base',Vector3.new(2.4,.4,1.3),Vector3.new(0,0,0),'675785');part('Mark',Vector3.new(.3,1,.1),Vector3.new(0,1.4,-.4),'F5EDD6');part('Mark',Vector3.new(.9,.3,.1),Vector3.new(0,1.6,-.4),'F5EDD6')
+   part('Grave',Vector3.new(1.8,2.5,.7),Vector3.new(0,1.3,0),({Wooden='A3754B',Stone='9AA6AC',Marble='F4E8DE',Golden='FFD34D',Emo='3A2E44',Military='6E7D45',Ghost='BFEFFF',Lunar='B08CFF'})[id or ''] or 'AE9FD1');part('Base',Vector3.new(2.4,.4,1.3),Vector3.new(0,0,0),'675785');part('Mark',Vector3.new(.3,1,.1),Vector3.new(0,1.4,-.4),'F5EDD6');part('Mark',Vector3.new(.9,.3,.1),Vector3.new(0,1.6,-.4),'F5EDD6')
   end
  end
  for _,q in model:GetDescendants() do if q:IsA('BasePart') then q.Anchored=true end end

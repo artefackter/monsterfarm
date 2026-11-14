@@ -133,37 +133,48 @@ function N.Show(text, kind, duration, key)
  layout()
  task.delay(duration or 3.5, function() remove(entry) end)
 end
+-- The location banner sits at the very top, in the topbar strip between Roblox's buttons and ours, small and out of
+-- the toasts' way (owner, 2026-11-14: "too much text over the screen"); it no longer pushes the toasts down.
+local banner
+local bannerLayer
 function N.ClearLocation()
- for i=#messages,1,-1 do if messages[i].location then remove(messages[i]) end end
+ if banner then banner.frame:Destroy();banner=nil end
 end
 function N.Location(title, subtitle)
  init()
  N.ClearLocation()
+ if not bannerLayer then
+  bannerLayer=Instance.new("ScreenGui");bannerLayer.Name="LocationBanner";bannerLayer.ResetOnSpawn=false;bannerLayer.IgnoreGuiInset=true
+  bannerLayer.ScreenInsets=Enum.ScreenInsets.DeviceSafeInsets;bannerLayer.DisplayOrder=24;bannerLayer.Parent=player:WaitForChild("PlayerGui")
+ end
  local entry=create("Location")
- entry.location=true
+ entry.frame.Parent=bannerLayer
+ local v=layer.AbsoluteSize;local scale=math.clamp(math.min(v.X/1000,v.Y/560),0.52,1.1)
+ entry.frame.Size=UDim2.fromOffset(math.min(v.X-16,380*scale),46*scale)
+ entry.frame.Position=UDim2.new(.5,0,0,4)
+ entry.frame.Visible=true
  entry.label.Text=title
  entry.label.TextColor3=Color3.fromRGB(255,244,211)
- entry.label.Position=UDim2.new(0,14,.035,0)
- entry.label.Size=UDim2.new(1,-28,.50,0)
- entry.label.UITextSizeConstraint.MaxTextSize=34
+ entry.label.Position=UDim2.new(0,10,0,1)
+ entry.label.Size=UDim2.new(1,-20,.56,0)
+ entry.label.UITextSizeConstraint.MaxTextSize=24
+ entry.label.UITextSizeConstraint.MinTextSize=9
  local detail=entry.label:Clone()
  detail.Name="RecommendedSpeed"
- detail.Position=UDim2.new(0,14,.55,0)
- detail.Size=UDim2.new(1,-28,.39,0)
+ detail.Position=UDim2.new(0,10,.56,0)
+ detail.Size=UDim2.new(1,-20,.4,0)
  detail.Text=subtitle
  detail.TextColor3=Color3.fromRGB(255,225,130)
- detail.UITextSizeConstraint.MinTextSize=10
- detail.UITextSizeConstraint.MaxTextSize=23
+ detail.UITextSizeConstraint.MinTextSize=8
+ detail.UITextSizeConstraint.MaxTextSize=16
  detail.Parent=entry.frame
  entry.frame.GroupTransparency=1
- table.insert(messages,1,entry)
- if #messages>2 then remove(messages[#messages]) end
- layout()
+ banner=entry
  game:GetService("TweenService"):Create(entry.frame,TweenInfo.new(.18),{GroupTransparency=0}):Play()
- task.delay(4.5,function()
-  if not table.find(messages,entry) then return end
+ task.delay(4,function()
+  if banner~=entry then return end
   game:GetService("TweenService"):Create(entry.frame,TweenInfo.new(.22),{GroupTransparency=1}):Play()
-  task.delay(.22,function() remove(entry) end)
+  task.delay(.22,function() if banner==entry then N.ClearLocation() end end)
  end)
 end
 function N.Guide(id, text, kind, enabled, priority, actionText, callback)

@@ -32,7 +32,8 @@ local preference=p:GetAttribute("ShowNightInfo")~=false
 local preferenceRevision=0
 local view
 local function hideCard()
- view:SetVisible(false);playerGui:SetAttribute("NightHelpOpen",false);gui.DisplayOrder=15
+ -- the layer drops first: clearing the attribute can open the other window at once, which raises it again
+ view:SetVisible(false);gui.DisplayOrder=15;playerGui:SetAttribute("NightHelpOpen",false)
 end
 local function showCard()
  if dig:GetAttribute("OtherModalOpen")==true or (dig:GetAttribute("ModalOpen")==true and not view.Root.Visible) then return false end
@@ -87,18 +88,18 @@ end)
 dig:GetAttributeChangedSignal("ModalOpen"):Connect(tryPending)
 p:GetAttributeChangedSignal("Language"):Connect(function() view:Refresh() end)
 -- The grave-heist tutorial (owner, 2026-11-14): walking into a sleeping boss's arena (the server's "bossAsleep"
--- notice) opens the same window with the boss's three choices, until "Don't show again" is ticked.
+-- notice) opens a painted window with the boss's three choices, the first time only.
 do
  local heistPreference=p:GetAttribute("ShowHeistInfo")~=false;local heistRevision=0
  local heist
- local function hideHeist() heist:SetVisible(false);playerGui:SetAttribute("HeistHelpOpen",false);gui.DisplayOrder=15 end
+ local function hideHeist() heist:SetVisible(false);gui.DisplayOrder=view.Root.Visible and 35 or 15;playerGui:SetAttribute("HeistHelpOpen",false) end
  heist=require(S:WaitForChild("NightInfoView")).Create(gui,{
   close=hideHeist,
   preference=function(dontShow)
    heistPreference=not dontShow;heistRevision+=1;local revision=heistRevision
    task.delay(.25,function() if revision==heistRevision then rem.InterfaceAction:FireServer("setting","ShowHeistInfo",heistPreference) end end)
   end,
- },{name="HeistInfoModal",title="heistTitle",noTimer=true,specs={
+ },{name="HeistInfoModal",title="heistTitle",noTimer=true,skin="heist_frame",noDontShow=true,specs={
   {image="heist_sleep",fallback="moon",title="heistSleepTitle",body="heistSleepBody"},
   {image="heist_run",fallback="crypt",title="heistRunTitle",body="heistRunBody"},
   {image="heist_fight",fallback="pistol",title="heistFightTitle",body="heistFightBody"},
@@ -108,6 +109,8 @@ do
   if dig:GetAttribute("OtherModalOpen")==true or dig:GetAttribute("ModalOpen")==true then return end
   heist:SetSubtitle(type(args)=="table" and type(args.boss)=="string" and "heistArena" or nil,{boss=type(args)=="table" and args.boss or nil})
   heist:SetDontShow(false);gui.DisplayOrder=35;heist:SetVisible(true);playerGui:SetAttribute("HeistHelpOpen",true)
+  -- Shown once (owner, 2026-11-14): the setting goes off at once; Settings can turn it back on.
+  heistPreference=false;rem.InterfaceAction:FireServer("setting","ShowHeistInfo",false)
  end)
  p:GetAttributeChangedSignal("ShowHeistInfo"):Connect(function() heistPreference=p:GetAttribute("ShowHeistInfo")~=false;heist:SetDontShow(not heistPreference) end)
  p:GetAttributeChangedSignal("Language"):Connect(function() heist:Refresh() end)
@@ -147,7 +150,7 @@ end
 local claimable=0
 local function questState(n,fresh)
  claimable=n
- pill.Visible=n>0
+ pill.Visible=false -- no quest pill bottom right any more (owner, 2026-11-14); the "!" over the board stays
  pillText.Text=t("questReady",{n=n})
  boardMarker(n>0)
  if fresh and n>0 then pillScale.Scale=1.25;Tween:Create(pillScale,TweenInfo.new(.35,Enum.EasingStyle.Back),{Scale=1}):Play() end
@@ -163,17 +166,22 @@ end)
 p:GetAttributeChangedSignal("Language"):Connect(function() questState(claimable,false) end)
 
 -- Newcomer's boost ----------------------------------------------------------------------------------------------------
-local boost=Instance.new("Frame");boost.Name="NewbieBoost";boost.AnchorPoint=Vector2.new(1,1);boost.Size=UDim2.fromOffset(330,40)
-boost.BackgroundColor3=Color3.fromRGB(90,220,90);boost.Visible=false;boost.Parent=clock;round(boost,14)
+-- Top right, between the top-right icons and the right-hand column (owner, 2026-11-14).
+local boost=Instance.new("Frame");boost.Name="NewbieBoost";boost.AnchorPoint=Vector2.new(1,1);boost.Size=UDim2.fromOffset(290,40)
+boost.BackgroundColor3=Color3.fromRGB(90,220,90);boost.Visible=false;boost.Parent=dig;round(boost,14)
+local boostScale=Instance.new("UIScale");boostScale.Parent=boost
 do local st=Instance.new("UIStroke");st.Color=Color3.fromRGB(25,110,40);st.Thickness=3;st.Parent=boost end
 image(boost,"hudZombucks",UDim2.fromOffset(32,32),UDim2.fromOffset(6,4))
 local boostText=text(boost,UDim2.new(1,-48,1,-4),UDim2.fromOffset(44,2),17);boostText.TextXAlignment=Enum.TextXAlignment.Left;boostText.TextWrapped=false
 task.spawn(function()
  while true do
   local mult=p:GetAttribute("NewbieBoost") or 1;local left=(p:GetAttribute("NewbieBoostEnds") or 0)-workspace:GetServerTimeNow()
-  boost.Visible=mult>1 and left>0
+  local column=dig:FindFirstChild("RightBox")
+  boost.Visible=mult>1 and left>0 and column~=nil and column.Visible
   if boost.Visible then
-   boost.Position=UDim2.new(1,0,0,pill.Visible and -74 or -8)
+   local k=column:FindFirstChildOfClass("UIScale");boostScale.Scale=k and k.Scale or 1
+   local corner=column.AbsolutePosition+Vector2.new(column.AbsoluteSize.X,0)-dig.AbsolutePosition
+   boost.Position=UDim2.fromOffset(corner.X,corner.Y-14*boostScale.Scale)
    boostText.Text=t("newbieBoost",{n=mult,time=string.format("%d:%02d",math.floor(left/60),math.floor(left%60))})
   end
   task.wait(.5)
