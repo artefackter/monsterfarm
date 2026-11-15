@@ -1,7 +1,8 @@
 -- Top farmers board, champion statue and friend invites.
 return {
  Board={
-  Store="GrowAMonster_IncomeBoard_v1", -- OrderedDataStore: UserId -> best income per second ever reached
+  Store="GrowAMonster_IncomeBoard_v2", -- OrderedDataStore: UserId -> best income per second ever reached (v2 since the
+  -- progress reset of 2026-11-14, so the old farms leave the table too)
   Fetch=50,WorldRows=10,
   FirstRefresh=5,Refresh=120,
   ProfileReread=600, -- how long an offline champion's best zombie is trusted before reading it again

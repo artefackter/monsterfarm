@@ -69,6 +69,14 @@ for _,family in C.Families do
   table.insert(C.Catalog,{Id=id,Tier=row[3]})
  end
 end
+-- The families of 2026-11-14 (Config.MonsterFamilies): a model of their own for every rarity, no outfits.
+do
+ local NF=require(script.Parent.Config.MonsterFamilies)
+ for _,family in NF.Order do
+  table.insert(C.Families,family)
+  for tier=1,#NF.Looks do local id=NF.Id(family,tier);C.Models[id]=id;table.insert(C.Catalog,{Id=id,Tier=tier}) end
+ end
+end
 function C.Family(id)
  for _,f in C.Families do if id:sub(1,#f)==f then return f end end
  return id

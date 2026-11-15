@@ -49,6 +49,18 @@ do
 end
 local Collection=require(script.Parent.MonsterCollection)
 local Rig=require(script.Parent.MonsterRig)
+-- The monsters built from skinned GLBs (2026-11-14, art/roblox-import-v1) carry their limb pivots as Joint_<group>
+-- attributes on the model (asset space, like MonsterRig's own tables).
+do
+ local models=ReplicatedStorage:FindFirstChild("ArtModels")
+ for _,model in models and models:GetChildren() or {} do
+  local joints
+  for key,v in model:GetAttributes() do
+   local group=key:match("^Joint_(.+)$");if group and typeof(v)=="Vector3" then joints=joints or {};joints[group]=v end
+  end
+  if joints and not Rig[model.Name] then Rig[model.Name]=joints end
+ end
+end
 local Art = {}
 
 -- Studio's glTF importer turns the mesh data 180 degrees around Y (+Z forward to -Z forward).
@@ -375,7 +387,7 @@ function Art.BuildZombie(model, feet, z)
   model:SetAttribute("MonsterRadius",math.max(hi.X-lo.X,hi.Z-lo.Z)*scale*.5)
   model:SetAttribute("MonsterAsset",asset)
   model:SetAttribute("Floating",Collection.Floating[z.type]==true)
-  for name,point in Rig[asset] do model:SetAttribute("Joint_"..name,point*scale-Vector3.new(0,Art.PivotHeight+lo.Y*scale,0)) end
+  for name,point in Rig[asset] or {} do model:SetAttribute("Joint_"..name,point*scale-Vector3.new(0,Art.PivotHeight+lo.Y*scale,0)) end
   model.PrimaryPart=parts.Body
   parts.Body.PivotOffset=parts.Body.CFrame:ToObjectSpace(feet*CFrame.new(0,Art.PivotHeight,0))
   return parts.Body

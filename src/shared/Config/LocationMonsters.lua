@@ -1,7 +1,8 @@
 -- Which monsters come out of a location's graves (owner, 2026-11-14: "a location has its own set — the forest gives the
 -- deer and the cave dweller, and so on"). Indexed like RoadProgression.Districts. A family brings all six of its
 -- looks (Farmer ... King); SirenHead and BuckshotDealer are specials with their own tiers (ZombieConfig.Types).
--- The owner chose the first four; the cave and the factory are placeholders until the new monsters are in.
+-- The owner chose the first four; the cave and the factory were placeholders until the new monsters came in. The new
+-- families of 2026-11-14 (MonsterFamilies) were spread by theme: two-ish per location, the old sets kept as they were.
 -- A grave remembers where it was dug (item.location); graves from anywhere else (the shop, the Blood Moon, the starter)
 -- may give anything.
 local Collection = require(script.Parent.Parent.MonsterCollection)
@@ -9,12 +10,12 @@ local ZC = require(script.Parent.ZombieConfig)
 
 local L = {
 	Sets = {
-		{ "Deer", "CaveDweller" }, -- Forest
-		{ "RingMaw", "Verity" }, -- Dark forest
-		{ "Parasite", "BuckshotDealer" }, -- Hospital
-		{ "SirenHead", "Stalker", "Deer" }, -- Village
-		{ "CaveDweller", "Stalker", "RingMaw" }, -- Cave (placeholder)
-		{ "Parasite", "Verity", "SirenHead" }, -- Factory (placeholder)
+		{ "Deer", "CaveDweller", "Longmaw" }, -- Forest
+		{ "RingMaw", "Verity", "Slenderman", "HoodedStranger" }, -- Dark forest
+		{ "Parasite", "BuckshotDealer", "AdaptedViscera", "AssimilatedAdventurer" }, -- Hospital (the new parasites)
+		{ "SirenHead", "Stalker", "Deer", "Granny", "Grandfather" }, -- Village
+		{ "SpiderMom", "Slendrina", "Dredge" }, -- Cave
+		{ "Mimic", "PrimitiveSummoner" }, -- Factory
 	},
 }
 

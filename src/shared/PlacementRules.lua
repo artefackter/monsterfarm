@@ -44,8 +44,8 @@ function R.InYard(point, radius)
 			return false
 		end
 	end
- -- Turned buildings: the crypt and the house across the corner
- for _,box in {C.Crypt,table.unpack(C.Rotated or {})} do
+ -- Turned buildings: the house across the corner (the crypt left the yard for the cemetery on 2026-11-14)
+ for _,box in C.Rotated or {} do
   local yaw=math.rad(box.Yaw or 0)
   local dx,dz=point.x-box.X,point.z-box.Z
   local x=math.cos(yaw)*dx-math.sin(yaw)*dz
@@ -57,8 +57,14 @@ function R.InYard(point, radius)
 	return true
 end
 
-local function contains(b,p,r)
- return p and p.x-r>=b.MinX and p.x+r<=b.MaxX and p.z-r>=b.MinZ and p.z+r<=b.MaxZ
+local function overlaps(b,p,r)
+ return p.x+r>b.MinX and p.x-r<b.MaxX and p.z+r>b.MinZ and p.z-r<b.MaxZ
+end
+-- Inside the round cemetery's wall, off the crypt and the walk up to its steps (PlacementConfig, 2026-11-14).
+function R.InCemetery(p,r)
+ local c=C.Cemetery;local dx,dz=p.x-c.X,p.z-c.Z
+ if math.sqrt(dx*dx+dz*dz)+r>c.Radius-c.Wall then return false end
+ return not overlaps(C.Crypt.Keep,p,r) and not overlaps(C.Walk,p,r)
 end
 function R.Role(point) return "Field" end
 function R.GravePoint(x,z)
@@ -91,7 +97,7 @@ function R.Check(d, kind, point, object, spaced)
 	end
 	local radius = R.Radius(kind,object)
  if kind=="Grave" then -- graves: only in the cemetery yard beside the farm (2026-11-14)
-  if not contains(C.Cemetery,point,radius) then return "placeCemetery" end
+  if not R.InCemetery(point,radius) then return "placeCemetery" end
  elseif not R.InYard(point, radius) then return "placeOutside" end
 	for _, other in R.Occupied(d, object and object.id) do
 		if kind ~= "Grave" and other[3] == "Zombie" and not spaced then
@@ -118,12 +124,13 @@ end
 
 -- Every planted grave and field zombie gets a spot; ones that no longer fit move to a free one.
 function R.Migrate(d)
- if d.farmLayoutVersion==46 then return d end
- -- 46 (2026-11-14): the cemetery moved out to its own yard beside the farm; graves left in the old patch move there.
- if d.farmLayoutVersion==45 then
+ if d.farmLayoutVersion==47 then return d end
+ -- 46 (2026-11-14): the cemetery moved out to its own yard beside the farm; 47 (the same day): it turned round, with
+ -- the crypt in its middle. Graves that no longer fit move to a free spot in it.
+ if d.farmLayoutVersion==45 or d.farmLayoutVersion==46 then
   for _,g in d.graves or {} do if not g.pos or R.Check(d,"Grave",g.pos,g) then g.pos=nil end end
   for _,g in d.graves or {} do if not g.pos then g.pos=R.FindFree(d,"Grave",g) end end
-  d.farmLayoutVersion=46;return d
+  d.farmLayoutVersion=47;return d
  end
  local graves=d.graves or {};local zombies=d.zombies or {}
  if d.farmLayoutVersion~=43 and d.farmLayoutVersion~=44 then
@@ -143,15 +150,15 @@ function R.Migrate(d)
    if not z.pos then z.zone="Crypt";z.slot=0 end
   end
  end
- d.farmLayoutVersion=46
+ d.farmLayoutVersion=47
  return d
 end
 
 -- A free spot near the front of the yard, for migration and for things the server places itself.
 function R.FindFree(d,kind,object)
  if kind=="Grave" then
-  local b=C.Cemetery;local radius=C.GraveRadius
-  for z=b.MinZ+radius,b.MaxZ-radius,1 do for x=b.MinX+radius,b.MaxX-radius,1 do
+  local c=C.Cemetery;local reach=c.Radius-c.Wall-C.GraveRadius
+  for z=c.Z-reach,c.Z+reach,1 do for x=c.X-reach,c.X+reach,1 do
    local p={x=x,z=z};if not R.Check(d,"Grave",p,object) then return p end
   end end
   return nil

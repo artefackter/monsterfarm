@@ -12,7 +12,8 @@ return {
   {Look=6,Price=25000000,Seconds=7200,Limits={Field=24,Graves=12,Guards=4,Crypt=60}},
   {Look=7,Price=100000000,Seconds=14400,Limits={Field=28,Graves=12,Guards=4,Crypt=60}},
  },
- Zones={"Guards","Crypt"}, -- the upgradeable zones the house caps; Field is the house's own limit (HouseRules.FieldCap)
+ Zones={"Guards"}, -- the upgradeable zones the house caps; Field is the house's own limit (HouseRules.FieldCap). The crypt
+ -- has no limit since 2026-11-14 (ZombieService.Slot), so its upgrade left the house menu.
  -- A monster base after the owner's reference (2026-11-12): graphite walls, cream corner pillars, a glass storefront.
  -- Each level adds to it: awning and neon, a showroom floor with your best monsters, a rooftop billboard with your
  -- name, gold and a beacon, a third floor, a crown. Tall bounds the room for "is the player inside".

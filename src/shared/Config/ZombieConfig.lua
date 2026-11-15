@@ -1,10 +1,14 @@
 -- Display rarity follows the archetype; existing income grades stay intact.
 -- The rotation (owner, 2026-11-13): six rarities, one look each - Farmer (Common), Miner (Uncommon), Punk (Rare),
 -- Knight (Epic), Assassin (Legendary), King (Mythic). Bigger rarities are much bigger (RaritySize).
+-- The families of 2026-11-14 (MonsterFamilies) bring one look per rarity each (a Princess instead of a King for some).
+local NF=require(script.Parent.MonsterFamilies)
 local families={"Deer","Parasite","Stalker","Verity","RingMaw","CaveDweller"}
 local function all(look,extra)
  local list={};for _,f in families do table.insert(list,f..look) end
  for _,id in extra or {} do table.insert(list,id) end
+ local tier=table.find(NF.Looks,look)
+ for _,id in NF.Tier(tier) do table.insert(list,id) end
  return list
 end
 return {Tiers={"Common","Uncommon","Rare","Epic","Legendary","Mythic"}, Income={1,4,15,60,250,1200},

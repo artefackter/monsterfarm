@@ -32,15 +32,30 @@ local STYLE = {
 	RingMaw = { speed = 2.3, gait = 13, bob = 0.06, lean = 0.06, sway = 0.05, jitter = 0.01, emotes = { "snap", "snap", "skitter" } },
 	CaveDweller = { speed = 0.95, gait = 5.5, bob = 0.12, lean = 0.1, sway = 0.035, jitter = 0, emotes = { "stretch", "stretch", "spin" } },
 	SirenHead = { speed = 0.85, gait = 4.5, bob = 0.08, lean = 0, sway = 0.03, jitter = 0, emotes = { "siren", "siren", "spin" } },
+	-- the families of 2026-11-14 (Config.MonsterFamilies)
+	Granny = { speed = 0.8, gait = 5, bob = 0.06, lean = 0.18, sway = 0.02, jitter = 0, emotes = { "peek", "peek", "spin" } },
+	Grandfather = { speed = 0.85, gait = 5, bob = 0.08, lean = 0.14, sway = 0.02, jitter = 0, emotes = { "stretch", "stretch", "spin" } },
+	Slenderman = { speed = 1.0, gait = 4, bob = 0.03, lean = 0, sway = 0.01, jitter = 0, emotes = { "glitch", "glitch", "peek" } },
+	Slendrina = { speed = 1.1, gait = 5, bob = 0.05, lean = 0.04, sway = 0.02, jitter = 0.02, emotes = { "glitch", "peek", "spin" } },
+	SpiderMom = { speed = 1.6, gait = 12, bob = 0.05, lean = 0, sway = 0.03, jitter = 0.02, emotes = { "skitter", "skitter", "spin" } },
+	Longmaw = { speed = 1.4, gait = 7, bob = 0.1, lean = 0.05, sway = 0.03, jitter = 0, emotes = { "snap", "snap", "stretch" } },
+	HoodedStranger = { speed = 1.0, gait = 5.5, bob = 0.06, lean = 0.08, sway = 0.015, jitter = 0, emotes = { "peek", "peek", "spin" } },
+	Mimic = { speed = 1.3, gait = 7.5, bob = 0.1, lean = 0.02, sway = 0.04, jitter = 0, emotes = { "wave", "snap", "spin" } },
+	AdaptedViscera = { speed = 1.5, gait = 10, bob = 0.08, lean = 0, sway = 0.05, jitter = 0.03, emotes = { "shiver", "skitter", "shiver" } },
+	AssimilatedAdventurer = { speed = 1.2, gait = 7, bob = 0.1, lean = 0.15, sway = 0.03, jitter = 0.02, emotes = { "shiver", "stretch", "spin" } },
+	Dredge = { speed = 1.1, gait = 6, bob = 0.05, lean = 0.05, sway = 0.06, jitter = 0, emotes = { "snap", "stretch", "spin" } },
+	PrimitiveSummoner = { speed = 1.6, gait = 9, bob = 0.08, lean = 0, sway = 0.04, jitter = 0.02, emotes = { "snap", "skitter", "snap" } },
 }
 local DEFAULT_STYLE = { speed = 1.5, gait = 8.5, bob = 0.14, lean = 0, sway = 0, jitter = 0, emotes = { "hop", "spin" } }
-local OUTFIT_EMOTE = { Miner = "dig", Knight = "salute", King = "regal" }
+-- the old families' outfits, and the new families' looks of the same name (their Princess waves like a King)
+local OUTFIT_EMOTE = { Miner = "dig", Knight = "salute", King = "regal", Princess = "regal" }
 local EMOTE_TIME = { hop = 1.1, spin = 1.1, wave = 1.7, rear = 1.4, shiver = 1.0, peek = 2.0, glitch = 0.9, snap = 1.2, skitter = 1.4, stretch = 1.8, siren = 1.4, dig = 1.8, salute = 1.6, regal = 2.0 }
 local function styleOf(m, data)
 	if not data.style then
 		local id = m:GetAttribute("Type") or ""
 		data.style = STYLE[Collection.Family(id)] or DEFAULT_STYLE
-		data.outfitEmote = OUTFIT_EMOTE[Collection.Outfits[id] or ""]
+		local family = Collection.Family(id)
+		data.outfitEmote = OUTFIT_EMOTE[Collection.Outfits[id] or (STYLE[family] and family ~= id and id:sub(#family + 1)) or ""]
 	end
 	return data.style
 end

@@ -503,6 +503,15 @@ for family,names in {Deer={"Deer","Олень",true},Parasite={"Parasite","Па�
   end
  end
 end
+-- The families of 2026-11-14 (Config.MonsterFamilies): "Farmer Granny" / "Фермер Гренни", look first, so the two-word
+-- names read well too ("Princess Slendrina's Mom" / "Принцесса Мама Слендерины").
+do
+ local NF=require(script.Parent.Config.MonsterFamilies)
+ for _,family in NF.Order do for tier=1,#NF.Looks do
+  local look=NF.LookNames[NF.Look(family,tier)];local name=NF.Names[family]
+  L.Rows[NF.Id(family,tier)]={look[1].." "..name[1],look[2].." "..name[2]}
+ end end
+end
 L.Rows.bossRingMaw={"RingMaw","Кольцевик"}
 L.Rows.bossPatient={"Patient Zero","Нулевой пациент"}
 L.Rows.bossDealer={"The Dealer","Дилер"}

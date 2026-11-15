@@ -4,7 +4,12 @@ function Z.Cap(d,zone)
  if zone=="Field" then return require(S.HouseRules).FieldCap(d) end -- the house level sets it (HouseConfig)
  return math.min(ZC[zone].Max,ZC[zone].Start+(d.upgrades[zone] or 0)*U[zone].Step)
 end
-function Z.Slot(d,zone) for i=1,Z.Cap(d,zone) do local used=false;for _,z in ipairs(d.zombies) do if z.zone==zone and z.slot==i then used=true end end;if not used then return i end end end
+-- The crypt never runs out of slots (2026-11-14): it takes every monster, as digging always did.
+function Z.Slot(d,zone)
+ local used={};for _,z in ipairs(d.zombies) do if z.zone==zone and type(z.slot)=="number" then used[z.slot]=true end end
+ local last=zone=="Crypt" and #d.zombies+1 or Z.Cap(d,zone)
+ for i=1,last do if not used[i] then return i end end
+end
 function Z.Find(d,id) for i,z in ipairs(d.zombies) do if z.id==id then return z,i end end end
 function Z.Bonus(d) local types={} for key in pairs(d.zombiedex) do types[string.split(key,":")[1]]=true end;local count=0;for _ in pairs(types) do count+=1 end;return 1+count*R.DexBonus end
 function Z.Rate(z) return require(S.MergeRules).Rate(z) end
@@ -85,34 +90,40 @@ function Z.Hold(p,d,id)
  require(script.Parent.ActionService).Empty(p) -- a monster in your arms, nothing else in your hands
  return true
 end
--- The crypt's two buttons (owner, 2026-11-14). "Place best": crypt monsters go out into free spots of the yard, the
--- best earners first, until the yard is full. "Store all": every monster on the farm goes back into the crypt, while
--- it has room.
+-- The crypt's two buttons (owner, 2026-11-14). "Place best": the farm ends up holding the best earners there are -
+-- weaker monsters on the farm go back into the crypt to make room for better ones from it, until the house's limit.
+-- "Store all": every monster on the farm goes back into the crypt. The crypt has no limit (2026-11-14): digging always
+-- filled it past its old cap, and a cap there only stranded monsters outside.
 function Z.PlaceBest(p,d)
- local Place=require(S.PlacementRules);local list={}
- for _,z in ipairs(d.zombies) do if z.zone=="Crypt" and not z.carriedBy and not z.pendingTransfer then table.insert(list,z) end end
- table.sort(list,function(a,b) return Z.Rate(a)>Z.Rate(b) end)
- local placed=0
- for _,z in ipairs(list) do
-  local count=0;for _,o in ipairs(d.zombies) do if o.zone=="Field" then count+=1 end end
-  if count>=Z.Cap(d,"Field") then break end
+ local Place=require(S.PlacementRules);local pool={};local locked=0
+ for _,z in ipairs(d.zombies) do
+  local free=not z.carriedBy and not z.pendingTransfer
+  if (z.zone=="Crypt" or z.zone=="Field") and free then table.insert(pool,z) elseif z.zone=="Field" then locked+=1 end
+ end
+ -- equal earners keep the one already out, so a second press changes nothing
+ table.sort(pool,function(a,b) local ra,rb=Z.Rate(a),Z.Rate(b);if ra~=rb then return ra>rb end;return a.zone=="Field" and b.zone~="Field" end)
+ local room=math.max(0,Z.Cap(d,"Field")-locked);local best={}
+ for i=1,math.min(room,#pool) do best[pool[i]]=true end
+ local changed=0
+ local function store(z)
+  if Z.Holding[p] and Z.Holding[p].id==z.id then Z.Drop(p) end
+  z.zone="Crypt";z.slot=Z.Slot(d,"Crypt");z.pos=nil;Z.Remove(z.id);changed+=1
+ end
+ for _,z in ipairs(pool) do if z.zone=="Field" and not best[z] then store(z) end end
+ for _,z in ipairs(pool) do if z.zone=="Crypt" and best[z] then
   local point=Place.FindFree(d,"Worker",z);if not point then break end
   if Z.Holding[p] and Z.Holding[p].id==z.id then Z.Drop(p) end
-  z.zone="Field";z.slot=Z.Slot(d,"Field") or count+1;z.pos=point;Z.Remove(z.id);placed+=1
- end
- if placed>0 then Z.Render(p,d) end
- return placed>0
+  z.zone="Field";z.slot=Z.Slot(d,"Field") or #d.zombies;z.pos=point;Z.Remove(z.id);changed+=1
+ end end
+ if changed>0 then Z.Render(p,d) end
+ return changed>0
 end
 function Z.StoreAll(p,d)
- local list={}
- for _,z in ipairs(d.zombies) do if (z.zone=="Field" or z.zone=="Guards") and not z.carriedBy and not z.pendingTransfer then table.insert(list,z) end end
- table.sort(list,function(a,b) return Z.Rate(a)>Z.Rate(b) end) -- the best go in first if the crypt runs out of room
  local moved=0
- for _,z in ipairs(list) do
-  local slot=Z.Slot(d,"Crypt");if not slot then break end
+ for _,z in ipairs(d.zombies) do if (z.zone=="Field" or z.zone=="Guards") and not z.carriedBy and not z.pendingTransfer then
   if Z.Holding[p] and Z.Holding[p].id==z.id then Z.Drop(p) end
-  z.zone="Crypt";z.slot=slot;z.pos=nil;Z.Remove(z.id);moved+=1
- end
+  z.zone="Crypt";z.slot=Z.Slot(d,"Crypt");z.pos=nil;Z.Remove(z.id);moved+=1
+ end end
  if moved>0 then Z.Render(p,d) end
  return moved>0
 end

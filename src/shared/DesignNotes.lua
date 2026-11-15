@@ -355,3 +355,20 @@ return {}
 -- tiles for quests and rewards, a dex without tabs) were rolled back at the owner's request: the windows, the painted
 -- quest and reward boards are as they were before; the crypt keeps its two buttons; the Monsterdex stays one scrolling
 -- list of locations without tabs (owner: "no, remove the tabs").
+-- 2026-11-14, the big update (owner): (1) a boss can't be hurt while a grave theft is on - woken, chasing or walking
+-- back to bed - until it lies down again; only a shut arena's fighters ever hurt it (RoadService.BossCanHurt).
+-- (2) 15 s after a win everyone still inside the arena (winner or not, carrying a grave or not) is put on the road just
+-- in front of its entrance instead of being sent home. (3) Twelve new families (Config.MonsterFamilies): Granny,
+-- Grandpa, Slenderman, Slendrina, Slendrina's Mom, Longmaw, the Stranger, the Mimic and the four SRP parasites, one
+-- model per rarity (a Princess instead of a King for the women). Their skinned GLBs were baked in the idle pose and
+-- cut into the game's rigid limb groups (art/roblox-import-v1); the limb pivots ride on the ArtModels as Joint_*
+-- attributes. Spread over the locations by theme, the owner's first four sets kept; the cave and the factory got new
+-- sets instead of placeholders. Slenderman, Slendrina and her Mom have no painted portraits yet (3D ones instead).
+-- (4) The cemetery is round now, a continuation of the farm beside its +x fence: the old purple patch made round
+-- (ArtModels.Cemetery_Round, W_Graveyard's tiles, rim stones and tint) behind the farm's own fence (2026-11-15, owner:
+-- the stone wall with an iron fence and the green lawn were wrong), the new crypt (art/crypt-optimized-v1) in its
+-- middle, graves all round, no stepping stones across it; the old block crypt is gone from the yard.
+-- Standing in the cemetery counts as being on the farm (PlotService.Inside) - that was why graves could not be
+-- planted there. The crypt holds any number of monsters now: "Store all" stores everything, "Place best" puts the
+-- best earners out (swapping weaker ones in), and the crypt upgrade left the house menu. (5) Progress reset: profiles
+-- live in GrowAMonster_v2 and the leaderboard in GrowAMonster_IncomeBoard_v2; the v1 stores are kept as a backup.

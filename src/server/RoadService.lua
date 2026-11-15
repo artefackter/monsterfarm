@@ -694,12 +694,12 @@ local function awake(a,mode)
  a.mode=mode;a.modeAt=os.clock();a.model:SetAttribute("Asleep",nil)
  local gui=a.model.PrimaryPart:FindFirstChild("SleepZzz");if gui then gui.Enabled=false end
 end
--- Who may hurt a boss: nobody while it sleeps (owner, 2026-11-14: the fight starts only from the target button over
--- it, Road.Challenge), a shut arena's boss only its fighters; awake on the road, anyone.
+-- Who may hurt a boss: only the fighters of its shut arena. Nobody while it sleeps (owner, 2026-11-14: the fight
+-- starts only from the target button over it, Road.Challenge), and nobody - thief or not - while a grave theft is on:
+-- woken, chasing, or walking back to bed, until it lies down again (owner, 2026-11-14).
 function Road.BossCanHurt(a,p)
- if a.mode=="sleep" then return false end
  if a.mode=="fight" then local f=Road.Fights[a.arena];return f~=nil and f.fighters[p]==true end
- return true
+ return false
 end
 function Road.BossHurt(a,p) if a.mode=="sleep" then Road.StartFight(a.arena,p) end end
 function Road.WakeForThief(i,p)
@@ -1027,17 +1027,21 @@ function Road.Init()
   M.FX("BossDeath",a.id,pos,i,0)
   -- no "X defeated the boss" toast for everyone (owner, 2026-11-14): the boss bar turns into the win window instead
   Road.OpenPortal(i,winners) -- the way home for the winners, for the short window after the win
-  -- 15 s after the win (owner, 2026-11-14): the boss is back (C.Boss.Respawn) and every winner still standing in the
-  -- arena empty-handed is sent home; whoever took a grave runs it home as usual. The clients show the window draining
-  -- in the boss bar (BossWinUntil).
+  -- 15 s after the win (owner, 2026-11-14): the boss is back (C.Boss.Respawn) and everyone still inside the arena -
+  -- winner or not, who didn't take the portal - is put out on the road just in front of its entrance. A grave on the
+  -- back stays there, to be run home as usual. The clients show the window draining in the boss bar (BossWinUntil).
   local untilAt=workspace:GetServerTimeNow()+C.Boss.AfterWin
   for p in pairs(winners) do if p.Parent then p:SetAttribute("BossWinUntil",untilAt) end end
   task.delay(C.Boss.AfterWin,function()
-   for p in pairs(winners) do
-    if p.Parent then
-     if p:GetAttribute("BossWinUntil")==untilAt then p:SetAttribute("BossWinUntil",nil) end
-     local root=p.Character and p.Character:FindFirstChild("HumanoidRootPart")
-     if root and not Road.Carriers[p] and insideArena(i,root.Position) then Road.CancelPickup(p);P.Home(p) end
+   for p in pairs(winners) do if p.Parent and p:GetAttribute("BossWinUntil")==untilAt then p:SetAttribute("BossWinUntil",nil) end end
+   local n=0
+   for _,p in ipairs(Players:GetPlayers()) do
+    local root=rootOf(p)
+    if root and Road.IsOnRoad(p) and insideArena(i,root.Position) then
+     local s,x=Progression.DoorPoint(i,-12,({0,3.5,-3.5,7,-7})[n%5+1]);n+=1 -- side by side, the first in the middle
+     -- the hop is towards the gate: count the carried grave's trip from here, so the honest-trip check still holds
+     local c=Road.Carriers[p];if c then c.from=math.min(c.from,s) else Road.CancelPickup(p) end
+     p.Character:PivotTo(at(s,x,4)*CFrame.Angles(0,math.pi,0))
     end
    end
   end)

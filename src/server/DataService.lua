@@ -4,7 +4,9 @@ local C=require(game.ReplicatedStorage.Shared.Config.ShopConfig)
 local L=require(game.ReplicatedStorage.Shared.Locale)
 local D={Profiles={},Busy={},Claims={}}
 local memory=Run:IsStudio() and C.StudioMemory
-local store=not memory and DSS:GetDataStore("GrowAMonster_v1");local owners=not memory and DSS:GetDataStore("GrowAMonsterOwners_v1")
+-- Progress reset (owner, 2026-11-14): profiles moved to a new store, so every player starts afresh. The old one,
+-- GrowAMonster_v1, is left untouched as a backup; the ownership journal carries on (new monsters get new ids).
+local store=not memory and DSS:GetDataStore("GrowAMonster_v2");local owners=not memory and DSS:GetDataStore("GrowAMonsterOwners_v1")
 local job=game.JobId~="" and game.JobId or game:GetService("HttpService"):GenerateGUID(false)
 local function retry(fn) for i=1,C.Retries do local ok,v=pcall(fn);if ok then return true,v end;warn("Data retry",i,v);task.wait(C.RetryDelay*i) end return false end
 local function fresh() return {coins=C.StartingCoins,zombies={},graves={{type="Wooden",slot=1,plantedAt=os.time()-require(game.ReplicatedStorage.Shared.Config.GraveConfig).Wooden.Seconds,starter=true}},upgrades={},zombiedex={},dailyStreak=0,lastDailyAt=0,lastSeenAt=os.time(),playTime=0,tutorialDone=false,tutorialStep=0,version=C.Version,vouchers={},shopUsed={}} end
