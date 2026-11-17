@@ -62,7 +62,7 @@ guideHomeTitle={"4. House and merging","4. Дом и слияние"},guideHome=
 guideTrainTitle={"5. Run faster","5. Беги быстрее"},guideTrain={"Stand on your treadmill to increase your speed. Training works only while you are in the game. Use the upgrade board beside it.","Встань на беговую дорожку, чтобы повысить скорость. Тренировка идёт только в игре. Улучшай дорожку на табличке рядом."},
 guideRoadTitle={"6. Graves on the road","6. Могилы на дороге"},guideRoad={"Hold Take beside a road grave, carry it back through the gate. Rare graves lie farther away. Dodge mutants and slime.","Удерживай «Забрать» у могилы на дороге и вернись через ворота. Редкие могилы — дальше. Обходи мутантов и слизь."},
 guideCombatTitle={"7. Auto fire and weapons","7. Автострельба и оружие"},guideCombat={"A drawn weapon aims and fires at nearby visible mutants. Keep moving! Select slot 2 to draw it, or another slot to put it away. Reload with R; auto fire can be toggled in settings.","Достанное оружие само целится в ближайших видимых мутантов. Продолжай двигаться! Слот 2 — достать, другой слот — убрать. Перезарядка — R. Автострельба переключается в настройках."},
-guideBatTitle={"8. Shovel and traps","8. Лопата и капканы"},guideBat={"On the road, swing your shovel with empty hands to knock back a player and interrupt digging. Select a trap in slot 3 and tap the ground to place it. A trapped carrier drops the grave for anyone to pick up.","На дороге удар лопатой без могилы в руках отталкивает игрока и сбивает выкапывание. Выбери капкан в слоте 3 и нажми на землю. Попавший в капкан роняет могилу — её может подобрать любой."},
+guideBatTitle={"8. Melee and traps","8. Ближний бой и капканы"},guideBat={"On the road, swing your melee weapon with empty hands to knock back a player and interrupt digging. Select a trap in slot 3 and tap the ground to place it. A trapped carrier drops the grave for anyone to pick up.","На дороге удар оружием ближнего боя без могилы в руках отталкивает игрока и сбивает выкапывание. Выбери капкан в слоте 3 и нажми на землю. Попавший в капкан роняет могилу — её может подобрать любой."},
 guideNightTitle={"9. Night and pets","9. Ночь и питомцы"},guideNight={"At night, protect your farm from raiders. Equip pets from the paw menu for bonuses. Check quests and daily rewards for extra Zombucks.","Ночью защищай ферму от налётчиков. Экипируй питомцев в меню с лапкой ради бонусов. Задания и ежедневные награды дают зомбуксы."},
 
 weaponHolster={"Holster","Убрать оружие"},weaponDraw={"Draw weapon","Достать оружие"},
@@ -328,13 +328,14 @@ function L.number(value,locale,decimals)
  return text
 end
 L.Rows.treadmillLine={'Speed: {speed} · +{rate} / step','Скорость: {speed} · +{rate} / шаг'}
-L.Rows.roadBatHint={'Shovel: interrupt digging, knock down rivals on the road and hit mutants.','Лопата: срывай копание, выбивай могилы на дороге и бей мутантов.'}
+L.Rows.roadBatHint={'Melee weapon: interrupt digging, knock down rivals on the road and hit mutants.','Оружие ближнего боя: срывай копание, выбивай могилы на дороге и бей мутантов.'}
 L.Rows.trapHint={'Place on the road or your farm. Catches other players carrying graves.','Ставь на дороге или своей ферме. Ловит чужих игроков с могилами.'}
 L.Rows.shovelStats={'Range {range} · Damage {damage}','Дальность {range} · Урон {damage}'}
 L.Rows.dexReward={'Zombiedex reward','Награда Зомбидекса'}
-L.Rows.slotWeapon={'Weapon','Оружие'};L.Rows.slotShovel={'Shovel','Лопата'};L.Rows.slowMode={'Slow mode','Медленный режим'};L.Rows.showRanges={'Show action ranges','Радиусы действий'};L.Rows.actionBlocked={'Action unavailable right now.','Сейчас действие недоступно.'}
+L.Rows.slotWeapon={'Weapon','Оружие'};L.Rows.slotShovel={'Melee','Ближний бой'};L.Rows.slowMode={'Slow mode','Медленный режим'};L.Rows.showRanges={'Show action ranges','Радиусы действий'};L.Rows.actionBlocked={'Action unavailable right now.','Сейчас действие недоступно.'}
 L.Rows.roadBat={'Strike','Удар'}
-for id,ru in {Rusty='Ржавая',Steel='Стальная',Combat='Боевая',Bone='Костяная',Golden='Золотая',Lunar='Лунная',Rainbow='Радужная'} do L.Rows['shovel_'..id]={id..' shovel',ru..' лопата'} end
+-- the melee weapons that replaced the shovels (owner's names, 2026-11-16; the dagger is "Mimicry" by his choice)
+for id,name in {Chainsaw={'Chainsaw','Бензопила'},Scythe={"Reaper's Scythe",'Коса Жатвы'},Katana={'Katana','Катана'},Chainsword={'Chainsword','Пила-меч'},Dagger={'Mimicry Dagger','Кинжал Мимикрия'},Butterfly={'Butterfly Knife','Нож-бабочка'},Pickaxe={'Diamond Pickaxe','Алмазная кирка'}} do L.Rows['shovel_'..id]=name end
 L.Rows["home"]={"Home","Домой"}
 L.Rows["homeUnavailable"]={"Home is unavailable right now.","Сейчас нельзя домой."}
 L.Rows["homeRoad"]={"Leave the ruins road first.","Сначала выйди с дороги заброшек."}
@@ -416,17 +417,23 @@ L.Rows["mutantNewbie"]={"New player protection: your monster is safe!","Защи
 L.Rows["mutantStolen"]={"A cultist took {n} Zombucks! Your monster needs rest.","Культист стащил {n} зомбуксов! Монстру нужен отдых."}
 L.Rows["empty"]={"No monsters yet. Dig your first grave!","Монстров пока нет. Выкопай первую могилу!"}
 L.Rows["tutorialField"]={"② Take a monster from the crypt and place it in your yard","② Возьми монстра в склепе и поставь на участке"}
+L.Rows["tutorialGunsmith"]={"⑤ Visit the gunsmith and take the Double barrel","⑤ Зайди к оружейнику и возьми Двушку"} -- owner-approved, 2026-11-15
+L.Rows["tutorialWeaponUpgrade"]={"⑥ Upgrade your gun at the workbench","⑥ Улучши оружие на верстаке"} -- owner-approved, 2026-11-15
+L.Rows["tutorialTreadmill"]={"⑦ Upgrade the treadmill","⑦ Улучши беговую дорожку"}
+L.Rows["tutorialGate"]={"⑧ Upgrade the gate","⑧ Улучши ворота"}
+L.Rows["tutorialHouse"]={"⑨ Upgrade the house","⑨ Улучши дом"}
 L.Rows["tutorialDone"]={"Grow your monster collection. Protect it at night!","Собирай монстров и защищай их ночью!"}
 L.Rows["DeerFarmer"]={"Farmer Deer","Олень-фермер"}
 L.Rows["DeerPunk"]={"Punk Deer","Олень-нефор"}
 L.Rows["DeerAssassin"]={"Assassin Deer","Олень-убийца"}
 L.Rows["DeerChief"]={"Chief Physician","Главврач"}
-L.Rows["roadForest"]={"1. FOREST","1. ЛЕС"}
-L.Rows["roadFactory"]={"2. ABANDONED FACTORY","2. ЗАБРОШЕННЫЙ ЗАВОД"}
-L.Rows["roadDarkForest"]={"3. DARK FOREST","3. МРАЧНЫЙ ЛЕС"}
+-- the road's locations since the reskin of 2026-11-15 (owner's list)
+L.Rows["roadDarkForest"]={"1. DARK FOREST","1. ТЁМНЫЙ ЛЕС"}
+L.Rows["roadBackrooms"]={"2. BACKROOMS","2. БЭКРУМС"}
+L.Rows["roadCity"]={"3. ABANDONED CITY","3. ЗАБРОШЕННЫЙ ГОРОД"}
 L.Rows["roadVillage"]={"4. ABANDONED VILLAGE","4. ЗАБРОШЕННАЯ ДЕРЕВНЯ"}
-L.Rows["roadCave"]={"5. CULTIST CAVE","5. ПЕЩЕРА КУЛЬТИСТОВ"}
-L.Rows["roadHospital"]={"6. ABANDONED HOSPITAL","6. ЗАБРОШЕННАЯ БОЛЬНИЦА"}
+L.Rows["roadParasitown"]={"5. PARASITOWN","5. ПАРАЗИТАУН"}
+L.Rows["roadCave"]={"6. ABANDONED CAVE","6. ЗАБРОШЕННАЯ ПЕЩЕРА"}
 L.Rows["chiefGrave"]={"CHIEF PHYSICIAN GRAVE","МОГИЛА ГЛАВВРАЧА"}
 L.Rows["chiefGraveDropped"]={"The Chief dropped a special grave! Carry it home.","Из Главврача выпала особая могила! Доставь её домой."}
 L.Rows["found"]={"Collection: {n}/52","Коллекция: {n}/52"}
@@ -438,12 +445,12 @@ L.Rows["roadSpeed3"]={"Recommended speed: 40K","Скорость от 40К"}
 L.Rows["roadSpeed4"]={"Recommended speed: 170K","Скорость от 170К"}
 L.Rows["roadSpeed5"]={"Recommended speed: 700K","Скорость от 700К"}
 L.Rows["roadSpeed6"]={"Recommended speed: 2.5M","Скорость от 2.5М"}
-L.Rows.locationForest={"Forest","Лес"}
-L.Rows.locationDarkForest={"Dark Forest","Мрачный лес"}
-L.Rows.locationHospital={"Abandoned Hospital","Заброшенная больница"}
+L.Rows.locationDarkForest={"Dark Forest","Тёмный лес"}
+L.Rows.locationBackrooms={"Backrooms","Бэкрумс"}
+L.Rows.locationCity={"Abandoned City","Заброшенный город"}
 L.Rows.locationVillage={"Abandoned Village","Заброшенная деревня"}
-L.Rows.locationCave={"Cultist Cave","Пещера культистов"}
-L.Rows.locationFactory={"Abandoned Factory","Заброшенный завод"}
+L.Rows.locationParasitown={"Parasitown","Паразитаун"}
+L.Rows.locationCave={"Abandoned Cave","Заброшенная пещера"}
 L.Rows.locationSpeed={"Recommended speed > {speed}","Рекомендуемая скорость > {speed}"}
 L.Rows.Imp={"Cultist","Культист"}
 L.Rows.Spitter={"Hunter","Охотник"}
@@ -516,6 +523,18 @@ L.Rows.bossRingMaw={"RingMaw","Кольцевик"}
 L.Rows.bossPatient={"Patient Zero","Нулевой пациент"}
 L.Rows.bossDealer={"The Dealer","Дилер"}
 L.Rows.bossPriest={"High Priest","Верховный жрец"}
+-- the new bosses of the road reskin (2026-11-15): the city's, the village's and the cave's
+L.Rows.bossStranger={"The Stranger","Незнакомец"}
+L.Rows.bossSlendrina={"Slendrina","Слендерина"}
+L.Rows.bossCaveDweller={"The Cave Dweller","Пещерник"}
+-- The names over the road's monsters (owner, 2026-11-15: "their names over the health bar: Verity, Longmaw, Granny and
+-- so on"), by road kind (RoadMonsterRules ids): the names the families already go by
+do
+ local NF=require(script.Parent.Config.MonsterFamilies)
+ for id,names in NF.Names do L.Rows["roadName_"..id]=names end
+ L.Rows.roadName_Parasite={"Parasite","Паразит"} -- (a grave's family is named by these too: "Stone grave · Deer")
+ for id,names in {Deer={"Deer","Олень"},Verity={"Verity","Верити"},Stalker={"Stalker","Сталкер"},RingMaw={"RingMaw","Кольцевик"},SirenHead={"Siren Head","Сиреноголовый"},CaveDweller={"Cave Dweller","Пещерник"},BuckshotDealer={"Dealer","Дилер"}} do L.Rows["roadName_"..id]=names end
+end
 L.Rows.arena1={"ARENA · HORNED ALPHA","АРЕНА · РОГАТЫЙ ВОЖАК"}
 L.Rows.arena2={"ARENA · SIREN HEAD","АРЕНА · СИРЕНОГОЛОВЫЙ"}
 L.Rows.arena3={"ARENA · PATIENT ZERO","АРЕНА · НУЛЕВОЙ ПАЦИЕНТ"}
@@ -565,7 +584,7 @@ L.Rows.boardPrestigeLevel={"Prestige {n} → {next}","Престиж {n} → {ne
 L.Rows.boardPrestigeGain={"Income ×{a} → ×{b} forever","Доход ×{a} → ×{b} навсегда"}
 L.Rows.boardPrestigeHouse={"Needs house level {n}","Нужен дом {n} ур."}
 L.Rows.prestigeTitle={"Prestige {n}?","Престиж {n}?"}
-L.Rows.prestigeBody={"Your farm starts over: coins, monsters, graves, the house and the treadmill go back to the start.\nYou keep pets, the Monsterdex, weapons, shovels, mutagen and speed.\nIncome forever: ×{a} → ×{b}. Price: {price} $.","Ферма начнётся заново: монеты, монстры, могилы, дом и дорожка вернутся к началу.\nОстанутся питомцы, Монстродекс, оружие, лопаты, мутаген и скорость.\nДоход навсегда: ×{a} → ×{b}. Цена: {price} $."}
+L.Rows.prestigeBody={"Your farm starts over: coins, monsters, graves, the house and the treadmill go back to the start.\nYou keep pets, the Monsterdex, weapons, mutagen and speed.\nIncome forever: ×{a} → ×{b}. Price: {price} $.","Ферма начнётся заново: монеты, монстры, могилы, дом и дорожка вернутся к началу.\nОстанутся питомцы, Монстродекс, оружие, мутаген и скорость.\nДоход навсегда: ×{a} → ×{b}. Цена: {price} $."}
 L.Rows.prestigeYes={"Prestige!","Престиж!"}
 L.Rows.prestigeNo={"Not yet","Пока нет"}
 L.Rows.prestigeDone={"Prestige {n}! Your income is now ×{m} forever.","Престиж {n}! Теперь твой доход ×{m} навсегда."}
@@ -600,18 +619,18 @@ L.Rows.up_Range={"Range","Дальность"}
 L.Rows.upSeconds={"{n} s","{n} с"}
 L.Rows.upStuds={"{n} studs","{n} ст."}
 L.Rows.cryptNothing={"No monsters waiting in the crypt.","В склепе нет свободных монстров."}
-L.Rows.takeOnFarm={"Take monsters out on your own farm.","Взять монстра можно только на своей ферме."}
+L.Rows.bossFinishButton={"Finish it!","Добей"} -- the pulsing target over a staggered boss (owner, 2026-11-15, their word)
+L.Rows.digAll={"Dig all","Выкопать все"} -- the Graves tab's button (owner, 2026-11-15, their words)
 L.Rows.mergeChoose={"Choose a monster","Выбери монстра"}
 L.Rows.stealNewbie={"Newcomers can't steal graves while their boost lasts.","Пока действует буст новичка, красть могилы нельзя."}
 L.Rows.shovePenalty={"You shoved a player: for {n} s graves lift slower, and the monsters come for you!","Ты толкнул игрока: {n} с могилы поднимаются дольше, а монстры идут за тобой!"}
 L.Rows.workbench={"WORKBENCH","ВЕРСТАК"}
 L.Rows.portalHome={"Home","Домой"}
-L.Rows.portalOpen={"You beat the boss! Its main grave is open to its winners, and a portal home stands in the arena for {n} s (an ordinary grave carried through loses 1 rarity, the main one doesn't).","Босс повержен! Главная могила открыта для победителей, а портал домой стоит в арене {n} с (обычная могила в портале теряет 1 редкость, главная — нет)."}
+L.Rows.portalOpen={"You beat the boss! Its main grave is open to its winners, and a portal home stands in the arena for {n} s.","Босс повержен! Главная могила открыта для победителей, а портал домой стоит в арене {n} с."}
 L.Rows.portalUsed={"Home through the portal!","Ты дома — через портал!"}
 L.Rows.bossEnraged={"{boss} is enraged: faster and angrier!","{boss} в ярости: быстрее и злее!"}
 L.Rows.bloodArenaSign={"BLOOD MOON ARENA","АРЕНА КРОВАВОЙ ЛУНЫ"}
 L.Rows.portalDowngrade={"Through the portal your {from} grave became {to}.","Через портал могила «{from}» стала «{to}»."}
-L.Rows.portalPenalty={"A carried grave loses 1 rarity","Несомая могила потеряет 1 редкость"}
 -- Sleeping bosses (2026-11-13): steal from the hoard and run, or wake it and fight in the shut arena
 L.Rows.bossAsleep={"{boss} is asleep. Dig a grave from its hoard and run for the gate: it gives chase! Tap the target over it and the arena shuts: a fight to the end.","{boss} спит. Выкопай могилу из его клада и беги к воротам — он погонится! Нажми прицел над ним — арена закроется, бой до конца."}
 L.Rows.bossWoke={"{boss} woke up! Run for the gate!","{boss} проснулся! Беги к воротам!"}
@@ -636,4 +655,11 @@ L.Rows.heistFightBody={"Or show it who the real boss is: tap the target over it 
 L.Rows.heistArena={"Arena: {boss}","Арена: {boss}"}
 L.Rows.ShowHeistInfo={"Show the boss arena tip","Показывать подсказку у арены босса"}
 L.Rows.bossFightButton={"FIGHT!","В БОЙ!"}
+-- 2026-11-16 (the owner's wording, agreed beforehand): the pet pumpkin's case window, the crypt's Sell button and the
+-- Small farm monsters setting.
+L.Rows.caseContains={"Contains one of these pets:","Внутри один из питомцев:"}
+L.Rows.caseOpen={"Open · {price}","Открыть · {price}"}
+L.Rows.cryptSell={"Sell: {n} · {sum}","Продать: {n} · {sum}"}
+L.Rows.cryptSellSure={"Sell for sure?","Точно продать?"}
+L.Rows.SmallMonsters={"Small farm monsters","Маленькие монстры на ферме"}
 return L

@@ -1,0 +1,58 @@
+{
+  "status": "awaiting_owner_review",
+  "integrated": false,
+  "runtime_loading_measured": false,
+  "model_count": 14,
+  "icon_count": 6,
+  "model_profiles": {
+    "models": {
+      "source_bytes": 17878924,
+      "output_bytes": 13979624,
+      "reduction_percent": 21.809
+    },
+    "mobile": {
+      "source_bytes": 17878924,
+      "output_bytes": 12493904,
+      "reduction_percent": 30.119
+    }
+  },
+  "icon_profiles": {
+    "ui512": {
+      "source_bytes": 5586730,
+      "output_bytes": 1193191,
+      "reduction_percent": 78.642,
+      "size": [
+        512,
+        512
+      ]
+    },
+    "small256": {
+      "source_bytes": 5586730,
+      "output_bytes": 389212,
+      "reduction_percent": 93.033,
+      "size": [
+        256,
+        256
+      ]
+    },
+    "large1024": {
+      "source_bytes": 5586730,
+      "output_bytes": 3887948,
+      "reduction_percent": 30.407,
+      "size": [
+        1024,
+        1024
+      ]
+    }
+  },
+  "source_files_unchanged": 306,
+  "raw_export_triangles": {
+    "models": 121550,
+    "mobile": 106880
+  },
+  "combined_mobile_ui512": {
+    "source_bytes": 23465654,
+    "output_bytes": 13687095,
+    "reduction_percent": 41.672
+  }
+}

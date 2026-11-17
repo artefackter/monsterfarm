@@ -1,0 +1,901 @@
+{
+ "AdaptedViscera": {
+  "before": 9236,
+  "after": 3150,
+  "ratio": 0.325,
+  "gentler": [
+   "ArmL 0.44",
+   "ArmR 0.44",
+   "LegL 0.44",
+   "LegR 0.44"
+  ]
+ },
+ "AdaptedVisceraAssassin": {
+  "before": 10312,
+  "after": 3152,
+  "ratio": 0.291,
+  "gentler": [
+   "ArmL 0.39",
+   "ArmR 0.39",
+   "LegL 0.39",
+   "LegR 0.39"
+  ]
+ },
+ "AdaptedVisceraFarmer": {
+  "before": 10704,
+  "after": 3148,
+  "ratio": 0.28,
+  "gentler": [
+   "ArmL 0.38",
+   "ArmR 0.38",
+   "LegL 0.38",
+   "LegR 0.38"
+  ]
+ },
+ "AdaptedVisceraKing": {
+  "before": 11080,
+  "after": 3266,
+  "ratio": 0.271,
+  "gentler": [
+   "ArmL 0.37",
+   "ArmL 0.49",
+   "ArmR 0.37",
+   "ArmR 0.49",
+   "LegL 0.37",
+   "LegR 0.37"
+  ]
+ },
+ "AdaptedVisceraKnight": {
+  "before": 10424,
+  "after": 3166,
+  "ratio": 0.288,
+  "gentler": [
+   "ArmL 0.39",
+   "ArmR 0.39",
+   "LegL 0.39",
+   "LegR 0.39"
+  ]
+ },
+ "AdaptedVisceraMiner": {
+  "before": 10380,
+  "after": 3168,
+  "ratio": 0.289,
+  "gentler": [
+   "ArmL 0.39",
+   "ArmR 0.39",
+   "LegL 0.39",
+   "LegR 0.39"
+  ]
+ },
+ "AdaptedVisceraPunk": {
+  "before": 11812,
+  "after": 3355,
+  "ratio": 0.254,
+  "gentler": [
+   "ArmL 0.34",
+   "ArmL 0.46",
+   "ArmR 0.34",
+   "ArmR 0.46",
+   "LegL 0.34",
+   "LegL 0.46",
+   "LegR 0.34",
+   "LegR 0.46"
+  ]
+ },
+ "AssimilatedAdventurer": {
+  "before": 2160,
+  "after": 2160,
+  "ratio": 1.0,
+  "gentler": []
+ },
+ "AssimilatedAdventurerAssassin": {
+  "before": 3148,
+  "after": 2997,
+  "ratio": 0.952,
+  "gentler": []
+ },
+ "AssimilatedAdventurerFarmer": {
+  "before": 3540,
+  "after": 2997,
+  "ratio": 0.845,
+  "gentler": []
+ },
+ "AssimilatedAdventurerKing": {
+  "before": 3740,
+  "after": 2997,
+  "ratio": 0.799,
+  "gentler": []
+ },
+ "AssimilatedAdventurerKnight": {
+  "before": 3084,
+  "after": 2996,
+  "ratio": 0.972,
+  "gentler": []
+ },
+ "AssimilatedAdventurerMiner": {
+  "before": 3024,
+  "after": 3024,
+  "ratio": 0.992,
+  "gentler": []
+ },
+ "AssimilatedAdventurerPunk": {
+  "before": 4456,
+  "after": 2997,
+  "ratio": 0.669,
+  "gentler": []
+ },
+ "Dredge": {
+  "before": 6614,
+  "after": 3092,
+  "ratio": 0.454,
+  "gentler": [
+   "ArmL 0.61",
+   "ArmR 0.61"
+  ]
+ },
+ "DredgeAssassin": {
+  "before": 7474,
+  "after": 3094,
+  "ratio": 0.401,
+  "gentler": [
+   "ArmL 0.54",
+   "ArmR 0.54"
+  ]
+ },
+ "DredgeFarmer": {
+  "before": 7994,
+  "after": 3208,
+  "ratio": 0.375,
+  "gentler": [
+   "ArmL 0.51",
+   "ArmL 0.68",
+   "ArmR 0.51",
+   "ArmR 0.68"
+  ]
+ },
+ "DredgeKing": {
+  "before": 8098,
+  "after": 3233,
+  "ratio": 0.37,
+  "gentler": [
+   "ArmL 0.50",
+   "ArmL 0.68",
+   "ArmR 0.50",
+   "ArmR 0.68"
+  ]
+ },
+ "DredgeKnight": {
+  "before": 7538,
+  "after": 3106,
+  "ratio": 0.398,
+  "gentler": [
+   "ArmL 0.54",
+   "ArmR 0.54"
+  ]
+ },
+ "DredgeMiner": {
+  "before": 7494,
+  "after": 3106,
+  "ratio": 0.4,
+  "gentler": [
+   "ArmL 0.54",
+   "ArmR 0.54"
+  ]
+ },
+ "DredgePunk": {
+  "before": 8910,
+  "after": 3214,
+  "ratio": 0.337,
+  "gentler": [
+   "ArmL 0.45",
+   "ArmL 0.61",
+   "ArmR 0.45",
+   "ArmR 0.61"
+  ]
+ },
+ "Grandfather": {
+  "before": 6022,
+  "after": 2998,
+  "ratio": 0.498,
+  "gentler": []
+ },
+ "GrandfatherAssassin": {
+  "before": 7574,
+  "after": 3090,
+  "ratio": 0.396,
+  "gentler": [
+   "LegL 0.53",
+   "LegR 0.53"
+  ]
+ },
+ "GrandfatherFarmer": {
+  "before": 7474,
+  "after": 3093,
+  "ratio": 0.401,
+  "gentler": [
+   "LegL 0.54",
+   "LegR 0.54"
+  ]
+ },
+ "GrandfatherKing": {
+  "before": 8014,
+  "after": 3085,
+  "ratio": 0.374,
+  "gentler": [
+   "LegL 0.51",
+   "LegR 0.51"
+  ]
+ },
+ "GrandfatherKnight": {
+  "before": 7896,
+  "after": 3087,
+  "ratio": 0.38,
+  "gentler": [
+   "LegL 0.51",
+   "LegR 0.51"
+  ]
+ },
+ "GrandfatherMiner": {
+  "before": 7466,
+  "after": 3092,
+  "ratio": 0.402,
+  "gentler": [
+   "LegL 0.54",
+   "LegR 0.54"
+  ]
+ },
+ "GrandfatherPunk": {
+  "before": 8666,
+  "after": 3292,
+  "ratio": 0.346,
+  "gentler": [
+   "Head 0.47",
+   "LegL 0.47",
+   "LegR 0.47"
+  ]
+ },
+ "Granny": {
+  "before": 7728,
+  "after": 4195,
+  "ratio": 0.388,
+  "gentler": [
+   "Body 0.52",
+   "Head 0.52",
+   "Head 0.71",
+   "LegL 0.52",
+   "LegL 0.71",
+   "LegR 0.52",
+   "LegR 0.71"
+  ]
+ },
+ "GrannyAssassin": {
+  "before": 9268,
+  "after": 5075,
+  "ratio": 0.324,
+  "gentler": [
+   "ArmL 0.44",
+   "ArmR 0.44",
+   "Body 0.44",
+   "Body 0.59",
+   "Head 0.44",
+   "Head 0.59",
+   "LegL 0.44",
+   "LegL 0.59",
+   "LegR 0.44",
+   "LegR 0.59"
+  ]
+ },
+ "GrannyFarmer": {
+  "before": 9180,
+  "after": 4645,
+  "ratio": 0.327,
+  "gentler": [
+   "ArmR 0.44",
+   "Body 0.44",
+   "Body 0.60",
+   "Head 0.44",
+   "LegL 0.44",
+   "LegL 0.60",
+   "LegR 0.44",
+   "LegR 0.60"
+  ]
+ },
+ "GrannyKnight": {
+  "before": 9602,
+  "after": 5090,
+  "ratio": 0.312,
+  "gentler": [
+   "ArmL 0.42",
+   "ArmR 0.42",
+   "Body 0.42",
+   "Body 0.57",
+   "Head 0.42",
+   "Head 0.57",
+   "LegL 0.42",
+   "LegL 0.57",
+   "LegR 0.42",
+   "LegR 0.57"
+  ]
+ },
+ "GrannyMiner": {
+  "before": 9172,
+  "after": 5058,
+  "ratio": 0.327,
+  "gentler": [
+   "ArmR 0.44",
+   "Body 0.44",
+   "Body 0.60",
+   "Head 0.44",
+   "Head 0.60",
+   "LegL 0.44",
+   "LegL 0.60",
+   "LegR 0.44",
+   "LegR 0.60"
+  ]
+ },
+ "GrannyPrincess": {
+  "before": 10336,
+  "after": 5741,
+  "ratio": 0.29,
+  "gentler": [
+   "ArmL 0.39",
+   "ArmR 0.39",
+   "Body 0.39",
+   "Body 0.53",
+   "Head 0.39",
+   "Head 0.53",
+   "Head 0.71",
+   "LegL 0.39",
+   "LegL 0.53",
+   "LegL 0.71",
+   "LegR 0.39",
+   "LegR 0.53",
+   "LegR 0.71"
+  ]
+ },
+ "GrannyPunk": {
+  "before": 10372,
+  "after": 5191,
+  "ratio": 0.289,
+  "gentler": [
+   "ArmL 0.39",
+   "ArmR 0.39",
+   "Body 0.39",
+   "Body 0.53",
+   "Head 0.39",
+   "Head 0.53",
+   "LegL 0.39",
+   "LegL 0.53",
+   "LegL 0.71",
+   "LegR 0.39",
+   "LegR 0.53",
+   "LegR 0.71"
+  ]
+ },
+ "HoodedStranger": {
+  "before": 4040,
+  "after": 2997,
+  "ratio": 0.669,
+  "gentler": []
+ },
+ "HoodedStrangerAssassin": {
+  "before": 5864,
+  "after": 3386,
+  "ratio": 0.423,
+  "gentler": [
+   "ArmL 0.57",
+   "ArmR 0.57",
+   "LegL 0.57",
+   "LegL 0.77",
+   "LegR 0.57",
+   "LegR 0.77"
+  ]
+ },
+ "HoodedStrangerFarmer": {
+  "before": 6072,
+  "after": 3318,
+  "ratio": 0.406,
+  "gentler": [
+   "ArmL 0.55",
+   "ArmR 0.55",
+   "LegL 0.55",
+   "LegL 0.74",
+   "LegR 0.55",
+   "LegR 0.74"
+  ]
+ },
+ "HoodedStrangerKing": {
+  "before": 6688,
+  "after": 3408,
+  "ratio": 0.363,
+  "gentler": [
+   "ArmL 0.49",
+   "ArmL 0.66",
+   "ArmR 0.49",
+   "LegL 0.49",
+   "LegL 0.66",
+   "LegR 0.49",
+   "LegR 0.66"
+  ]
+ },
+ "HoodedStrangerKnight": {
+  "before": 5847,
+  "after": 3417,
+  "ratio": 0.425,
+  "gentler": [
+   "ArmL 0.57",
+   "ArmR 0.57",
+   "LegL 0.57",
+   "LegL 0.77",
+   "LegR 0.57",
+   "LegR 0.77"
+  ]
+ },
+ "HoodedStrangerMiner": {
+  "before": 5880,
+  "after": 3330,
+  "ratio": 0.422,
+  "gentler": [
+   "ArmL 0.57",
+   "ArmR 0.57",
+   "LegL 0.57",
+   "LegL 0.77",
+   "LegR 0.57",
+   "LegR 0.77"
+  ]
+ },
+ "HoodedStrangerPunk": {
+  "before": 6976,
+  "after": 3552,
+  "ratio": 0.346,
+  "gentler": [
+   "ArmL 0.47",
+   "ArmL 0.63",
+   "ArmR 0.47",
+   "ArmR 0.63",
+   "LegL 0.47",
+   "LegL 0.63",
+   "LegR 0.47",
+   "LegR 0.63"
+  ]
+ },
+ "Longmaw": {
+  "before": 5959,
+  "after": 3117,
+  "ratio": 0.503,
+  "gentler": [
+   "Body 0.68",
+   "Body 0.85"
+  ]
+ },
+ "LongmawAssassin": {
+  "before": 8074,
+  "after": 3352,
+  "ratio": 0.372,
+  "gentler": [
+   "ArmL 0.50",
+   "ArmR 0.50",
+   "LegL 0.50",
+   "LegR 0.50"
+  ]
+ },
+ "LongmawFarmer": {
+  "before": 7905,
+  "after": 3519,
+  "ratio": 0.38,
+  "gentler": [
+   "ArmL 0.51",
+   "ArmR 0.51",
+   "Body 0.51",
+   "LegL 0.51",
+   "LegR 0.51"
+  ]
+ },
+ "LongmawKnight": {
+  "before": 8995,
+  "after": 3750,
+  "ratio": 0.334,
+  "gentler": [
+   "ArmL 0.45",
+   "ArmR 0.45",
+   "Head 0.45",
+   "LegL 0.45",
+   "LegR 0.45"
+  ]
+ },
+ "LongmawMiner": {
+  "before": 8257,
+  "after": 3333,
+  "ratio": 0.363,
+  "gentler": [
+   "ArmL 0.49",
+   "ArmR 0.49",
+   "LegL 0.49",
+   "LegR 0.49"
+  ]
+ },
+ "LongmawPrincess": {
+  "before": 8597,
+  "after": 3761,
+  "ratio": 0.349,
+  "gentler": [
+   "ArmL 0.47",
+   "ArmR 0.47",
+   "Head 0.47",
+   "LegL 0.47",
+   "LegR 0.47"
+  ]
+ },
+ "LongmawPunk": {
+  "before": 12365,
+  "after": 4212,
+  "ratio": 0.243,
+  "gentler": [
+   "ArmL 0.33",
+   "ArmL 0.44",
+   "ArmR 0.33",
+   "ArmR 0.44",
+   "Head 0.33",
+   "Head 0.44",
+   "LegL 0.33",
+   "LegL 0.44",
+   "LegR 0.33",
+   "LegR 0.44"
+  ]
+ },
+ "Mimic": {
+  "before": 11980,
+  "after": 4861,
+  "ratio": 0.25,
+  "gentler": [
+   "ArmL 0.34",
+   "ArmL 0.46",
+   "ArmL 0.62",
+   "ArmR 0.34",
+   "ArmR 0.46",
+   "ArmR 0.62",
+   "Head 0.34",
+   "Head 0.46",
+   "LegL 0.34",
+   "LegR 0.34"
+  ]
+ },
+ "MimicAssassin": {
+  "before": 11756,
+  "after": 4662,
+  "ratio": 0.255,
+  "gentler": [
+   "ArmL 0.34",
+   "ArmL 0.47",
+   "ArmL 0.63",
+   "ArmR 0.34",
+   "ArmR 0.47",
+   "ArmR 0.63",
+   "Head 0.34",
+   "Head 0.47",
+   "LegL 0.34",
+   "LegR 0.34"
+  ]
+ },
+ "MimicFarmer": {
+  "before": 12144,
+  "after": 4743,
+  "ratio": 0.247,
+  "gentler": [
+   "ArmL 0.33",
+   "ArmL 0.45",
+   "ArmL 0.61",
+   "ArmR 0.33",
+   "ArmR 0.45",
+   "ArmR 0.61",
+   "Head 0.33",
+   "Head 0.45",
+   "LegL 0.33",
+   "LegR 0.33"
+  ]
+ },
+ "MimicKnight": {
+  "before": 11642,
+  "after": 4786,
+  "ratio": 0.258,
+  "gentler": [
+   "ArmL 0.35",
+   "ArmL 0.47",
+   "ArmL 0.63",
+   "ArmR 0.35",
+   "ArmR 0.47",
+   "ArmR 0.63",
+   "Head 0.35",
+   "Head 0.47",
+   "LegL 0.35",
+   "LegR 0.35"
+  ]
+ },
+ "MimicMiner": {
+  "before": 11810,
+  "after": 4714,
+  "ratio": 0.254,
+  "gentler": [
+   "ArmL 0.34",
+   "ArmL 0.46",
+   "ArmL 0.62",
+   "ArmR 0.34",
+   "ArmR 0.46",
+   "ArmR 0.62",
+   "Head 0.34",
+   "Head 0.46",
+   "LegL 0.34",
+   "LegR 0.34"
+  ]
+ },
+ "MimicPrincess": {
+  "before": 13090,
+  "after": 4591,
+  "ratio": 0.229,
+  "gentler": [
+   "ArmL 0.31",
+   "ArmL 0.42",
+   "ArmL 0.56",
+   "ArmR 0.31",
+   "ArmR 0.42",
+   "ArmR 0.56",
+   "Head 0.31",
+   "Head 0.42",
+   "LegL 0.31",
+   "LegR 0.31"
+  ]
+ },
+ "MimicPunk": {
+  "before": 12992,
+  "after": 5513,
+  "ratio": 0.231,
+  "gentler": [
+   "ArmL 0.31",
+   "ArmL 0.42",
+   "ArmL 0.57",
+   "ArmR 0.31",
+   "ArmR 0.42",
+   "ArmR 0.57",
+   "Head 0.31",
+   "Head 0.42",
+   "Head 0.57",
+   "LegL 0.31",
+   "LegR 0.31"
+  ]
+ },
+ "PrimitiveSummoner": {
+  "before": 2032,
+  "after": 2032,
+  "ratio": 1.0,
+  "gentler": []
+ },
+ "PrimitiveSummonerAssassin": {
+  "before": 3064,
+  "after": 2997,
+  "ratio": 0.979,
+  "gentler": []
+ },
+ "PrimitiveSummonerFarmer": {
+  "before": 3456,
+  "after": 2999,
+  "ratio": 0.868,
+  "gentler": []
+ },
+ "PrimitiveSummonerKing": {
+  "before": 3964,
+  "after": 2998,
+  "ratio": 0.757,
+  "gentler": []
+ },
+ "PrimitiveSummonerKnight": {
+  "before": 3088,
+  "after": 2998,
+  "ratio": 0.972,
+  "gentler": []
+ },
+ "PrimitiveSummonerMiner": {
+  "before": 3044,
+  "after": 3044,
+  "ratio": 0.986,
+  "gentler": []
+ },
+ "PrimitiveSummonerPunk": {
+  "before": 4468,
+  "after": 2997,
+  "ratio": 0.671,
+  "gentler": []
+ },
+ "Slenderman": {
+  "before": 2176,
+  "after": 2176,
+  "ratio": 1.0,
+  "gentler": []
+ },
+ "SlendermanAssassin": {
+  "before": 3728,
+  "after": 2996,
+  "ratio": 0.805,
+  "gentler": []
+ },
+ "SlendermanFarmer": {
+  "before": 3628,
+  "after": 2995,
+  "ratio": 0.827,
+  "gentler": []
+ },
+ "SlendermanKing": {
+  "before": 4168,
+  "after": 2997,
+  "ratio": 0.72,
+  "gentler": []
+ },
+ "SlendermanKnight": {
+  "before": 4050,
+  "after": 2997,
+  "ratio": 0.741,
+  "gentler": []
+ },
+ "SlendermanMiner": {
+  "before": 3620,
+  "after": 2998,
+  "ratio": 0.829,
+  "gentler": []
+ },
+ "SlendermanPunk": {
+  "before": 4820,
+  "after": 2997,
+  "ratio": 0.622,
+  "gentler": []
+ },
+ "Slendrina": {
+  "before": 4772,
+  "after": 3583,
+  "ratio": 0.629,
+  "gentler": [
+   "Body 0.85",
+   "LegL 0.85",
+   "LegR 0.85"
+  ]
+ },
+ "SlendrinaAssassin": {
+  "before": 6312,
+  "after": 4496,
+  "ratio": 0.475,
+  "gentler": [
+   "ArmL 0.64",
+   "ArmR 0.64",
+   "Body 0.64",
+   "Body 0.85",
+   "LegL 0.64",
+   "LegL 0.85",
+   "LegR 0.64",
+   "LegR 0.85"
+  ]
+ },
+ "SlendrinaFarmer": {
+  "before": 6224,
+  "after": 4354,
+  "ratio": 0.482,
+  "gentler": [
+   "ArmL 0.65",
+   "ArmR 0.65",
+   "Body 0.65",
+   "Body 0.85",
+   "LegL 0.65",
+   "LegL 0.85",
+   "LegR 0.65",
+   "LegR 0.85"
+  ]
+ },
+ "SlendrinaKnight": {
+  "before": 6646,
+  "after": 4430,
+  "ratio": 0.451,
+  "gentler": [
+   "ArmL 0.61",
+   "ArmR 0.61",
+   "Body 0.61",
+   "Body 0.82",
+   "LegL 0.61",
+   "LegL 0.82",
+   "LegR 0.61",
+   "LegR 0.82"
+  ]
+ },
+ "SlendrinaMiner": {
+  "before": 6216,
+  "after": 4448,
+  "ratio": 0.483,
+  "gentler": [
+   "ArmL 0.65",
+   "ArmR 0.65",
+   "Body 0.65",
+   "Body 0.85",
+   "LegL 0.65",
+   "LegL 0.85",
+   "LegR 0.65",
+   "LegR 0.85"
+  ]
+ },
+ "SlendrinaPrincess": {
+  "before": 7380,
+  "after": 4732,
+  "ratio": 0.407,
+  "gentler": [
+   "ArmL 0.55",
+   "ArmL 0.74",
+   "ArmR 0.55",
+   "ArmR 0.74",
+   "Body 0.55",
+   "Body 0.74",
+   "LegL 0.55",
+   "LegL 0.74",
+   "LegR 0.55",
+   "LegR 0.74"
+  ]
+ },
+ "SlendrinaPunk": {
+  "before": 7416,
+  "after": 4344,
+  "ratio": 0.405,
+  "gentler": [
+   "ArmL 0.55",
+   "ArmL 0.74",
+   "ArmR 0.55",
+   "ArmR 0.74",
+   "Body 0.55",
+   "Head 0.55",
+   "LegL 0.55",
+   "LegL 0.74",
+   "LegR 0.55",
+   "LegR 0.74"
+  ]
+ },
+ "SpiderMom": {
+  "before": 3144,
+  "after": 2996,
+  "ratio": 0.954,
+  "gentler": []
+ },
+ "SpiderMomAssassin": {
+  "before": 3992,
+  "after": 2998,
+  "ratio": 0.752,
+  "gentler": []
+ },
+ "SpiderMomFarmer": {
+  "before": 4380,
+  "after": 2999,
+  "ratio": 0.685,
+  "gentler": []
+ },
+ "SpiderMomKnight": {
+  "before": 4482,
+  "after": 2997,
+  "ratio": 0.669,
+  "gentler": []
+ },
+ "SpiderMomMiner": {
+  "before": 4212,
+  "after": 2999,
+  "ratio": 0.712,
+  "gentler": []
+ },
+ "SpiderMomPrincess": {
+  "before": 4388,
+  "after": 2996,
+  "ratio": 0.684,
+  "gentler": []
+ },
+ "SpiderMomPunk": {
+  "before": 4644,
+  "after": 3164,
+  "ratio": 0.646,
+  "gentler": [
+   "ArmL 0.85",
+   "ArmR 0.85",
+   "LegL 0.85",
+   "LegR 0.85"
+  ]
+ }
+}

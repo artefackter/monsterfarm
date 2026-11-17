@@ -1,0 +1,19 @@
+{
+  "character": "Longmaw V5, six current role costume renders",
+  "style": "Current in-game painted portrait art/ui/modal-refresh/DeerFarmer.png",
+  "source_hashes": {
+    "art/longmaw-forms-v1/previews/Longmaw_Farmer_Idle.png": "37c2b5580c5011afff48d3749b500ae27b426df5916f12824e0bf9e0dc680fa7",
+    "art/ui/modal-refresh/DeerFarmer.png": "51c614df7033bbce55fef0bef3c34c935eda0b44fea2ead07a9e48083b1ddf6e",
+    "art/longmaw-forms-v1/previews/Longmaw_Miner_Idle.png": "8e28d72bf9ff87f2f3f8929affb7d359a4e0108e24367e2c4e4d69b26d8accd3",
+    "art/longmaw-forms-v1/previews/Longmaw_Princess_Idle.png": "704b30606c2baba1ddb62423573623d734029aaad9459c4ea08167605d19046e",
+    "art/longmaw-forms-v1/previews/Longmaw_Knight_Idle.png": "9990199004df01843fcb97fd4ba5830832692939d1a6f37e5b0a400d10d35aaf",
+    "art/longmaw-forms-v1/previews/Longmaw_Punk_Idle.png": "be595c6c9743c8e4ceeac14c44e1f21454680b7ce92a950c0b940a590cccb39e",
+    "art/longmaw-forms-v1/previews/Longmaw_Assassin_Idle.png": "ce731622cbe14f3529765a019706064a73ad98c6081044df294ee4a39ffba4a5",
+    "art/ui/monster-outfits/RingMawKnight.png": "b96c9d504225db18d96a0b3a9af3d20e0e8ac9dde1199d9241e6dd2ae0f050fd"
+  },
+  "integration_authorized": false,
+  "comparison_sources": [
+    "art/ui/modal-refresh/DeerFarmer.png",
+    "art/ui/monster-outfits/RingMawKnight.png"
+  ]
+}

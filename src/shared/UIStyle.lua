@@ -124,7 +124,11 @@ function U.Icon(parent,kind,id,size,pos,finish)
   local q=Instance.new('Part');q.Name=name;q.Size=s;q.CFrame=CFrame.new(at);q.Color=Color3.fromHex(color);q.Anchored=true;q.CanCollide=false;q.Parent=model;return q
  end
  if kind=='weapon' then model=require(script.Parent.WeaponModel).Build(id or 'Deagle',wm,CFrame.identity,finish)
- elseif kind=='shovel' then model=require(script.Parent.ShovelModel).Build(id or 'Rusty',wm)
+ elseif kind=='shovel' then
+  -- a melee weapon (they were shovels): its flat to the eye, the working end up and to the right
+  model=require(script.Parent.ShovelModel).Build(id,wm);model:PivotTo(CFrame.Angles(0,0,math.rad(140))*CFrame.Angles(0,math.pi/2,0))
+  -- (metal and shine come out near black in a viewport, which has nothing to reflect: plain plastic here)
+  for _,q in model:GetDescendants() do if q:IsA('BasePart') then q.Reflectance=0;if q.Material==Enum.Material.Metal or q.Material==Enum.Material.Glass then q.Material=Enum.Material.SmoothPlastic end end end
  elseif kind=='trap' then model=require(script.Parent.RoadGearModel).Trap(wm,CFrame.identity)
  else
   model=Instance.new('Model',wm)
@@ -143,6 +147,7 @@ function U.Icon(parent,kind,id,size,pos,finish)
  local cam=Instance.new('Camera',v);cam.FieldOfView=36
  cam.CFrame=CFrame.lookAt(cf.Position+Vector3.new(radius*.8,radius*.55,radius),cf.Position)
  if kind=='weapon' then cam.CFrame=CFrame.lookAt(cf.Position+Vector3.new(radius,.35*radius,.25*radius),cf.Position) end
+ if kind=='shovel' then cam.CFrame=CFrame.lookAt(cf.Position+Vector3.new(0,0,radius*1.25),cf.Position) end
  v.CurrentCamera=cam;return v
 end
 return U

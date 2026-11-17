@@ -1,0 +1,80 @@
+{
+  "mode": "built-in image_gen",
+  "status": "awaiting_icon_approval",
+  "game_integration_authorized": false,
+  "transparent_background": true,
+  "assets": [
+    {
+      "id": "LongmawFarmer",
+      "role": "Farmer",
+      "ru": "Фермер",
+      "generated_source": "/Users/wingman/.codex/generated_images/01a1d952-567c-7b53-bc9e-641d7fb05c3b/exec-625cd07e-4ea2-4b1c-9799-f9f95af02f3d.png",
+      "file": "icons/LongmawFarmer.png",
+      "references": [
+        "/Users/wingman/Documents/Codex/GrowAMonster-Git-2026-11-12/art/longmaw-forms-v1/previews/Longmaw_Farmer_Idle.png",
+        "/Users/wingman/Documents/Codex/GrowAMonster-Git-2026-11-12/art/ui/modal-refresh/DeerFarmer.png"
+      ],
+      "status": "awaiting_icon_approval"
+    },
+    {
+      "id": "LongmawMiner",
+      "role": "Miner",
+      "ru": "Шахтёр",
+      "generated_source": "/Users/wingman/.codex/generated_images/01a1d952-567c-7b53-bc9e-641d7fb05c3b/exec-e08acefe-8f09-4822-99fe-baf30d3dbf87.png",
+      "file": "icons/LongmawMiner.png",
+      "references": [
+        "/Users/wingman/Documents/Codex/GrowAMonster-Git-2026-11-12/art/longmaw-forms-v1/previews/Longmaw_Miner_Idle.png",
+        "/Users/wingman/Documents/Codex/GrowAMonster-Git-2026-11-12/art/ui/modal-refresh/DeerFarmer.png"
+      ],
+      "status": "awaiting_icon_approval"
+    },
+    {
+      "id": "LongmawPrincess",
+      "role": "Princess",
+      "ru": "Принцесса",
+      "generated_source": "/Users/wingman/.codex/generated_images/01a1d952-567c-7b53-bc9e-641d7fb05c3b/exec-e713c563-3a53-464d-a80b-92b9d5db1cc5.png",
+      "file": "icons/LongmawPrincess.png",
+      "references": [
+        "/Users/wingman/Documents/Codex/GrowAMonster-Git-2026-11-12/art/longmaw-forms-v1/previews/Longmaw_Princess_Idle.png",
+        "/Users/wingman/Documents/Codex/GrowAMonster-Git-2026-11-12/art/ui/modal-refresh/DeerFarmer.png"
+      ],
+      "status": "awaiting_icon_approval"
+    },
+    {
+      "id": "LongmawKnight",
+      "role": "Knight",
+      "ru": "Рыцарь",
+      "generated_source": "/Users/wingman/.codex/generated_images/01a1d952-567c-7b53-bc9e-641d7fb05c3b/exec-d7412b46-c62e-47d1-8131-2c7d961cd3bf.png",
+      "file": "icons/LongmawKnight.png",
+      "references": [
+        "/Users/wingman/Documents/Codex/GrowAMonster-Git-2026-11-12/art/longmaw-forms-v1/previews/Longmaw_Knight_Idle.png",
+        "/Users/wingman/Documents/Codex/GrowAMonster-Git-2026-11-12/art/ui/modal-refresh/DeerFarmer.png"
+      ],
+      "status": "awaiting_icon_approval"
+    },
+    {
+      "id": "LongmawPunk",
+      "role": "Punk",
+      "ru": "Нефор",
+      "generated_source": "/Users/wingman/.codex/generated_images/01a1d952-567c-7b53-bc9e-641d7fb05c3b/exec-87713652-5d3d-445f-8677-5e9b40ef0f25.png",
+      "file": "icons/LongmawPunk.png",
+      "references": [
+        "/Users/wingman/Documents/Codex/GrowAMonster-Git-2026-11-12/art/longmaw-forms-v1/previews/Longmaw_Punk_Idle.png",
+        "/Users/wingman/Documents/Codex/GrowAMonster-Git-2026-11-12/art/ui/modal-refresh/DeerFarmer.png"
+      ],
+      "status": "awaiting_icon_approval"
+    },
+    {
+      "id": "LongmawAssassin",
+      "role": "Assassin",
+      "ru": "Убийца",
+      "generated_source": "/Users/wingman/.codex/generated_images/01a1d952-567c-7b53-bc9e-641d7fb05c3b/exec-aa46abda-a8d6-4300-8141-b3474aa28206.png",
+      "file": "icons/LongmawAssassin.png",
+      "references": [
+        "/Users/wingman/Documents/Codex/GrowAMonster-Git-2026-11-12/art/longmaw-forms-v1/previews/Longmaw_Assassin_Idle.png",
+        "/Users/wingman/Documents/Codex/GrowAMonster-Git-2026-11-12/art/ui/modal-refresh/DeerFarmer.png"
+      ],
+      "status": "awaiting_icon_approval"
+    }
+  ]
+}

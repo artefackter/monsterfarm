@@ -1,0 +1,897 @@
+{
+  "passed": true,
+  "source_originals_unchanged": true,
+  "models": [
+    {
+      "id": "HoodedStranger",
+      "passed": true,
+      "triangles": 4040,
+      "meshes": 2,
+      "bones": 28,
+      "exact_positions_normals_triangles_joints": true,
+      "exact_skeleton_and_bind_matrices": true,
+      "exact_face_crop_pixels": true,
+      "max_uv_pixel_error": 7.62939453125e-06,
+      "max_linear_color_error": 7.573392449944372e-06,
+      "max_weight_error": 6.914704756944001e-06
+    },
+    {
+      "id": "HoodedStranger_Farmer",
+      "passed": true,
+      "triangles": 6072,
+      "meshes": 2,
+      "bones": 28,
+      "exact_positions_normals_triangles_joints": true,
+      "exact_skeleton_and_bind_matrices": true,
+      "exact_face_crop_pixels": true,
+      "max_uv_pixel_error": 7.62939453125e-06,
+      "max_linear_color_error": 7.626171914965063e-06,
+      "max_weight_error": 6.914704756944001e-06
+    },
+    {
+      "id": "HoodedStranger_Miner",
+      "passed": true,
+      "triangles": 5880,
+      "meshes": 2,
+      "bones": 28,
+      "exact_positions_normals_triangles_joints": true,
+      "exact_skeleton_and_bind_matrices": true,
+      "exact_face_crop_pixels": true,
+      "max_uv_pixel_error": 7.62939453125e-06,
+      "max_linear_color_error": 7.626171914965063e-06,
+      "max_weight_error": 6.914704756944001e-06
+    },
+    {
+      "id": "HoodedStranger_King",
+      "passed": true,
+      "triangles": 6688,
+      "meshes": 2,
+      "bones": 28,
+      "exact_positions_normals_triangles_joints": true,
+      "exact_skeleton_and_bind_matrices": true,
+      "exact_face_crop_pixels": true,
+      "max_uv_pixel_error": 7.62939453125e-06,
+      "max_linear_color_error": 7.573392449944372e-06,
+      "max_weight_error": 6.914704756944001e-06
+    },
+    {
+      "id": "HoodedStranger_Knight",
+      "passed": true,
+      "triangles": 5847,
+      "meshes": 2,
+      "bones": 28,
+      "exact_positions_normals_triangles_joints": true,
+      "exact_skeleton_and_bind_matrices": true,
+      "exact_face_crop_pixels": true,
+      "max_uv_pixel_error": 7.62939453125e-06,
+      "max_linear_color_error": 7.5809354593558975e-06,
+      "max_weight_error": 6.914704756944001e-06
+    },
+    {
+      "id": "HoodedStranger_Punk",
+      "passed": true,
+      "triangles": 6976,
+      "meshes": 2,
+      "bones": 28,
+      "exact_positions_normals_triangles_joints": true,
+      "exact_skeleton_and_bind_matrices": true,
+      "exact_face_crop_pixels": true,
+      "max_uv_pixel_error": 7.62939453125e-06,
+      "max_linear_color_error": 7.573392449944372e-06,
+      "max_weight_error": 6.914704756944001e-06
+    },
+    {
+      "id": "HoodedStranger_Assassin",
+      "passed": true,
+      "triangles": 5864,
+      "meshes": 2,
+      "bones": 28,
+      "exact_positions_normals_triangles_joints": true,
+      "exact_skeleton_and_bind_matrices": true,
+      "exact_face_crop_pixels": true,
+      "max_uv_pixel_error": 7.62939453125e-06,
+      "max_linear_color_error": 7.626171914965063e-06,
+      "max_weight_error": 6.914704756944001e-06
+    }
+  ],
+  "icons": [
+    {
+      "id": "HoodedStrangerFarmer",
+      "passed": true,
+      "unchanged_after_deterministic_resize": true,
+      "comparisons": [
+        {
+          "profile": "ui512",
+          "display_size": 64,
+          "background": "#F6EDD8",
+          "mean_absolute_rgb_error_255": 0.15413,
+          "max_channel_error": 3
+        },
+        {
+          "profile": "ui512",
+          "display_size": 64,
+          "background": "#19212B",
+          "mean_absolute_rgb_error_255": 0.12915,
+          "max_channel_error": 2
+        },
+        {
+          "profile": "ui512",
+          "display_size": 96,
+          "background": "#F6EDD8",
+          "mean_absolute_rgb_error_255": 0.16417,
+          "max_channel_error": 3
+        },
+        {
+          "profile": "ui512",
+          "display_size": 96,
+          "background": "#19212B",
+          "mean_absolute_rgb_error_255": 0.13458,
+          "max_channel_error": 3
+        },
+        {
+          "profile": "ui512",
+          "display_size": 128,
+          "background": "#F6EDD8",
+          "mean_absolute_rgb_error_255": 0.17381,
+          "max_channel_error": 4
+        },
+        {
+          "profile": "ui512",
+          "display_size": 128,
+          "background": "#19212B",
+          "mean_absolute_rgb_error_255": 0.1405,
+          "max_channel_error": 3
+        },
+        {
+          "profile": "small256",
+          "display_size": 64,
+          "background": "#F6EDD8",
+          "mean_absolute_rgb_error_255": 0.2373,
+          "max_channel_error": 5
+        },
+        {
+          "profile": "small256",
+          "display_size": 64,
+          "background": "#19212B",
+          "mean_absolute_rgb_error_255": 0.16471,
+          "max_channel_error": 5
+        },
+        {
+          "profile": "small256",
+          "display_size": 96,
+          "background": "#F6EDD8",
+          "mean_absolute_rgb_error_255": 0.27268,
+          "max_channel_error": 7
+        },
+        {
+          "profile": "small256",
+          "display_size": 96,
+          "background": "#19212B",
+          "mean_absolute_rgb_error_255": 0.17274,
+          "max_channel_error": 6
+        },
+        {
+          "profile": "small256",
+          "display_size": 128,
+          "background": "#F6EDD8",
+          "mean_absolute_rgb_error_255": 0.28345,
+          "max_channel_error": 9
+        },
+        {
+          "profile": "small256",
+          "display_size": 128,
+          "background": "#19212B",
+          "mean_absolute_rgb_error_255": 0.18172,
+          "max_channel_error": 9
+        },
+        {
+          "profile": "large1024",
+          "display_size": 64,
+          "background": "#F6EDD8",
+          "mean_absolute_rgb_error_255": 0.12614,
+          "max_channel_error": 3
+        },
+        {
+          "profile": "large1024",
+          "display_size": 64,
+          "background": "#19212B",
+          "mean_absolute_rgb_error_255": 0.11711,
+          "max_channel_error": 3
+        },
+        {
+          "profile": "large1024",
+          "display_size": 96,
+          "background": "#F6EDD8",
+          "mean_absolute_rgb_error_255": 0.13169,
+          "max_channel_error": 3
+        },
+        {
+          "profile": "large1024",
+          "display_size": 96,
+          "background": "#19212B",
+          "mean_absolute_rgb_error_255": 0.12066,
+          "max_channel_error": 2
+        },
+        {
+          "profile": "large1024",
+          "display_size": 128,
+          "background": "#F6EDD8",
+          "mean_absolute_rgb_error_255": 0.13287,
+          "max_channel_error": 3
+        },
+        {
+          "profile": "large1024",
+          "display_size": 128,
+          "background": "#19212B",
+          "mean_absolute_rgb_error_255": 0.12174,
+          "max_channel_error": 3
+        }
+      ]
+    },
+    {
+      "id": "HoodedStrangerMiner",
+      "passed": true,
+      "unchanged_after_deterministic_resize": true,
+      "comparisons": [
+        {
+          "profile": "ui512",
+          "display_size": 64,
+          "background": "#F6EDD8",
+          "mean_absolute_rgb_error_255": 0.14608,
+          "max_channel_error": 3
+        },
+        {
+          "profile": "ui512",
+          "display_size": 64,
+          "background": "#19212B",
+          "mean_absolute_rgb_error_255": 0.12297,
+          "max_channel_error": 2
+        },
+        {
+          "profile": "ui512",
+          "display_size": 96,
+          "background": "#F6EDD8",
+          "mean_absolute_rgb_error_255": 0.16135,
+          "max_channel_error": 3
+        },
+        {
+          "profile": "ui512",
+          "display_size": 96,
+          "background": "#19212B",
+          "mean_absolute_rgb_error_255": 0.13458,
+          "max_channel_error": 3
+        },
+        {
+          "profile": "ui512",
+          "display_size": 128,
+          "background": "#F6EDD8",
+          "mean_absolute_rgb_error_255": 0.17041,
+          "max_channel_error": 5
+        },
+        {
+          "profile": "ui512",
+          "display_size": 128,
+          "background": "#19212B",
+          "mean_absolute_rgb_error_255": 0.13871,
+          "max_channel_error": 5
+        },
+        {
+          "profile": "small256",
+          "display_size": 64,
+          "background": "#F6EDD8",
+          "mean_absolute_rgb_error_255": 0.23364,
+          "max_channel_error": 5
+        },
+        {
+          "profile": "small256",
+          "display_size": 64,
+          "background": "#19212B",
+          "mean_absolute_rgb_error_255": 0.16488,
+          "max_channel_error": 5
+        },
+        {
+          "profile": "small256",
+          "display_size": 96,
+          "background": "#F6EDD8",
+          "mean_absolute_rgb_error_255": 0.26964,
+          "max_channel_error": 8
+        },
+        {
+          "profile": "small256",
+          "display_size": 96,
+          "background": "#19212B",
+          "mean_absolute_rgb_error_255": 0.17882,
+          "max_channel_error": 8
+        },
+        {
+          "profile": "small256",
+          "display_size": 128,
+          "background": "#F6EDD8",
+          "mean_absolute_rgb_error_255": 0.28648,
+          "max_channel_error": 13
+        },
+        {
+          "profile": "small256",
+          "display_size": 128,
+          "background": "#19212B",
+          "mean_absolute_rgb_error_255": 0.18447,
+          "max_channel_error": 13
+        },
+        {
+          "profile": "large1024",
+          "display_size": 64,
+          "background": "#F6EDD8",
+          "mean_absolute_rgb_error_255": 0.12256,
+          "max_channel_error": 3
+        },
+        {
+          "profile": "large1024",
+          "display_size": 64,
+          "background": "#19212B",
+          "mean_absolute_rgb_error_255": 0.11255,
+          "max_channel_error": 3
+        },
+        {
+          "profile": "large1024",
+          "display_size": 96,
+          "background": "#F6EDD8",
+          "mean_absolute_rgb_error_255": 0.12605,
+          "max_channel_error": 3
+        },
+        {
+          "profile": "large1024",
+          "display_size": 96,
+          "background": "#19212B",
+          "mean_absolute_rgb_error_255": 0.11643,
+          "max_channel_error": 3
+        },
+        {
+          "profile": "large1024",
+          "display_size": 128,
+          "background": "#F6EDD8",
+          "mean_absolute_rgb_error_255": 0.13057,
+          "max_channel_error": 3
+        },
+        {
+          "profile": "large1024",
+          "display_size": 128,
+          "background": "#19212B",
+          "mean_absolute_rgb_error_255": 0.11879,
+          "max_channel_error": 3
+        }
+      ]
+    },
+    {
+      "id": "HoodedStrangerKing",
+      "passed": true,
+      "unchanged_after_deterministic_resize": true,
+      "comparisons": [
+        {
+          "profile": "ui512",
+          "display_size": 64,
+          "background": "#F6EDD8",
+          "mean_absolute_rgb_error_255": 0.14827,
+          "max_channel_error": 4
+        },
+        {
+          "profile": "ui512",
+          "display_size": 64,
+          "background": "#19212B",
+          "mean_absolute_rgb_error_255": 0.12573,
+          "max_channel_error": 3
+        },
+        {
+          "profile": "ui512",
+          "display_size": 96,
+          "background": "#F6EDD8",
+          "mean_absolute_rgb_error_255": 0.15484,
+          "max_channel_error": 3
+        },
+        {
+          "profile": "ui512",
+          "display_size": 96,
+          "background": "#19212B",
+          "mean_absolute_rgb_error_255": 0.13473,
+          "max_channel_error": 3
+        },
+        {
+          "profile": "ui512",
+          "display_size": 128,
+          "background": "#F6EDD8",
+          "mean_absolute_rgb_error_255": 0.16789,
+          "max_channel_error": 5
+        },
+        {
+          "profile": "ui512",
+          "display_size": 128,
+          "background": "#19212B",
+          "mean_absolute_rgb_error_255": 0.14217,
+          "max_channel_error": 5
+        },
+        {
+          "profile": "small256",
+          "display_size": 64,
+          "background": "#F6EDD8",
+          "mean_absolute_rgb_error_255": 0.23657,
+          "max_channel_error": 4
+        },
+        {
+          "profile": "small256",
+          "display_size": 64,
+          "background": "#19212B",
+          "mean_absolute_rgb_error_255": 0.17863,
+          "max_channel_error": 4
+        },
+        {
+          "profile": "small256",
+          "display_size": 96,
+          "background": "#F6EDD8",
+          "mean_absolute_rgb_error_255": 0.25611,
+          "max_channel_error": 9
+        },
+        {
+          "profile": "small256",
+          "display_size": 96,
+          "background": "#19212B",
+          "mean_absolute_rgb_error_255": 0.19014,
+          "max_channel_error": 9
+        },
+        {
+          "profile": "small256",
+          "display_size": 128,
+          "background": "#F6EDD8",
+          "mean_absolute_rgb_error_255": 0.27531,
+          "max_channel_error": 11
+        },
+        {
+          "profile": "small256",
+          "display_size": 128,
+          "background": "#19212B",
+          "mean_absolute_rgb_error_255": 0.19875,
+          "max_channel_error": 10
+        },
+        {
+          "profile": "large1024",
+          "display_size": 64,
+          "background": "#F6EDD8",
+          "mean_absolute_rgb_error_255": 0.12012,
+          "max_channel_error": 3
+        },
+        {
+          "profile": "large1024",
+          "display_size": 64,
+          "background": "#19212B",
+          "mean_absolute_rgb_error_255": 0.10994,
+          "max_channel_error": 2
+        },
+        {
+          "profile": "large1024",
+          "display_size": 96,
+          "background": "#F6EDD8",
+          "mean_absolute_rgb_error_255": 0.12312,
+          "max_channel_error": 3
+        },
+        {
+          "profile": "large1024",
+          "display_size": 96,
+          "background": "#19212B",
+          "mean_absolute_rgb_error_255": 0.11411,
+          "max_channel_error": 3
+        },
+        {
+          "profile": "large1024",
+          "display_size": 128,
+          "background": "#F6EDD8",
+          "mean_absolute_rgb_error_255": 0.12561,
+          "max_channel_error": 3
+        },
+        {
+          "profile": "large1024",
+          "display_size": 128,
+          "background": "#19212B",
+          "mean_absolute_rgb_error_255": 0.11686,
+          "max_channel_error": 3
+        }
+      ]
+    },
+    {
+      "id": "HoodedStrangerKnight",
+      "passed": true,
+      "unchanged_after_deterministic_resize": true,
+      "comparisons": [
+        {
+          "profile": "ui512",
+          "display_size": 64,
+          "background": "#F6EDD8",
+          "mean_absolute_rgb_error_255": 0.13289,
+          "max_channel_error": 3
+        },
+        {
+          "profile": "ui512",
+          "display_size": 64,
+          "background": "#19212B",
+          "mean_absolute_rgb_error_255": 0.11621,
+          "max_channel_error": 3
+        },
+        {
+          "profile": "ui512",
+          "display_size": 96,
+          "background": "#F6EDD8",
+          "mean_absolute_rgb_error_255": 0.15394,
+          "max_channel_error": 4
+        },
+        {
+          "profile": "ui512",
+          "display_size": 96,
+          "background": "#19212B",
+          "mean_absolute_rgb_error_255": 0.12742,
+          "max_channel_error": 3
+        },
+        {
+          "profile": "ui512",
+          "display_size": 128,
+          "background": "#F6EDD8",
+          "mean_absolute_rgb_error_255": 0.16549,
+          "max_channel_error": 5
+        },
+        {
+          "profile": "ui512",
+          "display_size": 128,
+          "background": "#19212B",
+          "mean_absolute_rgb_error_255": 0.13324,
+          "max_channel_error": 5
+        },
+        {
+          "profile": "small256",
+          "display_size": 64,
+          "background": "#F6EDD8",
+          "mean_absolute_rgb_error_255": 0.21623,
+          "max_channel_error": 5
+        },
+        {
+          "profile": "small256",
+          "display_size": 64,
+          "background": "#19212B",
+          "mean_absolute_rgb_error_255": 0.15926,
+          "max_channel_error": 4
+        },
+        {
+          "profile": "small256",
+          "display_size": 96,
+          "background": "#F6EDD8",
+          "mean_absolute_rgb_error_255": 0.26657,
+          "max_channel_error": 7
+        },
+        {
+          "profile": "small256",
+          "display_size": 96,
+          "background": "#19212B",
+          "mean_absolute_rgb_error_255": 0.17245,
+          "max_channel_error": 6
+        },
+        {
+          "profile": "small256",
+          "display_size": 128,
+          "background": "#F6EDD8",
+          "mean_absolute_rgb_error_255": 0.2794,
+          "max_channel_error": 10
+        },
+        {
+          "profile": "small256",
+          "display_size": 128,
+          "background": "#19212B",
+          "mean_absolute_rgb_error_255": 0.17615,
+          "max_channel_error": 8
+        },
+        {
+          "profile": "large1024",
+          "display_size": 64,
+          "background": "#F6EDD8",
+          "mean_absolute_rgb_error_255": 0.11662,
+          "max_channel_error": 2
+        },
+        {
+          "profile": "large1024",
+          "display_size": 64,
+          "background": "#19212B",
+          "mean_absolute_rgb_error_255": 0.10897,
+          "max_channel_error": 2
+        },
+        {
+          "profile": "large1024",
+          "display_size": 96,
+          "background": "#F6EDD8",
+          "mean_absolute_rgb_error_255": 0.12113,
+          "max_channel_error": 3
+        },
+        {
+          "profile": "large1024",
+          "display_size": 96,
+          "background": "#19212B",
+          "mean_absolute_rgb_error_255": 0.11133,
+          "max_channel_error": 2
+        },
+        {
+          "profile": "large1024",
+          "display_size": 128,
+          "background": "#F6EDD8",
+          "mean_absolute_rgb_error_255": 0.12425,
+          "max_channel_error": 3
+        },
+        {
+          "profile": "large1024",
+          "display_size": 128,
+          "background": "#19212B",
+          "mean_absolute_rgb_error_255": 0.11403,
+          "max_channel_error": 3
+        }
+      ]
+    },
+    {
+      "id": "HoodedStrangerPunk",
+      "passed": true,
+      "unchanged_after_deterministic_resize": true,
+      "comparisons": [
+        {
+          "profile": "ui512",
+          "display_size": 64,
+          "background": "#F6EDD8",
+          "mean_absolute_rgb_error_255": 0.11548,
+          "max_channel_error": 3
+        },
+        {
+          "profile": "ui512",
+          "display_size": 64,
+          "background": "#19212B",
+          "mean_absolute_rgb_error_255": 0.09188,
+          "max_channel_error": 2
+        },
+        {
+          "profile": "ui512",
+          "display_size": 96,
+          "background": "#F6EDD8",
+          "mean_absolute_rgb_error_255": 0.12862,
+          "max_channel_error": 3
+        },
+        {
+          "profile": "ui512",
+          "display_size": 96,
+          "background": "#19212B",
+          "mean_absolute_rgb_error_255": 0.10059,
+          "max_channel_error": 3
+        },
+        {
+          "profile": "ui512",
+          "display_size": 128,
+          "background": "#F6EDD8",
+          "mean_absolute_rgb_error_255": 0.14079,
+          "max_channel_error": 5
+        },
+        {
+          "profile": "ui512",
+          "display_size": 128,
+          "background": "#19212B",
+          "mean_absolute_rgb_error_255": 0.10797,
+          "max_channel_error": 4
+        },
+        {
+          "profile": "small256",
+          "display_size": 64,
+          "background": "#F6EDD8",
+          "mean_absolute_rgb_error_255": 0.19873,
+          "max_channel_error": 5
+        },
+        {
+          "profile": "small256",
+          "display_size": 64,
+          "background": "#19212B",
+          "mean_absolute_rgb_error_255": 0.13208,
+          "max_channel_error": 5
+        },
+        {
+          "profile": "small256",
+          "display_size": 96,
+          "background": "#F6EDD8",
+          "mean_absolute_rgb_error_255": 0.24085,
+          "max_channel_error": 9
+        },
+        {
+          "profile": "small256",
+          "display_size": 96,
+          "background": "#19212B",
+          "mean_absolute_rgb_error_255": 0.14663,
+          "max_channel_error": 7
+        },
+        {
+          "profile": "small256",
+          "display_size": 128,
+          "background": "#F6EDD8",
+          "mean_absolute_rgb_error_255": 0.25488,
+          "max_channel_error": 11
+        },
+        {
+          "profile": "small256",
+          "display_size": 128,
+          "background": "#19212B",
+          "mean_absolute_rgb_error_255": 0.15456,
+          "max_channel_error": 9
+        },
+        {
+          "profile": "large1024",
+          "display_size": 64,
+          "background": "#F6EDD8",
+          "mean_absolute_rgb_error_255": 0.0896,
+          "max_channel_error": 3
+        },
+        {
+          "profile": "large1024",
+          "display_size": 64,
+          "background": "#19212B",
+          "mean_absolute_rgb_error_255": 0.08032,
+          "max_channel_error": 2
+        },
+        {
+          "profile": "large1024",
+          "display_size": 96,
+          "background": "#F6EDD8",
+          "mean_absolute_rgb_error_255": 0.09133,
+          "max_channel_error": 3
+        },
+        {
+          "profile": "large1024",
+          "display_size": 96,
+          "background": "#19212B",
+          "mean_absolute_rgb_error_255": 0.08207,
+          "max_channel_error": 2
+        },
+        {
+          "profile": "large1024",
+          "display_size": 128,
+          "background": "#F6EDD8",
+          "mean_absolute_rgb_error_255": 0.09983,
+          "max_channel_error": 3
+        },
+        {
+          "profile": "large1024",
+          "display_size": 128,
+          "background": "#19212B",
+          "mean_absolute_rgb_error_255": 0.08875,
+          "max_channel_error": 3
+        }
+      ]
+    },
+    {
+      "id": "HoodedStrangerAssassin",
+      "passed": true,
+      "unchanged_after_deterministic_resize": true,
+      "comparisons": [
+        {
+          "profile": "ui512",
+          "display_size": 64,
+          "background": "#F6EDD8",
+          "mean_absolute_rgb_error_255": 0.13468,
+          "max_channel_error": 3
+        },
+        {
+          "profile": "ui512",
+          "display_size": 64,
+          "background": "#19212B",
+          "mean_absolute_rgb_error_255": 0.11401,
+          "max_channel_error": 2
+        },
+        {
+          "profile": "ui512",
+          "display_size": 96,
+          "background": "#F6EDD8",
+          "mean_absolute_rgb_error_255": 0.14753,
+          "max_channel_error": 3
+        },
+        {
+          "profile": "ui512",
+          "display_size": 96,
+          "background": "#19212B",
+          "mean_absolute_rgb_error_255": 0.12052,
+          "max_channel_error": 3
+        },
+        {
+          "profile": "ui512",
+          "display_size": 128,
+          "background": "#F6EDD8",
+          "mean_absolute_rgb_error_255": 0.15462,
+          "max_channel_error": 4
+        },
+        {
+          "profile": "ui512",
+          "display_size": 128,
+          "background": "#19212B",
+          "mean_absolute_rgb_error_255": 0.1288,
+          "max_channel_error": 3
+        },
+        {
+          "profile": "small256",
+          "display_size": 64,
+          "background": "#F6EDD8",
+          "mean_absolute_rgb_error_255": 0.20312,
+          "max_channel_error": 7
+        },
+        {
+          "profile": "small256",
+          "display_size": 64,
+          "background": "#19212B",
+          "mean_absolute_rgb_error_255": 0.13957,
+          "max_channel_error": 4
+        },
+        {
+          "profile": "small256",
+          "display_size": 96,
+          "background": "#F6EDD8",
+          "mean_absolute_rgb_error_255": 0.23108,
+          "max_channel_error": 8
+        },
+        {
+          "profile": "small256",
+          "display_size": 96,
+          "background": "#19212B",
+          "mean_absolute_rgb_error_255": 0.15126,
+          "max_channel_error": 7
+        },
+        {
+          "profile": "small256",
+          "display_size": 128,
+          "background": "#F6EDD8",
+          "mean_absolute_rgb_error_255": 0.24915,
+          "max_channel_error": 11
+        },
+        {
+          "profile": "small256",
+          "display_size": 128,
+          "background": "#19212B",
+          "mean_absolute_rgb_error_255": 0.16473,
+          "max_channel_error": 10
+        },
+        {
+          "profile": "large1024",
+          "display_size": 64,
+          "background": "#F6EDD8",
+          "mean_absolute_rgb_error_255": 0.11344,
+          "max_channel_error": 3
+        },
+        {
+          "profile": "large1024",
+          "display_size": 64,
+          "background": "#19212B",
+          "mean_absolute_rgb_error_255": 0.10376,
+          "max_channel_error": 2
+        },
+        {
+          "profile": "large1024",
+          "display_size": 96,
+          "background": "#F6EDD8",
+          "mean_absolute_rgb_error_255": 0.12015,
+          "max_channel_error": 3
+        },
+        {
+          "profile": "large1024",
+          "display_size": 96,
+          "background": "#19212B",
+          "mean_absolute_rgb_error_255": 0.10912,
+          "max_channel_error": 2
+        },
+        {
+          "profile": "large1024",
+          "display_size": 128,
+          "background": "#F6EDD8",
+          "mean_absolute_rgb_error_255": 0.12168,
+          "max_channel_error": 3
+        },
+        {
+          "profile": "large1024",
+          "display_size": 128,
+          "background": "#19212B",
+          "mean_absolute_rgb_error_255": 0.11171,
+          "max_channel_error": 3
+        }
+      ]
+    }
+  ]
+}

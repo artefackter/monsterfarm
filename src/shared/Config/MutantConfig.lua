@@ -66,6 +66,24 @@ return {
     {Name="Summon",Shape="Summon",Count=2,MaxMinions=4,Range=60,Windup=1.4,Cooldown=14,Fx="Summon"},
     {Name="Curse",Shape="Volley",Count=2,Spread=7,Range=40,MinRange=5,Windup=1,Cooldown=3.5,Radius=7,Damage=2,Fx="Acid"},
    }},
+  -- The new bosses of the road reskin (owner, 2026-11-15): the city's Stranger dashes in and throws a fan of shadow;
+  -- the village's Slendrina flies at you and screams; the cave's Cave Dweller slams and leaps. As strong as the
+  -- bosses they replaced (the location's multipliers do the rest).
+  BossStranger={Boss=true,Health=450,Speed=12,Scale=1.6,SpeedFactor=.78,RewardMult=12,Model="HoodedStranger",Color=Color3.fromHex("3A3440"),
+   Attacks={
+    {Name="Charge",Shape="Dash",Range=46,MinRange=10,Windup=.9,Cooldown=5,Radius=6,Speed=66,Distance=52,Damage=2,Fx="Charge"},
+    {Name="Curse",Shape="Volley",Count=4,Spread=10,Range=40,MinRange=6,Windup=1,Cooldown=4.5,Radius=5,Damage=1,Fx="Acid"},
+   }},
+  BossSlendrina={Boss=true,Health=480,Speed=12,Scale=1.7,SpeedFactor=.78,RewardMult=12,Model="Slendrina",Color=Color3.fromHex("D8D2CC"),
+   Attacks={
+    {Name="Charge",Shape="Dash",Range=46,MinRange=10,Windup=.8,Cooldown=4.5,Radius=6,Speed=70,Distance=50,Damage=2,Fx="Charge"},
+    {Name="Scream",Shape="Scream",Range=28,Windup=1.2,Cooldown=7,Radius=28,Damage=1,Fx="Scream"},
+   }},
+  BossCaveDweller={Boss=true,Health=560,Speed=10,Scale=1.55,SpeedFactor=.75,RewardMult=15,Model="CaveDweller_Aggressive",Color=Color3.fromHex("6E6A74"),
+   Attacks={
+    {Name="Slam",Shape="Self",Range=13,Windup=1.2,Cooldown=4,Radius=14,Damage=2,Fx="Slam"},
+    {Name="Leap",Shape="Dash",Range=50,MinRange=12,Windup=.9,Cooldown=6,Radius=7,Speed=70,Distance=58,Damage=2,Fx="Leap"},
+   }},
   Chief={Boss=true,Health=560,Speed=10,Scale=1.45,SpeedFactor=.75,RewardMult=15,Model="Deer_Chief_Aggressive",Color=Color3.fromHex("699C87"),Range=10,Windup=1.2,Cooldown=4,Radius=11,
    Attacks={
     {Name="Slam",Shape="Self",Range=13,Windup=1.2,Cooldown=4,Radius=14,Damage=2,Fx="Slam"},

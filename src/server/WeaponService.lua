@@ -15,7 +15,7 @@ function W.Push(p)
  s.holstered=d.activeSlot~=2;p:SetAttribute("EquippedWeapon",d.equippedWeapon);p:SetAttribute("EquippedWeaponSkin",d.weaponSkins and d.weaponSkins[d.equippedWeapon] or "Default");p:SetAttribute("CarryingZombie",false)
  local ends=s.reload[d.equippedWeapon];p:SetAttribute("WeaponHolstered",s.holstered==true);p:SetAttribute("WeaponReloadUntil",ends and workspace:GetServerTimeNow()+math.max(0,ends-os.clock()) or 0);if p:GetAttribute('Mutagen')~=d.mutagen then p:SetAttribute('Mutagen',d.mutagen or 0) end;local stats=Up.Stats_(d,d.equippedWeapon);if p:GetAttribute("WeaponDamage")~=stats.Damage then p:SetAttribute("WeaponDamage",stats.Damage) end
  if p:GetAttribute("WeaponRange")~=stats.Range then p:SetAttribute("WeaponRange",stats.Range) end;if p:GetAttribute("WeaponReloadTime")~=stats.Reload then p:SetAttribute("WeaponReloadTime",stats.Reload) end
- rem.WeaponState:FireClient(p,{holstered=s.holstered==true,owned=d.weapons,skins=table.clone(d.weaponSkins or {}),equipped=d.equippedWeapon,skin=d.weaponSkins and d.weaponSkins[d.equippedWeapon] or "Default",ammo=s.ammo[d.equippedWeapon],reloadLeft=ends and math.max(0,ends-os.clock()) or 0,magazine=stats.Magazine,fireRate=stats.FireRate,range=stats.Range,reload=stats.Reload,kills=d.ruinKills,upgrades=d.weaponUpgrades,mutagen=d.mutagen or 0,coins=d.coins})
+ rem.WeaponState:FireClient(p,{freeUpgrade=require(script.Parent.TutorialService).FreeWeaponUpgrade(d),holstered=s.holstered==true,owned=d.weapons,skins=table.clone(d.weaponSkins or {}),equipped=d.equippedWeapon,skin=d.weaponSkins and d.weaponSkins[d.equippedWeapon] or "Default",ammo=s.ammo[d.equippedWeapon],reloadLeft=ends and math.max(0,ends-os.clock()) or 0,magazine=stats.Magazine,fireRate=stats.FireRate,range=stats.Range,reload=stats.Reload,kills=d.ruinKills,upgrades=d.weaponUpgrades,mutagen=d.mutagen or 0,coins=d.coins})
 end
 -- A gun earned in the ruins (WeaponConfig.Unlock): it is yours, and everyone hears about it.
 function W.Grant(p,d,id)
@@ -50,19 +50,39 @@ function W.Action(p,op,id)
   -- id is "<weapon>:<stat>"; the rules decide, the server pays
   local weapon,stat=string.match(type(id)=="string" and id or "","^(%a+%d*):(%a+)$")
   if not weapon or not C[weapon] then return false end
-  local ok,coins=Up.Buy(d,weapon,stat);if not ok then return false end
+  -- the tutorial's workbench step: one upgrade free (TutorialService)
+  local T=require(script.Parent.TutorialService);local free=T.FreeWeaponUpgrade(d)
+  d.freeUpgrade=free or nil;local ok,coins=Up.Buy(d,weapon,stat);d.freeUpgrade=nil;if not ok then return false end
+  if free then T.Advance(p,d,T.Weapon) end
   if stat=="Magazine" then local s=W.Session(p);if not s.reload[weapon] then s.ammo[weapon]=magazine(p,weapon) end end
   A.Economy(p,-coins,d.coins,"WeaponUpgrade");W.Push(p);return true
  end
  if not require(script.Parent.ActionService).CanAct(p) then return false end
  if type(id)~="string" or not table.find(C.Order,id) then return false end
  if op=="buy" then
-  -- no money any more: a gun is yours once you have hunted enough in its location (WeaponConfig.Unlock)
-  if d.weapons[id] or not table.find(Rules.Earned(d),id) then return false end
+  -- no money any more: a gun is yours once you have hunted enough in its location (WeaponConfig.Unlock); the
+  -- tutorial's gun is free on its last step
+  if d.weapons[id] or not (table.find(Rules.Earned(d),id) or W.TutorialGun(d)==id) then return false end
   W.Grant(p,d,id)
- elseif op=="equip" then if not d.weapons[id] then return false end;d.equippedWeapon=id
+  if W.TutorialGun(d)==id then d.equippedWeapon=id;W.FinishTutorial(p,d) end
+ elseif op=="equip" then if not d.weapons[id] then return false end;d.equippedWeapon=id;if W.TutorialGun(d)==id then W.FinishTutorial(p,d) end
  else return false end
  W.Push(p);return true
+end
+-- The tutorial's gunsmith step (owner, 2026-11-15; TutorialService): after the first road grave is planted, go to
+-- the gunsmith and take the Double barrel (WeaponConfig.TutorialGun), free. Taking it - or picking it, if the kills
+-- already won it - moves on to the workbench step.
+function W.TutorialGun(d)
+ local T=require(script.Parent.TutorialService)
+ return d and not d.tutorialDone and d.tutorialStep==T.Gunsmith and C.TutorialGun or nil
+end
+function W.FinishTutorial(p,d)
+ local T=require(script.Parent.TutorialService);T.Advance(p,d,T.Gunsmith)
+end
+-- On reaching the gunsmith step: one who already holds the gun (won with kills on the way) is done at once.
+function W.TutorialStep(p,d)
+ local id=W.TutorialGun(d)
+ if id and d.weapons[id] and d.equippedWeapon==id then W.FinishTutorial(p,d) end
 end
 -- What a shot (or a line of sight) hits first: the map's solid parts and, unless wallsOnly, the monsters' hitboxes.
 function W.Raycast(origin,delta,wallsOnly)

@@ -1,0 +1,658 @@
+{
+  "status": "passed",
+  "icons": 24,
+  "protected_files_checked": 606,
+  "protected_files_changed": [],
+  "game_integration": false,
+  "user_approval": "pending",
+  "assets": [
+    {
+      "id": "DredgeFarmer",
+      "file": "icons/DredgeFarmer.png",
+      "size": [
+        1254,
+        1254
+      ],
+      "mode": "RGBA",
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "corner_alpha": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "visible_bounds": [
+        94,
+        16,
+        1108,
+        1244
+      ],
+      "sha256": "a22e48e75210fc77a63944cc01fa4dbd7acc261aa4b86786f746746352dfca72",
+      "original_generated_pixels_preserved": true
+    },
+    {
+      "id": "DredgeMiner",
+      "file": "icons/DredgeMiner.png",
+      "size": [
+        1254,
+        1254
+      ],
+      "mode": "RGBA",
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "corner_alpha": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "visible_bounds": [
+        90,
+        14,
+        1096,
+        1241
+      ],
+      "sha256": "2d020ec13bbe16bb73296e20c892b8e99bb69afc9249fa5d60b5a71abbacb413",
+      "original_generated_pixels_preserved": true
+    },
+    {
+      "id": "DredgeKing",
+      "file": "icons/DredgeKing.png",
+      "size": [
+        1254,
+        1254
+      ],
+      "mode": "RGBA",
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "corner_alpha": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "visible_bounds": [
+        69,
+        7,
+        1083,
+        1245
+      ],
+      "sha256": "f054f8f7106ad482eab2fbd3c1b2133a8465de3552334568b982a71f80e47a1c",
+      "original_generated_pixels_preserved": true
+    },
+    {
+      "id": "DredgeKnight",
+      "file": "icons/DredgeKnight.png",
+      "size": [
+        1254,
+        1254
+      ],
+      "mode": "RGBA",
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "corner_alpha": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "visible_bounds": [
+        84,
+        14,
+        1103,
+        1241
+      ],
+      "sha256": "9b752c98def5f6f17349c94f1a92ee406df63182bb4fddff52ddfc87c683951e",
+      "original_generated_pixels_preserved": true
+    },
+    {
+      "id": "DredgeNefor",
+      "file": "icons/DredgeNefor.png",
+      "size": [
+        1254,
+        1254
+      ],
+      "mode": "RGBA",
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "corner_alpha": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "visible_bounds": [
+        128,
+        13,
+        1069,
+        1245
+      ],
+      "sha256": "6ae959a275c6d802dcb91547a509e085e14a8a8e9ecf7f31dc17ff811b3fcbcd",
+      "original_generated_pixels_preserved": true
+    },
+    {
+      "id": "DredgeKiller",
+      "file": "icons/DredgeKiller.png",
+      "size": [
+        1254,
+        1254
+      ],
+      "mode": "RGBA",
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "corner_alpha": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "visible_bounds": [
+        109,
+        27,
+        1064,
+        1236
+      ],
+      "sha256": "136668d77a49e55256ec44ffdad0a13b9118212022027a260ff867d2e5245768",
+      "original_generated_pixels_preserved": true
+    },
+    {
+      "id": "AssimilatedAdventurerFarmer",
+      "file": "icons/AssimilatedAdventurerFarmer.png",
+      "size": [
+        1254,
+        1254
+      ],
+      "mode": "RGBA",
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "corner_alpha": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "visible_bounds": [
+        309,
+        11,
+        900,
+        1243
+      ],
+      "sha256": "710e3b0152dba9376cccad7e3c69b3e0b72bba63324e20c5e325358246b6a709",
+      "original_generated_pixels_preserved": true
+    },
+    {
+      "id": "AssimilatedAdventurerMiner",
+      "file": "icons/AssimilatedAdventurerMiner.png",
+      "size": [
+        1254,
+        1254
+      ],
+      "mode": "RGBA",
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "corner_alpha": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "visible_bounds": [
+        327,
+        10,
+        899,
+        1245
+      ],
+      "sha256": "4e05b336b2f62464d720fba9f1b259d642fdb459a5468992b40b327f0efb8729",
+      "original_generated_pixels_preserved": true
+    },
+    {
+      "id": "AssimilatedAdventurerKing",
+      "file": "icons/AssimilatedAdventurerKing.png",
+      "size": [
+        1254,
+        1254
+      ],
+      "mode": "RGBA",
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "corner_alpha": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "visible_bounds": [
+        300,
+        8,
+        952,
+        1242
+      ],
+      "sha256": "571f60c50691badb1a1fab27ca49649083c4edd4eb2da17bac2ce03cbc4bc48b",
+      "original_generated_pixels_preserved": true
+    },
+    {
+      "id": "AssimilatedAdventurerKnight",
+      "file": "icons/AssimilatedAdventurerKnight.png",
+      "size": [
+        1254,
+        1254
+      ],
+      "mode": "RGBA",
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "corner_alpha": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "visible_bounds": [
+        318,
+        15,
+        899,
+        1243
+      ],
+      "sha256": "5ca9e80b98421ad0b36cf47c1666892a7eabb9268295e8c32cf8bcef69c3b29c",
+      "original_generated_pixels_preserved": true
+    },
+    {
+      "id": "AssimilatedAdventurerNefor",
+      "file": "icons/AssimilatedAdventurerNefor.png",
+      "size": [
+        1254,
+        1254
+      ],
+      "mode": "RGBA",
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "corner_alpha": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "visible_bounds": [
+        340,
+        15,
+        891,
+        1242
+      ],
+      "sha256": "f067e9c20e7fbdf5cfc41c975989d4097dc7124c89f38a128a88533864b1e590",
+      "original_generated_pixels_preserved": true
+    },
+    {
+      "id": "AssimilatedAdventurerKiller",
+      "file": "icons/AssimilatedAdventurerKiller.png",
+      "size": [
+        1254,
+        1254
+      ],
+      "mode": "RGBA",
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "corner_alpha": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "visible_bounds": [
+        334,
+        25,
+        872,
+        1232
+      ],
+      "sha256": "6f756e42dcbeef1c695224096c086c3c70ef1e7f9ee82abdd8f77f6d5c21502f",
+      "original_generated_pixels_preserved": true
+    },
+    {
+      "id": "PrimitiveSummonerFarmer",
+      "file": "icons/PrimitiveSummonerFarmer.png",
+      "size": [
+        1254,
+        1254
+      ],
+      "mode": "RGBA",
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "corner_alpha": [
+        0,
+        0,
+        1,
+        0
+      ],
+      "visible_bounds": [
+        20,
+        157,
+        1236,
+        1137
+      ],
+      "sha256": "239f7d8032961a75ffa2772bc6a9ab4a3d5762e4c5ab661e7637f3c206a0edf0",
+      "original_generated_pixels_preserved": true
+    },
+    {
+      "id": "PrimitiveSummonerMiner",
+      "file": "icons/PrimitiveSummonerMiner.png",
+      "size": [
+        1254,
+        1254
+      ],
+      "mode": "RGBA",
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "corner_alpha": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "visible_bounds": [
+        11,
+        164,
+        1243,
+        1130
+      ],
+      "sha256": "3fab92b6ce6775f8da80696e16bd100653e21da7799f1d21e00146fe0e2e63cf",
+      "original_generated_pixels_preserved": true
+    },
+    {
+      "id": "PrimitiveSummonerKing",
+      "file": "icons/PrimitiveSummonerKing.png",
+      "size": [
+        1254,
+        1254
+      ],
+      "mode": "RGBA",
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "corner_alpha": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "visible_bounds": [
+        114,
+        207,
+        1154,
+        1042
+      ],
+      "sha256": "9b3b5d06c6a2f2346ff793e6cbd12e51a4f80199790a363869b6f73702a897d8",
+      "original_generated_pixels_preserved": true
+    },
+    {
+      "id": "PrimitiveSummonerKnight",
+      "file": "icons/PrimitiveSummonerKnight.png",
+      "size": [
+        1254,
+        1254
+      ],
+      "mode": "RGBA",
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "corner_alpha": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "visible_bounds": [
+        15,
+        133,
+        1243,
+        1134
+      ],
+      "sha256": "0f2a93a5176a7bfa70d3413d55becc7f23326a7306967b1dd64da6a5a7a4c481",
+      "original_generated_pixels_preserved": true
+    },
+    {
+      "id": "PrimitiveSummonerNefor",
+      "file": "icons/PrimitiveSummonerNefor.png",
+      "size": [
+        1254,
+        1254
+      ],
+      "mode": "RGBA",
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "corner_alpha": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "visible_bounds": [
+        22,
+        115,
+        1232,
+        1142
+      ],
+      "sha256": "167dc7d1b5bb1b36bab0c0889c810c6d96c3e6d822276622a466da3d1c57e0b9",
+      "original_generated_pixels_preserved": true
+    },
+    {
+      "id": "PrimitiveSummonerKiller",
+      "file": "icons/PrimitiveSummonerKiller.png",
+      "size": [
+        1254,
+        1254
+      ],
+      "mode": "RGBA",
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "corner_alpha": [
+        0,
+        0,
+        1,
+        0
+      ],
+      "visible_bounds": [
+        5,
+        113,
+        1250,
+        1168
+      ],
+      "sha256": "0d7f9c558c245eeed61dc1faaa4ed36f52eb938edb0c71190bf711d51c460b75",
+      "original_generated_pixels_preserved": true
+    },
+    {
+      "id": "AdaptedVisceraFarmer",
+      "file": "icons/AdaptedVisceraFarmer.png",
+      "size": [
+        1254,
+        1254
+      ],
+      "mode": "RGBA",
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "corner_alpha": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "visible_bounds": [
+        64,
+        12,
+        1185,
+        1246
+      ],
+      "sha256": "17beeb67d0f93e69f2b172e1dd23e67b269ad47da34db95034b8e4efeb8845ba",
+      "original_generated_pixels_preserved": true
+    },
+    {
+      "id": "AdaptedVisceraMiner",
+      "file": "icons/AdaptedVisceraMiner.png",
+      "size": [
+        1254,
+        1254
+      ],
+      "mode": "RGBA",
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "corner_alpha": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "visible_bounds": [
+        59,
+        13,
+        1165,
+        1241
+      ],
+      "sha256": "8eb3bf6a2224902d283fa99dcfd00c5de25290d68327dff0f8311efa4b696f45",
+      "original_generated_pixels_preserved": true
+    },
+    {
+      "id": "AdaptedVisceraKing",
+      "file": "icons/AdaptedVisceraKing.png",
+      "size": [
+        1254,
+        1254
+      ],
+      "mode": "RGBA",
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "corner_alpha": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "visible_bounds": [
+        41,
+        11,
+        1225,
+        1247
+      ],
+      "sha256": "ecba3777d6cab166d7f4204aefa67fb06e48991e1787203793cc7bbed3b03c25",
+      "original_generated_pixels_preserved": true
+    },
+    {
+      "id": "AdaptedVisceraKnight",
+      "file": "icons/AdaptedVisceraKnight.png",
+      "size": [
+        1254,
+        1254
+      ],
+      "mode": "RGBA",
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "corner_alpha": [
+        0,
+        0,
+        1,
+        0
+      ],
+      "visible_bounds": [
+        28,
+        16,
+        1190,
+        1245
+      ],
+      "sha256": "6e9453627b81368f6fff55a12215b303c045dd7fbbd57005bd91e6f3eea244fa",
+      "original_generated_pixels_preserved": true
+    },
+    {
+      "id": "AdaptedVisceraNefor",
+      "file": "icons/AdaptedVisceraNefor.png",
+      "size": [
+        1254,
+        1254
+      ],
+      "mode": "RGBA",
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "corner_alpha": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "visible_bounds": [
+        46,
+        17,
+        1202,
+        1245
+      ],
+      "sha256": "21abbae7b9a4d90056f5aec67b8db46625c54b1718904b628e381147bb735d4c",
+      "original_generated_pixels_preserved": true
+    },
+    {
+      "id": "AdaptedVisceraKiller",
+      "file": "icons/AdaptedVisceraKiller.png",
+      "size": [
+        1254,
+        1254
+      ],
+      "mode": "RGBA",
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "corner_alpha": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "visible_bounds": [
+        48,
+        17,
+        1206,
+        1246
+      ],
+      "sha256": "e714aa8b858052401176f52bbdd361e5ea44781f3a626ce76efb3cfd3d8f1c1d",
+      "original_generated_pixels_preserved": true
+    }
+  ]
+}

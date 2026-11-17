@@ -1,0 +1,466 @@
+[
+ {
+  "name": "DeerChief_Skinned",
+  "winding": {
+   "Body": "kept",
+   "LegR": "kept",
+   "LegL": "kept",
+   "ArmR": "kept",
+   "HandItem": "kept",
+   "ArmL": "kept",
+   "Head": "kept"
+  },
+  "head": [
+   -0.108,
+   1.672,
+   -0.519
+  ],
+  "bones": {
+   "Root": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "Spine": [
+    0.0,
+    0.07,
+    2.91
+   ],
+   "Head": [
+    0.0,
+    -0.43,
+    4.84
+   ],
+   "ArmL": [
+    0.99,
+    -0.26,
+    4.46
+   ],
+   "ForearmL": [
+    2.069,
+    -0.96,
+    2.639
+   ],
+   "ArmR": [
+    -0.99,
+    -0.26,
+    4.46
+   ],
+   "ForearmR": [
+    -1.667,
+    -0.425,
+    3.229
+   ],
+   "LegL": [
+    0.44,
+    0.07,
+    2.91
+   ],
+   "ShinL": [
+    0.779,
+    -0.098,
+    1.502
+   ],
+   "LegR": [
+    -0.44,
+    0.07,
+    2.91
+   ],
+   "ShinR": [
+    -0.779,
+    -0.098,
+    1.502
+   ]
+  },
+  "bend": {
+   "ArmL": "bent",
+   "ArmR": "knee off the line",
+   "LegL": "straight",
+   "LegR": "straight"
+  },
+  "meshes": {
+   "DeerChief_Skinned": {
+    "tris": 5038,
+    "verts": 9664,
+    "groups": [
+     "Spine",
+     "LegR",
+     "ShinR",
+     "LegL",
+     "ShinL",
+     "ArmR",
+     "ForearmR",
+     "ArmL",
+     "ForearmL",
+     "Head"
+    ],
+    "lo": [
+     -2.31,
+     -1.93,
+     0.0
+    ],
+    "hi": [
+     2.19,
+     0.57,
+     8.61
+    ]
+   }
+  },
+  "file": "C:\\Users\\Firebird\\AppData\\Local\\Temp\\claude\\b9bd4d93a1f67684\\1ad04678-130e-420a-a5d7-d7fd321b6d54\\scratchpad\\rigout\\DeerChief_Skinned.glb"
+ },
+ {
+  "name": "CaveDweller_Skinned",
+  "winding": {
+   "Body": "kept",
+   "LegR": "kept",
+   "LegL": "kept",
+   "ArmR": "kept",
+   "ArmL": "kept",
+   "Head": "kept",
+   "FaceGlow": "kept"
+  },
+  "head": [
+   -0.0,
+   0.717,
+   0.109
+  ],
+  "bones": {
+   "Root": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "Spine": [
+    0.0,
+    0.025,
+    2.61
+   ],
+   "Head": [
+    0.0,
+    -0.43,
+    4.59
+   ],
+   "ArmL": [
+    0.66,
+    -0.115,
+    4.29
+   ],
+   "ForearmL": [
+    1.265,
+    -0.439,
+    2.513
+   ],
+   "ArmR": [
+    -0.66,
+    -0.115,
+    4.29
+   ],
+   "ForearmR": [
+    -1.293,
+    -0.516,
+    2.328
+   ],
+   "LegL": [
+    0.284,
+    0.025,
+    2.61
+   ],
+   "ShinL": [
+    0.368,
+    -0.097,
+    1.355
+   ],
+   "LegR": [
+    -0.284,
+    0.025,
+    2.61
+   ],
+   "ShinR": [
+    -0.368,
+    -0.097,
+    1.355
+   ]
+  },
+  "bend": {
+   "ArmL": "straight",
+   "ArmR": "straight",
+   "LegL": "straight",
+   "LegR": "straight"
+  },
+  "meshes": {
+   "CaveDweller_Skinned": {
+    "tris": 2095,
+    "verts": 4116,
+    "groups": [
+     "Spine",
+     "LegR",
+     "ShinR",
+     "LegL",
+     "ShinL",
+     "ArmR",
+     "ForearmR",
+     "ArmL",
+     "ForearmL",
+     "Head"
+    ],
+    "lo": [
+     -1.85,
+     -1.2,
+     0.01
+    ],
+    "hi": [
+     1.86,
+     0.49,
+     6.33
+    ]
+   },
+   "CaveDweller_Skinned_Glow": {
+    "tris": 440,
+    "verts": 960,
+    "groups": [
+     "Head"
+    ],
+    "lo": [
+     -0.26,
+     -1.03,
+     4.65
+    ],
+    "hi": [
+     0.26,
+     -0.17,
+     6.18
+    ]
+   }
+  },
+  "file": "C:\\Users\\Firebird\\AppData\\Local\\Temp\\claude\\b9bd4d93a1f67684\\1ad04678-130e-420a-a5d7-d7fd321b6d54\\scratchpad\\rigout\\CaveDweller_Skinned.glb"
+ },
+ {
+  "name": "RingMaw_Skinned",
+  "head": [
+   -0.048,
+   0.148,
+   -0.722
+  ],
+  "bones": {
+   "Root": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "Spine": [
+    0.0,
+    1.08,
+    2.08
+   ],
+   "Head": [
+    0.1,
+    -1.38,
+    2.61
+   ],
+   "ArmL": [
+    0.57,
+    -0.66,
+    2.37
+   ],
+   "ForearmL": [
+    1.143,
+    -0.919,
+    1.085
+   ],
+   "ArmR": [
+    -0.57,
+    -0.66,
+    2.37
+   ],
+   "ForearmR": [
+    -1.142,
+    -0.693,
+    1.084
+   ],
+   "LegL": [
+    0.43,
+    1.08,
+    2.08
+   ],
+   "ShinL": [
+    1.13,
+    0.963,
+    3.656
+   ],
+   "LegR": [
+    -0.43,
+    1.08,
+    2.08
+   ],
+   "ShinR": [
+    -1.13,
+    0.963,
+    3.656
+   ]
+  },
+  "bend": {
+   "ArmL": "bent",
+   "ArmR": "bent",
+   "LegL": "knee off the line",
+   "LegR": "knee off the line"
+  },
+  "meshes": {
+   "RingMaw_Skinned": {
+    "tris": 4509,
+    "verts": 11167,
+    "groups": [
+     "Head",
+     "ArmL",
+     "ForearmL",
+     "ArmR",
+     "ForearmR",
+     "Spine",
+     "LegL",
+     "ShinL",
+     "LegR",
+     "ShinR"
+    ],
+    "lo": [
+     -1.86,
+     -2.6,
+     0.01
+    ],
+    "hi": [
+     1.86,
+     2.44,
+     4.29
+    ]
+   }
+  },
+  "file": "C:\\Users\\Firebird\\AppData\\Local\\Temp\\claude\\b9bd4d93a1f67684\\1ad04678-130e-420a-a5d7-d7fd321b6d54\\scratchpad\\rigout\\RingMaw_Skinned.glb"
+ },
+ {
+  "name": "Parasite_Skinned",
+  "head": [
+   -0.018,
+   0.521,
+   -0.244
+  ],
+  "bones": {
+   "Root": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "Spine": [
+    0.0,
+    0.06,
+    2.214
+   ],
+   "Head": [
+    0.0,
+    -0.05,
+    4.264
+   ],
+   "ArmL": [
+    1.39,
+    0.03,
+    3.864
+   ],
+   "ForearmL": [
+    1.694,
+    -1.004,
+    2.528
+   ],
+   "ArmR": [
+    -1.39,
+    0.03,
+    3.864
+   ],
+   "ForearmR": [
+    -1.693,
+    -1.005,
+    2.526
+   ],
+   "LegL": [
+    0.676,
+    0.06,
+    2.214
+   ],
+   "ShinL": [
+    1.072,
+    -0.221,
+    1.171
+   ],
+   "LegR": [
+    -0.676,
+    0.06,
+    2.214
+   ],
+   "ShinR": [
+    -1.072,
+    -0.221,
+    1.171
+   ],
+   "TendrilL": [
+    0.791,
+    0.55,
+    3.714
+   ],
+   "TendrilR": [
+    -0.791,
+    0.55,
+    3.714
+   ]
+  },
+  "bend": {
+   "ArmL": "bent",
+   "ArmR": "bent",
+   "LegL": "straight",
+   "LegR": "straight"
+  },
+  "meshes": {
+   "Parasite_Skinned": {
+    "tris": 2468,
+    "verts": 6666,
+    "groups": [
+     "ArmL",
+     "ForearmL",
+     "ArmR",
+     "ForearmR",
+     "Spine",
+     "Head",
+     "LegL",
+     "ShinL",
+     "LegR",
+     "ShinR",
+     "TendrilL",
+     "TendrilR"
+    ],
+    "lo": [
+     -2.84,
+     -1.22,
+     0.01
+    ],
+    "hi": [
+     2.84,
+     0.69,
+     6.38
+    ]
+   },
+   "Parasite_Skinned_Glow": {
+    "tris": 24,
+    "verts": 48,
+    "groups": [
+     "Head"
+    ],
+    "lo": [
+     -0.4,
+     -1.19,
+     5.35
+    ],
+    "hi": [
+     0.4,
+     -1.15,
+     5.43
+    ]
+   }
+  },
+  "file": "C:\\Users\\Firebird\\AppData\\Local\\Temp\\claude\\b9bd4d93a1f67684\\1ad04678-130e-420a-a5d7-d7fd321b6d54\\scratchpad\\rigout\\Parasite_Skinned.glb"
+ }
+]

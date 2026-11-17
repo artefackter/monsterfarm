@@ -63,7 +63,7 @@ function R.Transfer(p,r)
  if r.transferring or R.Carriers[p]~=r or not td or not od or not rr or not P.Assigned[p] or not P.Near(p,P.Assigned[p].Gate.Position,Zone.GateRadius) then return false end
  if r.invalid or not Rules.HonestTrip((rr.Position-r.from).Magnitude,Rules.Speed(td),r.g.type,os.clock()-r.taken) then R.Return(p);return false end
  r.transferring=true
- local copy={id=r.g.id,type=r.g.type,monsterType=r.g.monsterType,location=r.g.location,progress=r.progress,pendingTransfer=true};table.insert(td.graveInventory,copy)
+ local copy={id=r.g.id,type=r.g.type,monsterType=r.g.monsterType,location=r.g.location,family=r.g.family,progress=r.progress,pendingTransfer=true};table.insert(td.graveInventory,copy)
  if not D.Save(r.owner) or not D.Save(p) or not D.SetOwner("grave_"..copy.id,r.owner.UserId,p.UserId) then
   table.remove(td.graveInventory,table.find(td.graveInventory,copy));r.transferring=false;R.Return(p);return false
  end

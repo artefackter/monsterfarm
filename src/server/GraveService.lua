@@ -10,6 +10,66 @@ function V.Progress(d,g) return math.clamp((os.time()-g.plantedAt)/math.max(1,G[
 function V.Remaining(d,g) return math.max(0,math.ceil(G[g.type].Seconds*(1-V.Boost(d))-(os.time()-g.plantedAt))) end
 function V.Slot(d) for i=1,Z.Cap(d,"Graves") do local found=false;for _,g in ipairs(d.graves) do if g.slot==i then found=true end end;if not found then return i end end end
 function V.New(kind,progress) return {id=game.HttpService:GenerateGUID(false),type=kind,progress=progress or 0} end
+-- Whose grave it is (owner, 2026-11-16: "it should be clear from a grave which mob drops - a coffin with horns, then
+-- a deer; with a smile, Verity; its rarity is the random part"; the next day: "that was about the graves in the
+-- ruins - so that you see on them which monster family drops"): the monster family it will give, g.family. A grave
+-- of the ruins has it from the moment it appears there and keeps it all the way to the farm (RoadService: the spot's
+-- Family, the carrier's, the bag's); any other is decided
+-- once, the first time anyone asks, by the odds a dig always had - a rarity by the grave's Weights, then any of its
+-- location's monsters of that rarity (LocationMonsters): that monster's family. The dig then rolls the rarity afresh
+-- within the family (ZombieService.Roll).
+function V.Family(g)
+ if g.family then return g.family end
+ local Col=require(S.MonsterCollection)
+ if g.monsterType then g.family=Col.Family(g.monsterType)
+ elseif g.starter then g.family="Deer"
+ else
+  local cfg=G[g.type];local tier=1;local roll=math.random()*100
+  for i,w in ipairs(cfg.Weights) do roll-=w;if roll<=0 then tier=i;break end end
+  tier=math.max(tier,cfg.MinTier or 1)
+  local types=require(S.Config.LocationMonsters).Types(g.location,tier)
+  g.family=Col.Family(types[math.random(#types)])
+ end
+ return g.family
+end
+-- The family's mark on a grave: its monster's head (the parts of one of its looks that go with the Head; all of it
+-- for one that has none), `size` studs at its largest (EMBLEM on the farm's own graves), sitting on the headstone.
+-- Returns how far it rises above. The ruins' graves and the one on a carrier's back wear it too (RoadService).
+-- The look is the rarity LOOK's (the punk: the farmer's straw hat, the same on every family, hid half of each head),
+-- or the family's nearest to it.
+local EMBLEM,LOOK=1.9,3
+function V.Emblem(m,head,cf,family,size)
+ local Col=require(S.MonsterCollection);local ZC=require(S.Config.ZombieConfig)
+ local id,tier
+ for step=0,#ZC.Types do
+  for _,t in ipairs({LOOK-step,LOOK+step}) do
+   for _,kind in ipairs(ZC.Types[t] or {}) do if Col.Family(kind)==family then id,tier=kind,t;break end end
+   if id then break end
+  end
+  if id then break end
+ end
+ if not id then return 0 end
+ local tmp=Instance.new("Model");local ok=pcall(function() Art.BuildZombie(tmp,cf,{type=id,tier=tier,mutation="None"}) end)
+ local mark=Instance.new("Model");mark.Name="Family"
+ if ok then
+  local headed=false
+  for _,q in tmp:GetChildren() do if q:IsA("BasePart") and q:GetAttribute("Attach")=="Head" then headed=true;break end end
+  for _,q in tmp:GetChildren() do
+   -- (no hats: the look's outfit says nothing about the family)
+   if q:IsA("BasePart") and (not headed or q:GetAttribute("Attach")=="Head") and not (q.Name=="Headwear" or q.Name=="Hood" or q.Name:sub(1,3)=="Hat") then q.Parent=mark end
+  end
+ end
+ tmp:Destroy()
+ if #mark:GetChildren()==0 then mark:Destroy();return 0 end
+ local _,box=mark:GetBoundingBox()
+ mark:ScaleTo((size or EMBLEM)/math.max(box.X,box.Y,box.Z))
+ local at,now=mark:GetBoundingBox()
+ local top=head.Position+Vector3.new(0,head.Size.Y/2,0)
+ mark:PivotTo(mark:GetPivot()+(top+Vector3.new(0,now.Y*.4,0)-at.Position))
+ for _,q in mark:GetChildren() do q.Anchored=true;q.CanCollide=false;q.CanQuery=false;q.CanTouch=false;q.CastShadow=false end
+ mark.Parent=m
+ return now.Y*.9
+end
 function V.Select(p,id)
  if not require(script.Parent.ActionService).CanAct(p) then return false end
  local d=require(script.Parent.DataService).Profiles[p];if not d or type(id)~="string" then return false end
@@ -38,7 +98,8 @@ function V.PlantAt(p,x,z)
  grave.slot=slot;grave.pos=point;grave.plantedAt=os.time()-(grave.progress or 0)*G[grave.type].Seconds*(1-V.Boost(d));grave.progress=nil
  table.insert(d.graves,grave);d.selectedGrave=nil;p:SetAttribute("SelectedGrave",nil)
  require(script.Parent.QuestService).Track(p,"plant",1)
- if not d.tutorialDone and d.tutorialStep==3 and grave.fromRoad then d.tutorialDone=true;d.tutorialStep=4;require(script.Parent.PetService).Starter(p) end
+ -- the road grave planted: on to the tutorial's last step, the gunsmith (WeaponService.FinishTutorial, 2026-11-15)
+ if not d.tutorialDone and d.tutorialStep==3 and grave.fromRoad then d.tutorialStep=4;require(script.Parent.WeaponService).TutorialStep(p,d) end
  V.Render(p,d);return true
 end
 -- Old entry point: plant at the spot the given cell used to have (kept for scripts that still speak in cells).
@@ -81,8 +142,12 @@ function V.Render(p,d)
  local click=Instance.new("ClickDetector");click.MaxActivationDistance=SC.DigDistance;click.Parent=head
  click.MouseClick:Connect(function(who) if who==p and V.OnDig then V.OnDig(p,g.slot) end end)
  if V.OnModel then V.OnModel(p,g,m,head) end
+ -- whose grave it is: that monster's head on the headstone (the timer rides above it)
+ local family=V.Family(g);m:SetAttribute("Family",family)
+ local rise=V.Emblem(m,head,cf,family)
  m.Parent=P.Assigned[p].Model;models[g.slot]=m
- timers[m]={timerLabel(head),hand}
+ local timer=timerLabel(head);timer.Parent.StudsOffsetWorldSpace+=Vector3.new(0,rise,0)
+ timers[m]={timer,hand}
  end
  local remaining=V.Remaining(d,g)
  m:SetAttribute("MonsterType",g.monsterType);m:SetAttribute("Remaining",remaining);m:SetAttribute("GraveType",g.type)

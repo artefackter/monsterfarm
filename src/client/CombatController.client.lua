@@ -61,7 +61,7 @@ local trapTile=slotButton('Slot3',172,function() pressSlot(4) end)
 local itemTile=slotButton('Slot4',282,pressGraves)
 local slots={selectShovel,weaponTile,itemTile,trapTile} -- indexed by the server's slot numbers
 for b,i in {[selectShovel]=1,[weaponTile]=2,[trapTile]=3,[itemTile]=4} do local n=Style.Text(b,tostring(i),UDim2.fromOffset(18,18),UDim2.fromOffset(4,2));n.TextColor3=Color3.new(1,1,1);n.TextXAlignment=Enum.TextXAlignment.Left;n.ZIndex=4 end
-local shovelIcon=Style.ModalArt(selectShovel,'shovel',p:GetAttribute('EquippedShovel') or 'Rusty',UDim2.fromOffset(62,58),UDim2.fromOffset(8,6))
+local shovelIcon=Style.ModalArt(selectShovel,'shovel',p:GetAttribute('EquippedShovel') or Shovels.Order[1],UDim2.fromOffset(62,58),UDim2.fromOffset(8,6))
 Style.ModalArt(itemTile,'grave',nil,UDim2.fromOffset(56,52),UDim2.fromOffset(11,6))
 Style.ModalArt(trapTile,'trap',nil,UDim2.fromOffset(56,52),UDim2.fromOffset(11,6))
 local function badgeText(parent,name)
@@ -246,7 +246,9 @@ local function aimPoint()
  local ch=p.Character;local head=ch and ch:FindFirstChild("Head");if not head then return end
  local f=workspace:FindFirstChild("Mutants");local targets={};local include={}
  for x in pairs(blockers) do if x.Parent and x.CanCollide and x.CanQuery then table.insert(include,x) end end
- for _,m in ipairs(f and f:GetChildren() or {}) do if m.PrimaryPart and (m:GetAttribute("Health") or 0)>0 and m:GetAttribute("State")~="Spawning" and not m:GetAttribute("Asleep") then -- a sleeping boss is only woken on purpose (its target button)
+ -- a sleeping boss is only woken on purpose (its target button); one awake but not fighting (woken by a thief,
+ -- chasing, walking back to bed) can't be hurt, so it isn't aimed at either (RoadService sets BossMode)
+ for _,m in ipairs(f and f:GetChildren() or {}) do local mode=m:GetAttribute("BossMode");if m.PrimaryPart and (m:GetAttribute("Health") or 0)>0 and m:GetAttribute("State")~="Spawning" and not m:GetAttribute("Asleep") and (mode==nil or mode=="fight") and m:GetAttribute("State")~="Staggered" then
   table.insert(include,m.PrimaryPart)
   local dist=(m.PrimaryPart.Position-head.Position).Magnitude
   if dist<=(state.range or C[state.equipped].Range) then table.insert(targets,{model=m,dist=dist}) end
@@ -312,7 +314,7 @@ end)
 local function updateGun(player)
  local ch=player.Character;local hand=ch and (ch:FindFirstChild("RightHand") or ch:FindFirstChild("Right Arm"));local id=player:GetAttribute("EquippedWeapon")
  local skin=player:GetAttribute("EquippedWeaponSkin") or "Default"
- local onBack=player:GetAttribute("ActiveSlot")~=2 or player:GetAttribute("WeaponHolstered") or player:GetAttribute("Training") or player:GetAttribute("DiggingGrave")
+ local onBack=player:GetAttribute("ActiveSlot")~=2 or player:GetAttribute("WeaponHolstered") or player:GetAttribute("Training") or workspace:GetServerTimeNow()<(player:GetAttribute("FinisherUntil") or 0) -- both hands on the shovel in a finisher or player:GetAttribute("DiggingGrave")
  if onBack then hand=nil end -- one weapon at a time (owner, 2026-11-13): a gun out of your hands is not shown on the back
  local old=heldModels[player];local from=old and old.model.PrimaryPart and old.model.PrimaryPart.CFrame
  if old and (not hand or old.hand~=hand or old.id~=id or old.skin~=skin or old.onBack~=onBack or not old.model.Parent) then old.model:Destroy();heldModels[player]=nil;old=nil end

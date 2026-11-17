@@ -1,0 +1,274 @@
+{
+  "status": "passed",
+  "exports": {
+    "AssimilatedAdventurer": {
+      "glb": {
+        "triangles": 2160,
+        "bones": 21,
+        "meshes": 1,
+        "materials": 1,
+        "normalized_weights": true,
+        "vertex_colors": true,
+        "deformation_checks": [
+          {
+            "bone": "Head",
+            "moved_vertices": 892,
+            "unrelated_group_unchanged": "Leg",
+            "protected_vertices": 384
+          },
+          {
+            "bone": "ChestFlapL",
+            "moved_vertices": 396,
+            "unrelated_group_unchanged": "ChestFlapR",
+            "protected_vertices": 410
+          }
+        ],
+        "animation_clips": 0,
+        "sha256": "3f608c4676b22388f9ed5dc3fb969406f71c503e9c3e5cf440ed2c6f0146b682"
+      },
+      "fbx": {
+        "triangles": 2160,
+        "bones": 21,
+        "meshes": 1,
+        "materials": 1,
+        "normalized_weights": true,
+        "vertex_colors": true,
+        "deformation_checks": [
+          {
+            "bone": "Head",
+            "moved_vertices": 864,
+            "unrelated_group_unchanged": "Leg",
+            "protected_vertices": 384
+          },
+          {
+            "bone": "ChestFlapL",
+            "moved_vertices": 388,
+            "unrelated_group_unchanged": "ChestFlapR",
+            "protected_vertices": 388
+          }
+        ],
+        "animation_clips": 0,
+        "sha256": "27e94b754ea1bb71e336e3ae293bf1a08261891d0c7c92200a98a5ff0a0611fc"
+      }
+    },
+    "PrimitiveSummoner": {
+      "glb": {
+        "triangles": 2032,
+        "bones": 16,
+        "meshes": 1,
+        "materials": 1,
+        "normalized_weights": true,
+        "vertex_colors": true,
+        "deformation_checks": [
+          {
+            "bone": "UpperJaw",
+            "moved_vertices": 916,
+            "unrelated_group_unchanged": "Leg",
+            "protected_vertices": 844
+          },
+          {
+            "bone": "LowerJaw",
+            "moved_vertices": 928,
+            "unrelated_group_unchanged": "UpperJaw",
+            "protected_vertices": 916
+          }
+        ],
+        "animation_clips": 0,
+        "sha256": "b0c3c9077eab5052e85b2cd93b6b39024036dc0d2c7f7c1e523c2f00d3e01dc2"
+      },
+      "fbx": {
+        "triangles": 2032,
+        "bones": 16,
+        "meshes": 1,
+        "materials": 1,
+        "normalized_weights": true,
+        "vertex_colors": true,
+        "deformation_checks": [
+          {
+            "bone": "UpperJaw",
+            "moved_vertices": 888,
+            "unrelated_group_unchanged": "Leg",
+            "protected_vertices": 768
+          },
+          {
+            "bone": "LowerJaw",
+            "moved_vertices": 912,
+            "unrelated_group_unchanged": "UpperJaw",
+            "protected_vertices": 888
+          }
+        ],
+        "animation_clips": 0,
+        "sha256": "602e9d58e41ab2e5f9b6f5459680dc65e299e5ba3e8ca8410d113cc0fb02cef9"
+      }
+    },
+    "ParasiteExisting": {
+      "glb": {
+        "triangles": 2492,
+        "bones": 9,
+        "meshes": 1,
+        "materials": 1,
+        "normalized_weights": true,
+        "vertex_colors": true,
+        "deformation_checks": [
+          {
+            "bone": "Head",
+            "moved_vertices": 3036,
+            "unrelated_group_unchanged": "Leg",
+            "protected_vertices": 680
+          },
+          {
+            "bone": "ArmL",
+            "moved_vertices": 738,
+            "unrelated_group_unchanged": "ArmR",
+            "protected_vertices": 742
+          }
+        ],
+        "animation_clips": 0,
+        "sha256": "a8bb4b0ff06695c26102e94bf7f7328cafb0735cec45d5893f7532704f931620"
+      },
+      "fbx": {
+        "triangles": 2492,
+        "bones": 9,
+        "meshes": 1,
+        "materials": 1,
+        "normalized_weights": true,
+        "vertex_colors": true,
+        "deformation_checks": [
+          {
+            "bone": "Head",
+            "moved_vertices": 2434,
+            "unrelated_group_unchanged": "Leg",
+            "protected_vertices": 576
+          },
+          {
+            "bone": "ArmL",
+            "moved_vertices": 576,
+            "unrelated_group_unchanged": "ArmR",
+            "protected_vertices": 576
+          }
+        ],
+        "animation_clips": 0,
+        "sha256": "8da6c1cbc4fefb4a53f9b0cdc9ecfeb5f1716cd68559450e519438cb20633b53"
+      }
+    },
+    "ParasiteAdapted": {
+      "glb": {
+        "triangles": 2984,
+        "bones": 9,
+        "meshes": 1,
+        "materials": 1,
+        "normalized_weights": true,
+        "vertex_colors": true,
+        "deformation_checks": [
+          {
+            "bone": "Head",
+            "moved_vertices": 3036,
+            "unrelated_group_unchanged": "Leg",
+            "protected_vertices": 680
+          },
+          {
+            "bone": "ArmL",
+            "moved_vertices": 912,
+            "unrelated_group_unchanged": "ArmR",
+            "protected_vertices": 918
+          }
+        ],
+        "animation_clips": 0,
+        "sha256": "dafcf31b732f481364556776503d0124e465789ded92b1079f60d8509481b181"
+      },
+      "fbx": {
+        "triangles": 2984,
+        "bones": 9,
+        "meshes": 1,
+        "materials": 1,
+        "normalized_weights": true,
+        "vertex_colors": true,
+        "deformation_checks": [
+          {
+            "bone": "Head",
+            "moved_vertices": 2434,
+            "unrelated_group_unchanged": "Leg",
+            "protected_vertices": 576
+          },
+          {
+            "bone": "ArmL",
+            "moved_vertices": 748,
+            "unrelated_group_unchanged": "ArmR",
+            "protected_vertices": 748
+          }
+        ],
+        "animation_clips": 0,
+        "sha256": "d21783166d962852618df0242f15986fb36d05ab9c1da42076ecbe654a32cfbc"
+      }
+    },
+    "AdaptedViscera": {
+      "glb": {
+        "triangles": 9236,
+        "bones": 46,
+        "meshes": 1,
+        "materials": 1,
+        "normalized_weights": true,
+        "vertex_colors": true,
+        "deformation_checks": [
+          {
+            "bone": "Mouth",
+            "moved_vertices": 16672,
+            "unrelated_group_unchanged": "Leg",
+            "protected_vertices": 1174
+          },
+          {
+            "bone": "Tentacle01_2",
+            "moved_vertices": 1226,
+            "unrelated_group_unchanged": "Tentacle02",
+            "protected_vertices": 1992
+          }
+        ],
+        "animation_clips": 0,
+        "sha256": "dfe02142e27498f4105832731c70ea804f51b43eda9579c13a62b9e0b3348139"
+      },
+      "fbx": {
+        "triangles": 9236,
+        "bones": 46,
+        "meshes": 1,
+        "materials": 1,
+        "normalized_weights": true,
+        "vertex_colors": true,
+        "deformation_checks": [
+          {
+            "bone": "Mouth",
+            "moved_vertices": 14524,
+            "unrelated_group_unchanged": "Leg",
+            "protected_vertices": 1152
+          },
+          {
+            "bone": "Tentacle01_2",
+            "moved_vertices": 1056,
+            "unrelated_group_unchanged": "Tentacle02",
+            "protected_vertices": 1728
+          }
+        ],
+        "animation_clips": 0,
+        "sha256": "6789d04ce65e65f16aa978eff3c8d5387c612c9922c65c821fec1fa50a7c4199"
+      }
+    }
+  },
+  "protected_game_files_checked": 175,
+  "protected_game_files_changed": [],
+  "approved_dredge_files_checked": 10,
+  "approved_dredge_files_changed": [],
+  "source_parasite_files_checked": 11,
+  "source_parasite_files_changed": [],
+  "existing_parasite_topology": {
+    "ParasiteExisting": {
+      "original_parts": 9,
+      "original_triangle_indices_preserved": true,
+      "head_legs_hands_tendrils_retained": true
+    },
+    "ParasiteAdapted": {
+      "original_parts": 9,
+      "original_triangle_indices_preserved": true,
+      "head_legs_hands_tendrils_retained": true
+    }
+  },
+  "scope": "Offline geometry and skinning verification. No Roblox Studio import or runtime test."
+}

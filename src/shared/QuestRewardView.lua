@@ -68,7 +68,7 @@ function V.Create(panel,kind,state,send,locale)
    if id=='upgrade' then icon(f,'house',8,10,205,112)
    elseif id=='hatch' then art(f,'pumpkin','Pumpkin',8,10,205,112)
    elseif id=='kill' or id=='rare' then
-    art(f,'grave','Stone',65,10,135,112);art(f,'shovel','Rusty',4,10,95,112)
+    art(f,'grave','Stone',65,10,135,112);art(f,'shovel','Chainsaw',4,10,95,112)
    elseif id=='time' or id=='dawn' then icon(f,'sun',24,14,165,105)
    elseif id=='earn' then art(f,'cash',nil,18,15,185,100)
    else art(f,'grave','Stone',15,6,192,120) end

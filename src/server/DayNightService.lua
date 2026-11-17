@@ -52,6 +52,8 @@ local function setup()
 	Lighting.GeographicLatitude = 28
 	Lighting.FogEnd = 100000
 	bloom.Intensity, bloom.Size, bloom.Threshold = 0.12, 24, 1.9
+	-- No bloom since 2026-11-15 (owner: phones run hot): it was the costliest full-screen pass and at 0.12 hardly showed
+	bloom.Enabled = false
 	sky.SunAngularSize = 16
 	sky.MoonAngularSize = 24
 	sky.StarCount = 4000

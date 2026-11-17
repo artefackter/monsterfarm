@@ -1,0 +1,1226 @@
+{
+  "longmaw-v5/Longmaw_Aggressive_manifest.json": {
+    "bytes": 34889,
+    "sha256": "5449187f1e15e4b2e7a3c7d61d4b11f78c1884dd2cd92618fb0576110ca11dc9"
+  },
+  "longmaw-v5/Longmaw_Aggressive_rig.json": {
+    "bytes": 4941,
+    "sha256": "614f53ff8e14a98ca771657e89ce2ba5b6bf09051628b1fe0a6587d75182924c"
+  },
+  "longmaw-v5/Longmaw_Idle_manifest.json": {
+    "bytes": 34360,
+    "sha256": "62411c10e5903c19fe758fabfbe677731fa3182b1a21725bd5207bd07a8235f2"
+  },
+  "longmaw-v5/Longmaw_Idle_rig.json": {
+    "bytes": 4938,
+    "sha256": "d7a9ee8170530f093e1931123ddfa1deb707f42414c29293d2aa5451c15461c0"
+  },
+  "longmaw-v5/README.md": {
+    "bytes": 4693,
+    "sha256": "287453bfa3ed59ec08d6ed0387d4fcdf06cd3a5ee72619e8be8574b85b8330c9"
+  },
+  "longmaw-v5/approval.json": {
+    "bytes": 1174,
+    "sha256": "81cb62c9e5c4016d6679700f2f842d0b502db879aa2bfdc2124e20b048e9efcf"
+  },
+  "longmaw-v5/build.py": {
+    "bytes": 10423,
+    "sha256": "b9ce9b3f64990c056eacaaceba051f5bef1b457b0c4a547ec1a78eabe26d23b8"
+  },
+  "longmaw-v5/compose_review.py": {
+    "bytes": 1976,
+    "sha256": "dafe712ad28afeaa9e179d3d169d89f8735b524764c06fb35e26fa5b3eb4e95a"
+  },
+  "longmaw-v5/creature.py": {
+    "bytes": 5613,
+    "sha256": "e2176fb8124d478f1b2d9a9384dd9521e4f7373c938520e85aa5d9310fbf55b9"
+  },
+  "longmaw-v5/geometry/Aggressive/Longmaw_Aggressive.Cheek.-1.json": {
+    "bytes": 3280,
+    "sha256": "77915bc37444181ad85ea7150788590e9f28ea3119aa26fb8266ffe6be763b1e"
+  },
+  "longmaw-v5/geometry/Aggressive/Longmaw_Aggressive.Cheek.1.json": {
+    "bytes": 3327,
+    "sha256": "5dfbbfa889ee2c30e1928268a3dcd7e8db0595f5a5cf65e3007a1bbae4d4d6a9"
+  },
+  "longmaw-v5/geometry/Aggressive/Longmaw_Aggressive.EyeSocket.-1.json": {
+    "bytes": 17578,
+    "sha256": "48b3aa5e60bea7d03b247f99ed4e52f0d0fcd072fbca307634aeac3ed5344f66"
+  },
+  "longmaw-v5/geometry/Aggressive/Longmaw_Aggressive.EyeSocket.1.json": {
+    "bytes": 17577,
+    "sha256": "c8c06604435aabb46b24b8d832943fd52a8c209905cc8d4797f723d75feed408"
+  },
+  "longmaw-v5/geometry/Aggressive/Longmaw_Aggressive.EyeWhite.L.json": {
+    "bytes": 3035,
+    "sha256": "4b82f4b34d8325682c76e6b5cb79d9f5a5ec0b3bcfc8e6f18da10916e5acb79c"
+  },
+  "longmaw-v5/geometry/Aggressive/Longmaw_Aggressive.EyeWhite.R.json": {
+    "bytes": 3035,
+    "sha256": "7ab860b89770332238819e7ea31e7d4aea6fc35c817c2424616bcec2b8f0da10"
+  },
+  "longmaw-v5/geometry/Aggressive/Longmaw_Aggressive.FrontLeg.L.json": {
+    "bytes": 18742,
+    "sha256": "3e785855efcbdea23be4c8b9da50f5f28737901d97846bd9794b7f95f493d726"
+  },
+  "longmaw-v5/geometry/Aggressive/Longmaw_Aggressive.FrontLeg.R.json": {
+    "bytes": 18619,
+    "sha256": "a34a0849401cc1de3ce1b3ee2268b9e099533f04781de81461a891bd94d1a89e"
+  },
+  "longmaw-v5/geometry/Aggressive/Longmaw_Aggressive.FrontPaw.L.json": {
+    "bytes": 49603,
+    "sha256": "d984ae5311b42d0d01e96a87a5f523c9e7dae14c3496cb89c2664336f1ee1b4d"
+  },
+  "longmaw-v5/geometry/Aggressive/Longmaw_Aggressive.FrontPaw.R.json": {
+    "bytes": 49653,
+    "sha256": "74140dad2d2c688d590a17c3512c591adf80d43b02104cf368c11868f421d22d"
+  },
+  "longmaw-v5/geometry/Aggressive/Longmaw_Aggressive.HindLeg.L.json": {
+    "bytes": 30612,
+    "sha256": "6ea71d73e5668c9352b29a117663e825a82410bc78d1e9603eeb8a39126a9959"
+  },
+  "longmaw-v5/geometry/Aggressive/Longmaw_Aggressive.HindLeg.R.json": {
+    "bytes": 30576,
+    "sha256": "80f8f03401da1c3ff831dfc7171ac45630acdd4f0233ee4f2e8fa3e8fd0f9d69"
+  },
+  "longmaw-v5/geometry/Aggressive/Longmaw_Aggressive.HindPaw.L.json": {
+    "bytes": 49655,
+    "sha256": "a82b0c09b15da0bbd28b9b6607d5fa273cb6aed7abd5ef2a4c292bf743590793"
+  },
+  "longmaw-v5/geometry/Aggressive/Longmaw_Aggressive.HindPaw.R.json": {
+    "bytes": 49605,
+    "sha256": "f9a3f7e67888c75a99bbb59a32bf31d5a88c1bca24ece0692fe1c2f589dc5a96"
+  },
+  "longmaw-v5/geometry/Aggressive/Longmaw_Aggressive.LowerIncisor0.json": {
+    "bytes": 2094,
+    "sha256": "17e4af15398797402ce8789d848e3d94ad95a7a1a03415594189a85771be8dba"
+  },
+  "longmaw-v5/geometry/Aggressive/Longmaw_Aggressive.LowerIncisor1.json": {
+    "bytes": 2094,
+    "sha256": "8503a2225c7ac621d8fc1fa3b06125e26e0ee11dddb64f297d9382ad04b9a38e"
+  },
+  "longmaw-v5/geometry/Aggressive/Longmaw_Aggressive.LowerIncisor2.json": {
+    "bytes": 2094,
+    "sha256": "52d38bc6f46b8ce42241cda667344b38737af5db9bbfb3e3399424b44f84402b"
+  },
+  "longmaw-v5/geometry/Aggressive/Longmaw_Aggressive.LowerPalate.json": {
+    "bytes": 4356,
+    "sha256": "ea6eead581a8279efe3823020562166a269c1005ca1fc027d3bda402864131a7"
+  },
+  "longmaw-v5/geometry/Aggressive/Longmaw_Aggressive.LowerTooth-1_0.json": {
+    "bytes": 2106,
+    "sha256": "f1a72b807ca52ab4369b6536ceaed863b0f7dc4658dcd4adc17bd6913c711ede"
+  },
+  "longmaw-v5/geometry/Aggressive/Longmaw_Aggressive.LowerTooth-1_1.json": {
+    "bytes": 2114,
+    "sha256": "b7a2ae7247deb3fcf8cf4a1a00275bac5b2c7d7db00982a85a9a860a22c94099"
+  },
+  "longmaw-v5/geometry/Aggressive/Longmaw_Aggressive.LowerTooth-1_10.json": {
+    "bytes": 2107,
+    "sha256": "b6e06f21ad67b016589139274c7b232498c4b630d1311c7710413f1c0e66244d"
+  },
+  "longmaw-v5/geometry/Aggressive/Longmaw_Aggressive.LowerTooth-1_11.json": {
+    "bytes": 2133,
+    "sha256": "e4b5122340cb98d63335e0a9badbab0a996185902dbfd5e34103fb7b2b9ae324"
+  },
+  "longmaw-v5/geometry/Aggressive/Longmaw_Aggressive.LowerTooth-1_12.json": {
+    "bytes": 2106,
+    "sha256": "fa68127263238569650d2071fd38005a3cb5b0340f52004c071119ba83e46c67"
+  },
+  "longmaw-v5/geometry/Aggressive/Longmaw_Aggressive.LowerTooth-1_13.json": {
+    "bytes": 2110,
+    "sha256": "bde632a4b9dae3c9f2cd3cda84592af66d722f8b93ed2ff11483e560ca5d172a"
+  },
+  "longmaw-v5/geometry/Aggressive/Longmaw_Aggressive.LowerTooth-1_14.json": {
+    "bytes": 2119,
+    "sha256": "952be34d06a1bd9af7d930646901ad9f1dc7dd0c7dac6b22eaae5843b01c82f7"
+  },
+  "longmaw-v5/geometry/Aggressive/Longmaw_Aggressive.LowerTooth-1_2.json": {
+    "bytes": 2060,
+    "sha256": "c28d6476c07dd0c37f23aefb7e681380f8617f4e66c3ee0f2ec9848d95e74345"
+  },
+  "longmaw-v5/geometry/Aggressive/Longmaw_Aggressive.LowerTooth-1_3.json": {
+    "bytes": 2095,
+    "sha256": "c3a67148fd932e1f8c70e2ac91f54a071e3435d931295a83b8c05e76721a7465"
+  },
+  "longmaw-v5/geometry/Aggressive/Longmaw_Aggressive.LowerTooth-1_4.json": {
+    "bytes": 2105,
+    "sha256": "26adfcf3a4986a6bed7f138e891d7ec3bf0262ea00f7cdc8ddcd1fb275dceddd"
+  },
+  "longmaw-v5/geometry/Aggressive/Longmaw_Aggressive.LowerTooth-1_5.json": {
+    "bytes": 2109,
+    "sha256": "4e5df5fb1736c6209ecedff7b3d4cbcd9d7c92a6fb3ce1c5bff02142ddc25ea1"
+  },
+  "longmaw-v5/geometry/Aggressive/Longmaw_Aggressive.LowerTooth-1_6.json": {
+    "bytes": 2099,
+    "sha256": "b3b85c90525436a47015df3a5274be753f5a73c30dacda9fe44a3e480288cff9"
+  },
+  "longmaw-v5/geometry/Aggressive/Longmaw_Aggressive.LowerTooth-1_7.json": {
+    "bytes": 2097,
+    "sha256": "3869e76a98327ce5fc75709273fc9db6722a54f100e32c43b8c291d4a7535e5a"
+  },
+  "longmaw-v5/geometry/Aggressive/Longmaw_Aggressive.LowerTooth-1_8.json": {
+    "bytes": 2108,
+    "sha256": "47967d057b9d9d97a20c20a574f1552d7b91f5224177f7a1a104fee5a4a27ad8"
+  },
+  "longmaw-v5/geometry/Aggressive/Longmaw_Aggressive.LowerTooth-1_9.json": {
+    "bytes": 2115,
+    "sha256": "86b79347916cbb50778f0373d4d0f16900e4eee92bf6c1023f2d42c64cf684ad"
+  },
+  "longmaw-v5/geometry/Aggressive/Longmaw_Aggressive.LowerTooth1_0.json": {
+    "bytes": 2105,
+    "sha256": "da42347793b744cd5375f92851d68c740685a4361c542253e4408fbb52aced47"
+  },
+  "longmaw-v5/geometry/Aggressive/Longmaw_Aggressive.LowerTooth1_1.json": {
+    "bytes": 2113,
+    "sha256": "ce6eb134dee448e8868a3207cbe534d894682c60d7ee76f21b2823573e291778"
+  },
+  "longmaw-v5/geometry/Aggressive/Longmaw_Aggressive.LowerTooth1_10.json": {
+    "bytes": 2094,
+    "sha256": "42901f0c4b8c6d0a8161dfa667b0a99f3fc89e7888f310e6bd069579585b88eb"
+  },
+  "longmaw-v5/geometry/Aggressive/Longmaw_Aggressive.LowerTooth1_11.json": {
+    "bytes": 2120,
+    "sha256": "55b7e80dcf5a6dc3c862233c5f891418f185bfeeed81f657cf593949e72f3f0a"
+  },
+  "longmaw-v5/geometry/Aggressive/Longmaw_Aggressive.LowerTooth1_12.json": {
+    "bytes": 2093,
+    "sha256": "881d09358093349c16b8592b194888b7d7124b305bbfcc69b020645bb2b716ea"
+  },
+  "longmaw-v5/geometry/Aggressive/Longmaw_Aggressive.LowerTooth1_13.json": {
+    "bytes": 2097,
+    "sha256": "4e8a15246023d4e52fb55ed82fdfaa371eeb6994678139d0bee5392835a2fa9c"
+  },
+  "longmaw-v5/geometry/Aggressive/Longmaw_Aggressive.LowerTooth1_14.json": {
+    "bytes": 2106,
+    "sha256": "e13715ec7df239ee22a109ece06e99d20ed75f284c3ba4524239122db241dd70"
+  },
+  "longmaw-v5/geometry/Aggressive/Longmaw_Aggressive.LowerTooth1_2.json": {
+    "bytes": 2059,
+    "sha256": "cb5ce058b865b0530abc921bfa442901d5f245a727768dad0e12ff0a09b58ec0"
+  },
+  "longmaw-v5/geometry/Aggressive/Longmaw_Aggressive.LowerTooth1_3.json": {
+    "bytes": 2082,
+    "sha256": "6e423f21736fe7e10d157a89332797e7c8e609db8a220fe0d631cd17922307ab"
+  },
+  "longmaw-v5/geometry/Aggressive/Longmaw_Aggressive.LowerTooth1_4.json": {
+    "bytes": 2104,
+    "sha256": "a449d60d8837b9d699271e54ecf875e4455415613277b20a64353b2a7b5682b0"
+  },
+  "longmaw-v5/geometry/Aggressive/Longmaw_Aggressive.LowerTooth1_5.json": {
+    "bytes": 2108,
+    "sha256": "65842c3fb263b6e201f642779da2d14917c9d792b6bbb9493e00e249a1b5a281"
+  },
+  "longmaw-v5/geometry/Aggressive/Longmaw_Aggressive.LowerTooth1_6.json": {
+    "bytes": 2098,
+    "sha256": "eb266e18081a02503b525361b3dc8d3de9a8219b0306dc8ec55125931e6e1bca"
+  },
+  "longmaw-v5/geometry/Aggressive/Longmaw_Aggressive.LowerTooth1_7.json": {
+    "bytes": 2084,
+    "sha256": "ae4236bad583a4d2b499a6620032acd53cc903f573bf80cd90f2925650bb6f53"
+  },
+  "longmaw-v5/geometry/Aggressive/Longmaw_Aggressive.LowerTooth1_8.json": {
+    "bytes": 2095,
+    "sha256": "4f010d19eccff185d7a7a3211bcd159124284a0367b2cdaadd5986f3813a8a23"
+  },
+  "longmaw-v5/geometry/Aggressive/Longmaw_Aggressive.LowerTooth1_9.json": {
+    "bytes": 2102,
+    "sha256": "def4c124823151223b20a6c3717035004bb605d9bede25e2ea9f9a1a2781a232"
+  },
+  "longmaw-v5/geometry/Aggressive/Longmaw_Aggressive.Mandible.json": {
+    "bytes": 6835,
+    "sha256": "41fa7fdb0af0907793f297493813a3dd378a6359f1ad143ad65777c6c389f33a"
+  },
+  "longmaw-v5/geometry/Aggressive/Longmaw_Aggressive.Neck.json": {
+    "bytes": 8762,
+    "sha256": "62728b4ec138cceff01a2c4d308f6b13b1cf8a287e365af8720b6f33167bb53c"
+  },
+  "longmaw-v5/geometry/Aggressive/Longmaw_Aggressive.Skull.json": {
+    "bytes": 110885,
+    "sha256": "c60226770e169ca224b619d074c96a5fce3b940f688c2418b7a3fc112d3688bc"
+  },
+  "longmaw-v5/geometry/Aggressive/Longmaw_Aggressive.Torso.json": {
+    "bytes": 35286,
+    "sha256": "a21a31d21da3fc5f72c0462891070d744fe06a85a1690d5ee18068f501aa1f1d"
+  },
+  "longmaw-v5/geometry/Aggressive/Longmaw_Aggressive.UpperIncisor0.json": {
+    "bytes": 2078,
+    "sha256": "0bdfcb3d988a85a2fba8936d377949f3bb9d8834a6d34a0bdbdbffd751638c63"
+  },
+  "longmaw-v5/geometry/Aggressive/Longmaw_Aggressive.UpperIncisor1.json": {
+    "bytes": 2078,
+    "sha256": "8cc7fd3a523fb550d85b01c66204d8ea75ecb379836a66e67d0dafde2dae6b73"
+  },
+  "longmaw-v5/geometry/Aggressive/Longmaw_Aggressive.UpperIncisor2.json": {
+    "bytes": 2078,
+    "sha256": "452db9b853098f0da76020baf2934a23e0ec65ecbf67261164880629d52ee4b4"
+  },
+  "longmaw-v5/geometry/Aggressive/Longmaw_Aggressive.UpperMuzzle.json": {
+    "bytes": 37684,
+    "sha256": "249da86a1ef397d8c96f205e88fab9f3ccd918c065052df44243e9e1d3eeb9fc"
+  },
+  "longmaw-v5/geometry/Aggressive/Longmaw_Aggressive.UpperPalate.json": {
+    "bytes": 4424,
+    "sha256": "2c5f795e04971add0ee1e1cb16c4f659b1d336c5f1487c85f151c09d147af50c"
+  },
+  "longmaw-v5/geometry/Aggressive/Longmaw_Aggressive.UpperTooth-1_0.json": {
+    "bytes": 2115,
+    "sha256": "37ecc7a30d09f1e1d6b0d1b9dde15cb78069ed972b52af733d9f47830db9a24e"
+  },
+  "longmaw-v5/geometry/Aggressive/Longmaw_Aggressive.UpperTooth-1_1.json": {
+    "bytes": 2117,
+    "sha256": "fc28a93e205e5c9a0fe2fd284ac83dc960929be259be848ab21189daad72ad8e"
+  },
+  "longmaw-v5/geometry/Aggressive/Longmaw_Aggressive.UpperTooth-1_10.json": {
+    "bytes": 2138,
+    "sha256": "56b576a64d17d573cadb30b0e227efa795f75af02e1bdafb10e2d94d833f7f98"
+  },
+  "longmaw-v5/geometry/Aggressive/Longmaw_Aggressive.UpperTooth-1_11.json": {
+    "bytes": 2121,
+    "sha256": "bdd4e5a842480109d84833a041109ff69f9c47e5c0ebcf41c31a1a13ab70b48f"
+  },
+  "longmaw-v5/geometry/Aggressive/Longmaw_Aggressive.UpperTooth-1_12.json": {
+    "bytes": 2112,
+    "sha256": "4c4698a42ae41f5ee24a92d468973b9a42e10b38cbd2dac44732183e72e22664"
+  },
+  "longmaw-v5/geometry/Aggressive/Longmaw_Aggressive.UpperTooth-1_13.json": {
+    "bytes": 2115,
+    "sha256": "17b26fdc3dc0c9af3c71c1ab28422742814fa4474d55238bffcbe5b6d615c703"
+  },
+  "longmaw-v5/geometry/Aggressive/Longmaw_Aggressive.UpperTooth-1_14.json": {
+    "bytes": 2126,
+    "sha256": "0ac3b899de9b9619d67770ca59f8ff29c3cd96dabd1ac9a240009bede3687602"
+  },
+  "longmaw-v5/geometry/Aggressive/Longmaw_Aggressive.UpperTooth-1_2.json": {
+    "bytes": 2085,
+    "sha256": "fc9745364cef802d1a34fecc7dfebcc73d264164b68a722729fe22cdfb5b891e"
+  },
+  "longmaw-v5/geometry/Aggressive/Longmaw_Aggressive.UpperTooth-1_3.json": {
+    "bytes": 2096,
+    "sha256": "04b02391e89aa6e338cc35e58e7bd50e336af229dfe264be344e23bdc571ee44"
+  },
+  "longmaw-v5/geometry/Aggressive/Longmaw_Aggressive.UpperTooth-1_4.json": {
+    "bytes": 2107,
+    "sha256": "fcff1b833ae95bba598924486b80bceca0008d087e0557b05698e38ee1369ee4"
+  },
+  "longmaw-v5/geometry/Aggressive/Longmaw_Aggressive.UpperTooth-1_5.json": {
+    "bytes": 2116,
+    "sha256": "bd659531cdfb7d16014b525e9a1008f2737ef856496e27329cf148a93e59cdcd"
+  },
+  "longmaw-v5/geometry/Aggressive/Longmaw_Aggressive.UpperTooth-1_6.json": {
+    "bytes": 2102,
+    "sha256": "c06177863bf27c212520de1c5a091199b00eaab8355e16b42deffde5e5c648e6"
+  },
+  "longmaw-v5/geometry/Aggressive/Longmaw_Aggressive.UpperTooth-1_7.json": {
+    "bytes": 2119,
+    "sha256": "0fa7db27a891601210f34bf2c2875b2eb09a6413d589957a84fc9b99c53ac83d"
+  },
+  "longmaw-v5/geometry/Aggressive/Longmaw_Aggressive.UpperTooth-1_8.json": {
+    "bytes": 2118,
+    "sha256": "e955bea3841e16d003c62c85f5f9624f5ab6e4f80c99ea99e542f1a867da08eb"
+  },
+  "longmaw-v5/geometry/Aggressive/Longmaw_Aggressive.UpperTooth-1_9.json": {
+    "bytes": 2136,
+    "sha256": "8fd04a1a06110a4f0b52181ac5867fabfab0a25bb47f2d7c9169b206d2abdf01"
+  },
+  "longmaw-v5/geometry/Aggressive/Longmaw_Aggressive.UpperTooth1_0.json": {
+    "bytes": 2114,
+    "sha256": "825928e9caa98a169d4ed4b8616d26d0de0a4b5681bd8852d4c0535593f7261c"
+  },
+  "longmaw-v5/geometry/Aggressive/Longmaw_Aggressive.UpperTooth1_1.json": {
+    "bytes": 2116,
+    "sha256": "04554e1eef9ca1b61d9d4a3a1154765afd907d904ba07d9c78ea8b6e2cbaadbf"
+  },
+  "longmaw-v5/geometry/Aggressive/Longmaw_Aggressive.UpperTooth1_10.json": {
+    "bytes": 2125,
+    "sha256": "3149cf20d472d9c50251c98db8cee2d6b9f27fe15222c0c6b3f525bd297d82ce"
+  },
+  "longmaw-v5/geometry/Aggressive/Longmaw_Aggressive.UpperTooth1_11.json": {
+    "bytes": 2108,
+    "sha256": "e049d6654d5f2fd8b50c58a488632988d1730b1d65f8e54a4d62a1b030c40948"
+  },
+  "longmaw-v5/geometry/Aggressive/Longmaw_Aggressive.UpperTooth1_12.json": {
+    "bytes": 2099,
+    "sha256": "87548c200a96beff7f623fac0034a9cda8b0d4f918f0757689801b854ad24fac"
+  },
+  "longmaw-v5/geometry/Aggressive/Longmaw_Aggressive.UpperTooth1_13.json": {
+    "bytes": 2102,
+    "sha256": "75200bcde36360d5e951093543e2cb272ac1c61229bc9fd4670e2d46ae1cc2bf"
+  },
+  "longmaw-v5/geometry/Aggressive/Longmaw_Aggressive.UpperTooth1_14.json": {
+    "bytes": 2113,
+    "sha256": "a207d068cb76fb794e11793b8909b11d178fe8c9b06cb1bdd10b0b1f101d0099"
+  },
+  "longmaw-v5/geometry/Aggressive/Longmaw_Aggressive.UpperTooth1_2.json": {
+    "bytes": 2084,
+    "sha256": "85d0c05baa9e905bf115992aa6415afaa49ff151eca89816126b0e3e0805aed9"
+  },
+  "longmaw-v5/geometry/Aggressive/Longmaw_Aggressive.UpperTooth1_3.json": {
+    "bytes": 2083,
+    "sha256": "aa8e957bc19d7940bda6f750cb5739ddf39f974edbe7388f3817481bedfa3642"
+  },
+  "longmaw-v5/geometry/Aggressive/Longmaw_Aggressive.UpperTooth1_4.json": {
+    "bytes": 2094,
+    "sha256": "627007418797ce04070ab831bf56c16b4259c8ba77f485af9445870b97776e5f"
+  },
+  "longmaw-v5/geometry/Aggressive/Longmaw_Aggressive.UpperTooth1_5.json": {
+    "bytes": 2103,
+    "sha256": "b8c34cf62f9ce335d329a97c7d58656163cb743d5161a73b29ebdd0fe5fd3fab"
+  },
+  "longmaw-v5/geometry/Aggressive/Longmaw_Aggressive.UpperTooth1_6.json": {
+    "bytes": 2089,
+    "sha256": "4bf48e28cee553d9fca0750985736e2a6142d9893990fbb63303d97dd1a06de0"
+  },
+  "longmaw-v5/geometry/Aggressive/Longmaw_Aggressive.UpperTooth1_7.json": {
+    "bytes": 2106,
+    "sha256": "0360e6b0f88df51c3ca7e14989a37af37e399ef0aab4e77f1209697cdcf66265"
+  },
+  "longmaw-v5/geometry/Aggressive/Longmaw_Aggressive.UpperTooth1_8.json": {
+    "bytes": 2105,
+    "sha256": "7f4c52d42550608dc1d2ebf15d75f400a79278574e3f380ba1623d32376aaba3"
+  },
+  "longmaw-v5/geometry/Aggressive/Longmaw_Aggressive.UpperTooth1_9.json": {
+    "bytes": 2123,
+    "sha256": "69747ddb6833e9814d1b0735a4e397de26747ed5646ffda3ef6e9a8cbaec3041"
+  },
+  "longmaw-v5/geometry/Idle/Longmaw_Idle.Cheek.-1.json": {
+    "bytes": 3285,
+    "sha256": "09e27e349d2b08e8fefa555501018f2e427f4c00a3099a009be63400000b899f"
+  },
+  "longmaw-v5/geometry/Idle/Longmaw_Idle.Cheek.1.json": {
+    "bytes": 3332,
+    "sha256": "0053ba602b7f91a097d27b12871b792fcc3ea2180c76b1800c491f277b841a98"
+  },
+  "longmaw-v5/geometry/Idle/Longmaw_Idle.EyeSocket.-1.json": {
+    "bytes": 17572,
+    "sha256": "d3f8de51e11b7be806b111d44e1ce947ceb84fcffb7d279718d14ce868cc0d0e"
+  },
+  "longmaw-v5/geometry/Idle/Longmaw_Idle.EyeSocket.1.json": {
+    "bytes": 17571,
+    "sha256": "3a5b63edc9b549101846b7cf6023d207c6123de5d79a97b13266d9c584d230de"
+  },
+  "longmaw-v5/geometry/Idle/Longmaw_Idle.EyeWhite.L.json": {
+    "bytes": 3029,
+    "sha256": "4003af575a56424b2dac654abd866ffe82975339aef0a000c7e657ab71717869"
+  },
+  "longmaw-v5/geometry/Idle/Longmaw_Idle.EyeWhite.R.json": {
+    "bytes": 3029,
+    "sha256": "655dfc82344bd409c12ff6db5fcf07d695a1bc9ac9f53fd271ff6f2e7477378b"
+  },
+  "longmaw-v5/geometry/Idle/Longmaw_Idle.FrontLeg.L.json": {
+    "bytes": 18736,
+    "sha256": "c56ec1246bf692fc05ec9e2f6fa5d9f5b2945fbb1faf4edeb600879fac791912"
+  },
+  "longmaw-v5/geometry/Idle/Longmaw_Idle.FrontLeg.R.json": {
+    "bytes": 18613,
+    "sha256": "5f4a089ab84d0fce90c60a2d1494b21bbb0ee0d3ac6c29b72c8f1ca594947f27"
+  },
+  "longmaw-v5/geometry/Idle/Longmaw_Idle.FrontPaw.L.json": {
+    "bytes": 49597,
+    "sha256": "0b82b4b3f1261e89ab459985bb47388b2e0d414559a4fcf073b0cada5f80e2d1"
+  },
+  "longmaw-v5/geometry/Idle/Longmaw_Idle.FrontPaw.R.json": {
+    "bytes": 49647,
+    "sha256": "e12655498ff32ef922233bbc8419b3d11c18b617333cae64547eb2fca91d6999"
+  },
+  "longmaw-v5/geometry/Idle/Longmaw_Idle.HindLeg.L.json": {
+    "bytes": 30606,
+    "sha256": "94213e6ae6479d2b8eb1ec5538efb8de05b6d1b07cded33d610ce01f543ff549"
+  },
+  "longmaw-v5/geometry/Idle/Longmaw_Idle.HindLeg.R.json": {
+    "bytes": 30570,
+    "sha256": "c6cbefa302a7817e256381b11c3ba33ddf6c3e7dc01e663dab2b0de46bd3efa6"
+  },
+  "longmaw-v5/geometry/Idle/Longmaw_Idle.HindPaw.L.json": {
+    "bytes": 49649,
+    "sha256": "b2e33b28059a0f47ca4989af5d4327e0a347e1a6528410595673acd8d777b120"
+  },
+  "longmaw-v5/geometry/Idle/Longmaw_Idle.HindPaw.R.json": {
+    "bytes": 49599,
+    "sha256": "ce15d2e4e72d0112c712a949ceb98ef7d6772cebc3b2e3cf8dae669a2b8d60e6"
+  },
+  "longmaw-v5/geometry/Idle/Longmaw_Idle.LowerIncisor0.json": {
+    "bytes": 2112,
+    "sha256": "e849b6a87225b6c6e6b4a3f0b5ad578d06ba965f78b4415b972c7ad1e3139908"
+  },
+  "longmaw-v5/geometry/Idle/Longmaw_Idle.LowerIncisor1.json": {
+    "bytes": 2112,
+    "sha256": "58e9ecb697414b0cc61024298c458815686943321dceea8527835a7d4b659ac6"
+  },
+  "longmaw-v5/geometry/Idle/Longmaw_Idle.LowerIncisor2.json": {
+    "bytes": 2112,
+    "sha256": "9811e1e91855cbbd0cee818065a5e4da191fa240eb8e76c7da54de4227829f26"
+  },
+  "longmaw-v5/geometry/Idle/Longmaw_Idle.LowerPalate.json": {
+    "bytes": 4412,
+    "sha256": "5306d92ebd106276a1e56d5854e098ea62a992841823a035ee4baa2b14a8c833"
+  },
+  "longmaw-v5/geometry/Idle/Longmaw_Idle.LowerTooth-1_0.json": {
+    "bytes": 2133,
+    "sha256": "b3d10e9bbaad5d26c2bdb4aed0f5fdb25ec310880ad4d2893d69bdcfadcda571"
+  },
+  "longmaw-v5/geometry/Idle/Longmaw_Idle.LowerTooth-1_1.json": {
+    "bytes": 2141,
+    "sha256": "191d4522d858a61a3e3cd40a7aaefb47d1ec9c77721227ff6585566709942350"
+  },
+  "longmaw-v5/geometry/Idle/Longmaw_Idle.LowerTooth-1_10.json": {
+    "bytes": 2142,
+    "sha256": "d6e162000b54b1e45a584e0c3d794b61209a57056ec3c17faafd1f902de5cdbd"
+  },
+  "longmaw-v5/geometry/Idle/Longmaw_Idle.LowerTooth-1_11.json": {
+    "bytes": 2132,
+    "sha256": "e972c50042b3d61080cf938b3b6d1e52088f3238e3fe1bd65c4c49f7d21d4522"
+  },
+  "longmaw-v5/geometry/Idle/Longmaw_Idle.LowerTooth-1_12.json": {
+    "bytes": 2140,
+    "sha256": "701e50b11eb1f2a3952f8d193b3fa25e21733005058f1ccc8e6942ee5684e68b"
+  },
+  "longmaw-v5/geometry/Idle/Longmaw_Idle.LowerTooth-1_13.json": {
+    "bytes": 2143,
+    "sha256": "53e3ed7cb558c2447e11c6df6c36941ea4d925223b95e6758ae7ea4aa9d84240"
+  },
+  "longmaw-v5/geometry/Idle/Longmaw_Idle.LowerTooth-1_14.json": {
+    "bytes": 2136,
+    "sha256": "cd21288c38094f5d972987ee89f3bc1eca400c50034d6736c4eec0dcede37178"
+  },
+  "longmaw-v5/geometry/Idle/Longmaw_Idle.LowerTooth-1_2.json": {
+    "bytes": 2091,
+    "sha256": "125e29a06baa7ebb8b272d0495ce9737e8e89a6a6896f367f77f0f6cf2f2d0f2"
+  },
+  "longmaw-v5/geometry/Idle/Longmaw_Idle.LowerTooth-1_3.json": {
+    "bytes": 2118,
+    "sha256": "3c82f0a40ee428d51c8aad24b29632a1456c1a844d37009e002aca4013dc0f59"
+  },
+  "longmaw-v5/geometry/Idle/Longmaw_Idle.LowerTooth-1_4.json": {
+    "bytes": 2142,
+    "sha256": "c2204164182779e8003817839b75e642f066222a0ee8777477859933fa5079d5"
+  },
+  "longmaw-v5/geometry/Idle/Longmaw_Idle.LowerTooth-1_5.json": {
+    "bytes": 2117,
+    "sha256": "718fa2535354d39e33c213e9d27a0aab917c6e689204044068eac9204ecc7e99"
+  },
+  "longmaw-v5/geometry/Idle/Longmaw_Idle.LowerTooth-1_6.json": {
+    "bytes": 2116,
+    "sha256": "90a969cdd80e7d4b7fd86f872abdd40da2982dd61beafb16c06984102f1fdf92"
+  },
+  "longmaw-v5/geometry/Idle/Longmaw_Idle.LowerTooth-1_7.json": {
+    "bytes": 2109,
+    "sha256": "6349c6b772588b1c020f7a4cff6a0e8b9afdcec6c8ca7c7c11cefc15554e6db0"
+  },
+  "longmaw-v5/geometry/Idle/Longmaw_Idle.LowerTooth-1_8.json": {
+    "bytes": 2138,
+    "sha256": "4fdafe88622a25f4e9b7f8d4a0bfa7b81a608e7043a67c377379bbb8140664ae"
+  },
+  "longmaw-v5/geometry/Idle/Longmaw_Idle.LowerTooth-1_9.json": {
+    "bytes": 2113,
+    "sha256": "6f9df4410ad73f67e20a7bde15db3169c7d19e3c7c573c4d85ef6991c56e9b7c"
+  },
+  "longmaw-v5/geometry/Idle/Longmaw_Idle.LowerTooth1_0.json": {
+    "bytes": 2132,
+    "sha256": "d858354bee2c9c962c5139f48d9c4d1c1b39b874cd373b31f18f5346196bd47a"
+  },
+  "longmaw-v5/geometry/Idle/Longmaw_Idle.LowerTooth1_1.json": {
+    "bytes": 2140,
+    "sha256": "703b15e4b9a93101ae7a50dbc3524ad646a56456661b66d5fb308742e4fb48fd"
+  },
+  "longmaw-v5/geometry/Idle/Longmaw_Idle.LowerTooth1_10.json": {
+    "bytes": 2129,
+    "sha256": "1d880a9a6a3220a9bcd609ca17d4ace893dde200e7c0478617c7eddf3bf59205"
+  },
+  "longmaw-v5/geometry/Idle/Longmaw_Idle.LowerTooth1_11.json": {
+    "bytes": 2119,
+    "sha256": "dbe259bbd34991797b7440289a7fb191a280dbe353063cc93c0cf8df53a41aee"
+  },
+  "longmaw-v5/geometry/Idle/Longmaw_Idle.LowerTooth1_12.json": {
+    "bytes": 2127,
+    "sha256": "6dd048cb9829f8195adfabb34a2d6e5ed313cb338c505bac6587a38b1968cd20"
+  },
+  "longmaw-v5/geometry/Idle/Longmaw_Idle.LowerTooth1_13.json": {
+    "bytes": 2130,
+    "sha256": "7ca96a3ff2c43e33cd9ee868aab96a71ca525d46a4f64cc05c2ce0408489d356"
+  },
+  "longmaw-v5/geometry/Idle/Longmaw_Idle.LowerTooth1_14.json": {
+    "bytes": 2123,
+    "sha256": "b45a00498895e7a0b37dd004963f5f1819ad8947e087a7db19b9da7b23f2fb96"
+  },
+  "longmaw-v5/geometry/Idle/Longmaw_Idle.LowerTooth1_2.json": {
+    "bytes": 2090,
+    "sha256": "ea8e7b4653bb2531c58c018589fc688a1d772e1255a992a34572698c6663e956"
+  },
+  "longmaw-v5/geometry/Idle/Longmaw_Idle.LowerTooth1_3.json": {
+    "bytes": 2105,
+    "sha256": "80cdebe23b4894fdd0f73fb2e11a87def557082d118b0bd19d05ec2c2ac9f897"
+  },
+  "longmaw-v5/geometry/Idle/Longmaw_Idle.LowerTooth1_4.json": {
+    "bytes": 2141,
+    "sha256": "de97996cb4e4332f15671441b7bf34cc93766343b2e0f01e6f25b3b43ef948c8"
+  },
+  "longmaw-v5/geometry/Idle/Longmaw_Idle.LowerTooth1_5.json": {
+    "bytes": 2116,
+    "sha256": "e4044b101689e2bd777dcb70389e2241b90f3a9da5589939fb69c43a16c86049"
+  },
+  "longmaw-v5/geometry/Idle/Longmaw_Idle.LowerTooth1_6.json": {
+    "bytes": 2115,
+    "sha256": "995cb91001cec408f6dfea7ae4d47b9c9fb0a53b09d9034cf4616acc5b75ebfb"
+  },
+  "longmaw-v5/geometry/Idle/Longmaw_Idle.LowerTooth1_7.json": {
+    "bytes": 2096,
+    "sha256": "44891c0028f5e519518f43dcb44153220815c764bb4cbce03ff2fe14d136a9d3"
+  },
+  "longmaw-v5/geometry/Idle/Longmaw_Idle.LowerTooth1_8.json": {
+    "bytes": 2125,
+    "sha256": "d9a563b1132bf0db4c5b681b64e864df25c955317606a4f0766c86d6c3f4e6ab"
+  },
+  "longmaw-v5/geometry/Idle/Longmaw_Idle.LowerTooth1_9.json": {
+    "bytes": 2100,
+    "sha256": "d32e9a798b7049bbff8d5e2fb1dcbfe68b634d1abcc92945df6094b6b367edff"
+  },
+  "longmaw-v5/geometry/Idle/Longmaw_Idle.Mandible.json": {
+    "bytes": 6789,
+    "sha256": "297599b4e9c065fe641a69bb09fdf1e7d64641561a740f221e8cf9cff4bc1faa"
+  },
+  "longmaw-v5/geometry/Idle/Longmaw_Idle.Neck.json": {
+    "bytes": 8756,
+    "sha256": "b32415cd31025800f19fc36aa951138ad2bdd14fe68eda6a0cdc1977a5c516d2"
+  },
+  "longmaw-v5/geometry/Idle/Longmaw_Idle.Skull.json": {
+    "bytes": 110879,
+    "sha256": "e488234971021e234cf5bef46d185b3c040be80e9dbdf1d20ec2c9a906268d7a"
+  },
+  "longmaw-v5/geometry/Idle/Longmaw_Idle.Torso.json": {
+    "bytes": 35280,
+    "sha256": "26064761d059cb74741d6dc21b3a58cb879871b5a1179c9d8480fb81492ccb6c"
+  },
+  "longmaw-v5/geometry/Idle/Longmaw_Idle.UpperIncisor0.json": {
+    "bytes": 2072,
+    "sha256": "a836596b4a360f5b92648754a4886982a26acda2efd3582c2828792220b28e2d"
+  },
+  "longmaw-v5/geometry/Idle/Longmaw_Idle.UpperIncisor1.json": {
+    "bytes": 2072,
+    "sha256": "4c44400432a84b2c9f36c21e991c3ebf912af7bf7547bd853e62eb2e07323735"
+  },
+  "longmaw-v5/geometry/Idle/Longmaw_Idle.UpperIncisor2.json": {
+    "bytes": 2072,
+    "sha256": "3068b0d7bdc80bab7b9978fbf452cdfe4510bec83fcde06281b555927f370db3"
+  },
+  "longmaw-v5/geometry/Idle/Longmaw_Idle.UpperMuzzle.json": {
+    "bytes": 37678,
+    "sha256": "ec06f72d3a8090c5cb6f1d69aae53c5cd04f4fb010b493f81d5237dd1354ca69"
+  },
+  "longmaw-v5/geometry/Idle/Longmaw_Idle.UpperPalate.json": {
+    "bytes": 4418,
+    "sha256": "5a2f72b01f4cbeae7caa6c5b3b206cc0dd9add6329168ac219d585eec47e87af"
+  },
+  "longmaw-v5/geometry/Idle/Longmaw_Idle.UpperTooth-1_0.json": {
+    "bytes": 2109,
+    "sha256": "476211d87d14b0cb97a12b0a36fd9e4460df5e65c3156f0a846d40d4b4aeb7c0"
+  },
+  "longmaw-v5/geometry/Idle/Longmaw_Idle.UpperTooth-1_1.json": {
+    "bytes": 2111,
+    "sha256": "c738538e55453d2fcdb9cc2669caeb9d9b17e15fee75b9cfe111ec67881eb3d4"
+  },
+  "longmaw-v5/geometry/Idle/Longmaw_Idle.UpperTooth-1_10.json": {
+    "bytes": 2132,
+    "sha256": "73330c2b81de51bbb3f21746edb6ca9da2e89a57e70ac26bfe37ba9783567d9d"
+  },
+  "longmaw-v5/geometry/Idle/Longmaw_Idle.UpperTooth-1_11.json": {
+    "bytes": 2115,
+    "sha256": "064c944fd6b9554283fc94a7c799743904337a3f4927dcfe6ee30da164717a16"
+  },
+  "longmaw-v5/geometry/Idle/Longmaw_Idle.UpperTooth-1_12.json": {
+    "bytes": 2106,
+    "sha256": "0ee0b04227a87c1143480b0077e6fda56d6ca96fadca8d1a9631d7f8917afa42"
+  },
+  "longmaw-v5/geometry/Idle/Longmaw_Idle.UpperTooth-1_13.json": {
+    "bytes": 2109,
+    "sha256": "329f4e273122fa5b41afea72293eb8385e14b0eb6597cf552cc68cb754869bee"
+  },
+  "longmaw-v5/geometry/Idle/Longmaw_Idle.UpperTooth-1_14.json": {
+    "bytes": 2120,
+    "sha256": "f0d08d1197b9a6c4f77823884104abc7b96d7754ebf8bab5ee89ba78359d37c9"
+  },
+  "longmaw-v5/geometry/Idle/Longmaw_Idle.UpperTooth-1_2.json": {
+    "bytes": 2079,
+    "sha256": "15f9c595988a7e18192a57eb5b0bde3e70ca235f1d0cc63cb7193544efe53777"
+  },
+  "longmaw-v5/geometry/Idle/Longmaw_Idle.UpperTooth-1_3.json": {
+    "bytes": 2090,
+    "sha256": "7ff91ed9cdb53a40e5d0c45583000a231ef9995ead1a269b3f15867f31d5dc93"
+  },
+  "longmaw-v5/geometry/Idle/Longmaw_Idle.UpperTooth-1_4.json": {
+    "bytes": 2101,
+    "sha256": "3b041ddb2d7045eb81cc0f3c3c1d9863e7a35b933bdbafeefd63fe506134857a"
+  },
+  "longmaw-v5/geometry/Idle/Longmaw_Idle.UpperTooth-1_5.json": {
+    "bytes": 2110,
+    "sha256": "edbaa7c6d24d5a58353c12736c5bcd2654e8f3c0617e72f9a7ef4d99a848c267"
+  },
+  "longmaw-v5/geometry/Idle/Longmaw_Idle.UpperTooth-1_6.json": {
+    "bytes": 2096,
+    "sha256": "4da7456a71305d285266cafb059e86a3014d45fe0d417cde79f89a431d78c540"
+  },
+  "longmaw-v5/geometry/Idle/Longmaw_Idle.UpperTooth-1_7.json": {
+    "bytes": 2113,
+    "sha256": "f934f9e5776c2555bde1a2c565d58d2fb71b7e7a0c080e3f5c0beb4c71462034"
+  },
+  "longmaw-v5/geometry/Idle/Longmaw_Idle.UpperTooth-1_8.json": {
+    "bytes": 2112,
+    "sha256": "a10ab4ec8bfc4a53db4555044b4a8850622cb214f92395911062283770fd3e80"
+  },
+  "longmaw-v5/geometry/Idle/Longmaw_Idle.UpperTooth-1_9.json": {
+    "bytes": 2130,
+    "sha256": "a7ab159e5dcf2cb660cc6a38ca66b87d4a29314f86c40fc26cce0b923665bdf0"
+  },
+  "longmaw-v5/geometry/Idle/Longmaw_Idle.UpperTooth1_0.json": {
+    "bytes": 2108,
+    "sha256": "75d26ae2662dbf3767329a18eb9d480f72ee94c2d8f50ce202f1336f3d931f22"
+  },
+  "longmaw-v5/geometry/Idle/Longmaw_Idle.UpperTooth1_1.json": {
+    "bytes": 2110,
+    "sha256": "2455cc285b55b2eee926da81aab5f4c2bccdf7f9b409cce1550b2d824e769238"
+  },
+  "longmaw-v5/geometry/Idle/Longmaw_Idle.UpperTooth1_10.json": {
+    "bytes": 2119,
+    "sha256": "f990283d5294ab57a9ea51b4621319988c003610c894becb62d32e7c082c4cbd"
+  },
+  "longmaw-v5/geometry/Idle/Longmaw_Idle.UpperTooth1_11.json": {
+    "bytes": 2102,
+    "sha256": "a91fe946bada58ad210e6e8d681d884ec55a210c41733cfeb1b981fdf3ea18c1"
+  },
+  "longmaw-v5/geometry/Idle/Longmaw_Idle.UpperTooth1_12.json": {
+    "bytes": 2093,
+    "sha256": "6fc5a7228043cdef50bf6dcf4401c05eebb0dcc34ab98f330caef444393a7679"
+  },
+  "longmaw-v5/geometry/Idle/Longmaw_Idle.UpperTooth1_13.json": {
+    "bytes": 2096,
+    "sha256": "593ab0f9f6dd71c357563aa36b5bd8f98b16abab68e302047d8588029eefd61a"
+  },
+  "longmaw-v5/geometry/Idle/Longmaw_Idle.UpperTooth1_14.json": {
+    "bytes": 2107,
+    "sha256": "bc1c16143b0ea82bcc136328206585fb347c3d1a58ae7ae0ca434ec1052dae79"
+  },
+  "longmaw-v5/geometry/Idle/Longmaw_Idle.UpperTooth1_2.json": {
+    "bytes": 2078,
+    "sha256": "842e21bac243c95a135b5ffaf5fd00527b42c2b0dc3cedc379b648ac1b2e73db"
+  },
+  "longmaw-v5/geometry/Idle/Longmaw_Idle.UpperTooth1_3.json": {
+    "bytes": 2077,
+    "sha256": "6ac5296a6c6aefea50d6e5eca2914edc6632a3920ecfe887012ea0f253a73ef6"
+  },
+  "longmaw-v5/geometry/Idle/Longmaw_Idle.UpperTooth1_4.json": {
+    "bytes": 2088,
+    "sha256": "d4c83aaf9fb6e573a4d3a34cd94c19505e0d0e6429293ebfef0fdb02b1911905"
+  },
+  "longmaw-v5/geometry/Idle/Longmaw_Idle.UpperTooth1_5.json": {
+    "bytes": 2097,
+    "sha256": "8f0bd12365be6422a7d221708d78e8cfa3df2ac8aeb998db615000abf612d6ce"
+  },
+  "longmaw-v5/geometry/Idle/Longmaw_Idle.UpperTooth1_6.json": {
+    "bytes": 2083,
+    "sha256": "571741a2b37e1c65d68559db8df3621a7531a521f29a62dbba778f1a7cb9731c"
+  },
+  "longmaw-v5/geometry/Idle/Longmaw_Idle.UpperTooth1_7.json": {
+    "bytes": 2100,
+    "sha256": "abddade4904f2bbb555e66bd0feb72b20d00bb0fd8b0f271419a51e11651f607"
+  },
+  "longmaw-v5/geometry/Idle/Longmaw_Idle.UpperTooth1_8.json": {
+    "bytes": 2099,
+    "sha256": "01d70acb904d44cc4b972093dc04f5a8b2edfa1ec73dbabfbbc0e1fd46490f9f"
+  },
+  "longmaw-v5/geometry/Idle/Longmaw_Idle.UpperTooth1_9.json": {
+    "bytes": 2117,
+    "sha256": "76481cd9d348d21079cdc0f9127571c6572e92e213bcec5fd192a1e844f3ccd9"
+  },
+  "longmaw-v5/models/Longmaw_Aggressive.fbx": {
+    "bytes": 284268,
+    "sha256": "aac0ad6df8d56b7ef7fb53912be11aeb2d4da577f20838599ddad38fd6bd1981"
+  },
+  "longmaw-v5/models/Longmaw_Aggressive.glb": {
+    "bytes": 909192,
+    "sha256": "ebe600c607a8b4904c85442201db305a6e3fbbb46674d0c4c20c0304c4845728"
+  },
+  "longmaw-v5/models/Longmaw_Idle.fbx": {
+    "bytes": 284892,
+    "sha256": "8efac25165f3920b62d2c7a4e39d03a8058d71dc3a5d9f67b012f75d14389292"
+  },
+  "longmaw-v5/models/Longmaw_Idle.glb": {
+    "bytes": 909904,
+    "sha256": "d9191dcf1644f5c4fbb5984e68bac9c3fffe084fb106386b1c01be2ddffceec3"
+  },
+  "longmaw-v5/models/Longmaw_Review.blend": {
+    "bytes": 446227,
+    "sha256": "6fce62603aa021af82797a7eb090ae2f5984618ae422322c87fad18b4c6de481"
+  },
+  "longmaw-v5/monster_head.py": {
+    "bytes": 6934,
+    "sha256": "858a1f2e497003c57d81d2198aa61e9bf1e363bb48a780a4c6afdaf44975cf7a"
+  },
+  "longmaw-v5/previews/Aggressive_Back.png": {
+    "bytes": 1354846,
+    "sha256": "eab8a736094474a8d7b54c2a7e330645e2ea8e201cde41c05967a63d804e63e1"
+  },
+  "longmaw-v5/previews/Aggressive_Face.png": {
+    "bytes": 1367044,
+    "sha256": "51db8de48b83b0cf420ffb4242dec5567d157e773377594e7a5c635a4f2f973c"
+  },
+  "longmaw-v5/previews/Aggressive_Front.png": {
+    "bytes": 1234320,
+    "sha256": "550bcae9fee266b5333da55a8486797e3899467d14a526d77b84a7f9cf1c0d14"
+  },
+  "longmaw-v5/previews/Aggressive_Side.png": {
+    "bytes": 1333669,
+    "sha256": "89529302002c8fa4e0138cde7b8f9870b444dfd66b1a18e2c41443f607ed8145"
+  },
+  "longmaw-v5/previews/Aggressive_ThreeQuarter.png": {
+    "bytes": 1478978,
+    "sha256": "6962af27d57424e69c8d34fa5ff54a46225766707477ded892d0e938690127f7"
+  },
+  "longmaw-v5/previews/Details_Review.png": {
+    "bytes": 1141982,
+    "sha256": "50b85069007bf89f758ac8145878858b69dc9d86abc3f0939027073f27dd1e01"
+  },
+  "longmaw-v5/previews/Eyes_Close.png": {
+    "bytes": 1214993,
+    "sha256": "67cf524166d87111f2b4c01ea5715456f39dd6efe54b6fcdc171090d89c879c3"
+  },
+  "longmaw-v5/previews/Idle_Face.png": {
+    "bytes": 1363846,
+    "sha256": "e31c88c4f9cee96ebb1e3db8f6d8b3ba6669dc40de3e57895d9a616f37e6ca9c"
+  },
+  "longmaw-v5/previews/Idle_Front.png": {
+    "bytes": 1230256,
+    "sha256": "5be3dbec0ed3df217e9c46eb04a160ca9cc6547d8935c0122d6ffb99a50a7fd3"
+  },
+  "longmaw-v5/previews/Idle_Side.png": {
+    "bytes": 1333095,
+    "sha256": "9a489df181f25792fa7ed03115459b7f284612d031cf50d9d8871d25a68d17d3"
+  },
+  "longmaw-v5/previews/Idle_ThreeQuarter.png": {
+    "bytes": 1475438,
+    "sha256": "80d52cf95d40a1b9910e2774ca761b74f4dbdd1fb7e600ed4e543c4377e9a4f9"
+  },
+  "longmaw-v5/previews/States_Review.png": {
+    "bytes": 1028376,
+    "sha256": "436a24ce7ad80d76fd42f7ab164d3bfea090bbdd64ce5481ef70b4d155925905"
+  },
+  "longmaw-v5/report.json": {
+    "bytes": 998,
+    "sha256": "26dd4fce8666e65cb5573c1dad1f0baab7c676a01e011f30652d0ea7cc0b12d2"
+  },
+  "longmaw-v5/validate.py": {
+    "bytes": 8620,
+    "sha256": "28991b93d3e790873ca53192ae31a4557bf4c8bd59cfb132454b158fcc8f5215"
+  },
+  "longmaw-v5/validation.json": {
+    "bytes": 2809,
+    "sha256": "52d8aaf4b7406d7f6f4238faf0d5c1d53c6ccf6fb9ea44edcaa3246257081557"
+  },
+  "longmaw-forms-v1/Longmaw_Six_Costumes.zip": {
+    "bytes": 55891119,
+    "sha256": "d27b1b2b79f3be81d5b0cf1353b22161a5e8bf793fc10e9a1f2aa78431d525c1"
+  },
+  "longmaw-forms-v1/README.md": {
+    "bytes": 6920,
+    "sha256": "b1dc37a09cd1827e0c659c60e04798c168211940759a19647dffece7796c39f2"
+  },
+  "longmaw-forms-v1/build.py": {
+    "bytes": 6517,
+    "sha256": "fcebeffa81433fbaefbda0b025835cfa47f658242a969e85290bc482746a111d"
+  },
+  "longmaw-forms-v1/catalog.json": {
+    "bytes": 27801,
+    "sha256": "e83e9f3d314db09a9cb28e4abad043da2311c81623cb9f3d1986e1fc30b48159"
+  },
+  "longmaw-forms-v1/compose_review.py": {
+    "bytes": 3947,
+    "sha256": "d182ef8ca618c9dd47aa9034785956d559fbe41a4c9c6ae25d3c1c9a5419c231"
+  },
+  "longmaw-forms-v1/models/Longmaw_Assassin_Aggressive.fbx": {
+    "bytes": 366124,
+    "sha256": "a1852b1fe892cf988e3ae615faff2d18e4e142dc0a9a582261bd9a2e4e80583d"
+  },
+  "longmaw-forms-v1/models/Longmaw_Assassin_Aggressive.glb": {
+    "bytes": 1210844,
+    "sha256": "a9fcbef6be0a186073c0f9ceddf2d909695fcb541be75f1bd2b501cb8afaa1b9"
+  },
+  "longmaw-forms-v1/models/Longmaw_Assassin_Idle.fbx": {
+    "bytes": 366604,
+    "sha256": "26105272f082a4fd52028d4618adae6a218ce687b6933e93962078eb90b208dd"
+  },
+  "longmaw-forms-v1/models/Longmaw_Assassin_Idle.glb": {
+    "bytes": 1211552,
+    "sha256": "584d8b52965ab3e3841ed141f3eaa64a876b8c8724281fd94c26cab687db19a6"
+  },
+  "longmaw-forms-v1/models/Longmaw_Assassin_States.blend": {
+    "bytes": 754350,
+    "sha256": "ea46865c4467e812b54a098b49914faece48eb552cad37bb9bcd04f699299eed"
+  },
+  "longmaw-forms-v1/models/Longmaw_Farmer_Aggressive.fbx": {
+    "bytes": 357596,
+    "sha256": "7d8be26a240a87de8661374246e5929ca8920b801cc08f530c8a96571cd1a315"
+  },
+  "longmaw-forms-v1/models/Longmaw_Farmer_Aggressive.glb": {
+    "bytes": 1178236,
+    "sha256": "d54e16b787b9f446c9b17964ecb75410520ea60754689ee266805cdfe1ca53e0"
+  },
+  "longmaw-forms-v1/models/Longmaw_Farmer_Idle.fbx": {
+    "bytes": 358092,
+    "sha256": "c9fbf0a1a3fc9536cecf6a20bbd158489a8048c4ddf402cf6cd787b3fe1d37b8"
+  },
+  "longmaw-forms-v1/models/Longmaw_Farmer_Idle.glb": {
+    "bytes": 1178944,
+    "sha256": "57506a32f41ea031d42f8f72785571b1b5fef68f81fdee8a8052891a8d99d47f"
+  },
+  "longmaw-forms-v1/models/Longmaw_Farmer_States.blend": {
+    "bytes": 732730,
+    "sha256": "4b4607d7573f6731d7c5c559ed9d497c858fbba6e42f30d768ac3f61df914f0b"
+  },
+  "longmaw-forms-v1/models/Longmaw_Knight_Aggressive.fbx": {
+    "bytes": 392940,
+    "sha256": "56af7b4fcfeb0c6762ca970901cc378ce780a02ed19e711fe127a58c8720be3d"
+  },
+  "longmaw-forms-v1/models/Longmaw_Knight_Aggressive.glb": {
+    "bytes": 1320688,
+    "sha256": "5c5fae7b26359201b843b34daf761d077f902ede4b170e62ecf9b85b3a693673"
+  },
+  "longmaw-forms-v1/models/Longmaw_Knight_Idle.fbx": {
+    "bytes": 393436,
+    "sha256": "4e4ba15bf6d77a335216bb08dcd3883544238b5d9e98949da445cd943656836d"
+  },
+  "longmaw-forms-v1/models/Longmaw_Knight_Idle.glb": {
+    "bytes": 1321400,
+    "sha256": "581d7b5e3493831908eecdd6fd24b27dbcb06bb3f03e807dc6eec0d8fe72b097"
+  },
+  "longmaw-forms-v1/models/Longmaw_Knight_States.blend": {
+    "bytes": 844424,
+    "sha256": "d9de6938e6eff328345680ee4eb51a3c338fed3ed5b5442bbda7e0fbf31c7fba"
+  },
+  "longmaw-forms-v1/models/Longmaw_Miner_Aggressive.fbx": {
+    "bytes": 367228,
+    "sha256": "6809c1c42f7db11a4ec31b35c1ff49a9f3f399d77ece09407d2a20c48f78dcad"
+  },
+  "longmaw-forms-v1/models/Longmaw_Miner_Aggressive.glb": {
+    "bytes": 1220104,
+    "sha256": "bb002cc6c789b1224705dc5ee1aff70c3a3fad1bca959913405f40cbd8b136a2"
+  },
+  "longmaw-forms-v1/models/Longmaw_Miner_Idle.fbx": {
+    "bytes": 367804,
+    "sha256": "d8297dd0debef652669e5f329e46b7a3d51bed585337198a350fe302df37512f"
+  },
+  "longmaw-forms-v1/models/Longmaw_Miner_Idle.glb": {
+    "bytes": 1220812,
+    "sha256": "bd2cb3f8b7c2e54b7df438ecfd896eca0780139cbaa96d82fbc38972628c9ab6"
+  },
+  "longmaw-forms-v1/models/Longmaw_Miner_States.blend": {
+    "bytes": 767622,
+    "sha256": "6329fa1389473b0852fc195d6debe425b6f868125d89ccf7b56dd84f15394fa4"
+  },
+  "longmaw-forms-v1/models/Longmaw_Princess_Aggressive.fbx": {
+    "bytes": 393116,
+    "sha256": "d7a1ce11a3e60cc07e66e233374f4b284a5ea2898665af6b9730bc1ce6012cb4"
+  },
+  "longmaw-forms-v1/models/Longmaw_Princess_Aggressive.glb": {
+    "bytes": 1329956,
+    "sha256": "0b8f41da63dc197ad8c1c45ae2575d6c4e8f082ad077752a1c461575f241de44"
+  },
+  "longmaw-forms-v1/models/Longmaw_Princess_Idle.fbx": {
+    "bytes": 393340,
+    "sha256": "d670fc38b1fdea43d0ec9d4fb81df0b826abc0dd234038a39595799da0a95ebc"
+  },
+  "longmaw-forms-v1/models/Longmaw_Princess_Idle.glb": {
+    "bytes": 1330664,
+    "sha256": "e3d47f009e22dc4112b07883d36c225e7fe63f02e9859cca29f450da512c5083"
+  },
+  "longmaw-forms-v1/models/Longmaw_Princess_States.blend": {
+    "bytes": 842004,
+    "sha256": "439ea90602be3795bc6fc5f07f406d3ed5f43aaa73f1a0a84865fd4709a78287"
+  },
+  "longmaw-forms-v1/models/Longmaw_Punk_Aggressive.fbx": {
+    "bytes": 504428,
+    "sha256": "f41368f53c2e13d6388c169507ef4bf141ea4467599f2ebfc8fd7434dab17dab"
+  },
+  "longmaw-forms-v1/models/Longmaw_Punk_Aggressive.glb": {
+    "bytes": 1767960,
+    "sha256": "86b33bed37b0dc81f5ea4b50b68e5fd37329693085654f4b81a676eac2c7946d"
+  },
+  "longmaw-forms-v1/models/Longmaw_Punk_Idle.fbx": {
+    "bytes": 504972,
+    "sha256": "052ba2fa8aa63880e958b474c64fc80876a9325e18ce9a53e4cd58aa33fe9924"
+  },
+  "longmaw-forms-v1/models/Longmaw_Punk_Idle.glb": {
+    "bytes": 1768668,
+    "sha256": "45deb97d4c4ac0d74eea31ca1d1d54673f119303f1ee498a0ba9dd82da08fab8"
+  },
+  "longmaw-forms-v1/models/Longmaw_Punk_States.blend": {
+    "bytes": 1136082,
+    "sha256": "575488a50d21226c6b8330c28bc68dff0de98b0f5a4668cf6c5a977a54aeebbf"
+  },
+  "longmaw-forms-v1/outfits.py": {
+    "bytes": 15954,
+    "sha256": "ec9f514dfaac91d4de6200d28fdea070abcc081b093491a890d5c387ac9b19ff"
+  },
+  "longmaw-forms-v1/previews/All_Aggressive.png": {
+    "bytes": 3135261,
+    "sha256": "09e54a56b3a48d2e681935c88453be8d1d1afcb4d0ab15050977d72a78272310"
+  },
+  "longmaw-forms-v1/previews/All_Back.png": {
+    "bytes": 2991619,
+    "sha256": "83cd6173349188439a9f47292c61de2ff8ff4db4bf1bdcb7de78bbebd41a2c7b"
+  },
+  "longmaw-forms-v1/previews/All_Heads.png": {
+    "bytes": 2271267,
+    "sha256": "2527e5078f656b25927478f7e1249a917b7040481469d8813bc4696f277b3a40"
+  },
+  "longmaw-forms-v1/previews/All_Idle.png": {
+    "bytes": 3131006,
+    "sha256": "0297deb3dd900a7b57547c7ef89ef8481029b1383fcca5e9c554144b363d4989"
+  },
+  "longmaw-forms-v1/previews/Longmaw_Assassin_Aggressive.png": {
+    "bytes": 1306691,
+    "sha256": "df3dcafd46cda8fa76339f132d020e49a6527955bd8bbba3979b3c38992ea35c"
+  },
+  "longmaw-forms-v1/previews/Longmaw_Assassin_Back.png": {
+    "bytes": 1062313,
+    "sha256": "900788ab8f34a3fc3298ba758cf9f8302c65c03f718fac48ace44a6581444178"
+  },
+  "longmaw-forms-v1/previews/Longmaw_Assassin_Head.png": {
+    "bytes": 970852,
+    "sha256": "51e3f32d150deef9a30fd40e9338d24b0d5911b8ffa6d20f203494bd5111644b"
+  },
+  "longmaw-forms-v1/previews/Longmaw_Assassin_Idle.png": {
+    "bytes": 1304175,
+    "sha256": "ce731622cbe14f3529765a019706064a73ad98c6081044df294ee4a39ffba4a5"
+  },
+  "longmaw-forms-v1/previews/Longmaw_Assassin_States.png": {
+    "bytes": 1005444,
+    "sha256": "373b45681f6b7eb132af704c2e37c5ec41ce68efd7ea18882af89d9280e3e5c3"
+  },
+  "longmaw-forms-v1/previews/Longmaw_Farmer_Aggressive.png": {
+    "bytes": 1301706,
+    "sha256": "100e90206e2b48aad05b6b3039ae55ab7dace2c83649f9244e5b0e726aba885f"
+  },
+  "longmaw-forms-v1/previews/Longmaw_Farmer_Back.png": {
+    "bytes": 1054295,
+    "sha256": "10fa29782296ee0bf33f59f067a4db8745dd92fae51b54c9877c69a85beaca42"
+  },
+  "longmaw-forms-v1/previews/Longmaw_Farmer_Head.png": {
+    "bytes": 966478,
+    "sha256": "9d2a65f69ec8742c51b1a3953a717433fef5898fcc0e0a5f4741e7b873e3001c"
+  },
+  "longmaw-forms-v1/previews/Longmaw_Farmer_Idle.png": {
+    "bytes": 1299183,
+    "sha256": "37c2b5580c5011afff48d3749b500ae27b426df5916f12824e0bf9e0dc680fa7"
+  },
+  "longmaw-forms-v1/previews/Longmaw_Farmer_States.png": {
+    "bytes": 1000527,
+    "sha256": "e7aa4d0ff8a5a8de2903c214484f74b07b60894392c918a2f33ac5c40d7e2ff2"
+  },
+  "longmaw-forms-v1/previews/Longmaw_Knight_Aggressive.png": {
+    "bytes": 1321117,
+    "sha256": "3a830642e67a9948de14d01e304bf0f34d04becbd4da7a0341721f8252ec8d0c"
+  },
+  "longmaw-forms-v1/previews/Longmaw_Knight_Back.png": {
+    "bytes": 1083847,
+    "sha256": "d6974a2fdf7a585056817dea39685c0d18165187cc4001a221daf7cf1b514828"
+  },
+  "longmaw-forms-v1/previews/Longmaw_Knight_Head.png": {
+    "bytes": 982955,
+    "sha256": "cb403b899ff989d41bb1b262a3d36422acf799c7aa0025e03bd052650809bfb8"
+  },
+  "longmaw-forms-v1/previews/Longmaw_Knight_Idle.png": {
+    "bytes": 1319548,
+    "sha256": "9990199004df01843fcb97fd4ba5830832692939d1a6f37e5b0a400d10d35aaf"
+  },
+  "longmaw-forms-v1/previews/Longmaw_Knight_States.png": {
+    "bytes": 1017977,
+    "sha256": "8631d2f6824e9bca84808ada3cedc3a3babc844a778c9a03606a0b89c0850c63"
+  },
+  "longmaw-forms-v1/previews/Longmaw_Miner_Aggressive.png": {
+    "bytes": 1315116,
+    "sha256": "5070922a1540a4cdf0c8e8774a312f3302e81843d74cafdb2fd70861ffa75811"
+  },
+  "longmaw-forms-v1/previews/Longmaw_Miner_Back.png": {
+    "bytes": 1069197,
+    "sha256": "1f7e744cd7c9d47f8bdc5ac547cedd5dd8d31520be14968bde3e7cb97a556eb6"
+  },
+  "longmaw-forms-v1/previews/Longmaw_Miner_Head.png": {
+    "bytes": 986917,
+    "sha256": "acc1c00b08ac4ff56ae25ed2346a0452fe4fe84c89cdb6f0fda84b8a89de0297"
+  },
+  "longmaw-forms-v1/previews/Longmaw_Miner_Idle.png": {
+    "bytes": 1312335,
+    "sha256": "8e28d72bf9ff87f2f3f8929affb7d359a4e0108e24367e2c4e4d69b26d8accd3"
+  },
+  "longmaw-forms-v1/previews/Longmaw_Miner_States.png": {
+    "bytes": 1010689,
+    "sha256": "acfea51744ee4725e5df41e3b96f8d57f4b663fe7175d7afe357e70a19ab0b0f"
+  },
+  "longmaw-forms-v1/previews/Longmaw_Princess_Aggressive.png": {
+    "bytes": 1300214,
+    "sha256": "6c81932cd75640e107e84a4a1bd12f0f1e6de5200bfc7f9003b9d736af5f4ad1"
+  },
+  "longmaw-forms-v1/previews/Longmaw_Princess_Back.png": {
+    "bytes": 1058537,
+    "sha256": "a314648fec2c11122cb1138fd523a6fea87692001d4d0ce2c3ecde44bda3c27d"
+  },
+  "longmaw-forms-v1/previews/Longmaw_Princess_Head.png": {
+    "bytes": 967927,
+    "sha256": "4a5e8ef4267815b9afcf97b590f1be8835b7e32d8b934fe5bc2598dc2e23d614"
+  },
+  "longmaw-forms-v1/previews/Longmaw_Princess_Idle.png": {
+    "bytes": 1297066,
+    "sha256": "704b30606c2baba1ddb62423573623d734029aaad9459c4ea08167605d19046e"
+  },
+  "longmaw-forms-v1/previews/Longmaw_Princess_States.png": {
+    "bytes": 995062,
+    "sha256": "eee3e8f202fbdcd023d00a03efcf8e5ed890dc3d7c554afd087681afd7e9e24a"
+  },
+  "longmaw-forms-v1/previews/Longmaw_Punk_Aggressive.png": {
+    "bytes": 1310994,
+    "sha256": "3f9782c28077560a0ff342da951e4140ea0a193c56d21b43e2e4dad57cee8fae"
+  },
+  "longmaw-forms-v1/previews/Longmaw_Punk_Back.png": {
+    "bytes": 1064244,
+    "sha256": "7d5e145a8a87f60c0ef0d71d48b447c7f8dccfd2d2421a08570c98211dd0e1de"
+  },
+  "longmaw-forms-v1/previews/Longmaw_Punk_Head.png": {
+    "bytes": 984280,
+    "sha256": "1e17f0fd1c0e402253a33d6a5f737eed48dd7e4c835150a67e2a2835901a28e0"
+  },
+  "longmaw-forms-v1/previews/Longmaw_Punk_Idle.png": {
+    "bytes": 1308644,
+    "sha256": "be595c6c9743c8e4ceeac14c44e1f21454680b7ce92a950c0b940a590cccb39e"
+  },
+  "longmaw-forms-v1/previews/Longmaw_Punk_States.png": {
+    "bytes": 1004888,
+    "sha256": "20646994e726a8f76c721e916c8d59fecd0eea03eaf251a119e9d902c6978262"
+  },
+  "longmaw-forms-v1/references.json": {
+    "bytes": 843,
+    "sha256": "cbe177169022fcf93cb0738cdb0b866dc026829c52ea4a8abdbc090a68f5b54c"
+  },
+  "longmaw-forms-v1/reports/Assassin.json": {
+    "bytes": 4572,
+    "sha256": "1e0bea71002614314db3aec2ea57542b90913a358fbbbbaf635437264233a2b3"
+  },
+  "longmaw-forms-v1/reports/Assassin_validation.json": {
+    "bytes": 2205,
+    "sha256": "f3d90a60558c0862e1da0e1cdb55e9bd2db67a466ae5d68c8339ce49d2d5cba5"
+  },
+  "longmaw-forms-v1/reports/Farmer.json": {
+    "bytes": 3798,
+    "sha256": "5ca5ab335fd75173c63498c0cecb08992683c0d9338be05ef9a9775daa7a6980"
+  },
+  "longmaw-forms-v1/reports/Farmer_validation.json": {
+    "bytes": 2205,
+    "sha256": "3167c8c55e57ac07311f11b10b7c09a75f1908ef35d0c4adf240a6dc48ff5d61"
+  },
+  "longmaw-forms-v1/reports/Knight.json": {
+    "bytes": 5278,
+    "sha256": "b616da49785c8268b6d89bf34eeb995665c65e23cb0681f51bb815482edd3a1f"
+  },
+  "longmaw-forms-v1/reports/Knight_validation.json": {
+    "bytes": 2205,
+    "sha256": "9e1157613cf4424b298384866e521abce94edd240aac325a2dfee11b0332b1df"
+  },
+  "longmaw-forms-v1/reports/Miner.json": {
+    "bytes": 4304,
+    "sha256": "d3cfd4ce79827fcc65edc9568fc76cdf1729cdc4982368ddd7a9207713bc2af8"
+  },
+  "longmaw-forms-v1/reports/Miner_validation.json": {
+    "bytes": 2205,
+    "sha256": "913674560d977639e034d19d69df6dee704b4898e30a923d994d381541c60ff4"
+  },
+  "longmaw-forms-v1/reports/Princess.json": {
+    "bytes": 3586,
+    "sha256": "88147081ca6d375078f5f6018ffc7438079872bc71e2976d435a674baf46b3e0"
+  },
+  "longmaw-forms-v1/reports/Princess_validation.json": {
+    "bytes": 2205,
+    "sha256": "7af6b8cf2b83d47e269db121a22504939862d6cd53448cc54baf4ddc085bfe8e"
+  },
+  "longmaw-forms-v1/reports/Punk.json": {
+    "bytes": 3812,
+    "sha256": "c7580b9ac493befa89ed3c6cd008af1476341274f53902da0d95ddcbfcaacf53"
+  },
+  "longmaw-forms-v1/reports/Punk_validation.json": {
+    "bytes": 2209,
+    "sha256": "ac903f84a4e78bc9b0efc24c9cf62775f97b8b40f6295b3fb8303f16f073753d"
+  },
+  "longmaw-forms-v1/review.py": {
+    "bytes": 4074,
+    "sha256": "9f41969b0b50e16536bb016cec203cbeb8312e23f2d5b76d3e7f1760433afff0"
+  },
+  "longmaw-forms-v1/validate.py": {
+    "bytes": 8046,
+    "sha256": "3a2222f3dd526ce3539f18999c3e8a7b12edeeb6701fcb540640a424be4a8200"
+  },
+  "longmaw-forms-v1/validation.json": {
+    "bytes": 15478,
+    "sha256": "9f6159146cf7302b405e6dd5985f399647d5b1f4a8594108730823913aaf579a"
+  },
+  "longmaw-icons-v1/Longmaw_Icons_Review.zip": {
+    "bytes": 7331898,
+    "sha256": "bec9b69b278ce048ed4c94ae0275d40decdb7391993347d3f06d50df66e2b967"
+  },
+  "longmaw-icons-v1/README.md": {
+    "bytes": 3677,
+    "sha256": "cacb93236054458d3af27db2c274a33d2575df5cbe4daeb94131e8332e0daf0e"
+  },
+  "longmaw-icons-v1/assets.json": {
+    "bytes": 3695,
+    "sha256": "00dc45cff534e4ffb9179287edfe07c490d268f32dcbec7b3641fe1b48115590"
+  },
+  "longmaw-icons-v1/compose_review.py": {
+    "bytes": 5140,
+    "sha256": "55121818a446023715218e66e482b7a65a89bec0694504c5da1e36ecc06cdbf3"
+  },
+  "longmaw-icons-v1/icons/LongmawAssassin.png": {
+    "bytes": 914194,
+    "sha256": "5e0d4e48bc9fe6f9dedcd09596355548cda3f2cf502de04ddcf29c9482a1dd60"
+  },
+  "longmaw-icons-v1/icons/LongmawFarmer.png": {
+    "bytes": 938190,
+    "sha256": "11f79b9686adcc79083902e7bc6af71aea17853f2a8f57a4385426ad56105315"
+  },
+  "longmaw-icons-v1/icons/LongmawKnight.png": {
+    "bytes": 960725,
+    "sha256": "3110fa44baf3a2ecb4dd8c1acb075ae135360ba736db79a413538b4dff3f7f02"
+  },
+  "longmaw-icons-v1/icons/LongmawMiner.png": {
+    "bytes": 958110,
+    "sha256": "66be9913b7403cad9db5ba0e25630bd0befddec82410bb162e2c9113eaf4e0eb"
+  },
+  "longmaw-icons-v1/icons/LongmawPrincess.png": {
+    "bytes": 910530,
+    "sha256": "0904f6f6e5cbca8107834d0212512a54adeb0e9d887b4a9369717feaa9cd5d50"
+  },
+  "longmaw-icons-v1/icons/LongmawPunk.png": {
+    "bytes": 904981,
+    "sha256": "d68be2e2454161e2b97cf71d580bcd71a2e8607fbf68587dc02ecbe35a1f4b00"
+  },
+  "longmaw-icons-v1/previews/Longmaw_Icons_Review.png": {
+    "bytes": 1489170,
+    "sha256": "9b7b5f6d58362f5f89502faaba7ecb857cde888932f20135a254cc86a75659b1"
+  },
+  "longmaw-icons-v1/previews/Longmaw_Icons_SmallSizes.png": {
+    "bytes": 125571,
+    "sha256": "f44a1230c6eb2c01c76da4ae7552f9c446433eed697a5d9247cb53f3557c22a6"
+  },
+  "longmaw-icons-v1/previews/Longmaw_Icons_StyleComparison.png": {
+    "bytes": 506655,
+    "sha256": "cd17159f3e11fe1cec4ab8719adaf418f6bb3c8b5dab31b663d13a43283d3847"
+  },
+  "longmaw-icons-v1/prompts.json": {
+    "bytes": 19754,
+    "sha256": "bb520f104b268877f8abfaa8091db562f2087348ec68a885679f175ec2b0f44f"
+  },
+  "longmaw-icons-v1/references.json": {
+    "bytes": 1332,
+    "sha256": "36baa7b9bb942fb1c8115bcc414f0cba8d8560776f8db6d662a901bba426b6a4"
+  },
+  "longmaw-icons-v1/validation.json": {
+    "bytes": 3380,
+    "sha256": "a8df601e096ac99ec03a6f99b56191f9c2c7c45d11ebc829e79e285368196f48"
+  }
+}

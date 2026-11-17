@@ -1,0 +1,157 @@
+{
+  "status": "awaiting_visual_approval",
+  "models": {
+    "AssimilatedAdventurer": {
+      "reference": 1,
+      "triangles": 2160,
+      "vertices": 4624,
+      "bones": 21,
+      "meshes": 1,
+      "materials": 1,
+      "textures": 0,
+      "animation_clips": 0,
+      "bounds": [
+        [
+          -1.6220521926879883,
+          -0.699999988079071,
+          0.0
+        ],
+        [
+          1.6220521926879883,
+          0.6407515406608582,
+          6.21999979019165
+        ]
+      ],
+      "height": 6.22,
+      "interpretation": "Assimilated Adventurer from reference 1: helmeted humanoid, splayed split chest with internal teeth, two arms and two walking legs. Peelflap is the displayed individual name.",
+      "review_baseline_only": false,
+      "source_asset": null
+    },
+    "PrimitiveSummoner": {
+      "reference": 3,
+      "triangles": 2032,
+      "vertices": 4392,
+      "bones": 16,
+      "meshes": 1,
+      "materials": 1,
+      "textures": 0,
+      "animation_clips": 0,
+      "bounds": [
+        [
+          -5.004215240478516,
+          -1.9615168571472168,
+          0.0
+        ],
+        [
+          5.004215240478516,
+          2.018061876296997,
+          6.992984771728516
+        ]
+      ],
+      "height": 6.993,
+      "interpretation": "Primitive Summoner: two large separate rectangular flesh jaws and four high angular support legs. Upper and lower jaws are independently rigged; no spherical spider abdomen.",
+      "review_baseline_only": false,
+      "source_asset": null
+    },
+    "ParasiteExisting": {
+      "reference": 4,
+      "triangles": 2492,
+      "vertices": 5410,
+      "bones": 9,
+      "meshes": 1,
+      "materials": 1,
+      "textures": 0,
+      "animation_clips": 0,
+      "bounds": [
+        [
+          -2.8399999141693115,
+          -1.2209999561309814,
+          0.00800000037997961
+        ],
+        [
+          2.8399999141693115,
+          0.6930000185966492,
+          6.38100004196167
+        ]
+      ],
+      "height": 6.373,
+      "interpretation": "Unmodified project Parasite_Root_Aggressive geometry and vertex colors for before/after comparison.",
+      "review_baseline_only": true,
+      "source_asset": "Parasite_Root_Aggressive"
+    },
+    "ParasiteAdapted": {
+      "reference": 4,
+      "triangles": 2984,
+      "vertices": 6438,
+      "bones": 9,
+      "meshes": 1,
+      "materials": 1,
+      "textures": 0,
+      "animation_clips": 0,
+      "bounds": [
+        [
+          -3.014011859893799,
+          -1.3460999727249146,
+          0.00800000037997961
+        ],
+        [
+          3.014011859893799,
+          1.7199430465698242,
+          6.38100004196167
+        ]
+      ],
+      "height": 6.373,
+      "interpretation": "Adaptation of the actual existing Parasite_Root_Aggressive. Original head, eyes, hands, legs, tendrils, triangle topology and source pivots retained; torso and arms subtly broadened, red folds added behind the head.",
+      "review_baseline_only": false,
+      "source_asset": "Parasite_Root_Aggressive"
+    },
+    "AdaptedViscera": {
+      "reference": 5,
+      "triangles": 9236,
+      "vertices": 19968,
+      "bones": 46,
+      "meshes": 1,
+      "materials": 1,
+      "textures": 0,
+      "animation_clips": 0,
+      "bounds": [
+        [
+          -3.9082870483398438,
+          -6.2890448570251465,
+          0.0
+        ],
+        [
+          4.110469818115234,
+          1.9560000896453857,
+          10.387864112854004
+        ]
+      ],
+      "height": 10.388,
+      "interpretation": "Adapted Viscera: thick pale-over-red nautilus-like shell, recessed blue-grey mouth, eight long forward-projecting segmented arms with ventral teeth, six separate support legs. Each arm has three bones.",
+      "review_baseline_only": false,
+      "source_asset": null
+    }
+  },
+  "authoring_axes": {
+    "up": "Z",
+    "front": "-Y"
+  },
+  "export_axes": {
+    "up": "Y"
+  },
+  "unit": "One intended Roblox stud; scale not verified in Studio",
+  "rig": "Custom rigid-segment NPC skeletons; not Roblox R15",
+  "game_integrated": false,
+  "studio_modified": false,
+  "uploaded": false,
+  "scope": "Three new reference models plus an adaptation of the existing Parasite. ParasiteExisting is only a comparison baseline. No new Crux model is included. Dredge remains approved and unchanged.",
+  "previews": "Rendered from the actual exported source geometry, no paintovers",
+  "delivery_models": [
+    "AssimilatedAdventurer",
+    "PrimitiveSummoner",
+    "ParasiteAdapted",
+    "AdaptedViscera"
+  ],
+  "approved_dredge_package": "../srp-dredge-v1",
+  "new_crux_included": false
+}

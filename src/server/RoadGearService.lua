@@ -44,7 +44,7 @@ end
 function Gear.Bat(p)
  local d=D.Profiles[p];if not d or d.activeSlot~=1 or not Actions.CanAct(p) or os.clock()<(Actions.State(p).switch or 0) then return false,'actionBlocked' end
  local now=os.clock();if now<(Gear.NextBat[p] or 0) then return false end
- local cfg=table.clone(Shovels[d.equippedShovel or 'Rusty']);if Road.Carriers[p] then cfg.Damage*=Shovels.CarryDamage;cfg.Knockout*=Shovels.CarryKnockout;cfg.Distance*=Shovels.CarryDistance end;Gear.NextBat[p]=now+cfg.Cooldown;Road.CancelPickup(p);Road.Reveal(p)
+ local cfg=table.clone(Shovels[d.equippedShovel or ''] or Shovels[Shovels.Order[1]]);if Road.Carriers[p] then cfg.Damage*=Shovels.CarryDamage;cfg.Knockout*=Shovels.CarryKnockout;cfg.Distance*=Shovels.CarryDistance end;Gear.NextBat[p]=now+cfg.Cooldown;Road.CancelPickup(p);Road.Reveal(p)
  p:SetAttribute('RoadBatUntil',workspace:GetServerTimeNow()+Shovels.Swing);p:SetAttribute('RoadBatReadyAt',workspace:GetServerTimeNow()+cfg.Cooldown)
  local character=p.Character;local swingAt=workspace:GetServerTimeNow()
  p:SetAttribute('ShovelSwingAt',swingAt)
@@ -174,12 +174,13 @@ function Gear.Init()
  rem=RS.Remotes
  local action=Instance.new("RemoteEvent");action.Name="RoadAction";action.Parent=rem
  action.OnServerEvent:Connect(function(p,op,target,...)
-  if select('#',...)~=0 or type(op)~="string" or (op~="bat" and op~="placeTrap" and op~="buyTrap" and op~="dropGrave" and op~="bossFight") then return end
+  if select('#',...)~=0 or type(op)~="string" or (op~="bat" and op~="placeTrap" and op~="buyTrap" and op~="dropGrave" and op~="bossFight" and op~="finisher") then return end
   if target~=nil and (op~="placeTrap" or typeof(target)~="Vector3") then return end
   local now=os.clock();if now-(Gear.Requests[p] or -math.huge)<.2 then return end;Gear.Requests[p]=now
   if op=="placeTrap" then local d=D.Profiles[p];if not d or d.activeSlot~=4 then return end end
   local ok,reason
   if op=="bossFight" then ok=Road.Challenge(p);return end
+  if op=="finisher" then ok=Road.Finish(p);return end -- the target over a staggered boss (2026-11-15)
   if op=="dropGrave" then ok,reason=Gear.DropGrave(p) elseif op=="bat" then ok,reason=Gear.Bat(p) elseif op=="placeTrap" then ok,reason=Gear.Place(p,target) else ok,reason=Gear.Buy(p) end
   if not ok and type(reason)=="string" then notice(p,reason) end
  end)

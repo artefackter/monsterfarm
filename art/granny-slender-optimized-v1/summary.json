@@ -1,0 +1,54 @@
+{
+  "model_count": 35,
+  "icon_count": 12,
+  "models": {
+    "source_bytes": 30958660,
+    "optimized_bytes": 24155652,
+    "reduction_percent": 21.97,
+    "source_meshes": 843,
+    "optimized_meshes": 49,
+    "triangles_preserved": 219168,
+    "source_vertices": 488111,
+    "optimized_vertices": 488111,
+    "bones_preserved": 623,
+    "input_animation_keys": 39382,
+    "output_animation_keys": 35434,
+    "moving_keys_preserved": true
+  },
+  "icons": {
+    "source_bytes": 9841945,
+    "profiles": {
+      "large1024": {
+        "bytes": 6840320,
+        "reduction_percent": 30.5,
+        "rgba8_uncompressed_bytes": 50331648
+      },
+      "ui512": {
+        "bytes": 2052589,
+        "reduction_percent": 79.14,
+        "rgba8_uncompressed_bytes": 12582912
+      },
+      "small256": {
+        "bytes": 636643,
+        "reduction_percent": 93.53,
+        "rgba8_uncompressed_bytes": 3145728
+      }
+    }
+  },
+  "selected_set": {
+    "profile": "models + icons/ui512",
+    "source_bytes": 40800605,
+    "optimized_bytes": 26208241,
+    "reduction_percent": 35.77
+  },
+  "archive": {
+    "file": "GrannySlender_Models_Icons512.zip",
+    "bytes": 7432298,
+    "sha256": "bda7a52aed5521bf0ecfd1bd479bf9e736525e97eb987c30c879da42499d1831",
+    "verified": true
+  },
+  "source_files_unchanged": 531,
+  "game_integrated": false,
+  "runtime_load_time_measured": false,
+  "measurement_scope": "Alternative main GLB + one icon-resolution set only. Authoring scenes, FBX, historical versions, duplicate static poses and review renders are not included. Working directory grows because original assets and review copies are retained."
+}

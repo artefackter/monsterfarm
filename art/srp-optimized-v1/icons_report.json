@@ -1,0 +1,4662 @@
+{
+  "passed": true,
+  "artwork_regenerated": false,
+  "icons": [
+    {
+      "id": "DredgeFarmer",
+      "character": "Dredge",
+      "role": "Farmer",
+      "source": "/Users/wingman/Documents/Codex/GrowAMonster-Git-2026-11-12/art/srp-icons-v1/icons/DredgeFarmer.png",
+      "source_bytes": 920669,
+      "source_sha256": "a22e48e75210fc77a63944cc01fa4dbd7acc261aa4b86786f746746352dfca72",
+      "source_size": [
+        1254,
+        1254
+      ],
+      "variants": {
+        "large1024": {
+          "file": "icons/large1024/DredgeFarmer.png",
+          "bytes": 651905,
+          "size": [
+            1024,
+            1024
+          ],
+          "rgba8_uncompressed_bytes": 4194304,
+          "sha256": "bad7ae24c4dd8e56785d33fe451501930aa735cccc1352b2aef8df04456403c7",
+          "corner_alpha": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "ui_comparison": [
+            {
+              "display_px": 64,
+              "background": "#F6EEDC",
+              "mean_rgb_error_255": 0.3849,
+              "rmse_255": 0.6496,
+              "psnr_db": 51.88
+            },
+            {
+              "display_px": 64,
+              "background": "#151C26",
+              "mean_rgb_error_255": 0.3499,
+              "rmse_255": 0.6098,
+              "psnr_db": 52.43
+            },
+            {
+              "display_px": 96,
+              "background": "#F6EEDC",
+              "mean_rgb_error_255": 0.4096,
+              "rmse_255": 0.6704,
+              "psnr_db": 51.6
+            },
+            {
+              "display_px": 96,
+              "background": "#151C26",
+              "mean_rgb_error_255": 0.3786,
+              "rmse_255": 0.6384,
+              "psnr_db": 52.03
+            },
+            {
+              "display_px": 128,
+              "background": "#F6EEDC",
+              "mean_rgb_error_255": 0.4348,
+              "rmse_255": 0.6886,
+              "psnr_db": 51.37
+            },
+            {
+              "display_px": 128,
+              "background": "#151C26",
+              "mean_rgb_error_255": 0.3949,
+              "rmse_255": 0.6499,
+              "psnr_db": 51.87
+            }
+          ]
+        },
+        "ui512": {
+          "file": "icons/ui512/DredgeFarmer.png",
+          "bytes": 201798,
+          "size": [
+            512,
+            512
+          ],
+          "rgba8_uncompressed_bytes": 1048576,
+          "sha256": "dcaff8ea97f215425eca5efded15cfe20d43c21a52e347ddb3c0b3518cfe658c",
+          "corner_alpha": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "ui_comparison": [
+            {
+              "display_px": 64,
+              "background": "#F6EEDC",
+              "mean_rgb_error_255": 0.4576,
+              "rmse_255": 0.7154,
+              "psnr_db": 51.04
+            },
+            {
+              "display_px": 64,
+              "background": "#151C26",
+              "mean_rgb_error_255": 0.3768,
+              "rmse_255": 0.6371,
+              "psnr_db": 52.05
+            },
+            {
+              "display_px": 96,
+              "background": "#F6EEDC",
+              "mean_rgb_error_255": 0.5232,
+              "rmse_255": 0.7873,
+              "psnr_db": 50.21
+            },
+            {
+              "display_px": 96,
+              "background": "#151C26",
+              "mean_rgb_error_255": 0.4321,
+              "rmse_255": 0.6971,
+              "psnr_db": 51.27
+            },
+            {
+              "display_px": 128,
+              "background": "#F6EEDC",
+              "mean_rgb_error_255": 0.5665,
+              "rmse_255": 0.8434,
+              "psnr_db": 49.61
+            },
+            {
+              "display_px": 128,
+              "background": "#151C26",
+              "mean_rgb_error_255": 0.4533,
+              "rmse_255": 0.719,
+              "psnr_db": 51.0
+            }
+          ]
+        },
+        "small256": {
+          "file": "icons/small256/DredgeFarmer.png",
+          "bytes": 65785,
+          "size": [
+            256,
+            256
+          ],
+          "rgba8_uncompressed_bytes": 262144,
+          "sha256": "77f03cf471db9ff1719c1fa30589f8232345101aaf0ed672ee45f58dbadbcc36",
+          "corner_alpha": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "ui_comparison": [
+            {
+              "display_px": 64,
+              "background": "#F6EEDC",
+              "mean_rgb_error_255": 0.7203,
+              "rmse_255": 1.0582,
+              "psnr_db": 47.64
+            },
+            {
+              "display_px": 64,
+              "background": "#151C26",
+              "mean_rgb_error_255": 0.4902,
+              "rmse_255": 0.7775,
+              "psnr_db": 50.32
+            },
+            {
+              "display_px": 96,
+              "background": "#F6EEDC",
+              "mean_rgb_error_255": 0.8848,
+              "rmse_255": 1.337,
+              "psnr_db": 45.61
+            },
+            {
+              "display_px": 96,
+              "background": "#151C26",
+              "mean_rgb_error_255": 0.5535,
+              "rmse_255": 0.861,
+              "psnr_db": 49.43
+            },
+            {
+              "display_px": 128,
+              "background": "#F6EEDC",
+              "mean_rgb_error_255": 0.9502,
+              "rmse_255": 1.4868,
+              "psnr_db": 44.69
+            },
+            {
+              "display_px": 128,
+              "background": "#151C26",
+              "mean_rgb_error_255": 0.5827,
+              "rmse_255": 0.915,
+              "psnr_db": 48.9
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "DredgeMiner",
+      "character": "Dredge",
+      "role": "Miner",
+      "source": "/Users/wingman/Documents/Codex/GrowAMonster-Git-2026-11-12/art/srp-icons-v1/icons/DredgeMiner.png",
+      "source_bytes": 959070,
+      "source_sha256": "2d020ec13bbe16bb73296e20c892b8e99bb69afc9249fa5d60b5a71abbacb413",
+      "source_size": [
+        1254,
+        1254
+      ],
+      "variants": {
+        "large1024": {
+          "file": "icons/large1024/DredgeMiner.png",
+          "bytes": 680002,
+          "size": [
+            1024,
+            1024
+          ],
+          "rgba8_uncompressed_bytes": 4194304,
+          "sha256": "abcbefd3427622c3335d5d6bae2b99a455afdd3840f81cae83026afa222c057e",
+          "corner_alpha": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "ui_comparison": [
+            {
+              "display_px": 64,
+              "background": "#F6EEDC",
+              "mean_rgb_error_255": 0.4133,
+              "rmse_255": 0.6704,
+              "psnr_db": 51.6
+            },
+            {
+              "display_px": 64,
+              "background": "#151C26",
+              "mean_rgb_error_255": 0.3865,
+              "rmse_255": 0.6386,
+              "psnr_db": 52.03
+            },
+            {
+              "display_px": 96,
+              "background": "#F6EEDC",
+              "mean_rgb_error_255": 0.4393,
+              "rmse_255": 0.6933,
+              "psnr_db": 51.31
+            },
+            {
+              "display_px": 96,
+              "background": "#151C26",
+              "mean_rgb_error_255": 0.4078,
+              "rmse_255": 0.6595,
+              "psnr_db": 51.75
+            },
+            {
+              "display_px": 128,
+              "background": "#F6EEDC",
+              "mean_rgb_error_255": 0.4666,
+              "rmse_255": 0.7167,
+              "psnr_db": 51.02
+            },
+            {
+              "display_px": 128,
+              "background": "#151C26",
+              "mean_rgb_error_255": 0.4284,
+              "rmse_255": 0.6793,
+              "psnr_db": 51.49
+            }
+          ]
+        },
+        "ui512": {
+          "file": "icons/ui512/DredgeMiner.png",
+          "bytes": 206592,
+          "size": [
+            512,
+            512
+          ],
+          "rgba8_uncompressed_bytes": 1048576,
+          "sha256": "6a411a6dc30cb4c05b8c979272e36eca2ad4cd16ca8122717f7dcdcba49dc48a",
+          "corner_alpha": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "ui_comparison": [
+            {
+              "display_px": 64,
+              "background": "#F6EEDC",
+              "mean_rgb_error_255": 0.4903,
+              "rmse_255": 0.7453,
+              "psnr_db": 50.68
+            },
+            {
+              "display_px": 64,
+              "background": "#151C26",
+              "mean_rgb_error_255": 0.4239,
+              "rmse_255": 0.68,
+              "psnr_db": 51.48
+            },
+            {
+              "display_px": 96,
+              "background": "#F6EEDC",
+              "mean_rgb_error_255": 0.5343,
+              "rmse_255": 0.7935,
+              "psnr_db": 50.14
+            },
+            {
+              "display_px": 96,
+              "background": "#151C26",
+              "mean_rgb_error_255": 0.4452,
+              "rmse_255": 0.7038,
+              "psnr_db": 51.18
+            },
+            {
+              "display_px": 128,
+              "background": "#F6EEDC",
+              "mean_rgb_error_255": 0.5732,
+              "rmse_255": 0.8436,
+              "psnr_db": 49.61
+            },
+            {
+              "display_px": 128,
+              "background": "#151C26",
+              "mean_rgb_error_255": 0.4793,
+              "rmse_255": 0.7385,
+              "psnr_db": 50.76
+            }
+          ]
+        },
+        "small256": {
+          "file": "icons/small256/DredgeMiner.png",
+          "bytes": 66204,
+          "size": [
+            256,
+            256
+          ],
+          "rgba8_uncompressed_bytes": 262144,
+          "sha256": "a1223ca513e69e1d7499443049bc5ee912bbdde129021f9da551f777d0931c70",
+          "corner_alpha": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "ui_comparison": [
+            {
+              "display_px": 64,
+              "background": "#F6EEDC",
+              "mean_rgb_error_255": 0.694,
+              "rmse_255": 1.0184,
+              "psnr_db": 47.97
+            },
+            {
+              "display_px": 64,
+              "background": "#151C26",
+              "mean_rgb_error_255": 0.5087,
+              "rmse_255": 0.7993,
+              "psnr_db": 50.08
+            },
+            {
+              "display_px": 96,
+              "background": "#F6EEDC",
+              "mean_rgb_error_255": 0.8419,
+              "rmse_255": 1.2887,
+              "psnr_db": 45.93
+            },
+            {
+              "display_px": 96,
+              "background": "#151C26",
+              "mean_rgb_error_255": 0.546,
+              "rmse_255": 0.8583,
+              "psnr_db": 49.46
+            },
+            {
+              "display_px": 128,
+              "background": "#F6EEDC",
+              "mean_rgb_error_255": 0.9157,
+              "rmse_255": 1.4591,
+              "psnr_db": 44.85
+            },
+            {
+              "display_px": 128,
+              "background": "#151C26",
+              "mean_rgb_error_255": 0.5762,
+              "rmse_255": 0.9053,
+              "psnr_db": 48.99
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "DredgeKing",
+      "character": "Dredge",
+      "role": "King",
+      "source": "/Users/wingman/Documents/Codex/GrowAMonster-Git-2026-11-12/art/srp-icons-v1/icons/DredgeKing.png",
+      "source_bytes": 994133,
+      "source_sha256": "f054f8f7106ad482eab2fbd3c1b2133a8465de3552334568b982a71f80e47a1c",
+      "source_size": [
+        1254,
+        1254
+      ],
+      "variants": {
+        "large1024": {
+          "file": "icons/large1024/DredgeKing.png",
+          "bytes": 707130,
+          "size": [
+            1024,
+            1024
+          ],
+          "rgba8_uncompressed_bytes": 4194304,
+          "sha256": "d77f5e79b48c4f4487cd156611a02fc43249987f5ce941446fdd94ed0f1cc094",
+          "corner_alpha": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "ui_comparison": [
+            {
+              "display_px": 64,
+              "background": "#F6EEDC",
+              "mean_rgb_error_255": 0.3864,
+              "rmse_255": 0.6504,
+              "psnr_db": 51.87
+            },
+            {
+              "display_px": 64,
+              "background": "#151C26",
+              "mean_rgb_error_255": 0.3598,
+              "rmse_255": 0.6196,
+              "psnr_db": 52.29
+            },
+            {
+              "display_px": 96,
+              "background": "#F6EEDC",
+              "mean_rgb_error_255": 0.4264,
+              "rmse_255": 0.6826,
+              "psnr_db": 51.45
+            },
+            {
+              "display_px": 96,
+              "background": "#151C26",
+              "mean_rgb_error_255": 0.3912,
+              "rmse_255": 0.6467,
+              "psnr_db": 51.92
+            },
+            {
+              "display_px": 128,
+              "background": "#F6EEDC",
+              "mean_rgb_error_255": 0.4419,
+              "rmse_255": 0.6971,
+              "psnr_db": 51.26
+            },
+            {
+              "display_px": 128,
+              "background": "#151C26",
+              "mean_rgb_error_255": 0.4043,
+              "rmse_255": 0.6569,
+              "psnr_db": 51.78
+            }
+          ]
+        },
+        "ui512": {
+          "file": "icons/ui512/DredgeKing.png",
+          "bytes": 214411,
+          "size": [
+            512,
+            512
+          ],
+          "rgba8_uncompressed_bytes": 1048576,
+          "sha256": "f6b9e4c4a29fa535ef3f34295fead3d8a1e5810db1aa45a71ab77e2fa1b3f0e6",
+          "corner_alpha": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "ui_comparison": [
+            {
+              "display_px": 64,
+              "background": "#F6EEDC",
+              "mean_rgb_error_255": 0.4736,
+              "rmse_255": 0.7344,
+              "psnr_db": 50.81
+            },
+            {
+              "display_px": 64,
+              "background": "#151C26",
+              "mean_rgb_error_255": 0.3952,
+              "rmse_255": 0.6548,
+              "psnr_db": 51.81
+            },
+            {
+              "display_px": 96,
+              "background": "#F6EEDC",
+              "mean_rgb_error_255": 0.5307,
+              "rmse_255": 0.7947,
+              "psnr_db": 50.13
+            },
+            {
+              "display_px": 96,
+              "background": "#151C26",
+              "mean_rgb_error_255": 0.442,
+              "rmse_255": 0.7037,
+              "psnr_db": 51.18
+            },
+            {
+              "display_px": 128,
+              "background": "#F6EEDC",
+              "mean_rgb_error_255": 0.5756,
+              "rmse_255": 0.8569,
+              "psnr_db": 49.47
+            },
+            {
+              "display_px": 128,
+              "background": "#151C26",
+              "mean_rgb_error_255": 0.4736,
+              "rmse_255": 0.7381,
+              "psnr_db": 50.77
+            }
+          ]
+        },
+        "small256": {
+          "file": "icons/small256/DredgeKing.png",
+          "bytes": 68676,
+          "size": [
+            256,
+            256
+          ],
+          "rgba8_uncompressed_bytes": 262144,
+          "sha256": "dcbeb4872b9d3c6bfe5bf60511b94cc6873c4084cd523a86280bea4e2aca36ac",
+          "corner_alpha": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "ui_comparison": [
+            {
+              "display_px": 64,
+              "background": "#F6EEDC",
+              "mean_rgb_error_255": 0.6884,
+              "rmse_255": 1.0156,
+              "psnr_db": 48.0
+            },
+            {
+              "display_px": 64,
+              "background": "#151C26",
+              "mean_rgb_error_255": 0.5114,
+              "rmse_255": 0.8153,
+              "psnr_db": 49.9
+            },
+            {
+              "display_px": 96,
+              "background": "#F6EEDC",
+              "mean_rgb_error_255": 0.8611,
+              "rmse_255": 1.3068,
+              "psnr_db": 45.81
+            },
+            {
+              "display_px": 96,
+              "background": "#151C26",
+              "mean_rgb_error_255": 0.5703,
+              "rmse_255": 0.9012,
+              "psnr_db": 49.03
+            },
+            {
+              "display_px": 128,
+              "background": "#F6EEDC",
+              "mean_rgb_error_255": 0.9388,
+              "rmse_255": 1.4883,
+              "psnr_db": 44.68
+            },
+            {
+              "display_px": 128,
+              "background": "#151C26",
+              "mean_rgb_error_255": 0.5998,
+              "rmse_255": 0.9506,
+              "psnr_db": 48.57
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "DredgeKnight",
+      "character": "Dredge",
+      "role": "Knight",
+      "source": "/Users/wingman/Documents/Codex/GrowAMonster-Git-2026-11-12/art/srp-icons-v1/icons/DredgeKnight.png",
+      "source_bytes": 938302,
+      "source_sha256": "9b752c98def5f6f17349c94f1a92ee406df63182bb4fddff52ddfc87c683951e",
+      "source_size": [
+        1254,
+        1254
+      ],
+      "variants": {
+        "large1024": {
+          "file": "icons/large1024/DredgeKnight.png",
+          "bytes": 663137,
+          "size": [
+            1024,
+            1024
+          ],
+          "rgba8_uncompressed_bytes": 4194304,
+          "sha256": "83a342c20c53bba5dd0aa886c500832d190899b6e17e25781cab49ea0e881335",
+          "corner_alpha": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "ui_comparison": [
+            {
+              "display_px": 64,
+              "background": "#F6EEDC",
+              "mean_rgb_error_255": 0.4042,
+              "rmse_255": 0.6642,
+              "psnr_db": 51.68
+            },
+            {
+              "display_px": 64,
+              "background": "#151C26",
+              "mean_rgb_error_255": 0.3758,
+              "rmse_255": 0.6302,
+              "psnr_db": 52.14
+            },
+            {
+              "display_px": 96,
+              "background": "#F6EEDC",
+              "mean_rgb_error_255": 0.4227,
+              "rmse_255": 0.6766,
+              "psnr_db": 51.52
+            },
+            {
+              "display_px": 96,
+              "background": "#151C26",
+              "mean_rgb_error_255": 0.3943,
+              "rmse_255": 0.6456,
+              "psnr_db": 51.93
+            },
+            {
+              "display_px": 128,
+              "background": "#F6EEDC",
+              "mean_rgb_error_255": 0.4474,
+              "rmse_255": 0.7008,
+              "psnr_db": 51.22
+            },
+            {
+              "display_px": 128,
+              "background": "#151C26",
+              "mean_rgb_error_255": 0.4132,
+              "rmse_255": 0.6661,
+              "psnr_db": 51.66
+            }
+          ]
+        },
+        "ui512": {
+          "file": "icons/ui512/DredgeKnight.png",
+          "bytes": 200047,
+          "size": [
+            512,
+            512
+          ],
+          "rgba8_uncompressed_bytes": 1048576,
+          "sha256": "85911fae2dc67e5ecab9d3073ce29cf5210cf45cf0ffffcbda23b588f1b24e44",
+          "corner_alpha": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "ui_comparison": [
+            {
+              "display_px": 64,
+              "background": "#F6EEDC",
+              "mean_rgb_error_255": 0.4866,
+              "rmse_255": 0.7477,
+              "psnr_db": 50.66
+            },
+            {
+              "display_px": 64,
+              "background": "#151C26",
+              "mean_rgb_error_255": 0.4096,
+              "rmse_255": 0.6686,
+              "psnr_db": 51.63
+            },
+            {
+              "display_px": 96,
+              "background": "#F6EEDC",
+              "mean_rgb_error_255": 0.5248,
+              "rmse_255": 0.7826,
+              "psnr_db": 50.26
+            },
+            {
+              "display_px": 96,
+              "background": "#151C26",
+              "mean_rgb_error_255": 0.4453,
+              "rmse_255": 0.7036,
+              "psnr_db": 51.18
+            },
+            {
+              "display_px": 128,
+              "background": "#F6EEDC",
+              "mean_rgb_error_255": 0.5779,
+              "rmse_255": 0.8484,
+              "psnr_db": 49.56
+            },
+            {
+              "display_px": 128,
+              "background": "#151C26",
+              "mean_rgb_error_255": 0.4745,
+              "rmse_255": 0.7327,
+              "psnr_db": 50.83
+            }
+          ]
+        },
+        "small256": {
+          "file": "icons/small256/DredgeKnight.png",
+          "bytes": 64428,
+          "size": [
+            256,
+            256
+          ],
+          "rgba8_uncompressed_bytes": 262144,
+          "sha256": "f7cb9e88698ec118175159097381f09fdc81b228b582db0265ce021fe208d6b4",
+          "corner_alpha": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "ui_comparison": [
+            {
+              "display_px": 64,
+              "background": "#F6EEDC",
+              "mean_rgb_error_255": 0.7208,
+              "rmse_255": 1.0438,
+              "psnr_db": 47.76
+            },
+            {
+              "display_px": 64,
+              "background": "#151C26",
+              "mean_rgb_error_255": 0.5164,
+              "rmse_255": 0.7958,
+              "psnr_db": 50.11
+            },
+            {
+              "display_px": 96,
+              "background": "#F6EEDC",
+              "mean_rgb_error_255": 0.8553,
+              "rmse_255": 1.2887,
+              "psnr_db": 45.93
+            },
+            {
+              "display_px": 96,
+              "background": "#151C26",
+              "mean_rgb_error_255": 0.5624,
+              "rmse_255": 0.8663,
+              "psnr_db": 49.38
+            },
+            {
+              "display_px": 128,
+              "background": "#F6EEDC",
+              "mean_rgb_error_255": 0.9401,
+              "rmse_255": 1.474,
+              "psnr_db": 44.76
+            },
+            {
+              "display_px": 128,
+              "background": "#151C26",
+              "mean_rgb_error_255": 0.6011,
+              "rmse_255": 0.934,
+              "psnr_db": 48.72
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "DredgeNefor",
+      "character": "Dredge",
+      "role": "Nefor",
+      "source": "/Users/wingman/Documents/Codex/GrowAMonster-Git-2026-11-12/art/srp-icons-v1/icons/DredgeNefor.png",
+      "source_bytes": 937538,
+      "source_sha256": "6ae959a275c6d802dcb91547a509e085e14a8a8e9ecf7f31dc17ff811b3fcbcd",
+      "source_size": [
+        1254,
+        1254
+      ],
+      "variants": {
+        "large1024": {
+          "file": "icons/large1024/DredgeNefor.png",
+          "bytes": 661368,
+          "size": [
+            1024,
+            1024
+          ],
+          "rgba8_uncompressed_bytes": 4194304,
+          "sha256": "a5f2facbab051ebf1b10fbc5756a6603b731b590b5e00a92f890ce3ca43fc94c",
+          "corner_alpha": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "ui_comparison": [
+            {
+              "display_px": 64,
+              "background": "#F6EEDC",
+              "mean_rgb_error_255": 0.3875,
+              "rmse_255": 0.6486,
+              "psnr_db": 51.89
+            },
+            {
+              "display_px": 64,
+              "background": "#151C26",
+              "mean_rgb_error_255": 0.3562,
+              "rmse_255": 0.6163,
+              "psnr_db": 52.34
+            },
+            {
+              "display_px": 96,
+              "background": "#F6EEDC",
+              "mean_rgb_error_255": 0.4205,
+              "rmse_255": 0.6813,
+              "psnr_db": 51.46
+            },
+            {
+              "display_px": 96,
+              "background": "#151C26",
+              "mean_rgb_error_255": 0.3895,
+              "rmse_255": 0.6467,
+              "psnr_db": 51.92
+            },
+            {
+              "display_px": 128,
+              "background": "#F6EEDC",
+              "mean_rgb_error_255": 0.4354,
+              "rmse_255": 0.6907,
+              "psnr_db": 51.35
+            },
+            {
+              "display_px": 128,
+              "background": "#151C26",
+              "mean_rgb_error_255": 0.3993,
+              "rmse_255": 0.6545,
+              "psnr_db": 51.81
+            }
+          ]
+        },
+        "ui512": {
+          "file": "icons/ui512/DredgeNefor.png",
+          "bytes": 201231,
+          "size": [
+            512,
+            512
+          ],
+          "rgba8_uncompressed_bytes": 1048576,
+          "sha256": "12e2e9e7de3faa4adc9a70e97c87694649456cce9f62dcd6287f32ea2089af2a",
+          "corner_alpha": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "ui_comparison": [
+            {
+              "display_px": 64,
+              "background": "#F6EEDC",
+              "mean_rgb_error_255": 0.464,
+              "rmse_255": 0.7242,
+              "psnr_db": 50.93
+            },
+            {
+              "display_px": 64,
+              "background": "#151C26",
+              "mean_rgb_error_255": 0.3818,
+              "rmse_255": 0.6423,
+              "psnr_db": 51.98
+            },
+            {
+              "display_px": 96,
+              "background": "#F6EEDC",
+              "mean_rgb_error_255": 0.5245,
+              "rmse_255": 0.7857,
+              "psnr_db": 50.23
+            },
+            {
+              "display_px": 96,
+              "background": "#151C26",
+              "mean_rgb_error_255": 0.4309,
+              "rmse_255": 0.6952,
+              "psnr_db": 51.29
+            },
+            {
+              "display_px": 128,
+              "background": "#F6EEDC",
+              "mean_rgb_error_255": 0.5645,
+              "rmse_255": 0.8412,
+              "psnr_db": 49.63
+            },
+            {
+              "display_px": 128,
+              "background": "#151C26",
+              "mean_rgb_error_255": 0.4601,
+              "rmse_255": 0.7236,
+              "psnr_db": 50.94
+            }
+          ]
+        },
+        "small256": {
+          "file": "icons/small256/DredgeNefor.png",
+          "bytes": 64850,
+          "size": [
+            256,
+            256
+          ],
+          "rgba8_uncompressed_bytes": 262144,
+          "sha256": "8ab5b29b647fda44968affa072027ebf94dc032eff79bfc9246027142e1df35a",
+          "corner_alpha": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "ui_comparison": [
+            {
+              "display_px": 64,
+              "background": "#F6EEDC",
+              "mean_rgb_error_255": 0.675,
+              "rmse_255": 1.0259,
+              "psnr_db": 47.91
+            },
+            {
+              "display_px": 64,
+              "background": "#151C26",
+              "mean_rgb_error_255": 0.4586,
+              "rmse_255": 0.7462,
+              "psnr_db": 50.67
+            },
+            {
+              "display_px": 96,
+              "background": "#F6EEDC",
+              "mean_rgb_error_255": 0.8591,
+              "rmse_255": 1.3195,
+              "psnr_db": 45.72
+            },
+            {
+              "display_px": 96,
+              "background": "#151C26",
+              "mean_rgb_error_255": 0.533,
+              "rmse_255": 0.8377,
+              "psnr_db": 49.67
+            },
+            {
+              "display_px": 128,
+              "background": "#F6EEDC",
+              "mean_rgb_error_255": 0.921,
+              "rmse_255": 1.4807,
+              "psnr_db": 44.72
+            },
+            {
+              "display_px": 128,
+              "background": "#151C26",
+              "mean_rgb_error_255": 0.5665,
+              "rmse_255": 0.8826,
+              "psnr_db": 49.22
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "DredgeKiller",
+      "character": "Dredge",
+      "role": "Killer",
+      "source": "/Users/wingman/Documents/Codex/GrowAMonster-Git-2026-11-12/art/srp-icons-v1/icons/DredgeKiller.png",
+      "source_bytes": 931824,
+      "source_sha256": "136668d77a49e55256ec44ffdad0a13b9118212022027a260ff867d2e5245768",
+      "source_size": [
+        1254,
+        1254
+      ],
+      "variants": {
+        "large1024": {
+          "file": "icons/large1024/DredgeKiller.png",
+          "bytes": 655329,
+          "size": [
+            1024,
+            1024
+          ],
+          "rgba8_uncompressed_bytes": 4194304,
+          "sha256": "339cb5b55e1d63745c3c5a311b0eb30cd6853ba9060942e91dbcab316acb7991",
+          "corner_alpha": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "ui_comparison": [
+            {
+              "display_px": 64,
+              "background": "#F6EEDC",
+              "mean_rgb_error_255": 0.415,
+              "rmse_255": 0.6752,
+              "psnr_db": 51.54
+            },
+            {
+              "display_px": 64,
+              "background": "#151C26",
+              "mean_rgb_error_255": 0.3825,
+              "rmse_255": 0.6398,
+              "psnr_db": 52.01
+            },
+            {
+              "display_px": 96,
+              "background": "#F6EEDC",
+              "mean_rgb_error_255": 0.4512,
+              "rmse_255": 0.7071,
+              "psnr_db": 51.14
+            },
+            {
+              "display_px": 96,
+              "background": "#151C26",
+              "mean_rgb_error_255": 0.4168,
+              "rmse_255": 0.6697,
+              "psnr_db": 51.61
+            },
+            {
+              "display_px": 128,
+              "background": "#F6EEDC",
+              "mean_rgb_error_255": 0.4712,
+              "rmse_255": 0.7207,
+              "psnr_db": 50.98
+            },
+            {
+              "display_px": 128,
+              "background": "#151C26",
+              "mean_rgb_error_255": 0.43,
+              "rmse_255": 0.6808,
+              "psnr_db": 51.47
+            }
+          ]
+        },
+        "ui512": {
+          "file": "icons/ui512/DredgeKiller.png",
+          "bytes": 198763,
+          "size": [
+            512,
+            512
+          ],
+          "rgba8_uncompressed_bytes": 1048576,
+          "sha256": "c51ff7b5d09b3ab61ce6625f8f2bb1e5b1a23babb2060ce84d8e59d69e168a88",
+          "corner_alpha": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "ui_comparison": [
+            {
+              "display_px": 64,
+              "background": "#F6EEDC",
+              "mean_rgb_error_255": 0.4651,
+              "rmse_255": 0.7225,
+              "psnr_db": 50.95
+            },
+            {
+              "display_px": 64,
+              "background": "#151C26",
+              "mean_rgb_error_255": 0.4058,
+              "rmse_255": 0.6627,
+              "psnr_db": 51.7
+            },
+            {
+              "display_px": 96,
+              "background": "#F6EEDC",
+              "mean_rgb_error_255": 0.5258,
+              "rmse_255": 0.7778,
+              "psnr_db": 50.31
+            },
+            {
+              "display_px": 96,
+              "background": "#151C26",
+              "mean_rgb_error_255": 0.4517,
+              "rmse_255": 0.7047,
+              "psnr_db": 51.17
+            },
+            {
+              "display_px": 128,
+              "background": "#F6EEDC",
+              "mean_rgb_error_255": 0.5761,
+              "rmse_255": 0.8411,
+              "psnr_db": 49.63
+            },
+            {
+              "display_px": 128,
+              "background": "#151C26",
+              "mean_rgb_error_255": 0.4772,
+              "rmse_255": 0.7348,
+              "psnr_db": 50.81
+            }
+          ]
+        },
+        "small256": {
+          "file": "icons/small256/DredgeKiller.png",
+          "bytes": 64016,
+          "size": [
+            256,
+            256
+          ],
+          "rgba8_uncompressed_bytes": 262144,
+          "sha256": "8ae1c3be69bb3e7efecb29b6c9f84cb20bcb2e6403d61cc1a82893ab62657ab5",
+          "corner_alpha": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "ui_comparison": [
+            {
+              "display_px": 64,
+              "background": "#F6EEDC",
+              "mean_rgb_error_255": 0.654,
+              "rmse_255": 0.9706,
+              "psnr_db": 48.39
+            },
+            {
+              "display_px": 64,
+              "background": "#151C26",
+              "mean_rgb_error_255": 0.4771,
+              "rmse_255": 0.7597,
+              "psnr_db": 50.52
+            },
+            {
+              "display_px": 96,
+              "background": "#F6EEDC",
+              "mean_rgb_error_255": 0.7856,
+              "rmse_255": 1.1749,
+              "psnr_db": 46.73
+            },
+            {
+              "display_px": 96,
+              "background": "#151C26",
+              "mean_rgb_error_255": 0.5308,
+              "rmse_255": 0.8095,
+              "psnr_db": 49.97
+            },
+            {
+              "display_px": 128,
+              "background": "#F6EEDC",
+              "mean_rgb_error_255": 0.8875,
+              "rmse_255": 1.3804,
+              "psnr_db": 45.33
+            },
+            {
+              "display_px": 128,
+              "background": "#151C26",
+              "mean_rgb_error_255": 0.5722,
+              "rmse_255": 0.8671,
+              "psnr_db": 49.37
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "AssimilatedAdventurerFarmer",
+      "character": "AssimilatedAdventurer",
+      "role": "Farmer",
+      "source": "/Users/wingman/Documents/Codex/GrowAMonster-Git-2026-11-12/art/srp-icons-v1/icons/AssimilatedAdventurerFarmer.png",
+      "source_bytes": 793404,
+      "source_sha256": "710e3b0152dba9376cccad7e3c69b3e0b72bba63324e20c5e325358246b6a709",
+      "source_size": [
+        1254,
+        1254
+      ],
+      "variants": {
+        "large1024": {
+          "file": "icons/large1024/AssimilatedAdventurerFarmer.png",
+          "bytes": 554190,
+          "size": [
+            1024,
+            1024
+          ],
+          "rgba8_uncompressed_bytes": 4194304,
+          "sha256": "deec477aecc19ac120bbf7f5cbabd8c0512386998710d4c05783ad3f5faee7cb",
+          "corner_alpha": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "ui_comparison": [
+            {
+              "display_px": 64,
+              "background": "#F6EEDC",
+              "mean_rgb_error_255": 0.4501,
+              "rmse_255": 0.6996,
+              "psnr_db": 51.23
+            },
+            {
+              "display_px": 64,
+              "background": "#151C26",
+              "mean_rgb_error_255": 0.423,
+              "rmse_255": 0.6711,
+              "psnr_db": 51.59
+            },
+            {
+              "display_px": 96,
+              "background": "#F6EEDC",
+              "mean_rgb_error_255": 0.4619,
+              "rmse_255": 0.7061,
+              "psnr_db": 51.15
+            },
+            {
+              "display_px": 96,
+              "background": "#151C26",
+              "mean_rgb_error_255": 0.4375,
+              "rmse_255": 0.6815,
+              "psnr_db": 51.46
+            },
+            {
+              "display_px": 128,
+              "background": "#F6EEDC",
+              "mean_rgb_error_255": 0.4848,
+              "rmse_255": 0.7317,
+              "psnr_db": 50.84
+            },
+            {
+              "display_px": 128,
+              "background": "#151C26",
+              "mean_rgb_error_255": 0.4534,
+              "rmse_255": 0.7004,
+              "psnr_db": 51.22
+            }
+          ]
+        },
+        "ui512": {
+          "file": "icons/ui512/AssimilatedAdventurerFarmer.png",
+          "bytes": 169140,
+          "size": [
+            512,
+            512
+          ],
+          "rgba8_uncompressed_bytes": 1048576,
+          "sha256": "c93a9b8d3993c5f3cc377fb744e36b0b3df91ac7912c99a72639a97086029398",
+          "corner_alpha": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "ui_comparison": [
+            {
+              "display_px": 64,
+              "background": "#F6EEDC",
+              "mean_rgb_error_255": 0.5078,
+              "rmse_255": 0.7572,
+              "psnr_db": 50.55
+            },
+            {
+              "display_px": 64,
+              "background": "#151C26",
+              "mean_rgb_error_255": 0.4455,
+              "rmse_255": 0.6955,
+              "psnr_db": 51.28
+            },
+            {
+              "display_px": 96,
+              "background": "#F6EEDC",
+              "mean_rgb_error_255": 0.5538,
+              "rmse_255": 0.8033,
+              "psnr_db": 50.03
+            },
+            {
+              "display_px": 96,
+              "background": "#151C26",
+              "mean_rgb_error_255": 0.4812,
+              "rmse_255": 0.7322,
+              "psnr_db": 50.84
+            },
+            {
+              "display_px": 128,
+              "background": "#F6EEDC",
+              "mean_rgb_error_255": 0.5997,
+              "rmse_255": 0.8685,
+              "psnr_db": 49.36
+            },
+            {
+              "display_px": 128,
+              "background": "#151C26",
+              "mean_rgb_error_255": 0.5104,
+              "rmse_255": 0.7671,
+              "psnr_db": 50.43
+            }
+          ]
+        },
+        "small256": {
+          "file": "icons/small256/AssimilatedAdventurerFarmer.png",
+          "bytes": 54158,
+          "size": [
+            256,
+            256
+          ],
+          "rgba8_uncompressed_bytes": 262144,
+          "sha256": "08adca6d978e741177c6cb46352f8b2ac946605cf2f9b25ea22d0861f8fcd61e",
+          "corner_alpha": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "ui_comparison": [
+            {
+              "display_px": 64,
+              "background": "#F6EEDC",
+              "mean_rgb_error_255": 0.7044,
+              "rmse_255": 1.0098,
+              "psnr_db": 48.05
+            },
+            {
+              "display_px": 64,
+              "background": "#151C26",
+              "mean_rgb_error_255": 0.5413,
+              "rmse_255": 0.8141,
+              "psnr_db": 49.92
+            },
+            {
+              "display_px": 96,
+              "background": "#F6EEDC",
+              "mean_rgb_error_255": 0.8876,
+              "rmse_255": 1.3478,
+              "psnr_db": 45.54
+            },
+            {
+              "display_px": 96,
+              "background": "#151C26",
+              "mean_rgb_error_255": 0.5966,
+              "rmse_255": 0.8827,
+              "psnr_db": 49.21
+            },
+            {
+              "display_px": 128,
+              "background": "#F6EEDC",
+              "mean_rgb_error_255": 0.9248,
+              "rmse_255": 1.4337,
+              "psnr_db": 45.0
+            },
+            {
+              "display_px": 128,
+              "background": "#151C26",
+              "mean_rgb_error_255": 0.6281,
+              "rmse_255": 0.9486,
+              "psnr_db": 48.59
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "AssimilatedAdventurerMiner",
+      "character": "AssimilatedAdventurer",
+      "role": "Miner",
+      "source": "/Users/wingman/Documents/Codex/GrowAMonster-Git-2026-11-12/art/srp-icons-v1/icons/AssimilatedAdventurerMiner.png",
+      "source_bytes": 723612,
+      "source_sha256": "4e05b336b2f62464d720fba9f1b259d642fdb459a5468992b40b327f0efb8729",
+      "source_size": [
+        1254,
+        1254
+      ],
+      "variants": {
+        "large1024": {
+          "file": "icons/large1024/AssimilatedAdventurerMiner.png",
+          "bytes": 504800,
+          "size": [
+            1024,
+            1024
+          ],
+          "rgba8_uncompressed_bytes": 4194304,
+          "sha256": "216b909410ef46861133835851eff959d7f799af48d8ea6d801f1cd1044cfbe5",
+          "corner_alpha": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "ui_comparison": [
+            {
+              "display_px": 64,
+              "background": "#F6EEDC",
+              "mean_rgb_error_255": 0.4525,
+              "rmse_255": 0.6985,
+              "psnr_db": 51.25
+            },
+            {
+              "display_px": 64,
+              "background": "#151C26",
+              "mean_rgb_error_255": 0.4294,
+              "rmse_255": 0.6793,
+              "psnr_db": 51.49
+            },
+            {
+              "display_px": 96,
+              "background": "#F6EEDC",
+              "mean_rgb_error_255": 0.4575,
+              "rmse_255": 0.7064,
+              "psnr_db": 51.15
+            },
+            {
+              "display_px": 96,
+              "background": "#151C26",
+              "mean_rgb_error_255": 0.4265,
+              "rmse_255": 0.6728,
+              "psnr_db": 51.57
+            },
+            {
+              "display_px": 128,
+              "background": "#F6EEDC",
+              "mean_rgb_error_255": 0.4787,
+              "rmse_255": 0.725,
+              "psnr_db": 50.92
+            },
+            {
+              "display_px": 128,
+              "background": "#151C26",
+              "mean_rgb_error_255": 0.4482,
+              "rmse_255": 0.696,
+              "psnr_db": 51.28
+            }
+          ]
+        },
+        "ui512": {
+          "file": "icons/ui512/AssimilatedAdventurerMiner.png",
+          "bytes": 155030,
+          "size": [
+            512,
+            512
+          ],
+          "rgba8_uncompressed_bytes": 1048576,
+          "sha256": "ffa0e550367f80a406f72c54892ddf8e49457adaf3bdf32cf42dec5d3f8224b9",
+          "corner_alpha": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "ui_comparison": [
+            {
+              "display_px": 64,
+              "background": "#F6EEDC",
+              "mean_rgb_error_255": 0.5178,
+              "rmse_255": 0.7633,
+              "psnr_db": 50.48
+            },
+            {
+              "display_px": 64,
+              "background": "#151C26",
+              "mean_rgb_error_255": 0.4612,
+              "rmse_255": 0.712,
+              "psnr_db": 51.08
+            },
+            {
+              "display_px": 96,
+              "background": "#F6EEDC",
+              "mean_rgb_error_255": 0.5482,
+              "rmse_255": 0.8073,
+              "psnr_db": 49.99
+            },
+            {
+              "display_px": 96,
+              "background": "#151C26",
+              "mean_rgb_error_255": 0.4773,
+              "rmse_255": 0.7301,
+              "psnr_db": 50.86
+            },
+            {
+              "display_px": 128,
+              "background": "#F6EEDC",
+              "mean_rgb_error_255": 0.5999,
+              "rmse_255": 0.8699,
+              "psnr_db": 49.34
+            },
+            {
+              "display_px": 128,
+              "background": "#151C26",
+              "mean_rgb_error_255": 0.511,
+              "rmse_255": 0.7702,
+              "psnr_db": 50.4
+            }
+          ]
+        },
+        "small256": {
+          "file": "icons/small256/AssimilatedAdventurerMiner.png",
+          "bytes": 49749,
+          "size": [
+            256,
+            256
+          ],
+          "rgba8_uncompressed_bytes": 262144,
+          "sha256": "079126af82d1c17abcfbb7c51fece89c86c989b7d6b9881fcf80256e477011bc",
+          "corner_alpha": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "ui_comparison": [
+            {
+              "display_px": 64,
+              "background": "#F6EEDC",
+              "mean_rgb_error_255": 0.7741,
+              "rmse_255": 1.1053,
+              "psnr_db": 47.26
+            },
+            {
+              "display_px": 64,
+              "background": "#151C26",
+              "mean_rgb_error_255": 0.5672,
+              "rmse_255": 0.8472,
+              "psnr_db": 49.57
+            },
+            {
+              "display_px": 96,
+              "background": "#F6EEDC",
+              "mean_rgb_error_255": 0.8736,
+              "rmse_255": 1.327,
+              "psnr_db": 45.67
+            },
+            {
+              "display_px": 96,
+              "background": "#151C26",
+              "mean_rgb_error_255": 0.6043,
+              "rmse_255": 0.9021,
+              "psnr_db": 49.03
+            },
+            {
+              "display_px": 128,
+              "background": "#F6EEDC",
+              "mean_rgb_error_255": 0.9293,
+              "rmse_255": 1.4424,
+              "psnr_db": 44.95
+            },
+            {
+              "display_px": 128,
+              "background": "#151C26",
+              "mean_rgb_error_255": 0.6346,
+              "rmse_255": 0.9449,
+              "psnr_db": 48.62
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "AssimilatedAdventurerKing",
+      "character": "AssimilatedAdventurer",
+      "role": "King",
+      "source": "/Users/wingman/Documents/Codex/GrowAMonster-Git-2026-11-12/art/srp-icons-v1/icons/AssimilatedAdventurerKing.png",
+      "source_bytes": 820519,
+      "source_sha256": "571f60c50691badb1a1fab27ca49649083c4edd4eb2da17bac2ce03cbc4bc48b",
+      "source_size": [
+        1254,
+        1254
+      ],
+      "variants": {
+        "large1024": {
+          "file": "icons/large1024/AssimilatedAdventurerKing.png",
+          "bytes": 573428,
+          "size": [
+            1024,
+            1024
+          ],
+          "rgba8_uncompressed_bytes": 4194304,
+          "sha256": "90a881ebe8adb2127f3472bf7a8f19c8ce565573aec2c1f1643a4bcc17c1a190",
+          "corner_alpha": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "ui_comparison": [
+            {
+              "display_px": 64,
+              "background": "#F6EEDC",
+              "mean_rgb_error_255": 0.4142,
+              "rmse_255": 0.672,
+              "psnr_db": 51.58
+            },
+            {
+              "display_px": 64,
+              "background": "#151C26",
+              "mean_rgb_error_255": 0.3968,
+              "rmse_255": 0.6519,
+              "psnr_db": 51.85
+            },
+            {
+              "display_px": 96,
+              "background": "#F6EEDC",
+              "mean_rgb_error_255": 0.4302,
+              "rmse_255": 0.6814,
+              "psnr_db": 51.46
+            },
+            {
+              "display_px": 96,
+              "background": "#151C26",
+              "mean_rgb_error_255": 0.4045,
+              "rmse_255": 0.6537,
+              "psnr_db": 51.82
+            },
+            {
+              "display_px": 128,
+              "background": "#F6EEDC",
+              "mean_rgb_error_255": 0.4536,
+              "rmse_255": 0.7058,
+              "psnr_db": 51.16
+            },
+            {
+              "display_px": 128,
+              "background": "#151C26",
+              "mean_rgb_error_255": 0.425,
+              "rmse_255": 0.6748,
+              "psnr_db": 51.55
+            }
+          ]
+        },
+        "ui512": {
+          "file": "icons/ui512/AssimilatedAdventurerKing.png",
+          "bytes": 175983,
+          "size": [
+            512,
+            512
+          ],
+          "rgba8_uncompressed_bytes": 1048576,
+          "sha256": "5097660c9a015ac4e6e9a5d1973256540d899d23660c2ff1c546d128fd841473",
+          "corner_alpha": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "ui_comparison": [
+            {
+              "display_px": 64,
+              "background": "#F6EEDC",
+              "mean_rgb_error_255": 0.4875,
+              "rmse_255": 0.7416,
+              "psnr_db": 50.73
+            },
+            {
+              "display_px": 64,
+              "background": "#151C26",
+              "mean_rgb_error_255": 0.4403,
+              "rmse_255": 0.6934,
+              "psnr_db": 51.31
+            },
+            {
+              "display_px": 96,
+              "background": "#F6EEDC",
+              "mean_rgb_error_255": 0.5252,
+              "rmse_255": 0.785,
+              "psnr_db": 50.23
+            },
+            {
+              "display_px": 96,
+              "background": "#151C26",
+              "mean_rgb_error_255": 0.4599,
+              "rmse_255": 0.7177,
+              "psnr_db": 51.01
+            },
+            {
+              "display_px": 128,
+              "background": "#F6EEDC",
+              "mean_rgb_error_255": 0.5627,
+              "rmse_255": 0.8359,
+              "psnr_db": 49.69
+            },
+            {
+              "display_px": 128,
+              "background": "#151C26",
+              "mean_rgb_error_255": 0.4922,
+              "rmse_255": 0.7495,
+              "psnr_db": 50.64
+            }
+          ]
+        },
+        "small256": {
+          "file": "icons/small256/AssimilatedAdventurerKing.png",
+          "bytes": 55662,
+          "size": [
+            256,
+            256
+          ],
+          "rgba8_uncompressed_bytes": 262144,
+          "sha256": "5115d66c821fad5d451b865ced6c3177a8e4ec643432fd360f2643ffc50c7e02",
+          "corner_alpha": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "ui_comparison": [
+            {
+              "display_px": 64,
+              "background": "#F6EEDC",
+              "mean_rgb_error_255": 0.669,
+              "rmse_255": 0.9787,
+              "psnr_db": 48.32
+            },
+            {
+              "display_px": 64,
+              "background": "#151C26",
+              "mean_rgb_error_255": 0.5461,
+              "rmse_255": 0.8328,
+              "psnr_db": 49.72
+            },
+            {
+              "display_px": 96,
+              "background": "#F6EEDC",
+              "mean_rgb_error_255": 0.8051,
+              "rmse_255": 1.2254,
+              "psnr_db": 46.37
+            },
+            {
+              "display_px": 96,
+              "background": "#151C26",
+              "mean_rgb_error_255": 0.5963,
+              "rmse_255": 0.9168,
+              "psnr_db": 48.89
+            },
+            {
+              "display_px": 128,
+              "background": "#F6EEDC",
+              "mean_rgb_error_255": 0.8591,
+              "rmse_255": 1.3652,
+              "psnr_db": 45.43
+            },
+            {
+              "display_px": 128,
+              "background": "#151C26",
+              "mean_rgb_error_255": 0.6213,
+              "rmse_255": 0.9628,
+              "psnr_db": 48.46
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "AssimilatedAdventurerKnight",
+      "character": "AssimilatedAdventurer",
+      "role": "Knight",
+      "source": "/Users/wingman/Documents/Codex/GrowAMonster-Git-2026-11-12/art/srp-icons-v1/icons/AssimilatedAdventurerKnight.png",
+      "source_bytes": 758957,
+      "source_sha256": "5ca9e80b98421ad0b36cf47c1666892a7eabb9268295e8c32cf8bcef69c3b29c",
+      "source_size": [
+        1254,
+        1254
+      ],
+      "variants": {
+        "large1024": {
+          "file": "icons/large1024/AssimilatedAdventurerKnight.png",
+          "bytes": 530057,
+          "size": [
+            1024,
+            1024
+          ],
+          "rgba8_uncompressed_bytes": 4194304,
+          "sha256": "57d0b58dbe1c04ae6c77ea28a95961664766d2c181d71ecb319065df59471a59",
+          "corner_alpha": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "ui_comparison": [
+            {
+              "display_px": 64,
+              "background": "#F6EEDC",
+              "mean_rgb_error_255": 0.4495,
+              "rmse_255": 0.6994,
+              "psnr_db": 51.24
+            },
+            {
+              "display_px": 64,
+              "background": "#151C26",
+              "mean_rgb_error_255": 0.4272,
+              "rmse_255": 0.6747,
+              "psnr_db": 51.55
+            },
+            {
+              "display_px": 96,
+              "background": "#F6EEDC",
+              "mean_rgb_error_255": 0.4714,
+              "rmse_255": 0.7161,
+              "psnr_db": 51.03
+            },
+            {
+              "display_px": 96,
+              "background": "#151C26",
+              "mean_rgb_error_255": 0.4423,
+              "rmse_255": 0.6869,
+              "psnr_db": 51.39
+            },
+            {
+              "display_px": 128,
+              "background": "#F6EEDC",
+              "mean_rgb_error_255": 0.4858,
+              "rmse_255": 0.7292,
+              "psnr_db": 50.87
+            },
+            {
+              "display_px": 128,
+              "background": "#151C26",
+              "mean_rgb_error_255": 0.4537,
+              "rmse_255": 0.697,
+              "psnr_db": 51.27
+            }
+          ]
+        },
+        "ui512": {
+          "file": "icons/ui512/AssimilatedAdventurerKnight.png",
+          "bytes": 163223,
+          "size": [
+            512,
+            512
+          ],
+          "rgba8_uncompressed_bytes": 1048576,
+          "sha256": "88c852470212176c079c4f67d7a505f166e856d94bc67e784d0b6ed538c931a7",
+          "corner_alpha": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "ui_comparison": [
+            {
+              "display_px": 64,
+              "background": "#F6EEDC",
+              "mean_rgb_error_255": 0.5202,
+              "rmse_255": 0.7675,
+              "psnr_db": 50.43
+            },
+            {
+              "display_px": 64,
+              "background": "#151C26",
+              "mean_rgb_error_255": 0.4572,
+              "rmse_255": 0.7033,
+              "psnr_db": 51.19
+            },
+            {
+              "display_px": 96,
+              "background": "#F6EEDC",
+              "mean_rgb_error_255": 0.5524,
+              "rmse_255": 0.7956,
+              "psnr_db": 50.12
+            },
+            {
+              "display_px": 96,
+              "background": "#151C26",
+              "mean_rgb_error_255": 0.4793,
+              "rmse_255": 0.7243,
+              "psnr_db": 50.93
+            },
+            {
+              "display_px": 128,
+              "background": "#F6EEDC",
+              "mean_rgb_error_255": 0.5833,
+              "rmse_255": 0.843,
+              "psnr_db": 49.61
+            },
+            {
+              "display_px": 128,
+              "background": "#151C26",
+              "mean_rgb_error_255": 0.4997,
+              "rmse_255": 0.7496,
+              "psnr_db": 50.63
+            }
+          ]
+        },
+        "small256": {
+          "file": "icons/small256/AssimilatedAdventurerKnight.png",
+          "bytes": 52425,
+          "size": [
+            256,
+            256
+          ],
+          "rgba8_uncompressed_bytes": 262144,
+          "sha256": "a906cc0dbd5170b782d6994ace30510dfb5489c4fea0d6ad8c6225ca82b4f0ff",
+          "corner_alpha": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "ui_comparison": [
+            {
+              "display_px": 64,
+              "background": "#F6EEDC",
+              "mean_rgb_error_255": 0.6881,
+              "rmse_255": 0.9981,
+              "psnr_db": 48.15
+            },
+            {
+              "display_px": 64,
+              "background": "#151C26",
+              "mean_rgb_error_255": 0.5132,
+              "rmse_255": 0.7729,
+              "psnr_db": 50.37
+            },
+            {
+              "display_px": 96,
+              "background": "#F6EEDC",
+              "mean_rgb_error_255": 0.8015,
+              "rmse_255": 1.2045,
+              "psnr_db": 46.51
+            },
+            {
+              "display_px": 96,
+              "background": "#151C26",
+              "mean_rgb_error_255": 0.5454,
+              "rmse_255": 0.8099,
+              "psnr_db": 49.96
+            },
+            {
+              "display_px": 128,
+              "background": "#F6EEDC",
+              "mean_rgb_error_255": 0.8782,
+              "rmse_255": 1.3624,
+              "psnr_db": 45.44
+            },
+            {
+              "display_px": 128,
+              "background": "#151C26",
+              "mean_rgb_error_255": 0.5934,
+              "rmse_255": 0.8731,
+              "psnr_db": 49.31
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "AssimilatedAdventurerNefor",
+      "character": "AssimilatedAdventurer",
+      "role": "Nefor",
+      "source": "/Users/wingman/Documents/Codex/GrowAMonster-Git-2026-11-12/art/srp-icons-v1/icons/AssimilatedAdventurerNefor.png",
+      "source_bytes": 757506,
+      "source_sha256": "f067e9c20e7fbdf5cfc41c975989d4097dc7124c89f38a128a88533864b1e590",
+      "source_size": [
+        1254,
+        1254
+      ],
+      "variants": {
+        "large1024": {
+          "file": "icons/large1024/AssimilatedAdventurerNefor.png",
+          "bytes": 525033,
+          "size": [
+            1024,
+            1024
+          ],
+          "rgba8_uncompressed_bytes": 4194304,
+          "sha256": "a67d6c248130ccc18867015f1f6212252e5f13b7baa0adb2be160b469050945e",
+          "corner_alpha": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "ui_comparison": [
+            {
+              "display_px": 64,
+              "background": "#F6EEDC",
+              "mean_rgb_error_255": 0.4404,
+              "rmse_255": 0.6893,
+              "psnr_db": 51.36
+            },
+            {
+              "display_px": 64,
+              "background": "#151C26",
+              "mean_rgb_error_255": 0.408,
+              "rmse_255": 0.6539,
+              "psnr_db": 51.82
+            },
+            {
+              "display_px": 96,
+              "background": "#F6EEDC",
+              "mean_rgb_error_255": 0.4541,
+              "rmse_255": 0.698,
+              "psnr_db": 51.25
+            },
+            {
+              "display_px": 96,
+              "background": "#151C26",
+              "mean_rgb_error_255": 0.4276,
+              "rmse_255": 0.6728,
+              "psnr_db": 51.57
+            },
+            {
+              "display_px": 128,
+              "background": "#F6EEDC",
+              "mean_rgb_error_255": 0.4769,
+              "rmse_255": 0.7264,
+              "psnr_db": 50.91
+            },
+            {
+              "display_px": 128,
+              "background": "#151C26",
+              "mean_rgb_error_255": 0.4434,
+              "rmse_255": 0.6922,
+              "psnr_db": 51.33
+            }
+          ]
+        },
+        "ui512": {
+          "file": "icons/ui512/AssimilatedAdventurerNefor.png",
+          "bytes": 159749,
+          "size": [
+            512,
+            512
+          ],
+          "rgba8_uncompressed_bytes": 1048576,
+          "sha256": "81a224d451efc598d3c125b978e1faccd22dd7330c5dad394c95249205586479",
+          "corner_alpha": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "ui_comparison": [
+            {
+              "display_px": 64,
+              "background": "#F6EEDC",
+              "mean_rgb_error_255": 0.5105,
+              "rmse_255": 0.7559,
+              "psnr_db": 50.56
+            },
+            {
+              "display_px": 64,
+              "background": "#151C26",
+              "mean_rgb_error_255": 0.4392,
+              "rmse_255": 0.6859,
+              "psnr_db": 51.4
+            },
+            {
+              "display_px": 96,
+              "background": "#F6EEDC",
+              "mean_rgb_error_255": 0.5388,
+              "rmse_255": 0.7894,
+              "psnr_db": 50.19
+            },
+            {
+              "display_px": 96,
+              "background": "#151C26",
+              "mean_rgb_error_255": 0.4785,
+              "rmse_255": 0.7276,
+              "psnr_db": 50.89
+            },
+            {
+              "display_px": 128,
+              "background": "#F6EEDC",
+              "mean_rgb_error_255": 0.5873,
+              "rmse_255": 0.854,
+              "psnr_db": 49.5
+            },
+            {
+              "display_px": 128,
+              "background": "#151C26",
+              "mean_rgb_error_255": 0.5028,
+              "rmse_255": 0.7575,
+              "psnr_db": 50.54
+            }
+          ]
+        },
+        "small256": {
+          "file": "icons/small256/AssimilatedAdventurerNefor.png",
+          "bytes": 51019,
+          "size": [
+            256,
+            256
+          ],
+          "rgba8_uncompressed_bytes": 262144,
+          "sha256": "96ae41c7bdf1d35258f71c9867c266898e9b677e12b7f588f7292c66b31e3dd0",
+          "corner_alpha": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "ui_comparison": [
+            {
+              "display_px": 64,
+              "background": "#F6EEDC",
+              "mean_rgb_error_255": 0.7216,
+              "rmse_255": 1.0308,
+              "psnr_db": 47.87
+            },
+            {
+              "display_px": 64,
+              "background": "#151C26",
+              "mean_rgb_error_255": 0.5425,
+              "rmse_255": 0.8091,
+              "psnr_db": 49.97
+            },
+            {
+              "display_px": 96,
+              "background": "#F6EEDC",
+              "mean_rgb_error_255": 0.8169,
+              "rmse_255": 1.2419,
+              "psnr_db": 46.25
+            },
+            {
+              "display_px": 96,
+              "background": "#151C26",
+              "mean_rgb_error_255": 0.5728,
+              "rmse_255": 0.8557,
+              "psnr_db": 49.48
+            },
+            {
+              "display_px": 128,
+              "background": "#F6EEDC",
+              "mean_rgb_error_255": 0.8959,
+              "rmse_255": 1.4043,
+              "psnr_db": 45.18
+            },
+            {
+              "display_px": 128,
+              "background": "#151C26",
+              "mean_rgb_error_255": 0.6105,
+              "rmse_255": 0.9165,
+              "psnr_db": 48.89
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "AssimilatedAdventurerKiller",
+      "character": "AssimilatedAdventurer",
+      "role": "Killer",
+      "source": "/Users/wingman/Documents/Codex/GrowAMonster-Git-2026-11-12/art/srp-icons-v1/icons/AssimilatedAdventurerKiller.png",
+      "source_bytes": 748268,
+      "source_sha256": "6f756e42dcbeef1c695224096c086c3c70ef1e7f9ee82abdd8f77f6d5c21502f",
+      "source_size": [
+        1254,
+        1254
+      ],
+      "variants": {
+        "large1024": {
+          "file": "icons/large1024/AssimilatedAdventurerKiller.png",
+          "bytes": 515592,
+          "size": [
+            1024,
+            1024
+          ],
+          "rgba8_uncompressed_bytes": 4194304,
+          "sha256": "5468edbf932f9b26f05d0ef10295faa92458d6c0234b64bd5cc50844972aa4c1",
+          "corner_alpha": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "ui_comparison": [
+            {
+              "display_px": 64,
+              "background": "#F6EEDC",
+              "mean_rgb_error_255": 0.4611,
+              "rmse_255": 0.7046,
+              "psnr_db": 51.17
+            },
+            {
+              "display_px": 64,
+              "background": "#151C26",
+              "mean_rgb_error_255": 0.4316,
+              "rmse_255": 0.674,
+              "psnr_db": 51.56
+            },
+            {
+              "display_px": 96,
+              "background": "#F6EEDC",
+              "mean_rgb_error_255": 0.4813,
+              "rmse_255": 0.7195,
+              "psnr_db": 50.99
+            },
+            {
+              "display_px": 96,
+              "background": "#151C26",
+              "mean_rgb_error_255": 0.4535,
+              "rmse_255": 0.6928,
+              "psnr_db": 51.32
+            },
+            {
+              "display_px": 128,
+              "background": "#F6EEDC",
+              "mean_rgb_error_255": 0.496,
+              "rmse_255": 0.7366,
+              "psnr_db": 50.79
+            },
+            {
+              "display_px": 128,
+              "background": "#151C26",
+              "mean_rgb_error_255": 0.466,
+              "rmse_255": 0.7082,
+              "psnr_db": 51.13
+            }
+          ]
+        },
+        "ui512": {
+          "file": "icons/ui512/AssimilatedAdventurerKiller.png",
+          "bytes": 160151,
+          "size": [
+            512,
+            512
+          ],
+          "rgba8_uncompressed_bytes": 1048576,
+          "sha256": "bc8495cbbd566decf823923ec44f43c60ec8c23adcb10f91d1e7016f96913f7b",
+          "corner_alpha": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "ui_comparison": [
+            {
+              "display_px": 64,
+              "background": "#F6EEDC",
+              "mean_rgb_error_255": 0.5028,
+              "rmse_255": 0.7435,
+              "psnr_db": 50.7
+            },
+            {
+              "display_px": 64,
+              "background": "#151C26",
+              "mean_rgb_error_255": 0.4524,
+              "rmse_255": 0.6988,
+              "psnr_db": 51.24
+            },
+            {
+              "display_px": 96,
+              "background": "#F6EEDC",
+              "mean_rgb_error_255": 0.5518,
+              "rmse_255": 0.7911,
+              "psnr_db": 50.17
+            },
+            {
+              "display_px": 96,
+              "background": "#151C26",
+              "mean_rgb_error_255": 0.4855,
+              "rmse_255": 0.7272,
+              "psnr_db": 50.9
+            },
+            {
+              "display_px": 128,
+              "background": "#F6EEDC",
+              "mean_rgb_error_255": 0.5881,
+              "rmse_255": 0.8449,
+              "psnr_db": 49.6
+            },
+            {
+              "display_px": 128,
+              "background": "#151C26",
+              "mean_rgb_error_255": 0.5112,
+              "rmse_255": 0.7555,
+              "psnr_db": 50.57
+            }
+          ]
+        },
+        "small256": {
+          "file": "icons/small256/AssimilatedAdventurerKiller.png",
+          "bytes": 51427,
+          "size": [
+            256,
+            256
+          ],
+          "rgba8_uncompressed_bytes": 262144,
+          "sha256": "d7d45e4a0a0bcc3918fdc65581385c9786aab24a3b216db613fb5dd21279273b",
+          "corner_alpha": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "ui_comparison": [
+            {
+              "display_px": 64,
+              "background": "#F6EEDC",
+              "mean_rgb_error_255": 0.6416,
+              "rmse_255": 0.9241,
+              "psnr_db": 48.82
+            },
+            {
+              "display_px": 64,
+              "background": "#151C26",
+              "mean_rgb_error_255": 0.5217,
+              "rmse_255": 0.7737,
+              "psnr_db": 50.36
+            },
+            {
+              "display_px": 96,
+              "background": "#F6EEDC",
+              "mean_rgb_error_255": 0.7874,
+              "rmse_255": 1.1684,
+              "psnr_db": 46.78
+            },
+            {
+              "display_px": 96,
+              "background": "#151C26",
+              "mean_rgb_error_255": 0.5684,
+              "rmse_255": 0.8282,
+              "psnr_db": 49.77
+            },
+            {
+              "display_px": 128,
+              "background": "#F6EEDC",
+              "mean_rgb_error_255": 0.8453,
+              "rmse_255": 1.3006,
+              "psnr_db": 45.85
+            },
+            {
+              "display_px": 128,
+              "background": "#151C26",
+              "mean_rgb_error_255": 0.6009,
+              "rmse_255": 0.8715,
+              "psnr_db": 49.33
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "PrimitiveSummonerFarmer",
+      "character": "PrimitiveSummoner",
+      "role": "Farmer",
+      "source": "/Users/wingman/Documents/Codex/GrowAMonster-Git-2026-11-12/art/srp-icons-v1/icons/PrimitiveSummonerFarmer.png",
+      "source_bytes": 1079995,
+      "source_sha256": "239f7d8032961a75ffa2772bc6a9ab4a3d5762e4c5ab661e7637f3c206a0edf0",
+      "source_size": [
+        1254,
+        1254
+      ],
+      "variants": {
+        "large1024": {
+          "file": "icons/large1024/PrimitiveSummonerFarmer.png",
+          "bytes": 728780,
+          "size": [
+            1024,
+            1024
+          ],
+          "rgba8_uncompressed_bytes": 4194304,
+          "sha256": "0b8180235ba82274a130dfc5a8d9511306d0dcecc537b4bbe3d59211322371cc",
+          "corner_alpha": [
+            0,
+            1,
+            0,
+            0
+          ],
+          "ui_comparison": [
+            {
+              "display_px": 64,
+              "background": "#F6EEDC",
+              "mean_rgb_error_255": 0.443,
+              "rmse_255": 0.6954,
+              "psnr_db": 51.29
+            },
+            {
+              "display_px": 64,
+              "background": "#151C26",
+              "mean_rgb_error_255": 0.4227,
+              "rmse_255": 0.6716,
+              "psnr_db": 51.59
+            },
+            {
+              "display_px": 96,
+              "background": "#F6EEDC",
+              "mean_rgb_error_255": 0.4859,
+              "rmse_255": 0.7345,
+              "psnr_db": 50.81
+            },
+            {
+              "display_px": 96,
+              "background": "#151C26",
+              "mean_rgb_error_255": 0.4542,
+              "rmse_255": 0.6998,
+              "psnr_db": 51.23
+            },
+            {
+              "display_px": 128,
+              "background": "#F6EEDC",
+              "mean_rgb_error_255": 0.4914,
+              "rmse_255": 0.7367,
+              "psnr_db": 50.78
+            },
+            {
+              "display_px": 128,
+              "background": "#151C26",
+              "mean_rgb_error_255": 0.4612,
+              "rmse_255": 0.7063,
+              "psnr_db": 51.15
+            }
+          ]
+        },
+        "ui512": {
+          "file": "icons/ui512/PrimitiveSummonerFarmer.png",
+          "bytes": 226099,
+          "size": [
+            512,
+            512
+          ],
+          "rgba8_uncompressed_bytes": 1048576,
+          "sha256": "b4b3dd5b7f9a4a1565588c255267b4b58d0110714825a88b441ca1dd18f8466c",
+          "corner_alpha": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "ui_comparison": [
+            {
+              "display_px": 64,
+              "background": "#F6EEDC",
+              "mean_rgb_error_255": 0.4961,
+              "rmse_255": 0.7515,
+              "psnr_db": 50.61
+            },
+            {
+              "display_px": 64,
+              "background": "#151C26",
+              "mean_rgb_error_255": 0.4479,
+              "rmse_255": 0.7074,
+              "psnr_db": 51.14
+            },
+            {
+              "display_px": 96,
+              "background": "#F6EEDC",
+              "mean_rgb_error_255": 0.5614,
+              "rmse_255": 0.8112,
+              "psnr_db": 49.95
+            },
+            {
+              "display_px": 96,
+              "background": "#151C26",
+              "mean_rgb_error_255": 0.4942,
+              "rmse_255": 0.7463,
+              "psnr_db": 50.67
+            },
+            {
+              "display_px": 128,
+              "background": "#F6EEDC",
+              "mean_rgb_error_255": 0.5966,
+              "rmse_255": 0.8581,
+              "psnr_db": 49.46
+            },
+            {
+              "display_px": 128,
+              "background": "#151C26",
+              "mean_rgb_error_255": 0.5164,
+              "rmse_255": 0.7692,
+              "psnr_db": 50.41
+            }
+          ]
+        },
+        "small256": {
+          "file": "icons/small256/PrimitiveSummonerFarmer.png",
+          "bytes": 74100,
+          "size": [
+            256,
+            256
+          ],
+          "rgba8_uncompressed_bytes": 262144,
+          "sha256": "bf49841f56e5081c912ebbfe8eb5bd2722278957f1f098d5811230bd6abe2365",
+          "corner_alpha": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "ui_comparison": [
+            {
+              "display_px": 64,
+              "background": "#F6EEDC",
+              "mean_rgb_error_255": 0.7125,
+              "rmse_255": 1.0076,
+              "psnr_db": 48.06
+            },
+            {
+              "display_px": 64,
+              "background": "#151C26",
+              "mean_rgb_error_255": 0.5559,
+              "rmse_255": 0.8305,
+              "psnr_db": 49.74
+            },
+            {
+              "display_px": 96,
+              "background": "#F6EEDC",
+              "mean_rgb_error_255": 0.8657,
+              "rmse_255": 1.277,
+              "psnr_db": 46.01
+            },
+            {
+              "display_px": 96,
+              "background": "#151C26",
+              "mean_rgb_error_255": 0.6201,
+              "rmse_255": 0.9239,
+              "psnr_db": 48.82
+            },
+            {
+              "display_px": 128,
+              "background": "#F6EEDC",
+              "mean_rgb_error_255": 0.9096,
+              "rmse_255": 1.3929,
+              "psnr_db": 45.25
+            },
+            {
+              "display_px": 128,
+              "background": "#151C26",
+              "mean_rgb_error_255": 0.6451,
+              "rmse_255": 0.9706,
+              "psnr_db": 48.39
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "PrimitiveSummonerMiner",
+      "character": "PrimitiveSummoner",
+      "role": "Miner",
+      "source": "/Users/wingman/Documents/Codex/GrowAMonster-Git-2026-11-12/art/srp-icons-v1/icons/PrimitiveSummonerMiner.png",
+      "source_bytes": 1098187,
+      "source_sha256": "3fab92b6ce6775f8da80696e16bd100653e21da7799f1d21e00146fe0e2e63cf",
+      "source_size": [
+        1254,
+        1254
+      ],
+      "variants": {
+        "large1024": {
+          "file": "icons/large1024/PrimitiveSummonerMiner.png",
+          "bytes": 737391,
+          "size": [
+            1024,
+            1024
+          ],
+          "rgba8_uncompressed_bytes": 4194304,
+          "sha256": "7f8809b5ec763ee0c74fc8e42e97218013c0d2105fd2042d8cb49015ad1281ad",
+          "corner_alpha": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "ui_comparison": [
+            {
+              "display_px": 64,
+              "background": "#F6EEDC",
+              "mean_rgb_error_255": 0.441,
+              "rmse_255": 0.6985,
+              "psnr_db": 51.25
+            },
+            {
+              "display_px": 64,
+              "background": "#151C26",
+              "mean_rgb_error_255": 0.4167,
+              "rmse_255": 0.6681,
+              "psnr_db": 51.63
+            },
+            {
+              "display_px": 96,
+              "background": "#F6EEDC",
+              "mean_rgb_error_255": 0.4628,
+              "rmse_255": 0.7066,
+              "psnr_db": 51.15
+            },
+            {
+              "display_px": 96,
+              "background": "#151C26",
+              "mean_rgb_error_255": 0.4381,
+              "rmse_255": 0.6816,
+              "psnr_db": 51.46
+            },
+            {
+              "display_px": 128,
+              "background": "#F6EEDC",
+              "mean_rgb_error_255": 0.4788,
+              "rmse_255": 0.7238,
+              "psnr_db": 50.94
+            },
+            {
+              "display_px": 128,
+              "background": "#151C26",
+              "mean_rgb_error_255": 0.4519,
+              "rmse_255": 0.6982,
+              "psnr_db": 51.25
+            }
+          ]
+        },
+        "ui512": {
+          "file": "icons/ui512/PrimitiveSummonerMiner.png",
+          "bytes": 224700,
+          "size": [
+            512,
+            512
+          ],
+          "rgba8_uncompressed_bytes": 1048576,
+          "sha256": "366d2e45f299b9187b8a50351e455c886822b8985c71a80cee1f7126a86dcd27",
+          "corner_alpha": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "ui_comparison": [
+            {
+              "display_px": 64,
+              "background": "#F6EEDC",
+              "mean_rgb_error_255": 0.5023,
+              "rmse_255": 0.7511,
+              "psnr_db": 50.62
+            },
+            {
+              "display_px": 64,
+              "background": "#151C26",
+              "mean_rgb_error_255": 0.448,
+              "rmse_255": 0.6987,
+              "psnr_db": 51.24
+            },
+            {
+              "display_px": 96,
+              "background": "#F6EEDC",
+              "mean_rgb_error_255": 0.5339,
+              "rmse_255": 0.7831,
+              "psnr_db": 50.25
+            },
+            {
+              "display_px": 96,
+              "background": "#151C26",
+              "mean_rgb_error_255": 0.472,
+              "rmse_255": 0.721,
+              "psnr_db": 50.97
+            },
+            {
+              "display_px": 128,
+              "background": "#F6EEDC",
+              "mean_rgb_error_255": 0.5881,
+              "rmse_255": 0.8477,
+              "psnr_db": 49.57
+            },
+            {
+              "display_px": 128,
+              "background": "#151C26",
+              "mean_rgb_error_255": 0.5056,
+              "rmse_255": 0.7591,
+              "psnr_db": 50.52
+            }
+          ]
+        },
+        "small256": {
+          "file": "icons/small256/PrimitiveSummonerMiner.png",
+          "bytes": 73365,
+          "size": [
+            256,
+            256
+          ],
+          "rgba8_uncompressed_bytes": 262144,
+          "sha256": "f6738ea1cac78ae440eb471a28180fbf7999356a7290fb9dafbe79f2cd7d2861",
+          "corner_alpha": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "ui_comparison": [
+            {
+              "display_px": 64,
+              "background": "#F6EEDC",
+              "mean_rgb_error_255": 0.7267,
+              "rmse_255": 1.0403,
+              "psnr_db": 47.79
+            },
+            {
+              "display_px": 64,
+              "background": "#151C26",
+              "mean_rgb_error_255": 0.5529,
+              "rmse_255": 0.8362,
+              "psnr_db": 49.68
+            },
+            {
+              "display_px": 96,
+              "background": "#F6EEDC",
+              "mean_rgb_error_255": 0.836,
+              "rmse_255": 1.2475,
+              "psnr_db": 46.21
+            },
+            {
+              "display_px": 96,
+              "background": "#151C26",
+              "mean_rgb_error_255": 0.6048,
+              "rmse_255": 0.9134,
+              "psnr_db": 48.92
+            },
+            {
+              "display_px": 128,
+              "background": "#F6EEDC",
+              "mean_rgb_error_255": 0.8907,
+              "rmse_255": 1.3672,
+              "psnr_db": 45.41
+            },
+            {
+              "display_px": 128,
+              "background": "#151C26",
+              "mean_rgb_error_255": 0.6291,
+              "rmse_255": 0.962,
+              "psnr_db": 48.47
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "PrimitiveSummonerKing",
+      "character": "PrimitiveSummoner",
+      "role": "King",
+      "source": "/Users/wingman/Documents/Codex/GrowAMonster-Git-2026-11-12/art/srp-icons-v1/icons/PrimitiveSummonerKing.png",
+      "source_bytes": 914767,
+      "source_sha256": "9b3b5d06c6a2f2346ff793e6cbd12e51a4f80199790a363869b6f73702a897d8",
+      "source_size": [
+        1254,
+        1254
+      ],
+      "variants": {
+        "large1024": {
+          "file": "icons/large1024/PrimitiveSummonerKing.png",
+          "bytes": 629718,
+          "size": [
+            1024,
+            1024
+          ],
+          "rgba8_uncompressed_bytes": 4194304,
+          "sha256": "d7d4b824e22a61aba3e0c8473d8e88bf238c7840b541ea93fc73c139c0fa5791",
+          "corner_alpha": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "ui_comparison": [
+            {
+              "display_px": 64,
+              "background": "#F6EEDC",
+              "mean_rgb_error_255": 0.4317,
+              "rmse_255": 0.6907,
+              "psnr_db": 51.35
+            },
+            {
+              "display_px": 64,
+              "background": "#151C26",
+              "mean_rgb_error_255": 0.4062,
+              "rmse_255": 0.6614,
+              "psnr_db": 51.72
+            },
+            {
+              "display_px": 96,
+              "background": "#F6EEDC",
+              "mean_rgb_error_255": 0.4519,
+              "rmse_255": 0.7098,
+              "psnr_db": 51.11
+            },
+            {
+              "display_px": 96,
+              "background": "#151C26",
+              "mean_rgb_error_255": 0.4222,
+              "rmse_255": 0.6752,
+              "psnr_db": 51.54
+            },
+            {
+              "display_px": 128,
+              "background": "#F6EEDC",
+              "mean_rgb_error_255": 0.4589,
+              "rmse_255": 0.7066,
+              "psnr_db": 51.15
+            },
+            {
+              "display_px": 128,
+              "background": "#151C26",
+              "mean_rgb_error_255": 0.4332,
+              "rmse_255": 0.6819,
+              "psnr_db": 51.46
+            }
+          ]
+        },
+        "ui512": {
+          "file": "icons/ui512/PrimitiveSummonerKing.png",
+          "bytes": 193203,
+          "size": [
+            512,
+            512
+          ],
+          "rgba8_uncompressed_bytes": 1048576,
+          "sha256": "4a1050e7dc27841436cea2b50d858f50420ca2c9579d771a576f8a254b69a374",
+          "corner_alpha": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "ui_comparison": [
+            {
+              "display_px": 64,
+              "background": "#F6EEDC",
+              "mean_rgb_error_255": 0.512,
+              "rmse_255": 0.774,
+              "psnr_db": 50.36
+            },
+            {
+              "display_px": 64,
+              "background": "#151C26",
+              "mean_rgb_error_255": 0.4506,
+              "rmse_255": 0.7145,
+              "psnr_db": 51.05
+            },
+            {
+              "display_px": 96,
+              "background": "#F6EEDC",
+              "mean_rgb_error_255": 0.5525,
+              "rmse_255": 0.8154,
+              "psnr_db": 49.9
+            },
+            {
+              "display_px": 96,
+              "background": "#151C26",
+              "mean_rgb_error_255": 0.4812,
+              "rmse_255": 0.7465,
+              "psnr_db": 50.67
+            },
+            {
+              "display_px": 128,
+              "background": "#F6EEDC",
+              "mean_rgb_error_255": 0.5972,
+              "rmse_255": 0.8651,
+              "psnr_db": 49.39
+            },
+            {
+              "display_px": 128,
+              "background": "#151C26",
+              "mean_rgb_error_255": 0.5106,
+              "rmse_255": 0.776,
+              "psnr_db": 50.33
+            }
+          ]
+        },
+        "small256": {
+          "file": "icons/small256/PrimitiveSummonerKing.png",
+          "bytes": 62259,
+          "size": [
+            256,
+            256
+          ],
+          "rgba8_uncompressed_bytes": 262144,
+          "sha256": "e2a8c5d9c0788eaa8b1775c3670897e511e627d6a7c23966cda6c34b48ac690d",
+          "corner_alpha": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "ui_comparison": [
+            {
+              "display_px": 64,
+              "background": "#F6EEDC",
+              "mean_rgb_error_255": 0.7691,
+              "rmse_255": 1.0983,
+              "psnr_db": 47.32
+            },
+            {
+              "display_px": 64,
+              "background": "#151C26",
+              "mean_rgb_error_255": 0.5956,
+              "rmse_255": 0.917,
+              "psnr_db": 48.88
+            },
+            {
+              "display_px": 96,
+              "background": "#F6EEDC",
+              "mean_rgb_error_255": 0.8945,
+              "rmse_255": 1.346,
+              "psnr_db": 45.55
+            },
+            {
+              "display_px": 96,
+              "background": "#151C26",
+              "mean_rgb_error_255": 0.6357,
+              "rmse_255": 0.9985,
+              "psnr_db": 48.14
+            },
+            {
+              "display_px": 128,
+              "background": "#F6EEDC",
+              "mean_rgb_error_255": 0.9557,
+              "rmse_255": 1.4927,
+              "psnr_db": 44.65
+            },
+            {
+              "display_px": 128,
+              "background": "#151C26",
+              "mean_rgb_error_255": 0.6603,
+              "rmse_255": 1.0565,
+              "psnr_db": 47.65
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "PrimitiveSummonerKnight",
+      "character": "PrimitiveSummoner",
+      "role": "Knight",
+      "source": "/Users/wingman/Documents/Codex/GrowAMonster-Git-2026-11-12/art/srp-icons-v1/icons/PrimitiveSummonerKnight.png",
+      "source_bytes": 1089671,
+      "source_sha256": "0f2a93a5176a7bfa70d3413d55becc7f23326a7306967b1dd64da6a5a7a4c481",
+      "source_size": [
+        1254,
+        1254
+      ],
+      "variants": {
+        "large1024": {
+          "file": "icons/large1024/PrimitiveSummonerKnight.png",
+          "bytes": 735455,
+          "size": [
+            1024,
+            1024
+          ],
+          "rgba8_uncompressed_bytes": 4194304,
+          "sha256": "265a174729565ea9a4e4f5224d93062c52e34202f9043b71edbb1fafdea3fee2",
+          "corner_alpha": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "ui_comparison": [
+            {
+              "display_px": 64,
+              "background": "#F6EEDC",
+              "mean_rgb_error_255": 0.4428,
+              "rmse_255": 0.6963,
+              "psnr_db": 51.27
+            },
+            {
+              "display_px": 64,
+              "background": "#151C26",
+              "mean_rgb_error_255": 0.4145,
+              "rmse_255": 0.6642,
+              "psnr_db": 51.68
+            },
+            {
+              "display_px": 96,
+              "background": "#F6EEDC",
+              "mean_rgb_error_255": 0.4568,
+              "rmse_255": 0.7044,
+              "psnr_db": 51.17
+            },
+            {
+              "display_px": 96,
+              "background": "#151C26",
+              "mean_rgb_error_255": 0.4295,
+              "rmse_255": 0.6753,
+              "psnr_db": 51.54
+            },
+            {
+              "display_px": 128,
+              "background": "#F6EEDC",
+              "mean_rgb_error_255": 0.4672,
+              "rmse_255": 0.716,
+              "psnr_db": 51.03
+            },
+            {
+              "display_px": 128,
+              "background": "#151C26",
+              "mean_rgb_error_255": 0.4394,
+              "rmse_255": 0.6879,
+              "psnr_db": 51.38
+            }
+          ]
+        },
+        "ui512": {
+          "file": "icons/ui512/PrimitiveSummonerKnight.png",
+          "bytes": 228413,
+          "size": [
+            512,
+            512
+          ],
+          "rgba8_uncompressed_bytes": 1048576,
+          "sha256": "a0b24d2378eb45b9ee02a00ee03527fbf41d84acf1c70f85ccb125fd277a7673",
+          "corner_alpha": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "ui_comparison": [
+            {
+              "display_px": 64,
+              "background": "#F6EEDC",
+              "mean_rgb_error_255": 0.4847,
+              "rmse_255": 0.7312,
+              "psnr_db": 50.85
+            },
+            {
+              "display_px": 64,
+              "background": "#151C26",
+              "mean_rgb_error_255": 0.4394,
+              "rmse_255": 0.6898,
+              "psnr_db": 51.36
+            },
+            {
+              "display_px": 96,
+              "background": "#F6EEDC",
+              "mean_rgb_error_255": 0.5435,
+              "rmse_255": 0.7899,
+              "psnr_db": 50.18
+            },
+            {
+              "display_px": 96,
+              "background": "#151C26",
+              "mean_rgb_error_255": 0.478,
+              "rmse_255": 0.7274,
+              "psnr_db": 50.89
+            },
+            {
+              "display_px": 128,
+              "background": "#F6EEDC",
+              "mean_rgb_error_255": 0.5732,
+              "rmse_255": 0.8332,
+              "psnr_db": 49.72
+            },
+            {
+              "display_px": 128,
+              "background": "#151C26",
+              "mean_rgb_error_255": 0.4929,
+              "rmse_255": 0.7451,
+              "psnr_db": 50.69
+            }
+          ]
+        },
+        "small256": {
+          "file": "icons/small256/PrimitiveSummonerKnight.png",
+          "bytes": 74691,
+          "size": [
+            256,
+            256
+          ],
+          "rgba8_uncompressed_bytes": 262144,
+          "sha256": "f94bc8fc5d56c52501d1de4e69d34d9fd7de14ff1c7717d1f6e055f1e77ea253",
+          "corner_alpha": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "ui_comparison": [
+            {
+              "display_px": 64,
+              "background": "#F6EEDC",
+              "mean_rgb_error_255": 0.7019,
+              "rmse_255": 0.993,
+              "psnr_db": 48.19
+            },
+            {
+              "display_px": 64,
+              "background": "#151C26",
+              "mean_rgb_error_255": 0.5437,
+              "rmse_255": 0.8172,
+              "psnr_db": 49.88
+            },
+            {
+              "display_px": 96,
+              "background": "#F6EEDC",
+              "mean_rgb_error_255": 0.837,
+              "rmse_255": 1.2564,
+              "psnr_db": 46.15
+            },
+            {
+              "display_px": 96,
+              "background": "#151C26",
+              "mean_rgb_error_255": 0.5861,
+              "rmse_255": 0.886,
+              "psnr_db": 49.18
+            },
+            {
+              "display_px": 128,
+              "background": "#F6EEDC",
+              "mean_rgb_error_255": 0.897,
+              "rmse_255": 1.371,
+              "psnr_db": 45.39
+            },
+            {
+              "display_px": 128,
+              "background": "#151C26",
+              "mean_rgb_error_255": 0.6246,
+              "rmse_255": 0.9453,
+              "psnr_db": 48.62
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "PrimitiveSummonerNefor",
+      "character": "PrimitiveSummoner",
+      "role": "Nefor",
+      "source": "/Users/wingman/Documents/Codex/GrowAMonster-Git-2026-11-12/art/srp-icons-v1/icons/PrimitiveSummonerNefor.png",
+      "source_bytes": 1224470,
+      "source_sha256": "167dc7d1b5bb1b36bab0c0889c810c6d96c3e6d822276622a466da3d1c57e0b9",
+      "source_size": [
+        1254,
+        1254
+      ],
+      "variants": {
+        "large1024": {
+          "file": "icons/large1024/PrimitiveSummonerNefor.png",
+          "bytes": 832847,
+          "size": [
+            1024,
+            1024
+          ],
+          "rgba8_uncompressed_bytes": 4194304,
+          "sha256": "eca92e04a4ee68fb343ff5c33ab0b97241e2d87ebebbdc0b05ec461192d39922",
+          "corner_alpha": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "ui_comparison": [
+            {
+              "display_px": 64,
+              "background": "#F6EEDC",
+              "mean_rgb_error_255": 0.4475,
+              "rmse_255": 0.6961,
+              "psnr_db": 51.28
+            },
+            {
+              "display_px": 64,
+              "background": "#151C26",
+              "mean_rgb_error_255": 0.4244,
+              "rmse_255": 0.6703,
+              "psnr_db": 51.61
+            },
+            {
+              "display_px": 96,
+              "background": "#F6EEDC",
+              "mean_rgb_error_255": 0.4533,
+              "rmse_255": 0.7015,
+              "psnr_db": 51.21
+            },
+            {
+              "display_px": 96,
+              "background": "#151C26",
+              "mean_rgb_error_255": 0.4309,
+              "rmse_255": 0.6769,
+              "psnr_db": 51.52
+            },
+            {
+              "display_px": 128,
+              "background": "#F6EEDC",
+              "mean_rgb_error_255": 0.4817,
+              "rmse_255": 0.7256,
+              "psnr_db": 50.92
+            },
+            {
+              "display_px": 128,
+              "background": "#151C26",
+              "mean_rgb_error_255": 0.45,
+              "rmse_255": 0.6936,
+              "psnr_db": 51.31
+            }
+          ]
+        },
+        "ui512": {
+          "file": "icons/ui512/PrimitiveSummonerNefor.png",
+          "bytes": 257784,
+          "size": [
+            512,
+            512
+          ],
+          "rgba8_uncompressed_bytes": 1048576,
+          "sha256": "175bfcd7a6c6e48384cc9c0c7ae669b777fcdd8d9f0064579a4487071db0578d",
+          "corner_alpha": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "ui_comparison": [
+            {
+              "display_px": 64,
+              "background": "#F6EEDC",
+              "mean_rgb_error_255": 0.4979,
+              "rmse_255": 0.748,
+              "psnr_db": 50.65
+            },
+            {
+              "display_px": 64,
+              "background": "#151C26",
+              "mean_rgb_error_255": 0.4532,
+              "rmse_255": 0.7037,
+              "psnr_db": 51.18
+            },
+            {
+              "display_px": 96,
+              "background": "#F6EEDC",
+              "mean_rgb_error_255": 0.5557,
+              "rmse_255": 0.8007,
+              "psnr_db": 50.06
+            },
+            {
+              "display_px": 96,
+              "background": "#151C26",
+              "mean_rgb_error_255": 0.4867,
+              "rmse_255": 0.7354,
+              "psnr_db": 50.8
+            },
+            {
+              "display_px": 128,
+              "background": "#F6EEDC",
+              "mean_rgb_error_255": 0.6025,
+              "rmse_255": 0.8578,
+              "psnr_db": 49.46
+            },
+            {
+              "display_px": 128,
+              "background": "#151C26",
+              "mean_rgb_error_255": 0.518,
+              "rmse_255": 0.7662,
+              "psnr_db": 50.44
+            }
+          ]
+        },
+        "small256": {
+          "file": "icons/small256/PrimitiveSummonerNefor.png",
+          "bytes": 83367,
+          "size": [
+            256,
+            256
+          ],
+          "rgba8_uncompressed_bytes": 262144,
+          "sha256": "ba9882abd1a95e3e9ca044ae753f4487814093049f177c063c36cf2246da2629",
+          "corner_alpha": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "ui_comparison": [
+            {
+              "display_px": 64,
+              "background": "#F6EEDC",
+              "mean_rgb_error_255": 0.7231,
+              "rmse_255": 1.0251,
+              "psnr_db": 47.92
+            },
+            {
+              "display_px": 64,
+              "background": "#151C26",
+              "mean_rgb_error_255": 0.5553,
+              "rmse_255": 0.8267,
+              "psnr_db": 49.78
+            },
+            {
+              "display_px": 96,
+              "background": "#F6EEDC",
+              "mean_rgb_error_255": 0.8431,
+              "rmse_255": 1.2484,
+              "psnr_db": 46.2
+            },
+            {
+              "display_px": 96,
+              "background": "#151C26",
+              "mean_rgb_error_255": 0.5978,
+              "rmse_255": 0.8941,
+              "psnr_db": 49.1
+            },
+            {
+              "display_px": 128,
+              "background": "#F6EEDC",
+              "mean_rgb_error_255": 0.9059,
+              "rmse_255": 1.3976,
+              "psnr_db": 45.22
+            },
+            {
+              "display_px": 128,
+              "background": "#151C26",
+              "mean_rgb_error_255": 0.6281,
+              "rmse_255": 0.9488,
+              "psnr_db": 48.59
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "PrimitiveSummonerKiller",
+      "character": "PrimitiveSummoner",
+      "role": "Killer",
+      "source": "/Users/wingman/Documents/Codex/GrowAMonster-Git-2026-11-12/art/srp-icons-v1/icons/PrimitiveSummonerKiller.png",
+      "source_bytes": 1212345,
+      "source_sha256": "0d7f9c558c245eeed61dc1faaa4ed36f52eb938edb0c71190bf711d51c460b75",
+      "source_size": [
+        1254,
+        1254
+      ],
+      "variants": {
+        "large1024": {
+          "file": "icons/large1024/PrimitiveSummonerKiller.png",
+          "bytes": 809152,
+          "size": [
+            1024,
+            1024
+          ],
+          "rgba8_uncompressed_bytes": 4194304,
+          "sha256": "9d480172c8ad37a1604cf69803d72a3cb27a63139a8e42b8c09268067cdb0e64",
+          "corner_alpha": [
+            0,
+            1,
+            0,
+            0
+          ],
+          "ui_comparison": [
+            {
+              "display_px": 64,
+              "background": "#F6EEDC",
+              "mean_rgb_error_255": 0.4673,
+              "rmse_255": 0.7122,
+              "psnr_db": 51.08
+            },
+            {
+              "display_px": 64,
+              "background": "#151C26",
+              "mean_rgb_error_255": 0.4454,
+              "rmse_255": 0.6864,
+              "psnr_db": 51.4
+            },
+            {
+              "display_px": 96,
+              "background": "#F6EEDC",
+              "mean_rgb_error_255": 0.4835,
+              "rmse_255": 0.7278,
+              "psnr_db": 50.89
+            },
+            {
+              "display_px": 96,
+              "background": "#151C26",
+              "mean_rgb_error_255": 0.4589,
+              "rmse_255": 0.7012,
+              "psnr_db": 51.21
+            },
+            {
+              "display_px": 128,
+              "background": "#F6EEDC",
+              "mean_rgb_error_255": 0.5,
+              "rmse_255": 0.7422,
+              "psnr_db": 50.72
+            },
+            {
+              "display_px": 128,
+              "background": "#151C26",
+              "mean_rgb_error_255": 0.4715,
+              "rmse_255": 0.7144,
+              "psnr_db": 51.05
+            }
+          ]
+        },
+        "ui512": {
+          "file": "icons/ui512/PrimitiveSummonerKiller.png",
+          "bytes": 250281,
+          "size": [
+            512,
+            512
+          ],
+          "rgba8_uncompressed_bytes": 1048576,
+          "sha256": "731cb2176c7fc897ce951cb4e5d8ff05b18aaf69b7b28e62065157d868e85b69",
+          "corner_alpha": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "ui_comparison": [
+            {
+              "display_px": 64,
+              "background": "#F6EEDC",
+              "mean_rgb_error_255": 0.5119,
+              "rmse_255": 0.7526,
+              "psnr_db": 50.6
+            },
+            {
+              "display_px": 64,
+              "background": "#151C26",
+              "mean_rgb_error_255": 0.4651,
+              "rmse_255": 0.7083,
+              "psnr_db": 51.13
+            },
+            {
+              "display_px": 96,
+              "background": "#F6EEDC",
+              "mean_rgb_error_255": 0.5506,
+              "rmse_255": 0.794,
+              "psnr_db": 50.13
+            },
+            {
+              "display_px": 96,
+              "background": "#151C26",
+              "mean_rgb_error_255": 0.4944,
+              "rmse_255": 0.738,
+              "psnr_db": 50.77
+            },
+            {
+              "display_px": 128,
+              "background": "#F6EEDC",
+              "mean_rgb_error_255": 0.5932,
+              "rmse_255": 0.8445,
+              "psnr_db": 49.6
+            },
+            {
+              "display_px": 128,
+              "background": "#151C26",
+              "mean_rgb_error_255": 0.5181,
+              "rmse_255": 0.7638,
+              "psnr_db": 50.47
+            }
+          ]
+        },
+        "small256": {
+          "file": "icons/small256/PrimitiveSummonerKiller.png",
+          "bytes": 81876,
+          "size": [
+            256,
+            256
+          ],
+          "rgba8_uncompressed_bytes": 262144,
+          "sha256": "6b9269f5739ad748c86bf583a0a288375a99cff06bb2d76694641e8d38b1c461",
+          "corner_alpha": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "ui_comparison": [
+            {
+              "display_px": 64,
+              "background": "#F6EEDC",
+              "mean_rgb_error_255": 0.7238,
+              "rmse_255": 1.0205,
+              "psnr_db": 47.95
+            },
+            {
+              "display_px": 64,
+              "background": "#151C26",
+              "mean_rgb_error_255": 0.5706,
+              "rmse_255": 0.8424,
+              "psnr_db": 49.62
+            },
+            {
+              "display_px": 96,
+              "background": "#F6EEDC",
+              "mean_rgb_error_255": 0.8249,
+              "rmse_255": 1.2181,
+              "psnr_db": 46.42
+            },
+            {
+              "display_px": 96,
+              "background": "#151C26",
+              "mean_rgb_error_255": 0.6114,
+              "rmse_255": 0.9065,
+              "psnr_db": 48.98
+            },
+            {
+              "display_px": 128,
+              "background": "#F6EEDC",
+              "mean_rgb_error_255": 0.875,
+              "rmse_255": 1.3252,
+              "psnr_db": 45.69
+            },
+            {
+              "display_px": 128,
+              "background": "#151C26",
+              "mean_rgb_error_255": 0.636,
+              "rmse_255": 0.9466,
+              "psnr_db": 48.61
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "AdaptedVisceraFarmer",
+      "character": "AdaptedViscera",
+      "role": "Farmer",
+      "source": "/Users/wingman/Documents/Codex/GrowAMonster-Git-2026-11-12/art/srp-icons-v1/icons/AdaptedVisceraFarmer.png",
+      "source_bytes": 1106898,
+      "source_sha256": "17beeb67d0f93e69f2b172e1dd23e67b269ad47da34db95034b8e4efeb8845ba",
+      "source_size": [
+        1254,
+        1254
+      ],
+      "variants": {
+        "large1024": {
+          "file": "icons/large1024/AdaptedVisceraFarmer.png",
+          "bytes": 779720,
+          "size": [
+            1024,
+            1024
+          ],
+          "rgba8_uncompressed_bytes": 4194304,
+          "sha256": "4a85bd399cbc8d2dc74cf89063b059499ca648b66d44e9eb20229530ab66efbb",
+          "corner_alpha": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "ui_comparison": [
+            {
+              "display_px": 64,
+              "background": "#F6EEDC",
+              "mean_rgb_error_255": 0.3972,
+              "rmse_255": 0.6566,
+              "psnr_db": 51.78
+            },
+            {
+              "display_px": 64,
+              "background": "#151C26",
+              "mean_rgb_error_255": 0.3646,
+              "rmse_255": 0.6182,
+              "psnr_db": 52.31
+            },
+            {
+              "display_px": 96,
+              "background": "#F6EEDC",
+              "mean_rgb_error_255": 0.4079,
+              "rmse_255": 0.6656,
+              "psnr_db": 51.67
+            },
+            {
+              "display_px": 96,
+              "background": "#151C26",
+              "mean_rgb_error_255": 0.3743,
+              "rmse_255": 0.6287,
+              "psnr_db": 52.16
+            },
+            {
+              "display_px": 128,
+              "background": "#F6EEDC",
+              "mean_rgb_error_255": 0.4301,
+              "rmse_255": 0.6863,
+              "psnr_db": 51.4
+            },
+            {
+              "display_px": 128,
+              "background": "#151C26",
+              "mean_rgb_error_255": 0.3958,
+              "rmse_255": 0.6518,
+              "psnr_db": 51.85
+            }
+          ]
+        },
+        "ui512": {
+          "file": "icons/ui512/AdaptedVisceraFarmer.png",
+          "bytes": 240098,
+          "size": [
+            512,
+            512
+          ],
+          "rgba8_uncompressed_bytes": 1048576,
+          "sha256": "3ecf12a356b5519acb8cc267eae4a8c76ed5eefa3bcfe2f207e06adecaf6e5c9",
+          "corner_alpha": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "ui_comparison": [
+            {
+              "display_px": 64,
+              "background": "#F6EEDC",
+              "mean_rgb_error_255": 0.4625,
+              "rmse_255": 0.7237,
+              "psnr_db": 50.94
+            },
+            {
+              "display_px": 64,
+              "background": "#151C26",
+              "mean_rgb_error_255": 0.3882,
+              "rmse_255": 0.6458,
+              "psnr_db": 51.93
+            },
+            {
+              "display_px": 96,
+              "background": "#F6EEDC",
+              "mean_rgb_error_255": 0.503,
+              "rmse_255": 0.7693,
+              "psnr_db": 50.41
+            },
+            {
+              "display_px": 96,
+              "background": "#151C26",
+              "mean_rgb_error_255": 0.4196,
+              "rmse_255": 0.6817,
+              "psnr_db": 51.46
+            },
+            {
+              "display_px": 128,
+              "background": "#F6EEDC",
+              "mean_rgb_error_255": 0.5557,
+              "rmse_255": 0.8354,
+              "psnr_db": 49.69
+            },
+            {
+              "display_px": 128,
+              "background": "#151C26",
+              "mean_rgb_error_255": 0.4502,
+              "rmse_255": 0.7131,
+              "psnr_db": 51.07
+            }
+          ]
+        },
+        "small256": {
+          "file": "icons/small256/AdaptedVisceraFarmer.png",
+          "bytes": 77919,
+          "size": [
+            256,
+            256
+          ],
+          "rgba8_uncompressed_bytes": 262144,
+          "sha256": "ac92e1884fc8c568c192d024e1272544ca8bb4e63a9c7483e699e4d5d163e696",
+          "corner_alpha": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "ui_comparison": [
+            {
+              "display_px": 64,
+              "background": "#F6EEDC",
+              "mean_rgb_error_255": 0.6856,
+              "rmse_255": 1.0102,
+              "psnr_db": 48.04
+            },
+            {
+              "display_px": 64,
+              "background": "#151C26",
+              "mean_rgb_error_255": 0.4891,
+              "rmse_255": 0.7732,
+              "psnr_db": 50.36
+            },
+            {
+              "display_px": 96,
+              "background": "#F6EEDC",
+              "mean_rgb_error_255": 0.8344,
+              "rmse_255": 1.279,
+              "psnr_db": 45.99
+            },
+            {
+              "display_px": 96,
+              "background": "#151C26",
+              "mean_rgb_error_255": 0.5402,
+              "rmse_255": 0.8487,
+              "psnr_db": 49.56
+            },
+            {
+              "display_px": 128,
+              "background": "#F6EEDC",
+              "mean_rgb_error_255": 0.9191,
+              "rmse_255": 1.449,
+              "psnr_db": 44.91
+            },
+            {
+              "display_px": 128,
+              "background": "#151C26",
+              "mean_rgb_error_255": 0.571,
+              "rmse_255": 0.8942,
+              "psnr_db": 49.1
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "AdaptedVisceraMiner",
+      "character": "AdaptedViscera",
+      "role": "Miner",
+      "source": "/Users/wingman/Documents/Codex/GrowAMonster-Git-2026-11-12/art/srp-icons-v1/icons/AdaptedVisceraMiner.png",
+      "source_bytes": 1133951,
+      "source_sha256": "8eb3bf6a2224902d283fa99dcfd00c5de25290d68327dff0f8311efa4b696f45",
+      "source_size": [
+        1254,
+        1254
+      ],
+      "variants": {
+        "large1024": {
+          "file": "icons/large1024/AdaptedVisceraMiner.png",
+          "bytes": 806507,
+          "size": [
+            1024,
+            1024
+          ],
+          "rgba8_uncompressed_bytes": 4194304,
+          "sha256": "8f1f68fef62d832533adb7df9f4b9d673b31230cb93e0fca6f4efec0ab822dfc",
+          "corner_alpha": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "ui_comparison": [
+            {
+              "display_px": 64,
+              "background": "#F6EEDC",
+              "mean_rgb_error_255": 0.3734,
+              "rmse_255": 0.6339,
+              "psnr_db": 52.09
+            },
+            {
+              "display_px": 64,
+              "background": "#151C26",
+              "mean_rgb_error_255": 0.3561,
+              "rmse_255": 0.6143,
+              "psnr_db": 52.36
+            },
+            {
+              "display_px": 96,
+              "background": "#F6EEDC",
+              "mean_rgb_error_255": 0.4047,
+              "rmse_255": 0.667,
+              "psnr_db": 51.65
+            },
+            {
+              "display_px": 96,
+              "background": "#151C26",
+              "mean_rgb_error_255": 0.3743,
+              "rmse_255": 0.6341,
+              "psnr_db": 52.09
+            },
+            {
+              "display_px": 128,
+              "background": "#F6EEDC",
+              "mean_rgb_error_255": 0.4153,
+              "rmse_255": 0.6761,
+              "psnr_db": 51.53
+            },
+            {
+              "display_px": 128,
+              "background": "#151C26",
+              "mean_rgb_error_255": 0.3832,
+              "rmse_255": 0.6422,
+              "psnr_db": 51.98
+            }
+          ]
+        },
+        "ui512": {
+          "file": "icons/ui512/AdaptedVisceraMiner.png",
+          "bytes": 248748,
+          "size": [
+            512,
+            512
+          ],
+          "rgba8_uncompressed_bytes": 1048576,
+          "sha256": "8c64891f967226a5b0f23edde5443a70cef224761cbdffe9f0cdfc9fbcef4dab",
+          "corner_alpha": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "ui_comparison": [
+            {
+              "display_px": 64,
+              "background": "#F6EEDC",
+              "mean_rgb_error_255": 0.4576,
+              "rmse_255": 0.7184,
+              "psnr_db": 51.0
+            },
+            {
+              "display_px": 64,
+              "background": "#151C26",
+              "mean_rgb_error_255": 0.399,
+              "rmse_255": 0.661,
+              "psnr_db": 51.73
+            },
+            {
+              "display_px": 96,
+              "background": "#F6EEDC",
+              "mean_rgb_error_255": 0.4999,
+              "rmse_255": 0.7659,
+              "psnr_db": 50.45
+            },
+            {
+              "display_px": 96,
+              "background": "#151C26",
+              "mean_rgb_error_255": 0.4245,
+              "rmse_255": 0.6906,
+              "psnr_db": 51.35
+            },
+            {
+              "display_px": 128,
+              "background": "#F6EEDC",
+              "mean_rgb_error_255": 0.56,
+              "rmse_255": 0.8416,
+              "psnr_db": 49.63
+            },
+            {
+              "display_px": 128,
+              "background": "#151C26",
+              "mean_rgb_error_255": 0.4528,
+              "rmse_255": 0.7192,
+              "psnr_db": 50.99
+            }
+          ]
+        },
+        "small256": {
+          "file": "icons/small256/AdaptedVisceraMiner.png",
+          "bytes": 79818,
+          "size": [
+            256,
+            256
+          ],
+          "rgba8_uncompressed_bytes": 262144,
+          "sha256": "db18c2825c47acdf076a2e44bf5d398d1339932b366eee2feb65b2ae2a8e5be9",
+          "corner_alpha": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "ui_comparison": [
+            {
+              "display_px": 64,
+              "background": "#F6EEDC",
+              "mean_rgb_error_255": 0.7097,
+              "rmse_255": 1.0424,
+              "psnr_db": 47.77
+            },
+            {
+              "display_px": 64,
+              "background": "#151C26",
+              "mean_rgb_error_255": 0.5169,
+              "rmse_255": 0.8329,
+              "psnr_db": 49.72
+            },
+            {
+              "display_px": 96,
+              "background": "#F6EEDC",
+              "mean_rgb_error_255": 0.8428,
+              "rmse_255": 1.2754,
+              "psnr_db": 46.02
+            },
+            {
+              "display_px": 96,
+              "background": "#151C26",
+              "mean_rgb_error_255": 0.5751,
+              "rmse_255": 0.9146,
+              "psnr_db": 48.91
+            },
+            {
+              "display_px": 128,
+              "background": "#F6EEDC",
+              "mean_rgb_error_255": 0.9372,
+              "rmse_255": 1.4862,
+              "psnr_db": 44.69
+            },
+            {
+              "display_px": 128,
+              "background": "#151C26",
+              "mean_rgb_error_255": 0.6027,
+              "rmse_255": 0.9742,
+              "psnr_db": 48.36
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "AdaptedVisceraKing",
+      "character": "AdaptedViscera",
+      "role": "King",
+      "source": "/Users/wingman/Documents/Codex/GrowAMonster-Git-2026-11-12/art/srp-icons-v1/icons/AdaptedVisceraKing.png",
+      "source_bytes": 1366673,
+      "source_sha256": "ecba3777d6cab166d7f4204aefa67fb06e48991e1787203793cc7bbed3b03c25",
+      "source_size": [
+        1254,
+        1254
+      ],
+      "variants": {
+        "large1024": {
+          "file": "icons/large1024/AdaptedVisceraKing.png",
+          "bytes": 968976,
+          "size": [
+            1024,
+            1024
+          ],
+          "rgba8_uncompressed_bytes": 4194304,
+          "sha256": "f691ee7e3d460ece7788ca93824827306d7637979fd32dab37501fb991186f22",
+          "corner_alpha": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "ui_comparison": [
+            {
+              "display_px": 64,
+              "background": "#F6EEDC",
+              "mean_rgb_error_255": 0.3675,
+              "rmse_255": 0.635,
+              "psnr_db": 52.08
+            },
+            {
+              "display_px": 64,
+              "background": "#151C26",
+              "mean_rgb_error_255": 0.3436,
+              "rmse_255": 0.6034,
+              "psnr_db": 52.52
+            },
+            {
+              "display_px": 96,
+              "background": "#F6EEDC",
+              "mean_rgb_error_255": 0.3898,
+              "rmse_255": 0.6514,
+              "psnr_db": 51.85
+            },
+            {
+              "display_px": 96,
+              "background": "#151C26",
+              "mean_rgb_error_255": 0.3591,
+              "rmse_255": 0.6173,
+              "psnr_db": 52.32
+            },
+            {
+              "display_px": 128,
+              "background": "#F6EEDC",
+              "mean_rgb_error_255": 0.4012,
+              "rmse_255": 0.6614,
+              "psnr_db": 51.72
+            },
+            {
+              "display_px": 128,
+              "background": "#151C26",
+              "mean_rgb_error_255": 0.3719,
+              "rmse_255": 0.6322,
+              "psnr_db": 52.11
+            }
+          ]
+        },
+        "ui512": {
+          "file": "icons/ui512/AdaptedVisceraKing.png",
+          "bytes": 296568,
+          "size": [
+            512,
+            512
+          ],
+          "rgba8_uncompressed_bytes": 1048576,
+          "sha256": "7e376470fde64d5120a5e54946678bc1e2c59437d8b5bb30691ad6c403759cd9",
+          "corner_alpha": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "ui_comparison": [
+            {
+              "display_px": 64,
+              "background": "#F6EEDC",
+              "mean_rgb_error_255": 0.4355,
+              "rmse_255": 0.6981,
+              "psnr_db": 51.25
+            },
+            {
+              "display_px": 64,
+              "background": "#151C26",
+              "mean_rgb_error_255": 0.3736,
+              "rmse_255": 0.6359,
+              "psnr_db": 52.06
+            },
+            {
+              "display_px": 96,
+              "background": "#F6EEDC",
+              "mean_rgb_error_255": 0.5078,
+              "rmse_255": 0.7761,
+              "psnr_db": 50.33
+            },
+            {
+              "display_px": 96,
+              "background": "#151C26",
+              "mean_rgb_error_255": 0.4227,
+              "rmse_255": 0.6889,
+              "psnr_db": 51.37
+            },
+            {
+              "display_px": 128,
+              "background": "#F6EEDC",
+              "mean_rgb_error_255": 0.5443,
+              "rmse_255": 0.8279,
+              "psnr_db": 49.77
+            },
+            {
+              "display_px": 128,
+              "background": "#151C26",
+              "mean_rgb_error_255": 0.4485,
+              "rmse_255": 0.7234,
+              "psnr_db": 50.94
+            }
+          ]
+        },
+        "small256": {
+          "file": "icons/small256/AdaptedVisceraKing.png",
+          "bytes": 93357,
+          "size": [
+            256,
+            256
+          ],
+          "rgba8_uncompressed_bytes": 262144,
+          "sha256": "5553ed7c1b643409c435965ac9b53309e6f067d4c67fc569a62c3fea39ad2fc5",
+          "corner_alpha": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "ui_comparison": [
+            {
+              "display_px": 64,
+              "background": "#F6EEDC",
+              "mean_rgb_error_255": 0.7185,
+              "rmse_255": 1.0654,
+              "psnr_db": 47.58
+            },
+            {
+              "display_px": 64,
+              "background": "#151C26",
+              "mean_rgb_error_255": 0.5357,
+              "rmse_255": 0.8581,
+              "psnr_db": 49.46
+            },
+            {
+              "display_px": 96,
+              "background": "#F6EEDC",
+              "mean_rgb_error_255": 0.8579,
+              "rmse_255": 1.3243,
+              "psnr_db": 45.69
+            },
+            {
+              "display_px": 96,
+              "background": "#151C26",
+              "mean_rgb_error_255": 0.5961,
+              "rmse_255": 0.9597,
+              "psnr_db": 48.49
+            },
+            {
+              "display_px": 128,
+              "background": "#F6EEDC",
+              "mean_rgb_error_255": 0.9406,
+              "rmse_255": 1.4929,
+              "psnr_db": 44.65
+            },
+            {
+              "display_px": 128,
+              "background": "#151C26",
+              "mean_rgb_error_255": 0.633,
+              "rmse_255": 1.0283,
+              "psnr_db": 47.89
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "AdaptedVisceraKnight",
+      "character": "AdaptedViscera",
+      "role": "Knight",
+      "source": "/Users/wingman/Documents/Codex/GrowAMonster-Git-2026-11-12/art/srp-icons-v1/icons/AdaptedVisceraKnight.png",
+      "source_bytes": 1214743,
+      "source_sha256": "6e9453627b81368f6fff55a12215b303c045dd7fbbd57005bd91e6f3eea244fa",
+      "source_size": [
+        1254,
+        1254
+      ],
+      "variants": {
+        "large1024": {
+          "file": "icons/large1024/AdaptedVisceraKnight.png",
+          "bytes": 856139,
+          "size": [
+            1024,
+            1024
+          ],
+          "rgba8_uncompressed_bytes": 4194304,
+          "sha256": "8226f6ae00506c4442c761901122e5d2f1998a489a2544b54e77b83d7fbf2be5",
+          "corner_alpha": [
+            0,
+            1,
+            0,
+            0
+          ],
+          "ui_comparison": [
+            {
+              "display_px": 64,
+              "background": "#F6EEDC",
+              "mean_rgb_error_255": 0.3848,
+              "rmse_255": 0.6465,
+              "psnr_db": 51.92
+            },
+            {
+              "display_px": 64,
+              "background": "#151C26",
+              "mean_rgb_error_255": 0.3563,
+              "rmse_255": 0.6098,
+              "psnr_db": 52.43
+            },
+            {
+              "display_px": 96,
+              "background": "#F6EEDC",
+              "mean_rgb_error_255": 0.418,
+              "rmse_255": 0.6771,
+              "psnr_db": 51.52
+            },
+            {
+              "display_px": 96,
+              "background": "#151C26",
+              "mean_rgb_error_255": 0.3843,
+              "rmse_255": 0.6386,
+              "psnr_db": 52.03
+            },
+            {
+              "display_px": 128,
+              "background": "#F6EEDC",
+              "mean_rgb_error_255": 0.4258,
+              "rmse_255": 0.6831,
+              "psnr_db": 51.44
+            },
+            {
+              "display_px": 128,
+              "background": "#151C26",
+              "mean_rgb_error_255": 0.3935,
+              "rmse_255": 0.6494,
+              "psnr_db": 51.88
+            }
+          ]
+        },
+        "ui512": {
+          "file": "icons/ui512/AdaptedVisceraKnight.png",
+          "bytes": 263356,
+          "size": [
+            512,
+            512
+          ],
+          "rgba8_uncompressed_bytes": 1048576,
+          "sha256": "6ad44e221b62128f43d942ef20d50364eb4be05b68ddf5053742a05b6479b946",
+          "corner_alpha": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "ui_comparison": [
+            {
+              "display_px": 64,
+              "background": "#F6EEDC",
+              "mean_rgb_error_255": 0.4718,
+              "rmse_255": 0.7315,
+              "psnr_db": 50.85
+            },
+            {
+              "display_px": 64,
+              "background": "#151C26",
+              "mean_rgb_error_255": 0.3969,
+              "rmse_255": 0.6505,
+              "psnr_db": 51.87
+            },
+            {
+              "display_px": 96,
+              "background": "#F6EEDC",
+              "mean_rgb_error_255": 0.5016,
+              "rmse_255": 0.7645,
+              "psnr_db": 50.46
+            },
+            {
+              "display_px": 96,
+              "background": "#151C26",
+              "mean_rgb_error_255": 0.4235,
+              "rmse_255": 0.6801,
+              "psnr_db": 51.48
+            },
+            {
+              "display_px": 128,
+              "background": "#F6EEDC",
+              "mean_rgb_error_255": 0.5464,
+              "rmse_255": 0.822,
+              "psnr_db": 49.83
+            },
+            {
+              "display_px": 128,
+              "background": "#151C26",
+              "mean_rgb_error_255": 0.4495,
+              "rmse_255": 0.7084,
+              "psnr_db": 51.13
+            }
+          ]
+        },
+        "small256": {
+          "file": "icons/small256/AdaptedVisceraKnight.png",
+          "bytes": 84516,
+          "size": [
+            256,
+            256
+          ],
+          "rgba8_uncompressed_bytes": 262144,
+          "sha256": "746f2e1e286871a271ddd469738bdcd6c329df5e07bd251243907c8f63744c99",
+          "corner_alpha": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "ui_comparison": [
+            {
+              "display_px": 64,
+              "background": "#F6EEDC",
+              "mean_rgb_error_255": 0.6727,
+              "rmse_255": 1.0048,
+              "psnr_db": 48.09
+            },
+            {
+              "display_px": 64,
+              "background": "#151C26",
+              "mean_rgb_error_255": 0.481,
+              "rmse_255": 0.7651,
+              "psnr_db": 50.46
+            },
+            {
+              "display_px": 96,
+              "background": "#F6EEDC",
+              "mean_rgb_error_255": 0.8255,
+              "rmse_255": 1.2764,
+              "psnr_db": 46.01
+            },
+            {
+              "display_px": 96,
+              "background": "#151C26",
+              "mean_rgb_error_255": 0.5315,
+              "rmse_255": 0.8366,
+              "psnr_db": 49.68
+            },
+            {
+              "display_px": 128,
+              "background": "#F6EEDC",
+              "mean_rgb_error_255": 0.8925,
+              "rmse_255": 1.4323,
+              "psnr_db": 45.01
+            },
+            {
+              "display_px": 128,
+              "background": "#151C26",
+              "mean_rgb_error_255": 0.5624,
+              "rmse_255": 0.8875,
+              "psnr_db": 49.17
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "AdaptedVisceraNefor",
+      "character": "AdaptedViscera",
+      "role": "Nefor",
+      "source": "/Users/wingman/Documents/Codex/GrowAMonster-Git-2026-11-12/art/srp-icons-v1/icons/AdaptedVisceraNefor.png",
+      "source_bytes": 1223978,
+      "source_sha256": "21abbae7b9a4d90056f5aec67b8db46625c54b1718904b628e381147bb735d4c",
+      "source_size": [
+        1254,
+        1254
+      ],
+      "variants": {
+        "large1024": {
+          "file": "icons/large1024/AdaptedVisceraNefor.png",
+          "bytes": 865837,
+          "size": [
+            1024,
+            1024
+          ],
+          "rgba8_uncompressed_bytes": 4194304,
+          "sha256": "7486e3bf7b0e5bb762a8b5ec55f15d067108eaf08acc79adf672c77b10556d8a",
+          "corner_alpha": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "ui_comparison": [
+            {
+              "display_px": 64,
+              "background": "#F6EEDC",
+              "mean_rgb_error_255": 0.4039,
+              "rmse_255": 0.6652,
+              "psnr_db": 51.67
+            },
+            {
+              "display_px": 64,
+              "background": "#151C26",
+              "mean_rgb_error_255": 0.3662,
+              "rmse_255": 0.6207,
+              "psnr_db": 52.27
+            },
+            {
+              "display_px": 96,
+              "background": "#F6EEDC",
+              "mean_rgb_error_255": 0.4197,
+              "rmse_255": 0.6784,
+              "psnr_db": 51.5
+            },
+            {
+              "display_px": 96,
+              "background": "#151C26",
+              "mean_rgb_error_255": 0.38,
+              "rmse_255": 0.6351,
+              "psnr_db": 52.07
+            },
+            {
+              "display_px": 128,
+              "background": "#F6EEDC",
+              "mean_rgb_error_255": 0.4274,
+              "rmse_255": 0.6848,
+              "psnr_db": 51.42
+            },
+            {
+              "display_px": 128,
+              "background": "#151C26",
+              "mean_rgb_error_255": 0.3928,
+              "rmse_255": 0.6492,
+              "psnr_db": 51.88
+            }
+          ]
+        },
+        "ui512": {
+          "file": "icons/ui512/AdaptedVisceraNefor.png",
+          "bytes": 261998,
+          "size": [
+            512,
+            512
+          ],
+          "rgba8_uncompressed_bytes": 1048576,
+          "sha256": "76336ef30ddce3819e92cbfcc2dcd641d49ab381276271c733f3daa1bb2fe873",
+          "corner_alpha": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "ui_comparison": [
+            {
+              "display_px": 64,
+              "background": "#F6EEDC",
+              "mean_rgb_error_255": 0.4798,
+              "rmse_255": 0.7416,
+              "psnr_db": 50.73
+            },
+            {
+              "display_px": 64,
+              "background": "#151C26",
+              "mean_rgb_error_255": 0.4056,
+              "rmse_255": 0.6624,
+              "psnr_db": 51.71
+            },
+            {
+              "display_px": 96,
+              "background": "#F6EEDC",
+              "mean_rgb_error_255": 0.5208,
+              "rmse_255": 0.7863,
+              "psnr_db": 50.22
+            },
+            {
+              "display_px": 96,
+              "background": "#151C26",
+              "mean_rgb_error_255": 0.4357,
+              "rmse_255": 0.6951,
+              "psnr_db": 51.29
+            },
+            {
+              "display_px": 128,
+              "background": "#F6EEDC",
+              "mean_rgb_error_255": 0.5737,
+              "rmse_255": 0.8541,
+              "psnr_db": 49.5
+            },
+            {
+              "display_px": 128,
+              "background": "#151C26",
+              "mean_rgb_error_255": 0.4689,
+              "rmse_255": 0.7361,
+              "psnr_db": 50.79
+            }
+          ]
+        },
+        "small256": {
+          "file": "icons/small256/AdaptedVisceraNefor.png",
+          "bytes": 83840,
+          "size": [
+            256,
+            256
+          ],
+          "rgba8_uncompressed_bytes": 262144,
+          "sha256": "e0dfa98f08f09280ac0986bdd3f0ff22fe6e57413c03e42a28badb14513e8e2b",
+          "corner_alpha": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "ui_comparison": [
+            {
+              "display_px": 64,
+              "background": "#F6EEDC",
+              "mean_rgb_error_255": 0.7116,
+              "rmse_255": 1.0351,
+              "psnr_db": 47.83
+            },
+            {
+              "display_px": 64,
+              "background": "#151C26",
+              "mean_rgb_error_255": 0.5205,
+              "rmse_255": 0.8118,
+              "psnr_db": 49.94
+            },
+            {
+              "display_px": 96,
+              "background": "#F6EEDC",
+              "mean_rgb_error_255": 0.8518,
+              "rmse_255": 1.2948,
+              "psnr_db": 45.89
+            },
+            {
+              "display_px": 96,
+              "background": "#151C26",
+              "mean_rgb_error_255": 0.5755,
+              "rmse_255": 0.9096,
+              "psnr_db": 48.95
+            },
+            {
+              "display_px": 128,
+              "background": "#F6EEDC",
+              "mean_rgb_error_255": 0.9381,
+              "rmse_255": 1.4828,
+              "psnr_db": 44.71
+            },
+            {
+              "display_px": 128,
+              "background": "#151C26",
+              "mean_rgb_error_255": 0.6084,
+              "rmse_255": 0.9761,
+              "psnr_db": 48.34
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "AdaptedVisceraKiller",
+      "character": "AdaptedViscera",
+      "role": "Killer",
+      "source": "/Users/wingman/Documents/Codex/GrowAMonster-Git-2026-11-12/art/srp-icons-v1/icons/AdaptedVisceraKiller.png",
+      "source_bytes": 1216073,
+      "source_sha256": "e714aa8b858052401176f52bbdd361e5ea44781f3a626ce76efb3cfd3d8f1c1d",
+      "source_size": [
+        1254,
+        1254
+      ],
+      "variants": {
+        "large1024": {
+          "file": "icons/large1024/AdaptedVisceraKiller.png",
+          "bytes": 856280,
+          "size": [
+            1024,
+            1024
+          ],
+          "rgba8_uncompressed_bytes": 4194304,
+          "sha256": "7688a71e4b0f64eff190fbf769b7447988534cdfe4baac1fa922449c5047d74b",
+          "corner_alpha": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "ui_comparison": [
+            {
+              "display_px": 64,
+              "background": "#F6EEDC",
+              "mean_rgb_error_255": 0.3917,
+              "rmse_255": 0.6479,
+              "psnr_db": 51.9
+            },
+            {
+              "display_px": 64,
+              "background": "#151C26",
+              "mean_rgb_error_255": 0.3693,
+              "rmse_255": 0.621,
+              "psnr_db": 52.27
+            },
+            {
+              "display_px": 96,
+              "background": "#F6EEDC",
+              "mean_rgb_error_255": 0.4177,
+              "rmse_255": 0.6748,
+              "psnr_db": 51.55
+            },
+            {
+              "display_px": 96,
+              "background": "#151C26",
+              "mean_rgb_error_255": 0.3895,
+              "rmse_255": 0.644,
+              "psnr_db": 51.95
+            },
+            {
+              "display_px": 128,
+              "background": "#F6EEDC",
+              "mean_rgb_error_255": 0.4363,
+              "rmse_255": 0.694,
+              "psnr_db": 51.3
+            },
+            {
+              "display_px": 128,
+              "background": "#151C26",
+              "mean_rgb_error_255": 0.4049,
+              "rmse_255": 0.6596,
+              "psnr_db": 51.74
+            }
+          ]
+        },
+        "ui512": {
+          "file": "icons/ui512/AdaptedVisceraKiller.png",
+          "bytes": 262673,
+          "size": [
+            512,
+            512
+          ],
+          "rgba8_uncompressed_bytes": 1048576,
+          "sha256": "e35b4db996f70c9206b6b750e9135ad487bdf24b48932c7ebe6dac5ef99c8330",
+          "corner_alpha": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "ui_comparison": [
+            {
+              "display_px": 64,
+              "background": "#F6EEDC",
+              "mean_rgb_error_255": 0.4605,
+              "rmse_255": 0.7223,
+              "psnr_db": 50.96
+            },
+            {
+              "display_px": 64,
+              "background": "#151C26",
+              "mean_rgb_error_255": 0.4013,
+              "rmse_255": 0.6577,
+              "psnr_db": 51.77
+            },
+            {
+              "display_px": 96,
+              "background": "#F6EEDC",
+              "mean_rgb_error_255": 0.5019,
+              "rmse_255": 0.758,
+              "psnr_db": 50.54
+            },
+            {
+              "display_px": 96,
+              "background": "#151C26",
+              "mean_rgb_error_255": 0.4248,
+              "rmse_255": 0.6827,
+              "psnr_db": 51.45
+            },
+            {
+              "display_px": 128,
+              "background": "#F6EEDC",
+              "mean_rgb_error_255": 0.5529,
+              "rmse_255": 0.8285,
+              "psnr_db": 49.76
+            },
+            {
+              "display_px": 128,
+              "background": "#151C26",
+              "mean_rgb_error_255": 0.4627,
+              "rmse_255": 0.7246,
+              "psnr_db": 50.93
+            }
+          ]
+        },
+        "small256": {
+          "file": "icons/small256/AdaptedVisceraKiller.png",
+          "bytes": 85191,
+          "size": [
+            256,
+            256
+          ],
+          "rgba8_uncompressed_bytes": 262144,
+          "sha256": "8a9e81e2ffc65294e9c5a91635dfb553eb304dad1c79f8edabe74d28df5a355b",
+          "corner_alpha": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "ui_comparison": [
+            {
+              "display_px": 64,
+              "background": "#F6EEDC",
+              "mean_rgb_error_255": 0.6828,
+              "rmse_255": 0.9971,
+              "psnr_db": 48.16
+            },
+            {
+              "display_px": 64,
+              "background": "#151C26",
+              "mean_rgb_error_255": 0.492,
+              "rmse_255": 0.7726,
+              "psnr_db": 50.37
+            },
+            {
+              "display_px": 96,
+              "background": "#F6EEDC",
+              "mean_rgb_error_255": 0.8145,
+              "rmse_255": 1.2297,
+              "psnr_db": 46.34
+            },
+            {
+              "display_px": 96,
+              "background": "#151C26",
+              "mean_rgb_error_255": 0.5541,
+              "rmse_255": 0.8599,
+              "psnr_db": 49.44
+            },
+            {
+              "display_px": 128,
+              "background": "#F6EEDC",
+              "mean_rgb_error_255": 0.8852,
+              "rmse_255": 1.3875,
+              "psnr_db": 45.29
+            },
+            {
+              "display_px": 128,
+              "background": "#151C26",
+              "mean_rgb_error_255": 0.5826,
+              "rmse_255": 0.9096,
+              "psnr_db": 48.95
+            }
+          ]
+        }
+      }
+    }
+  ]
+}

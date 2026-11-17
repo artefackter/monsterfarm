@@ -1,0 +1,129 @@
+{
+  "passed": true,
+  "candidates_unmodified": true,
+  "original_alpha_preserved": true,
+  "reference_hashes_unchanged": true,
+  "integration_authorized": false,
+  "icons": [
+    {
+      "role": "Farmer",
+      "file": "icons/LongmawFarmer.png",
+      "size": [
+        1254,
+        1254
+      ],
+      "mode": "RGBA",
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "transparent_pixels": 1004296,
+      "opaque_pixels": 1926,
+      "near_opaque_pixels_alpha_250_plus": 519930,
+      "visible_silhouette_inside_frame": true,
+      "outer_border_max_alpha": 3,
+      "matches_generated_original": true,
+      "sha256": "11f79b9686adcc79083902e7bc6af71aea17853f2a8f57a4385426ad56105315"
+    },
+    {
+      "role": "Miner",
+      "file": "icons/LongmawMiner.png",
+      "size": [
+        1254,
+        1254
+      ],
+      "mode": "RGBA",
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "transparent_pixels": 1020463,
+      "opaque_pixels": 2225,
+      "near_opaque_pixels_alpha_250_plus": 505071,
+      "visible_silhouette_inside_frame": true,
+      "outer_border_max_alpha": 1,
+      "matches_generated_original": true,
+      "sha256": "66be9913b7403cad9db5ba0e25630bd0befddec82410bb162e2c9113eaf4e0eb"
+    },
+    {
+      "role": "Princess",
+      "file": "icons/LongmawPrincess.png",
+      "size": [
+        1254,
+        1254
+      ],
+      "mode": "RGBA",
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "transparent_pixels": 1020838,
+      "opaque_pixels": 2388,
+      "near_opaque_pixels_alpha_250_plus": 509560,
+      "visible_silhouette_inside_frame": true,
+      "outer_border_max_alpha": 1,
+      "matches_generated_original": true,
+      "sha256": "0904f6f6e5cbca8107834d0212512a54adeb0e9d887b4a9369717feaa9cd5d50"
+    },
+    {
+      "role": "Knight",
+      "file": "icons/LongmawKnight.png",
+      "size": [
+        1254,
+        1254
+      ],
+      "mode": "RGBA",
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "transparent_pixels": 1003184,
+      "opaque_pixels": 2292,
+      "near_opaque_pixels_alpha_250_plus": 518567,
+      "visible_silhouette_inside_frame": true,
+      "outer_border_max_alpha": 1,
+      "matches_generated_original": true,
+      "sha256": "3110fa44baf3a2ecb4dd8c1acb075ae135360ba736db79a413538b4dff3f7f02"
+    },
+    {
+      "role": "Punk",
+      "file": "icons/LongmawPunk.png",
+      "size": [
+        1254,
+        1254
+      ],
+      "mode": "RGBA",
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "transparent_pixels": 1026527,
+      "opaque_pixels": 2718,
+      "near_opaque_pixels_alpha_250_plus": 508837,
+      "visible_silhouette_inside_frame": true,
+      "outer_border_max_alpha": 2,
+      "matches_generated_original": true,
+      "sha256": "d68be2e2454161e2b97cf71d580bcd71a2e8607fbf68587dc02ecbe35a1f4b00"
+    },
+    {
+      "role": "Assassin",
+      "file": "icons/LongmawAssassin.png",
+      "size": [
+        1254,
+        1254
+      ],
+      "mode": "RGBA",
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "transparent_pixels": 1033657,
+      "opaque_pixels": 2094,
+      "near_opaque_pixels_alpha_250_plus": 493918,
+      "visible_silhouette_inside_frame": true,
+      "outer_border_max_alpha": 6,
+      "matches_generated_original": true,
+      "sha256": "5e0d4e48bc9fe6f9dedcd09596355548cda3f2cf502de04ddcf29c9482a1dd60"
+    }
+  ]
+}

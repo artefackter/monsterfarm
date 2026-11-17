@@ -1,0 +1,9 @@
+{
+  "source_sha256": "947304347eda47e06bca4ebfc20223d18b339e34abd56a1016a2c079bc60dbf8",
+  "source_triangles": 7822,
+  "triangles_after_small_bevel_cleanup": 4380,
+  "interior_triangles_removed": 629,
+  "final_triangles": 3751,
+  "accepted_convex_occluders": 158,
+  "original_unchanged": true
+}

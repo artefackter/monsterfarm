@@ -1,0 +1,2527 @@
+{
+  "status": "optimized_copies_for_review",
+  "game_integrated": false,
+  "runtime_load_time_measured": false,
+  "source_hashes": {
+    "hooded-stranger-v2/models/HoodedStranger.glb": "0157fb6678d308c2fbaa9e19eaaec1dd57d3f3657e2d59c294a408a3b12d352d",
+    "hooded-stranger-v2/models/HoodedStranger.fbx": "0acd95ec68858216fa20d4f94f2afe3306c6283007967642190134a05c457c4b",
+    "hooded-stranger-v2/models/HoodedStranger.blend": "80a1d4d8ac61cebffad0d25a0fc500993a7629cb33006c438cfb6a43acba1de0",
+    "hooded-stranger-forms-v1/models/HoodedStranger_Assassin.blend": "7a2b13b7ed5877164fd5f89a9caa733e1d024ec8e468d4469826822b95922923",
+    "hooded-stranger-forms-v1/models/HoodedStranger_Miner.glb": "6a6cde6c5ab812d02e05fe565bc121f7b551968b2adec995694401005427ef22",
+    "hooded-stranger-forms-v1/models/HoodedStranger_Punk.fbx": "aab2918df5c8e6a3ceb3ab55b830408e2c0f43d7811da81a16661f67bc6799cd",
+    "hooded-stranger-forms-v1/models/HoodedStranger_Knight.fbx": "e91af436034365b908eb235da3628664b0afdade4cc41667bb04c25578a95668",
+    "hooded-stranger-forms-v1/models/HoodedStranger_Farmer.glb": "d25f074fc1ef9a4fea09e25965eeb8040d1ae48d197ed4356e41d94d76ba4026",
+    "hooded-stranger-forms-v1/models/HoodedStranger_King.fbx": "812bee837e2c9c031e88c831667798401f6a6c5f175a6fafad4cd03fa5dc2739",
+    "hooded-stranger-forms-v1/models/HoodedStranger_Assassin.fbx": "b4f3101c129c71a97560480493e1f9b57d7677dcaea068fea9e428d689c27efd",
+    "hooded-stranger-forms-v1/models/HoodedStranger_Knight.blend": "9dffe382e9bcc9c97a4c2b19bb24782f4e2b71831788884d3d962f49b5390b20",
+    "hooded-stranger-forms-v1/models/HoodedStranger_Knight.glb": "d8ded2cfc52244e505d65980c3269210c8836565a1f4b595eb389a8bf13cc44a",
+    "hooded-stranger-forms-v1/models/HoodedStranger_King.blend": "ed055634ed3c3b9e245bada315252ff6db0c2105ece3396a61ad69a53e493e64",
+    "hooded-stranger-forms-v1/models/HoodedStranger_Farmer.fbx": "2f5f019dfe1157107b4d342b496eab6dd8e3161cf50e701dcc70fcd1738df732",
+    "hooded-stranger-forms-v1/models/HoodedStranger_Punk.blend": "55dd9ca42fa15ef9b127361fb8206c5ecf9e795b496ca390eb6192539130895c",
+    "hooded-stranger-forms-v1/models/HoodedStranger_King.glb": "8573bd23c5e59271c2878e02d7343c27ed377c76c6bc214f740c42d6169893d0",
+    "hooded-stranger-forms-v1/models/HoodedStranger_Miner.blend": "62d3915f9c9caeb69ef34273731d1e2cbc0b1f00c54f3abfd1844b0e5f289133",
+    "hooded-stranger-forms-v1/models/HoodedStranger_Miner.fbx": "0dbe2d269b54f800ec68f05b0abe2e330581b5cca57c8d24c98bb483133565ff",
+    "hooded-stranger-forms-v1/models/HoodedStranger_Punk.glb": "f1741647cb48f1c1b7893861382b00b8a6fea411299ebf65c96ab31a9c099cf4",
+    "hooded-stranger-forms-v1/models/HoodedStranger_Farmer.blend": "7daf5f2a843c2e68ca464b4ba86bb2af26e542d44285445836da83e805d4ab92",
+    "hooded-stranger-forms-v1/models/HoodedStranger_Assassin.glb": "907920baf1c9d1d7cc6f27ca750fcbeabc8a5c67aa8f43189390c40ced316f99",
+    "hooded-stranger-icons-v1/icons/HoodedStrangerKnight.png": "2f43a1db96d83bde95dd1a6729710f64ca49f87d98a08b495ea96d27a2565bd3",
+    "hooded-stranger-icons-v1/icons/HoodedStrangerKing.png": "012194bf4d0628fde4cc7e776631b0fcde54724e36eee7b1b669c8e866814f3f",
+    "hooded-stranger-icons-v1/icons/HoodedStrangerMiner.png": "efa2721fa8e3dbc517ecb169266fceb6722b0a95f85a87bf24b3ab610fd98317",
+    "hooded-stranger-icons-v1/icons/HoodedStrangerPunk.png": "ef1d765bde043a3c21a171a237ea7fa2826f08e2f01ab6331d7d45ffcfb60fc1",
+    "hooded-stranger-icons-v1/icons/HoodedStrangerFarmer.png": "6f98420a152fd3cea49d7628c2da872317b7c72c34c9553e52c7b7c04a117bd0",
+    "hooded-stranger-icons-v1/icons/HoodedStrangerAssassin.png": "b5a868c5f5a9f1f1b498546d1efb3bbbd5987620ee7bf8a02a92a9ec0ba42b5f"
+  },
+  "models": [
+    {
+      "id": "HoodedStranger",
+      "role": "Base",
+      "ru": "Базовый",
+      "source": "hooded-stranger-v2/models/HoodedStranger.glb",
+      "source_sha256": "0157fb6678d308c2fbaa9e19eaaec1dd57d3f3657e2d59c294a408a3b12d352d",
+      "file": "models/HoodedStranger.glb",
+      "sha256": "42a5609ddc5904b077500eced37a8f337a823c5469f7c84051167baf06bcac0c",
+      "input_bytes": 513972,
+      "output_bytes": 343180,
+      "input_meshes": 27,
+      "output_meshes": 2,
+      "bones": 28,
+      "triangles": 4040,
+      "groups": {
+        "StrangerBody": {
+          "vertices": 5585,
+          "triangles": 3142,
+          "source_parts": [
+            "Cowl",
+            "Finger1L",
+            "Finger1R",
+            "Finger2L",
+            "Finger2R",
+            "Finger3L",
+            "Finger3R",
+            "Finger4L",
+            "Finger4R",
+            "FootL",
+            "FootR",
+            "ForearmL",
+            "ForearmR",
+            "HandL",
+            "HandR",
+            "Hood",
+            "NeckCloth",
+            "ShinL",
+            "ShinR",
+            "ThighL",
+            "ThighR",
+            "ThumbL",
+            "ThumbR",
+            "Torso",
+            "UpperArmL",
+            "UpperArmR"
+          ]
+        },
+        "Face": {
+          "vertices": 569,
+          "triangles": 898,
+          "source_parts": [
+            "Face"
+          ]
+        }
+      },
+      "part_ranges": {
+        "Cowl": {
+          "mesh": "StrangerBody",
+          "vertex_start": 0,
+          "vertex_count": 400,
+          "triangle_start": 0,
+          "triangles": 156
+        },
+        "Face": {
+          "mesh": "Face",
+          "vertex_start": 0,
+          "vertex_count": 569,
+          "triangle_start": 0,
+          "triangles": 898
+        },
+        "Finger1L": {
+          "mesh": "StrangerBody",
+          "vertex_start": 400,
+          "vertex_count": 108,
+          "triangle_start": 156,
+          "triangles": 44
+        },
+        "Finger1R": {
+          "mesh": "StrangerBody",
+          "vertex_start": 508,
+          "vertex_count": 108,
+          "triangle_start": 200,
+          "triangles": 44
+        },
+        "Finger2L": {
+          "mesh": "StrangerBody",
+          "vertex_start": 616,
+          "vertex_count": 108,
+          "triangle_start": 244,
+          "triangles": 44
+        },
+        "Finger2R": {
+          "mesh": "StrangerBody",
+          "vertex_start": 724,
+          "vertex_count": 108,
+          "triangle_start": 288,
+          "triangles": 44
+        },
+        "Finger3L": {
+          "mesh": "StrangerBody",
+          "vertex_start": 832,
+          "vertex_count": 108,
+          "triangle_start": 332,
+          "triangles": 44
+        },
+        "Finger3R": {
+          "mesh": "StrangerBody",
+          "vertex_start": 940,
+          "vertex_count": 110,
+          "triangle_start": 376,
+          "triangles": 44
+        },
+        "Finger4L": {
+          "mesh": "StrangerBody",
+          "vertex_start": 1050,
+          "vertex_count": 113,
+          "triangle_start": 420,
+          "triangles": 44
+        },
+        "Finger4R": {
+          "mesh": "StrangerBody",
+          "vertex_start": 1163,
+          "vertex_count": 108,
+          "triangle_start": 464,
+          "triangles": 44
+        },
+        "FootL": {
+          "mesh": "StrangerBody",
+          "vertex_start": 1271,
+          "vertex_count": 192,
+          "triangle_start": 508,
+          "triangles": 88
+        },
+        "FootR": {
+          "mesh": "StrangerBody",
+          "vertex_start": 1463,
+          "vertex_count": 192,
+          "triangle_start": 596,
+          "triangles": 88
+        },
+        "ForearmL": {
+          "mesh": "StrangerBody",
+          "vertex_start": 1655,
+          "vertex_count": 352,
+          "triangle_start": 684,
+          "triangles": 140
+        },
+        "ForearmR": {
+          "mesh": "StrangerBody",
+          "vertex_start": 2007,
+          "vertex_count": 352,
+          "triangle_start": 824,
+          "triangles": 140
+        },
+        "HandL": {
+          "mesh": "StrangerBody",
+          "vertex_start": 2359,
+          "vertex_count": 96,
+          "triangle_start": 964,
+          "triangles": 44
+        },
+        "HandR": {
+          "mesh": "StrangerBody",
+          "vertex_start": 2455,
+          "vertex_count": 96,
+          "triangle_start": 1008,
+          "triangles": 44
+        },
+        "Hood": {
+          "mesh": "StrangerBody",
+          "vertex_start": 2551,
+          "vertex_count": 736,
+          "triangle_start": 1052,
+          "triangles": 1146
+        },
+        "NeckCloth": {
+          "mesh": "StrangerBody",
+          "vertex_start": 3287,
+          "vertex_count": 168,
+          "triangle_start": 2198,
+          "triangles": 68
+        },
+        "ShinL": {
+          "mesh": "StrangerBody",
+          "vertex_start": 3455,
+          "vertex_count": 354,
+          "triangle_start": 2266,
+          "triangles": 140
+        },
+        "ShinR": {
+          "mesh": "StrangerBody",
+          "vertex_start": 3809,
+          "vertex_count": 352,
+          "triangle_start": 2406,
+          "triangles": 140
+        },
+        "ThighL": {
+          "mesh": "StrangerBody",
+          "vertex_start": 4161,
+          "vertex_count": 114,
+          "triangle_start": 2546,
+          "triangles": 60
+        },
+        "ThighR": {
+          "mesh": "StrangerBody",
+          "vertex_start": 4275,
+          "vertex_count": 114,
+          "triangle_start": 2606,
+          "triangles": 60
+        },
+        "ThumbL": {
+          "mesh": "StrangerBody",
+          "vertex_start": 4389,
+          "vertex_count": 84,
+          "triangle_start": 2666,
+          "triangles": 32
+        },
+        "ThumbR": {
+          "mesh": "StrangerBody",
+          "vertex_start": 4473,
+          "vertex_count": 84,
+          "triangle_start": 2698,
+          "triangles": 32
+        },
+        "Torso": {
+          "mesh": "StrangerBody",
+          "vertex_start": 4557,
+          "vertex_count": 800,
+          "triangle_start": 2730,
+          "triangles": 292
+        },
+        "UpperArmL": {
+          "mesh": "StrangerBody",
+          "vertex_start": 5357,
+          "vertex_count": 112,
+          "triangle_start": 3022,
+          "triangles": 60
+        },
+        "UpperArmR": {
+          "mesh": "StrangerBody",
+          "vertex_start": 5469,
+          "vertex_count": 116,
+          "triangle_start": 3082,
+          "triangles": 60
+        }
+      },
+      "position_normal_triangle_changes": false,
+      "max_linear_color_error": 7.573392449944372e-06,
+      "max_weight_error": 6.914704756944001e-06,
+      "max_uv_pixel_error": 7.62939453125e-06,
+      "source_texture_size": [
+        1000,
+        562
+      ],
+      "output_texture_size": [
+        256,
+        256
+      ],
+      "texture_crop": [
+        392,
+        152,
+        648,
+        408
+      ],
+      "source_texture_bytes": 106028,
+      "output_texture_bytes": 36940,
+      "texture_pixels_resampled": false,
+      "removed_face_color_layers": "All-white COLOR_0 and COLOR_1; default white is identical",
+      "compression_decoder_required": false,
+      "extensions_used": [
+        "KHR_materials_specular"
+      ]
+    },
+    {
+      "id": "HoodedStranger_Farmer",
+      "role": "Farmer",
+      "ru": "Фермер",
+      "source": "hooded-stranger-forms-v1/models/HoodedStranger_Farmer.glb",
+      "source_sha256": "d25f074fc1ef9a4fea09e25965eeb8040d1ae48d197ed4356e41d94d76ba4026",
+      "file": "models/HoodedStranger_Farmer.glb",
+      "sha256": "e9b128e1faca4524ec5a239cea00bda8feed85c9c0502190468ebba8ee0f53da",
+      "input_bytes": 789832,
+      "output_bytes": 559896,
+      "input_meshes": 30,
+      "output_meshes": 2,
+      "bones": 28,
+      "triangles": 6072,
+      "groups": {
+        "StrangerBody": {
+          "vertices": 10233,
+          "triangles": 5174,
+          "source_parts": [
+            "Cowl",
+            "Finger1L",
+            "Finger1R",
+            "Finger2L",
+            "Finger2R",
+            "Finger3L",
+            "Finger3R",
+            "Finger4L",
+            "Finger4R",
+            "FootL",
+            "FootR",
+            "ForearmL",
+            "ForearmR",
+            "HandL",
+            "HandR",
+            "Hood",
+            "NeckCloth",
+            "Role_Belt",
+            "Role_Chest",
+            "Role_Headgear",
+            "ShinL",
+            "ShinR",
+            "ThighL",
+            "ThighR",
+            "ThumbL",
+            "ThumbR",
+            "Torso",
+            "UpperArmL",
+            "UpperArmR"
+          ]
+        },
+        "Face": {
+          "vertices": 569,
+          "triangles": 898,
+          "source_parts": [
+            "Face"
+          ]
+        }
+      },
+      "part_ranges": {
+        "Cowl": {
+          "mesh": "StrangerBody",
+          "vertex_start": 0,
+          "vertex_count": 400,
+          "triangle_start": 0,
+          "triangles": 156
+        },
+        "Face": {
+          "mesh": "Face",
+          "vertex_start": 0,
+          "vertex_count": 569,
+          "triangle_start": 0,
+          "triangles": 898
+        },
+        "Finger1L": {
+          "mesh": "StrangerBody",
+          "vertex_start": 400,
+          "vertex_count": 108,
+          "triangle_start": 156,
+          "triangles": 44
+        },
+        "Finger1R": {
+          "mesh": "StrangerBody",
+          "vertex_start": 508,
+          "vertex_count": 108,
+          "triangle_start": 200,
+          "triangles": 44
+        },
+        "Finger2L": {
+          "mesh": "StrangerBody",
+          "vertex_start": 616,
+          "vertex_count": 108,
+          "triangle_start": 244,
+          "triangles": 44
+        },
+        "Finger2R": {
+          "mesh": "StrangerBody",
+          "vertex_start": 724,
+          "vertex_count": 108,
+          "triangle_start": 288,
+          "triangles": 44
+        },
+        "Finger3L": {
+          "mesh": "StrangerBody",
+          "vertex_start": 832,
+          "vertex_count": 108,
+          "triangle_start": 332,
+          "triangles": 44
+        },
+        "Finger3R": {
+          "mesh": "StrangerBody",
+          "vertex_start": 940,
+          "vertex_count": 110,
+          "triangle_start": 376,
+          "triangles": 44
+        },
+        "Finger4L": {
+          "mesh": "StrangerBody",
+          "vertex_start": 1050,
+          "vertex_count": 113,
+          "triangle_start": 420,
+          "triangles": 44
+        },
+        "Finger4R": {
+          "mesh": "StrangerBody",
+          "vertex_start": 1163,
+          "vertex_count": 108,
+          "triangle_start": 464,
+          "triangles": 44
+        },
+        "FootL": {
+          "mesh": "StrangerBody",
+          "vertex_start": 1271,
+          "vertex_count": 192,
+          "triangle_start": 508,
+          "triangles": 88
+        },
+        "FootR": {
+          "mesh": "StrangerBody",
+          "vertex_start": 1463,
+          "vertex_count": 192,
+          "triangle_start": 596,
+          "triangles": 88
+        },
+        "ForearmL": {
+          "mesh": "StrangerBody",
+          "vertex_start": 1655,
+          "vertex_count": 352,
+          "triangle_start": 684,
+          "triangles": 140
+        },
+        "ForearmR": {
+          "mesh": "StrangerBody",
+          "vertex_start": 2007,
+          "vertex_count": 352,
+          "triangle_start": 824,
+          "triangles": 140
+        },
+        "HandL": {
+          "mesh": "StrangerBody",
+          "vertex_start": 2359,
+          "vertex_count": 96,
+          "triangle_start": 964,
+          "triangles": 44
+        },
+        "HandR": {
+          "mesh": "StrangerBody",
+          "vertex_start": 2455,
+          "vertex_count": 96,
+          "triangle_start": 1008,
+          "triangles": 44
+        },
+        "Hood": {
+          "mesh": "StrangerBody",
+          "vertex_start": 2551,
+          "vertex_count": 736,
+          "triangle_start": 1052,
+          "triangles": 1146
+        },
+        "NeckCloth": {
+          "mesh": "StrangerBody",
+          "vertex_start": 3287,
+          "vertex_count": 168,
+          "triangle_start": 2198,
+          "triangles": 68
+        },
+        "Role_Belt": {
+          "mesh": "StrangerBody",
+          "vertex_start": 3455,
+          "vertex_count": 624,
+          "triangle_start": 2266,
+          "triangles": 312
+        },
+        "Role_Chest": {
+          "mesh": "StrangerBody",
+          "vertex_start": 4079,
+          "vertex_count": 1484,
+          "triangle_start": 2578,
+          "triangles": 608
+        },
+        "Role_Headgear": {
+          "mesh": "StrangerBody",
+          "vertex_start": 5563,
+          "vertex_count": 2540,
+          "triangle_start": 3186,
+          "triangles": 1112
+        },
+        "ShinL": {
+          "mesh": "StrangerBody",
+          "vertex_start": 8103,
+          "vertex_count": 354,
+          "triangle_start": 4298,
+          "triangles": 140
+        },
+        "ShinR": {
+          "mesh": "StrangerBody",
+          "vertex_start": 8457,
+          "vertex_count": 352,
+          "triangle_start": 4438,
+          "triangles": 140
+        },
+        "ThighL": {
+          "mesh": "StrangerBody",
+          "vertex_start": 8809,
+          "vertex_count": 114,
+          "triangle_start": 4578,
+          "triangles": 60
+        },
+        "ThighR": {
+          "mesh": "StrangerBody",
+          "vertex_start": 8923,
+          "vertex_count": 114,
+          "triangle_start": 4638,
+          "triangles": 60
+        },
+        "ThumbL": {
+          "mesh": "StrangerBody",
+          "vertex_start": 9037,
+          "vertex_count": 84,
+          "triangle_start": 4698,
+          "triangles": 32
+        },
+        "ThumbR": {
+          "mesh": "StrangerBody",
+          "vertex_start": 9121,
+          "vertex_count": 84,
+          "triangle_start": 4730,
+          "triangles": 32
+        },
+        "Torso": {
+          "mesh": "StrangerBody",
+          "vertex_start": 9205,
+          "vertex_count": 800,
+          "triangle_start": 4762,
+          "triangles": 292
+        },
+        "UpperArmL": {
+          "mesh": "StrangerBody",
+          "vertex_start": 10005,
+          "vertex_count": 112,
+          "triangle_start": 5054,
+          "triangles": 60
+        },
+        "UpperArmR": {
+          "mesh": "StrangerBody",
+          "vertex_start": 10117,
+          "vertex_count": 116,
+          "triangle_start": 5114,
+          "triangles": 60
+        }
+      },
+      "position_normal_triangle_changes": false,
+      "max_linear_color_error": 7.626171914965063e-06,
+      "max_weight_error": 6.914704756944001e-06,
+      "max_uv_pixel_error": 7.62939453125e-06,
+      "source_texture_size": [
+        1000,
+        562
+      ],
+      "output_texture_size": [
+        256,
+        256
+      ],
+      "texture_crop": [
+        392,
+        152,
+        648,
+        408
+      ],
+      "source_texture_bytes": 106028,
+      "output_texture_bytes": 36940,
+      "texture_pixels_resampled": false,
+      "removed_face_color_layers": "All-white COLOR_0 and COLOR_1; default white is identical",
+      "compression_decoder_required": false,
+      "extensions_used": [
+        "KHR_materials_specular"
+      ]
+    },
+    {
+      "id": "HoodedStranger_Miner",
+      "role": "Miner",
+      "ru": "Шахтёр",
+      "source": "hooded-stranger-forms-v1/models/HoodedStranger_Miner.glb",
+      "source_sha256": "6a6cde6c5ab812d02e05fe565bc121f7b551968b2adec995694401005427ef22",
+      "file": "models/HoodedStranger_Miner.glb",
+      "sha256": "9c7af50b91471007814517c2f89154ec29b212d55323493105cd38fa2cf059e1",
+      "input_bytes": 758396,
+      "output_bytes": 534052,
+      "input_meshes": 31,
+      "output_meshes": 2,
+      "bones": 28,
+      "triangles": 5880,
+      "groups": {
+        "StrangerBody": {
+          "vertices": 9672,
+          "triangles": 4982,
+          "source_parts": [
+            "Cowl",
+            "Finger1L",
+            "Finger1R",
+            "Finger2L",
+            "Finger2R",
+            "Finger3L",
+            "Finger3R",
+            "Finger4L",
+            "Finger4R",
+            "FootL",
+            "FootR",
+            "ForearmL",
+            "ForearmR",
+            "HandL",
+            "HandR",
+            "Hood",
+            "NeckCloth",
+            "Role_Belt",
+            "Role_Chest",
+            "Role_Headgear",
+            "Role_Pickaxe",
+            "ShinL",
+            "ShinR",
+            "ThighL",
+            "ThighR",
+            "ThumbL",
+            "ThumbR",
+            "Torso",
+            "UpperArmL",
+            "UpperArmR"
+          ]
+        },
+        "Face": {
+          "vertices": 569,
+          "triangles": 898,
+          "source_parts": [
+            "Face"
+          ]
+        }
+      },
+      "part_ranges": {
+        "Cowl": {
+          "mesh": "StrangerBody",
+          "vertex_start": 0,
+          "vertex_count": 400,
+          "triangle_start": 0,
+          "triangles": 156
+        },
+        "Face": {
+          "mesh": "Face",
+          "vertex_start": 0,
+          "vertex_count": 569,
+          "triangle_start": 0,
+          "triangles": 898
+        },
+        "Finger1L": {
+          "mesh": "StrangerBody",
+          "vertex_start": 400,
+          "vertex_count": 108,
+          "triangle_start": 156,
+          "triangles": 44
+        },
+        "Finger1R": {
+          "mesh": "StrangerBody",
+          "vertex_start": 508,
+          "vertex_count": 108,
+          "triangle_start": 200,
+          "triangles": 44
+        },
+        "Finger2L": {
+          "mesh": "StrangerBody",
+          "vertex_start": 616,
+          "vertex_count": 108,
+          "triangle_start": 244,
+          "triangles": 44
+        },
+        "Finger2R": {
+          "mesh": "StrangerBody",
+          "vertex_start": 724,
+          "vertex_count": 108,
+          "triangle_start": 288,
+          "triangles": 44
+        },
+        "Finger3L": {
+          "mesh": "StrangerBody",
+          "vertex_start": 832,
+          "vertex_count": 108,
+          "triangle_start": 332,
+          "triangles": 44
+        },
+        "Finger3R": {
+          "mesh": "StrangerBody",
+          "vertex_start": 940,
+          "vertex_count": 110,
+          "triangle_start": 376,
+          "triangles": 44
+        },
+        "Finger4L": {
+          "mesh": "StrangerBody",
+          "vertex_start": 1050,
+          "vertex_count": 113,
+          "triangle_start": 420,
+          "triangles": 44
+        },
+        "Finger4R": {
+          "mesh": "StrangerBody",
+          "vertex_start": 1163,
+          "vertex_count": 108,
+          "triangle_start": 464,
+          "triangles": 44
+        },
+        "FootL": {
+          "mesh": "StrangerBody",
+          "vertex_start": 1271,
+          "vertex_count": 192,
+          "triangle_start": 508,
+          "triangles": 88
+        },
+        "FootR": {
+          "mesh": "StrangerBody",
+          "vertex_start": 1463,
+          "vertex_count": 192,
+          "triangle_start": 596,
+          "triangles": 88
+        },
+        "ForearmL": {
+          "mesh": "StrangerBody",
+          "vertex_start": 1655,
+          "vertex_count": 352,
+          "triangle_start": 684,
+          "triangles": 140
+        },
+        "ForearmR": {
+          "mesh": "StrangerBody",
+          "vertex_start": 2007,
+          "vertex_count": 352,
+          "triangle_start": 824,
+          "triangles": 140
+        },
+        "HandL": {
+          "mesh": "StrangerBody",
+          "vertex_start": 2359,
+          "vertex_count": 96,
+          "triangle_start": 964,
+          "triangles": 44
+        },
+        "HandR": {
+          "mesh": "StrangerBody",
+          "vertex_start": 2455,
+          "vertex_count": 96,
+          "triangle_start": 1008,
+          "triangles": 44
+        },
+        "Hood": {
+          "mesh": "StrangerBody",
+          "vertex_start": 2551,
+          "vertex_count": 736,
+          "triangle_start": 1052,
+          "triangles": 1146
+        },
+        "NeckCloth": {
+          "mesh": "StrangerBody",
+          "vertex_start": 3287,
+          "vertex_count": 168,
+          "triangle_start": 2198,
+          "triangles": 68
+        },
+        "Role_Belt": {
+          "mesh": "StrangerBody",
+          "vertex_start": 3455,
+          "vertex_count": 912,
+          "triangle_start": 2266,
+          "triangles": 444
+        },
+        "Role_Chest": {
+          "mesh": "StrangerBody",
+          "vertex_start": 4367,
+          "vertex_count": 1484,
+          "triangle_start": 2710,
+          "triangles": 608
+        },
+        "Role_Headgear": {
+          "mesh": "StrangerBody",
+          "vertex_start": 5851,
+          "vertex_count": 1283,
+          "triangle_start": 3318,
+          "triangles": 596
+        },
+        "Role_Pickaxe": {
+          "mesh": "StrangerBody",
+          "vertex_start": 7134,
+          "vertex_count": 408,
+          "triangle_start": 3914,
+          "triangles": 192
+        },
+        "ShinL": {
+          "mesh": "StrangerBody",
+          "vertex_start": 7542,
+          "vertex_count": 354,
+          "triangle_start": 4106,
+          "triangles": 140
+        },
+        "ShinR": {
+          "mesh": "StrangerBody",
+          "vertex_start": 7896,
+          "vertex_count": 352,
+          "triangle_start": 4246,
+          "triangles": 140
+        },
+        "ThighL": {
+          "mesh": "StrangerBody",
+          "vertex_start": 8248,
+          "vertex_count": 114,
+          "triangle_start": 4386,
+          "triangles": 60
+        },
+        "ThighR": {
+          "mesh": "StrangerBody",
+          "vertex_start": 8362,
+          "vertex_count": 114,
+          "triangle_start": 4446,
+          "triangles": 60
+        },
+        "ThumbL": {
+          "mesh": "StrangerBody",
+          "vertex_start": 8476,
+          "vertex_count": 84,
+          "triangle_start": 4506,
+          "triangles": 32
+        },
+        "ThumbR": {
+          "mesh": "StrangerBody",
+          "vertex_start": 8560,
+          "vertex_count": 84,
+          "triangle_start": 4538,
+          "triangles": 32
+        },
+        "Torso": {
+          "mesh": "StrangerBody",
+          "vertex_start": 8644,
+          "vertex_count": 800,
+          "triangle_start": 4570,
+          "triangles": 292
+        },
+        "UpperArmL": {
+          "mesh": "StrangerBody",
+          "vertex_start": 9444,
+          "vertex_count": 112,
+          "triangle_start": 4862,
+          "triangles": 60
+        },
+        "UpperArmR": {
+          "mesh": "StrangerBody",
+          "vertex_start": 9556,
+          "vertex_count": 116,
+          "triangle_start": 4922,
+          "triangles": 60
+        }
+      },
+      "position_normal_triangle_changes": false,
+      "max_linear_color_error": 7.626171914965063e-06,
+      "max_weight_error": 6.914704756944001e-06,
+      "max_uv_pixel_error": 7.62939453125e-06,
+      "source_texture_size": [
+        1000,
+        562
+      ],
+      "output_texture_size": [
+        256,
+        256
+      ],
+      "texture_crop": [
+        392,
+        152,
+        648,
+        408
+      ],
+      "source_texture_bytes": 106028,
+      "output_texture_bytes": 36940,
+      "texture_pixels_resampled": false,
+      "removed_face_color_layers": "All-white COLOR_0 and COLOR_1; default white is identical",
+      "compression_decoder_required": false,
+      "extensions_used": [
+        "KHR_materials_specular"
+      ]
+    },
+    {
+      "id": "HoodedStranger_King",
+      "role": "King",
+      "ru": "Король",
+      "source": "hooded-stranger-forms-v1/models/HoodedStranger_King.glb",
+      "source_sha256": "8573bd23c5e59271c2878e02d7343c27ed377c76c6bc214f740c42d6169893d0",
+      "file": "models/HoodedStranger_King.glb",
+      "sha256": "1d81cc1270330299f79ad32b875e666e8c08d0fb7614e31d3e30861ed8411eff",
+      "input_bytes": 913284,
+      "output_bytes": 654760,
+      "input_meshes": 34,
+      "output_meshes": 2,
+      "bones": 28,
+      "triangles": 6688,
+      "groups": {
+        "StrangerBody": {
+          "vertices": 12305,
+          "triangles": 5790,
+          "source_parts": [
+            "Cowl",
+            "Finger1L",
+            "Finger1R",
+            "Finger2L",
+            "Finger2R",
+            "Finger3L",
+            "Finger3R",
+            "Finger4L",
+            "Finger4R",
+            "FootL",
+            "FootR",
+            "ForearmL",
+            "ForearmR",
+            "HandL",
+            "HandR",
+            "Hood",
+            "NeckCloth",
+            "Role_Belt",
+            "Role_BracerL",
+            "Role_BracerR",
+            "Role_Cape",
+            "Role_Chest",
+            "Role_FurCollar",
+            "Role_Headgear",
+            "ShinL",
+            "ShinR",
+            "ThighL",
+            "ThighR",
+            "ThumbL",
+            "ThumbR",
+            "Torso",
+            "UpperArmL",
+            "UpperArmR"
+          ]
+        },
+        "Face": {
+          "vertices": 569,
+          "triangles": 898,
+          "source_parts": [
+            "Face"
+          ]
+        }
+      },
+      "part_ranges": {
+        "Cowl": {
+          "mesh": "StrangerBody",
+          "vertex_start": 0,
+          "vertex_count": 400,
+          "triangle_start": 0,
+          "triangles": 156
+        },
+        "Face": {
+          "mesh": "Face",
+          "vertex_start": 0,
+          "vertex_count": 569,
+          "triangle_start": 0,
+          "triangles": 898
+        },
+        "Finger1L": {
+          "mesh": "StrangerBody",
+          "vertex_start": 400,
+          "vertex_count": 108,
+          "triangle_start": 156,
+          "triangles": 44
+        },
+        "Finger1R": {
+          "mesh": "StrangerBody",
+          "vertex_start": 508,
+          "vertex_count": 108,
+          "triangle_start": 200,
+          "triangles": 44
+        },
+        "Finger2L": {
+          "mesh": "StrangerBody",
+          "vertex_start": 616,
+          "vertex_count": 108,
+          "triangle_start": 244,
+          "triangles": 44
+        },
+        "Finger2R": {
+          "mesh": "StrangerBody",
+          "vertex_start": 724,
+          "vertex_count": 108,
+          "triangle_start": 288,
+          "triangles": 44
+        },
+        "Finger3L": {
+          "mesh": "StrangerBody",
+          "vertex_start": 832,
+          "vertex_count": 108,
+          "triangle_start": 332,
+          "triangles": 44
+        },
+        "Finger3R": {
+          "mesh": "StrangerBody",
+          "vertex_start": 940,
+          "vertex_count": 110,
+          "triangle_start": 376,
+          "triangles": 44
+        },
+        "Finger4L": {
+          "mesh": "StrangerBody",
+          "vertex_start": 1050,
+          "vertex_count": 113,
+          "triangle_start": 420,
+          "triangles": 44
+        },
+        "Finger4R": {
+          "mesh": "StrangerBody",
+          "vertex_start": 1163,
+          "vertex_count": 108,
+          "triangle_start": 464,
+          "triangles": 44
+        },
+        "FootL": {
+          "mesh": "StrangerBody",
+          "vertex_start": 1271,
+          "vertex_count": 192,
+          "triangle_start": 508,
+          "triangles": 88
+        },
+        "FootR": {
+          "mesh": "StrangerBody",
+          "vertex_start": 1463,
+          "vertex_count": 192,
+          "triangle_start": 596,
+          "triangles": 88
+        },
+        "ForearmL": {
+          "mesh": "StrangerBody",
+          "vertex_start": 1655,
+          "vertex_count": 352,
+          "triangle_start": 684,
+          "triangles": 140
+        },
+        "ForearmR": {
+          "mesh": "StrangerBody",
+          "vertex_start": 2007,
+          "vertex_count": 352,
+          "triangle_start": 824,
+          "triangles": 140
+        },
+        "HandL": {
+          "mesh": "StrangerBody",
+          "vertex_start": 2359,
+          "vertex_count": 96,
+          "triangle_start": 964,
+          "triangles": 44
+        },
+        "HandR": {
+          "mesh": "StrangerBody",
+          "vertex_start": 2455,
+          "vertex_count": 96,
+          "triangle_start": 1008,
+          "triangles": 44
+        },
+        "Hood": {
+          "mesh": "StrangerBody",
+          "vertex_start": 2551,
+          "vertex_count": 736,
+          "triangle_start": 1052,
+          "triangles": 1146
+        },
+        "NeckCloth": {
+          "mesh": "StrangerBody",
+          "vertex_start": 3287,
+          "vertex_count": 168,
+          "triangle_start": 2198,
+          "triangles": 68
+        },
+        "Role_Belt": {
+          "mesh": "StrangerBody",
+          "vertex_start": 3455,
+          "vertex_count": 336,
+          "triangle_start": 2266,
+          "triangles": 180
+        },
+        "Role_BracerL": {
+          "mesh": "StrangerBody",
+          "vertex_start": 3791,
+          "vertex_count": 180,
+          "triangle_start": 2446,
+          "triangles": 108
+        },
+        "Role_BracerR": {
+          "mesh": "StrangerBody",
+          "vertex_start": 3971,
+          "vertex_count": 180,
+          "triangle_start": 2554,
+          "triangles": 108
+        },
+        "Role_Cape": {
+          "mesh": "StrangerBody",
+          "vertex_start": 4151,
+          "vertex_count": 924,
+          "triangle_start": 2662,
+          "triangles": 392
+        },
+        "Role_Chest": {
+          "mesh": "StrangerBody",
+          "vertex_start": 5075,
+          "vertex_count": 900,
+          "triangle_start": 3054,
+          "triangles": 372
+        },
+        "Role_FurCollar": {
+          "mesh": "StrangerBody",
+          "vertex_start": 5975,
+          "vertex_count": 1740,
+          "triangle_start": 3426,
+          "triangles": 580
+        },
+        "Role_Headgear": {
+          "mesh": "StrangerBody",
+          "vertex_start": 7715,
+          "vertex_count": 2460,
+          "triangle_start": 4006,
+          "triangles": 908
+        },
+        "ShinL": {
+          "mesh": "StrangerBody",
+          "vertex_start": 10175,
+          "vertex_count": 354,
+          "triangle_start": 4914,
+          "triangles": 140
+        },
+        "ShinR": {
+          "mesh": "StrangerBody",
+          "vertex_start": 10529,
+          "vertex_count": 352,
+          "triangle_start": 5054,
+          "triangles": 140
+        },
+        "ThighL": {
+          "mesh": "StrangerBody",
+          "vertex_start": 10881,
+          "vertex_count": 114,
+          "triangle_start": 5194,
+          "triangles": 60
+        },
+        "ThighR": {
+          "mesh": "StrangerBody",
+          "vertex_start": 10995,
+          "vertex_count": 114,
+          "triangle_start": 5254,
+          "triangles": 60
+        },
+        "ThumbL": {
+          "mesh": "StrangerBody",
+          "vertex_start": 11109,
+          "vertex_count": 84,
+          "triangle_start": 5314,
+          "triangles": 32
+        },
+        "ThumbR": {
+          "mesh": "StrangerBody",
+          "vertex_start": 11193,
+          "vertex_count": 84,
+          "triangle_start": 5346,
+          "triangles": 32
+        },
+        "Torso": {
+          "mesh": "StrangerBody",
+          "vertex_start": 11277,
+          "vertex_count": 800,
+          "triangle_start": 5378,
+          "triangles": 292
+        },
+        "UpperArmL": {
+          "mesh": "StrangerBody",
+          "vertex_start": 12077,
+          "vertex_count": 112,
+          "triangle_start": 5670,
+          "triangles": 60
+        },
+        "UpperArmR": {
+          "mesh": "StrangerBody",
+          "vertex_start": 12189,
+          "vertex_count": 116,
+          "triangle_start": 5730,
+          "triangles": 60
+        }
+      },
+      "position_normal_triangle_changes": false,
+      "max_linear_color_error": 7.573392449944372e-06,
+      "max_weight_error": 6.914704756944001e-06,
+      "max_uv_pixel_error": 7.62939453125e-06,
+      "source_texture_size": [
+        1000,
+        562
+      ],
+      "output_texture_size": [
+        256,
+        256
+      ],
+      "texture_crop": [
+        392,
+        152,
+        648,
+        408
+      ],
+      "source_texture_bytes": 106028,
+      "output_texture_bytes": 36940,
+      "texture_pixels_resampled": false,
+      "removed_face_color_layers": "All-white COLOR_0 and COLOR_1; default white is identical",
+      "compression_decoder_required": false,
+      "extensions_used": [
+        "KHR_materials_specular"
+      ]
+    },
+    {
+      "id": "HoodedStranger_Knight",
+      "role": "Knight",
+      "ru": "Рыцарь",
+      "source": "hooded-stranger-forms-v1/models/HoodedStranger_Knight.glb",
+      "source_sha256": "d8ded2cfc52244e505d65980c3269210c8836565a1f4b595eb389a8bf13cc44a",
+      "file": "models/HoodedStranger_Knight.glb",
+      "sha256": "b7daa9ab6918d06cf3b1bbfdc4b5c48c9e274bb3b7f3c953b2bfdec683fff886",
+      "input_bytes": 763768,
+      "output_bytes": 533812,
+      "input_meshes": 38,
+      "output_meshes": 2,
+      "bones": 28,
+      "triangles": 5847,
+      "groups": {
+        "StrangerBody": {
+          "vertices": 9671,
+          "triangles": 4949,
+          "source_parts": [
+            "Cowl",
+            "Finger1L",
+            "Finger1R",
+            "Finger2L",
+            "Finger2R",
+            "Finger3L",
+            "Finger3R",
+            "Finger4L",
+            "Finger4R",
+            "FootL",
+            "FootR",
+            "ForearmL",
+            "ForearmR",
+            "HandL",
+            "HandR",
+            "Hood",
+            "NeckCloth",
+            "Role_Belt",
+            "Role_BracerL",
+            "Role_BracerR",
+            "Role_Chest",
+            "Role_Headgear",
+            "Role_KneeL",
+            "Role_KneeR",
+            "Role_Shield",
+            "Role_ShoulderL",
+            "Role_ShoulderR",
+            "Role_Sword",
+            "ShinL",
+            "ShinR",
+            "ThighL",
+            "ThighR",
+            "ThumbL",
+            "ThumbR",
+            "Torso",
+            "UpperArmL",
+            "UpperArmR"
+          ]
+        },
+        "Face": {
+          "vertices": 569,
+          "triangles": 898,
+          "source_parts": [
+            "Face"
+          ]
+        }
+      },
+      "part_ranges": {
+        "Cowl": {
+          "mesh": "StrangerBody",
+          "vertex_start": 0,
+          "vertex_count": 400,
+          "triangle_start": 0,
+          "triangles": 156
+        },
+        "Face": {
+          "mesh": "Face",
+          "vertex_start": 0,
+          "vertex_count": 569,
+          "triangle_start": 0,
+          "triangles": 898
+        },
+        "Finger1L": {
+          "mesh": "StrangerBody",
+          "vertex_start": 400,
+          "vertex_count": 108,
+          "triangle_start": 156,
+          "triangles": 44
+        },
+        "Finger1R": {
+          "mesh": "StrangerBody",
+          "vertex_start": 508,
+          "vertex_count": 108,
+          "triangle_start": 200,
+          "triangles": 44
+        },
+        "Finger2L": {
+          "mesh": "StrangerBody",
+          "vertex_start": 616,
+          "vertex_count": 108,
+          "triangle_start": 244,
+          "triangles": 44
+        },
+        "Finger2R": {
+          "mesh": "StrangerBody",
+          "vertex_start": 724,
+          "vertex_count": 108,
+          "triangle_start": 288,
+          "triangles": 44
+        },
+        "Finger3L": {
+          "mesh": "StrangerBody",
+          "vertex_start": 832,
+          "vertex_count": 108,
+          "triangle_start": 332,
+          "triangles": 44
+        },
+        "Finger3R": {
+          "mesh": "StrangerBody",
+          "vertex_start": 940,
+          "vertex_count": 110,
+          "triangle_start": 376,
+          "triangles": 44
+        },
+        "Finger4L": {
+          "mesh": "StrangerBody",
+          "vertex_start": 1050,
+          "vertex_count": 113,
+          "triangle_start": 420,
+          "triangles": 44
+        },
+        "Finger4R": {
+          "mesh": "StrangerBody",
+          "vertex_start": 1163,
+          "vertex_count": 108,
+          "triangle_start": 464,
+          "triangles": 44
+        },
+        "FootL": {
+          "mesh": "StrangerBody",
+          "vertex_start": 1271,
+          "vertex_count": 192,
+          "triangle_start": 508,
+          "triangles": 88
+        },
+        "FootR": {
+          "mesh": "StrangerBody",
+          "vertex_start": 1463,
+          "vertex_count": 192,
+          "triangle_start": 596,
+          "triangles": 88
+        },
+        "ForearmL": {
+          "mesh": "StrangerBody",
+          "vertex_start": 1655,
+          "vertex_count": 352,
+          "triangle_start": 684,
+          "triangles": 140
+        },
+        "ForearmR": {
+          "mesh": "StrangerBody",
+          "vertex_start": 2007,
+          "vertex_count": 352,
+          "triangle_start": 824,
+          "triangles": 140
+        },
+        "HandL": {
+          "mesh": "StrangerBody",
+          "vertex_start": 2359,
+          "vertex_count": 96,
+          "triangle_start": 964,
+          "triangles": 44
+        },
+        "HandR": {
+          "mesh": "StrangerBody",
+          "vertex_start": 2455,
+          "vertex_count": 96,
+          "triangle_start": 1008,
+          "triangles": 44
+        },
+        "Hood": {
+          "mesh": "StrangerBody",
+          "vertex_start": 2551,
+          "vertex_count": 736,
+          "triangle_start": 1052,
+          "triangles": 1146
+        },
+        "NeckCloth": {
+          "mesh": "StrangerBody",
+          "vertex_start": 3287,
+          "vertex_count": 168,
+          "triangle_start": 2198,
+          "triangles": 68
+        },
+        "Role_Belt": {
+          "mesh": "StrangerBody",
+          "vertex_start": 3455,
+          "vertex_count": 336,
+          "triangle_start": 2266,
+          "triangles": 180
+        },
+        "Role_BracerL": {
+          "mesh": "StrangerBody",
+          "vertex_start": 3791,
+          "vertex_count": 180,
+          "triangle_start": 2446,
+          "triangles": 108
+        },
+        "Role_BracerR": {
+          "mesh": "StrangerBody",
+          "vertex_start": 3971,
+          "vertex_count": 180,
+          "triangle_start": 2554,
+          "triangles": 108
+        },
+        "Role_Chest": {
+          "mesh": "StrangerBody",
+          "vertex_start": 4151,
+          "vertex_count": 406,
+          "triangle_start": 2662,
+          "triangles": 190
+        },
+        "Role_Headgear": {
+          "mesh": "StrangerBody",
+          "vertex_start": 4557,
+          "vertex_count": 1439,
+          "triangle_start": 2852,
+          "triangles": 578
+        },
+        "Role_KneeL": {
+          "mesh": "StrangerBody",
+          "vertex_start": 5996,
+          "vertex_count": 96,
+          "triangle_start": 3430,
+          "triangles": 44
+        },
+        "Role_KneeR": {
+          "mesh": "StrangerBody",
+          "vertex_start": 6092,
+          "vertex_count": 96,
+          "triangle_start": 3474,
+          "triangles": 44
+        },
+        "Role_Shield": {
+          "mesh": "StrangerBody",
+          "vertex_start": 6188,
+          "vertex_count": 421,
+          "triangle_start": 3518,
+          "triangles": 199
+        },
+        "Role_ShoulderL": {
+          "mesh": "StrangerBody",
+          "vertex_start": 6609,
+          "vertex_count": 240,
+          "triangle_start": 3717,
+          "triangles": 80
+        },
+        "Role_ShoulderR": {
+          "mesh": "StrangerBody",
+          "vertex_start": 6849,
+          "vertex_count": 240,
+          "triangle_start": 3797,
+          "triangles": 80
+        },
+        "Role_Sword": {
+          "mesh": "StrangerBody",
+          "vertex_start": 7089,
+          "vertex_count": 452,
+          "triangle_start": 3877,
+          "triangles": 196
+        },
+        "ShinL": {
+          "mesh": "StrangerBody",
+          "vertex_start": 7541,
+          "vertex_count": 354,
+          "triangle_start": 4073,
+          "triangles": 140
+        },
+        "ShinR": {
+          "mesh": "StrangerBody",
+          "vertex_start": 7895,
+          "vertex_count": 352,
+          "triangle_start": 4213,
+          "triangles": 140
+        },
+        "ThighL": {
+          "mesh": "StrangerBody",
+          "vertex_start": 8247,
+          "vertex_count": 114,
+          "triangle_start": 4353,
+          "triangles": 60
+        },
+        "ThighR": {
+          "mesh": "StrangerBody",
+          "vertex_start": 8361,
+          "vertex_count": 114,
+          "triangle_start": 4413,
+          "triangles": 60
+        },
+        "ThumbL": {
+          "mesh": "StrangerBody",
+          "vertex_start": 8475,
+          "vertex_count": 84,
+          "triangle_start": 4473,
+          "triangles": 32
+        },
+        "ThumbR": {
+          "mesh": "StrangerBody",
+          "vertex_start": 8559,
+          "vertex_count": 84,
+          "triangle_start": 4505,
+          "triangles": 32
+        },
+        "Torso": {
+          "mesh": "StrangerBody",
+          "vertex_start": 8643,
+          "vertex_count": 800,
+          "triangle_start": 4537,
+          "triangles": 292
+        },
+        "UpperArmL": {
+          "mesh": "StrangerBody",
+          "vertex_start": 9443,
+          "vertex_count": 112,
+          "triangle_start": 4829,
+          "triangles": 60
+        },
+        "UpperArmR": {
+          "mesh": "StrangerBody",
+          "vertex_start": 9555,
+          "vertex_count": 116,
+          "triangle_start": 4889,
+          "triangles": 60
+        }
+      },
+      "position_normal_triangle_changes": false,
+      "max_linear_color_error": 7.5809354593558975e-06,
+      "max_weight_error": 6.914704756944001e-06,
+      "max_uv_pixel_error": 7.62939453125e-06,
+      "source_texture_size": [
+        1000,
+        562
+      ],
+      "output_texture_size": [
+        256,
+        256
+      ],
+      "texture_crop": [
+        392,
+        152,
+        648,
+        408
+      ],
+      "source_texture_bytes": 106028,
+      "output_texture_bytes": 36940,
+      "texture_pixels_resampled": false,
+      "removed_face_color_layers": "All-white COLOR_0 and COLOR_1; default white is identical",
+      "compression_decoder_required": false,
+      "extensions_used": [
+        "KHR_materials_specular"
+      ]
+    },
+    {
+      "id": "HoodedStranger_Punk",
+      "role": "Punk",
+      "ru": "Нефор",
+      "source": "hooded-stranger-forms-v1/models/HoodedStranger_Punk.glb",
+      "source_sha256": "f1741647cb48f1c1b7893861382b00b8a6fea411299ebf65c96ab31a9c099cf4",
+      "file": "models/HoodedStranger_Punk.glb",
+      "sha256": "3bae19ccb2f034e3df6de5323e4bb03a4d04183f11302799b1af3b172b4b9f09",
+      "input_bytes": 898664,
+      "output_bytes": 643640,
+      "input_meshes": 34,
+      "output_meshes": 2,
+      "bones": 28,
+      "triangles": 6976,
+      "groups": {
+        "StrangerBody": {
+          "vertices": 12013,
+          "triangles": 6078,
+          "source_parts": [
+            "Cowl",
+            "Finger1L",
+            "Finger1R",
+            "Finger2L",
+            "Finger2R",
+            "Finger3L",
+            "Finger3R",
+            "Finger4L",
+            "Finger4R",
+            "FootL",
+            "FootR",
+            "ForearmL",
+            "ForearmR",
+            "HandL",
+            "HandR",
+            "Hood",
+            "NeckCloth",
+            "Role_Belt",
+            "Role_BracerL",
+            "Role_BracerR",
+            "Role_Chest",
+            "Role_Headgear",
+            "Role_ShoulderL",
+            "Role_ShoulderR",
+            "ShinL",
+            "ShinR",
+            "ThighL",
+            "ThighR",
+            "ThumbL",
+            "ThumbR",
+            "Torso",
+            "UpperArmL",
+            "UpperArmR"
+          ]
+        },
+        "Face": {
+          "vertices": 569,
+          "triangles": 898,
+          "source_parts": [
+            "Face"
+          ]
+        }
+      },
+      "part_ranges": {
+        "Cowl": {
+          "mesh": "StrangerBody",
+          "vertex_start": 0,
+          "vertex_count": 400,
+          "triangle_start": 0,
+          "triangles": 156
+        },
+        "Face": {
+          "mesh": "Face",
+          "vertex_start": 0,
+          "vertex_count": 569,
+          "triangle_start": 0,
+          "triangles": 898
+        },
+        "Finger1L": {
+          "mesh": "StrangerBody",
+          "vertex_start": 400,
+          "vertex_count": 108,
+          "triangle_start": 156,
+          "triangles": 44
+        },
+        "Finger1R": {
+          "mesh": "StrangerBody",
+          "vertex_start": 508,
+          "vertex_count": 108,
+          "triangle_start": 200,
+          "triangles": 44
+        },
+        "Finger2L": {
+          "mesh": "StrangerBody",
+          "vertex_start": 616,
+          "vertex_count": 108,
+          "triangle_start": 244,
+          "triangles": 44
+        },
+        "Finger2R": {
+          "mesh": "StrangerBody",
+          "vertex_start": 724,
+          "vertex_count": 108,
+          "triangle_start": 288,
+          "triangles": 44
+        },
+        "Finger3L": {
+          "mesh": "StrangerBody",
+          "vertex_start": 832,
+          "vertex_count": 108,
+          "triangle_start": 332,
+          "triangles": 44
+        },
+        "Finger3R": {
+          "mesh": "StrangerBody",
+          "vertex_start": 940,
+          "vertex_count": 110,
+          "triangle_start": 376,
+          "triangles": 44
+        },
+        "Finger4L": {
+          "mesh": "StrangerBody",
+          "vertex_start": 1050,
+          "vertex_count": 113,
+          "triangle_start": 420,
+          "triangles": 44
+        },
+        "Finger4R": {
+          "mesh": "StrangerBody",
+          "vertex_start": 1163,
+          "vertex_count": 108,
+          "triangle_start": 464,
+          "triangles": 44
+        },
+        "FootL": {
+          "mesh": "StrangerBody",
+          "vertex_start": 1271,
+          "vertex_count": 192,
+          "triangle_start": 508,
+          "triangles": 88
+        },
+        "FootR": {
+          "mesh": "StrangerBody",
+          "vertex_start": 1463,
+          "vertex_count": 192,
+          "triangle_start": 596,
+          "triangles": 88
+        },
+        "ForearmL": {
+          "mesh": "StrangerBody",
+          "vertex_start": 1655,
+          "vertex_count": 352,
+          "triangle_start": 684,
+          "triangles": 140
+        },
+        "ForearmR": {
+          "mesh": "StrangerBody",
+          "vertex_start": 2007,
+          "vertex_count": 352,
+          "triangle_start": 824,
+          "triangles": 140
+        },
+        "HandL": {
+          "mesh": "StrangerBody",
+          "vertex_start": 2359,
+          "vertex_count": 96,
+          "triangle_start": 964,
+          "triangles": 44
+        },
+        "HandR": {
+          "mesh": "StrangerBody",
+          "vertex_start": 2455,
+          "vertex_count": 96,
+          "triangle_start": 1008,
+          "triangles": 44
+        },
+        "Hood": {
+          "mesh": "StrangerBody",
+          "vertex_start": 2551,
+          "vertex_count": 736,
+          "triangle_start": 1052,
+          "triangles": 1146
+        },
+        "NeckCloth": {
+          "mesh": "StrangerBody",
+          "vertex_start": 3287,
+          "vertex_count": 168,
+          "triangle_start": 2198,
+          "triangles": 68
+        },
+        "Role_Belt": {
+          "mesh": "StrangerBody",
+          "vertex_start": 3455,
+          "vertex_count": 1866,
+          "triangle_start": 2266,
+          "triangles": 884
+        },
+        "Role_BracerL": {
+          "mesh": "StrangerBody",
+          "vertex_start": 5321,
+          "vertex_count": 180,
+          "triangle_start": 3150,
+          "triangles": 108
+        },
+        "Role_BracerR": {
+          "mesh": "StrangerBody",
+          "vertex_start": 5501,
+          "vertex_count": 180,
+          "triangle_start": 3258,
+          "triangles": 108
+        },
+        "Role_Chest": {
+          "mesh": "StrangerBody",
+          "vertex_start": 5681,
+          "vertex_count": 2978,
+          "triangle_start": 3366,
+          "triangles": 1360
+        },
+        "Role_Headgear": {
+          "mesh": "StrangerBody",
+          "vertex_start": 8659,
+          "vertex_count": 506,
+          "triangle_start": 4726,
+          "triangles": 220
+        },
+        "Role_ShoulderL": {
+          "mesh": "StrangerBody",
+          "vertex_start": 9165,
+          "vertex_count": 360,
+          "triangle_start": 4946,
+          "triangles": 128
+        },
+        "Role_ShoulderR": {
+          "mesh": "StrangerBody",
+          "vertex_start": 9525,
+          "vertex_count": 358,
+          "triangle_start": 5074,
+          "triangles": 128
+        },
+        "ShinL": {
+          "mesh": "StrangerBody",
+          "vertex_start": 9883,
+          "vertex_count": 354,
+          "triangle_start": 5202,
+          "triangles": 140
+        },
+        "ShinR": {
+          "mesh": "StrangerBody",
+          "vertex_start": 10237,
+          "vertex_count": 352,
+          "triangle_start": 5342,
+          "triangles": 140
+        },
+        "ThighL": {
+          "mesh": "StrangerBody",
+          "vertex_start": 10589,
+          "vertex_count": 114,
+          "triangle_start": 5482,
+          "triangles": 60
+        },
+        "ThighR": {
+          "mesh": "StrangerBody",
+          "vertex_start": 10703,
+          "vertex_count": 114,
+          "triangle_start": 5542,
+          "triangles": 60
+        },
+        "ThumbL": {
+          "mesh": "StrangerBody",
+          "vertex_start": 10817,
+          "vertex_count": 84,
+          "triangle_start": 5602,
+          "triangles": 32
+        },
+        "ThumbR": {
+          "mesh": "StrangerBody",
+          "vertex_start": 10901,
+          "vertex_count": 84,
+          "triangle_start": 5634,
+          "triangles": 32
+        },
+        "Torso": {
+          "mesh": "StrangerBody",
+          "vertex_start": 10985,
+          "vertex_count": 800,
+          "triangle_start": 5666,
+          "triangles": 292
+        },
+        "UpperArmL": {
+          "mesh": "StrangerBody",
+          "vertex_start": 11785,
+          "vertex_count": 112,
+          "triangle_start": 5958,
+          "triangles": 60
+        },
+        "UpperArmR": {
+          "mesh": "StrangerBody",
+          "vertex_start": 11897,
+          "vertex_count": 116,
+          "triangle_start": 6018,
+          "triangles": 60
+        }
+      },
+      "position_normal_triangle_changes": false,
+      "max_linear_color_error": 7.573392449944372e-06,
+      "max_weight_error": 6.914704756944001e-06,
+      "max_uv_pixel_error": 7.62939453125e-06,
+      "source_texture_size": [
+        1000,
+        562
+      ],
+      "output_texture_size": [
+        256,
+        256
+      ],
+      "texture_crop": [
+        392,
+        152,
+        648,
+        408
+      ],
+      "source_texture_bytes": 106028,
+      "output_texture_bytes": 36940,
+      "texture_pixels_resampled": false,
+      "removed_face_color_layers": "All-white COLOR_0 and COLOR_1; default white is identical",
+      "compression_decoder_required": false,
+      "extensions_used": [
+        "KHR_materials_specular"
+      ]
+    },
+    {
+      "id": "HoodedStranger_Assassin",
+      "role": "Assassin",
+      "ru": "Убийца",
+      "source": "hooded-stranger-forms-v1/models/HoodedStranger_Assassin.glb",
+      "source_sha256": "907920baf1c9d1d7cc6f27ca750fcbeabc8a5c67aa8f43189390c40ced316f99",
+      "file": "models/HoodedStranger_Assassin.glb",
+      "sha256": "8df9b16fb1a6e680c15c9b2063fe26603afd2d8279a573e2b1b0ad6af442d77a",
+      "input_bytes": 765036,
+      "output_bytes": 536816,
+      "input_meshes": 35,
+      "output_meshes": 2,
+      "bones": 28,
+      "triangles": 5864,
+      "groups": {
+        "StrangerBody": {
+          "vertices": 9737,
+          "triangles": 4966,
+          "source_parts": [
+            "Cowl",
+            "Finger1L",
+            "Finger1R",
+            "Finger2L",
+            "Finger2R",
+            "Finger3L",
+            "Finger3R",
+            "Finger4L",
+            "Finger4R",
+            "FootL",
+            "FootR",
+            "ForearmL",
+            "ForearmR",
+            "HandL",
+            "HandR",
+            "Hood",
+            "NeckCloth",
+            "Role_Belt",
+            "Role_BracerL",
+            "Role_BracerR",
+            "Role_Cape",
+            "Role_Chest",
+            "Role_Daggers",
+            "Role_ShoulderL",
+            "Role_ShoulderR",
+            "ShinL",
+            "ShinR",
+            "ThighL",
+            "ThighR",
+            "ThumbL",
+            "ThumbR",
+            "Torso",
+            "UpperArmL",
+            "UpperArmR"
+          ]
+        },
+        "Face": {
+          "vertices": 569,
+          "triangles": 898,
+          "source_parts": [
+            "Face"
+          ]
+        }
+      },
+      "part_ranges": {
+        "Cowl": {
+          "mesh": "StrangerBody",
+          "vertex_start": 0,
+          "vertex_count": 400,
+          "triangle_start": 0,
+          "triangles": 156
+        },
+        "Face": {
+          "mesh": "Face",
+          "vertex_start": 0,
+          "vertex_count": 569,
+          "triangle_start": 0,
+          "triangles": 898
+        },
+        "Finger1L": {
+          "mesh": "StrangerBody",
+          "vertex_start": 400,
+          "vertex_count": 108,
+          "triangle_start": 156,
+          "triangles": 44
+        },
+        "Finger1R": {
+          "mesh": "StrangerBody",
+          "vertex_start": 508,
+          "vertex_count": 108,
+          "triangle_start": 200,
+          "triangles": 44
+        },
+        "Finger2L": {
+          "mesh": "StrangerBody",
+          "vertex_start": 616,
+          "vertex_count": 108,
+          "triangle_start": 244,
+          "triangles": 44
+        },
+        "Finger2R": {
+          "mesh": "StrangerBody",
+          "vertex_start": 724,
+          "vertex_count": 108,
+          "triangle_start": 288,
+          "triangles": 44
+        },
+        "Finger3L": {
+          "mesh": "StrangerBody",
+          "vertex_start": 832,
+          "vertex_count": 108,
+          "triangle_start": 332,
+          "triangles": 44
+        },
+        "Finger3R": {
+          "mesh": "StrangerBody",
+          "vertex_start": 940,
+          "vertex_count": 110,
+          "triangle_start": 376,
+          "triangles": 44
+        },
+        "Finger4L": {
+          "mesh": "StrangerBody",
+          "vertex_start": 1050,
+          "vertex_count": 113,
+          "triangle_start": 420,
+          "triangles": 44
+        },
+        "Finger4R": {
+          "mesh": "StrangerBody",
+          "vertex_start": 1163,
+          "vertex_count": 108,
+          "triangle_start": 464,
+          "triangles": 44
+        },
+        "FootL": {
+          "mesh": "StrangerBody",
+          "vertex_start": 1271,
+          "vertex_count": 192,
+          "triangle_start": 508,
+          "triangles": 88
+        },
+        "FootR": {
+          "mesh": "StrangerBody",
+          "vertex_start": 1463,
+          "vertex_count": 192,
+          "triangle_start": 596,
+          "triangles": 88
+        },
+        "ForearmL": {
+          "mesh": "StrangerBody",
+          "vertex_start": 1655,
+          "vertex_count": 352,
+          "triangle_start": 684,
+          "triangles": 140
+        },
+        "ForearmR": {
+          "mesh": "StrangerBody",
+          "vertex_start": 2007,
+          "vertex_count": 352,
+          "triangle_start": 824,
+          "triangles": 140
+        },
+        "HandL": {
+          "mesh": "StrangerBody",
+          "vertex_start": 2359,
+          "vertex_count": 96,
+          "triangle_start": 964,
+          "triangles": 44
+        },
+        "HandR": {
+          "mesh": "StrangerBody",
+          "vertex_start": 2455,
+          "vertex_count": 96,
+          "triangle_start": 1008,
+          "triangles": 44
+        },
+        "Hood": {
+          "mesh": "StrangerBody",
+          "vertex_start": 2551,
+          "vertex_count": 736,
+          "triangle_start": 1052,
+          "triangles": 1146
+        },
+        "NeckCloth": {
+          "mesh": "StrangerBody",
+          "vertex_start": 3287,
+          "vertex_count": 168,
+          "triangle_start": 2198,
+          "triangles": 68
+        },
+        "Role_Belt": {
+          "mesh": "StrangerBody",
+          "vertex_start": 3455,
+          "vertex_count": 912,
+          "triangle_start": 2266,
+          "triangles": 444
+        },
+        "Role_BracerL": {
+          "mesh": "StrangerBody",
+          "vertex_start": 4367,
+          "vertex_count": 180,
+          "triangle_start": 2710,
+          "triangles": 108
+        },
+        "Role_BracerR": {
+          "mesh": "StrangerBody",
+          "vertex_start": 4547,
+          "vertex_count": 180,
+          "triangle_start": 2818,
+          "triangles": 108
+        },
+        "Role_Cape": {
+          "mesh": "StrangerBody",
+          "vertex_start": 4727,
+          "vertex_count": 940,
+          "triangle_start": 2926,
+          "triangles": 392
+        },
+        "Role_Chest": {
+          "mesh": "StrangerBody",
+          "vertex_start": 5667,
+          "vertex_count": 532,
+          "triangle_start": 3318,
+          "triangles": 220
+        },
+        "Role_Daggers": {
+          "mesh": "StrangerBody",
+          "vertex_start": 6199,
+          "vertex_count": 928,
+          "triangle_start": 3538,
+          "triangles": 392
+        },
+        "Role_ShoulderL": {
+          "mesh": "StrangerBody",
+          "vertex_start": 7127,
+          "vertex_count": 240,
+          "triangle_start": 3930,
+          "triangles": 80
+        },
+        "Role_ShoulderR": {
+          "mesh": "StrangerBody",
+          "vertex_start": 7367,
+          "vertex_count": 240,
+          "triangle_start": 4010,
+          "triangles": 80
+        },
+        "ShinL": {
+          "mesh": "StrangerBody",
+          "vertex_start": 7607,
+          "vertex_count": 354,
+          "triangle_start": 4090,
+          "triangles": 140
+        },
+        "ShinR": {
+          "mesh": "StrangerBody",
+          "vertex_start": 7961,
+          "vertex_count": 352,
+          "triangle_start": 4230,
+          "triangles": 140
+        },
+        "ThighL": {
+          "mesh": "StrangerBody",
+          "vertex_start": 8313,
+          "vertex_count": 114,
+          "triangle_start": 4370,
+          "triangles": 60
+        },
+        "ThighR": {
+          "mesh": "StrangerBody",
+          "vertex_start": 8427,
+          "vertex_count": 114,
+          "triangle_start": 4430,
+          "triangles": 60
+        },
+        "ThumbL": {
+          "mesh": "StrangerBody",
+          "vertex_start": 8541,
+          "vertex_count": 84,
+          "triangle_start": 4490,
+          "triangles": 32
+        },
+        "ThumbR": {
+          "mesh": "StrangerBody",
+          "vertex_start": 8625,
+          "vertex_count": 84,
+          "triangle_start": 4522,
+          "triangles": 32
+        },
+        "Torso": {
+          "mesh": "StrangerBody",
+          "vertex_start": 8709,
+          "vertex_count": 800,
+          "triangle_start": 4554,
+          "triangles": 292
+        },
+        "UpperArmL": {
+          "mesh": "StrangerBody",
+          "vertex_start": 9509,
+          "vertex_count": 112,
+          "triangle_start": 4846,
+          "triangles": 60
+        },
+        "UpperArmR": {
+          "mesh": "StrangerBody",
+          "vertex_start": 9621,
+          "vertex_count": 116,
+          "triangle_start": 4906,
+          "triangles": 60
+        }
+      },
+      "position_normal_triangle_changes": false,
+      "max_linear_color_error": 7.626171914965063e-06,
+      "max_weight_error": 6.914704756944001e-06,
+      "max_uv_pixel_error": 7.62939453125e-06,
+      "source_texture_size": [
+        1000,
+        562
+      ],
+      "output_texture_size": [
+        256,
+        256
+      ],
+      "texture_crop": [
+        392,
+        152,
+        648,
+        408
+      ],
+      "source_texture_bytes": 106028,
+      "output_texture_bytes": 36940,
+      "texture_pixels_resampled": false,
+      "removed_face_color_layers": "All-white COLOR_0 and COLOR_1; default white is identical",
+      "compression_decoder_required": false,
+      "extensions_used": [
+        "KHR_materials_specular"
+      ]
+    }
+  ],
+  "icons": [
+    {
+      "id": "HoodedStrangerFarmer",
+      "ru": "Фермер",
+      "source": "hooded-stranger-icons-v1/icons/HoodedStrangerFarmer.png",
+      "source_sha256": "6f98420a152fd3cea49d7628c2da872317b7c72c34c9553e52c7b7c04a117bd0",
+      "source_bytes": 786089,
+      "source_size": [
+        1254,
+        1254
+      ],
+      "variants": {
+        "ui512": {
+          "file": "icons/ui512/HoodedStrangerFarmer.png",
+          "bytes": 168021,
+          "size": [
+            512,
+            512
+          ],
+          "rgba8_uncompressed_bytes": 1048576,
+          "sha256": "f98be901519465477f68a161c56cfa8e8225a4dcbed3cb78479ba594a6758bcf"
+        },
+        "small256": {
+          "file": "icons/small256/HoodedStrangerFarmer.png",
+          "bytes": 54366,
+          "size": [
+            256,
+            256
+          ],
+          "rgba8_uncompressed_bytes": 262144,
+          "sha256": "7adef43379b600854102b25acc8990438567605332c83543bc96999931ad8cfe"
+        },
+        "large1024": {
+          "file": "icons/large1024/HoodedStrangerFarmer.png",
+          "bytes": 548909,
+          "size": [
+            1024,
+            1024
+          ],
+          "rgba8_uncompressed_bytes": 4194304,
+          "sha256": "f0e61d14af8277591d157a8fb15e0379cdc97b4e1cff0eff641f8c9b5d1c9d13"
+        }
+      }
+    },
+    {
+      "id": "HoodedStrangerMiner",
+      "ru": "Шахтёр",
+      "source": "hooded-stranger-icons-v1/icons/HoodedStrangerMiner.png",
+      "source_sha256": "efa2721fa8e3dbc517ecb169266fceb6722b0a95f85a87bf24b3ab610fd98317",
+      "source_bytes": 787212,
+      "source_size": [
+        1254,
+        1254
+      ],
+      "variants": {
+        "ui512": {
+          "file": "icons/ui512/HoodedStrangerMiner.png",
+          "bytes": 167101,
+          "size": [
+            512,
+            512
+          ],
+          "rgba8_uncompressed_bytes": 1048576,
+          "sha256": "6a5a15b48a4a26e31c9fdd91f0aab86dcbe4ee02844ebf85639c71e203e86b93"
+        },
+        "small256": {
+          "file": "icons/small256/HoodedStrangerMiner.png",
+          "bytes": 53565,
+          "size": [
+            256,
+            256
+          ],
+          "rgba8_uncompressed_bytes": 262144,
+          "sha256": "e0557e1f8e31e1ba51d4ea9acb97162c36a4b3587a2b6f3024b172f268163c0c"
+        },
+        "large1024": {
+          "file": "icons/large1024/HoodedStrangerMiner.png",
+          "bytes": 546536,
+          "size": [
+            1024,
+            1024
+          ],
+          "rgba8_uncompressed_bytes": 4194304,
+          "sha256": "ae2f634d03aa58f36f32128f962d70ce1c02e4ce903e92747133f808443d9a0c"
+        }
+      }
+    },
+    {
+      "id": "HoodedStrangerKing",
+      "ru": "Король",
+      "source": "hooded-stranger-icons-v1/icons/HoodedStrangerKing.png",
+      "source_sha256": "012194bf4d0628fde4cc7e776631b0fcde54724e36eee7b1b669c8e866814f3f",
+      "source_bytes": 876728,
+      "source_size": [
+        1254,
+        1254
+      ],
+      "variants": {
+        "ui512": {
+          "file": "icons/ui512/HoodedStrangerKing.png",
+          "bytes": 184131,
+          "size": [
+            512,
+            512
+          ],
+          "rgba8_uncompressed_bytes": 1048576,
+          "sha256": "b92523f4091b419657f9b7ccbeab3e6cbc418675973c8edcc86c52c5268748eb"
+        },
+        "small256": {
+          "file": "icons/small256/HoodedStrangerKing.png",
+          "bytes": 57429,
+          "size": [
+            256,
+            256
+          ],
+          "rgba8_uncompressed_bytes": 262144,
+          "sha256": "de7dffa3e22b24341e20f629918140e903e8f401340e0c860259fea35ba07178"
+        },
+        "large1024": {
+          "file": "icons/large1024/HoodedStrangerKing.png",
+          "bytes": 610121,
+          "size": [
+            1024,
+            1024
+          ],
+          "rgba8_uncompressed_bytes": 4194304,
+          "sha256": "5d638cc906f8fc9df4443e071dbbbc91f79bfb32b3c7bde225aa43c8dc6927b9"
+        }
+      }
+    },
+    {
+      "id": "HoodedStrangerKnight",
+      "ru": "Рыцарь",
+      "source": "hooded-stranger-icons-v1/icons/HoodedStrangerKnight.png",
+      "source_sha256": "2f43a1db96d83bde95dd1a6729710f64ca49f87d98a08b495ea96d27a2565bd3",
+      "source_bytes": 792060,
+      "source_size": [
+        1254,
+        1254
+      ],
+      "variants": {
+        "ui512": {
+          "file": "icons/ui512/HoodedStrangerKnight.png",
+          "bytes": 168882,
+          "size": [
+            512,
+            512
+          ],
+          "rgba8_uncompressed_bytes": 1048576,
+          "sha256": "87bca756e9bb02dbae905a56af5535d3826aac3ac721bea5b505cb7a2c2f4174"
+        },
+        "small256": {
+          "file": "icons/small256/HoodedStrangerKnight.png",
+          "bytes": 53096,
+          "size": [
+            256,
+            256
+          ],
+          "rgba8_uncompressed_bytes": 262144,
+          "sha256": "280c938212171754efda1e603638253498e117fc7c159da7d462ba74fe0580d0"
+        },
+        "large1024": {
+          "file": "icons/large1024/HoodedStrangerKnight.png",
+          "bytes": 550795,
+          "size": [
+            1024,
+            1024
+          ],
+          "rgba8_uncompressed_bytes": 4194304,
+          "sha256": "de2bf43acd9d3835e263043a70a35e42ed4d3ba53ee071adf08749c464f8923f"
+        }
+      }
+    },
+    {
+      "id": "HoodedStrangerPunk",
+      "ru": "Нефор",
+      "source": "hooded-stranger-icons-v1/icons/HoodedStrangerPunk.png",
+      "source_sha256": "ef1d765bde043a3c21a171a237ea7fa2826f08e2f01ab6331d7d45ffcfb60fc1",
+      "source_bytes": 726873,
+      "source_size": [
+        1254,
+        1254
+      ],
+      "variants": {
+        "ui512": {
+          "file": "icons/ui512/HoodedStrangerPunk.png",
+          "bytes": 154196,
+          "size": [
+            512,
+            512
+          ],
+          "rgba8_uncompressed_bytes": 1048576,
+          "sha256": "03d610f1a7c49b9872f611f6fdae968caebcb2c9ad61b856d37dc24f3a85bf63"
+        },
+        "small256": {
+          "file": "icons/small256/HoodedStrangerPunk.png",
+          "bytes": 48931,
+          "size": [
+            256,
+            256
+          ],
+          "rgba8_uncompressed_bytes": 262144,
+          "sha256": "dd0acfa075c48759c45c6655f5e6b7b2187b985f087dac9ffde84ca54ea1ad37"
+        },
+        "large1024": {
+          "file": "icons/large1024/HoodedStrangerPunk.png",
+          "bytes": 502675,
+          "size": [
+            1024,
+            1024
+          ],
+          "rgba8_uncompressed_bytes": 4194304,
+          "sha256": "54f0b966d17f20fa593ac0353e820a4b0fbf1a7e8f20c2e81a43374628674279"
+        }
+      }
+    },
+    {
+      "id": "HoodedStrangerAssassin",
+      "ru": "Убийца",
+      "source": "hooded-stranger-icons-v1/icons/HoodedStrangerAssassin.png",
+      "source_sha256": "b5a868c5f5a9f1f1b498546d1efb3bbbd5987620ee7bf8a02a92a9ec0ba42b5f",
+      "source_bytes": 804182,
+      "source_size": [
+        1254,
+        1254
+      ],
+      "variants": {
+        "ui512": {
+          "file": "icons/ui512/HoodedStrangerAssassin.png",
+          "bytes": 168009,
+          "size": [
+            512,
+            512
+          ],
+          "rgba8_uncompressed_bytes": 1048576,
+          "sha256": "a014272f8660752f1db447502d13b87f2c8098e9caaecb6b897203830818972a"
+        },
+        "small256": {
+          "file": "icons/small256/HoodedStrangerAssassin.png",
+          "bytes": 52873,
+          "size": [
+            256,
+            256
+          ],
+          "rgba8_uncompressed_bytes": 262144,
+          "sha256": "f9e5c5a658b5bd70d7cc88bb5101e555a73cd9b983bf06fdd9849c618061340d"
+        },
+        "large1024": {
+          "file": "icons/large1024/HoodedStrangerAssassin.png",
+          "bytes": 547967,
+          "size": [
+            1024,
+            1024
+          ],
+          "rgba8_uncompressed_bytes": 4194304,
+          "sha256": "8076dfbe9f0eb73beaea88cab90daddd9debe824fd39aff50ab6cbe92a366efa"
+        }
+      }
+    }
+  ]
+}

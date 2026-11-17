@@ -1,6 +1,9 @@
 -- Free placement on your own farm. With a grave selected (slot 3) or a zombie in your hands, a ghost follows
 -- the pointer over the yard: green means the spot is fine, red that it isn't. A click or a tap puts it there;
 -- the server checks the same PlacementRules again. Graves stolen back by guards still fly home in an arc.
+-- Since 2026-11-15 nothing collides (PlacementRules.Check): a monster is green anywhere in the farm's yard (not in
+-- the cemetery) and a grave anywhere in the cemetery off the crypt, whatever stands there, and the ring is one
+-- size - it marks the spot, not the room the monster takes.
 local Players = game:GetService("Players")
 local Input = game:GetService("UserInputService")
 local Run = game:GetService("RunService")
@@ -54,22 +57,6 @@ local function baseOf(plot)
 	return CFrame.new(plot:GetAttribute("BasePosition")) * CFrame.Angles(0, plot:GetAttribute("BaseYaw") or 0, 0)
 end
 
--- What already stands in the yard, read from the world, in the shape PlacementRules expects.
-local function occupancy(plot, base)
-	local d = { graves = {}, zombies = {} }
-	for _, x in plot:GetChildren() do
-		if x:IsA("Model") and (x.Name == "Grave" or x.Name == "Zombie") then
-			local v = base:PointToObjectSpace(x:GetPivot().Position)
-			if x.Name == "Grave" then
-				table.insert(d.graves, { id = x:GetAttribute("GraveId"), pos = { x = v.X, z = v.Z } })
-			elseif x:GetAttribute("Zone") == "Field" or x:GetAttribute("Zone") == "Guards" then
-				table.insert(d.zombies, { id = x:GetAttribute("ZombieId"),type=x:GetAttribute("Type"),tier=x:GetAttribute("Tier") or 1,stars=x:GetAttribute("Stars") or 1, zone = x:GetAttribute("Zone"), pos = { x = v.X, z = v.Z } })
-			end
-		end
-	end
-	return d
-end
-
 local function heldObject()
  local model=p.Character and p.Character:FindFirstChild("HeldZombie")
  return {id=p:GetAttribute("HoldingZombie"),type=model and model:GetAttribute("Type"),tier=model and model:GetAttribute("Tier") or 1,stars=model and model:GetAttribute("Stars") or 1}
@@ -113,7 +100,7 @@ local function probe(screen, viewport)
 	local point = p:GetAttribute("HoldingZombie") and Place.Point(v.X,v.Z) or Place.GravePoint(v.X,v.Z)
 	local kind = mode()
 	local reason = "placeBad"
-	if point then reason = Place.Check(occupancy(plot, base), kind, point, heldObject()) end
+	if point then reason = Place.Check(nil, kind, point, heldObject()) end
 	return point, reason, base
 end
 
@@ -148,7 +135,7 @@ Run.RenderStepped:Connect(function()
 	end
 	placementGuide(L.text(reason or "placeHint", lang), kind, kind ~= "Grave", reason ~= nil)
 	local color = reason and BAD or GOOD
-	local radius = Place.Radius(kind,heldObject())
+	local radius = kind == "Grave" and PC.GraveRadius or PC.ZombieRadius
 	ring.Size = Vector3.new(0.12, radius * 2, radius * 2)
 	local cf = base * CFrame.new(point.x, -0.35, point.z)
 	ring.CFrame = cf * CFrame.Angles(0, 0, math.pi / 2)

@@ -1,0 +1,20 @@
+{
+  "user_choice": "Последние четыре: только 24 вариации",
+  "characters": [
+    "Dredge",
+    "AssimilatedAdventurer",
+    "PrimitiveSummoner",
+    "AdaptedViscera"
+  ],
+  "roles": [
+    "Farmer",
+    "Miner",
+    "King",
+    "Knight",
+    "Nefor",
+    "Killer"
+  ],
+  "icons": 24,
+  "game_integration_authorized": false,
+  "approval": "pending"
+}

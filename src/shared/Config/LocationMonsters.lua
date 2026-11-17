@@ -1,21 +1,21 @@
 -- Which monsters come out of a location's graves (owner, 2026-11-14: "a location has its own set — the forest gives the
 -- deer and the cave dweller, and so on"). Indexed like RoadProgression.Districts. A family brings all six of its
 -- looks (Farmer ... King); SirenHead and BuckshotDealer are specials with their own tiers (ZombieConfig.Types).
--- The owner chose the first four; the cave and the factory were placeholders until the new monsters came in. The new
--- families of 2026-11-14 (MonsterFamilies) were spread by theme: two-ish per location, the old sets kept as they were.
+-- (Until 2026-11-15 the sets followed the old locations: forest, dark forest, hospital, village, cultist cave, factory.)
 -- A grave remembers where it was dug (item.location); graves from anywhere else (the shop, the Blood Moon, the starter)
 -- may give anything.
 local Collection = require(script.Parent.Parent.MonsterCollection)
 local ZC = require(script.Parent.ZombieConfig)
 
 local L = {
+	-- The road reskin (owner, 2026-11-15): a location's graves give the monsters that roam it, and its boss's family.
 	Sets = {
-		{ "Deer", "CaveDweller", "Longmaw" }, -- Forest
-		{ "RingMaw", "Verity", "Slenderman", "HoodedStranger" }, -- Dark forest
-		{ "Parasite", "BuckshotDealer", "AdaptedViscera", "AssimilatedAdventurer" }, -- Hospital (the new parasites)
-		{ "SirenHead", "Stalker", "Deer", "Granny", "Grandfather" }, -- Village
-		{ "SpiderMom", "Slendrina", "Dredge" }, -- Cave
-		{ "Mimic", "PrimitiveSummoner" }, -- Factory
+		{ "Deer", "Verity", "Stalker" }, -- Dark forest (boss: the Horned Alpha, a deer)
+		{ "Longmaw", "RingMaw", "SirenHead" }, -- Backrooms (boss: RingMaw)
+		{ "HoodedStranger", "Slenderman", "Mimic" }, -- Abandoned city (boss: the Stranger)
+		{ "Granny", "Grandfather", "SpiderMom", "Slendrina" }, -- Abandoned village (boss: Slendrina)
+		{ "AssimilatedAdventurer", "Dredge", "AdaptedViscera", "Parasite" }, -- Parasitown (boss: Patient Zero, a parasite)
+		{ "CaveDweller", "PrimitiveSummoner", "BuckshotDealer" }, -- Abandoned cave (boss: the Cave Dweller)
 	},
 }
 

@@ -1,0 +1,35 @@
+{
+  "passed": true,
+  "same_light_and_camera": true,
+  "renders": [
+    {
+      "id": "HoodedStranger",
+      "mean_absolute_rgb_error_255": 0.10393541324575807
+    },
+    {
+      "id": "HoodedStranger_Farmer",
+      "mean_absolute_rgb_error_255": 0.10423462871738734
+    },
+    {
+      "id": "HoodedStranger_Miner",
+      "mean_absolute_rgb_error_255": 0.10411968618865171
+    },
+    {
+      "id": "HoodedStranger_King",
+      "mean_absolute_rgb_error_255": 0.10421455938697317
+    },
+    {
+      "id": "HoodedStranger_Knight",
+      "mean_absolute_rgb_error_255": 0.10424861643252448
+    },
+    {
+      "id": "HoodedStranger_Punk",
+      "mean_absolute_rgb_error_255": 0.10402967828255184
+    },
+    {
+      "id": "HoodedStranger_Assassin",
+      "mean_absolute_rgb_error_255": 0.10424557562488597
+    }
+  ],
+  "scope": "Offline comparison; not a Roblox frame-rate or network benchmark"
+}

@@ -1,0 +1,326 @@
+[
+  {
+    "id": "Longmaw_Idle",
+    "profile": "source",
+    "view": "Full",
+    "file": "previews/raw/Longmaw_Idle_source_Full.png"
+  },
+  {
+    "id": "Longmaw_Idle",
+    "profile": "source",
+    "view": "Head",
+    "file": "previews/raw/Longmaw_Idle_source_Head.png"
+  },
+  {
+    "id": "Longmaw_Idle",
+    "profile": "models",
+    "view": "Full",
+    "file": "previews/raw/Longmaw_Idle_models_Full.png"
+  },
+  {
+    "id": "Longmaw_Idle",
+    "profile": "models",
+    "view": "Head",
+    "file": "previews/raw/Longmaw_Idle_models_Head.png"
+  },
+  {
+    "id": "Longmaw_Idle",
+    "profile": "mobile",
+    "view": "Full",
+    "file": "previews/raw/Longmaw_Idle_mobile_Full.png"
+  },
+  {
+    "id": "Longmaw_Idle",
+    "profile": "mobile",
+    "view": "Head",
+    "file": "previews/raw/Longmaw_Idle_mobile_Head.png"
+  },
+  {
+    "id": "Longmaw_Aggressive",
+    "profile": "source",
+    "view": "Full",
+    "file": "previews/raw/Longmaw_Aggressive_source_Full.png"
+  },
+  {
+    "id": "Longmaw_Aggressive",
+    "profile": "models",
+    "view": "Full",
+    "file": "previews/raw/Longmaw_Aggressive_models_Full.png"
+  },
+  {
+    "id": "Longmaw_Aggressive",
+    "profile": "mobile",
+    "view": "Full",
+    "file": "previews/raw/Longmaw_Aggressive_mobile_Full.png"
+  },
+  {
+    "id": "Longmaw_Farmer_Idle",
+    "profile": "source",
+    "view": "Full",
+    "file": "previews/raw/Longmaw_Farmer_Idle_source_Full.png"
+  },
+  {
+    "id": "Longmaw_Farmer_Idle",
+    "profile": "models",
+    "view": "Full",
+    "file": "previews/raw/Longmaw_Farmer_Idle_models_Full.png"
+  },
+  {
+    "id": "Longmaw_Farmer_Idle",
+    "profile": "mobile",
+    "view": "Full",
+    "file": "previews/raw/Longmaw_Farmer_Idle_mobile_Full.png"
+  },
+  {
+    "id": "Longmaw_Farmer_Aggressive",
+    "profile": "source",
+    "view": "Full",
+    "file": "previews/raw/Longmaw_Farmer_Aggressive_source_Full.png"
+  },
+  {
+    "id": "Longmaw_Farmer_Aggressive",
+    "profile": "models",
+    "view": "Full",
+    "file": "previews/raw/Longmaw_Farmer_Aggressive_models_Full.png"
+  },
+  {
+    "id": "Longmaw_Farmer_Aggressive",
+    "profile": "mobile",
+    "view": "Full",
+    "file": "previews/raw/Longmaw_Farmer_Aggressive_mobile_Full.png"
+  },
+  {
+    "id": "Longmaw_Miner_Idle",
+    "profile": "source",
+    "view": "Full",
+    "file": "previews/raw/Longmaw_Miner_Idle_source_Full.png"
+  },
+  {
+    "id": "Longmaw_Miner_Idle",
+    "profile": "models",
+    "view": "Full",
+    "file": "previews/raw/Longmaw_Miner_Idle_models_Full.png"
+  },
+  {
+    "id": "Longmaw_Miner_Idle",
+    "profile": "mobile",
+    "view": "Full",
+    "file": "previews/raw/Longmaw_Miner_Idle_mobile_Full.png"
+  },
+  {
+    "id": "Longmaw_Miner_Aggressive",
+    "profile": "source",
+    "view": "Full",
+    "file": "previews/raw/Longmaw_Miner_Aggressive_source_Full.png"
+  },
+  {
+    "id": "Longmaw_Miner_Aggressive",
+    "profile": "models",
+    "view": "Full",
+    "file": "previews/raw/Longmaw_Miner_Aggressive_models_Full.png"
+  },
+  {
+    "id": "Longmaw_Miner_Aggressive",
+    "profile": "mobile",
+    "view": "Full",
+    "file": "previews/raw/Longmaw_Miner_Aggressive_mobile_Full.png"
+  },
+  {
+    "id": "Longmaw_Princess_Idle",
+    "profile": "source",
+    "view": "Full",
+    "file": "previews/raw/Longmaw_Princess_Idle_source_Full.png"
+  },
+  {
+    "id": "Longmaw_Princess_Idle",
+    "profile": "models",
+    "view": "Full",
+    "file": "previews/raw/Longmaw_Princess_Idle_models_Full.png"
+  },
+  {
+    "id": "Longmaw_Princess_Idle",
+    "profile": "mobile",
+    "view": "Full",
+    "file": "previews/raw/Longmaw_Princess_Idle_mobile_Full.png"
+  },
+  {
+    "id": "Longmaw_Princess_Aggressive",
+    "profile": "source",
+    "view": "Full",
+    "file": "previews/raw/Longmaw_Princess_Aggressive_source_Full.png"
+  },
+  {
+    "id": "Longmaw_Princess_Aggressive",
+    "profile": "models",
+    "view": "Full",
+    "file": "previews/raw/Longmaw_Princess_Aggressive_models_Full.png"
+  },
+  {
+    "id": "Longmaw_Princess_Aggressive",
+    "profile": "mobile",
+    "view": "Full",
+    "file": "previews/raw/Longmaw_Princess_Aggressive_mobile_Full.png"
+  },
+  {
+    "id": "Longmaw_Knight_Idle",
+    "profile": "source",
+    "view": "Full",
+    "file": "previews/raw/Longmaw_Knight_Idle_source_Full.png"
+  },
+  {
+    "id": "Longmaw_Knight_Idle",
+    "profile": "source",
+    "view": "Head",
+    "file": "previews/raw/Longmaw_Knight_Idle_source_Head.png"
+  },
+  {
+    "id": "Longmaw_Knight_Idle",
+    "profile": "models",
+    "view": "Full",
+    "file": "previews/raw/Longmaw_Knight_Idle_models_Full.png"
+  },
+  {
+    "id": "Longmaw_Knight_Idle",
+    "profile": "models",
+    "view": "Head",
+    "file": "previews/raw/Longmaw_Knight_Idle_models_Head.png"
+  },
+  {
+    "id": "Longmaw_Knight_Idle",
+    "profile": "mobile",
+    "view": "Full",
+    "file": "previews/raw/Longmaw_Knight_Idle_mobile_Full.png"
+  },
+  {
+    "id": "Longmaw_Knight_Idle",
+    "profile": "mobile",
+    "view": "Head",
+    "file": "previews/raw/Longmaw_Knight_Idle_mobile_Head.png"
+  },
+  {
+    "id": "Longmaw_Knight_Aggressive",
+    "profile": "source",
+    "view": "Full",
+    "file": "previews/raw/Longmaw_Knight_Aggressive_source_Full.png"
+  },
+  {
+    "id": "Longmaw_Knight_Aggressive",
+    "profile": "models",
+    "view": "Full",
+    "file": "previews/raw/Longmaw_Knight_Aggressive_models_Full.png"
+  },
+  {
+    "id": "Longmaw_Knight_Aggressive",
+    "profile": "mobile",
+    "view": "Full",
+    "file": "previews/raw/Longmaw_Knight_Aggressive_mobile_Full.png"
+  },
+  {
+    "id": "Longmaw_Punk_Idle",
+    "profile": "source",
+    "view": "Full",
+    "file": "previews/raw/Longmaw_Punk_Idle_source_Full.png"
+  },
+  {
+    "id": "Longmaw_Punk_Idle",
+    "profile": "source",
+    "view": "Head",
+    "file": "previews/raw/Longmaw_Punk_Idle_source_Head.png"
+  },
+  {
+    "id": "Longmaw_Punk_Idle",
+    "profile": "models",
+    "view": "Full",
+    "file": "previews/raw/Longmaw_Punk_Idle_models_Full.png"
+  },
+  {
+    "id": "Longmaw_Punk_Idle",
+    "profile": "models",
+    "view": "Head",
+    "file": "previews/raw/Longmaw_Punk_Idle_models_Head.png"
+  },
+  {
+    "id": "Longmaw_Punk_Idle",
+    "profile": "mobile",
+    "view": "Full",
+    "file": "previews/raw/Longmaw_Punk_Idle_mobile_Full.png"
+  },
+  {
+    "id": "Longmaw_Punk_Idle",
+    "profile": "mobile",
+    "view": "Head",
+    "file": "previews/raw/Longmaw_Punk_Idle_mobile_Head.png"
+  },
+  {
+    "id": "Longmaw_Punk_Aggressive",
+    "profile": "source",
+    "view": "Full",
+    "file": "previews/raw/Longmaw_Punk_Aggressive_source_Full.png"
+  },
+  {
+    "id": "Longmaw_Punk_Aggressive",
+    "profile": "models",
+    "view": "Full",
+    "file": "previews/raw/Longmaw_Punk_Aggressive_models_Full.png"
+  },
+  {
+    "id": "Longmaw_Punk_Aggressive",
+    "profile": "mobile",
+    "view": "Full",
+    "file": "previews/raw/Longmaw_Punk_Aggressive_mobile_Full.png"
+  },
+  {
+    "id": "Longmaw_Assassin_Idle",
+    "profile": "source",
+    "view": "Full",
+    "file": "previews/raw/Longmaw_Assassin_Idle_source_Full.png"
+  },
+  {
+    "id": "Longmaw_Assassin_Idle",
+    "profile": "source",
+    "view": "Head",
+    "file": "previews/raw/Longmaw_Assassin_Idle_source_Head.png"
+  },
+  {
+    "id": "Longmaw_Assassin_Idle",
+    "profile": "models",
+    "view": "Full",
+    "file": "previews/raw/Longmaw_Assassin_Idle_models_Full.png"
+  },
+  {
+    "id": "Longmaw_Assassin_Idle",
+    "profile": "models",
+    "view": "Head",
+    "file": "previews/raw/Longmaw_Assassin_Idle_models_Head.png"
+  },
+  {
+    "id": "Longmaw_Assassin_Idle",
+    "profile": "mobile",
+    "view": "Full",
+    "file": "previews/raw/Longmaw_Assassin_Idle_mobile_Full.png"
+  },
+  {
+    "id": "Longmaw_Assassin_Idle",
+    "profile": "mobile",
+    "view": "Head",
+    "file": "previews/raw/Longmaw_Assassin_Idle_mobile_Head.png"
+  },
+  {
+    "id": "Longmaw_Assassin_Aggressive",
+    "profile": "source",
+    "view": "Full",
+    "file": "previews/raw/Longmaw_Assassin_Aggressive_source_Full.png"
+  },
+  {
+    "id": "Longmaw_Assassin_Aggressive",
+    "profile": "models",
+    "view": "Full",
+    "file": "previews/raw/Longmaw_Assassin_Aggressive_models_Full.png"
+  },
+  {
+    "id": "Longmaw_Assassin_Aggressive",
+    "profile": "mobile",
+    "view": "Full",
+    "file": "previews/raw/Longmaw_Assassin_Aggressive_mobile_Full.png"
+  }
+]

@@ -1,0 +1,848 @@
+{
+  "passed": true,
+  "validated_outputs": 28,
+  "source_files_unchanged": 306,
+  "Roblox_tested": false,
+  "results": [
+    {
+      "id": "Longmaw_Idle",
+      "profile": "models",
+      "passed": true,
+      "sha256": "53c41c4310122111d17c76d4cf7bcd2c4c5be3aba0ec1f212b7e9e4a50a1f688",
+      "triangles": 5959,
+      "bones": 23,
+      "meshes": 1,
+      "materials": 1,
+      "bind_matrix_max_error": 0,
+      "protected_unique_surfaces_preserved": 5959,
+      "redundant_coincident_faces_removed_by_importer": 89,
+      "face_ray_max_error": 0.0,
+      "paw_heights": {
+        "FrontPaw.L": 0.04999994486570358,
+        "FrontPaw.R": 0.04999994486570358,
+        "HindPaw.L": 0.04999864473938942,
+        "HindPaw.R": 0.04999864473938942
+      },
+      "deformation_moved_vertices": {
+        "Head": 6958,
+        "Jaw": 1822,
+        "Spine": 11299,
+        "Hips": 15039,
+        "FrontUpper.L": 1583,
+        "FrontLower.R": 1320,
+        "HindThigh.L": 1838,
+        "HindShin.R": 1406
+      }
+    },
+    {
+      "id": "Longmaw_Idle",
+      "profile": "mobile",
+      "passed": true,
+      "sha256": "2112ba252c20135b0fc9a3c3e0ac07eeedeeba4a5075791938960b11dee231e6",
+      "triangles": 5487,
+      "bones": 23,
+      "meshes": 1,
+      "materials": 1,
+      "bind_matrix_max_error": 1.6689300537109375e-06,
+      "protected_unique_surfaces_preserved": 4839,
+      "redundant_coincident_faces_removed_by_importer": 89,
+      "face_ray_max_error": 5.478441854990033e-06,
+      "paw_heights": {
+        "FrontPaw.L": 0.05048304796218872,
+        "FrontPaw.R": 0.05048384144902229,
+        "HindPaw.L": 0.050482384860515594,
+        "HindPaw.R": 0.05048145726323128
+      },
+      "deformation_moved_vertices": {
+        "Head": 6878,
+        "Jaw": 1784,
+        "Spine": 10517,
+        "Hips": 13504,
+        "FrontUpper.L": 1237,
+        "FrontLower.R": 966,
+        "HindThigh.L": 1462,
+        "HindShin.R": 1029
+      }
+    },
+    {
+      "id": "Longmaw_Aggressive",
+      "profile": "models",
+      "passed": true,
+      "sha256": "6502d1f49e6f0e70bc7a878affac20bff7a157f05940a72844ee2dea7e48963c",
+      "triangles": 5959,
+      "bones": 23,
+      "meshes": 1,
+      "materials": 1,
+      "bind_matrix_max_error": 0,
+      "protected_unique_surfaces_preserved": 5959,
+      "redundant_coincident_faces_removed_by_importer": 89,
+      "face_ray_max_error": 0.0,
+      "paw_heights": {
+        "FrontPaw.L": 0.04999994486570358,
+        "FrontPaw.R": 0.04999994486570358,
+        "HindPaw.L": 0.04999864473938942,
+        "HindPaw.R": 0.04999864473938942
+      },
+      "deformation_moved_vertices": {
+        "Head": 6944,
+        "Jaw": 1808,
+        "Spine": 11285,
+        "Hips": 15025,
+        "FrontUpper.L": 1583,
+        "FrontLower.R": 1320,
+        "HindThigh.L": 1838,
+        "HindShin.R": 1406
+      }
+    },
+    {
+      "id": "Longmaw_Aggressive",
+      "profile": "mobile",
+      "passed": true,
+      "sha256": "9e67844851548fb17ce04b915cb13cfaca7c56ae7706435c8f5fad8e95bc4d99",
+      "triangles": 5487,
+      "bones": 23,
+      "meshes": 1,
+      "materials": 1,
+      "bind_matrix_max_error": 1.6689300537109375e-06,
+      "protected_unique_surfaces_preserved": 4839,
+      "redundant_coincident_faces_removed_by_importer": 89,
+      "face_ray_max_error": 5.478441854990033e-06,
+      "paw_heights": {
+        "FrontPaw.L": 0.05048304796218872,
+        "FrontPaw.R": 0.05048384144902229,
+        "HindPaw.L": 0.050482384860515594,
+        "HindPaw.R": 0.05048145726323128
+      },
+      "deformation_moved_vertices": {
+        "Head": 6894,
+        "Jaw": 1800,
+        "Spine": 10533,
+        "Hips": 13520,
+        "FrontUpper.L": 1237,
+        "FrontLower.R": 966,
+        "HindThigh.L": 1462,
+        "HindShin.R": 1029
+      }
+    },
+    {
+      "id": "Longmaw_Farmer_Idle",
+      "profile": "models",
+      "passed": true,
+      "sha256": "cfbc374c602ab98950abaf4aa68ce2aefe939d66f02d122ce13675905cc69371",
+      "triangles": 7905,
+      "bones": 23,
+      "meshes": 1,
+      "materials": 1,
+      "bind_matrix_max_error": 0,
+      "protected_unique_surfaces_preserved": 7905,
+      "redundant_coincident_faces_removed_by_importer": 89,
+      "face_ray_max_error": 0.0,
+      "paw_heights": {
+        "FrontPaw.L": 0.04999994486570358,
+        "FrontPaw.R": 0.04999994486570358,
+        "HindPaw.L": 0.04999864473938942,
+        "HindPaw.R": 0.04999864473938942
+      },
+      "deformation_moved_vertices": {
+        "Head": 8825,
+        "Jaw": 1822,
+        "Spine": 15300,
+        "Hips": 19632,
+        "FrontUpper.L": 1763,
+        "FrontLower.R": 1320,
+        "HindThigh.L": 1838,
+        "HindShin.R": 1406
+      }
+    },
+    {
+      "id": "Longmaw_Farmer_Idle",
+      "profile": "mobile",
+      "passed": true,
+      "sha256": "9e7b5227108e36ccfe1edae36c9a238e0e2d0941d6da3a610eabf21d42d0a12b",
+      "triangles": 7190,
+      "bones": 23,
+      "meshes": 1,
+      "materials": 1,
+      "bind_matrix_max_error": 1.6689300537109375e-06,
+      "protected_unique_surfaces_preserved": 6205,
+      "redundant_coincident_faces_removed_by_importer": 89,
+      "face_ray_max_error": 5.478441854990033e-06,
+      "paw_heights": {
+        "FrontPaw.L": 0.05048304796218872,
+        "FrontPaw.R": 0.05048384144902229,
+        "HindPaw.L": 0.050482384860515594,
+        "HindPaw.R": 0.05048145726323128
+      },
+      "deformation_moved_vertices": {
+        "Head": 8721,
+        "Jaw": 1784,
+        "Spine": 14271,
+        "Hips": 17704,
+        "FrontUpper.L": 1495,
+        "FrontLower.R": 1056,
+        "HindThigh.L": 1546,
+        "HindShin.R": 1119
+      }
+    },
+    {
+      "id": "Longmaw_Farmer_Aggressive",
+      "profile": "models",
+      "passed": true,
+      "sha256": "1e37e854603838ea7c9e94265792093e0b5fd81c33b793b0a4bc0b5f0f9448da",
+      "triangles": 7905,
+      "bones": 23,
+      "meshes": 1,
+      "materials": 1,
+      "bind_matrix_max_error": 0,
+      "protected_unique_surfaces_preserved": 7905,
+      "redundant_coincident_faces_removed_by_importer": 89,
+      "face_ray_max_error": 0.0,
+      "paw_heights": {
+        "FrontPaw.L": 0.04999994486570358,
+        "FrontPaw.R": 0.04999994486570358,
+        "HindPaw.L": 0.04999864473938942,
+        "HindPaw.R": 0.04999864473938942
+      },
+      "deformation_moved_vertices": {
+        "Head": 8811,
+        "Jaw": 1808,
+        "Spine": 15286,
+        "Hips": 19618,
+        "FrontUpper.L": 1763,
+        "FrontLower.R": 1320,
+        "HindThigh.L": 1838,
+        "HindShin.R": 1406
+      }
+    },
+    {
+      "id": "Longmaw_Farmer_Aggressive",
+      "profile": "mobile",
+      "passed": true,
+      "sha256": "7cecc512d90206a8e9dd667e2de54345338390adfc2a9f9d4b65c69bb901cd4a",
+      "triangles": 7190,
+      "bones": 23,
+      "meshes": 1,
+      "materials": 1,
+      "bind_matrix_max_error": 1.6689300537109375e-06,
+      "protected_unique_surfaces_preserved": 6205,
+      "redundant_coincident_faces_removed_by_importer": 89,
+      "face_ray_max_error": 5.478441854990033e-06,
+      "paw_heights": {
+        "FrontPaw.L": 0.05048304796218872,
+        "FrontPaw.R": 0.05048384144902229,
+        "HindPaw.L": 0.050482384860515594,
+        "HindPaw.R": 0.05048145726323128
+      },
+      "deformation_moved_vertices": {
+        "Head": 8737,
+        "Jaw": 1800,
+        "Spine": 14287,
+        "Hips": 17720,
+        "FrontUpper.L": 1495,
+        "FrontLower.R": 1056,
+        "HindThigh.L": 1546,
+        "HindShin.R": 1119
+      }
+    },
+    {
+      "id": "Longmaw_Miner_Idle",
+      "profile": "models",
+      "passed": true,
+      "sha256": "fae3952cf07a8a4a142b8d552a0e6feba53647ab388be74d046994233f2caeb0",
+      "triangles": 8257,
+      "bones": 23,
+      "meshes": 1,
+      "materials": 1,
+      "bind_matrix_max_error": 0,
+      "protected_unique_surfaces_preserved": 8257,
+      "redundant_coincident_faces_removed_by_importer": 89,
+      "face_ray_max_error": 0.0,
+      "paw_heights": {
+        "FrontPaw.L": 0.04999994486570358,
+        "FrontPaw.R": 0.04999994486570358,
+        "HindPaw.L": 0.04999864473938942,
+        "HindPaw.R": 0.04999864473938942
+      },
+      "deformation_moved_vertices": {
+        "Head": 8063,
+        "Jaw": 1822,
+        "Spine": 16010,
+        "Hips": 20342,
+        "FrontUpper.L": 1763,
+        "FrontLower.R": 1320,
+        "HindThigh.L": 1838,
+        "HindShin.R": 1406
+      }
+    },
+    {
+      "id": "Longmaw_Miner_Idle",
+      "profile": "mobile",
+      "passed": true,
+      "sha256": "bcbc5ae458228d51cc0abfade656b89ca49e383aa8f0495544cfe891f5d3f7f7",
+      "triangles": 7299,
+      "bones": 23,
+      "meshes": 1,
+      "materials": 1,
+      "bind_matrix_max_error": 1.6689300537109375e-06,
+      "protected_unique_surfaces_preserved": 5977,
+      "redundant_coincident_faces_removed_by_importer": 89,
+      "face_ray_max_error": 5.478441854990033e-06,
+      "paw_heights": {
+        "FrontPaw.L": 0.05048304796218872,
+        "FrontPaw.R": 0.05048384144902229,
+        "HindPaw.L": 0.050482384860515594,
+        "HindPaw.R": 0.05048145726323128
+      },
+      "deformation_moved_vertices": {
+        "Head": 7974,
+        "Jaw": 1784,
+        "Spine": 14469,
+        "Hips": 18064,
+        "FrontUpper.L": 1543,
+        "FrontLower.R": 1104,
+        "HindThigh.L": 1606,
+        "HindShin.R": 1173
+      }
+    },
+    {
+      "id": "Longmaw_Miner_Aggressive",
+      "profile": "models",
+      "passed": true,
+      "sha256": "fa0b5b50d33eb6827bf511c5a5cb247feadd7f0f803762986dd7e6ee0972c81d",
+      "triangles": 8257,
+      "bones": 23,
+      "meshes": 1,
+      "materials": 1,
+      "bind_matrix_max_error": 0,
+      "protected_unique_surfaces_preserved": 8257,
+      "redundant_coincident_faces_removed_by_importer": 89,
+      "face_ray_max_error": 0.0,
+      "paw_heights": {
+        "FrontPaw.L": 0.04999994486570358,
+        "FrontPaw.R": 0.04999994486570358,
+        "HindPaw.L": 0.04999864473938942,
+        "HindPaw.R": 0.04999864473938942
+      },
+      "deformation_moved_vertices": {
+        "Head": 8049,
+        "Jaw": 1808,
+        "Spine": 15996,
+        "Hips": 20328,
+        "FrontUpper.L": 1763,
+        "FrontLower.R": 1320,
+        "HindThigh.L": 1838,
+        "HindShin.R": 1406
+      }
+    },
+    {
+      "id": "Longmaw_Miner_Aggressive",
+      "profile": "mobile",
+      "passed": true,
+      "sha256": "c74f7bee745a8e7870b03c8f9f1c1f79bb03e2e48cb9bf80579566327428fdbd",
+      "triangles": 7299,
+      "bones": 23,
+      "meshes": 1,
+      "materials": 1,
+      "bind_matrix_max_error": 1.6689300537109375e-06,
+      "protected_unique_surfaces_preserved": 5977,
+      "redundant_coincident_faces_removed_by_importer": 89,
+      "face_ray_max_error": 5.478441854990033e-06,
+      "paw_heights": {
+        "FrontPaw.L": 0.05048304796218872,
+        "FrontPaw.R": 0.05048384144902229,
+        "HindPaw.L": 0.050482384860515594,
+        "HindPaw.R": 0.05048145726323128
+      },
+      "deformation_moved_vertices": {
+        "Head": 7990,
+        "Jaw": 1800,
+        "Spine": 14485,
+        "Hips": 18080,
+        "FrontUpper.L": 1543,
+        "FrontLower.R": 1104,
+        "HindThigh.L": 1606,
+        "HindShin.R": 1173
+      }
+    },
+    {
+      "id": "Longmaw_Princess_Idle",
+      "profile": "models",
+      "passed": true,
+      "sha256": "a0d9cfb1c8df10876f5eb4188caa4a42d102ec623801dfb4aee3892a467b0387",
+      "triangles": 8597,
+      "bones": 23,
+      "meshes": 1,
+      "materials": 1,
+      "bind_matrix_max_error": 0,
+      "protected_unique_surfaces_preserved": 8597,
+      "redundant_coincident_faces_removed_by_importer": 89,
+      "face_ray_max_error": 0.0,
+      "paw_heights": {
+        "FrontPaw.L": 0.04999994486570358,
+        "FrontPaw.R": 0.04999994486570358,
+        "HindPaw.L": 0.04999864473938942,
+        "HindPaw.R": 0.04999864473938942
+      },
+      "deformation_moved_vertices": {
+        "Head": 8642,
+        "Jaw": 1822,
+        "Spine": 17587,
+        "Hips": 22267,
+        "FrontUpper.L": 1583,
+        "FrontLower.R": 1320,
+        "HindThigh.L": 1838,
+        "HindShin.R": 1406
+      }
+    },
+    {
+      "id": "Longmaw_Princess_Idle",
+      "profile": "mobile",
+      "passed": true,
+      "sha256": "2b0b16789e5b9d4a42c1c60bd866ac9bb7177791c0aff363bcb6303d651b0445",
+      "triangles": 7834,
+      "bones": 23,
+      "meshes": 1,
+      "materials": 1,
+      "bind_matrix_max_error": 1.6689300537109375e-06,
+      "protected_unique_surfaces_preserved": 6785,
+      "redundant_coincident_faces_removed_by_importer": 89,
+      "face_ray_max_error": 5.478441854990033e-06,
+      "paw_heights": {
+        "FrontPaw.L": 0.05048304796218872,
+        "FrontPaw.R": 0.05048384144902229,
+        "HindPaw.L": 0.050482384860515594,
+        "HindPaw.R": 0.05048145726323128
+      },
+      "deformation_moved_vertices": {
+        "Head": 8562,
+        "Jaw": 1784,
+        "Spine": 16572,
+        "Hips": 20277,
+        "FrontUpper.L": 1315,
+        "FrontLower.R": 1056,
+        "HindThigh.L": 1546,
+        "HindShin.R": 1119
+      }
+    },
+    {
+      "id": "Longmaw_Princess_Aggressive",
+      "profile": "models",
+      "passed": true,
+      "sha256": "c0a9181416846da934d1eb9d1c2656dd6ed21995e8c55b2e3849cc131aa8989d",
+      "triangles": 8597,
+      "bones": 23,
+      "meshes": 1,
+      "materials": 1,
+      "bind_matrix_max_error": 0,
+      "protected_unique_surfaces_preserved": 8597,
+      "redundant_coincident_faces_removed_by_importer": 89,
+      "face_ray_max_error": 0.0,
+      "paw_heights": {
+        "FrontPaw.L": 0.04999994486570358,
+        "FrontPaw.R": 0.04999994486570358,
+        "HindPaw.L": 0.04999864473938942,
+        "HindPaw.R": 0.04999864473938942
+      },
+      "deformation_moved_vertices": {
+        "Head": 8628,
+        "Jaw": 1808,
+        "Spine": 17573,
+        "Hips": 22253,
+        "FrontUpper.L": 1583,
+        "FrontLower.R": 1320,
+        "HindThigh.L": 1838,
+        "HindShin.R": 1406
+      }
+    },
+    {
+      "id": "Longmaw_Princess_Aggressive",
+      "profile": "mobile",
+      "passed": true,
+      "sha256": "84404a7434d986044477c15a14e4f83bb37654a1ecf036c9d93eeec76b4e5306",
+      "triangles": 7834,
+      "bones": 23,
+      "meshes": 1,
+      "materials": 1,
+      "bind_matrix_max_error": 1.6689300537109375e-06,
+      "protected_unique_surfaces_preserved": 6785,
+      "redundant_coincident_faces_removed_by_importer": 89,
+      "face_ray_max_error": 5.478441854990033e-06,
+      "paw_heights": {
+        "FrontPaw.L": 0.05048304796218872,
+        "FrontPaw.R": 0.05048384144902229,
+        "HindPaw.L": 0.050482384860515594,
+        "HindPaw.R": 0.05048145726323128
+      },
+      "deformation_moved_vertices": {
+        "Head": 8578,
+        "Jaw": 1800,
+        "Spine": 16588,
+        "Hips": 20293,
+        "FrontUpper.L": 1315,
+        "FrontLower.R": 1056,
+        "HindThigh.L": 1546,
+        "HindShin.R": 1119
+      }
+    },
+    {
+      "id": "Longmaw_Knight_Idle",
+      "profile": "models",
+      "passed": true,
+      "sha256": "eaf89339ff0f419192dcbbf5e3d7550eb8314bb95f18a8a22be1a81113253d8f",
+      "triangles": 8995,
+      "bones": 23,
+      "meshes": 1,
+      "materials": 1,
+      "bind_matrix_max_error": 0,
+      "protected_unique_surfaces_preserved": 8995,
+      "redundant_coincident_faces_removed_by_importer": 89,
+      "face_ray_max_error": 0.0,
+      "paw_heights": {
+        "FrontPaw.L": 0.04999994486570358,
+        "FrontPaw.R": 0.04999994486570358,
+        "HindPaw.L": 0.04999864473938942,
+        "HindPaw.R": 0.04999864473938942
+      },
+      "deformation_moved_vertices": {
+        "Head": 7985,
+        "Jaw": 1822,
+        "Spine": 17201,
+        "Hips": 22059,
+        "FrontUpper.L": 1945,
+        "FrontLower.R": 1502,
+        "HindThigh.L": 1838,
+        "HindShin.R": 1406
+      }
+    },
+    {
+      "id": "Longmaw_Knight_Idle",
+      "profile": "mobile",
+      "passed": true,
+      "sha256": "6863c2e4132a5f2d89d9d5773ea5ba806bff17608e1138d1974bb0ec78499df1",
+      "triangles": 7840,
+      "bones": 23,
+      "meshes": 1,
+      "materials": 1,
+      "bind_matrix_max_error": 1.6689300537109375e-06,
+      "protected_unique_surfaces_preserved": 6247,
+      "redundant_coincident_faces_removed_by_importer": 89,
+      "face_ray_max_error": 5.478441854990033e-06,
+      "paw_heights": {
+        "FrontPaw.L": 0.05048304796218872,
+        "FrontPaw.R": 0.05048384144902229,
+        "HindPaw.L": 0.050482384860515594,
+        "HindPaw.R": 0.05048145726323128
+      },
+      "deformation_moved_vertices": {
+        "Head": 7890,
+        "Jaw": 1784,
+        "Spine": 15532,
+        "Hips": 19559,
+        "FrontUpper.L": 1795,
+        "FrontLower.R": 1358,
+        "HindThigh.L": 1678,
+        "HindShin.R": 1245
+      }
+    },
+    {
+      "id": "Longmaw_Knight_Aggressive",
+      "profile": "models",
+      "passed": true,
+      "sha256": "9a067e92668766ee264bc9d7ca4f4403b2b7e86c9664d4704c7d033b0263320a",
+      "triangles": 8995,
+      "bones": 23,
+      "meshes": 1,
+      "materials": 1,
+      "bind_matrix_max_error": 0,
+      "protected_unique_surfaces_preserved": 8995,
+      "redundant_coincident_faces_removed_by_importer": 89,
+      "face_ray_max_error": 0.0,
+      "paw_heights": {
+        "FrontPaw.L": 0.04999994486570358,
+        "FrontPaw.R": 0.04999994486570358,
+        "HindPaw.L": 0.04999864473938942,
+        "HindPaw.R": 0.04999864473938942
+      },
+      "deformation_moved_vertices": {
+        "Head": 7971,
+        "Jaw": 1808,
+        "Spine": 17187,
+        "Hips": 22045,
+        "FrontUpper.L": 1945,
+        "FrontLower.R": 1502,
+        "HindThigh.L": 1838,
+        "HindShin.R": 1406
+      }
+    },
+    {
+      "id": "Longmaw_Knight_Aggressive",
+      "profile": "mobile",
+      "passed": true,
+      "sha256": "0407d8c3dbdcd81346306fc426e273e456f81be3581897c97a916a02a2f38b3c",
+      "triangles": 7840,
+      "bones": 23,
+      "meshes": 1,
+      "materials": 1,
+      "bind_matrix_max_error": 1.6689300537109375e-06,
+      "protected_unique_surfaces_preserved": 6247,
+      "redundant_coincident_faces_removed_by_importer": 89,
+      "face_ray_max_error": 5.478441854990033e-06,
+      "paw_heights": {
+        "FrontPaw.L": 0.05048304796218872,
+        "FrontPaw.R": 0.05048384144902229,
+        "HindPaw.L": 0.050482384860515594,
+        "HindPaw.R": 0.05048145726323128
+      },
+      "deformation_moved_vertices": {
+        "Head": 7906,
+        "Jaw": 1800,
+        "Spine": 15548,
+        "Hips": 19575,
+        "FrontUpper.L": 1795,
+        "FrontLower.R": 1358,
+        "HindThigh.L": 1678,
+        "HindShin.R": 1245
+      }
+    },
+    {
+      "id": "Longmaw_Punk_Idle",
+      "profile": "models",
+      "passed": true,
+      "sha256": "8c2abf3b0e186179a180d04bd379bc36000f61192819c0866eb956d468300c57",
+      "triangles": 12365,
+      "bones": 23,
+      "meshes": 1,
+      "materials": 1,
+      "bind_matrix_max_error": 0,
+      "protected_unique_surfaces_preserved": 12365,
+      "redundant_coincident_faces_removed_by_importer": 89,
+      "face_ray_max_error": 0.0,
+      "paw_heights": {
+        "FrontPaw.L": 0.04999994486570358,
+        "FrontPaw.R": 0.04999994486570358,
+        "HindPaw.L": 0.04999864473938942,
+        "HindPaw.R": 0.04999864473938942
+      },
+      "deformation_moved_vertices": {
+        "Head": 7574,
+        "Jaw": 1822,
+        "Spine": 25353,
+        "Hips": 29685,
+        "FrontUpper.L": 1765,
+        "FrontLower.R": 1320,
+        "HindThigh.L": 1838,
+        "HindShin.R": 1406
+      }
+    },
+    {
+      "id": "Longmaw_Punk_Idle",
+      "profile": "mobile",
+      "passed": true,
+      "sha256": "a5b35c5b7077b183bad1d70169a39da61d5276ff9363c9862bf84efe8457160c",
+      "triangles": 9944,
+      "bones": 23,
+      "meshes": 1,
+      "materials": 1,
+      "bind_matrix_max_error": 1.6689300537109375e-06,
+      "protected_unique_surfaces_preserved": 6605,
+      "redundant_coincident_faces_removed_by_importer": 89,
+      "face_ray_max_error": 5.478441854990033e-06,
+      "paw_heights": {
+        "FrontPaw.L": 0.05048304796218872,
+        "FrontPaw.R": 0.05048384144902229,
+        "HindPaw.L": 0.050482384860515594,
+        "HindPaw.R": 0.05048145726323128
+      },
+      "deformation_moved_vertices": {
+        "Head": 7484,
+        "Jaw": 1784,
+        "Spine": 22534,
+        "Hips": 26129,
+        "FrontUpper.L": 1545,
+        "FrontLower.R": 1104,
+        "HindThigh.L": 1606,
+        "HindShin.R": 1173
+      }
+    },
+    {
+      "id": "Longmaw_Punk_Aggressive",
+      "profile": "models",
+      "passed": true,
+      "sha256": "64dbfe58d5ae95dd53c7668d3ab21e6cb02a2a4f119e7ad6a6fefb809817ec77",
+      "triangles": 12365,
+      "bones": 23,
+      "meshes": 1,
+      "materials": 1,
+      "bind_matrix_max_error": 0,
+      "protected_unique_surfaces_preserved": 12365,
+      "redundant_coincident_faces_removed_by_importer": 89,
+      "face_ray_max_error": 0.0,
+      "paw_heights": {
+        "FrontPaw.L": 0.04999994486570358,
+        "FrontPaw.R": 0.04999994486570358,
+        "HindPaw.L": 0.04999864473938942,
+        "HindPaw.R": 0.04999864473938942
+      },
+      "deformation_moved_vertices": {
+        "Head": 7560,
+        "Jaw": 1808,
+        "Spine": 25339,
+        "Hips": 29671,
+        "FrontUpper.L": 1765,
+        "FrontLower.R": 1320,
+        "HindThigh.L": 1838,
+        "HindShin.R": 1406
+      }
+    },
+    {
+      "id": "Longmaw_Punk_Aggressive",
+      "profile": "mobile",
+      "passed": true,
+      "sha256": "ef0c8b5fc5e0bdd55e781673f50a8daf629a2c0dab2ccbdee42edff0186e9721",
+      "triangles": 9944,
+      "bones": 23,
+      "meshes": 1,
+      "materials": 1,
+      "bind_matrix_max_error": 1.6689300537109375e-06,
+      "protected_unique_surfaces_preserved": 6605,
+      "redundant_coincident_faces_removed_by_importer": 89,
+      "face_ray_max_error": 5.478441854990033e-06,
+      "paw_heights": {
+        "FrontPaw.L": 0.05048304796218872,
+        "FrontPaw.R": 0.05048384144902229,
+        "HindPaw.L": 0.050482384860515594,
+        "HindPaw.R": 0.05048145726323128
+      },
+      "deformation_moved_vertices": {
+        "Head": 7500,
+        "Jaw": 1800,
+        "Spine": 22550,
+        "Hips": 26145,
+        "FrontUpper.L": 1545,
+        "FrontLower.R": 1104,
+        "HindThigh.L": 1606,
+        "HindShin.R": 1173
+      }
+    },
+    {
+      "id": "Longmaw_Assassin_Idle",
+      "profile": "models",
+      "passed": true,
+      "sha256": "3540f2c14996f5bf67b649f86e409bf6725ead79cdc2f47de17db5e5999c5f6a",
+      "triangles": 8074,
+      "bones": 23,
+      "meshes": 1,
+      "materials": 1,
+      "bind_matrix_max_error": 0,
+      "protected_unique_surfaces_preserved": 8074,
+      "redundant_coincident_faces_removed_by_importer": 89,
+      "face_ray_max_error": 0.0,
+      "paw_heights": {
+        "FrontPaw.L": 0.04999994486570358,
+        "FrontPaw.R": 0.04999994486570358,
+        "HindPaw.L": 0.04999864473938942,
+        "HindPaw.R": 0.04999864473938942
+      },
+      "deformation_moved_vertices": {
+        "Head": 7642,
+        "Jaw": 1822,
+        "Spine": 15864,
+        "Hips": 20196,
+        "FrontUpper.L": 1823,
+        "FrontLower.R": 1380,
+        "HindThigh.L": 1838,
+        "HindShin.R": 1406
+      }
+    },
+    {
+      "id": "Longmaw_Assassin_Idle",
+      "profile": "mobile",
+      "passed": true,
+      "sha256": "bb81bb66a8b5f5e0d39c533f1572278fbd43cef74d2d4a170aca2e65451e4093",
+      "triangles": 7223,
+      "bones": 23,
+      "meshes": 1,
+      "materials": 1,
+      "bind_matrix_max_error": 1.6689300537109375e-06,
+      "protected_unique_surfaces_preserved": 6050,
+      "redundant_coincident_faces_removed_by_importer": 89,
+      "face_ray_max_error": 5.478441854990033e-06,
+      "paw_heights": {
+        "FrontPaw.L": 0.05048304796218872,
+        "FrontPaw.R": 0.05048384144902229,
+        "HindPaw.L": 0.050482384860515594,
+        "HindPaw.R": 0.05048145726323128
+      },
+      "deformation_moved_vertices": {
+        "Head": 7562,
+        "Jaw": 1784,
+        "Spine": 14419,
+        "Hips": 17966,
+        "FrontUpper.L": 1603,
+        "FrontLower.R": 1158,
+        "HindThigh.L": 1606,
+        "HindShin.R": 1173
+      }
+    },
+    {
+      "id": "Longmaw_Assassin_Aggressive",
+      "profile": "models",
+      "passed": true,
+      "sha256": "c7cc26d8ecb3d1760496fc0367ffc34439386a76870599dd2ca5a883e5135ae8",
+      "triangles": 8074,
+      "bones": 23,
+      "meshes": 1,
+      "materials": 1,
+      "bind_matrix_max_error": 0,
+      "protected_unique_surfaces_preserved": 8074,
+      "redundant_coincident_faces_removed_by_importer": 89,
+      "face_ray_max_error": 0.0,
+      "paw_heights": {
+        "FrontPaw.L": 0.04999994486570358,
+        "FrontPaw.R": 0.04999994486570358,
+        "HindPaw.L": 0.04999864473938942,
+        "HindPaw.R": 0.04999864473938942
+      },
+      "deformation_moved_vertices": {
+        "Head": 7628,
+        "Jaw": 1808,
+        "Spine": 15850,
+        "Hips": 20182,
+        "FrontUpper.L": 1823,
+        "FrontLower.R": 1380,
+        "HindThigh.L": 1838,
+        "HindShin.R": 1406
+      }
+    },
+    {
+      "id": "Longmaw_Assassin_Aggressive",
+      "profile": "mobile",
+      "passed": true,
+      "sha256": "c4988f88c9c9ac7f2e20879c644c64505b6c66ccba07da96c64c673023041d47",
+      "triangles": 7223,
+      "bones": 23,
+      "meshes": 1,
+      "materials": 1,
+      "bind_matrix_max_error": 1.6689300537109375e-06,
+      "protected_unique_surfaces_preserved": 6050,
+      "redundant_coincident_faces_removed_by_importer": 89,
+      "face_ray_max_error": 5.478441854990033e-06,
+      "paw_heights": {
+        "FrontPaw.L": 0.05048304796218872,
+        "FrontPaw.R": 0.05048384144902229,
+        "HindPaw.L": 0.050482384860515594,
+        "HindPaw.R": 0.05048145726323128
+      },
+      "deformation_moved_vertices": {
+        "Head": 7578,
+        "Jaw": 1800,
+        "Spine": 14435,
+        "Hips": 17982,
+        "FrontUpper.L": 1603,
+        "FrontLower.R": 1158,
+        "HindThigh.L": 1606,
+        "HindShin.R": 1173
+      }
+    }
+  ]
+}

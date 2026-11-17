@@ -1,0 +1,559 @@
+{
+  "passed": true,
+  "models": [
+    {
+      "id": "DredgeFarmer",
+      "passed": true,
+      "meshes": 1,
+      "materials": 1,
+      "bones": 29,
+      "triangles": 7994,
+      "animation_clips": 0,
+      "deformation_checks": [
+        {
+          "bone": "Head",
+          "moved_vertices": 5016,
+          "stationary_group": "Tail",
+          "stationary_error": 0.0
+        },
+        {
+          "bone": "Tail05",
+          "moved_vertices": 6336,
+          "stationary_group": "Arm",
+          "stationary_error": 0.0
+        }
+      ]
+    },
+    {
+      "id": "DredgeMiner",
+      "passed": true,
+      "meshes": 1,
+      "materials": 1,
+      "bones": 29,
+      "triangles": 7494,
+      "animation_clips": 0,
+      "deformation_checks": [
+        {
+          "bone": "Head",
+          "moved_vertices": 3482,
+          "stationary_group": "Tail",
+          "stationary_error": 0.0
+        },
+        {
+          "bone": "Tail05",
+          "moved_vertices": 6336,
+          "stationary_group": "Arm",
+          "stationary_error": 0.0
+        }
+      ]
+    },
+    {
+      "id": "DredgeKing",
+      "passed": true,
+      "meshes": 1,
+      "materials": 1,
+      "bones": 29,
+      "triangles": 8098,
+      "animation_clips": 0,
+      "deformation_checks": [
+        {
+          "bone": "Head",
+          "moved_vertices": 3938,
+          "stationary_group": "Tail",
+          "stationary_error": 0.0
+        },
+        {
+          "bone": "Tail05",
+          "moved_vertices": 6336,
+          "stationary_group": "Arm",
+          "stationary_error": 0.0
+        }
+      ]
+    },
+    {
+      "id": "DredgeKnight",
+      "passed": true,
+      "meshes": 1,
+      "materials": 1,
+      "bones": 29,
+      "triangles": 7538,
+      "animation_clips": 0,
+      "deformation_checks": [
+        {
+          "bone": "Head",
+          "moved_vertices": 3674,
+          "stationary_group": "Tail",
+          "stationary_error": 0.0
+        },
+        {
+          "bone": "Tail05",
+          "moved_vertices": 6336,
+          "stationary_group": "Arm",
+          "stationary_error": 0.0
+        }
+      ]
+    },
+    {
+      "id": "DredgeNefor",
+      "passed": true,
+      "meshes": 1,
+      "materials": 1,
+      "bones": 29,
+      "triangles": 8910,
+      "animation_clips": 0,
+      "deformation_checks": [
+        {
+          "bone": "Head",
+          "moved_vertices": 3960,
+          "stationary_group": "Tail",
+          "stationary_error": 0.0
+        },
+        {
+          "bone": "Tail05",
+          "moved_vertices": 6336,
+          "stationary_group": "Arm",
+          "stationary_error": 0.0
+        }
+      ]
+    },
+    {
+      "id": "DredgeKiller",
+      "passed": true,
+      "meshes": 1,
+      "materials": 1,
+      "bones": 29,
+      "triangles": 7474,
+      "animation_clips": 0,
+      "deformation_checks": [
+        {
+          "bone": "Head",
+          "moved_vertices": 3710,
+          "stationary_group": "Tail",
+          "stationary_error": 0.0
+        },
+        {
+          "bone": "Tail05",
+          "moved_vertices": 6336,
+          "stationary_group": "Arm",
+          "stationary_error": 0.0
+        }
+      ]
+    },
+    {
+      "id": "AssimilatedAdventurerFarmer",
+      "passed": true,
+      "meshes": 1,
+      "materials": 1,
+      "bones": 21,
+      "triangles": 3540,
+      "animation_clips": 0,
+      "deformation_checks": [
+        {
+          "bone": "Head",
+          "moved_vertices": 2920,
+          "stationary_group": "Leg",
+          "stationary_error": 0.0
+        },
+        {
+          "bone": "ChestFlapL",
+          "moved_vertices": 396,
+          "stationary_group": "ChestFlapR",
+          "stationary_error": 0.0
+        }
+      ]
+    },
+    {
+      "id": "AssimilatedAdventurerMiner",
+      "passed": true,
+      "meshes": 1,
+      "materials": 1,
+      "bones": 21,
+      "triangles": 3024,
+      "animation_clips": 0,
+      "deformation_checks": [
+        {
+          "bone": "Head",
+          "moved_vertices": 1316,
+          "stationary_group": "Leg",
+          "stationary_error": 0.0
+        },
+        {
+          "bone": "ChestFlapL",
+          "moved_vertices": 396,
+          "stationary_group": "ChestFlapR",
+          "stationary_error": 0.0
+        }
+      ]
+    },
+    {
+      "id": "AssimilatedAdventurerKing",
+      "passed": true,
+      "meshes": 1,
+      "materials": 1,
+      "bones": 21,
+      "triangles": 3740,
+      "animation_clips": 0,
+      "deformation_checks": [
+        {
+          "bone": "Head",
+          "moved_vertices": 1802,
+          "stationary_group": "Leg",
+          "stationary_error": 0.0
+        },
+        {
+          "bone": "ChestFlapL",
+          "moved_vertices": 396,
+          "stationary_group": "ChestFlapR",
+          "stationary_error": 0.0
+        }
+      ]
+    },
+    {
+      "id": "AssimilatedAdventurerKnight",
+      "passed": true,
+      "meshes": 1,
+      "materials": 1,
+      "bones": 21,
+      "triangles": 3084,
+      "animation_clips": 0,
+      "deformation_checks": [
+        {
+          "bone": "Head",
+          "moved_vertices": 1544,
+          "stationary_group": "Leg",
+          "stationary_error": 0.0
+        },
+        {
+          "bone": "ChestFlapL",
+          "moved_vertices": 396,
+          "stationary_group": "ChestFlapR",
+          "stationary_error": 0.0
+        }
+      ]
+    },
+    {
+      "id": "AssimilatedAdventurerNefor",
+      "passed": true,
+      "meshes": 1,
+      "materials": 1,
+      "bones": 21,
+      "triangles": 4456,
+      "animation_clips": 0,
+      "deformation_checks": [
+        {
+          "bone": "Head",
+          "moved_vertices": 1823,
+          "stationary_group": "Leg",
+          "stationary_error": 0.0
+        },
+        {
+          "bone": "ChestFlapL",
+          "moved_vertices": 396,
+          "stationary_group": "ChestFlapR",
+          "stationary_error": 0.0
+        }
+      ]
+    },
+    {
+      "id": "AssimilatedAdventurerKiller",
+      "passed": true,
+      "meshes": 1,
+      "materials": 1,
+      "bones": 21,
+      "triangles": 3148,
+      "animation_clips": 0,
+      "deformation_checks": [
+        {
+          "bone": "Head",
+          "moved_vertices": 1560,
+          "stationary_group": "Leg",
+          "stationary_error": 0.0
+        },
+        {
+          "bone": "ChestFlapL",
+          "moved_vertices": 396,
+          "stationary_group": "ChestFlapR",
+          "stationary_error": 0.0
+        }
+      ]
+    },
+    {
+      "id": "PrimitiveSummonerFarmer",
+      "passed": true,
+      "meshes": 1,
+      "materials": 1,
+      "bones": 16,
+      "triangles": 3456,
+      "animation_clips": 0,
+      "deformation_checks": [
+        {
+          "bone": "UpperJaw",
+          "moved_vertices": 3852,
+          "stationary_group": "Leg",
+          "stationary_error": 0.0
+        },
+        {
+          "bone": "LowerJaw",
+          "moved_vertices": 928,
+          "stationary_group": "UpperJaw",
+          "stationary_error": 0.0
+        }
+      ]
+    },
+    {
+      "id": "PrimitiveSummonerMiner",
+      "passed": true,
+      "meshes": 1,
+      "materials": 1,
+      "bones": 16,
+      "triangles": 3044,
+      "animation_clips": 0,
+      "deformation_checks": [
+        {
+          "bone": "UpperJaw",
+          "moved_vertices": 2332,
+          "stationary_group": "Leg",
+          "stationary_error": 0.0
+        },
+        {
+          "bone": "LowerJaw",
+          "moved_vertices": 928,
+          "stationary_group": "UpperJaw",
+          "stationary_error": 0.0
+        }
+      ]
+    },
+    {
+      "id": "PrimitiveSummonerKing",
+      "passed": true,
+      "meshes": 1,
+      "materials": 1,
+      "bones": 16,
+      "triangles": 3964,
+      "animation_clips": 0,
+      "deformation_checks": [
+        {
+          "bone": "UpperJaw",
+          "moved_vertices": 4482,
+          "stationary_group": "Leg",
+          "stationary_error": 0.0
+        },
+        {
+          "bone": "LowerJaw",
+          "moved_vertices": 928,
+          "stationary_group": "UpperJaw",
+          "stationary_error": 0.0
+        }
+      ]
+    },
+    {
+      "id": "PrimitiveSummonerKnight",
+      "passed": true,
+      "meshes": 1,
+      "materials": 1,
+      "bones": 16,
+      "triangles": 3088,
+      "animation_clips": 0,
+      "deformation_checks": [
+        {
+          "bone": "UpperJaw",
+          "moved_vertices": 2428,
+          "stationary_group": "Leg",
+          "stationary_error": 0.0
+        },
+        {
+          "bone": "LowerJaw",
+          "moved_vertices": 928,
+          "stationary_group": "UpperJaw",
+          "stationary_error": 0.0
+        }
+      ]
+    },
+    {
+      "id": "PrimitiveSummonerNefor",
+      "passed": true,
+      "meshes": 1,
+      "materials": 1,
+      "bones": 16,
+      "triangles": 4468,
+      "animation_clips": 0,
+      "deformation_checks": [
+        {
+          "bone": "UpperJaw",
+          "moved_vertices": 6574,
+          "stationary_group": "Leg",
+          "stationary_error": 0.0
+        },
+        {
+          "bone": "LowerJaw",
+          "moved_vertices": 928,
+          "stationary_group": "UpperJaw",
+          "stationary_error": 0.0
+        }
+      ]
+    },
+    {
+      "id": "PrimitiveSummonerKiller",
+      "passed": true,
+      "meshes": 1,
+      "materials": 1,
+      "bones": 16,
+      "triangles": 3064,
+      "animation_clips": 0,
+      "deformation_checks": [
+        {
+          "bone": "UpperJaw",
+          "moved_vertices": 2880,
+          "stationary_group": "Leg",
+          "stationary_error": 0.0
+        },
+        {
+          "bone": "LowerJaw",
+          "moved_vertices": 928,
+          "stationary_group": "UpperJaw",
+          "stationary_error": 0.0
+        }
+      ]
+    },
+    {
+      "id": "AdaptedVisceraFarmer",
+      "passed": true,
+      "meshes": 1,
+      "materials": 1,
+      "bones": 46,
+      "triangles": 10704,
+      "animation_clips": 0,
+      "deformation_checks": [
+        {
+          "bone": "Shell",
+          "moved_vertices": 4136,
+          "stationary_group": "Leg",
+          "stationary_error": 0.0
+        },
+        {
+          "bone": "Tentacle01_2",
+          "moved_vertices": 1226,
+          "stationary_group": "Tentacle02",
+          "stationary_error": 0.0
+        }
+      ]
+    },
+    {
+      "id": "AdaptedVisceraMiner",
+      "passed": true,
+      "meshes": 1,
+      "materials": 1,
+      "bones": 46,
+      "triangles": 10380,
+      "animation_clips": 0,
+      "deformation_checks": [
+        {
+          "bone": "Shell",
+          "moved_vertices": 2600,
+          "stationary_group": "Leg",
+          "stationary_error": 0.0
+        },
+        {
+          "bone": "Tentacle01_2",
+          "moved_vertices": 1226,
+          "stationary_group": "Tentacle02",
+          "stationary_error": 0.0
+        }
+      ]
+    },
+    {
+      "id": "AdaptedVisceraKing",
+      "passed": true,
+      "meshes": 1,
+      "materials": 1,
+      "bones": 46,
+      "triangles": 11080,
+      "animation_clips": 0,
+      "deformation_checks": [
+        {
+          "bone": "Shell",
+          "moved_vertices": 4310,
+          "stationary_group": "Leg",
+          "stationary_error": 0.0
+        },
+        {
+          "bone": "Tentacle01_2",
+          "moved_vertices": 1226,
+          "stationary_group": "Tentacle02",
+          "stationary_error": 0.0
+        }
+      ]
+    },
+    {
+      "id": "AdaptedVisceraKnight",
+      "passed": true,
+      "meshes": 1,
+      "materials": 1,
+      "bones": 46,
+      "triangles": 10424,
+      "animation_clips": 0,
+      "deformation_checks": [
+        {
+          "bone": "Shell",
+          "moved_vertices": 2696,
+          "stationary_group": "Leg",
+          "stationary_error": 0.0
+        },
+        {
+          "bone": "Tentacle01_2",
+          "moved_vertices": 1226,
+          "stationary_group": "Tentacle02",
+          "stationary_error": 0.0
+        }
+      ]
+    },
+    {
+      "id": "AdaptedVisceraNefor",
+      "passed": true,
+      "meshes": 1,
+      "materials": 1,
+      "bones": 46,
+      "triangles": 11812,
+      "animation_clips": 0,
+      "deformation_checks": [
+        {
+          "bone": "Shell",
+          "moved_vertices": 6832,
+          "stationary_group": "Leg",
+          "stationary_error": 0.0
+        },
+        {
+          "bone": "Tentacle01_2",
+          "moved_vertices": 1226,
+          "stationary_group": "Tentacle02",
+          "stationary_error": 0.0
+        }
+      ]
+    },
+    {
+      "id": "AdaptedVisceraKiller",
+      "passed": true,
+      "meshes": 1,
+      "materials": 1,
+      "bones": 46,
+      "triangles": 10312,
+      "animation_clips": 0,
+      "deformation_checks": [
+        {
+          "bone": "Shell",
+          "moved_vertices": 3140,
+          "stationary_group": "Leg",
+          "stationary_error": 0.0
+        },
+        {
+          "bone": "Tentacle01_2",
+          "moved_vertices": 1226,
+          "stationary_group": "Tentacle02",
+          "stationary_error": 0.0
+        }
+      ]
+    }
+  ],
+  "source_files_unchanged": 837,
+  "roblox_import_tested": false
+}

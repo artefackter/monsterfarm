@@ -13,25 +13,41 @@ local edge=Instance.new('TextLabel',gui);edge.Name='GuideEdge';edge.Size=UDim2.f
 local gateTarget=Instance.new('Part',workspace);gateTarget.Name='GuideDeliveryGate';gateTarget.Size=Vector3.one;gateTarget.Transparency=1;gateTarget.Anchored=true;gateTarget.CanQuery=false;gateTarget.CanTouch=false;gateTarget.CanCollide=false
 local RoadC=require(game.ReplicatedStorage.Shared.Config.RoadConfig);gateTarget.Position=RoadC.Dir.Unit*(RoadC.Rim+RoadC.GateLine-3)+Vector3.new(0,2,0)
 local floor=Instance.new('Folder');floor.Name='TutorialFloorArrows';floor.Parent=workspace
+local gunsmithZone
 local function destination()
  local world=workspace:FindFirstChild('DigAZombie');if not world then return end
  local plot;for _,m in world:GetChildren() do if m:GetAttribute('Owner')==p.UserId then plot=m;break end end
  if p:GetAttribute('GuideArrows')==false then return end
  -- The arrows belong to the tutorial: once it is done they never come back (owner, 2026-11-08).
  local step=gui:GetAttribute('TutorialStep')
- if type(step)~='number' or step>=4 then return end
+ if type(step)~='number' or step>=9 then return end
  if p:GetAttribute('CarryingGrave') then return p:GetAttribute('OnRoad') and gateTarget or plot and plot:FindFirstChild('Gate') end
  if p:GetAttribute('SelectedGrave') and plot then return plot:FindFirstChild('GuideCemetery') or plot:FindFirstChild('GuideField') end
  if p:GetAttribute('HoldingZombie') and plot then return plot:FindFirstChild('GuideField') end
- local key=({[0]='grave',[1]='field',[2]='road',[3]='plant'})[step]
+ local key=({[0]='grave',[1]='field',[2]='road',[3]='plant',[4]='gunsmith',[5]='workbench',[6]='Treadmill',[7]='Fence',[8]='House'})[step]
  if not key then
+  return
+ end
+ -- the upgrade steps (2026-11-15, TutorialService): the workbench's circle, then the farm's upgrade boards
+ if key=='workbench' then
+  local bench=plot and plot:FindFirstChild('Workbench',true);return bench and bench:FindFirstChild('WorkbenchZone')
+ end
+ if key=='Treadmill' or key=='Fence' or key=='House' then
+  local boards=plot and plot:FindFirstChild('UpgradeBoards');return boards and boards:FindFirstChild(key)
+ end
+ -- the gunsmith's stall on the plaza (InterfaceService's menu zone)
+ if key=='gunsmith' then
+  if gunsmithZone and gunsmithZone.Parent then return gunsmithZone end
+  for _,q in workspace:GetDescendants() do if q:IsA('BasePart') and q:GetAttribute('MenuZone')=='weapons' then gunsmithZone=q;return q end end
   return
  end
  if key=='road' then
   -- the nearest open grave, not whichever the road happens to list first (that could be at the far end)
   local road=world:FindFirstChild('Road');local root=p.Character and p.Character:FindFirstChild('HumanoidRootPart');local best,bestDist
   for _,m in road and road:GetChildren() or {} do
+   -- never a sleeping boss's hoard grave (its StealTag): digging one wakes the boss
    local spot=m.Name=='RoadGrave' and not m:GetAttribute('BossLocked') and m:FindFirstChild('RoadGrabSpot')
+   if spot and spot:FindFirstChild('StealTag') then spot=nil end
    if spot and root then local d=(spot.Position-root.Position).Magnitude;if not bestDist or d<bestDist then best,bestDist=spot,d end end
   end
   return best

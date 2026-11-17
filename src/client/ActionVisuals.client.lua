@@ -1,6 +1,7 @@
 -- Presentation only. Gameplay, timers, equipment and contacts come from the server.
 local Players=game:GetService('Players');local Run=game:GetService('RunService');local Tween=game:GetService('TweenService');local Debris=game:GetService('Debris')
-local p=Players.LocalPlayer;local S=game.ReplicatedStorage:WaitForChild('Shared');local L=require(S.Locale);local Sfx=require(S.Sfx);local Shovels=require(S.Config.ShovelConfig);local Guns=require(S.Config.WeaponConfig);local Shovel=require(S.ShovelModel)
+local p=Players.LocalPlayer;local S=game.ReplicatedStorage:WaitForChild('Shared');local L=require(S.Locale);local Sfx=require(S.Sfx);local Shovels=require(S.Config.ShovelConfig);local Guns=require(S.Config.WeaponConfig);local Shovel=require(S.ShovelModel);local Chainsaw=require(S.ChainsawModel)
+local function meleeOf(who) local id=who:GetAttribute('EquippedShovel');return Shovels[id or ''] and id or Shovels.Order[1] end
 local ShovelMotion=require(S.ShovelMotion)
 local visuals=Instance.new('Folder',workspace);visuals.Name='LocalActionVisuals'
 local characters={};local drops={};local colliders={};local tickAt=0
@@ -54,7 +55,7 @@ local function range()
  local include={};for v in colliders do if v.Parent and v.CanCollide and v.CanQuery then table.insert(include,v) end end
  local rp=RaycastParams.new();rp.FilterType=Enum.RaycastFilterType.Include;rp.FilterDescendantsInstances=include
  local function ground(point) local hit=workspace:Raycast(point+Vector3.new(0,7,0),Vector3.new(0,-20,0),rp);return hit and hit.Position+Vector3.new(0,.065,0) end
- local gun=p:GetAttribute('ActiveSlot')==2;local cfg=gun and Guns[p:GetAttribute('EquippedWeapon') or 'Deagle'] or Shovels[p:GetAttribute('EquippedShovel') or 'Rusty']
+ local gun=p:GetAttribute('ActiveSlot')==2;local cfg=gun and Guns[p:GetAttribute('EquippedWeapon') or 'Deagle'] or Shovels[meleeOf(p)]
  local radius=gun and (p:GetAttribute('WeaponRange') or cfg.Range) or cfg.Range;local half=gun and math.pi or math.rad(Shovels.HalfAngle);local menu=p.PlayerGui:FindFirstChild('DigUI');menu=menu and menu:FindFirstChild('Menu');local alpha=menu and menu.Visible and .88 or .4
  local center=ground(root.Position);local previous
  for i=0,48 do local angle=-half+2*half*i/48;local at=ground((root.CFrame*CFrame.new(math.sin(angle)*radius,0,-math.cos(angle)*radius)).Position)
@@ -71,16 +72,23 @@ Run.PreSimulation:Connect(function(dt)
   if data and data.ch~=ch then if data.shovel then data.shovel:Destroy() end;characters[who]=nil;data=nil end
   if root and hand then
    if not data then local b,t=label(root,'ActionStatus');local f,segments=clock(b);data={ch=ch,status=b,text=t,clock=f,segments=segments,phase=0};characters[who]=data end
-   local ko=now<(who:GetAttribute('KnockedOutUntil') or 0);local dig=who:GetAttribute('DiggingGrave');local id=who:GetAttribute('EquippedShovel') or 'Rusty'
+   local ko=now<(who:GetAttribute('KnockedOutUntil') or 0);local dig=who:GetAttribute('DiggingGrave')
+   local motion=ShovelMotion.ForPlayer(who,now)
+   -- what is in the hands: the melee weapon, or the tool the motion names - a finisher's weapon, the shovel a grave
+   -- is dug with ('Dig')
+   local id=motion and motion.tool or meleeOf(who)
    -- only what is in the hands shows (owner, 2026-11-13: one weapon at a time): no shovel on the back
-   local show=not ko and not who:GetAttribute('Training') and ShovelMotion.ForPlayer(who,now)~=nil
-   if data.shovel and (not show or id~=data.id or not data.shovel.Parent) then data.shovel:Destroy();data.shovel=nil end
+   local show=not ko and not who:GetAttribute('Training') and motion~=nil
+   if data.shovel and (not show or id~=data.id or not data.shovel.Parent) then
+    data.shovel:Destroy();data.shovel=nil
+    if data.engine then data.engine:Destroy();data.engine=nil end
+   end
    if show and not data.shovel then
     local m=Shovel.Build(id,ch);local w=Instance.new('Weld',m.PrimaryPart);w.Name='ShovelGrip';w.Part1=m.PrimaryPart;data.shovel=m;data.grip=w;data.id=id;data.mode=nil;data.origin=m:GetPivot():ToObjectSpace(m.PrimaryPart.CFrame)
+    data.chain,data.pulls=0,0
    end
    -- Ready hold stays upright independently of wrist animation; actions follow the hand.
    local torso=ch:FindFirstChild('UpperTorso') or ch:FindFirstChild('Torso')
-   local motion=ShovelMotion.ForPlayer(who,now)
    local mode=motion and 'hand' or 'back'
    if data.shovel and torso and data.mode~=mode then
     local part0=mode~='back' and hand or torso
@@ -88,13 +96,43 @@ Run.PreSimulation:Connect(function(dt)
     data.grip.Enabled=false;data.shovel:PivotTo(goal);data.grip.Part0=part0;data.grip.C0=part0.CFrame:ToObjectSpace(data.shovel.PrimaryPart.CFrame);data.grip.Enabled=true;data.mode=mode
    end
    if motion and data.shovel and data.grip then
-    if ch:FindFirstChild('RightLowerArm') then
+    if motion.grip then
+     data.grip.C0=motion.grip -- the saw's own frame (its PrimaryPart) sits in the hand as its motion says (CombatPose.SawPose puts the hand there)
+    elseif ch:FindFirstChild('RightLowerArm') then
      -- Both wrist and shovel use the same pose basis, in the same simulation step.
-     data.grip.C0=CFrame.Angles(math.pi/2,0,-.2):Inverse()*motion.frame.Rotation*data.origin
+     -- (slide: the boss finisher holds it by the top of the shaft, ShovelMotion.Finisher)
+     data.grip.C0=CFrame.Angles(math.pi/2,0,-.2):Inverse()*motion.frame.Rotation*CFrame.new(0,motion.slide or 0,0)*data.origin
     else
      local frame=CFrame.new(hand.Position)*root.CFrame.Rotation*CFrame.Angles(0,motion.spin,0)*motion.frame.Rotation
      data.grip.C0=hand.CFrame:ToObjectSpace(frame*data.origin)
     end
+   end
+   -- The chainsaw alive (ShovelMotion's saw): the cord's rasp at each pull, the engine as a loop whose pitch and
+   -- loudness follow the revs, smoke from the muffler, the chain running, sparks and chips where it cuts.
+   -- (the chainsword's too, 2026-11-16; either revs through a plain swing)
+   if motion and data.shovel and data.shovel:GetAttribute('Bar') then
+    local saw=data.shovel;local handle=saw.PrimaryPart;local near=Sfx.at(handle.Position,30,160)
+    local engine,cutting,pulls=motion.engine or 0,motion.cutting or 0,motion.pulls or 0
+    if pulls>data.pulls then Sfx.play('ChainsawPull',.1,near) end
+    data.pulls=pulls
+    local running=engine>.02
+    if running and not data.engine then
+     local source=game.ReplicatedStorage:FindFirstChild('Sounds');source=source and source:FindFirstChild('ChainsawEngine')
+     if source then local e=source:Clone();e.Name='Engine';e.Looped=true;e.RollOffMode=Enum.RollOffMode.InverseTapered;e.RollOffMinDistance=18;e.RollOffMaxDistance=170;e.Parent=handle;e:Play();data.engine=e;data.engineVolume=source.Volume end
+    elseif not running and data.engine then data.engine:Destroy();data.engine=nil end
+    if data.engine then
+     data.engine.Volume=data.engineVolume*(p:GetAttribute('SfxVolume') or 1)*(.35+.65*engine+.25*cutting)
+     data.engine.PlaybackSpeed=(data.id=='Chainsword' and .95 or .8)+.45*engine-.12*cutting+math.noise(now*9,4.2)*.05*cutting
+    end
+    data.chain+=dt*engine*34;Chainsaw.Run(saw,data.chain)
+    local cut=handle:FindFirstChild('Cut');local muffler=saw:FindFirstChild('Muffler');local exhaust=muffler and muffler:FindFirstChild('Exhaust')
+    if cut then cut.Sparks.Enabled=cutting>.5;cut.Chips.Enabled=cutting>.5 end
+    if exhaust then exhaust.Smoke.Enabled=running;exhaust.Smoke.Rate=14+30*engine end
+   end
+   -- the butterfly knife flips in its flourish (ShovelModel.Flip)
+   if data.shovel and data.id=='Butterfly' then
+    local flip=motion and motion.flip or 0
+    if flip~=data.flip then data.flip=flip;Shovel.Flip(data.shovel,flip) end
    end
    if dig then
     local start=who:GetAttribute('DigStartedAt') or now;local duration=who:GetAttribute('DigDuration') or 1.5
@@ -108,7 +146,8 @@ Run.PreSimulation:Connect(function(dt)
     if data.carry~=carry then data.carry=carry;data.carryAt=now;local b,t=label(carry.PrimaryPart,'GraveName');b.StudsOffsetWorldSpace=Vector3.new(0,2.8,0);b.Size=UDim2.fromOffset(160,30);data.name=t end
     local arrive=math.max(0,1-(now-data.carryAt)/.45);local moving=math.min(speed/16,1)
     grip.Transform=CFrame.new(0,-1.8*arrive+math.abs(math.sin(data.phase))*.055*moving,-.6*arrive)*CFrame.Angles(.25*arrive,0,math.sin(data.phase)*.035*moving)
-    data.name.Text=L.text('grave_'..carry:GetAttribute('GraveType'),L.lang())
+    local family=carry:GetAttribute('Family') -- whose grave it is (2026-11-17): "Stone grave · Deer"
+    data.name.Text=L.text('grave_'..carry:GetAttribute('GraveType'),L.lang())..(family and ' · '..L.text('roadName_'..family,L.lang()) or '')
    end
    local left=math.max(0,(who:GetAttribute('MutantSlowUntil') or 0)-now)
    data.status.Enabled=ko or left>0;data.text.Text=ko and '' or '↓  −35%';data.text.TextColor3=ko and Color3.fromRGB(255,229,107) or Color3.fromRGB(255,156,94);data.text.Rotation=ko and math.sin(now*8)*8 or 0
@@ -120,7 +159,8 @@ Run.PreSimulation:Connect(function(dt)
    local age=now-data.born;local y=age<.7 and math.abs(math.sin(age/.7*math.pi*2))*(1-age/.7)*1.25 or 0
    for q,cf in data.parts do if q.Parent then q.CFrame=cf+Vector3.new(0,y,0) end end
    local left=math.max(0,(model:GetAttribute('DropExpiresAt') or now)-now);data.label.Text=tostring(math.ceil(left))..'s'
-   if data.ring then data.ring.Transparency=.45+math.sin(now*3)*.15;data.ring.Size=Vector3.new(.14,9,9)*(Vector3.new(1,1,1)*(1+.04*math.sin(now*3))) end
+   -- the soft glow under a dropped grave breathes a little (softer since 2026-11-15)
+   if data.ring then data.ring.Transparency=.62+math.sin(now*3)*.08;data.ring.Size=Vector3.new(.14,7,7)*(Vector3.new(1,1,1)*(1+.04*math.sin(now*3))) end
   end
  end
  if os.clock()>=tickAt then tickAt=os.clock()+.12;range() end

@@ -14,12 +14,25 @@ function Z.Find(d,id) for i,z in ipairs(d.zombies) do if z.id==id then return z,
 function Z.Bonus(d) local types={} for key in pairs(d.zombiedex) do types[string.split(key,":")[1]]=true end;local count=0;for _ in pairs(types) do count+=1 end;return 1+count*R.DexBonus end
 function Z.Rate(z) return require(S.MergeRules).Rate(z) end
 function Z.Income(d,ignoreSuppression) local v=0;for _,z in ipairs(d.zombies) do if z.zone=="Field" and not z.carriedBy and not z.pendingTransfer and (ignoreSuppression or not Z.IsIncomeBlocked or not Z.IsIncomeBlocked(d,z)) then v+=Z.Rate(z) end end;return v*Z.Bonus(d)*(1+require(script.Parent.PetService).ForData(d).incomePct)*require(script.Parent.PetService).ForData(d).incomeMult*require(S.PrestigeRules).Mult(d) end
-function Z.Roll(weights,night,starter,luck,minTier,location) -- location: where the grave was dug (LocationMonsters)
+-- family: the grave's (GraveService.Family, 2026-11-16) - the monster is that family's look of the rarity rolled; a
+-- family with no look of it (the specials have two rarities each) gives its nearest.
+function Z.Roll(weights,night,starter,luck,minTier,location,family) -- location: where the grave was dug (LocationMonsters)
  luck=luck or 1
  local tier=1;local roll=rng:NextNumber()*100;for i,w in ipairs(weights) do roll-=w;if roll<=0 then tier=i;break end end
  tier=math.max(tier,minTier or 1) -- the grave's floor (GraveConfig.MinTier)
  local mut="None";if rng:NextNumber()<C.RainbowChance*luck then mut="Rainbow" elseif night and rng:NextNumber()<C.LunarChance*luck then mut="Lunar" elseif rng:NextNumber()<C.GoldenChance*luck then mut="Golden" end
- local types=require(S.Config.LocationMonsters).Types(location,tier);return {id=game.HttpService:GenerateGUID(false),type=starter and "DeerMiner" or types[rng:NextInteger(1,#types)],tier=starter and 2 or tier,mutation=starter and "None" or mut,zone="Crypt",slot=0}
+ local types=require(S.Config.LocationMonsters).Types(location,tier)
+ if family and not starter then
+  local Col=require(S.MonsterCollection)
+  local function own(t) local list={};for _,id in ipairs(C.Types[t] or {}) do if Col.Family(id)==family then table.insert(list,id) end end;return list end
+  local mine=own(tier)
+  for step=1,#C.Types do
+   if #mine>0 then break end
+   for _,t in ipairs({tier-step,tier+step}) do mine=own(t);if #mine>0 then tier=t;break end end
+  end
+  if #mine>0 then types=mine end
+ end
+ return {id=game.HttpService:GenerateGUID(false),type=starter and "DeerMiner" or types[rng:NextInteger(1,#types)],tier=starter and 2 or tier,mutation=starter and "None" or mut,zone="Crypt",slot=0}
 end
 -- Both pen and yard share the same grass level.
 -- Bigger zombies are scaled around their middle, so the pivot rises to keep their feet on the ground.
@@ -82,7 +95,7 @@ function Z.Drop(p)
 end
 function Z.Hold(p,d,id)
  local z=Z.Find(d,id);local plot=P.Assigned[p]
- if not z or z.carriedBy or z.pendingTransfer or not plot or not P.Inside(p,plot) or p:GetAttribute("CarryingGrave") then return false end
+ if not z or z.carriedBy or z.pendingTransfer or not plot or p:GetAttribute("CarryingGrave") then return false end -- anywhere since 2026-11-15 (the crypt works from anywhere)
  if Z.Holding[p] then Z.Drop(p) end
  if z.zone~="Crypt" then z.zone="Crypt";z.slot=Z.Slot(d,"Crypt") or 0;z.pos=nil;Z.Remove(z.id) end
  local model=heldVisual(p,z);if not model then return false end
@@ -92,6 +105,9 @@ function Z.Hold(p,d,id)
 end
 -- The crypt's two buttons (owner, 2026-11-14). "Place best": the farm ends up holding the best earners there are -
 -- weaker monsters on the farm go back into the crypt to make room for better ones from it, until the house's limit.
+-- The best go out first and stand nearest the middle of the farm (PlacementRules.FindFree, 2026-11-15); one that
+-- finds no spot at all is passed over and the rest still go out (it stopped there before: owner, "it doesn't put
+-- out every monster it could").
 -- "Store all": every monster on the farm goes back into the crypt. The crypt has no limit (2026-11-14): digging always
 -- filled it past its old cap, and a cap there only stranded monsters outside.
 function Z.PlaceBest(p,d)
@@ -111,9 +127,11 @@ function Z.PlaceBest(p,d)
  end
  for _,z in ipairs(pool) do if z.zone=="Field" and not best[z] then store(z) end end
  for _,z in ipairs(pool) do if z.zone=="Crypt" and best[z] then
-  local point=Place.FindFree(d,"Worker",z);if not point then break end
-  if Z.Holding[p] and Z.Holding[p].id==z.id then Z.Drop(p) end
-  z.zone="Field";z.slot=Z.Slot(d,"Field") or #d.zombies;z.pos=point;Z.Remove(z.id);changed+=1
+  local point=Place.FindFree(d,"Worker",z)
+  if point then
+   if Z.Holding[p] and Z.Holding[p].id==z.id then Z.Drop(p) end
+   z.zone="Field";z.slot=Z.Slot(d,"Field") or #d.zombies;z.pos=point;Z.Remove(z.id);changed+=1
+  end
  end end
  if changed>0 then Z.Render(p,d) end
  return changed>0

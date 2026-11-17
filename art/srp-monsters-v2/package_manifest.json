@@ -1,0 +1,886 @@
+{
+  "Pending_approval/README.md": {
+    "bytes": 8837,
+    "sha256": "f796efec2f3e38c62b5f47fed30714d1ee14a03240f251194b9c24167cbb02ad"
+  },
+  "Pending_approval/build.py": {
+    "bytes": 10504,
+    "sha256": "9b067be95b64352d7f147acfef8666e6c8503e1de59e88c6813a340ef3f02606"
+  },
+  "Pending_approval/compose_review.py": {
+    "bytes": 6325,
+    "sha256": "cf855bd5607d1fbf20144df1325ed4a2738d00c82efe5e86088aa7998a471e4e"
+  },
+  "Pending_approval/creatures.py": {
+    "bytes": 19069,
+    "sha256": "869fb12d07ad90843ee4c790db22835d86e2f8fc97fa8d62efde028ef0575923"
+  },
+  "Pending_approval/game-files-baseline.json": {
+    "bytes": 18468,
+    "sha256": "80f3f570dbcb5ed5e9a1960dd88d79f2fd78966c254f03eb4b11901186ddfeac"
+  },
+  "Pending_approval/geometry/AdaptedViscera.FootL1.json": {
+    "bytes": 7506,
+    "sha256": "eb537dab245da05d3dfab3bf60ec21f9804173cacd3169d432cff02600dbca9d"
+  },
+  "Pending_approval/geometry/AdaptedViscera.FootL2.json": {
+    "bytes": 7531,
+    "sha256": "b85e2fba3879b8f13a39053a9a7ab7c647e2c2c5ba66f4e6e6159b1683d1023d"
+  },
+  "Pending_approval/geometry/AdaptedViscera.FootL3.json": {
+    "bytes": 7536,
+    "sha256": "e25aab7d8413524abab5555bfb01e5b3d7a2cc7d85182081dc2941ff15404f01"
+  },
+  "Pending_approval/geometry/AdaptedViscera.FootR1.json": {
+    "bytes": 7462,
+    "sha256": "f9f3715a1629922f7f6aa905a681ba1fd59c673c4b2a5d3787a6292714e40fd2"
+  },
+  "Pending_approval/geometry/AdaptedViscera.FootR2.json": {
+    "bytes": 7501,
+    "sha256": "037788a9c1205093e47aa82c2245a5f4606c124d2ded3eb65a588523bb655308"
+  },
+  "Pending_approval/geometry/AdaptedViscera.FootR3.json": {
+    "bytes": 7481,
+    "sha256": "7ffc7552db0cf8bc3bdb1a9960185a5dd8e16241eb01aef980fbfb8d323fdd82"
+  },
+  "Pending_approval/geometry/AdaptedViscera.LegL1.json": {
+    "bytes": 9893,
+    "sha256": "bedbc92ef061914f86f8442872847ef115c6c8c6576ffe9e020565e7e8aa3b23"
+  },
+  "Pending_approval/geometry/AdaptedViscera.LegL2.json": {
+    "bytes": 9897,
+    "sha256": "b347642333a40d6680896ecff847c21583299e927322077c3229cfe382724364"
+  },
+  "Pending_approval/geometry/AdaptedViscera.LegL3.json": {
+    "bytes": 9869,
+    "sha256": "f03a6f5867ff56bdf16a4c9448f1b288dfd99cb66e7616c947bdd5aada9c93ee"
+  },
+  "Pending_approval/geometry/AdaptedViscera.LegR1.json": {
+    "bytes": 9845,
+    "sha256": "fe4273b5da74998a75696db743f63d77896a4893f77b0ab45f950ee22da61ccb"
+  },
+  "Pending_approval/geometry/AdaptedViscera.LegR2.json": {
+    "bytes": 9849,
+    "sha256": "108864875540352d5d03c730ab9feaed0af7797d75f7e803a9cdca381e71ff37"
+  },
+  "Pending_approval/geometry/AdaptedViscera.LegR3.json": {
+    "bytes": 9825,
+    "sha256": "8b458058a03af76bf144222973586444851c0b013de86e51099412e9792e5fbf"
+  },
+  "Pending_approval/geometry/AdaptedViscera.Mouth.json": {
+    "bytes": 36613,
+    "sha256": "6c89c4809ffb79b4c3445f6739eae20c7161059ad42337c9022a62494d8c1442"
+  },
+  "Pending_approval/geometry/AdaptedViscera.Shell.json": {
+    "bytes": 57528,
+    "sha256": "ee1b0777b0aa300ac3d2b4a1ece4b1ac36e12e87a09bf8bf888dcf09425d9d4f"
+  },
+  "Pending_approval/geometry/AdaptedViscera.ShinL1.json": {
+    "bytes": 19854,
+    "sha256": "300f666c75a6329759c32d91a074504cb540ed55a8dd09f6ac4649c64fd915ef"
+  },
+  "Pending_approval/geometry/AdaptedViscera.ShinL2.json": {
+    "bytes": 19934,
+    "sha256": "dd3dad622c20181f1a8d4ce9918ab5c00e748e1c83b7f8609df52affd38116d9"
+  },
+  "Pending_approval/geometry/AdaptedViscera.ShinL3.json": {
+    "bytes": 19870,
+    "sha256": "a9a002e966355e1a6db06367ca96be84a7bbf2b6c27399dd910ae07e31d0c742"
+  },
+  "Pending_approval/geometry/AdaptedViscera.ShinR1.json": {
+    "bytes": 19830,
+    "sha256": "2cd68b0396f144cbee75750ddf94e21f8ea09dac6d3de9df7ced5144a21cf0e4"
+  },
+  "Pending_approval/geometry/AdaptedViscera.ShinR2.json": {
+    "bytes": 19906,
+    "sha256": "083b0c198d81aa25afac87ac3776e23f7830f836f74e67299a91cb5cfd06b2f5"
+  },
+  "Pending_approval/geometry/AdaptedViscera.ShinR3.json": {
+    "bytes": 19846,
+    "sha256": "1d411c55f418af0d1c22af160c37ac21c98804267daa2982d7bf9fd66ab9947a"
+  },
+  "Pending_approval/geometry/AdaptedViscera.Tentacle01_1.json": {
+    "bytes": 35034,
+    "sha256": "e86479e124e4ca058bdcde2a41d5cf945378ea4a5a04894ef0fd118702e0c8c7"
+  },
+  "Pending_approval/geometry/AdaptedViscera.Tentacle01_2.json": {
+    "bytes": 34840,
+    "sha256": "870fa534a29e9ce7099ebef0956c3d0fe7351fbacd46f33f6e73577bb5a9a7bc"
+  },
+  "Pending_approval/geometry/AdaptedViscera.Tentacle01_3.json": {
+    "bytes": 19752,
+    "sha256": "4849773ca2e2b541d1774276139c4879f125fba666e2bd99dff27922d4411e44"
+  },
+  "Pending_approval/geometry/AdaptedViscera.Tentacle02_1.json": {
+    "bytes": 35044,
+    "sha256": "b167eac348911340c13476308224361d58c7b76c8cda0abe4ee1509ac55c1e94"
+  },
+  "Pending_approval/geometry/AdaptedViscera.Tentacle02_2.json": {
+    "bytes": 34907,
+    "sha256": "55a1e5b90649293f2509d4fc7fa7d5be370b4e62b8d5ee084b77f87c595e5ec6"
+  },
+  "Pending_approval/geometry/AdaptedViscera.Tentacle02_3.json": {
+    "bytes": 19952,
+    "sha256": "e71144d518772b19a07428689a187c7f7812570f3f2413efb3b05e6c91032d29"
+  },
+  "Pending_approval/geometry/AdaptedViscera.Tentacle03_1.json": {
+    "bytes": 35148,
+    "sha256": "572ecd45b4f658797b9daa4975346c11b74428daa08bc4ceed96755512f381f3"
+  },
+  "Pending_approval/geometry/AdaptedViscera.Tentacle03_2.json": {
+    "bytes": 35097,
+    "sha256": "f4f47a8867237c2ea9ecc664022417a970cc66e1250ad8202ad3667e48395a0a"
+  },
+  "Pending_approval/geometry/AdaptedViscera.Tentacle03_3.json": {
+    "bytes": 19874,
+    "sha256": "0055f8100a2c5ba9e546f5a3b7ebc6e5a2f408f2e103884ded6a8cbb430d92ff"
+  },
+  "Pending_approval/geometry/AdaptedViscera.Tentacle04_1.json": {
+    "bytes": 35182,
+    "sha256": "d8552aa104bbbe8ce40e2edfc33e6631e3f63b2a35c5065ac1a926dbdb712634"
+  },
+  "Pending_approval/geometry/AdaptedViscera.Tentacle04_2.json": {
+    "bytes": 34956,
+    "sha256": "77f198ede8ce6f70a2db8883b2333263700541450b913b8ea55e6514435a2b18"
+  },
+  "Pending_approval/geometry/AdaptedViscera.Tentacle04_3.json": {
+    "bytes": 19812,
+    "sha256": "946104a61b98c46dfeb10d9cfb3be8ba8b08681c3bb7a265cae6b56c2c515635"
+  },
+  "Pending_approval/geometry/AdaptedViscera.Tentacle05_1.json": {
+    "bytes": 35072,
+    "sha256": "b1d7d3ab2687a26ea7ce6ad7324995a63a1a7b7aa6ee3648498d1a5d6ab7d2ca"
+  },
+  "Pending_approval/geometry/AdaptedViscera.Tentacle05_2.json": {
+    "bytes": 35200,
+    "sha256": "7e63f70b101608bb067b5f6e04b59545665c5ae5b49618d786832e9348efca65"
+  },
+  "Pending_approval/geometry/AdaptedViscera.Tentacle05_3.json": {
+    "bytes": 19854,
+    "sha256": "69c60ef1f4a36e1f7532b98984021e3c975584842797416fb638ab9a8c388a81"
+  },
+  "Pending_approval/geometry/AdaptedViscera.Tentacle06_1.json": {
+    "bytes": 35027,
+    "sha256": "d2da3dec63002b05a76d0ee67b5fd0c4d0ec5c3dc6d503a509182d267b97f98e"
+  },
+  "Pending_approval/geometry/AdaptedViscera.Tentacle06_2.json": {
+    "bytes": 34916,
+    "sha256": "aa7181bddf98a62efe89b6628132f733fd9073b80184c61c83f8b4028b4c2cae"
+  },
+  "Pending_approval/geometry/AdaptedViscera.Tentacle06_3.json": {
+    "bytes": 19944,
+    "sha256": "4915b4d8f735bba90b327198eb3e3ef49af968b5867f8f5673d68ffa71ec435b"
+  },
+  "Pending_approval/geometry/AdaptedViscera.Tentacle07_1.json": {
+    "bytes": 34913,
+    "sha256": "cdb121e018a87f8b02aef1b01d414b0fecd4b7b1c307180180b451235ea32f20"
+  },
+  "Pending_approval/geometry/AdaptedViscera.Tentacle07_2.json": {
+    "bytes": 35004,
+    "sha256": "7ca7b7fb48fbd96441436c2ff8cb4f601c83d2a2a8dc1d3e55ed7e326ed11222"
+  },
+  "Pending_approval/geometry/AdaptedViscera.Tentacle07_3.json": {
+    "bytes": 19892,
+    "sha256": "15d44c423164a4e5b702265ae6289468fafeb0f50456e0c4faa1d155afeaa059"
+  },
+  "Pending_approval/geometry/AdaptedViscera.Tentacle08_1.json": {
+    "bytes": 35010,
+    "sha256": "6587bfa3813bc8323ec0c8385f7c76abd77410a5d8ed2eef05af6ecc235a1119"
+  },
+  "Pending_approval/geometry/AdaptedViscera.Tentacle08_2.json": {
+    "bytes": 35080,
+    "sha256": "7a1ce93e0b75fa6a97b3f3b4facb4c5d8c50c236ff5dfbd01d1a0e68663233b0"
+  },
+  "Pending_approval/geometry/AdaptedViscera.Tentacle08_3.json": {
+    "bytes": 20012,
+    "sha256": "5c53536e2d26c2296fc1b14cfe63ec3aa5fac9c625c7e6397b4571caedb922ff"
+  },
+  "Pending_approval/geometry/AssimilatedAdventurer.ArmL.json": {
+    "bytes": 9957,
+    "sha256": "9a119d73f61c53b97d450c3e764e2a1180c89c4048fac98dc1a10a17ed55adf3"
+  },
+  "Pending_approval/geometry/AssimilatedAdventurer.ArmR.json": {
+    "bytes": 9961,
+    "sha256": "a963769270f73fda5917f2dc295ce579261f2cf827b04f389e4387e3c10af6f2"
+  },
+  "Pending_approval/geometry/AssimilatedAdventurer.Body.json": {
+    "bytes": 37781,
+    "sha256": "062acc0db9e61f506e1cd47472b4756642a9389323964889878fbe88148d7c59"
+  },
+  "Pending_approval/geometry/AssimilatedAdventurer.ChestFlapL.json": {
+    "bytes": 20127,
+    "sha256": "dce3419e97ee570b86ae261610fdf05f9f7eeeb1768001c5ffa3d38a24568583"
+  },
+  "Pending_approval/geometry/AssimilatedAdventurer.ChestFlapR.json": {
+    "bytes": 20288,
+    "sha256": "06be596b877abe3cc373ba73c33629a3e0a8f4c748611d2404de62abd2e9e8d2"
+  },
+  "Pending_approval/geometry/AssimilatedAdventurer.FootL.json": {
+    "bytes": 4516,
+    "sha256": "a02afd4daeed9aad4e091e9e00039e7c87d762b23936984d631b337e431af74e"
+  },
+  "Pending_approval/geometry/AssimilatedAdventurer.FootR.json": {
+    "bytes": 4516,
+    "sha256": "fa33ad77735bab407e5452e6dcd0c207ad6f25a14993edc856f92af5cbd6d868"
+  },
+  "Pending_approval/geometry/AssimilatedAdventurer.ForearmL.json": {
+    "bytes": 9869,
+    "sha256": "684325344f2e8b06f0acdba166a6c40ecb4325c1b2c5656c0e83b95fe79278e6"
+  },
+  "Pending_approval/geometry/AssimilatedAdventurer.ForearmR.json": {
+    "bytes": 9869,
+    "sha256": "2dd3c9f1db9b6362d48893319d573e751c926deadf0039d09c047420f653adf4"
+  },
+  "Pending_approval/geometry/AssimilatedAdventurer.HandL.json": {
+    "bytes": 4576,
+    "sha256": "b82a4cee01ebcd37b445ec240b9a4f96a32c817b2efb50356c9b4de1a1816c41"
+  },
+  "Pending_approval/geometry/AssimilatedAdventurer.HandR.json": {
+    "bytes": 4576,
+    "sha256": "2391b9591d51b6f23ca3e011b80c4914f2281fb8a0567e8288a7c9b7bbfb4044"
+  },
+  "Pending_approval/geometry/AssimilatedAdventurer.Head.json": {
+    "bytes": 43051,
+    "sha256": "c401f244462f34f349103d68aa6a46f1fe2cd85edc154a6666b8bd14a2045813"
+  },
+  "Pending_approval/geometry/AssimilatedAdventurer.LegL.json": {
+    "bytes": 9565,
+    "sha256": "f7d11b265fbe5fdd33ca1804fb3a4787be722b8ba16a8e18467470f3eb1457f3"
+  },
+  "Pending_approval/geometry/AssimilatedAdventurer.LegR.json": {
+    "bytes": 9565,
+    "sha256": "9f943beb6adb5e7bdba52c6ce9e9a3805feaf250ac166b39d3c8bc2af6648f08"
+  },
+  "Pending_approval/geometry/AssimilatedAdventurer.Neck.json": {
+    "bytes": 5667,
+    "sha256": "b025704268199a882ff24e4c4f2b6bd776ef86bf9469d0f652e04e4b0839cadc"
+  },
+  "Pending_approval/geometry/AssimilatedAdventurer.Pelvis.json": {
+    "bytes": 4417,
+    "sha256": "87c37d09ff0f7c62c2bcc0d9e2614572105ea950437e378b92d5bf1a48d0ce74"
+  },
+  "Pending_approval/geometry/AssimilatedAdventurer.ShinL.json": {
+    "bytes": 9580,
+    "sha256": "c1979b123a788becd5609a7cbd76bc6e43bd56fb1e711fb9b93b33e285cbe397"
+  },
+  "Pending_approval/geometry/AssimilatedAdventurer.ShinR.json": {
+    "bytes": 9580,
+    "sha256": "614a313b7a1752a3a3c5aa04489ab7f7032854c776259cbc086cd1b143848fb5"
+  },
+  "Pending_approval/geometry/AssimilatedAdventurer.TendrilL.json": {
+    "bytes": 2644,
+    "sha256": "3c0e6495002425a1c119db1db620a7ac6b28fe7da5fae5b6d3d3fcbf421e4b90"
+  },
+  "Pending_approval/geometry/AssimilatedAdventurer.TendrilR.json": {
+    "bytes": 2604,
+    "sha256": "b042537008c969985e824da95371958c2d645706fb76d4aa1613e24e77f269db"
+  },
+  "Pending_approval/geometry/ParasiteAdapted.ArmL.json": {
+    "bytes": 72027,
+    "sha256": "814c9fa74b6ae1a10f0b425c100bb4ce78635b5274ef7bf09ef18e8a1022f29d"
+  },
+  "Pending_approval/geometry/ParasiteAdapted.ArmR.json": {
+    "bytes": 72621,
+    "sha256": "39aba84370a927b27dc5251197abbcd33ee637d7ef0f8b061e389689903e0f5b"
+  },
+  "Pending_approval/geometry/ParasiteAdapted.BackGrowth.json": {
+    "bytes": 35557,
+    "sha256": "c018214c4beda2cfebd5e1b7561beb62676ad81b738c19c7417c782913564792"
+  },
+  "Pending_approval/geometry/ParasiteAdapted.Body.json": {
+    "bytes": 36230,
+    "sha256": "ec99aee90b99b9a566281ac72276d8aa504af50376278715e24ff962cd9f292e"
+  },
+  "Pending_approval/geometry/ParasiteAdapted.EyesGlow.json": {
+    "bytes": 5303,
+    "sha256": "17ebfe0c09ca45787d857d1244d5bedc69f63927cd12b0792e40966176eb6cd6"
+  },
+  "Pending_approval/geometry/ParasiteAdapted.Head.json": {
+    "bytes": 297760,
+    "sha256": "68608b76069866d8bbd9a1290b5f0a11ddd4c88ffa0593d99461f1f309a0f4ab"
+  },
+  "Pending_approval/geometry/ParasiteAdapted.LegL.json": {
+    "bytes": 36018,
+    "sha256": "5b24b272fab11c5079ec38b97f0613f121d5ebd4e6fe2d970da37ace3ddbf2ae"
+  },
+  "Pending_approval/geometry/ParasiteAdapted.LegR.json": {
+    "bytes": 36305,
+    "sha256": "fecea3babcd7b9e60f4695c4a4aa50e92ed2da9b9f95296f135a3d8f8faedd5a"
+  },
+  "Pending_approval/geometry/ParasiteAdapted.ShoulderFoldL.json": {
+    "bytes": 8752,
+    "sha256": "c34cbda3e634e07a487d4a1310739b63089ca60823ce1e1270370f86373eda3e"
+  },
+  "Pending_approval/geometry/ParasiteAdapted.ShoulderFoldR.json": {
+    "bytes": 8749,
+    "sha256": "4f55d8102e4e39e69a302ed43bcf94312bbf8905f6e0c873332c7c09b3e251d6"
+  },
+  "Pending_approval/geometry/ParasiteAdapted.TendrilL.json": {
+    "bytes": 59833,
+    "sha256": "69e964fde1b0c954e77c4755ac0436d4f9c734ede0d5ab267889f9ae070e1677"
+  },
+  "Pending_approval/geometry/ParasiteAdapted.TendrilR.json": {
+    "bytes": 60329,
+    "sha256": "ca0ba92efbb5ed8b43cfe8f393f4e868d4c088aabbdee80336488cc7468fdb09"
+  },
+  "Pending_approval/geometry/ParasiteExisting.ArmL.json": {
+    "bytes": 71307,
+    "sha256": "015fd6b14c0cc96bf3f9b5eb294d6b7e7ce4b8613167dc55b212e7e64e85d52d"
+  },
+  "Pending_approval/geometry/ParasiteExisting.ArmR.json": {
+    "bytes": 72084,
+    "sha256": "19e012605725e10f59593e4d7bcbdcc846e1760d04de4a2f076524e8a74f8e6e"
+  },
+  "Pending_approval/geometry/ParasiteExisting.Body.json": {
+    "bytes": 35972,
+    "sha256": "56ab57309c6e0aa8e1b34587d79696ae5dbb096d041da7f554e24dcc932beef8"
+  },
+  "Pending_approval/geometry/ParasiteExisting.EyesGlow.json": {
+    "bytes": 5303,
+    "sha256": "17ebfe0c09ca45787d857d1244d5bedc69f63927cd12b0792e40966176eb6cd6"
+  },
+  "Pending_approval/geometry/ParasiteExisting.Head.json": {
+    "bytes": 297220,
+    "sha256": "3b88c39be9a072cc70a10d63fc9c2b619801b831a8207db3f420abad2eba8909"
+  },
+  "Pending_approval/geometry/ParasiteExisting.LegL.json": {
+    "bytes": 36026,
+    "sha256": "aad98f0f264a1c3be0844fb4def70c29f4e6c9c8509d628fdc9552d78ea246ec"
+  },
+  "Pending_approval/geometry/ParasiteExisting.LegR.json": {
+    "bytes": 36299,
+    "sha256": "188039dcc2dcbb5beffcf32071442bca452fe208c1726577352c22eb9038e755"
+  },
+  "Pending_approval/geometry/ParasiteExisting.TendrilL.json": {
+    "bytes": 59508,
+    "sha256": "5af5bd9178de0420416bc97f461e2e01f4145e71efd65f795525936fe292dc61"
+  },
+  "Pending_approval/geometry/ParasiteExisting.TendrilR.json": {
+    "bytes": 60054,
+    "sha256": "625250174b3042431b25a3bb16223b3debacffda48e736cf146689c9d781e036"
+  },
+  "Pending_approval/geometry/PrimitiveSummoner.Body.json": {
+    "bytes": 9527,
+    "sha256": "55c7d30e30ea552d8f990c017a4c3079e46eb380c630411f66a17a11b5c838c6"
+  },
+  "Pending_approval/geometry/PrimitiveSummoner.FootL1.json": {
+    "bytes": 4897,
+    "sha256": "5f13379d2cf75041f4a847c71cc2db037dee69018004fe0f81657507dc07290a"
+  },
+  "Pending_approval/geometry/PrimitiveSummoner.FootL2.json": {
+    "bytes": 4845,
+    "sha256": "160a4069fac2b1c84b265e65369b05e1e5367bd649d0abcfffd8dbb08b004e95"
+  },
+  "Pending_approval/geometry/PrimitiveSummoner.FootR1.json": {
+    "bytes": 4897,
+    "sha256": "ddc4b5fb41edb63f634ed40e9ffcbea84f25b48054dffacff9c409fe685955fe"
+  },
+  "Pending_approval/geometry/PrimitiveSummoner.FootR2.json": {
+    "bytes": 4845,
+    "sha256": "6d3b31070e94460ee843d0ae649c67595a95083f7ee0c050efb3a134d0e7ec03"
+  },
+  "Pending_approval/geometry/PrimitiveSummoner.LegL1.json": {
+    "bytes": 9937,
+    "sha256": "531137ee76f0f955fb1390166387fa80115b938f5089c2ac9a917db063a070bf"
+  },
+  "Pending_approval/geometry/PrimitiveSummoner.LegL2.json": {
+    "bytes": 9940,
+    "sha256": "c419a02b70b997f7975a3aeafbeed4621650bf93017a8382b42ec3ce28430f4d"
+  },
+  "Pending_approval/geometry/PrimitiveSummoner.LegR1.json": {
+    "bytes": 9937,
+    "sha256": "112fbf53ba2c89f507e14a40d3698fef755546c98282e04e78bd8699d6cacfce"
+  },
+  "Pending_approval/geometry/PrimitiveSummoner.LegR2.json": {
+    "bytes": 9940,
+    "sha256": "4e07345f0d736643ef681e235f11989ae230ed5ac94138c5d9d930244cb5a627"
+  },
+  "Pending_approval/geometry/PrimitiveSummoner.LowerJaw.json": {
+    "bytes": 46283,
+    "sha256": "a430feb6bcfb9b7dcb8743a1948176cec7aa846cc8ee45deadd295e611949c18"
+  },
+  "Pending_approval/geometry/PrimitiveSummoner.ShinL1.json": {
+    "bytes": 9789,
+    "sha256": "ca37f70cc2767a732b74e56e77111c0df7b7e9b3e8be4751a23b58d77139559e"
+  },
+  "Pending_approval/geometry/PrimitiveSummoner.ShinL2.json": {
+    "bytes": 9805,
+    "sha256": "4e911817cacd66833a68f1b10a187ce05bc959016d97c613d9e7ac7b09d85b68"
+  },
+  "Pending_approval/geometry/PrimitiveSummoner.ShinR1.json": {
+    "bytes": 9829,
+    "sha256": "144ff3323ef8eb00e5483edad13fdaf392350d55d9a319e5a9f920c0f8087349"
+  },
+  "Pending_approval/geometry/PrimitiveSummoner.ShinR2.json": {
+    "bytes": 9853,
+    "sha256": "a4e32ad9bb2f95703d3b4357a97c8f100f42a04467ba4f1c09b7ff43e4c9ee17"
+  },
+  "Pending_approval/geometry/PrimitiveSummoner.Throat.json": {
+    "bytes": 23337,
+    "sha256": "4380b23b98e5d6a8065977b9a2153c2a4bf3c5ff8ea38aeb581bbe8ab56db086"
+  },
+  "Pending_approval/geometry/PrimitiveSummoner.UpperJaw.json": {
+    "bytes": 45254,
+    "sha256": "66deddc9f4ece8c75396d17f75015c14624997d4553d2c21bc59f04dac013053"
+  },
+  "Pending_approval/geometry/_manifest.json": {
+    "bytes": 35419,
+    "sha256": "3aabf8c7a8da6a339890bc0c74343d8d02898e4c2019f1e01ddce75773cef981"
+  },
+  "Pending_approval/geometry/_rig.json": {
+    "bytes": 21046,
+    "sha256": "a8c8d5d092ae1336492fcd1fe4c382ea6a7675f20ee2e3d22d9b4bf987393058"
+  },
+  "Pending_approval/models/AdaptedViscera.blend": {
+    "bytes": 669156,
+    "sha256": "936a71367d0d2b8b2cf767dcc1c89039db7c6141931308de7eaf9f7e3038352a"
+  },
+  "Pending_approval/models/AdaptedViscera.fbx": {
+    "bytes": 465212,
+    "sha256": "6789d04ce65e65f16aa978eff3c8d5387c612c9922c65c821fec1fa50a7c4199"
+  },
+  "Pending_approval/models/AdaptedViscera.glb": {
+    "bytes": 1332584,
+    "sha256": "dfe02142e27498f4105832731c70ea804f51b43eda9579c13a62b9e0b3348139"
+  },
+  "Pending_approval/models/AssimilatedAdventurer.blend": {
+    "bytes": 669160,
+    "sha256": "21ac982ac20c0b58e6c20bc420c407a463e6190addf99bbc3ef758242bef379c"
+  },
+  "Pending_approval/models/AssimilatedAdventurer.fbx": {
+    "bytes": 134460,
+    "sha256": "27e94b754ea1bb71e336e3ae293bf1a08261891d0c7c92200a98a5ff0a0611fc"
+  },
+  "Pending_approval/models/AssimilatedAdventurer.glb": {
+    "bytes": 286848,
+    "sha256": "3f608c4676b22388f9ed5dc3fb969406f71c503e9c3e5cf440ed2c6f0146b682"
+  },
+  "Pending_approval/models/ParasiteAdapted.blend": {
+    "bytes": 669168,
+    "sha256": "2fdcf559608d3b51cace6c97b9a40549c05bd97ff2ac4ff87fbca8839b866301"
+  },
+  "Pending_approval/models/ParasiteAdapted.fbx": {
+    "bytes": 156892,
+    "sha256": "d21783166d962852618df0242f15986fb36d05ab9c1da42076ecbe654a32cfbc"
+  },
+  "Pending_approval/models/ParasiteAdapted.glb": {
+    "bytes": 463360,
+    "sha256": "dafcf31b732f481364556776503d0124e465789ded92b1079f60d8509481b181"
+  },
+  "Pending_approval/models/PrimitiveSummoner.blend": {
+    "bytes": 669158,
+    "sha256": "54fa2985e9f1c6b9cbea6698cf33fb2d9bbaa1c8ba0d6bd3ba562f037a4d4226"
+  },
+  "Pending_approval/models/PrimitiveSummoner.fbx": {
+    "bytes": 121372,
+    "sha256": "602e9d58e41ab2e5f9b6f5459680dc65e299e5ba3e8ca8410d113cc0fb02cef9"
+  },
+  "Pending_approval/models/PrimitiveSummoner.glb": {
+    "bytes": 273092,
+    "sha256": "b0c3c9077eab5052e85b2cd93b6b39024036dc0d2c7f7c1e523c2f00d3e01dc2"
+  },
+  "Pending_approval/package_review.py": {
+    "bytes": 4452,
+    "sha256": "41765e43b6e9be5999174fe40d407e19e725fad39b515ac6e36cfebbad784101"
+  },
+  "Pending_approval/previews/AdaptedViscera_Back.png": {
+    "bytes": 1359754,
+    "sha256": "f8492ed579528b43d418a2c4110fd0967771a038f5d01b032f6c19648aa45a16"
+  },
+  "Pending_approval/previews/AdaptedViscera_Detail.png": {
+    "bytes": 1303434,
+    "sha256": "c923b553a7fabe97b229fbec125ee521fce4d4387b3a0c8e3c249ff251e09f19"
+  },
+  "Pending_approval/previews/AdaptedViscera_Reference_Review.png": {
+    "bytes": 2177001,
+    "sha256": "38886995b5ed5abc3645a1f476f0045a1bec3d0c4dea223539d9e63e388568b5"
+  },
+  "Pending_approval/previews/AdaptedViscera_Side.png": {
+    "bytes": 1204448,
+    "sha256": "65ba10b8ac546f9035c4cba4676fd96fbaeddeb5b18e99c843969b380d3cc03f"
+  },
+  "Pending_approval/previews/AdaptedViscera_ThreeQuarter.png": {
+    "bytes": 1364263,
+    "sha256": "1a6d291ea9e34e82f8928be0696d9ba1a76280d46ed3f26d1a983e92f1206082"
+  },
+  "Pending_approval/previews/AdaptedViscera_Views.png": {
+    "bytes": 1343917,
+    "sha256": "fa0c086da9fa8d0ec1b1e95c2eb2d85f2017a6edb209301db96fce27acf082f7"
+  },
+  "Pending_approval/previews/AssimilatedAdventurer_Back.png": {
+    "bytes": 1281548,
+    "sha256": "1721b3639d54db24e743309bf0f2e8c21cb2dea15d8cbdec7499770bafcede84"
+  },
+  "Pending_approval/previews/AssimilatedAdventurer_Detail.png": {
+    "bytes": 1174120,
+    "sha256": "e685bb737a652b3a71855b59f33183479957a78370ef3be4d36ab52758004124"
+  },
+  "Pending_approval/previews/AssimilatedAdventurer_Reference_Review.png": {
+    "bytes": 1528525,
+    "sha256": "bea4ff1d47b1b4aead6ceb6174c1f016a2c6b65eb79decc6c8971a25669629f3"
+  },
+  "Pending_approval/previews/AssimilatedAdventurer_Side.png": {
+    "bytes": 1069449,
+    "sha256": "32801859e7d8b7b85e5ab55b07230b50fa5b2c758b145960b557369d5cddaf3a"
+  },
+  "Pending_approval/previews/AssimilatedAdventurer_ThreeQuarter.png": {
+    "bytes": 1301460,
+    "sha256": "ac010e2dc486e407ac35fdb705b0af1079633644ef39b90978ae1aa809912ac3"
+  },
+  "Pending_approval/previews/AssimilatedAdventurer_Views.png": {
+    "bytes": 1184615,
+    "sha256": "b64e6f6cd383e5b433cdac21f485a04fd0c56cf5206e6d3df4ff6f2bada723c3"
+  },
+  "Pending_approval/previews/ParasiteAdapted_Back.png": {
+    "bytes": 1347387,
+    "sha256": "ff70d6778925a33238ec76be86fc049bac57cf74b24b0eae68fad756a3f23215"
+  },
+  "Pending_approval/previews/ParasiteAdapted_Detail.png": {
+    "bytes": 1229859,
+    "sha256": "8fbf05d302d3cb359557597e9ad561424b10a94eff2c4092c66866429a582124"
+  },
+  "Pending_approval/previews/ParasiteAdapted_Reference_Review.png": {
+    "bytes": 1808372,
+    "sha256": "6a00bc1188d99b41c05b0d38d1aed8981577dcd35ac8ac96347f4d1f171e7898"
+  },
+  "Pending_approval/previews/ParasiteAdapted_Side.png": {
+    "bytes": 1133797,
+    "sha256": "77bbd377ebd27f548bcae842a1dc626913c4c4321f485bf3661931d9c5053e5f"
+  },
+  "Pending_approval/previews/ParasiteAdapted_ThreeQuarter.png": {
+    "bytes": 1350292,
+    "sha256": "185bb0eb93c82ef6b05e41064cad492afa3695216dc2ef075b8ba7d4f6fb47bf"
+  },
+  "Pending_approval/previews/ParasiteAdapted_Views.png": {
+    "bytes": 1280084,
+    "sha256": "73b1348633c740789f2b2abdba08d651e5078aa7d2c42c0cde36c9bad792d7cf"
+  },
+  "Pending_approval/previews/ParasiteExisting_ThreeQuarter.png": {
+    "bytes": 1334720,
+    "sha256": "8764440473da0d442abb27432ad528beb1d68c4a5f7f1612ed6eb67d5616246d"
+  },
+  "Pending_approval/previews/Parasite_Before_After.png": {
+    "bytes": 1303458,
+    "sha256": "ad5e127d8a8d09b01f7e7c22e9cda77b620a140a4380c7825515ad6b70fc56d3"
+  },
+  "Pending_approval/previews/PrimitiveSummoner_Back.png": {
+    "bytes": 1295192,
+    "sha256": "508f63103dc8801f792439fccb2dc7e9c58450011a2db4459878d4b9ef97b243"
+  },
+  "Pending_approval/previews/PrimitiveSummoner_Detail.png": {
+    "bytes": 1159628,
+    "sha256": "c100b3e4042c9b04dd587962efca74b7278e7b4ab839c75f9494d8d162a8ff22"
+  },
+  "Pending_approval/previews/PrimitiveSummoner_Reference_Review.png": {
+    "bytes": 1968850,
+    "sha256": "6d908e19622ad10d8cac3976de3725091f2630a7588e9009e25051c48f1f8d19"
+  },
+  "Pending_approval/previews/PrimitiveSummoner_Side.png": {
+    "bytes": 1107265,
+    "sha256": "a44138f3fac93a6406928fc673a5388a3c106fc47dae8d4b5eff6310e4d72832"
+  },
+  "Pending_approval/previews/PrimitiveSummoner_ThreeQuarter.png": {
+    "bytes": 1291369,
+    "sha256": "163ebb55ddd269143eb63fa7ad389c7f86c3b7aae6e74d33ded8b64ceeb62dfc"
+  },
+  "Pending_approval/previews/PrimitiveSummoner_Views.png": {
+    "bytes": 1194394,
+    "sha256": "8d48700012cb23a0e6f17191069b69d1c1793ce263eaa21365abdb6877e5da48"
+  },
+  "Pending_approval/previews/SRP_Four_Reference_Review.png": {
+    "bytes": 2509794,
+    "sha256": "c8f70b854365aa9835978e7a031a377c3d26d31f4f0b315a2ccaed0544e17cac"
+  },
+  "Pending_approval/previews/User_Reference_AdaptedViscera_Crop.png": {
+    "bytes": 3687714,
+    "sha256": "22f73a2d8bfaa7e2a6eb2b92c38a78be3dbfdcd842fb8f35ca4298b4f465fc60"
+  },
+  "Pending_approval/previews/User_Reference_AssimilatedAdventurer_Crop.png": {
+    "bytes": 423516,
+    "sha256": "912fff20ebe2f3910361f78cd3b6e6ef45b6b62fbd0f5ec70aba955884b8d3a5"
+  },
+  "Pending_approval/previews/User_Reference_ParasiteAdapted_Crop.png": {
+    "bytes": 1242614,
+    "sha256": "3081b84442c6a51b271181d9e9e46f0020b1d06b5adccef58855907fd712c32c"
+  },
+  "Pending_approval/previews/User_Reference_PrimitiveSummoner_Crop.png": {
+    "bytes": 2969406,
+    "sha256": "82c9e1fdbe9b4ac885fab62b0eb3f7bf59c012d81ca8db807a99139b1ab00112"
+  },
+  "Pending_approval/render_parasite_comparison.py": {
+    "bytes": 633,
+    "sha256": "343eda03b2df4a13e9401bcf2096262f0fb044ec236b3c972b96a2b44cc9f5a3"
+  },
+  "Pending_approval/report.json": {
+    "bytes": 4588,
+    "sha256": "279c7abc4cf7d4282be33849232b6da77f3a27050c54e0d3a3f36c68e50d92b5"
+  },
+  "Pending_approval/review-history.json": {
+    "bytes": 733,
+    "sha256": "a3daec1d5634b7e538ac715208eedff0a58e2c6204952bda6d3f1500c8599c1f"
+  },
+  "Pending_approval/source/parasite/Parasite_Root_Aggressive.ArmL.json": {
+    "bytes": 30276,
+    "sha256": "76a3d08077ce7b688ddd119239af4aac61911cbbf68873945ce0d07dc2748bd4"
+  },
+  "Pending_approval/source/parasite/Parasite_Root_Aggressive.ArmR.json": {
+    "bytes": 30036,
+    "sha256": "315bc3aad71bd4b5adba278b8515b42a8c8940ff4d450a19167d9e4912c8a63e"
+  },
+  "Pending_approval/source/parasite/Parasite_Root_Aggressive.Body.json": {
+    "bytes": 14278,
+    "sha256": "d1a26df788f8a69c299ce83361388e4319cc9da3d4c1e490e7c4fa38baa73942"
+  },
+  "Pending_approval/source/parasite/Parasite_Root_Aggressive.EyesGlow.json": {
+    "bytes": 2381,
+    "sha256": "41189d30c4ed16873e1733e4f8fe3264e585d51cfc3eae32f93c8c01e015f2a0"
+  },
+  "Pending_approval/source/parasite/Parasite_Root_Aggressive.Head.json": {
+    "bytes": 126936,
+    "sha256": "f2e3f544c6fc7a8cf89e79a511d73e45b88e3d051cf2ed010c312b8aab0feca8"
+  },
+  "Pending_approval/source/parasite/Parasite_Root_Aggressive.LegL.json": {
+    "bytes": 14569,
+    "sha256": "80e32cd9653e697c5a6f794fe8823ccd576f5eb955dfd790308f9a5f14284ac4"
+  },
+  "Pending_approval/source/parasite/Parasite_Root_Aggressive.LegR.json": {
+    "bytes": 14569,
+    "sha256": "d5921b127cab8ef634826d4ba6d8a103df243c517b02fdfc21747d58b985b05e"
+  },
+  "Pending_approval/source/parasite/Parasite_Root_Aggressive.TendrilL.json": {
+    "bytes": 24822,
+    "sha256": "b781e1dec4dfed6f6e937c8f22927ead3c0f25fa54e8f3733c96713af826f5c3"
+  },
+  "Pending_approval/source/parasite/Parasite_Root_Aggressive.TendrilR.json": {
+    "bytes": 24574,
+    "sha256": "89f9ace9461d217653cf7b2ae5327c6da935b85fa03a05f587e67793529d6cbc"
+  },
+  "Pending_approval/source/parasite/_manifest.json": {
+    "bytes": 11420,
+    "sha256": "a0073ef7bd128781eeb483bc2df3ca56bc71766e909235574bb4b185ebb18d6a"
+  },
+  "Pending_approval/source/parasite/_rig.json": {
+    "bytes": 2090,
+    "sha256": "9e999c96d1acea8c867d69d5477c36c92dd2dad6365dca65ee49d06726ad7d8b"
+  },
+  "Pending_approval/source-parasite-baseline.json": {
+    "bytes": 1730,
+    "sha256": "a2df5ca746a87d3149f84dd2bbd51d618e08c7b7e1c4fef4c88471432347d1f1"
+  },
+  "Pending_approval/tools/kit.py": {
+    "bytes": 18636,
+    "sha256": "a0717e70f99aba1cd1f8462ea9634bc276e7378241ee3e38df30598d147fd4ce"
+  },
+  "Pending_approval/validate.py": {
+    "bytes": 6280,
+    "sha256": "1dfc6f49bd5d88355c5fc64e4bb261e87ebe4fb684d0511c469c53200d514578"
+  },
+  "Pending_approval/validation.json": {
+    "bytes": 7882,
+    "sha256": "a53742d2f295aea74a6970ef8a9cce35f2b2828d45bc2eca7c51bb30921faa05"
+  },
+  "Dredge_approved/README.md": {
+    "bytes": 7587,
+    "sha256": "cf0781ce91309f2338ffa783f38175d1ce3a071b47e50169de3f91e0807e39a0"
+  },
+  "Dredge_approved/approval.json": {
+    "bytes": 1828,
+    "sha256": "ceb3d6ad1827c8def2a2096550eebe1df4331bc0a677f6eed0ffa4b39fd0c0f0"
+  },
+  "Dredge_approved/build.py": {
+    "bytes": 9445,
+    "sha256": "dd50372115766380d3f54a443eb76c6592cfde0836ef365bb470a7caf54d6b9f"
+  },
+  "Dredge_approved/compose_review.py": {
+    "bytes": 2619,
+    "sha256": "f2695d27d6d7761583cf545edff7238deed4a4057825784263fd85ec67025c24"
+  },
+  "Dredge_approved/creatures.py": {
+    "bytes": 9738,
+    "sha256": "e5f214b59e9d2bff81235c5060558c7208594efed8711505c8fb5255ad753284"
+  },
+  "Dredge_approved/game-files-baseline.json": {
+    "bytes": 18468,
+    "sha256": "80f3f570dbcb5ed5e9a1960dd88d79f2fd78966c254f03eb4b11901186ddfeac"
+  },
+  "Dredge_approved/geometry/Dredge.ArmL.json": {
+    "bytes": 5573,
+    "sha256": "76b7fb64eab82d8a08f1f68deafef47003ac17533ba9cac33f97fd6cf773158b"
+  },
+  "Dredge_approved/geometry/Dredge.ArmR.json": {
+    "bytes": 5577,
+    "sha256": "b95b304de9a1aa0d68756e207996c3687ea35b7fbfea8409d9b6f94c816a9638"
+  },
+  "Dredge_approved/geometry/Dredge.Body.json": {
+    "bytes": 72293,
+    "sha256": "0b8bb0ede40ac884c39a078a74f2a288396a3729d7121bfb22fb902012a8dd4d"
+  },
+  "Dredge_approved/geometry/Dredge.CrownL1.json": {
+    "bytes": 15071,
+    "sha256": "0645de4281b248b8a601b8d690fb9db52954feaed08fae39f96265ce6846bb19"
+  },
+  "Dredge_approved/geometry/Dredge.CrownL2.json": {
+    "bytes": 14855,
+    "sha256": "09f98c84e08d7447ee7227d4dfe96f0c9b9b02bed4633d86f15d9197bf2badaa"
+  },
+  "Dredge_approved/geometry/Dredge.CrownR1.json": {
+    "bytes": 14879,
+    "sha256": "e3c589027cf08cb70571384a60df0f011de42ca26f374da53f86fe25b36e9a95"
+  },
+  "Dredge_approved/geometry/Dredge.CrownR2.json": {
+    "bytes": 14695,
+    "sha256": "5226bf0e1d5208893d2e73bed46a39cded33fc780e6a7cc14663ce66ecdb9e03"
+  },
+  "Dredge_approved/geometry/Dredge.ForearmL.json": {
+    "bytes": 5827,
+    "sha256": "1b11318dc6d4785cb65bfbc41fd05d980b6221bec1d276e79600aa62419b21b0"
+  },
+  "Dredge_approved/geometry/Dredge.ForearmR.json": {
+    "bytes": 5827,
+    "sha256": "c9e3600a71643afd0bd1b6c63106b6d4bf57fb814447c15f990794926b88cf6c"
+  },
+  "Dredge_approved/geometry/Dredge.HandL.json": {
+    "bytes": 18459,
+    "sha256": "d737115eea9a5e6c49dc868d5d7cea56da42a242d73bbe707d33146243f9a7a2"
+  },
+  "Dredge_approved/geometry/Dredge.HandR.json": {
+    "bytes": 18612,
+    "sha256": "e15780124deb3fd3a266a82abd83de1f68bac87958fc932e3c22b5bfe1c61094"
+  },
+  "Dredge_approved/geometry/Dredge.Head.json": {
+    "bytes": 84685,
+    "sha256": "6793a09d0b4b90df38d102af8cb6ec6ec82c209ddded781128ab8591d9909452"
+  },
+  "Dredge_approved/geometry/Dredge.Jaw.json": {
+    "bytes": 9167,
+    "sha256": "134ae62cc7dfe4d3b15e3a14a17b56eec4765409f12e9811081db40579725be3"
+  },
+  "Dredge_approved/geometry/Dredge.Neck.json": {
+    "bytes": 5731,
+    "sha256": "cae6f466d75ace0fb7d90292e004e33e3d77af541a5cd6e9db7aa6bc0432f76d"
+  },
+  "Dredge_approved/geometry/Dredge.Tail01.json": {
+    "bytes": 28366,
+    "sha256": "d489da03c8155136dfca9350c0791b233122588b7d993937a672c3cbe30e580c"
+  },
+  "Dredge_approved/geometry/Dredge.Tail02.json": {
+    "bytes": 29342,
+    "sha256": "4934e998b02abbcad7c75f5f3c0e9cf32f429337afcdc813b3d2fed0f820f742"
+  },
+  "Dredge_approved/geometry/Dredge.Tail03.json": {
+    "bytes": 29238,
+    "sha256": "fa0b72917bdb717d3585a15ce34b97cd2b99f5526cfe002cfc27b3d5be81562f"
+  },
+  "Dredge_approved/geometry/Dredge.Tail04.json": {
+    "bytes": 29434,
+    "sha256": "1bb4f08fc3fb125bcf5b4a00198c9e39ed642e890f8e756517050d2f115bfc1a"
+  },
+  "Dredge_approved/geometry/Dredge.Tail05.json": {
+    "bytes": 29182,
+    "sha256": "784cfab3cd481e68e5fa92f2b4fc903d4edb8ca19c6a46f6d52ecfd3b1236d71"
+  },
+  "Dredge_approved/geometry/Dredge.Tail06.json": {
+    "bytes": 29410,
+    "sha256": "cfe95cf640a73a534d80c7fea9938234dd0d24d068efe49eb11510b0aa7cc317"
+  },
+  "Dredge_approved/geometry/Dredge.Tail07.json": {
+    "bytes": 29050,
+    "sha256": "4e121fdac90c687377017b05e93d9ee69326546fbf88a051774f85c21d7f68b3"
+  },
+  "Dredge_approved/geometry/Dredge.Tail08.json": {
+    "bytes": 32538,
+    "sha256": "738ae9c97a8cd6214d7e2d24b625c79245c9803da3bd551a94107d9ab7904adb"
+  },
+  "Dredge_approved/geometry/Dredge.Tail09.json": {
+    "bytes": 41879,
+    "sha256": "0d96e00e5b7090d5aeb70d9492c8bcbbc44b6cd52168ca9c6f1839ab6be2a800"
+  },
+  "Dredge_approved/geometry/Dredge.Tail10.json": {
+    "bytes": 32693,
+    "sha256": "c86464575ad06a5a13583b1c112651ea185b64bc4b23c36aa80e3482ebc22a9d"
+  },
+  "Dredge_approved/geometry/Dredge.Tail11.json": {
+    "bytes": 32575,
+    "sha256": "aa2918431ff351051cf31208448ebff549c8b7c9f9db1178adddf8ebad4520af"
+  },
+  "Dredge_approved/geometry/Dredge.Tail12.json": {
+    "bytes": 32638,
+    "sha256": "65105a162c766bf11c65aa9013f485ad11e3db9d725e2c3c2d38c2deaad3d5b4"
+  },
+  "Dredge_approved/geometry/Dredge.Tail13.json": {
+    "bytes": 3069,
+    "sha256": "5fc791439b7787d54daa1d2c5930cb7d16b190ab4f6b3b4f22dbc3b3ebc966a2"
+  },
+  "Dredge_approved/geometry/Dredge.Tail14.json": {
+    "bytes": 2011,
+    "sha256": "1ccd2e0808d74574e11eda9896560e124789f5bca374438306d3c5613774d2bf"
+  },
+  "Dredge_approved/geometry/Dredge.TailSkin.json": {
+    "bytes": 46489,
+    "sha256": "ad94e9c62780c3e2256ad5d476f6aa0106e17b39226e4581e72018eecdb175a6"
+  },
+  "Dredge_approved/geometry/_manifest.json": {
+    "bytes": 10542,
+    "sha256": "f888ce76d67d213451ffcccafe9a81786b919e0a39cc5159ef9af33df963dcaa"
+  },
+  "Dredge_approved/geometry/_rig.json": {
+    "bytes": 5120,
+    "sha256": "65f9f126404f54312bfcedbb1712817590e6bc69dcb282b6574891b79eacd9ed"
+  },
+  "Dredge_approved/models/Dredge.blend": {
+    "bytes": 302960,
+    "sha256": "54f9ca938818289046d42c9c638f15d1acccc45524d74cc8a059a46cc06693bc"
+  },
+  "Dredge_approved/models/Dredge.fbx": {
+    "bytes": 323884,
+    "sha256": "9249bf88879b3e016cf942f2282b5e01e93d0e9d4637a2cd08d9dbcdd258937d"
+  },
+  "Dredge_approved/models/Dredge.glb": {
+    "bytes": 908684,
+    "sha256": "f44639d2a311a39ad3a2e19162a248c08e7baeff246b0925fd8f9110a937a5dd"
+  },
+  "Dredge_approved/previews/Dredge_Back.png": {
+    "bytes": 1361052,
+    "sha256": "64ddab49fb04a66a27b2d070f2e1eb64836f610c7aa844e33f306243a012c6c2"
+  },
+  "Dredge_approved/previews/Dredge_Detail.png": {
+    "bytes": 1163075,
+    "sha256": "75d46247b0bc73bbd466a194f8d8a23db8da7a011482bb4b8f22d77c99ae7fba"
+  },
+  "Dredge_approved/previews/Dredge_Reference_Review.png": {
+    "bytes": 2029046,
+    "sha256": "8de626f0a2f431f1e2ac90c1b9775a129df8a52c9e1e328116c2cdd064509ce5"
+  },
+  "Dredge_approved/previews/Dredge_Side.png": {
+    "bytes": 1156891,
+    "sha256": "c71ff4b053ded2217b61da932688d1c3ae2effd159a749cae3af9ea2fbdbf596"
+  },
+  "Dredge_approved/previews/Dredge_ThreeQuarter.png": {
+    "bytes": 1335178,
+    "sha256": "41c8097d23a5edb38a632afca9bbb78302a085a9941967655f9dc66838029590"
+  },
+  "Dredge_approved/previews/Dredge_Views.png": {
+    "bytes": 1260203,
+    "sha256": "34a353541fd9f86a00b665fbb213f9d0484e38bb171a2e5fe2c8bf1bf634cf08"
+  },
+  "Dredge_approved/previews/User_Reference_Dredge_Crop.png": {
+    "bytes": 1395269,
+    "sha256": "de59a0f6567287cc172c0e75bd82059a8f4be6e4b8c775136f2fc8c5dc189854"
+  },
+  "Dredge_approved/report.json": {
+    "bytes": 1281,
+    "sha256": "c4b13891a789fa61e135a4040b5ab203116e1c2c45dceaae6a866f0e4a0b02c2"
+  },
+  "Dredge_approved/review-history.json": {
+    "bytes": 396,
+    "sha256": "8bd28666e8f4b6142795fa052fdd166da341c3428e57824fd1424fcbda1c8e04"
+  },
+  "Dredge_approved/validate.py": {
+    "bytes": 4456,
+    "sha256": "d639721efd609dac8a67257b1eb7ef300828e592a62533b418c4de05ad616b9b"
+  },
+  "Dredge_approved/validation.json": {
+    "bytes": 1157,
+    "sha256": "95a538fcb873c000b4143040b5a0d57fd92a7b2a0067480ead51cf492e3abdac"
+  }
+}

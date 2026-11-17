@@ -28,7 +28,7 @@ local SocialService = game:GetService("SocialService")
 local WeaponC=require(S.Config.WeaponConfig);local weaponState
 local PetC=require(S.Config.PetConfig);local Pumpkins=require(S.Config.PumpkinConfig);local PetModel=require(S.PetModel)
 local showPetHatch;local starterShown=false
-local petState;local petFilter="all";local releaseId;local petStarterHint=false
+local petState;local releaseId;local petStarterHint=false
 local lang = L.lang()
 local isRussian = string.sub(lang, 1, 2) == "ru"
 local function t(k, a)
@@ -129,6 +129,13 @@ local function button(parent, text, callback, size, pos, color)
 		bounce(pop, 1)
 		callback()
 	end)
+	if RunService:IsStudio() then
+		-- Studio's test scripts press a button by firing this (their mouse does not reach the interface)
+		local press = Instance.new("BindableEvent")
+		press.Name = "DebugPress"
+		press.Event:Connect(callback)
+		press.Parent = b
+	end
 	b.Parent = parent
  if isModal(parent) then Style.ModalButton(b,(color==Pal.Accent or color==Pal.Orange) and Style.ModalColors.Gold or color==Pal.Red and Style.ModalColors.Red or color==Pal.Common and Color3.fromRGB(100,107,142) or (color==Pal.Sky2 or color==Pal.Panel or color==Pal.PanelDark) and Style.ModalColors.Cream or Style.ModalColors.Green) end
 	return b
@@ -227,7 +234,7 @@ local carryIcon=iconImage(roadStatus,'hudCoffin',UDim2.fromOffset(66,62),UDim2.f
 local income=Instance.new('TextLabel') -- income is displayed overhead, not in the HUD
 local slowTimer=label(metrics,'',UDim2.fromOffset(70,26),UDim2.fromOffset(250,16),{textSize=20,stroke=true,color=Pal.Red})
 RunService.Heartbeat:Connect(function()
- local weapon=p:GetAttribute('ActiveSlot')==2 and (p:GetAttribute('EquippedWeapon') or 'Deagle');local shovel=p:GetAttribute('EquippedShovel') or 'Rusty'
+ local weapon=p:GetAttribute('ActiveSlot')==2 and (p:GetAttribute('EquippedWeapon') or 'Deagle');local shovel=p:GetAttribute('EquippedShovel') or 'Chainsaw'
  local skin=p:GetAttribute('EquippedWeaponSkin') or 'Default'
  local key=weapon and ('weapon:'..weapon..':'..skin) or ('shovel:'..shovel)
  if key~=toolKey then
@@ -480,6 +487,81 @@ local menu = "weapons"
 local cardId
 local filter = "Crypt"
 local signature = ""
+-- This script's main chunk stands at Luau's limit of 200 local variables a function, so what was added on 2026-11-16
+-- lives in this one table and not in new locals. ADD TO IT rather than declaring more locals at the top level (a
+-- script over the limit does not compile: "Out of local registers").
+--   sellSel, sellArmedUntil  the crypt's Sell button (owner: "a Sell button in the crypt, showing the sum of the
+--                            monsters chosen"): a tap on a monster's card marks it; the ids marked, and the moment
+--                            until which a second press of the button confirms the sale
+--   blink                    the nav icons that flash because they have something to take: dex - a Monsterdex reward
+--                            to claim, crypt - a grave to plant. Set with every State, drawn by the tutorial's pulse
+--                            loop (navStroke: each icon's own outline, to give back)
+--   showPetCase, caseWaiting the pet pumpkin's case window (below, by showPetHatch)
+local More = { sellSel = {}, sellArmedUntil = 0, SELL_MAX = 60, blink = {}, navStroke = {}, dexReadyCount = 0 }
+-- A grave's name on its card: the one place to change when graves get more to say (their monster family).
+function More.graveTitle(g)
+ -- with whose it is (GraveService.Family, 2026-11-16): "Stone grave · Deer"
+ return t("grave_" .. g.type) .. (g.family and " · " .. t("roadName_" .. g.family) or "")
+end
+-- Everything the crypt's Graves tab shows, as one string: the tab is rebuilt when it changes (the timers tick in place).
+function More.graveSig(s)
+ local sig = {}
+ for _, g in ipairs(s.graves or {}) do table.insert(sig, g.slot .. g.type .. (g.remaining == 0 and "r" or "")) end
+ for _, g in ipairs(s.graveInventory or {}) do if not g.pendingTransfer then table.insert(sig, "i" .. tostring(g.id)) end end
+ for name, n in pairs(s.vouchers or {}) do if n > 0 then table.insert(sig, "v" .. name .. n) end end
+ table.sort(sig)
+ return table.concat(sig, ",")
+end
+-- Is there a grave to plant, and room for it in the cemetery? (the crypt icon flashes while there is)
+function More.plantable(s)
+ if not s or #(s.graves or {}) >= (s.graveCap or math.huge) then return false end
+ for _, g in ipairs(s.graveInventory or {}) do if not g.pendingTransfer then return true end end
+ for _, n in pairs(s.vouchers or {}) do if n > 0 then return true end end
+ return false
+end
+-- How many monsters wait with a Monsterdex reward: found and not claimed, counted as the Monsterdex window lists them
+-- (renderDex). Counted again only when the dex or the claims grew.
+function More.dexReady(s)
+ local a, b = 0, 0
+ for _ in pairs(s.dex or {}) do a += 1 end
+ for _ in pairs(s.dexClaims or {}) do b += 1 end
+ local key = a .. "/" .. b
+ if key ~= More.dexReadyKey then
+  local n = 0
+  local LM = require(S.Config.LocationMonsters);local claims = s.dexClaims or {};local data = {zombiedex = s.dex}
+  for li = 1, #LM.Sets do
+   for _, e in LM.Catalog(li) do if not claims["mon:" .. e.Id] and InterfaceRules.Known(data, e.Id) then n += 1 end end
+  end
+  More.dexReadyKey, More.dexReadyCount = key, n
+ end
+ return More.dexReadyCount
+end
+-- A crypt card marked for sale: a gold rim and a tick in its corner.
+function More.sellMark(f, on, tierName)
+ if on then Style.ModalSelected(f) else f.UIStroke.Transparency = 0;f.UIStroke.Color = Pal[tierName];f.UIStroke.Thickness = 2.5 end
+ local c = f:FindFirstChild("SellCheck")
+ if on and not c then
+  c = Instance.new("Frame");c.Name = "SellCheck";c.Size = UDim2.fromOffset(28, 25);c.Position = UDim2.fromOffset(7, 56);c.BackgroundColor3 = Color3.fromRGB(70, 139, 15);c.BorderSizePixel = 0;c.ZIndex = 6;c.Parent = f
+  Instance.new("UICorner", c).CornerRadius = UDim.new(0, 8)
+  local st = Instance.new("UIStroke", c);st.Color = Style.ModalColors.Gold;st.Thickness = 2
+  local mark = label(c, "✓", UDim2.fromScale(1, 1), nil, {title = true, textSize = 20});mark.TextColor3 = Color3.new(1, 1, 1);mark.ZIndex = 7
+ end
+ if c then c.Visible = on == true end
+end
+-- The crypt's foot: Place best and Store all share it with Sell once a monster is marked. The sum is the server's
+-- own price for each (Main.server: its income a second, MergeRules.Rate, times ZombieConfig.SaleSeconds).
+function More.sellFooter()
+ local sell = cryptFooter:FindFirstChild("SellSelected")
+ if not sell or not state then return end
+ local n, sum = 0, 0
+ for _, z in ipairs(state.zombies) do if More.sellSel[z.id] then n += 1;sum += Merge.Rate(z) * ZC.SaleSeconds end end
+ local three = filter ~= "Graves" and n > 0
+ sell.Visible = three
+ sell.Text = os.clock() < More.sellArmedUntil and t("cryptSellSure") or t("cryptSell", {n = n, sum = "$" .. L.compact(math.floor(sum + .5), lang)})
+ local w = three and 1 / 3 or .5
+ cryptFooter.PlaceBest.Size = UDim2.new(w, -6, 1, 0)
+ cryptFooter.StoreAll.Size = UDim2.new(w, -6, 1, 0);cryptFooter.StoreAll.Position = UDim2.new(w, three and 3 or 6, 0, 0)
+end
 
 local function row(height,color)
  local f=Style.ModalSurface(Instance.new('Frame'),color or Style.ModalColors.Blue,16);f.Size=UDim2.new(1,0,0,height);f.Parent=scroll;return f
@@ -541,20 +623,23 @@ local function tile(grid, opts)
 	pic.Size = UDim2.new(1, -12, 1, opts.action and -78 or -40)
 	pic.Position = UDim2.fromOffset(6, 36)
 	pic.Parent = f
- if opts.rarity then
+ -- (opts.chip = {text, color}: the same strip under the title with any words - a grave's monster family)
+ if opts.rarity or opts.chip then
+  local chipColor = opts.chip and opts.chip.color or Pal[opts.rarity]
   pic.Position = UDim2.fromOffset(6, 54)
   pic.Size = UDim2.new(1,-12,1,opts.action and -98 or -62)
   local rarity = Instance.new("Frame")
   rarity.Name = "Rarity"
   rarity.Size = UDim2.new(.56,0,0,17)
   rarity.Position = UDim2.new(.22,0,0,35)
-  rarity.BackgroundColor3 = Pal[opts.rarity]
+  rarity.BackgroundColor3 = chipColor
   rarity.BorderSizePixel = 0
   rarity.ZIndex = 3
   rarity.Parent = f
   Instance.new("UICorner",rarity).CornerRadius=UDim.new(0,6)
-  local stroke=Instance.new("UIStroke",rarity);stroke.Color=Pal[opts.rarity]:Lerp(Color3.new(0,0,0),.5);stroke.Thickness=1.5
-  local caption=label(rarity,t(opts.rarity),UDim2.fromScale(1,1),nil,{title=true,textSize=15})
+  local stroke=Instance.new("UIStroke",rarity);stroke.Color=chipColor:Lerp(Color3.new(0,0,0),.5);stroke.Thickness=1.5
+  if opts.chip then rarity.Size = UDim2.new(.8,0,0,17);rarity.Position = UDim2.new(.1,0,0,35) end
+  local caption=label(rarity,opts.chip and opts.chip.text or t(opts.rarity),UDim2.fromScale(1,1),nil,{title=true,textSize=15})
   caption.Name="RarityName";caption.TextColor3=Color3.new(1,1,1);caption.ZIndex=4
   local outline=caption:FindFirstChild("ModalTextOutline");if outline then outline.Color=Color3.fromRGB(25,18,35);outline.Transparency=0;outline.Thickness=1 end
   f.UIStroke.Transparency=0;f.UIStroke.Color=Pal[opts.rarity];f.UIStroke.Thickness=2.5
@@ -564,7 +649,7 @@ local function tile(grid, opts)
 		opts.art(pic)
 	end
 	if opts.badge then
-		badge(f, opts.badge, opts.badgeColor or Pal.Stroke, opts.badgeRight and UDim2.new(1,-(opts.badgeWidth or 96)-8,1,-65) or UDim2.new(0, 8, 1, opts.action and -65 or -30), opts.badgeWidth or 96)
+		badge(f, opts.badge, opts.badgeColor or Pal.Stroke, opts.badgeRight and UDim2.new(1,-(opts.badgeWidth or 96)-8,1,-65) or UDim2.new(0, 8, 1, opts.action and -65 or -30), opts.badgeWidth or 96).Name = "Badge"
 	end
 	if opts.corner then
 		local c = label(f, opts.corner, UDim2.fromOffset(60, 30), UDim2.new(1, -66, 0, opts.rarity and 64 or 36), { title = true, textSize = 24, color = Pal.Text, stroke = true, align = Enum.TextXAlignment.Right })
@@ -583,9 +668,33 @@ local function tile(grid, opts)
 		end, UDim2.new(1, -14, 0, 32), UDim2.new(0, 7, 1, -39), a.enabled == false and Pal.Common or (a.color or Pal.Mint))
 		b.Name = a.name or "Action"
 	end
+	-- a tap on the card itself (2026-11-16: a pumpkin opens its case, a crypt monster is marked for sale): the picture
+	-- and the name, not the buttons - those stay above it
+	local tap
+	if opts.tap then
+		tap = Instance.new("TextButton")
+		tap.Name = "Tap"
+		tap.Text = ""
+		tap.AutoLocalize = false
+		tap.BackgroundTransparency = 1
+		tap.Size = UDim2.new(1, 0, 1, opts.action and -42 or 0)
+		tap.ZIndex = 5
+		tap.Parent = f
+		tap.Activated:Connect(function()
+			Sfx.play("Click")
+			opts.tap(f)
+		end)
+		if RunService:IsStudio() then
+			local press = Instance.new("BindableEvent")
+			press.Name = "DebugPress"
+			press.Event:Connect(function() opts.tap(f) end)
+			press.Parent = tap
+		end
+	end
 	if opts.small then
 		local s2 = button(f, opts.small.text, opts.small.callback, UDim2.fromOffset(28, 25), UDim2.new(1, -35, 0, opts.rarity and 56 or 36), opts.small.color or Pal.Red)
 		s2.Name = opts.small.name or "Small"
+		if tap then s2.ZIndex = math.max(s2.ZIndex, 6) end
 	end
 	return f
 end
@@ -767,8 +876,9 @@ local function renderInventory()
 	end
 end
 local function renderSettings()
- for _,key in {'AutoFire','GuideArrows','ShiftSlow','CameraShake','ShowNightInfo','ShowHeistInfo'} do
- local value=p:GetAttribute(key)~=false
+ -- SmallMonsters (2026-11-16) is the one that is off unless turned on: your own farm monsters pet-sized, on your screen only
+ for _,key in {'AutoFire','GuideArrows','ShiftSlow','CameraShake','ShowNightInfo','ShowHeistInfo','SmallMonsters'} do
+ local value=p:GetAttribute(key)~=false;if key=='SmallMonsters' then value=p:GetAttribute(key)==true end
  button(row(58),t(key)..(value and ' ✓' or ' —'),function() rem.InterfaceAction:FireServer('setting',key,not value) end,UDim2.new(1,-12,1,-12),UDim2.fromOffset(6,6),value and Pal.Mint or Pal.Common)
  end
  for _,key in {'MusicVolume','SfxVolume'} do
@@ -963,7 +1073,6 @@ local function renderHouse()
 		end
 	end
 end
-local mergeAfterEnter = false
 local function renderMerge()
 	local byId = {}
 	for _, z in ipairs(state.zombies) do
@@ -1093,8 +1202,6 @@ end
 -- painted portrait; one still unknown is a dark silhouette with a question mark, so you can see what you hunt.
 -- The page tint is the mutation (gold, moonlight, a rainbow shimmer). The big card shows the selected monster with
 -- its rarity and income; the progress bar carries the milestone gifts, their buttons sit under the big card.
-local dexPage='None';local dexSelected='DeerFarmer'
-local DEX_PAGE_COLOR={None=Style.ModalColors.Cream,Golden=Color3.fromRGB(255,206,84),Lunar=Color3.fromRGB(176,150,255),Rainbow=Color3.fromRGB(255,140,200)}
 local DEX_TINT={Golden=Color3.fromRGB(255,215,120),Lunar=Color3.fromRGB(185,170,255)}
 local function dexPortrait(parent,id,known,page,size,pos)
  if not require(S.MonsterCollection).Icon(id,Icons) then -- missing painted assets keep the 3D fallback
@@ -1221,7 +1328,7 @@ render = function()
  TILE_H=menu=="weapons" and 212 or menu=="crypt" and 236 or single and 280 or 252;TILE_W=(isShop or menu=="crypt") and 172 or 166
  fitModal(panel)
  scroll.Position=UDim2.fromOffset(24,108);scroll.Size=UDim2.new(1,-48,1,-132)
- cryptFooter.Visible=menu=="crypt";if menu=="crypt" then scroll.Size=UDim2.new(1,-48,1,-196) end
+ cryptFooter.Visible=menu=="crypt";if menu=="crypt" then scroll.Size=UDim2.new(1,-48,1,-196) end -- the monster buttons, or Dig all on the Graves tab
  shopTabs.Visible=false
  for _,c in ipairs(shopTabs:GetChildren()) do c:Destroy() end
  if false then
@@ -1304,7 +1411,9 @@ elseif menu=="pets" then
   local reason=petState and #petState.pets>=PetC.Inventory and "petFull" or state.coins<pumpkin.Price and "petNoCoins" or pumpkin.NightOnly and not state.night and "petNightOnly"
   local best=1;for k,w in ipairs(pumpkin.Weights) do if w>0 then best=k end end
   tile(grid,{order=i,name="Pumpkin_"..name,title=t(name),color=({Pumpkin=Style.ModalColors.Blue,BigPumpkin=Pal.Violet,GoldenPumpkin=Style.ModalColors.Gold,LunarPumpkin=Style.ModalColors.Purple})[name],art=function(f) pumpkinArt(f,name) end,badge=pumpkin.NightOnly and "🌙" or nil,badgeWidth=44,
-   action={name="Hatch_"..name,text="$"..short(pumpkin.Price),enabled=not reason,reason=reason and t(reason),callback=function() petSend("PetHatch",name) end}})
+   -- a pumpkin is a case (2026-11-16): its card and its price button open the case window (More.showPetCase), which buys
+   tap=function() More.showPetCase(name) end,
+   action={name="Hatch_"..name,text="$"..short(pumpkin.Price),color=reason and Pal.Common or nil,callback=function() More.showPetCase(name) end}})
  end
  elseif menu=="weaponSkins" then
  button(row(48),t("backWeapons"),function() menu="weapons";render() end)
@@ -1324,6 +1433,9 @@ elseif menu=="pets" then
  for i,id in ipairs(WeaponC.Order) do local cfg=WeaponC[id];local owned=weaponState and weaponState.owned[id];local equipped=weaponState and weaponState.equipped==id
   local unlock=WeaponC.Unlock[id];local place=unlock and districts[unlock.Location]
   local have=unlock and weaponState and weaponState.kills and weaponState.kills[unlock.Location] or 0
+  -- the tutorial's last step hands the Double over for free (WeaponService.TutorialGun, 2026-11-15)
+  local tutorialGun=not owned and state and not state.tutorialDone and state.step==4 and id==WeaponC.TutorialGun
+  if tutorialGun then have=unlock and unlock.Kills or have end
   tile(grid,{order=i,name="Weapon_"..id,title=t(id),color=Style.ModalColors.Blue,selected=equipped,art=function(f) Style.ModalArt(f,'weapon',id,nil,nil,weaponState and weaponState.skins and weaponState.skins[id]) end,badge="⚔ "..cfg.Damage*(cfg.Pellets or 1),badgeWidth=70,
    corner=not owned and place and place.Emoji or nil,
    action=owned and {text=equipped and t("inHand") or t("choose"),color=equipped and Pal.Accent or Pal.Mint,callback=function() if not equipped then rem.WeaponAction:FireServer("equip",id) end end}
@@ -1355,18 +1467,71 @@ elseif menu=="pets" then
   if not cryptFooter:FindFirstChild("PlaceBest") then
    local a=button(cryptFooter,"",function() send("placeBest") end,UDim2.new(.5,-6,1,0),UDim2.fromOffset(0,0),Pal.Mint);a.Name="PlaceBest"
    local b=button(cryptFooter,"",function() send("storeAll") end,UDim2.new(.5,-6,1,0),UDim2.new(.5,6,0,0),Pal.Orange);b.Name="StoreAll"
+   -- the Graves tab's one button (owner, 2026-11-15): dig every ripe grave at once
+   local c=button(cryptFooter,"",function() send("digAll") end,UDim2.new(1,0,1,0),UDim2.fromOffset(0,0),Pal.Mint);c.Name="DigAll"
+   -- Sell (owner, 2026-11-16): the monsters marked by a tap on their cards, with what they fetch; the first press
+   -- asks "Sell for sure?", a second one within 3 s sells (Main.server: sellMany)
+   local s=button(cryptFooter,"",function()
+    local ids={};for _,z in ipairs(state.zombies) do if More.sellSel[z.id] and #ids<More.SELL_MAX then table.insert(ids,z.id) end end
+    if #ids==0 then return end
+    if os.clock()<More.sellArmedUntil then
+     More.sellArmedUntil=0;table.clear(More.sellSel);send("sellMany",table.concat(ids,","));More.sellFooter()
+    else
+     More.sellArmedUntil=os.clock()+3;More.sellFooter()
+     task.delay(3.05,function() if os.clock()>=More.sellArmedUntil then More.sellFooter() end end)
+    end
+   end,UDim2.new(1/3,-6,1,0),UDim2.new(2/3,6,0,0),Pal.Red);s.Name="SellSelected"
    for _,o in cryptFooter:GetDescendants() do if o:IsA("GuiObject") then o.ZIndex=math.max(o.ZIndex,scroll.ZIndex+1) end end
   end
-  cryptFooter.PlaceBest.Text=t("cryptPlaceBest");cryptFooter.StoreAll.Text=t("cryptStoreAll")
+  cryptFooter.PlaceBest.Text=t("cryptPlaceBest");cryptFooter.StoreAll.Text=t("cryptStoreAll");cryptFooter.DigAll.Text=t("digAll")
+  cryptFooter.PlaceBest.Visible=filter~="Graves";cryptFooter.StoreAll.Visible=filter~="Graves";cryptFooter.DigAll.Visible=filter=="Graves"
+  -- a monster sold, merged or gone some other way is no longer marked
+  do local have={};for _,z in ipairs(state.zombies) do have[z.id]=true end;for id in pairs(More.sellSel) do if not have[id] then More.sellSel[id]=nil end end end
+  More.sellFooter()
   local chips = Style.ModalRow(row(48, Pal.Panel))
-  local chipIcons = {all="dex", Field="house", Crypt="crypt"}
-  for i, key in ipairs({"all", "Field", "Crypt"}) do
+  local chipIcons = {all="dex", Field="house", Crypt="crypt", Graves="modal_grave_Stone"}
+  local tabs = {"all", "Field", "Crypt", "Graves"}
+  for i, key in ipairs(tabs) do
    local chip = button(chips, "", function()
     filter = key;scroll.CanvasPosition = Vector2.zero;render()
-   end, UDim2.new(1/3, -8, 0, 40), UDim2.new((i-1)/3, 4, 0, 4), filter == key and Pal.Accent or Pal.Sky2)
+   end, UDim2.new(1/#tabs, -8, 0, 40), UDim2.new((i-1)/#tabs, 4, 0, 4), filter == key and Pal.Accent or Pal.Sky2)
    chip.Name = "CryptTab_" .. key
    iconImage(chip, chipIcons[key], UDim2.fromOffset(36,36), UDim2.fromOffset(8,4))
    label(chip, t(key), UDim2.new(1,-54,1,0), UDim2.fromOffset(48,0), {title=true,textSize=24})
+  end
+  -- The Graves tab (owner, 2026-11-15): the graves growing on the farm, the time each has left, and a Dig button that
+  -- digs a ripe one from wherever you are, the monster at once. The timers tick with the state (every second).
+  if filter == "Graves" then
+   local graves = table.clone(state.graves or {})
+   table.sort(graves, function(a, b) if a.remaining ~= b.remaining then return a.remaining < b.remaining end;return a.slot < b.slot end)
+   scroll:SetAttribute("GraveSig", More.graveSig(state))
+   -- the graves not planted yet come first (owner, 2026-11-16: the crypt icon flashes while there is one to plant, and
+   -- this is where it leads): those brought home and the vouchers, each with the inventory's own Select button
+   local loose = {}
+   for _, g in ipairs(state.graveInventory or {}) do if not g.pendingTransfer then table.insert(loose, {grave = g}) end end
+   for _, name in ipairs(GC.Order) do local n = state.vouchers and state.vouchers[name] or 0;if n > 0 then table.insert(loose, {voucher = name, n = n}) end end
+   if #graves == 0 and #loose == 0 then label(row(80), t("placeCemetery"), UDim2.new(1,-28,1,0), UDim2.fromOffset(14,0), {title=true,textSize=22}) end
+   for _, item in ipairs(loose) do -- rows like the inventory's own, with its button
+    local g, name = item.grave, item.voucher
+    local f = row(80);f.Name = g and "LooseGrave_" .. tostring(g.id) or "VoucherGrave_" .. name
+    Style.ModalArt(f, g and "coffin" or "grave", g and g.type or name, UDim2.fromOffset(64, 64), UDim2.fromOffset(10, 8))
+    label(f, More.graveTitle(g or {type = name}) .. (name and "  × " .. item.n or ""), UDim2.new(.55, -84, 1, 0), UDim2.fromOffset(84, 0), {title = true, align = LEFT})
+    button(f, t("selectGrave"), function()
+     if g then send("selectGrave", g.id) else send("plantVoucher", name) end
+     panel.Visible = false
+    end, UDim2.fromScale(.43, .8), UDim2.fromScale(.56, .1)).Name = "SelectGrave"
+   end
+   local grid = tileGrid()
+   for i, g in ipairs(graves) do
+    local ready = g.remaining == 0
+    -- (the family on a strip of its own: "Marble · Longmaw" does not fit a card's title)
+    tile(grid, {order = i, name = "GraveTile_" .. g.slot, title = t("grave_" .. g.type), color = Style.ModalColors.Blue,
+     chip = g.family and {text = t("roadName_" .. g.family), color = Color3.fromRGB(112, 92, 156)} or nil,
+     art = function(f) Style.ModalArt(f, "grave", g.type) end,
+     badge = ready and t("ready") or "⏳ " .. clockText(g.remaining), badgeColor = ready and Style.ModalColors.Green or nil, badgeWidth = 120,
+     action = {name = "DigGrave", text = t("dig"), enabled = ready, callback = function() send("digGrave", tostring(g.slot)) end}})
+   end
+   return
   end
   local shown = 0
   for _, z in ipairs(state.zombies) do if filter == "all" or filter == z.zone then shown += 1 end end
@@ -1376,12 +1541,22 @@ elseif menu=="pets" then
 			if filter == "all" or filter == z.zone then
 				local tierName = ZC.Tiers[z.tier]
 				local stars = Merge.Stars(z)
-				tile(grid, {
+				local card
+				card = tile(grid, {
 					order = i,
 					name = "Zombie_" .. z.id,
 					title = t(z.type),
 					color = Pal[tierName],
      rarity = tierName,
+     -- a tap on the card marks the monster for the Sell button (2026-11-16)
+     tap = function(f)
+      if not More.sellSel[z.id] then
+       local n = 0;for _ in pairs(More.sellSel) do n += 1 end
+       if n >= More.SELL_MAX then Sfx.play("Error", 0.4);return end
+      end
+      More.sellSel[z.id] = not More.sellSel[z.id] or nil;More.sellArmedUntil = 0
+      More.sellMark(f, More.sellSel[z.id], tierName);More.sellFooter()
+     end,
 					art = function(f)
 						zombieStage(f, z, UDim2.fromScale(1, 1))
 						if stars > 0 then
@@ -1402,6 +1577,7 @@ elseif menu=="pets" then
 						render()
 					end },
 				})
+				if More.sellSel[z.id] then More.sellMark(card, true, tierName) end
 			end
 		end
 	elseif menu == "dex" then
@@ -1458,8 +1634,10 @@ end
 
 -- One fixed text size down the column; scaled text would make short labels look shouty.
 local navButtons = {}
-local function openMenu(key)
- if key == "crypt" then filter = "Crypt";scroll.CanvasPosition = Vector2.zero end
+local function openMenu(key, fromIcon)
+ -- the crypt opens on its monsters; from its icon while that flashes for a grave to plant, on the graves (2026-11-16).
+ -- Nothing stays marked for sale from the last visit.
+ if key == "crypt" then filter = fromIcon and More.blink.crypt and "Graves" or "Crypt";scroll.CanvasPosition = Vector2.zero;table.clear(More.sellSel);More.sellArmedUntil = 0 end
 	menu = key
 	panel.Visible = true
 	render()
@@ -1467,7 +1645,7 @@ local function openMenu(key)
 end
 local function menuIcon(parent, key, size, order)
 	local b = iconButton(parent, MENU_ICON[key] or key, function()
-		openMenu(key)
+		openMenu(key, true)
 	end, size)
 	b.Name = "Nav_" .. key
 	b.LayoutOrder = order
@@ -1538,18 +1716,30 @@ menuBridge.Event:Connect(function(key,opening)
  elseif gui:GetAttribute('ZoneMenuKey')==key then panel.Visible=false;gui:SetAttribute('ZoneMenuKey',nil) end
 end)
 
--- Icons have no captions, so the tutorial makes the one it means flash.
+-- Icons have no captions, so the tutorial makes the one it means flash. Since 2026-11-16 an icon also flashes while
+-- it has something to take (More.blink: the Monsterdex with a reward to claim, the crypt with a grave to plant) - only
+-- once the tutorial is over, and never beside the tutorial's own hint. An icon that stops flashing gets back the
+-- outline it was painted with (it was left in the plain one before).
 local pulseTarget, pulsing
 RunService.Heartbeat:Connect(function()
-	if not pulseTarget and not pulsing then
+	local any = pulseTarget ~= nil or next(More.blink) ~= nil
+	if not any and not pulsing then
 		return
 	end
-	pulsing = pulseTarget
+	pulsing = any
 	local on = os.clock() % 0.8 < 0.4
 	for key, b in pairs(navButtons) do
-		local lit = key == pulseTarget and on
-		b.UIStroke.Color = lit and Pal.Accent or Pal.Stroke
-		b.UIStroke.Thickness = lit and 7 or 4
+		local st = b:FindFirstChildOfClass("UIStroke")
+		if st then
+			local base = More.navStroke[b]
+			if not base then
+				base = { st.Color, st.Thickness }
+				More.navStroke[b] = base
+			end
+			local lit = (key == pulseTarget or (not pulseTarget and More.blink[key])) and on
+			st.Color = lit and Pal.Accent or base[1]
+			st.Thickness = lit and 7 or base[2]
+		end
 	end
 end)
 
@@ -1572,6 +1762,10 @@ mergeDot.Parent = navButtons.crypt
 local dailyDot = questDot:Clone()
 dailyDot.Name = "DailyDot";dailyDot.Text = "!"
 dailyDot.Parent = navButtons.rewards
+-- how many monsters wait with a Monsterdex reward (owner, 2026-11-16: "a notice on the Monsterdex icon, and flashing")
+More.dexDot = questDot:Clone()
+More.dexDot.Name = "DexDot"
+More.dexDot.Parent = navButtons.dex
 
 -- Health stays visible everywhere; the grave indicator follows the carrying state.
 local function refreshRoadHud()
@@ -1633,13 +1827,14 @@ task.spawn(function()
 	end)
 end)
 
-local tutorialDoneAt
 rem.State.OnClientEvent:Connect(function(s)
 	local first = not state
 	-- A jump bigger than a second or two of income means a sale, a reward or a purchase rather than the farm ticking.
+	-- The tick pays the newcomer's boost on top (IncomeService.Tick) while s.income is without it: counted in here, or
+	-- every tick under the x3 boost sounded like a sale (2026-11-15).
 	if not first then
 		local change = s.coins - state.coins
-		if change > math.max(s.income * 2.5, 1) then
+		if change > math.max(s.income * (p:GetAttribute("NewbieBoost") or 1) * 2.5, 1) then
 			Sfx.play("Coins", 0.5)
 		elseif change < 0 then
 			Sfx.play("Buy", 0.3)
@@ -1667,12 +1862,17 @@ rem.State.OnClientEvent:Connect(function(s)
 	clockBox.BackgroundColor3 = s.night and Pal.Violet or Pal.Sky2
 	dayIcon.Image = Icons[s.night and "sun" or "moon"] or ""
 	dayText.Text = string.format("%d:%02d", math.floor(s.left / 60), math.floor(s.left % 60)) -- the sun or moon icon says which; no "night in" words (owner, 2026-11-14)
- tutorialText=t(({"tutorialDig","tutorialField","tutorialRoad","tutorialPlant"})[(s.step or 0)+1] or "tutorialDone")
+ tutorialText=t(({"tutorialDig","tutorialField","tutorialRoad","tutorialPlant","tutorialGunsmith","tutorialWeaponUpgrade","tutorialTreadmill","tutorialGate","tutorialHouse"})[(s.step or 0)+1] or "tutorialDone")
  tutorialWanted=not s.tutorialDone;refreshModal()
- gui:SetAttribute("TutorialStep",s.tutorialDone and 4 or s.step)
+ gui:SetAttribute("TutorialStep",s.tutorialDone and 9 or s.step)
  pulseTarget=not s.tutorialDone and s.step==1 and "crypt" or nil
 	gui:SetAttribute("Night", s.night)
  if panel.Visible and menu=="pumpkins" then render() end
+ -- the crypt's Graves tab: the timers tick in place; a grave planted, dug or ripe rebuilds the tab
+ if panel.Visible and menu=="crypt" and filter=="Graves" then
+  if More.graveSig(s)~=scroll:GetAttribute("GraveSig") then render()
+  else for _,g in ipairs(s.graves or {}) do local f=scroll:FindFirstChild("GraveTile_"..g.slot,true);local b=f and f:FindFirstChild("Badge");if b and g.remaining>0 then b.Text="⏳ "..clockText(g.remaining) end end end
+ end
 	if treadmillText and treadmillText.Parent then
 		treadmillText.Text = treadmillLine()
 	end
@@ -1683,6 +1883,12 @@ rem.State.OnClientEvent:Connect(function(s)
 	mergeDot.Text = tostring(readyToMerge)
 	mergeDot.Visible = readyToMerge > 0
 	dailyDot.Visible = s.dailyReady == true
+	-- the icons that flash while they have something to take (2026-11-16), once the tutorial is over
+	local ready = More.dexReady(s)
+	More.dexDot.Text = tostring(ready)
+	More.dexDot.Visible = ready > 0
+	More.blink.dex = s.tutorialDone and ready > 0 or nil
+	More.blink.crypt = s.tutorialDone and More.plantable(s) or nil
 	local questSig = ""
 	if s.quests then
 		local claimable = QuestRules.Claimable(s.quests)
@@ -1788,7 +1994,7 @@ rem.Notice.OnClientEvent:Connect(function(key, args)
  if key=="openCrypt" then openMenu("crypt");return elseif key=="zombieCard" then cardId=args.id;openMenu("zombieCard");return end
  -- No toasts for these (owner, 2026-11-14: visual noise): a grave brought home only plays a soft hit; a sleeping
  -- boss is explained once by the heist window (HelpController).
- if key=="roadStoredQuiet" then Sfx.play("Reveal",1);return end
+ if key=="roadStoredQuiet" then Sfx.jingle("Reveal");return end
  if key=="bossAsleep" then return end
 	if key == "error" then
 		Sfx.play("Error", 0.4)
@@ -1798,9 +2004,9 @@ rem.Notice.OnClientEvent:Connect(function(key, args)
 		Sfx.play("PetHatchSound", 1)
 		args = { name = t("quest_" .. args.id, { n = short(args.goal) }) }
 	elseif key == "roadDelivered" or key == "roadStored" then
-		Sfx.play("Reveal", 1) -- a short soft hit: the long fanfare was too loud for something done every minute
+		Sfx.jingle("Reveal") -- a short soft hit: the long fanfare was too loud for something done every minute
 	elseif key == "inviteWelcome" or key == "inviteReward" or key == "houseDone" then
-		Sfx.play("RareReveal", 1)
+		Sfx.jingle("RareReveal") -- (Sfx.jingle: the reveal jingles never sound on top of one another, 2026-11-16)
 	end
  if key=="petDug" then return end
 
@@ -1832,9 +2038,12 @@ promptService.PromptShown:Connect(function(pr)
  pr.ActionText=t(key)
  if pr.Name == "RoadGrab" then
   local grave=t("grave_" .. tostring(pr:GetAttribute("Grave")))
+  -- with whose it is (the grave model's Family, 2026-11-17): "Stone grave · Deer"
+  local family=pr.Parent.Parent:GetAttribute("Family");if family then grave=grave.." · "..t("roadName_"..family) end
   pr.ObjectText=pr.Parent.Parent:GetAttribute("Dropped") and t("roadDroppedObject",{grave=grave}) or grave
  end
- if pr.Name == "PortalHome" then pr.ObjectText = p:GetAttribute("CarryingGrave") and t("portalPenalty") or "" end
+ -- no "loses 1 rarity" line over the portal: a carried grave goes through as it is since 2026-11-14 (owner, 2026-11-15)
+ if pr.Name == "PortalHome" then pr.ObjectText = "" end
  if pr.Name == "ExpandPrompt" then pr.ObjectText = t(pr:GetAttribute("Zone")) .. " · 💰 " .. short(pr:GetAttribute("Price") or 0) end
 	if pr.Name == "DigPrompt" then
 		local m = pr.Parent.Parent
@@ -1897,6 +2106,17 @@ end)
 rem:WaitForChild("PetAlarm").OnClientEvent:Connect(function(_,kind)
  if kind ~= "mutant" then flash(t("petAlarm"), false, 4, "warning", "petAlarm") end
 end)
+-- The pet that came out, on its card: its picture, a burst in its rarity's colour, then its name, its rarity and what
+-- it does. Both the starter's pumpkin and a pumpkin's case end with it. Yields: call it from a thread of its own.
+function More.petReveal(card,vp,result)
+ petArt(vp,result.pet)
+ for i=1,20 do local f=Instance.new("Frame");f.Size=UDim2.fromScale(.018,.018);f.Position=UDim2.fromScale(.5,.4);f.BackgroundColor3=Pal[PetC.Tiers[result.pet.tier]];f.ZIndex=10;f.Parent=card;TweenService:Create(f,TweenInfo.new(.8),{Position=UDim2.fromScale(math.random(),1),Rotation=math.random(-180,180),BackgroundTransparency=1}):Play();game.Debris:AddItem(f,.9) end
+ label(card,t(result.pet.species),UDim2.fromScale(1,.11),UDim2.fromScale(0,.58),{title=true,textSize=34})
+ task.wait(.25);if not card.Parent then return end;label(card,t(PetC.Tiers[result.pet.tier]),UDim2.fromScale(1,.08),UDim2.fromScale(0,.69),{textSize=26,color=Pal[PetC.Tiers[result.pet.tier]]})
+ task.wait(.25);if not card.Parent then return end;label(card,petAbility(result.pet),UDim2.fromScale(1,.07),UDim2.fromScale(0,.77),{textSize=24})
+ Sfx.play("PetHatchSound",.5)
+end
+-- The starter pet's pumpkin (and any pet that arrives with no case window open): it rocks, then the pet.
 showPetHatch=function(result)
  local old=gui:FindFirstChild("PetHatch");if old then old:Destroy() end
  local previousMenu=panel.Visible and menu or nil
@@ -1915,16 +2135,118 @@ showPetHatch=function(result)
   if not card.Parent then return end
   local tween=TweenService:Create(pumpkin,TweenInfo.new(.18,Enum.EasingStyle.Sine,Enum.EasingDirection.InOut,1,true),{Rotation=15});tween:Play();tween.Completed:Wait()
  end
- if not card.Parent then return end;pumpkin:Destroy();petArt(vp,result.pet)
- for i=1,20 do local f=Instance.new("Frame");f.Size=UDim2.fromScale(.018,.018);f.Position=UDim2.fromScale(.5,.4);f.BackgroundColor3=Pal[PetC.Tiers[result.pet.tier]];f.ZIndex=10;f.Parent=card;TweenService:Create(f,TweenInfo.new(.8),{Position=UDim2.fromScale(math.random(),1),Rotation=math.random(-180,180),BackgroundTransparency=1}):Play();game.Debris:AddItem(f,.9) end
- label(card,t(result.pet.species),UDim2.fromScale(1,.11),UDim2.fromScale(0,.58),{title=true,textSize=34})
- task.wait(.25);if not card.Parent then return end;label(card,t(PetC.Tiers[result.pet.tier]),UDim2.fromScale(1,.08),UDim2.fromScale(0,.69),{textSize=26,color=Pal[PetC.Tiers[result.pet.tier]]})
- task.wait(.25);if not card.Parent then return end;label(card,petAbility(result.pet),UDim2.fromScale(1,.07),UDim2.fromScale(0,.77),{textSize=24})
- Sfx.play("PetHatchSound",.5)
+ if not card.Parent then return end;pumpkin:Destroy();More.petReveal(card,vp,result)
  end)
  button(card,t("close"),closeHatch,UDim2.fromScale(.4,.08),UDim2.fromScale(.3,.85))
 end
-rem:WaitForChild("PetHatched").OnClientEvent:Connect(showPetHatch)
+-- Pet pumpkins are cases (owner, 2026-11-16: "it isn't clear that the pets' pumpkins are cases - maybe a tap should
+-- open an interface like CS:GO's"). A pumpkin's card opens its case: every pet that can be inside with its chance
+-- (the kind's weight times the rarity's, PetConfig and PumpkinConfig - the server's own dice), and an Open button with
+-- the price. The purchase is the old one (PetHatch); the server's answer (PetHatched) spins a strip of pets under a
+-- marker, slowing down to stop on the one that hatched, and then shows it as before. Closing the window mid-spin
+-- loses nothing: the pet is in the inventory from the moment the server answered.
+function More.caseOdds(name)
+ local pumpkin=Pumpkins[name];local list={};local kinds,tiers=0,0
+ for _,w in ipairs(PetC.Weights) do kinds+=w end;for _,w in ipairs(pumpkin.Weights) do tiers+=w end
+ for tier,tw in ipairs(pumpkin.Weights) do if tw>0 then
+  for i,species in ipairs(PetC.Order) do local kw=PetC.Weights[i] or 0;if kw>0 then table.insert(list,{species=species,tier=tier,chance=kw/kinds*tw/tiers}) end end
+ end end
+ return list
+end
+function More.casePick(odds)
+ local r=math.random()
+ for _,o in ipairs(odds) do r-=o.chance;if r<=0 then return o end end
+ return odds[#odds]
+end
+-- one pet of a case: its picture on its rarity's colour, and under it the chance (the list) or the rarity (the strip)
+function More.caseCard(parent,pet,size,pos,chance)
+ local tierName=PetC.Tiers[pet.tier] or PetC.Tiers[1];local color=Pal[tierName]
+ local c=Style.ModalSurface(Instance.new("Frame"),color:Lerp(Color3.new(1,1,1),.35),12,false);c.Name="CasePet";c.Size=size;c.Position=pos or UDim2.new();c.Parent=parent
+ c.UIStroke.Color=color:Lerp(Color3.new(0,0,0),.35);c.UIStroke.Thickness=2.5
+ local pic=Instance.new("Frame");pic.Name="Picture";pic.BackgroundTransparency=1;pic.Size=UDim2.new(1,-8,1,-34);pic.Position=UDim2.fromOffset(4,4);pic.Parent=c
+ petArt(pic,{species=pet.species,tier=pet.tier})
+ local bar=Instance.new("Frame");bar.Name="Rarity";bar.Size=UDim2.new(1,-8,0,24);bar.Position=UDim2.new(0,4,1,-28);bar.BackgroundColor3=color;bar.BorderSizePixel=0;bar.ZIndex=3;bar.Parent=c
+ Instance.new("UICorner",bar).CornerRadius=UDim.new(0,8)
+ local st=Instance.new("UIStroke",bar);st.Color=color:Lerp(Color3.new(0,0,0),.5);st.Thickness=1.5
+ local text=chance and L.number(chance*100,lang,(chance*100)%1<.05 and 0 or 1).."%" or t(tierName)
+ local caption=label(bar,text,UDim2.fromScale(1,1),nil,{title=true,textSize=17});caption.Name="Caption";caption.TextColor3=Color3.new(1,1,1);caption.ZIndex=4
+ local outline=caption:FindFirstChild("ModalTextOutline");if outline then outline.Color=Color3.fromRGB(25,18,35);outline.Transparency=0;outline.Thickness=1 end
+ return c
+end
+More.showPetCase=function(name)
+ local pumpkin=Pumpkins[name];if not pumpkin or not state then return end
+ local old=gui:FindFirstChild("PetHatch");if old then old:Destroy() end
+ local previousMenu=panel.Visible and menu or nil
+ panel.Visible=false
+ local card=scaledBy(Style.ModalWindow(Instance.new("Frame")));card.Name="PetHatch";card.Size=UDim2.fromOffset(640,540);card.AnchorPoint=Vector2.new(.5,.5);card.Position=UDim2.fromScale(.5,.5);card.ZIndex=20;card.Parent=gui;fitModal(card);modalLayouts[card]=function() end;refreshModal()
+ local function closeCase()
+  if More.caseWaiting and More.caseWaiting.card==card then More.caseWaiting=nil end
+  card:Destroy()
+  if previousMenu then menu=previousMenu;panel.Visible=true;render() end
+ end
+ modalTitle(card,t(name),closeCase)
+ local odds=More.caseOdds(name)
+ -- what is inside
+ local body=Instance.new("Frame");body.Name="Contents";body.BackgroundTransparency=1;body.Size=UDim2.new(1,0,1,-64);body.Position=UDim2.fromOffset(0,64);body.Parent=card
+ local art=pumpkinArt(body,name);art.Size=UDim2.fromOffset(76,76);art.Position=UDim2.fromOffset(24,0)
+ -- walked away from the pet shop with the case still shut: the window goes with the shop's menu (a spin plays out)
+ local left=gui:GetAttributeChangedSignal("ZoneMenuKey"):Connect(function()
+  if gui:GetAttribute("ZoneMenuKey")~="pumpkins" and card.Parent and not card:GetAttribute("Spinning") then previousMenu=nil;closeCase() end
+ end)
+ card.Destroying:Connect(function() left:Disconnect() end)
+ label(body,t("caseContains"),UDim2.new(1,-134,0,60),UDim2.fromOffset(110,8),{title=true,textSize=28,align=LEFT})
+ local grid=Instance.new("Frame");grid.Name="Pets";grid.BackgroundTransparency=1;grid.Size=UDim2.new(1,-40,0,290);grid.Position=UDim2.fromOffset(20,84);grid.Parent=body
+ local layout=Instance.new("UIGridLayout");layout.CellSize=UDim2.fromOffset(#odds>8 and 110 or 138,#odds>8 and 90 or 138);layout.CellPadding=UDim2.fromOffset(10,10);layout.SortOrder=Enum.SortOrder.LayoutOrder;layout.HorizontalAlignment=Enum.HorizontalAlignment.Center;layout.VerticalAlignment=Enum.VerticalAlignment.Center;layout.Parent=grid
+ for i,o in ipairs(odds) do More.caseCard(grid,o,UDim2.new(),nil,o.chance).LayoutOrder=i end
+ local function blocked() return petState and #petState.pets>=PetC.Inventory and "petFull" or state.coins<pumpkin.Price and "petNoCoins" or pumpkin.NightOnly and not state.night and "petNightOnly" or nil end
+ local waitingSince
+ local open=button(body,t("caseOpen",{price="$"..short(pumpkin.Price)}),function()
+  local reason=blocked()
+  if reason then flash(t(reason),true);return end
+  if waitingSince and os.clock()-waitingSince<3 then return end -- one purchase a press: the answer is on its way
+  waitingSince=os.clock();More.caseWaiting={card=card,name=name,spin=function(result) More.caseSpin(card,body,name,odds,result,closeCase) end}
+  petSend("PetHatch",name)
+ end,UDim2.new(1,-200,0,64),UDim2.new(0,100,1,-86),blocked() and Pal.Common or Pal.Mint)
+ open.Name="OpenCase";open.UITextSizeConstraint.MaxTextSize=30
+end
+-- The spin: the pets of the case run past the marker and slow down; the one in WIN's place is the pet that hatched.
+function More.caseSpin(card,body,name,odds,result,close)
+ if not card.Parent then return end
+ card:SetAttribute("Spinning",true);body:ClearAllChildren()
+ local N,WIN,CW,GAP,SECONDS=40,35,132,8,4.6;local pitch=CW+GAP;local width=600
+ local window=Style.ModalSurface(Instance.new("Frame"),Style.ModalColors.Purple,14,false);window.Name="Roulette";window.Size=UDim2.fromOffset(width,176);window.Position=UDim2.fromOffset(20,96);window.ClipsDescendants=true;window.Parent=body
+ local strip=Instance.new("Frame");strip.Name="Strip";strip.BackgroundTransparency=1;strip.Size=UDim2.fromOffset(N*pitch,152);strip.Position=UDim2.fromOffset(0,12);strip.Parent=window
+ for i=1,N do More.caseCard(strip,i==WIN and result.pet or More.casePick(odds),UDim2.fromOffset(CW,152),UDim2.fromOffset((i-1)*pitch,0)).LayoutOrder=i end
+ for _,y in {0,1} do -- the marker: a gold line down the middle with a notch at each end
+  local notch=Instance.new("Frame");notch.Name="Notch";notch.AnchorPoint=Vector2.new(.5,.5);notch.Size=UDim2.fromOffset(18,18);notch.Position=UDim2.new(.5,0,y,0);notch.Rotation=45;notch.BackgroundColor3=Style.ModalColors.Gold;notch.BorderSizePixel=0;notch.ZIndex=8;notch.Parent=window
+ end
+ local marker=Instance.new("Frame");marker.Name="Marker";marker.AnchorPoint=Vector2.new(.5,0);marker.Size=UDim2.new(0,4,1,0);marker.Position=UDim2.fromScale(.5,0);marker.BackgroundColor3=Style.ModalColors.Gold;marker.BorderSizePixel=0;marker.ZIndex=8;marker.Parent=window
+ -- it starts with the first cards in view and stops with the marker somewhere on the winner's card, not dead centre
+ local stop=(WIN-1)*pitch+CW/2+(math.random()-.5)*CW*.7-width/2
+ local tween=TweenService:Create(strip,TweenInfo.new(SECONDS,Enum.EasingStyle.Quart,Enum.EasingDirection.Out),{Position=UDim2.fromOffset(-stop,12)});tween:Play()
+ task.spawn(function()
+  -- a click as each card passes the marker
+  local last=0;local started=os.clock()
+  while card.Parent and os.clock()-started<SECONDS do
+   local index=math.floor((width/2-strip.Position.X.Offset)/pitch)
+   if index~=last then last=index;Sfx.play("Click",.04,.45) end
+   RunService.Heartbeat:Wait()
+  end
+  if not card.Parent then return end
+  task.wait(.35);if not card.Parent then return end
+  local won=nil;for _,c in strip:GetChildren() do if c.LayoutOrder==WIN then won=c end end
+  if won then won.UIStroke.Color=Style.ModalColors.Gold;TweenService:Create(won.UIStroke,TweenInfo.new(.2,Enum.EasingStyle.Back,Enum.EasingDirection.Out),{Thickness=6}):Play() end
+  task.wait(.75);if not card.Parent then return end
+  body:Destroy()
+  local vp=Instance.new("Frame");vp.Size=UDim2.fromScale(.8,.43);vp.Position=UDim2.fromScale(.1,.15);vp.BackgroundTransparency=1;vp.Parent=card
+  button(card,t("close"),close,UDim2.fromScale(.4,.08),UDim2.fromScale(.3,.85))
+  More.petReveal(card,vp,result)
+ end)
+end
+rem:WaitForChild("PetHatched").OnClientEvent:Connect(function(result)
+ local case=More.caseWaiting;More.caseWaiting=nil
+ if case and case.card.Parent and case.name==result.pumpkin and not result.starter then case.spin(result) else showPetHatch(result) end
+end)
 petSend("PetSync")
 
 rem:WaitForChild("WeaponState").OnClientEvent:Connect(function(data) local changed=not weaponState or weaponState.equipped~=data.equipped or game.HttpService:JSONEncode(weaponState.owned)~=game.HttpService:JSONEncode(data.owned) or game.HttpService:JSONEncode(weaponState.skins or {})~=game.HttpService:JSONEncode(data.skins or {});weaponState=data;if changed and panel.Visible and (menu=="weapons" or menu=="inventory" or menu=="weaponSkins") then render() end end)

@@ -1,0 +1,174 @@
+{
+  "same_stage_render_comparison": [
+    {
+      "id": "Longmaw_Idle",
+      "profile": "models",
+      "image_rms_255": 0.2931,
+      "psnr_db": 58.79
+    },
+    {
+      "id": "Longmaw_Idle",
+      "profile": "mobile",
+      "image_rms_255": 0.4547,
+      "psnr_db": 54.98
+    },
+    {
+      "id": "Longmaw_Aggressive",
+      "profile": "models",
+      "image_rms_255": 0.2932,
+      "psnr_db": 58.79
+    },
+    {
+      "id": "Longmaw_Aggressive",
+      "profile": "mobile",
+      "image_rms_255": 0.4559,
+      "psnr_db": 54.95
+    },
+    {
+      "id": "Longmaw_Farmer_Idle",
+      "profile": "models",
+      "image_rms_255": 0.2772,
+      "psnr_db": 59.28
+    },
+    {
+      "id": "Longmaw_Farmer_Idle",
+      "profile": "mobile",
+      "image_rms_255": 0.8257,
+      "psnr_db": 49.79
+    },
+    {
+      "id": "Longmaw_Farmer_Aggressive",
+      "profile": "models",
+      "image_rms_255": 0.2785,
+      "psnr_db": 59.23
+    },
+    {
+      "id": "Longmaw_Farmer_Aggressive",
+      "profile": "mobile",
+      "image_rms_255": 0.8246,
+      "psnr_db": 49.81
+    },
+    {
+      "id": "Longmaw_Miner_Idle",
+      "profile": "models",
+      "image_rms_255": 0.2647,
+      "psnr_db": 59.68
+    },
+    {
+      "id": "Longmaw_Miner_Idle",
+      "profile": "mobile",
+      "image_rms_255": 0.9085,
+      "psnr_db": 48.96
+    },
+    {
+      "id": "Longmaw_Miner_Aggressive",
+      "profile": "models",
+      "image_rms_255": 0.2656,
+      "psnr_db": 59.64
+    },
+    {
+      "id": "Longmaw_Miner_Aggressive",
+      "profile": "mobile",
+      "image_rms_255": 0.908,
+      "psnr_db": 48.97
+    },
+    {
+      "id": "Longmaw_Princess_Idle",
+      "profile": "models",
+      "image_rms_255": 0.2961,
+      "psnr_db": 58.7
+    },
+    {
+      "id": "Longmaw_Princess_Idle",
+      "profile": "mobile",
+      "image_rms_255": 1.3055,
+      "psnr_db": 45.82
+    },
+    {
+      "id": "Longmaw_Princess_Aggressive",
+      "profile": "models",
+      "image_rms_255": 0.2958,
+      "psnr_db": 58.71
+    },
+    {
+      "id": "Longmaw_Princess_Aggressive",
+      "profile": "mobile",
+      "image_rms_255": 1.3043,
+      "psnr_db": 45.82
+    },
+    {
+      "id": "Longmaw_Knight_Idle",
+      "profile": "models",
+      "image_rms_255": 0.2686,
+      "psnr_db": 59.55
+    },
+    {
+      "id": "Longmaw_Knight_Idle",
+      "profile": "mobile",
+      "image_rms_255": 1.0489,
+      "psnr_db": 47.72
+    },
+    {
+      "id": "Longmaw_Knight_Aggressive",
+      "profile": "models",
+      "image_rms_255": 0.2679,
+      "psnr_db": 59.57
+    },
+    {
+      "id": "Longmaw_Knight_Aggressive",
+      "profile": "mobile",
+      "image_rms_255": 1.0487,
+      "psnr_db": 47.72
+    },
+    {
+      "id": "Longmaw_Punk_Idle",
+      "profile": "models",
+      "image_rms_255": 0.2949,
+      "psnr_db": 58.74
+    },
+    {
+      "id": "Longmaw_Punk_Idle",
+      "profile": "mobile",
+      "image_rms_255": 1.3911,
+      "psnr_db": 45.26
+    },
+    {
+      "id": "Longmaw_Punk_Aggressive",
+      "profile": "models",
+      "image_rms_255": 0.2994,
+      "psnr_db": 58.61
+    },
+    {
+      "id": "Longmaw_Punk_Aggressive",
+      "profile": "mobile",
+      "image_rms_255": 1.3926,
+      "psnr_db": 45.25
+    },
+    {
+      "id": "Longmaw_Assassin_Idle",
+      "profile": "models",
+      "image_rms_255": 0.2799,
+      "psnr_db": 59.19
+    },
+    {
+      "id": "Longmaw_Assassin_Idle",
+      "profile": "mobile",
+      "image_rms_255": 0.8291,
+      "psnr_db": 49.76
+    },
+    {
+      "id": "Longmaw_Assassin_Aggressive",
+      "profile": "models",
+      "image_rms_255": 0.2792,
+      "psnr_db": 59.21
+    },
+    {
+      "id": "Longmaw_Assassin_Aggressive",
+      "profile": "mobile",
+      "image_rms_255": 0.8277,
+      "psnr_db": 49.77
+    }
+  ],
+  "metric_is_not_runtime_benchmark": true,
+  "source_files_unchanged": 306
+}

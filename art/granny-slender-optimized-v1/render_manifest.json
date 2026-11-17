@@ -1,0 +1,203 @@
+{
+  "renders": [
+    {
+      "case": "Granny_Idle_full",
+      "id": "Granny",
+      "character": "Granny",
+      "clip": "Idle",
+      "view": "full",
+      "profile": "original",
+      "file": "previews/original/Granny_Idle_full.png"
+    },
+    {
+      "case": "Granny_Idle_full",
+      "id": "Granny",
+      "character": "Granny",
+      "clip": "Idle",
+      "view": "full",
+      "profile": "optimized",
+      "file": "previews/optimized/Granny_Idle_full.png"
+    },
+    {
+      "case": "Granny_Aggressive_full",
+      "id": "Granny",
+      "character": "Granny",
+      "clip": "Aggressive",
+      "view": "full",
+      "profile": "original",
+      "file": "previews/original/Granny_Aggressive_full.png"
+    },
+    {
+      "case": "Granny_Aggressive_full",
+      "id": "Granny",
+      "character": "Granny",
+      "clip": "Aggressive",
+      "view": "full",
+      "profile": "optimized",
+      "file": "previews/optimized/Granny_Aggressive_full.png"
+    },
+    {
+      "case": "Granny_Idle_grip",
+      "id": "Granny",
+      "character": "Granny",
+      "clip": "Idle",
+      "view": "grip",
+      "profile": "original",
+      "file": "previews/original/Granny_Idle_grip.png"
+    },
+    {
+      "case": "Granny_Idle_grip",
+      "id": "Granny",
+      "character": "Granny",
+      "clip": "Idle",
+      "view": "grip",
+      "profile": "optimized",
+      "file": "previews/optimized/Granny_Idle_grip.png"
+    },
+    {
+      "case": "Granny_Aggressive_grip",
+      "id": "Granny",
+      "character": "Granny",
+      "clip": "Aggressive",
+      "view": "grip",
+      "profile": "original",
+      "file": "previews/original/Granny_Aggressive_grip.png"
+    },
+    {
+      "case": "Granny_Aggressive_grip",
+      "id": "Granny",
+      "character": "Granny",
+      "clip": "Aggressive",
+      "view": "grip",
+      "profile": "optimized",
+      "file": "previews/optimized/Granny_Aggressive_grip.png"
+    },
+    {
+      "case": "Grandfather_King_Idle_full",
+      "id": "Grandfather_King",
+      "character": "Grandfather",
+      "clip": "Idle",
+      "view": "full",
+      "profile": "original",
+      "file": "previews/original/Grandfather_King_Idle_full.png"
+    },
+    {
+      "case": "Grandfather_King_Idle_full",
+      "id": "Grandfather_King",
+      "character": "Grandfather",
+      "clip": "Idle",
+      "view": "full",
+      "profile": "optimized",
+      "file": "previews/optimized/Grandfather_King_Idle_full.png"
+    },
+    {
+      "case": "Grandfather_King_Aggressive_full",
+      "id": "Grandfather_King",
+      "character": "Grandfather",
+      "clip": "Aggressive",
+      "view": "full",
+      "profile": "original",
+      "file": "previews/original/Grandfather_King_Aggressive_full.png"
+    },
+    {
+      "case": "Grandfather_King_Aggressive_full",
+      "id": "Grandfather_King",
+      "character": "Grandfather",
+      "clip": "Aggressive",
+      "view": "full",
+      "profile": "optimized",
+      "file": "previews/optimized/Grandfather_King_Aggressive_full.png"
+    },
+    {
+      "case": "Grandfather_King_Idle_weapon",
+      "id": "Grandfather_King",
+      "character": "Grandfather",
+      "clip": "Idle",
+      "view": "weapon",
+      "profile": "original",
+      "file": "previews/original/Grandfather_King_Idle_weapon.png"
+    },
+    {
+      "case": "Grandfather_King_Idle_weapon",
+      "id": "Grandfather_King",
+      "character": "Grandfather",
+      "clip": "Idle",
+      "view": "weapon",
+      "profile": "optimized",
+      "file": "previews/optimized/Grandfather_King_Idle_weapon.png"
+    },
+    {
+      "case": "Slenderman_King_Idle_full",
+      "id": "Slenderman_King",
+      "character": "Slenderman",
+      "clip": "Idle",
+      "view": "full",
+      "profile": "original",
+      "file": "previews/original/Slenderman_King_Idle_full.png"
+    },
+    {
+      "case": "Slenderman_King_Idle_full",
+      "id": "Slenderman_King",
+      "character": "Slenderman",
+      "clip": "Idle",
+      "view": "full",
+      "profile": "optimized",
+      "file": "previews/optimized/Slenderman_King_Idle_full.png"
+    },
+    {
+      "case": "Slendrina_Punk_Aggressive_full",
+      "id": "Slendrina_Punk",
+      "character": "Slendrina",
+      "clip": "Aggressive",
+      "view": "full",
+      "profile": "original",
+      "file": "previews/original/Slendrina_Punk_Aggressive_full.png"
+    },
+    {
+      "case": "Slendrina_Punk_Aggressive_full",
+      "id": "Slendrina_Punk",
+      "character": "Slendrina",
+      "clip": "Aggressive",
+      "view": "full",
+      "profile": "optimized",
+      "file": "previews/optimized/Slendrina_Punk_Aggressive_full.png"
+    },
+    {
+      "case": "SpiderMom_Knight_Idle_full",
+      "id": "SpiderMom_Knight",
+      "character": "SpiderMom",
+      "clip": "Idle",
+      "view": "full",
+      "profile": "original",
+      "file": "previews/original/SpiderMom_Knight_Idle_full.png"
+    },
+    {
+      "case": "SpiderMom_Knight_Idle_full",
+      "id": "SpiderMom_Knight",
+      "character": "SpiderMom",
+      "clip": "Idle",
+      "view": "full",
+      "profile": "optimized",
+      "file": "previews/optimized/SpiderMom_Knight_Idle_full.png"
+    },
+    {
+      "case": "SpiderMom_Assassin_Aggressive_full",
+      "id": "SpiderMom_Assassin",
+      "character": "SpiderMom",
+      "clip": "Aggressive",
+      "view": "full",
+      "profile": "original",
+      "file": "previews/original/SpiderMom_Assassin_Aggressive_full.png"
+    },
+    {
+      "case": "SpiderMom_Assassin_Aggressive_full",
+      "id": "SpiderMom_Assassin",
+      "character": "SpiderMom",
+      "clip": "Aggressive",
+      "view": "full",
+      "profile": "optimized",
+      "file": "previews/optimized/SpiderMom_Assassin_Aggressive_full.png"
+    }
+  ],
+  "source_files_unchanged": 531
+}

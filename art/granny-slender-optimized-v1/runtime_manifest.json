@@ -1,0 +1,559 @@
+{
+  "status": "optimized_copies_for_review",
+  "game_integration_authorized": false,
+  "models": {
+    "Granny": {
+      "file": "models/Granny.glb",
+      "character": "Granny",
+      "role": "Base",
+      "sha256": "8ce3213d899bc5ff57ac7296bd2c1f5fa56392f228ad5f9bce09982a138358b0",
+      "bones": 17,
+      "meshes": 2,
+      "triangles": 7728,
+      "animations": {
+        "Idle": 2.4,
+        "Aggressive": 1.2
+      }
+    },
+    "Grandfather": {
+      "file": "models/Grandfather.glb",
+      "character": "Grandfather",
+      "role": "Base",
+      "sha256": "cec1560c6362b74fbe33ca00dd01aa8c10c4dc2092aede99ea5ece710b998817",
+      "bones": 16,
+      "meshes": 2,
+      "triangles": 6022,
+      "animations": {
+        "Idle": 2.4,
+        "Aggressive": 1.2
+      }
+    },
+    "Slenderman": {
+      "file": "models/Slenderman.glb",
+      "character": "Slenderman",
+      "role": "Base",
+      "sha256": "6fdb184ef2742bfc956dc106f8bf3147676ee8235e7f8f61d93fadf94cbf2567",
+      "bones": 16,
+      "meshes": 1,
+      "triangles": 2176,
+      "animations": {
+        "Idle": 2.4,
+        "Aggressive": 1.2
+      }
+    },
+    "Slendrina": {
+      "file": "models/Slendrina.glb",
+      "character": "Slendrina",
+      "role": "Base",
+      "sha256": "1822d9d26bec3eda09ca3d2a6ff06b8594409b894ad47370bae75ed1b6c513f0",
+      "bones": 19,
+      "meshes": 1,
+      "triangles": 4772,
+      "animations": {
+        "Idle": 2.4,
+        "Aggressive": 1.2
+      }
+    },
+    "SpiderMom": {
+      "file": "models/SpiderMom.glb",
+      "character": "SpiderMom",
+      "role": "Base",
+      "sha256": "b9e85416f0b37b11845d017db102691b6a6e80cc46b8c7c4e526f6b95db1ee1f",
+      "bones": 21,
+      "meshes": 1,
+      "triangles": 3144,
+      "animations": {
+        "Idle": 2.4,
+        "Aggressive": 1.2
+      }
+    },
+    "Granny_Farmer": {
+      "file": "models/Granny_Farmer.glb",
+      "character": "Granny",
+      "role": "Farmer",
+      "sha256": "24cd5be46f0004f2e8d48e984a6931774955f10e417493c78c63369825aebdd8",
+      "bones": 17,
+      "meshes": 2,
+      "triangles": 9180,
+      "animations": {
+        "Idle": 2.4,
+        "Aggressive": 1.2
+      }
+    },
+    "Granny_Miner": {
+      "file": "models/Granny_Miner.glb",
+      "character": "Granny",
+      "role": "Miner",
+      "sha256": "e92d787cd38cc7bc7e3f443057f0f8cac5d2888f3dc1df17f6de72d10e2ea474",
+      "bones": 17,
+      "meshes": 2,
+      "triangles": 9172,
+      "animations": {
+        "Idle": 2.4,
+        "Aggressive": 1.2
+      }
+    },
+    "Granny_Princess": {
+      "file": "models/Granny_Princess.glb",
+      "character": "Granny",
+      "role": "Princess",
+      "sha256": "6f4f111cce804e7d7bd797f2ca23563f14b68ab3dd4f43f72e27ee6eb796e976",
+      "bones": 17,
+      "meshes": 2,
+      "triangles": 10336,
+      "animations": {
+        "Idle": 2.4,
+        "Aggressive": 1.2
+      }
+    },
+    "Granny_Knight": {
+      "file": "models/Granny_Knight.glb",
+      "character": "Granny",
+      "role": "Knight",
+      "sha256": "ffb7b35bd581ed61ac82ebf576391955b03b2882f3c07d8436cc2c37de2c3c33",
+      "bones": 17,
+      "meshes": 2,
+      "triangles": 9602,
+      "animations": {
+        "Idle": 2.4,
+        "Aggressive": 1.2
+      }
+    },
+    "Granny_Punk": {
+      "file": "models/Granny_Punk.glb",
+      "character": "Granny",
+      "role": "Punk",
+      "sha256": "38dbf3a84f2ed5bfdb1486953f950ddea69423facdb9839b18c1e0d37bc0ca79",
+      "bones": 17,
+      "meshes": 2,
+      "triangles": 10372,
+      "animations": {
+        "Idle": 2.4,
+        "Aggressive": 1.2
+      }
+    },
+    "Granny_Assassin": {
+      "file": "models/Granny_Assassin.glb",
+      "character": "Granny",
+      "role": "Assassin",
+      "sha256": "1b1103b6311f2d676f8725cbd0b75c3e1f7195abf7a6073b070e03ebea616006",
+      "bones": 17,
+      "meshes": 2,
+      "triangles": 9268,
+      "animations": {
+        "Idle": 2.4,
+        "Aggressive": 1.2
+      }
+    },
+    "Grandfather_Farmer": {
+      "file": "models/Grandfather_Farmer.glb",
+      "character": "Grandfather",
+      "role": "Farmer",
+      "sha256": "ff3fe3ba68dd3f1c2d241cd0aaf35f32bb66e7e317da780c4c046b3539b7c5b4",
+      "bones": 16,
+      "meshes": 2,
+      "triangles": 7474,
+      "animations": {
+        "Idle": 2.4,
+        "Aggressive": 1.2
+      }
+    },
+    "Grandfather_Miner": {
+      "file": "models/Grandfather_Miner.glb",
+      "character": "Grandfather",
+      "role": "Miner",
+      "sha256": "47b545d6f120b3c54f3f4f08275c4bde841cf88b699637800cd33cd477e179ed",
+      "bones": 16,
+      "meshes": 2,
+      "triangles": 7466,
+      "animations": {
+        "Idle": 2.4,
+        "Aggressive": 1.2
+      }
+    },
+    "Grandfather_King": {
+      "file": "models/Grandfather_King.glb",
+      "character": "Grandfather",
+      "role": "King",
+      "sha256": "37a667dd1f487355ee975ef498c53e3880f3160ae99b551918b9966dea1e206b",
+      "bones": 16,
+      "meshes": 2,
+      "triangles": 8014,
+      "animations": {
+        "Idle": 2.4,
+        "Aggressive": 1.2
+      }
+    },
+    "Grandfather_Knight": {
+      "file": "models/Grandfather_Knight.glb",
+      "character": "Grandfather",
+      "role": "Knight",
+      "sha256": "5b7aa4b992c53e089487e69c4dfe25f9f7bc72a9055b867aa56ece5972f3a139",
+      "bones": 16,
+      "meshes": 2,
+      "triangles": 7896,
+      "animations": {
+        "Idle": 2.4,
+        "Aggressive": 1.2
+      }
+    },
+    "Grandfather_Punk": {
+      "file": "models/Grandfather_Punk.glb",
+      "character": "Grandfather",
+      "role": "Punk",
+      "sha256": "eaffe7f185a3209d755437feafd435a1076d8cebaab683531b941f524767c5a4",
+      "bones": 16,
+      "meshes": 2,
+      "triangles": 8666,
+      "animations": {
+        "Idle": 2.4,
+        "Aggressive": 1.2
+      }
+    },
+    "Grandfather_Assassin": {
+      "file": "models/Grandfather_Assassin.glb",
+      "character": "Grandfather",
+      "role": "Assassin",
+      "sha256": "462724534a3b195783ac4bc3e166c956da786c59e5c4a59933bc4d0eee21e617",
+      "bones": 16,
+      "meshes": 2,
+      "triangles": 7574,
+      "animations": {
+        "Idle": 2.4,
+        "Aggressive": 1.2
+      }
+    },
+    "Slenderman_Farmer": {
+      "file": "models/Slenderman_Farmer.glb",
+      "character": "Slenderman",
+      "role": "Farmer",
+      "sha256": "f4bf9410fb3580fbc19a153a29bc81607b4f0db902a766ec17be67c4fa1808a3",
+      "bones": 16,
+      "meshes": 1,
+      "triangles": 3628,
+      "animations": {
+        "Idle": 2.4,
+        "Aggressive": 1.2
+      }
+    },
+    "Slenderman_Miner": {
+      "file": "models/Slenderman_Miner.glb",
+      "character": "Slenderman",
+      "role": "Miner",
+      "sha256": "c326589a269b92f668d4baa2ec06f6aabfd034e7999282f95617f9228276773a",
+      "bones": 16,
+      "meshes": 1,
+      "triangles": 3620,
+      "animations": {
+        "Idle": 2.4,
+        "Aggressive": 1.2
+      }
+    },
+    "Slenderman_King": {
+      "file": "models/Slenderman_King.glb",
+      "character": "Slenderman",
+      "role": "King",
+      "sha256": "f9422b6edc710047ddab547a937006dd1e876ed2295f76412278dfad1b7c82df",
+      "bones": 16,
+      "meshes": 1,
+      "triangles": 4168,
+      "animations": {
+        "Idle": 2.4,
+        "Aggressive": 1.2
+      }
+    },
+    "Slenderman_Knight": {
+      "file": "models/Slenderman_Knight.glb",
+      "character": "Slenderman",
+      "role": "Knight",
+      "sha256": "35718ef818af11fa85d1aa264c486709a1dfca66e5884fd1d8a408cf149af194",
+      "bones": 16,
+      "meshes": 1,
+      "triangles": 4050,
+      "animations": {
+        "Idle": 2.4,
+        "Aggressive": 1.2
+      }
+    },
+    "Slenderman_Punk": {
+      "file": "models/Slenderman_Punk.glb",
+      "character": "Slenderman",
+      "role": "Punk",
+      "sha256": "13258d14b1e09530b9c685c0bcfb767dfa82910ce560355fb0c0c833e0f4d276",
+      "bones": 16,
+      "meshes": 1,
+      "triangles": 4820,
+      "animations": {
+        "Idle": 2.4,
+        "Aggressive": 1.2
+      }
+    },
+    "Slenderman_Assassin": {
+      "file": "models/Slenderman_Assassin.glb",
+      "character": "Slenderman",
+      "role": "Assassin",
+      "sha256": "74b10a0775d8eef5262db7c356c235f73bc0ee1068b28bc9395541ed3bf78f02",
+      "bones": 16,
+      "meshes": 1,
+      "triangles": 3728,
+      "animations": {
+        "Idle": 2.4,
+        "Aggressive": 1.2
+      }
+    },
+    "Slendrina_Farmer": {
+      "file": "models/Slendrina_Farmer.glb",
+      "character": "Slendrina",
+      "role": "Farmer",
+      "sha256": "2900b5aefcd220e82ef193e792918d47af9da18b55ac4072322684566a7f5a2a",
+      "bones": 19,
+      "meshes": 1,
+      "triangles": 6224,
+      "animations": {
+        "Idle": 2.4,
+        "Aggressive": 1.2
+      }
+    },
+    "Slendrina_Miner": {
+      "file": "models/Slendrina_Miner.glb",
+      "character": "Slendrina",
+      "role": "Miner",
+      "sha256": "114373c3fcf39a73d12d7ef157489f713c74ba5933f3ba98a4f4e152ae973377",
+      "bones": 19,
+      "meshes": 1,
+      "triangles": 6216,
+      "animations": {
+        "Idle": 2.4,
+        "Aggressive": 1.2
+      }
+    },
+    "Slendrina_Princess": {
+      "file": "models/Slendrina_Princess.glb",
+      "character": "Slendrina",
+      "role": "Princess",
+      "sha256": "a6d2c57519f556cd775f450379d303960b2000980a41713bddfb277966ba1584",
+      "bones": 19,
+      "meshes": 1,
+      "triangles": 7380,
+      "animations": {
+        "Idle": 2.4,
+        "Aggressive": 1.2
+      }
+    },
+    "Slendrina_Knight": {
+      "file": "models/Slendrina_Knight.glb",
+      "character": "Slendrina",
+      "role": "Knight",
+      "sha256": "87e1a5389d979095e9d71425ae40e397e7f41384b2466ab365900a696529eb1e",
+      "bones": 19,
+      "meshes": 1,
+      "triangles": 6646,
+      "animations": {
+        "Idle": 2.4,
+        "Aggressive": 1.2
+      }
+    },
+    "Slendrina_Punk": {
+      "file": "models/Slendrina_Punk.glb",
+      "character": "Slendrina",
+      "role": "Punk",
+      "sha256": "424c94f02e3728a99d565b527e06b2c5a7c09848bcd808a93a20a39a4f92600e",
+      "bones": 19,
+      "meshes": 1,
+      "triangles": 7416,
+      "animations": {
+        "Idle": 2.4,
+        "Aggressive": 1.2
+      }
+    },
+    "Slendrina_Assassin": {
+      "file": "models/Slendrina_Assassin.glb",
+      "character": "Slendrina",
+      "role": "Assassin",
+      "sha256": "76f8360289ca24ebfcb0c2714fe2b0d39daf361fc292d937484e7cb4854fb09d",
+      "bones": 19,
+      "meshes": 1,
+      "triangles": 6312,
+      "animations": {
+        "Idle": 2.4,
+        "Aggressive": 1.2
+      }
+    },
+    "SpiderMom_Farmer": {
+      "file": "models/SpiderMom_Farmer.glb",
+      "character": "SpiderMom",
+      "role": "Farmer",
+      "sha256": "7d32b61491a4b35ea4bfdbd0a292bd74acd6c0498d3f9ce50db81afab83d1200",
+      "bones": 21,
+      "meshes": 1,
+      "triangles": 4380,
+      "animations": {
+        "Idle": 2.4,
+        "Aggressive": 1.2
+      }
+    },
+    "SpiderMom_Miner": {
+      "file": "models/SpiderMom_Miner.glb",
+      "character": "SpiderMom",
+      "role": "Miner",
+      "sha256": "6a6fda71f16d3b67746eaeecc988ee33b398aeacd3f654c4205375504ac98420",
+      "bones": 21,
+      "meshes": 1,
+      "triangles": 4212,
+      "animations": {
+        "Idle": 2.4,
+        "Aggressive": 1.2
+      }
+    },
+    "SpiderMom_Princess": {
+      "file": "models/SpiderMom_Princess.glb",
+      "character": "SpiderMom",
+      "role": "Princess",
+      "sha256": "32747d4c883de4e7ab6524337c368fb0ec0fd1c1224e7f05c7a0fbdff820e88f",
+      "bones": 21,
+      "meshes": 1,
+      "triangles": 4388,
+      "animations": {
+        "Idle": 2.4,
+        "Aggressive": 1.2
+      }
+    },
+    "SpiderMom_Knight": {
+      "file": "models/SpiderMom_Knight.glb",
+      "character": "SpiderMom",
+      "role": "Knight",
+      "sha256": "7913b4fbcc5da7f4a03838e7ce0e9c8bb9a9a9e41cc08ad13867b094f22aa685",
+      "bones": 21,
+      "meshes": 1,
+      "triangles": 4482,
+      "animations": {
+        "Idle": 2.4,
+        "Aggressive": 1.2
+      }
+    },
+    "SpiderMom_Punk": {
+      "file": "models/SpiderMom_Punk.glb",
+      "character": "SpiderMom",
+      "role": "Punk",
+      "sha256": "d3457426236f3a4c19569771707cfdc1771d47c29135a281d011aa7c79d635db",
+      "bones": 21,
+      "meshes": 1,
+      "triangles": 4644,
+      "animations": {
+        "Idle": 2.4,
+        "Aggressive": 1.2
+      }
+    },
+    "SpiderMom_Assassin": {
+      "file": "models/SpiderMom_Assassin.glb",
+      "character": "SpiderMom",
+      "role": "Assassin",
+      "sha256": "230b41c39046e347682b0ce67c2e1ecde5338edf4cd689de6257dcd88462b440",
+      "bones": 21,
+      "meshes": 1,
+      "triangles": 3992,
+      "animations": {
+        "Idle": 2.4,
+        "Aggressive": 1.2
+      }
+    }
+  },
+  "icons": {
+    "GrandfatherFarmer": {
+      "file": "icons/ui512/GrandfatherFarmer.png",
+      "size": [
+        512,
+        512
+      ],
+      "sha256": "8f8c1849f74fa59413e44d69c5d8ee232a127332f962e66ac28103657b313909"
+    },
+    "GrandfatherMiner": {
+      "file": "icons/ui512/GrandfatherMiner.png",
+      "size": [
+        512,
+        512
+      ],
+      "sha256": "77f68b2b25abe95c0e8eaa6da1687cdc298c7870da5eb687295e69140b49746d"
+    },
+    "GrandfatherKnight": {
+      "file": "icons/ui512/GrandfatherKnight.png",
+      "size": [
+        512,
+        512
+      ],
+      "sha256": "7ea44fea2a78bb4e9bf527d1fcc5b67e7873871e31f5d0310b85145ff997a9eb"
+    },
+    "GrandfatherPunk": {
+      "file": "icons/ui512/GrandfatherPunk.png",
+      "size": [
+        512,
+        512
+      ],
+      "sha256": "818c8ab0e8e158143ff9e9ee3745bf7c044883692fe35602d82bc9d6169daee2"
+    },
+    "GrandfatherAssassin": {
+      "file": "icons/ui512/GrandfatherAssassin.png",
+      "size": [
+        512,
+        512
+      ],
+      "sha256": "1de6639342028ef60bc260d85ed05bf9270ec280d9fe83ac47ed7ced499e643a"
+    },
+    "GrannyFarmer": {
+      "file": "icons/ui512/GrannyFarmer.png",
+      "size": [
+        512,
+        512
+      ],
+      "sha256": "8d940faa5fac47ad21ffc2ef0d6c6be6140bf1aa83d1a0a20e8537f7863e42de"
+    },
+    "GrannyMiner": {
+      "file": "icons/ui512/GrannyMiner.png",
+      "size": [
+        512,
+        512
+      ],
+      "sha256": "467e5c497055fee5cf49357cc711695ebcaf5909604a3d6e769560f7851b859c"
+    },
+    "GrannyPrincess": {
+      "file": "icons/ui512/GrannyPrincess.png",
+      "size": [
+        512,
+        512
+      ],
+      "sha256": "890d5a2060b8824d9ed6a57e06248b64d4a6b3095564f5e17baf704cc338f039"
+    },
+    "GrannyKnight": {
+      "file": "icons/ui512/GrannyKnight.png",
+      "size": [
+        512,
+        512
+      ],
+      "sha256": "2260c7c3c8cf7288815ac74665d41e7647737357e10ba8765f9998fbc347ec62"
+    },
+    "GrannyPunk": {
+      "file": "icons/ui512/GrannyPunk.png",
+      "size": [
+        512,
+        512
+      ],
+      "sha256": "386ff081f549c7282f6440d08e07ee38e1037b2528cb32b442d834ffe494e098"
+    },
+    "GrannyAssassin": {
+      "file": "icons/ui512/GrannyAssassin.png",
+      "size": [
+        512,
+        512
+      ],
+      "sha256": "5a8b2d953b600ad13f35bd0eb912cbcc41f72ec0309ca96578a16fecfa784155"
+    },
+    "GrandfatherKing": {
+      "file": "icons/ui512/GrandfatherKing.png",
+      "size": [
+        512,
+        512
+      ],
+      "sha256": "0fe0a0deec1131f18909e3283c21e80c8e26ae8b7a34d80b7f7ab103769cad41"
+    }
+  }
+}

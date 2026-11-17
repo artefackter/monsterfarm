@@ -1,0 +1,100 @@
+[
+  {
+    "id": "DredgeFarmer",
+    "source": "/Users/wingman/.codex/generated_images/01a1d9d4-d34e-7b10-a745-1167fae292c7/exec-bfae7ba6-5162-49e7-b2bc-b23759d70130.png"
+  },
+  {
+    "id": "DredgeMiner",
+    "source": "/Users/wingman/.codex/generated_images/01a1d9d4-d34e-7b10-a745-1167fae292c7/exec-a6851d17-c1da-4141-918a-00e4e4250e21.png"
+  },
+  {
+    "id": "DredgeKing",
+    "source": "/Users/wingman/.codex/generated_images/01a1d9d4-d34e-7b10-a745-1167fae292c7/exec-2e6d4b61-4b59-4d31-8679-21728e1ab4cf.png"
+  },
+  {
+    "id": "DredgeKnight",
+    "source": "/Users/wingman/.codex/generated_images/01a1d9d4-d34e-7b10-a745-1167fae292c7/exec-5a945e4d-d025-4285-9955-3c7d5bb8ee6d.png"
+  },
+  {
+    "id": "DredgeNefor",
+    "source": "/Users/wingman/.codex/generated_images/01a1d9d4-d34e-7b10-a745-1167fae292c7/exec-a22d04d0-836b-4933-96d6-7979dc006814.png"
+  },
+  {
+    "id": "DredgeKiller",
+    "source": "/Users/wingman/.codex/generated_images/01a1d9d4-d34e-7b10-a745-1167fae292c7/exec-59494bfe-11b1-4161-abe1-7b1a2f33a69d.png"
+  },
+  {
+    "id": "AssimilatedAdventurerFarmer",
+    "source": "/Users/wingman/.codex/generated_images/01a1d9d4-d34e-7b10-a745-1167fae292c7/exec-fd2a52a2-706e-4dd6-9aff-74deb5263c21.png"
+  },
+  {
+    "id": "AssimilatedAdventurerMiner",
+    "source": "/Users/wingman/.codex/generated_images/01a1d9d4-d34e-7b10-a745-1167fae292c7/exec-83738d7c-c0a0-4e15-bced-da7751448e07.png"
+  },
+  {
+    "id": "AssimilatedAdventurerKing",
+    "source": "/Users/wingman/.codex/generated_images/01a1d9d4-d34e-7b10-a745-1167fae292c7/exec-3fa08c15-5d10-4ee4-abec-78b8e90fca36.png"
+  },
+  {
+    "id": "AssimilatedAdventurerKnight",
+    "source": "/Users/wingman/.codex/generated_images/01a1d9d4-d34e-7b10-a745-1167fae292c7/exec-c4e8f826-1b1e-4c01-85b3-1360061082ba.png"
+  },
+  {
+    "id": "AssimilatedAdventurerNefor",
+    "source": "/Users/wingman/.codex/generated_images/01a1d9d4-d34e-7b10-a745-1167fae292c7/exec-2cd950f2-9671-4b36-adbc-4a4b9a3a51da.png"
+  },
+  {
+    "id": "AssimilatedAdventurerKiller",
+    "source": "/Users/wingman/.codex/generated_images/01a1d9d4-d34e-7b10-a745-1167fae292c7/exec-1d54a6b0-a869-4266-935c-b2f9c875e6a0.png"
+  },
+  {
+    "id": "PrimitiveSummonerFarmer",
+    "source": "/Users/wingman/.codex/generated_images/01a1d9d4-d34e-7b10-a745-1167fae292c7/exec-f4ca4353-acc7-4f3b-bf33-a7c62444fb87.png"
+  },
+  {
+    "id": "PrimitiveSummonerMiner",
+    "source": "/Users/wingman/.codex/generated_images/01a1d9d4-d34e-7b10-a745-1167fae292c7/exec-609f9faa-9f78-458f-8ef4-adc1f90b9f8b.png"
+  },
+  {
+    "id": "PrimitiveSummonerKing",
+    "source": "/Users/wingman/.codex/generated_images/01a1d9d4-d34e-7b10-a745-1167fae292c7/exec-7cb8badc-25bd-4556-b8e3-3607e9369c97.png",
+    "original_source": "/Users/wingman/.codex/generated_images/01a1d9d4-d34e-7b10-a745-1167fae292c7/exec-c8d97818-68ad-4c55-abb9-d105f6f08501.png"
+  },
+  {
+    "id": "PrimitiveSummonerKnight",
+    "source": "/Users/wingman/.codex/generated_images/01a1d9d4-d34e-7b10-a745-1167fae292c7/exec-8ebb2ba1-6a84-40dc-b56f-4b5f40e8b5f4.png"
+  },
+  {
+    "id": "PrimitiveSummonerNefor",
+    "source": "/Users/wingman/.codex/generated_images/01a1d9d4-d34e-7b10-a745-1167fae292c7/exec-0655df13-a32b-4662-bc9a-f83aa6ec6dd2.png"
+  },
+  {
+    "id": "PrimitiveSummonerKiller",
+    "source": "/Users/wingman/.codex/generated_images/01a1d9d4-d34e-7b10-a745-1167fae292c7/exec-bb9c4da0-f942-4c48-9898-7f0aac7a3c7c.png"
+  },
+  {
+    "id": "AdaptedVisceraFarmer",
+    "source": "/Users/wingman/.codex/generated_images/01a1d9d4-d34e-7b10-a745-1167fae292c7/exec-d94386d2-820f-4173-b7a2-9ddeb241f39a.png"
+  },
+  {
+    "id": "AdaptedVisceraMiner",
+    "source": "/Users/wingman/.codex/generated_images/01a1d9d4-d34e-7b10-a745-1167fae292c7/exec-e106cc4d-bb9f-46df-adca-d6073f24dff5.png"
+  },
+  {
+    "id": "AdaptedVisceraKing",
+    "source": "/Users/wingman/.codex/generated_images/01a1d9d4-d34e-7b10-a745-1167fae292c7/exec-f463cc01-f64c-402f-8e8d-76a6b74bf636.png",
+    "original_source": "/Users/wingman/.codex/generated_images/01a1d9d4-d34e-7b10-a745-1167fae292c7/exec-fbd31346-228e-4a6d-871d-3e0556ad8cf2.png"
+  },
+  {
+    "id": "AdaptedVisceraKnight",
+    "source": "/Users/wingman/.codex/generated_images/01a1d9d4-d34e-7b10-a745-1167fae292c7/exec-8634c483-fed7-435f-a2dd-2cfd6c291e64.png"
+  },
+  {
+    "id": "AdaptedVisceraNefor",
+    "source": "/Users/wingman/.codex/generated_images/01a1d9d4-d34e-7b10-a745-1167fae292c7/exec-170db077-8b0b-4ea0-bf35-8bce0760f512.png"
+  },
+  {
+    "id": "AdaptedVisceraKiller",
+    "source": "/Users/wingman/.codex/generated_images/01a1d9d4-d34e-7b10-a745-1167fae292c7/exec-3f0cbf04-1ab3-407a-96ef-fee0e1e73764.png"
+  }
+]

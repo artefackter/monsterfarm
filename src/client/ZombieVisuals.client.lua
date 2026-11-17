@@ -64,7 +64,11 @@ local models = {}
 
 local function add(m)
 	if m:IsA("Model") and m:GetAttribute("ZombieId") then
-		models[m] = { last = os.clock(), born = os.clock(), phase = math.random() * 6 }
+		local data = { last = os.clock(), born = os.clock(), phase = math.random() * 6, sizeDirty = true }
+		models[m] = data
+		m.AttributeChanged:Connect(function()
+			data.sizeDirty = true -- its zone changed, perhaps: is it still to be drawn small? (resize)
+		end)
 	end
 end
 workspace.DescendantAdded:Connect(add)
@@ -93,6 +97,94 @@ local function around(point, rotation)
 	return CFrame.new(point) * rotation * CFrame.new(-point)
 end
 
+-- Small farm monsters (owner, 2026-11-16: "a setting that shrinks your monsters' models, to the size of pets - for
+-- you only"; the next day: "not miniature - just down to the player's size"). With the player's SmallMonsters
+-- setting on, their own monsters standing on their farm are drawn about as tall as the player's own character
+-- (playerHeight; SMALL_HEIGHT when there is none to measure), on this screen only: the server's models, and so what everyone else sees, stay as they
+-- are, and so do other players' monsters here. The model goes back to its rest pose, is scaled locally about its
+-- pivot and lowered so its feet stay on the ground (the pivot is ArtKit.PivotHeight above them at scale 1); the rig is
+-- then measured again, and the labels over it follow its new height (sizeOf).
+local SMALL_HEIGHT = 5.2
+-- How tall the local player's character stands: the soles to the top of the head (no hats, wings or hair).
+local heightAt, heightNow = 0, SMALL_HEIGHT
+local function playerHeight()
+	if os.clock() < heightAt then
+		return heightNow
+	end
+	heightAt = os.clock() + 2
+	local ch = Players.LocalPlayer.Character
+	local root, head = ch and ch:FindFirstChild("HumanoidRootPart"), ch and ch:FindFirstChild("Head")
+	local hum = ch and ch:FindFirstChildOfClass("Humanoid")
+	if root and head and hum and hum.Health > 0 then
+		heightNow = math.clamp(head.Position.Y + head.Size.Y / 2 - (root.Position.Y - root.Size.Y / 2 - hum.HipHeight), 4, 7)
+	end
+	return heightNow
+end
+local PIVOT_HEIGHT = require(game.ReplicatedStorage.Shared.ArtKit).PivotHeight
+local smallEpoch = 0
+Players.LocalPlayer:GetAttributeChangedSignal("SmallMonsters"):Connect(function()
+	smallEpoch += 1
+end)
+local function smallScale(m)
+	local me = Players.LocalPlayer
+	if me:GetAttribute("SmallMonsters") ~= true or m:GetAttribute("Held") or m:GetAttribute("Carried") then
+		return nil
+	end
+	local zone, plot = m:GetAttribute("Zone"), m.Parent
+	if zone == "Crypt" or zone == "Hand" or not plot or plot:GetAttribute("Owner") ~= me.UserId then
+		return nil
+	end
+	local base = m:GetAttribute("VisualSize") or 1
+	local k = playerHeight() * base ^ 0.25 / (m:GetAttribute("MonsterHeight") or 5) -- a rarer or merged one stays a little bigger
+	return k < base * 0.95 and k or nil -- (one that is no taller than that already is left alone)
+end
+-- how big the monster is drawn here: the labels over it sit by this
+local function sizeOf(m, data)
+	return data.small or m:GetAttribute("VisualSize") or 1
+end
+local function resize(m, data, now)
+	if not (data.sizeDirty or data.sizeEpoch ~= smallEpoch or now >= (data.sizeCheckAt or 0)) then
+		return
+	end
+	if not m.PrimaryPart or now - data.born < 0.25 then
+		return -- (not all here yet: next frame)
+	end
+	data.sizeDirty, data.sizeEpoch, data.sizeCheckAt = false, smallEpoch, now + 1
+	local want = smallScale(m)
+	if want == data.small then
+		return
+	end
+	local carried = m:GetAttribute("Carried")
+	if data.parts and data.pivot and not carried then
+		-- the rest pose first: the scale and the new rig are measured from it, not from a step of the walk
+		local frames = table.create(#data.parts)
+		for i = 1, #data.parts do
+			frames[i] = data.pivot * data.offsets[i]
+		end
+		workspace:BulkMoveTo(data.parts, frames, Enum.BulkMoveMode.FireCFrameChanged)
+	end
+	local base = m:GetAttribute("VisualSize") or 1
+	if want then
+		data.home = data.home or m:GetPivot() -- where the server stood it, at the server's size
+		m:ScaleTo(want)
+		m:PivotTo(data.home * CFrame.new(0, -(base - want) * PIVOT_HEIGHT, 0))
+	else
+		m:ScaleTo(base)
+		if data.home and not carried then
+			m:PivotTo(data.home)
+		end
+		data.home = nil
+	end
+	data.small = want
+	data.pivot, data.known, data.parts = nil, nil, nil -- measured again, at this size (rig)
+	data.labelDirty = true
+	-- the server's star badge sits over the head by the size it knew
+	local stars = m.PrimaryPart:FindFirstChild("Stars")
+	if stars and stars:IsA("BillboardGui") then
+		stars.StudsOffsetWorldSpace = Vector3.new(0, (m:GetAttribute("MonsterLabelHeight") or 3.3) * (want or base) + 1, 0)
+	end
+end
+
 local function floatIncome(m, data, now)
 	if (m:GetAttribute("MutantBiting") or m:GetAttribute("MutantStunned") or m:GetAttribute("Carried")) or m:GetAttribute("Zone") ~= "Field" or now - data.last < 3 or not m.PrimaryPart then
 		return
@@ -102,7 +194,7 @@ local function floatIncome(m, data, now)
 	local v = workspace.CurrentCamera.ViewportSize
 	local k = math.clamp(math.min(v.X / 1000, v.Y / 560), 0.62, 1) -- smaller on phones
 	b.Size = UDim2.fromOffset(130 * k, 42 * k)
-	b.StudsOffset = Vector3.new(0, (m:GetAttribute("MonsterLabelHeight") or 4.4)*(m:GetAttribute("VisualSize") or 1), 0)
+	b.StudsOffset = Vector3.new(0, (m:GetAttribute("MonsterLabelHeight") or 4.4)*sizeOf(m, data), 0)
 	b.Parent = m.PrimaryPart
 	local l = Instance.new("TextLabel")
 	l.Size = UDim2.fromScale(1, 1)
@@ -114,7 +206,7 @@ local function floatIncome(m, data, now)
 	l.Font = Enum.Font.GothamBlack
 	l.TextSize = math.floor(24 * k)
 	l.Parent = b
-	game.TweenService:Create(b, TweenInfo.new(1.5, Enum.EasingStyle.Quad, Enum.EasingDirection.Out), { StudsOffset = Vector3.new(0, (m:GetAttribute("MonsterLabelHeight") or 4.4)*(m:GetAttribute("VisualSize") or 1)+2.6, 0) }):Play()
+	game.TweenService:Create(b, TweenInfo.new(1.5, Enum.EasingStyle.Quad, Enum.EasingDirection.Out), { StudsOffset = Vector3.new(0, (m:GetAttribute("MonsterLabelHeight") or 4.4)*sizeOf(m, data)+2.6, 0) }):Play()
 	game.TweenService:Create(l, TweenInfo.new(1.5), { TextTransparency = 1, TextStrokeTransparency = 1 }):Play()
 	game.Debris:AddItem(b, 1.5)
 end
@@ -158,6 +250,11 @@ local function label(m, data)
 	data.nameLine = line(b, 0, 28 * k, math.floor(24 * k), Color3.new(1, 1, 1))
 	data.rateLine = line(b, 27 * k, 28 * k, math.floor(24 * k), Color3.fromRGB(196, 255, 62))
 	data.rareLine = line(b, 54 * k, 22 * k, math.floor(18 * k), Color3.new(1, 1, 1))
+	-- refilled only when something on it changes, not every frame (2026-11-15, performance)
+	data.labelDirty = true
+	m.AttributeChanged:Connect(function()
+		data.labelDirty = true
+	end)
 end
 local function fillLabel(m, data)
 	local lang = L.lang()
@@ -242,8 +339,14 @@ local function behave(m, data, now, dt, k, playerPos)
 	data.gait += dt * data.style.gait * data.walk
 end
 
+-- Performance (2026-11-15, phones ran hot): labels refill only on a change, the rig is re-checked once a second, and
+-- monsters farther than FAR_RANGE move every other frame (with twice the step, so at the same speed).
+local FAR_RANGE = 60
+local frame = 0
 RunService.RenderStepped:Connect(function(dt)
 	dt = math.min(dt, 0.1)
+	frame += 1
+	local labelLang = L.lang()
 	local now = os.clock()
 	local camera = workspace.CurrentCamera.CFrame.Position
 	local me = Players.LocalPlayer.Character
@@ -253,19 +356,32 @@ RunService.RenderStepped:Connect(function(dt)
 	for m, data in pairs(models) do
 		if not m.Parent then
 			models[m] = nil
-		elseif not m:GetAttribute("Carried") then
+		else
+			resize(m, data, now) -- the Small farm monsters setting
+		end
+		if m.Parent and not m:GetAttribute("Carried") then
 			local zone = m:GetAttribute("Zone")
-			if zone ~= "Crypt" and (not data.parts or data.count ~= #m:GetChildren()) and m.PrimaryPart then
-				rig(m, data)
+			if zone ~= "Crypt" and m.PrimaryPart and (not data.parts or now >= (data.rigCheckAt or 0)) then
+				data.rigCheckAt = now + 1
+				if not data.parts or data.count ~= #m:GetChildren() then
+					rig(m, data)
+				end
 			end
 			if zone ~= "Crypt" and m.PrimaryPart and not m:GetAttribute("Held") then
 				if not data.gui then
 					label(m, data)
 				end
-				fillLabel(m, data)
-				data.gui.StudsOffsetWorldSpace = Vector3.new(0, (m:GetAttribute("MonsterLabelHeight") or 3.3) * (m:GetAttribute("VisualSize") or 1) + 1.2, 0)
+				if data.labelDirty or labelLang ~= data.labelLang then
+					data.labelDirty, data.labelLang = false, labelLang
+					fillLabel(m, data)
+					data.gui.StudsOffsetWorldSpace = Vector3.new(0, (m:GetAttribute("MonsterLabelHeight") or 3.3) * sizeOf(m, data) + (data.small and 0.7 or 1.2), 0)
+				end
 			end
-			if zone ~= "Crypt" and data.parts and (data.pivot.Position - camera).Magnitude < ANIMATE_RANGE*math.max(1,m:GetAttribute("VisualSize") or 1) then
+			local dist = data.parts and data.pivot and (data.pivot.Position - camera).Magnitude or math.huge
+			local far = dist > FAR_RANGE
+			data.parity = data.parity or math.random(0, 1)
+			if zone ~= "Crypt" and data.parts and dist < ANIMATE_RANGE*math.max(1,m:GetAttribute("VisualSize") or 1) and (not far or (frame + data.parity) % 2 == 0) then
+				local dt = far and dt * 2 or dt
 				local t = now + data.phase
 				local body
 				local alive = false

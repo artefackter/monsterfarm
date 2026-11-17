@@ -1,0 +1,31 @@
+{
+  "model_renders": {
+    "art/hooded-stranger-forms-v1/previews/HoodedStranger_Farmer_Front.png": {
+      "sha256": "c527f0ac16d6823211f21e6520afd563cb4f91cffa9207281881f8f9cc45660c",
+      "role": "Farmer"
+    },
+    "art/hooded-stranger-forms-v1/previews/HoodedStranger_Miner_Front.png": {
+      "sha256": "9bbf9ad29794bc1071e05722113eb001242cbcd47eee2cdb2bceb83dc8072546",
+      "role": "Miner"
+    },
+    "art/hooded-stranger-forms-v1/previews/HoodedStranger_King_Front.png": {
+      "sha256": "2c0e4a91489193b6426b745e7cba125193645a51bd45ac928e7ae5311e1539cd",
+      "role": "King"
+    },
+    "art/hooded-stranger-forms-v1/previews/HoodedStranger_Knight_Front.png": {
+      "sha256": "4f3d5be7639c40c9b59cd2de8e5c8b60b0e47c97c8af628223fd7f5f2f1c4fb2",
+      "role": "Knight"
+    },
+    "art/hooded-stranger-forms-v1/previews/HoodedStranger_Punk_Front.png": {
+      "sha256": "2d639a3d8c2e9b71fa96a340120f640698a19346230a686f5ba7d8ad78922857",
+      "role": "Punk"
+    },
+    "art/hooded-stranger-forms-v1/previews/HoodedStranger_Assassin_Front.png": {
+      "sha256": "5a71976de80057058ce0c7d7b2844e1428139acc19030478b7244f4ec38ba222",
+      "role": "Assassin"
+    }
+  },
+  "style_reference": "art/ui/modal-refresh/DeerFarmer.png",
+  "integration_authorized": false,
+  "status": "icons pending separate user review"
+}

@@ -1,0 +1,733 @@
+{
+  "passed": true,
+  "checks": [
+    {
+      "id": "Mimic_Idle",
+      "profile": "full",
+      "passed": true,
+      "meshes": 2,
+      "bones": 37,
+      "two_hand_contacts": {
+        "L": {
+          "palm_min_distance": 0.000696,
+          "near_surface_vertices": 850
+        },
+        "R": {
+          "palm_min_distance": 0.015,
+          "near_surface_vertices": 754
+        }
+      },
+      "deformation_moved_vertices": {
+        "Head": 16905,
+        "Jaw": 3599,
+        "Forearm.L": 1303,
+        "Finger2.L": 220,
+        "Hair.Back": 871,
+        "Skirt.Back": 727,
+        "Biwa": 3112
+      }
+    },
+    {
+      "id": "Mimic_Idle",
+      "profile": "mobile",
+      "passed": true,
+      "meshes": 2,
+      "bones": 37,
+      "two_hand_contacts": {
+        "L": {
+          "palm_min_distance": 0.000696,
+          "near_surface_vertices": 850
+        },
+        "R": {
+          "palm_min_distance": 0.015,
+          "near_surface_vertices": 754
+        }
+      },
+      "deformation_moved_vertices": {
+        "Head": 15316,
+        "Jaw": 3599,
+        "Forearm.L": 1303,
+        "Finger2.L": 220,
+        "Hair.Back": 433,
+        "Skirt.Back": 621,
+        "Biwa": 3112
+      }
+    },
+    {
+      "id": "Mimic_Aggressive",
+      "profile": "full",
+      "passed": true,
+      "meshes": 2,
+      "bones": 37,
+      "two_hand_contacts": {
+        "L": {
+          "palm_min_distance": 0.000696,
+          "near_surface_vertices": 849
+        },
+        "R": {
+          "palm_min_distance": 0.015,
+          "near_surface_vertices": 762
+        }
+      },
+      "deformation_moved_vertices": {
+        "Head": 17215,
+        "Jaw": 3499,
+        "Forearm.L": 1296,
+        "Finger2.L": 216,
+        "Hair.Back": 1146,
+        "Skirt.Back": 727,
+        "Biwa": 3234
+      }
+    },
+    {
+      "id": "Mimic_Aggressive",
+      "profile": "mobile",
+      "passed": true,
+      "meshes": 2,
+      "bones": 37,
+      "two_hand_contacts": {
+        "L": {
+          "palm_min_distance": 0.000696,
+          "near_surface_vertices": 849
+        },
+        "R": {
+          "palm_min_distance": 0.015,
+          "near_surface_vertices": 762
+        }
+      },
+      "deformation_moved_vertices": {
+        "Head": 15488,
+        "Jaw": 3499,
+        "Forearm.L": 1296,
+        "Finger2.L": 216,
+        "Hair.Back": 594,
+        "Skirt.Back": 621,
+        "Biwa": 3234
+      }
+    },
+    {
+      "id": "Mimic_Farmer_Idle",
+      "profile": "full",
+      "passed": true,
+      "meshes": 2,
+      "bones": 37,
+      "two_hand_contacts": {
+        "L": {
+          "palm_min_distance": 0.000696,
+          "near_surface_vertices": 850
+        },
+        "R": {
+          "palm_min_distance": 0.015,
+          "near_surface_vertices": 754
+        }
+      },
+      "deformation_moved_vertices": {
+        "Head": 15251,
+        "Jaw": 3599,
+        "Forearm.L": 1303,
+        "Finger2.L": 220,
+        "Hair.Back": 871,
+        "Skirt.Back": 727,
+        "Biwa": 3747
+      }
+    },
+    {
+      "id": "Mimic_Farmer_Idle",
+      "profile": "mobile",
+      "passed": true,
+      "meshes": 2,
+      "bones": 37,
+      "two_hand_contacts": {
+        "L": {
+          "palm_min_distance": 0.000696,
+          "near_surface_vertices": 850
+        },
+        "R": {
+          "palm_min_distance": 0.015,
+          "near_surface_vertices": 754
+        }
+      },
+      "deformation_moved_vertices": {
+        "Head": 13662,
+        "Jaw": 3599,
+        "Forearm.L": 1303,
+        "Finger2.L": 220,
+        "Hair.Back": 433,
+        "Skirt.Back": 621,
+        "Biwa": 3747
+      }
+    },
+    {
+      "id": "Mimic_Farmer_Aggressive",
+      "profile": "full",
+      "passed": true,
+      "meshes": 2,
+      "bones": 37,
+      "two_hand_contacts": {
+        "L": {
+          "palm_min_distance": 0.000696,
+          "near_surface_vertices": 849
+        },
+        "R": {
+          "palm_min_distance": 0.015,
+          "near_surface_vertices": 762
+        }
+      },
+      "deformation_moved_vertices": {
+        "Head": 15676,
+        "Jaw": 3499,
+        "Forearm.L": 1296,
+        "Finger2.L": 216,
+        "Hair.Back": 1146,
+        "Skirt.Back": 727,
+        "Biwa": 3870
+      }
+    },
+    {
+      "id": "Mimic_Farmer_Aggressive",
+      "profile": "mobile",
+      "passed": true,
+      "meshes": 2,
+      "bones": 37,
+      "two_hand_contacts": {
+        "L": {
+          "palm_min_distance": 0.000696,
+          "near_surface_vertices": 849
+        },
+        "R": {
+          "palm_min_distance": 0.015,
+          "near_surface_vertices": 762
+        }
+      },
+      "deformation_moved_vertices": {
+        "Head": 13949,
+        "Jaw": 3499,
+        "Forearm.L": 1296,
+        "Finger2.L": 216,
+        "Hair.Back": 594,
+        "Skirt.Back": 621,
+        "Biwa": 3870
+      }
+    },
+    {
+      "id": "Mimic_Miner_Idle",
+      "profile": "full",
+      "passed": true,
+      "meshes": 2,
+      "bones": 37,
+      "two_hand_contacts": {
+        "L": {
+          "palm_min_distance": 0.000696,
+          "near_surface_vertices": 850
+        },
+        "R": {
+          "palm_min_distance": 0.015,
+          "near_surface_vertices": 754
+        }
+      },
+      "deformation_moved_vertices": {
+        "Head": 13957,
+        "Jaw": 3599,
+        "Forearm.L": 1363,
+        "Finger2.L": 220,
+        "Hair.Back": 871,
+        "Skirt.Back": 727,
+        "Biwa": 3292
+      }
+    },
+    {
+      "id": "Mimic_Miner_Idle",
+      "profile": "mobile",
+      "passed": true,
+      "meshes": 2,
+      "bones": 37,
+      "two_hand_contacts": {
+        "L": {
+          "palm_min_distance": 0.000696,
+          "near_surface_vertices": 850
+        },
+        "R": {
+          "palm_min_distance": 0.015,
+          "near_surface_vertices": 754
+        }
+      },
+      "deformation_moved_vertices": {
+        "Head": 12368,
+        "Jaw": 3599,
+        "Forearm.L": 1363,
+        "Finger2.L": 220,
+        "Hair.Back": 433,
+        "Skirt.Back": 621,
+        "Biwa": 3292
+      }
+    },
+    {
+      "id": "Mimic_Miner_Aggressive",
+      "profile": "full",
+      "passed": true,
+      "meshes": 2,
+      "bones": 37,
+      "two_hand_contacts": {
+        "L": {
+          "palm_min_distance": 0.000696,
+          "near_surface_vertices": 849
+        },
+        "R": {
+          "palm_min_distance": 0.015,
+          "near_surface_vertices": 762
+        }
+      },
+      "deformation_moved_vertices": {
+        "Head": 14299,
+        "Jaw": 3499,
+        "Forearm.L": 1356,
+        "Finger2.L": 216,
+        "Hair.Back": 1146,
+        "Skirt.Back": 727,
+        "Biwa": 3414
+      }
+    },
+    {
+      "id": "Mimic_Miner_Aggressive",
+      "profile": "mobile",
+      "passed": true,
+      "meshes": 2,
+      "bones": 37,
+      "two_hand_contacts": {
+        "L": {
+          "palm_min_distance": 0.000696,
+          "near_surface_vertices": 849
+        },
+        "R": {
+          "palm_min_distance": 0.015,
+          "near_surface_vertices": 762
+        }
+      },
+      "deformation_moved_vertices": {
+        "Head": 12572,
+        "Jaw": 3499,
+        "Forearm.L": 1356,
+        "Finger2.L": 216,
+        "Hair.Back": 594,
+        "Skirt.Back": 621,
+        "Biwa": 3414
+      }
+    },
+    {
+      "id": "Mimic_Princess_Idle",
+      "profile": "full",
+      "passed": true,
+      "meshes": 2,
+      "bones": 37,
+      "two_hand_contacts": {
+        "L": {
+          "palm_min_distance": 0.000696,
+          "near_surface_vertices": 850
+        },
+        "R": {
+          "palm_min_distance": 0.015,
+          "near_surface_vertices": 754
+        }
+      },
+      "deformation_moved_vertices": {
+        "Head": 14601,
+        "Jaw": 3599,
+        "Forearm.L": 1303,
+        "Finger2.L": 220,
+        "Hair.Back": 871,
+        "Skirt.Back": 727,
+        "Biwa": 3592
+      }
+    },
+    {
+      "id": "Mimic_Princess_Idle",
+      "profile": "mobile",
+      "passed": true,
+      "meshes": 2,
+      "bones": 37,
+      "two_hand_contacts": {
+        "L": {
+          "palm_min_distance": 0.000696,
+          "near_surface_vertices": 850
+        },
+        "R": {
+          "palm_min_distance": 0.015,
+          "near_surface_vertices": 754
+        }
+      },
+      "deformation_moved_vertices": {
+        "Head": 13012,
+        "Jaw": 3599,
+        "Forearm.L": 1303,
+        "Finger2.L": 220,
+        "Hair.Back": 433,
+        "Skirt.Back": 621,
+        "Biwa": 3592
+      }
+    },
+    {
+      "id": "Mimic_Princess_Aggressive",
+      "profile": "full",
+      "passed": true,
+      "meshes": 2,
+      "bones": 37,
+      "two_hand_contacts": {
+        "L": {
+          "palm_min_distance": 0.000696,
+          "near_surface_vertices": 849
+        },
+        "R": {
+          "palm_min_distance": 0.015,
+          "near_surface_vertices": 762
+        }
+      },
+      "deformation_moved_vertices": {
+        "Head": 14908,
+        "Jaw": 3499,
+        "Forearm.L": 1296,
+        "Finger2.L": 216,
+        "Hair.Back": 1146,
+        "Skirt.Back": 727,
+        "Biwa": 3714
+      }
+    },
+    {
+      "id": "Mimic_Princess_Aggressive",
+      "profile": "mobile",
+      "passed": true,
+      "meshes": 2,
+      "bones": 37,
+      "two_hand_contacts": {
+        "L": {
+          "palm_min_distance": 0.000696,
+          "near_surface_vertices": 849
+        },
+        "R": {
+          "palm_min_distance": 0.015,
+          "near_surface_vertices": 762
+        }
+      },
+      "deformation_moved_vertices": {
+        "Head": 13181,
+        "Jaw": 3499,
+        "Forearm.L": 1296,
+        "Finger2.L": 216,
+        "Hair.Back": 594,
+        "Skirt.Back": 621,
+        "Biwa": 3714
+      }
+    },
+    {
+      "id": "Mimic_Knight_Idle",
+      "profile": "full",
+      "passed": true,
+      "meshes": 2,
+      "bones": 37,
+      "two_hand_contacts": {
+        "L": {
+          "palm_min_distance": 0.000696,
+          "near_surface_vertices": 850
+        },
+        "R": {
+          "palm_min_distance": 0.015,
+          "near_surface_vertices": 754
+        }
+      },
+      "deformation_moved_vertices": {
+        "Head": 13965,
+        "Jaw": 3599,
+        "Forearm.L": 1363,
+        "Finger2.L": 220,
+        "Hair.Back": 871,
+        "Skirt.Back": 727,
+        "Biwa": 3184
+      }
+    },
+    {
+      "id": "Mimic_Knight_Idle",
+      "profile": "mobile",
+      "passed": true,
+      "meshes": 2,
+      "bones": 37,
+      "two_hand_contacts": {
+        "L": {
+          "palm_min_distance": 0.000696,
+          "near_surface_vertices": 850
+        },
+        "R": {
+          "palm_min_distance": 0.015,
+          "near_surface_vertices": 754
+        }
+      },
+      "deformation_moved_vertices": {
+        "Head": 12376,
+        "Jaw": 3599,
+        "Forearm.L": 1363,
+        "Finger2.L": 220,
+        "Hair.Back": 433,
+        "Skirt.Back": 621,
+        "Biwa": 3184
+      }
+    },
+    {
+      "id": "Mimic_Knight_Aggressive",
+      "profile": "full",
+      "passed": true,
+      "meshes": 2,
+      "bones": 37,
+      "two_hand_contacts": {
+        "L": {
+          "palm_min_distance": 0.000696,
+          "near_surface_vertices": 849
+        },
+        "R": {
+          "palm_min_distance": 0.015,
+          "near_surface_vertices": 762
+        }
+      },
+      "deformation_moved_vertices": {
+        "Head": 14290,
+        "Jaw": 3499,
+        "Forearm.L": 1356,
+        "Finger2.L": 216,
+        "Hair.Back": 1146,
+        "Skirt.Back": 727,
+        "Biwa": 3306
+      }
+    },
+    {
+      "id": "Mimic_Knight_Aggressive",
+      "profile": "mobile",
+      "passed": true,
+      "meshes": 2,
+      "bones": 37,
+      "two_hand_contacts": {
+        "L": {
+          "palm_min_distance": 0.000696,
+          "near_surface_vertices": 849
+        },
+        "R": {
+          "palm_min_distance": 0.015,
+          "near_surface_vertices": 762
+        }
+      },
+      "deformation_moved_vertices": {
+        "Head": 12563,
+        "Jaw": 3499,
+        "Forearm.L": 1356,
+        "Finger2.L": 216,
+        "Hair.Back": 594,
+        "Skirt.Back": 621,
+        "Biwa": 3306
+      }
+    },
+    {
+      "id": "Mimic_Punk_Idle",
+      "profile": "full",
+      "passed": true,
+      "meshes": 2,
+      "bones": 37,
+      "two_hand_contacts": {
+        "L": {
+          "palm_min_distance": 0.000696,
+          "near_surface_vertices": 850
+        },
+        "R": {
+          "palm_min_distance": 0.015,
+          "near_surface_vertices": 754
+        }
+      },
+      "deformation_moved_vertices": {
+        "Head": 14186,
+        "Jaw": 3599,
+        "Forearm.L": 1663,
+        "Finger2.L": 220,
+        "Hair.Back": 871,
+        "Skirt.Back": 727,
+        "Biwa": 3278
+      }
+    },
+    {
+      "id": "Mimic_Punk_Idle",
+      "profile": "mobile",
+      "passed": true,
+      "meshes": 2,
+      "bones": 37,
+      "two_hand_contacts": {
+        "L": {
+          "palm_min_distance": 0.000696,
+          "near_surface_vertices": 850
+        },
+        "R": {
+          "palm_min_distance": 0.015,
+          "near_surface_vertices": 754
+        }
+      },
+      "deformation_moved_vertices": {
+        "Head": 12597,
+        "Jaw": 3599,
+        "Forearm.L": 1643,
+        "Finger2.L": 220,
+        "Hair.Back": 433,
+        "Skirt.Back": 621,
+        "Biwa": 3278
+      }
+    },
+    {
+      "id": "Mimic_Punk_Aggressive",
+      "profile": "full",
+      "passed": true,
+      "meshes": 2,
+      "bones": 37,
+      "two_hand_contacts": {
+        "L": {
+          "palm_min_distance": 0.000696,
+          "near_surface_vertices": 849
+        },
+        "R": {
+          "palm_min_distance": 0.015,
+          "near_surface_vertices": 762
+        }
+      },
+      "deformation_moved_vertices": {
+        "Head": 14525,
+        "Jaw": 3499,
+        "Forearm.L": 1656,
+        "Finger2.L": 216,
+        "Hair.Back": 1146,
+        "Skirt.Back": 727,
+        "Biwa": 3411
+      }
+    },
+    {
+      "id": "Mimic_Punk_Aggressive",
+      "profile": "mobile",
+      "passed": true,
+      "meshes": 2,
+      "bones": 37,
+      "two_hand_contacts": {
+        "L": {
+          "palm_min_distance": 0.000696,
+          "near_surface_vertices": 849
+        },
+        "R": {
+          "palm_min_distance": 0.015,
+          "near_surface_vertices": 762
+        }
+      },
+      "deformation_moved_vertices": {
+        "Head": 12798,
+        "Jaw": 3499,
+        "Forearm.L": 1636,
+        "Finger2.L": 216,
+        "Hair.Back": 594,
+        "Skirt.Back": 621,
+        "Biwa": 3411
+      }
+    },
+    {
+      "id": "Mimic_Assassin_Idle",
+      "profile": "full",
+      "passed": true,
+      "meshes": 2,
+      "bones": 37,
+      "two_hand_contacts": {
+        "L": {
+          "palm_min_distance": 0.000696,
+          "near_surface_vertices": 850
+        },
+        "R": {
+          "palm_min_distance": 0.015,
+          "near_surface_vertices": 754
+        }
+      },
+      "deformation_moved_vertices": {
+        "Head": 13644,
+        "Jaw": 3599,
+        "Forearm.L": 1363,
+        "Finger2.L": 220,
+        "Hair.Back": 871,
+        "Skirt.Back": 727,
+        "Biwa": 3208
+      }
+    },
+    {
+      "id": "Mimic_Assassin_Idle",
+      "profile": "mobile",
+      "passed": true,
+      "meshes": 2,
+      "bones": 37,
+      "two_hand_contacts": {
+        "L": {
+          "palm_min_distance": 0.000696,
+          "near_surface_vertices": 850
+        },
+        "R": {
+          "palm_min_distance": 0.015,
+          "near_surface_vertices": 754
+        }
+      },
+      "deformation_moved_vertices": {
+        "Head": 12055,
+        "Jaw": 3599,
+        "Forearm.L": 1363,
+        "Finger2.L": 220,
+        "Hair.Back": 433,
+        "Skirt.Back": 621,
+        "Biwa": 3208
+      }
+    },
+    {
+      "id": "Mimic_Assassin_Aggressive",
+      "profile": "full",
+      "passed": true,
+      "meshes": 2,
+      "bones": 37,
+      "two_hand_contacts": {
+        "L": {
+          "palm_min_distance": 0.000696,
+          "near_surface_vertices": 849
+        },
+        "R": {
+          "palm_min_distance": 0.015,
+          "near_surface_vertices": 762
+        }
+      },
+      "deformation_moved_vertices": {
+        "Head": 13929,
+        "Jaw": 3499,
+        "Forearm.L": 1356,
+        "Finger2.L": 216,
+        "Hair.Back": 1146,
+        "Skirt.Back": 727,
+        "Biwa": 3336
+      }
+    },
+    {
+      "id": "Mimic_Assassin_Aggressive",
+      "profile": "mobile",
+      "passed": true,
+      "meshes": 2,
+      "bones": 37,
+      "two_hand_contacts": {
+        "L": {
+          "palm_min_distance": 0.000696,
+          "near_surface_vertices": 849
+        },
+        "R": {
+          "palm_min_distance": 0.015,
+          "near_surface_vertices": 762
+        }
+      },
+      "deformation_moved_vertices": {
+        "Head": 12202,
+        "Jaw": 3499,
+        "Forearm.L": 1356,
+        "Finger2.L": 216,
+        "Hair.Back": 594,
+        "Skirt.Back": 621,
+        "Biwa": 3336
+      }
+    }
+  ]
+}

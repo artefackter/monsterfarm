@@ -1,0 +1,53 @@
+{
+  "passed": true,
+  "render_pairs": [
+    {
+      "id": "DredgeKing",
+      "pose": "rest",
+      "mean_rgb_error_255": 2.857142857142857e-05,
+      "max_channel_error": 1
+    },
+    {
+      "id": "DredgeKing",
+      "pose": "posed",
+      "mean_rgb_error_255": 1.3492063492063492e-05,
+      "max_channel_error": 1
+    },
+    {
+      "id": "AssimilatedAdventurerFarmer",
+      "pose": "rest",
+      "mean_rgb_error_255": 0.0,
+      "max_channel_error": 0
+    },
+    {
+      "id": "AssimilatedAdventurerFarmer",
+      "pose": "posed",
+      "mean_rgb_error_255": 0.0,
+      "max_channel_error": 0
+    },
+    {
+      "id": "PrimitiveSummonerNefor",
+      "pose": "rest",
+      "mean_rgb_error_255": 0.0,
+      "max_channel_error": 0
+    },
+    {
+      "id": "PrimitiveSummonerNefor",
+      "pose": "posed",
+      "mean_rgb_error_255": 0.0,
+      "max_channel_error": 0
+    },
+    {
+      "id": "AdaptedVisceraKnight",
+      "pose": "rest",
+      "mean_rgb_error_255": 0.0,
+      "max_channel_error": 0
+    },
+    {
+      "id": "AdaptedVisceraKnight",
+      "pose": "posed",
+      "mean_rgb_error_255": 0.0,
+      "max_channel_error": 0
+    }
+  ]
+}

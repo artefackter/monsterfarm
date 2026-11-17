@@ -1,0 +1,79 @@
+{
+  "mode": "built-in image_gen",
+  "status": "awaiting_icon_approval",
+  "game_integration_authorized": false,
+  "assets": [
+    {
+      "id": "MimicFarmer",
+      "role": "Farmer",
+      "ru": "Фермер",
+      "generated_source": "/Users/wingman/.codex/generated_images/01a1d8e4-acdd-79b3-8922-0cbdd78c86a4/exec-c02b8631-c59e-476f-aaac-80f4f8ce5540.png",
+      "file": "icons/MimicFarmer.png",
+      "references": [
+        "/Users/wingman/Documents/Codex/GrowAMonster-Git-2026-11-12/art/mimic-forms-v1/previews/Mimic_Farmer_Idle.png",
+        "/Users/wingman/Documents/Codex/GrowAMonster-Git-2026-11-12/art/ui/modal-refresh/DeerFarmer.png"
+      ],
+      "status": "awaiting_icon_approval"
+    },
+    {
+      "id": "MimicMiner",
+      "role": "Miner",
+      "ru": "Шахтёр",
+      "generated_source": "/Users/wingman/.codex/generated_images/01a1d8e4-acdd-79b3-8922-0cbdd78c86a4/exec-78d43acc-f38b-4969-be7f-58f9f58d1c8b.png",
+      "file": "icons/MimicMiner.png",
+      "references": [
+        "/Users/wingman/Documents/Codex/GrowAMonster-Git-2026-11-12/art/mimic-forms-v1/previews/Mimic_Miner_Idle.png",
+        "/Users/wingman/Documents/Codex/GrowAMonster-Git-2026-11-12/art/ui/modal-refresh/DeerFarmer.png"
+      ],
+      "status": "awaiting_icon_approval"
+    },
+    {
+      "id": "MimicPrincess",
+      "role": "Princess",
+      "ru": "Принцесса",
+      "generated_source": "/Users/wingman/.codex/generated_images/01a1d8e4-acdd-79b3-8922-0cbdd78c86a4/exec-7e7a80f8-3273-4a87-a78f-ad67cf40bef0.png",
+      "file": "icons/MimicPrincess.png",
+      "references": [
+        "/Users/wingman/Documents/Codex/GrowAMonster-Git-2026-11-12/art/mimic-forms-v1/previews/Mimic_Princess_Idle.png",
+        "/Users/wingman/Documents/Codex/GrowAMonster-Git-2026-11-12/art/ui/modal-refresh/DeerFarmer.png"
+      ],
+      "status": "awaiting_icon_approval"
+    },
+    {
+      "id": "MimicKnight",
+      "role": "Knight",
+      "ru": "Рыцарь",
+      "generated_source": "/Users/wingman/.codex/generated_images/01a1d8e4-acdd-79b3-8922-0cbdd78c86a4/exec-51a1119b-0963-41b0-a9b4-336a8b160a45.png",
+      "file": "icons/MimicKnight.png",
+      "references": [
+        "/Users/wingman/Documents/Codex/GrowAMonster-Git-2026-11-12/art/mimic-forms-v1/previews/Mimic_Knight_Idle.png",
+        "/Users/wingman/Documents/Codex/GrowAMonster-Git-2026-11-12/art/ui/modal-refresh/DeerFarmer.png"
+      ],
+      "status": "awaiting_icon_approval"
+    },
+    {
+      "id": "MimicPunk",
+      "role": "Punk",
+      "ru": "Нефор",
+      "generated_source": "/Users/wingman/.codex/generated_images/01a1d8e4-acdd-79b3-8922-0cbdd78c86a4/exec-0469139b-168c-4234-8e77-eee2259d3e94.png",
+      "file": "icons/MimicPunk.png",
+      "references": [
+        "/Users/wingman/Documents/Codex/GrowAMonster-Git-2026-11-12/art/mimic-forms-v1/previews/Mimic_Punk_Idle.png",
+        "/Users/wingman/Documents/Codex/GrowAMonster-Git-2026-11-12/art/ui/modal-refresh/DeerFarmer.png"
+      ],
+      "status": "awaiting_icon_approval"
+    },
+    {
+      "id": "MimicAssassin",
+      "role": "Assassin",
+      "ru": "Убийца",
+      "generated_source": "/Users/wingman/.codex/generated_images/01a1d8e4-acdd-79b3-8922-0cbdd78c86a4/exec-490ad56b-df99-496e-9632-8e153f3eeb48.png",
+      "file": "icons/MimicAssassin.png",
+      "references": [
+        "/Users/wingman/Documents/Codex/GrowAMonster-Git-2026-11-12/art/mimic-forms-v1/previews/Mimic_Assassin_Idle.png",
+        "/Users/wingman/Documents/Codex/GrowAMonster-Git-2026-11-12/art/ui/modal-refresh/DeerFarmer.png"
+      ],
+      "status": "awaiting_icon_approval"
+    }
+  ]
+}

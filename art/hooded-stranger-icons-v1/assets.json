@@ -1,0 +1,84 @@
+{
+  "mode": "built-in image_gen",
+  "status": "awaiting_icon_approval",
+  "game_integration_authorized": false,
+  "assets": [
+    {
+      "id": "HoodedStrangerFarmer",
+      "role": "Farmer",
+      "ru": "Фермер",
+      "file": "icons/HoodedStrangerFarmer.png",
+      "generated_source": "/Users/wingman/.codex/generated_images/01a1d950-0e11-7043-b369-87da19091fd7/exec-6c29171a-c860-4488-8383-26a7a552dd9d.png",
+      "reference_images": [
+        "/Users/wingman/Documents/Codex/GrowAMonster-Git-2026-11-12/art/hooded-stranger-forms-v1/previews/HoodedStranger_Farmer_Front.png",
+        "/Users/wingman/Documents/Codex/GrowAMonster-Git-2026-11-12/art/ui/modal-refresh/DeerFarmer.png"
+      ],
+      "status": "awaiting_icon_approval"
+    },
+    {
+      "id": "HoodedStrangerMiner",
+      "role": "Miner",
+      "ru": "Шахтёр",
+      "file": "icons/HoodedStrangerMiner.png",
+      "generated_source": "/Users/wingman/.codex/generated_images/01a1d950-0e11-7043-b369-87da19091fd7/exec-a50a68e0-6b02-4724-b7c5-c9f337dc8a1f.png",
+      "reference_images": [
+        "/Users/wingman/Documents/Codex/GrowAMonster-Git-2026-11-12/art/hooded-stranger-forms-v1/previews/HoodedStranger_Miner_Front.png",
+        "/Users/wingman/Documents/Codex/GrowAMonster-Git-2026-11-12/art/ui/modal-refresh/DeerFarmer.png",
+        "/Users/wingman/Documents/Codex/GrowAMonster-Git-2026-11-12/art/hooded-stranger-icons-v1/icons/HoodedStrangerFarmer.png"
+      ],
+      "status": "awaiting_icon_approval"
+    },
+    {
+      "id": "HoodedStrangerKing",
+      "role": "King",
+      "ru": "Король",
+      "file": "icons/HoodedStrangerKing.png",
+      "generated_source": "/Users/wingman/.codex/generated_images/01a1d950-0e11-7043-b369-87da19091fd7/exec-99467a5f-105c-4c50-8e44-c604deef8943.png",
+      "reference_images": [
+        "/Users/wingman/Documents/Codex/GrowAMonster-Git-2026-11-12/art/hooded-stranger-forms-v1/previews/HoodedStranger_King_Front.png",
+        "/Users/wingman/Documents/Codex/GrowAMonster-Git-2026-11-12/art/ui/modal-refresh/DeerFarmer.png",
+        "/Users/wingman/Documents/Codex/GrowAMonster-Git-2026-11-12/art/hooded-stranger-icons-v1/icons/HoodedStrangerFarmer.png"
+      ],
+      "status": "awaiting_icon_approval"
+    },
+    {
+      "id": "HoodedStrangerKnight",
+      "role": "Knight",
+      "ru": "Рыцарь",
+      "file": "icons/HoodedStrangerKnight.png",
+      "generated_source": "/Users/wingman/.codex/generated_images/01a1d950-0e11-7043-b369-87da19091fd7/exec-a9d1f4d2-5e3f-4e5f-85a2-ce2418cb3f34.png",
+      "reference_images": [
+        "/Users/wingman/Documents/Codex/GrowAMonster-Git-2026-11-12/art/hooded-stranger-forms-v1/previews/HoodedStranger_Knight_Front.png",
+        "/Users/wingman/Documents/Codex/GrowAMonster-Git-2026-11-12/art/ui/modal-refresh/DeerFarmer.png",
+        "/Users/wingman/Documents/Codex/GrowAMonster-Git-2026-11-12/art/hooded-stranger-icons-v1/icons/HoodedStrangerFarmer.png"
+      ],
+      "status": "awaiting_icon_approval"
+    },
+    {
+      "id": "HoodedStrangerPunk",
+      "role": "Punk",
+      "ru": "Нефор",
+      "file": "icons/HoodedStrangerPunk.png",
+      "generated_source": "/Users/wingman/.codex/generated_images/01a1d950-0e11-7043-b369-87da19091fd7/exec-dbff7359-8d78-4279-b4a2-4e4bcda08fbe.png",
+      "reference_images": [
+        "/Users/wingman/Documents/Codex/GrowAMonster-Git-2026-11-12/art/hooded-stranger-forms-v1/previews/HoodedStranger_Punk_Front.png",
+        "/Users/wingman/Documents/Codex/GrowAMonster-Git-2026-11-12/art/ui/modal-refresh/DeerFarmer.png",
+        "/Users/wingman/Documents/Codex/GrowAMonster-Git-2026-11-12/art/hooded-stranger-icons-v1/icons/HoodedStrangerFarmer.png"
+      ],
+      "status": "awaiting_icon_approval"
+    },
+    {
+      "id": "HoodedStrangerAssassin",
+      "role": "Assassin",
+      "ru": "Убийца",
+      "file": "icons/HoodedStrangerAssassin.png",
+      "generated_source": "/Users/wingman/.codex/generated_images/01a1d950-0e11-7043-b369-87da19091fd7/exec-37a97346-ffaf-459b-9d63-6e002813b7c0.png",
+      "reference_images": [
+        "/Users/wingman/Documents/Codex/GrowAMonster-Git-2026-11-12/art/hooded-stranger-forms-v1/previews/HoodedStranger_Assassin_Front.png",
+        "/Users/wingman/Documents/Codex/GrowAMonster-Git-2026-11-12/art/ui/modal-refresh/DeerFarmer.png",
+        "/Users/wingman/Documents/Codex/GrowAMonster-Git-2026-11-12/art/hooded-stranger-icons-v1/icons/HoodedStrangerFarmer.png"
+      ],
+      "status": "awaiting_icon_approval"
+    }
+  ]
+}

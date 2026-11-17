@@ -176,7 +176,7 @@ function V.Create(parent,callbacks)
  function view:Update(s)
   self.snapshot=s;self.selected=C[self.selected] and self.selected or s.equipped or C.Order[1]
   local id=self.selected;local lang=L.lang();local function t(k) return L.text(k,lang) end
-  local d={weapons=s.owned or {},weaponUpgrades=s.upgrades or {},coins=s.coins or 0,mutagen=s.mutagen or 0}
+  local d={weapons=s.owned or {},weaponUpgrades=s.upgrades or {},coins=s.coins or 0,mutagen=s.mutagen or 0,freeUpgrade=s.freeUpgrade}
   if self.pending and (Up.Level(d,self.pending.id,self.pending.stat)~=self.pending.level or os.clock()-self.pending.at>=2) then self.pending=nil end
   title.TextScaled=true;title.Text=t('weaponWorkshop');hint.Text=t('weaponWorkshopHint')
   gunName.Text=t(id)..' ('..id..')'
@@ -202,7 +202,7 @@ function V.Create(parent,callbacks)
    local a,b=Up.Value(id,stat,level);card.before.Text=value(stat,a,b,lang)
    local nextA,nextB=Up.Value(id,stat,math.min(level+1,Up.Max));card.after.Text=max and t('upMax') or value(stat,nextA,nextB,lang)
    card.arrow.Visible=not max
-   local coins,mut=Up.Cost(id,stat,level);card.cost.Text=max and '—' or '$'..L.compact(coins,lang);card.need.Text=max and '—' or tostring(mut)
+   local coins,mut=Up.Cost(id,stat,level);card.cost.Text=max and '—' or d.freeUpgrade and t('freeGift') or '$'..L.compact(coins,lang);card.need.Text=max and '—' or d.freeUpgrade and '0' or tostring(mut) -- free on the tutorial's workbench step
    local waiting=self.pending~=nil
    card.buy.Text=waiting and '…' or t(why=='max' and 'upMax' or why=='bad' and 'upLocked' or why and 'upInsufficient' or 'upgradeTile')
    local enabled=not why and not waiting
@@ -213,7 +213,7 @@ function V.Create(parent,callbacks)
  end
  function view:Purchase(stat,pop)
   local s=self.snapshot;if not s or self.pending or not cards[stat] then return false end
-  local data={weapons=s.owned,weaponUpgrades=s.upgrades,coins=s.coins,mutagen=s.mutagen}
+  local data={weapons=s.owned,weaponUpgrades=s.upgrades,coins=s.coins,mutagen=s.mutagen,freeUpgrade=s.freeUpgrade}
   if Up.Check(data,self.selected,stat) then return false end
   self.pending={id=self.selected,stat=stat,level=Up.Level(data,self.selected,stat),at=os.clock()}
   if pop then Style.Pop(pop,1) end;self:Update(s)

@@ -1,8 +1,9 @@
 -- The ruins road, dressed after the owner's reference picture (2026-11-09): one long walled corridor, a path
--- down the middle and six locations in a row — forest, dark forest, hospital, village, cultist cave, factory —
--- each with its own look, each a little darker. The walls are the island's block wall, recoloured
--- per location. Physical floors and gameplay colliders belong to RoadService; everything here is decoration
--- except a few solid building blocks that players (not mutants) bump into.
+-- down the middle and six locations in a row, each with its own look. Since the reskin of 2026-11-15 (owner): dark
+-- forest, backrooms, abandoned city, abandoned village, Parasitown, abandoned cave (the blood mine), after
+-- art/road-reskin-screenshot-concepts-v5. The walls are the island's block wall, recoloured per location.
+-- Physical floors and gameplay colliders belong to RoadService; everything here is decoration except a few solid
+-- building blocks that players (not mutants) bump into.
 -- Revision 5 (owner, 2026-11-13): every location's boss waits in a round pocket beside the road near its end (left and
 -- right in turn), through an arched opening in the road wall with the boss's name over it; the road runs on past it.
 local S = game.ReplicatedStorage.Shared
@@ -18,7 +19,7 @@ end
 function A.Build(world, at, C, districts, P)
 	local root = Instance.new("Model")
 	root.Name = "RoadArt"
-	root:SetAttribute("Revision", 5)
+	root:SetAttribute("Revision", 6)
 	root.Parent = world
 	local rng = Random.new(9032)
 	local W = C.Width
@@ -28,8 +29,9 @@ function A.Build(world, at, C, districts, P)
 	-- itself, and a wider stretch for buildings and props so they never stand in the way in.
 	local skipS, skipSide, skipGap
 	local function skipped(s, x)
-		-- nothing of the road's scenery stands inside a boss arena (they are big since 2026-11-13: radius 100)
-		if x and Progression.PocketAt(s, x, 12) and math.abs(x) > half - 1 then
+		-- nothing of the road's scenery stands inside a boss arena (they are big since 2026-11-13: radius 100), the part
+		-- of it reaching into the road included (2026-11-15) - save the path and the lines down the road's middle
+		if x and math.abs(x) > 34 and Progression.PocketAt(s, x, 12) then
 			return true
 		end
 		if not skipS or not x or x * skipSide < 15 then
@@ -72,7 +74,54 @@ function A.Build(world, at, C, districts, P)
 				return true
 			end
 		end
+		for _, g in C.Graveyards or {} do -- the mini cemeteries (2026-11-15)
+			if Vector2.new(g.S - s, g.X - x).Magnitude < g.Radius + r + 4 then
+				return true
+			end
+		end
 		return false
+	end
+
+	-- A location's mini cemetery (owner, 2026-11-15: "mini cemeteries like the players' farms"; RoadConfig.Graveyards,
+	-- whose ring of grave spots RoadService fills): the farm's round purple patch at its size and tint, ringed by the
+	-- farm's weathered fence with an opening towards the road's middle and a post either side of it. Scenery only: the
+	-- fence has no collider, so it never gets in the way of a chase.
+	local FENCE_TINT = Color3.fromRGB(150, 126, 108)
+	local function buildGraveyard(g)
+		local m = Instance.new("Model")
+		m.Name = "RoadGraveyard"
+		m:SetAttribute("Location", g.Location)
+		m.Parent = root
+		local function loose(parts)
+			for _, q in parts or {} do
+				if typeof(q) == "Instance" and q:IsA("BasePart") then
+					q.CanCollide, q.CanQuery, q.CanTouch = false, false, false
+				end
+			end
+		end
+		local toward = g.Side > 0 and math.pi or 0 -- the opening's direction (the road's middle), as an angle in s, x
+		if Art.Has("Cemetery_Round") then
+			-- the patch was made 24 studs round with its entrance on its -X side
+			local k = g.Radius / 24
+			loose(Art.Spawn("Cemetery_Round", m, at(g.S, g.X, 0) * CFrame.Angles(0, g.Side > 0 and 0 or math.pi, 0), { scale = Vector3.new(k, 1, k), tints = { Main = Color3.fromRGB(173, 145, 204) } }))
+		end
+		local gap = math.asin(4 / g.Radius) -- an 8-stud way in
+		local a0, a1 = toward + gap, toward + 2 * math.pi - gap
+		local n = math.max(3, math.ceil((a1 - a0) * g.Radius / 8))
+		local function point(a)
+			return at(g.S + math.sin(a) * g.Radius, g.X + math.cos(a) * g.Radius, 0).Position
+		end
+		for k = 0, n - 1 do
+			local p0, p1 = point(a0 + (a1 - a0) * k / n), point(a0 + (a1 - a0) * (k + 1) / n)
+			local v, q = p1 - p0, (p0 + p1) / 2
+			loose(Art.Spawn("W_Fence", m, CFrame.lookAt(q, q + Vector3.new(v.Z, 0, -v.X)), { scale = Vector3.new(v.Magnitude / 8, 1, 1), tints = { Main = FENCE_TINT } }))
+		end
+		for _, a in { a0, a1 } do
+			loose(Art.Spawn("W_FencePost", m, CFrame.new(point(a)), { tints = { Main = FENCE_TINT } }))
+		end
+	end
+	for _, g in C.Graveyards or {} do
+		buildGraveyard(g)
 	end
 
 	-- The amphitheatre at the end of every location ------------------------------------------------------------------
@@ -82,6 +131,8 @@ function A.Build(world, at, C, districts, P)
 	-- v5 (owner, 2026-11-13): the arena is a round pocket beside the road (RoadProgression.PocketAt), not across it. Sand
 	-- floor with the seal, a full bowl of stands round it (open only towards the road), columns with fire, braziers,
 	-- and an arch over the opening in the road wall with the boss's name on it.
+	-- v6 (owner, 2026-11-15): no corridor; the round reaches into the road and is open to it along its arc, with a
+	-- pillar at each end of the opening and the boss's name on a board over the far side.
 	local function buildPocket(d, parent)
 		local pd = Progression.Districts[d.Index]
 		local model = Instance.new("Model")
@@ -117,72 +168,54 @@ function A.Build(world, at, C, districts, P)
 		disc("ArenaLine", R * 0.58, 0.06, dark)
 		local sandInner = disc("ArenaSandInner", R * 0.58 - 0.9, 0.07, sand, Enum.Material.Sand)
 		Art.Spawn("MR_ArenaSeal", model, at(c, px, 0.06), { scale = Vector3.new(3.2, 0.4, 3.2) })
-		-- the slanted corridor's floor from the road into the round (RoadProgression.DoorPoint)
-		do
-			local s0, x0 = Progression.DoorPoint(d.Index, -2, 0)
-			local s1, x1 = Progression.DoorPoint(d.Index, Progression.PocketNeck + 6, 0)
-			local p0, p1 = at(s0, x0, 0.05).Position, at(s1, x1, 0.05).Position
-			piece("PocketPath", Vector3.new(gap * 2 - 2, 0.06, (p1 - p0).Magnitude), CFrame.lookAt((p0 + p1) / 2, p1), sand, Enum.Material.Sand)
-			-- low stone walls along both sides, from the road wall to the round (the colliders are RoadService's)
-			local c0, n0 = pd.DirS, math.abs(pd.DirX)
-			for _, e in { -1, 1 } do
-				local across = e * (gap + 2)
-				local a0 = (2 - across * c0) / n0
-				local sa0, xa0 = Progression.DoorPoint(d.Index, a0, across)
-				local sa1, xa1 = Progression.DoorPoint(d.Index, Progression.PocketNeck + 3, across)
-				local q0, q1 = at(sa0, xa0, 5).Position, at(sa1, xa1, 5).Position
-				local frame = CFrame.lookAt((q0 + q1) / 2, q1)
-				piece("CorridorWall", Vector3.new(4, 10, (q1 - q0).Magnitude), frame, stone:Lerp(dark, 0.2))
-				piece("CorridorCap", Vector3.new(4.6, 0.8, (q1 - q0).Magnitude + 0.4), frame * CFrame.new(0, 5.4, 0), hex(d.Cap))
-			end
-		end
-		local function facesRoad(ds, dx, margin) -- towards the corridor
+		-- (no corridor since 2026-11-15: the floor's dark rim draws the circle's arc across the road where it is open)
+		local function facesRoad(ds, dx, margin) -- on the road's side, where the arena is open
 			return Progression.FacesDoor(d.Index, ds, dx, margin or 4)
 		end
 		-- Each boss's own look (owner, 2026-11-13: "style the amphitheatres after the boss; drop steps 1-3, keep 4 and 5"):
 		-- only the two tall back tiers stand round the floor now, in the boss's colours, with its emblem on the columns.
+		-- The road reskin (owner, 2026-11-15; art/road-reskin-screenshot-concepts-v5): each arena in its location's look.
 		local THEMES = {
-			{ stand = { "5E6B45", "4D5A3A" }, cap = "8A6A3F", sand = "B9A27A", motif = "antlers" }, -- the Horned One: mossy stone, antlers
-			{ stand = { "3E3A2E", "332F26" }, cap = "C8692A", sand = "5E5240", motif = "gourds" }, -- the RingMaw: dark forest bark, carved gourds
-			{ stand = { "E9ECEE", "DDE2E4" }, cap = "7FC6B6", sand = "CFD6D2", motif = "crosses" }, -- Patient Zero: white tiles, teal, red crosses
-			{ stand = { "3A2A2A", "5A1E22" }, cap = "D9B44A", sand = "2E6B3F", motif = "cards" }, -- the Dealer: green felt, card suits, brass shells
-			{ stand = { "4A3F52", "3A3042" }, cap = "8E1F35", sand = "6C6170", motif = "cult" }, -- the Priest: dark stone, red banners, candles
-			{ stand = { "6E6A64", "5A5650" }, cap = "FFD23F", sand = "7E7A74", motif = "factory" }, -- the Chief: concrete, hazard stripes, pipes
+			{ stand = { "3F4A33", "35402B" }, cap = "6B5A3A", sand = "56603F", motif = "antlers" }, -- dark forest (the Horned Alpha): mossy stone, antlers
+			{ stand = { "3A3226", "2E281E" }, cap = "E07A1F", sand = "4A4236", motif = "candles", floor = "Fabric" }, -- backrooms (RingMaw): dark carpet, an orange rim, candles
+			{ stand = { "6E6E6C", "5E5E5C" }, cap = "B3262E", sand = "8A8A88", motif = "banners", floor = "Concrete" }, -- city (the Stranger): concrete, red banners
+			{ stand = { "B98A5A", "A87A4C" }, cap = "8A6038", sand = "B49C7C", motif = "candles" }, -- village (Slendrina): a ring of planks, candles
+			{ stand = { "4A4446", "3E383A" }, cap = "7A1E26", sand = "6E6668", motif = "tentacles", floor = "Concrete" }, -- Parasitown (Patient Zero): tentacles, red growth
+			{ stand = { "5E5256", "4E4448" }, cap = "7A6A5E", sand = "7A6A6E", motif = "torches", floor = "Slate" }, -- the cave (the Cave Dweller): rock, torches, ore
 		}
 		local theme = THEMES[d.Index] or THEMES[1]
 		local capColor = hex(theme.cap)
 		sandFloor.Color = hex(theme.sand)
 		sandInner.Color = hex(theme.sand)
-		if theme.motif == "cards" then
-			sandFloor.Material, sandInner.Material = Enum.Material.Fabric, Enum.Material.Fabric
-		elseif theme.motif == "crosses" or theme.motif == "factory" then
-			sandFloor.Material, sandInner.Material = Enum.Material.Concrete, Enum.Material.Concrete
+		if theme.floor then
+			sandFloor.Material, sandInner.Material = Enum.Material[theme.floor], Enum.Material[theme.floor]
 		end
 		-- The stands: the old fourth and fifth tiers, now right behind the floor's edge
 		-- Performance (2026-11-14): 32 stand segments, 16 columns, 8 floor props and 6 braziers (3 of them lit) per arena;
 		-- they were 80, 36, 16 and 10, all lit.
+		-- No holes (owner, 2026-11-15: "every boss arena has holes"): each row runs exactly from where its circle meets
+		-- the road's wall line on one side round to the other, so it closes on the pillars and the road's walls; it
+		-- stopped well short of them before and the void showed through.
 		local segments = 32
 		local rows = { { r = R + 5, seat = 17.2 }, { r = R + 12.6, seat = 20.6 } }
+		local tRoad = side > 0 and math.pi or 0 -- the angle that points from the arena's middle at the road
 		for k, row in rows do
 			local r, height = row.r, row.seat + 14
-			for n = 0, segments - 1 do
-				local t0, t1 = n / segments * math.pi * 2, (n + 1) / segments * math.pi * 2
+			local edge = math.acos(math.clamp((math.abs(px) - (Progression.RoadHalf + 2)) / r, -1, 1))
+			local from, arc = tRoad + edge, 2 * math.pi - 2 * edge
+			local n = math.max(1, math.floor(segments * arc / (2 * math.pi) + 0.5))
+			for step = 0, n - 1 do
+				local t0, t1 = from + arc * step / n, from + arc * (step + 1) / n
 				local tm = (t0 + t1) / 2
 				local ds, dx = math.sin(tm) * r, math.cos(tm) * r
-				-- both ends and the middle stay clear of the way in (the segments are long since 2026-11-14)
-				local function clear(t) return not facesRoad(math.sin(t) * r, math.cos(t) * r, 6 + k * 3) end
-				if clear(t0) and clear(tm) and clear(t1) then
+				do
 					local p0, p1 = at(c + math.sin(t0) * r, px + math.cos(t0) * r, 0).Position, at(c + math.sin(t1) * r, px + math.cos(t1) * r, 0).Position
 					local mid = at(c + ds, px + dx, row.seat - height / 2).Position
 					local look = CFrame.lookAt(mid, mid + (p1 - p0))
 					piece("Stand", Vector3.new(7.6, height, (p1 - p0).Magnitude + 0.5), look, hex(theme.stand[k]))
 					piece("StandTrim", Vector3.new(7.8, 0.6, (p1 - p0).Magnitude + 0.5), look * CFrame.new(0, height / 2 + 0.3, 0), capColor)
-					if theme.motif == "factory" and k == 1 then -- hazard stripes along the inner face
-						piece("Hazard", Vector3.new(0.2, 1.4, (p1 - p0).Magnitude + 0.5), look * CFrame.new(-3.85, height / 2 - 3, 0), n % 2 == 0 and hex("FFD23F") or hex("1E1E1E"))
-					elseif theme.motif == "crosses" and k == 1 then -- a teal stripe, as on the hospital's walls
-						piece("Stripe", Vector3.new(0.2, 0.9, (p1 - p0).Magnitude + 0.5), look * CFrame.new(-3.85, height / 2 - 4, 0), hex("7FC6B6"))
-					elseif theme.motif == "cards" and k == 1 then -- gold rail round the felt
-						piece("Rail", Vector3.new(0.3, 0.5, (p1 - p0).Magnitude + 0.5), look * CFrame.new(-3.9, height / 2 - 2.5, 0), hex("D9B44A"), Enum.Material.Metal)
+					if theme.motif == "tentacles" and k == 1 and step % 3 == 0 then -- dark red growth creeping over the inner face
+						piece("Growth", Vector3.new(0.3, height * 0.6, (p1 - p0).Magnitude * 0.5), look * CFrame.new(-3.85, height * 0.1, 0), hex("5A1218"))
 					end
 				end
 			end
@@ -196,9 +229,9 @@ function A.Build(world, at, C, districts, P)
 			local t = (n + 0.5) / columns * math.pi * 2
 			local ds, dx = math.sin(t) * rTop, math.cos(t) * rTop
 			if not facesRoad(ds, dx, 20) then
-				local tall = theme.motif == "gourds" and 16 or 12
+				local tall = 12
 				local base = at(c + ds, px + dx, topY + tall / 2)
-				piece("Column", Vector3.new(2.6, tall, 2.6), base, theme.motif == "factory" and hex("8D9AA3") or hex(theme.stand[1]):Lerp(Color3.new(1, 1, 1), 0.2), theme.motif == "factory" and Enum.Material.Metal or nil)
+				piece("Column", Vector3.new(2.6, tall, 2.6), base, hex(theme.stand[1]):Lerp(Color3.new(1, 1, 1), 0.2))
 				local headY = topY + tall
 				piece("ColumnCap", Vector3.new(3.8, 1, 3.8), at(c + ds, px + dx, headY + 0.5), capColor)
 				local headAt = at(c + ds, px + dx, headY + 1).Position
@@ -209,47 +242,41 @@ function A.Build(world, at, C, districts, P)
 						piece("Antler", Vector3.new(0.5, 4, 0.5), head * CFrame.new(e * 1.2, 3, 0) * CFrame.Angles(0, 0, -e * 0.5), bone)
 						piece("AntlerTine", Vector3.new(0.4, 2, 0.4), head * CFrame.new(e * 2.2, 4.4, 0) * CFrame.Angles(0, 0, e * 0.4), bone)
 					end
-				elseif theme.motif == "gourds" then
-					-- a carved gourd on every column, its round toothed mouth turned to the floor
-					piece("Gourd", Vector3.new(3.4, 3.4, 3.4), head * CFrame.new(0, 1.9, 0), hex(n % 2 == 0 and "D9772B" or "C4621E"), nil, Enum.PartType.Ball)
-					piece("GourdTeeth", Vector3.new(0.3, 2.3, 2.3), head * CFrame.new(0, 1.8, -1.45) * CFrame.Angles(0, math.pi / 2, 0), hex("EDE3C6"), nil, Enum.PartType.Cylinder)
-					piece("GourdMouth", Vector3.new(0.35, 1.5, 1.5), head * CFrame.new(0, 1.8, -1.55) * CFrame.Angles(0, math.pi / 2, 0), hex("FF6A2A"), Enum.Material.Neon, Enum.PartType.Cylinder)
-					piece("GourdStem", Vector3.new(0.5, 1.2, 0.5), head * CFrame.new(0, 3.9, 0.2) * CFrame.Angles(0.3, 0, 0), hex("4E3B22"), Enum.Material.Wood)
-				elseif theme.motif == "crosses" then
-					piece("CrossV", Vector3.new(1, 3.4, 0.5), head * CFrame.new(0, 1.8, -1.4), hex("D6303F"))
-					piece("CrossH", Vector3.new(3.4, 1, 0.5), head * CFrame.new(0, 1.8, -1.4), hex("D6303F"))
-				elseif theme.motif == "cards" then
-					local red = n % 2 == 0
-					piece("Card", Vector3.new(2.6, 3.6, 0.2), head * CFrame.new(0, 2, -1.4), hex("F4F0E6"))
-					piece("Suit", Vector3.new(1.1, 1.1, 0.25), head * CFrame.new(0, 2, -1.55) * CFrame.Angles(0, 0, math.pi / 4), red and hex("C8202E") or hex("1E1E1E"))
-				elseif theme.motif == "cult" then
-					piece("Banner", Vector3.new(3, 8, 0.3), head * CFrame.new(0, -5, -1.6), hex("8E1F35"))
-					piece("Sigil", Vector3.new(1.4, 1.4, 0.35), head * CFrame.new(0, -4, -1.8) * CFrame.Angles(0, 0, math.pi / 4), hex("E4B34A"))
-					piece("Candle", Vector3.new(0.6, 1.6, 0.6), head * CFrame.new(0, 0.8, 0), hex("EDE3C8"))
-				elseif theme.motif == "factory" then
-					piece("Gear", Vector3.new(0.5, 3.4, 3.4), head * CFrame.new(0, 2, -0.8) * CFrame.Angles(0, math.pi / 2, 0), hex("8D9AA3"), Enum.Material.Metal, Enum.PartType.Cylinder)
-					piece("GearHub", Vector3.new(0.7, 1.2, 1.2), head * CFrame.new(0, 2, -1.1) * CFrame.Angles(0, math.pi / 2, 0), hex("FFD23F"), Enum.Material.Metal, Enum.PartType.Cylinder)
+				elseif theme.motif == "candles" then
+					-- a thick candle on every column, its flame glowing
+					piece("Candle", Vector3.new(1.1, 2.6, 1.1), head * CFrame.new(0, 1.3, 0), hex("EDE3C8"))
+					piece("CandleFlame", Vector3.new(0.7, 1.1, 0.7), head * CFrame.new(0, 3.1, 0), hex("FFB04A"), Enum.Material.Neon, Enum.PartType.Ball)
+				elseif theme.motif == "banners" then
+					-- a red banner with a yellow diamond hanging into the arena, like the island's
+					piece("Banner", Vector3.new(3, 8, 0.3), head * CFrame.new(0, -5, -1.6), hex("B3262E"))
+					piece("Diamond", Vector3.new(1.6, 1.6, 0.35), head * CFrame.new(0, -4, -1.8) * CFrame.Angles(0, 0, math.pi / 4), hex("F2C744"))
+				elseif theme.motif == "tentacles" then
+					-- a bone spike crusted with red growth
+					piece("Spike", Vector3.new(0.9, 4, 0.9), head * CFrame.new(0, 2.2, 0), hex("E6DCC4"))
+					piece("SpikeGrowth", Vector3.new(1.5, 1.6, 1.5), head * CFrame.new(0, 0.8, 0), hex("7A1E26"), nil, Enum.PartType.Ball)
+				elseif theme.motif == "torches" then
+					piece("TorchFlame", Vector3.new(1.6, 2.2, 1.6), head * CFrame.new(0, 1.4, 0), hex("FF8A3D"), Enum.Material.Neon, Enum.PartType.Ball)
 				end
 			end
 		end
-		-- Round the floor: brass shells for the Dealer, skulls for the Priest, bones for the Horned One
+		-- Round the floor: bones for the Horned Alpha, tentacles in Parasitown, ore in the cave, rubble in the city
 		local props = 8
 		for n = 0, props - 1 do
 			local t = (n + 0.5) / props * math.pi * 2
 			local ds, dx = math.sin(t) * (R - 3), math.cos(t) * (R - 3)
 			if not facesRoad(ds, dx, 10) then
 				local spot = at(c + ds, px + dx, 0)
-				if theme.motif == "cards" then
-					for k = 0, 2 do
-						piece("Shell", Vector3.new(1.6, 0.6, 0.6), spot * CFrame.new(k * 0.9 - 0.9, 0.3, k * 0.4) * CFrame.Angles(0, k, 0), hex("C9A13F"), Enum.Material.Metal, Enum.PartType.Cylinder)
-					end
-				elseif theme.motif == "cult" then
-					Art.Spawn("MR_CultSkulls", model, spot * CFrame.Angles(0, t, 0), { scale = 1.3 })
-				elseif theme.motif == "antlers" then
+				-- turned to face the middle of the arena
+				local inward = spot * CFrame.Angles(0, math.atan2(math.cos(t), -math.sin(t)), 0)
+				if theme.motif == "antlers" then
 					piece("Bones", Vector3.new(0.5, 0.5, 3), spot * CFrame.new(0, 0.25, 0) * CFrame.Angles(0, t, 0), bone)
-				elseif theme.motif == "gourds" then -- gourds in the grass, glowing from inside
-					piece("FloorGourd", Vector3.new(2.2, 2.2, 2.2), spot * CFrame.new(0, 0.9, 0), hex(n % 2 == 0 and "C8692A" or "A4561F"), nil, Enum.PartType.Ball)
-					piece("FloorGourdGlow", Vector3.new(0.3, 0.9, 0.9), spot * CFrame.Angles(0, t + math.pi / 2, 0) * CFrame.new(-1.0, 1, 0), hex("FF6A2A"), Enum.Material.Neon, Enum.PartType.Cylinder)
+				elseif theme.motif == "tentacles" and Art.Has("PT_ArenaTentacleTall") then
+					-- the tentacles stand round the arena only (the concept keeps the road itself clear of them)
+					Art.Spawn(n % 2 == 0 and "PT_ArenaTentacleTall" or "PT_ArenaTentacleHook", model, inward, { scale = 1.2 })
+				elseif theme.motif == "torches" and Art.Has("BM_OreCluster") then
+					Art.Spawn("BM_OreCluster", model, inward, { scale = 1.3 })
+				elseif theme.motif == "banners" and Art.Has("SH_Rubble") then
+					Art.Spawn("SH_Rubble", model, inward, { scale = 1.2 })
 				end
 			end
 		end
@@ -261,17 +288,14 @@ function A.Build(world, at, C, districts, P)
 			if not facesRoad(ds, dx, 10) then
 				piece("BrazierStand", Vector3.new(1.4, 5, 1.4), at(c + ds, px + dx, 2.5), dark)
 				piece("BrazierBowl", Vector3.new(1.2, 3.6, 3.6), at(c + ds, px + dx, 5.4) * CFrame.Angles(0, 0, math.pi / 2), dark, nil, Enum.PartType.Cylinder)
-				local flame = piece("BrazierFlame", Vector3.new(2.2, 2.2, 2.2), at(c + ds, px + dx, 6.6), hex("FF8A3D"), Enum.Material.Neon, Enum.PartType.Ball)
-				if n % 2 == 0 then
-					local light = Instance.new("PointLight")
-					light.Color, light.Range, light.Brightness, light.Shadows = hex("FFA34D"), 30, 1.2, false
-					light.Parent = flame
-				end
+				-- the flame only glows: the braziers lost their light on 2026-11-15 (performance); the pillar torches light the arena
+				piece("BrazierFlame", Vector3.new(2.2, 2.2, 2.2), at(c + ds, px + dx, 6.6), hex("FF8A3D"), Enum.Material.Neon, Enum.PartType.Ball)
 			end
 		end
-		-- The arch over the opening in the road wall, with the boss's name facing the road
+		-- The arena is open to the road (2026-11-15): a pillar with a torch where each end of the road wall meets the
+		-- circle, and the boss's name on a board high over the far side, facing the road across the arena.
 		local ax = side * (half + 2)
-		local door, dw = pd.DoorS, Progression.DoorWidth / 2 -- the opening sits where the slanted corridor meets the wall
+		local door, dw = pd.DoorS, Progression.DoorWidth / 2
 		for _, e in { -1, 1 } do
 			piece("ArchPillar", Vector3.new(6, 26, 6), at(door + e * (dw + 3), ax, 13), stone:Lerp(dark, 0.15))
 			piece("ArchPillarCap", Vector3.new(7.4, 1.4, 7.4), at(door + e * (dw + 3), ax, 26.7), hex(d.Cap))
@@ -280,11 +304,15 @@ function A.Build(world, at, C, districts, P)
 			light.Color, light.Range, light.Brightness, light.Shadows = hex("FFA34D"), 22, 1, false
 			light.Parent = torch
 		end
-		piece("ArchBeam", Vector3.new(6, 5, dw * 2 + 12), at(door, ax, 23.5), stone:Lerp(dark, 0.3))
-		piece("ArchCoping", Vector3.new(7, 1, dw * 2 + 13), at(door, ax, 26.5), hex(d.Cap))
+		local backX = px + side * (R + 21)
+		for _, e in { -1, 1 } do
+			piece("NamePost", Vector3.new(2, 24, 2), at(c + e * 30, backX + side * 0.6, 32), stone:Lerp(dark, 0.3))
+		end
+		piece("NameBoard", Vector3.new(1, 10, 76), at(c, backX + side * 0.6, 42), stone:Lerp(dark, 0.3))
+		piece("NameBoardTrim", Vector3.new(1.2, 0.8, 78), at(c, backX + side * 0.6, 47.4), hex(d.Cap))
 		local boss = require(S.RoadMonsterRules).Bosses[d.Index]
-		local label = P.SignText(model, at(door, ax - side * 3.05, 23.5) * CFrame.Angles(0, side * math.pi / 2, 0), Vector3.new(dw * 2 + 8, 4, 0.1), boss and boss.Name or "Chief", hex("FFE7A3"))
-		label.Parent.PixelsPerStud = 18
+		local label = P.SignText(model, at(c, backX, 42) * CFrame.Angles(0, side * math.pi / 2, 0), Vector3.new(72, 8, 0.1), boss and boss.Name or "Chief", hex("FFE7A3"))
+		label.Parent.PixelsPerStud = 12
 		local stroke = Instance.new("UIStroke")
 		stroke.Color, stroke.Thickness = hex("2A1240"), 3
 		stroke.Parent = label
@@ -301,6 +329,11 @@ function A.Build(world, at, C, districts, P)
 		local function put(asset, s, x, scale, yaw, y)
 			if skipped(s, x) then
 				return {}
+			end
+			for _, g in C.Graveyards or {} do -- nothing grows out of a mini cemetery (2026-11-15)
+				if Vector2.new(g.S - s, g.X - x).Magnitude < g.Radius + 5 then
+					return {}
+				end
 			end
 			return Art.Spawn(asset, folder, at(s, x, y or 0) * CFrame.Angles(0, math.rad(yaw or 0), 0), { scale = scale or 1 })
 		end
@@ -331,11 +364,12 @@ function A.Build(world, at, C, districts, P)
 				end
 			end
 		end
-		-- Only every other lantern and torch carries a real light (2026-11-14, performance); the rest just glow.
+		-- Only every fourth lantern and torch carries a real light (every other since 2026-11-14, every fourth since
+		-- 2026-11-15: phones run hot); the rest just glow.
 		local lampCount = 0
 		local function lamp(s, x, y, color, range, always)
 			lampCount += 1
-			if lampCount % 2 == 0 then
+			if lampCount % 4 ~= 1 then
 				return
 			end
 			local anchor = part(folder, "LampLight", Vector3.one * 0.2, at(s, x, y), hex("FFFFFF"))
@@ -397,148 +431,206 @@ function A.Build(world, at, C, districts, P)
 			end
 		end
 
-		if d.Name == "roadForest" then
-			-- A bright, friendly forest: round trees down both sides, grass and a fallen log (thinned 2026-11-14: trees
-			-- every 32 studs, not 18; no rocks or mushrooms; less grass)
-			for s = d.From + 10, d.To - 6, 32 do
-				for _, side in { -1, 1 } do
-					put("MR_ForestTree", s + rng:NextNumber(-5, 5), side * rng:NextNumber(48, 62), rng:NextNumber(2.3, 2.9), rng:NextInteger(0, 359))
+		-- The road reskin (owner, 2026-11-15; art/road-reskin-screenshot-concepts-v5, props from
+		-- art/biome-models-optimized-v1 as ArtModels): long shallow buildings and walls stand along the road's walls,
+		-- the middle stays clear and readable, a few props lie about. The wall models face -Z with their back on the pivot.
+		local function hasArt(asset)
+			return Art.Has(asset)
+		end
+		-- the stretch of the road's own wall a building may stand against: clear of the boss pocket's opening
+		local doorFrom, doorTo = skipS - skipGap - 6, skipS + skipGap + 6
+		local function wallFree(s0, s1, side)
+			if side == skipSide and s1 > doorFrom and s0 < doorTo then
+				return false
+			end
+			return s0 >= d.From + 2 and s1 <= d.To - 2
+		end
+		-- Buildings end to end along both walls: `assets` in turn, `length` long each, `gap` between them. Each gets a
+		-- solid block so players don't walk into it (`depth` deep, `height` tall).
+		local function alongWalls(assets, length, depth, height, gap, offset)
+			for _, side in { -1, 1 } do
+				local n = side > 0 and 1 or 0
+				local s = d.From + 2 + (offset or 0) * (side > 0 and 1 or 0)
+				while s + length <= d.To - 2 do
+					if wallFree(s, s + length, side) then
+						n += 1
+						local asset = assets[n % #assets + 1]
+						local mid = s + length / 2
+						if hasArt(asset) then
+							Art.Spawn(asset, folder, at(mid, side * (half - 0.3), 0) * CFrame.Angles(0, math.rad(side < 0 and -90 or 90), 0), {})
+						end
+						local q = P.Solid(folder, "BuildingBlock", Vector3.new(depth, height, length - 1), at(mid, side * (half - depth / 2), height / 2))
+						q.CanQuery = false
+					end
+					s += length + gap
 				end
 			end
-			scatter("MR_GrassClump", 20, 10, 66, 1.4, 2.4, 1)
-			put("MR_Log", d.From + 60, 22, 1.8, 80)
-		elseif d.Name == "roadDarkForest" then
-			-- Bare twisted trees, grey rocks and lanterns hanging over the path (thinned 2026-11-14 to about half)
-			for s = d.From + 12, d.To - 8, 36 do
-				for _, side in { -1, 1 } do
-					put("MR_TwistedTree", s + rng:NextNumber(-6, 6), side * rng:NextNumber(46, 62), rng:NextNumber(1.8, 2.4), rng:NextInteger(0, 359))
+		end
+		-- the bushes are gameplay (RoadConfig.Bushes): keep scenery that stands in the road off them
+		local function nearBush(s, x, r)
+			for _, b in C.Bushes do
+				if math.abs(b.S - s) < r + 8 and math.abs(b.X - x) < r + 8 then
+					return true
 				end
 			end
-			scatter("MR_TwistedTree", 2, 26, 40, 1.3, 1.7, 6)
+			return false
+		end
+		local function prop(asset, s, x, yaw, scale, r)
+			if not hasArt(asset) or busy(s, x, r or 4) or nearBush(s, x, r or 4) then
+				return {}
+			end
+			return put(asset, s, x, scale or 1, yaw or rng:NextInteger(0, 359))
+		end
+		local function scatterProps(assets, count, minX, maxX, r)
+			for k = 1, count do
+				local s = rng:NextNumber(d.From + 10, d.ArenaFrom - 10)
+				local x = (rng:NextNumber() < 0.5 and -1 or 1) * rng:NextNumber(minX, maxX)
+				prop(assets[(k - 1) % #assets + 1], s, x, nil, 1, r)
+			end
+		end
+
+		if d.Name == "roadDarkForest" then
+			-- Round dark-green trees and bare twisted ones down both sides, lanterns hanging over the path, blue
+			-- mushrooms, grey rocks and a fallen log (the concept's dark forest)
+			local k = 0
+			for s = d.From + 12, d.To - 8, 30 do
+				for _, side in { -1, 1 } do
+					k += 1
+					local round = k % 3 ~= 0
+					put(round and "MR_ForestTree" or "MR_TwistedTree", s + rng:NextNumber(-6, 6), side * rng:NextNumber(48, 62), round and rng:NextNumber(2.2, 2.7) or rng:NextNumber(1.8, 2.3), rng:NextInteger(0, 359))
+				end
+			end
+			scatter("MR_TwistedTree", 3, 26, 40, 1.3, 1.7, 6)
+			scatter("MR_Mushrooms", 6, 14, 44, 1.6, 2.4, 2)
 			scatter("MR_Rocks", 4, 14, 50, 1.6, 2.8)
-			scatter("MR_LeafLitter", 6, 10, 60, 2.2, 3.4, 1)
-			scatter("MR_GrassClump", 12, 10, 66, 1.2, 2, 1)
+			scatter("MR_GrassClump", 10, 10, 66, 1.2, 2, 1)
 			for s = d.From + 30, d.To - 10, 90 do
 				for _, side in { -1, 1 } do
 					put("MR_HangingLantern", s, side * 12, 1.7, side < 0 and 0 or 180)
 					lamp(s, side * 10.5, 10, hex("FFB146"), 24)
 				end
 			end
-		elseif d.Name == "roadHospital" then
-			-- A tiled courtyard between white blocks with a teal stripe; hospital buildings stand behind them
-			for s = d.From + 6, d.To - 6, 12 do
-				for x = -half + 6, half - 6, 12 do
-					if (math.floor(s / 12) + math.floor(x / 12)) % 2 == 0 then
-						part(folder, "Tile", Vector3.new(11.9, 0.04, 11.9), at(s, x, 0.02), hex("C6CCC4"))
+		elseif d.Name == "roadBackrooms" then
+			-- Yellow wallpapered walls with fluorescent tubes, doorway partitions and short corner pieces jutting out
+			-- from the walls, free-standing pillars; the carpet's lighter strip down the middle is the path
+			alongWalls({ "BR_WallPanel" }, 32.2, 1.8, 14, 0)
+			for _, side in { -1, 1 } do
+				for s = d.From + 20 + (side > 0 and 32 or 0), d.To - 10, 64 do
+					if wallFree(s - 4, s + 4, side) and hasArt("BR_Fluorescent") then
+						put("BR_Fluorescent", s, side * (half - 2.2), 1, side < 0 and -90 or 90, 11)
+						lamp(s, side * (half - 4), 11, hex("FFF4CC"), 26, true)
 					end
 				end
+				-- a doorway partition every so often, square to the wall, and an L-shaped corner piece in between
+				for s = d.From + 60 + (side > 0 and 55 or 0), d.ArenaFrom - 20, 110 do
+					if wallFree(s - 2, s + 2, side) and not nearBush(s, side * (half - 14), 14) and hasArt("BR_DoorPartition") then
+						put("BR_DoorPartition", s, side * (half - 14), 1, 0)
+						local q = P.Solid(folder, "BuildingBlock", Vector3.new(28, 14, 1.7), at(s, side * (half - 14), 7))
+						q.CanQuery = false
+					end
+					local c = s + 55
+					if c < d.ArenaFrom - 20 and wallFree(c - 6, c + 6, side) and not nearBush(c, side * (half - 10), 10) and hasArt("BR_CornerPartition") then
+						put("BR_CornerPartition", c, side * (half - 10), 1, side < 0 and 0 or 180)
+					end
+				end
+			end
+			for s = d.From + 45, d.ArenaFrom - 20, 70 do
+				local x = (math.floor((s - d.From) / 70) % 2 == 0 and -1 or 1) * rng:NextNumber(30, 44)
+				if hasArt("BR_Pillar") and not busy(s, x, 3) and not nearBush(s, x, 3) then
+					put("BR_Pillar", s, x, 1, 0)
+					local q = P.Solid(folder, "BuildingBlock", Vector3.new(3.9, 16, 3.9), at(s, x, 8))
+					q.CanQuery = false
+				end
+			end
+		elseif d.Name == "roadCity" then
+			-- Asphalt with a yellow dashed middle line and edge lines, long grey facades along both walls, wrecked
+			-- cars, street lights, trees in planters, rubble, crates and barrels
+			for s = d.From + 5, d.To - 5, 14 do
+				part(folder, "LaneDash", Vector3.new(1, 0.07, 7), at(s, 0, 0.04), hex("E8C33A"))
 			end
 			for _, side in { -1, 1 } do
-				for s = d.From + 40, d.To - 40, 120 do
-					put("MR_Hospital", s, side * 54, 2.1, side < 0 and -90 or 90)
-					block(s, side * 54, Vector3.new(30, 24, 48))
+				strip("LaneEdge", 1, 0.07, side * 30, 0.04, hex("E8C33A"))
+			end
+			alongWalls({ "AC_FacadeLongA", "AC_FacadeLongB" }, 64.7, 7.7, 22, 2)
+			for _, side in { -1, 1 } do
+				for s = d.From + 30 + (side > 0 and 40 or 0), d.To - 20, 80 do
+					if wallFree(s - 4, s + 4, side) and hasArt("AC_Streetlight") then
+						-- the lamp's arm reaches over the road
+						put("AC_Streetlight", s, side * (half - 12), 1, side < 0 and 0 or 180)
+						lamp(s, side * (half - 17), 17, hex("FFE3A0"), 28)
+					end
 				end
-				for s = d.From + 8, d.To - 8, 16 do
-					if (s - d.From) % 120 > 20 and (s - d.From) % 120 < 100 then
-						part(folder, "CourtWall", Vector3.new(2, 4, 15), at(s, side * 38, 2), hex("EEF1F1"))
-						part(folder, "CourtStripe", Vector3.new(2.05, 0.9, 15.05), at(s, side * 38, 2.6), hex("7FC6B6"))
+				for s = d.From + 70 + (side > 0 and 60 or 0), d.ArenaFrom - 20, 120 do
+					if wallFree(s - 6, s + 6, side) then
+						prop("AC_PlanterTree", s, side * (half - 15), side < 0 and -90 or 90, 1, 6)
 					end
 				end
 			end
-			for s = d.From + 60, d.To - 30, 90 do
-				if not busy(s, 0, 6) then
-					part(folder, "HelipadRing", Vector3.new(0.05, 14, 14), at(s, 0, 0.06) * CFrame.Angles(0, 0, math.pi / 2), hex("BDE7DE"), nil, Enum.PartType.Cylinder)
-					part(folder, "HelipadCore", Vector3.new(0.06, 10, 10), at(s, 0, 0.07) * CFrame.Angles(0, 0, math.pi / 2), hex("E9F2EF"), nil, Enum.PartType.Cylinder)
-				end
+			for k = 1, 6 do
+				local s = rng:NextNumber(d.From + 20, d.ArenaFrom - 20)
+				local x = (k % 2 == 0 and -1 or 1) * rng:NextNumber(18, 44)
+				prop(k % 2 == 0 and "AC_CarBlue" or "AC_CarRust", s, x, rng:NextInteger(-25, 25) + (k % 3 == 0 and 180 or 0), 1, 7)
 			end
-			scatter("MR_Cart", 4, 16, 34, 1.4, 1.7) -- thinned 2026-11-14
-			scatter("MR_GrassClump", 12, 8, 36, 1, 1.6, 1)
-			for s = d.From + 30, d.To - 10, 90 do
-				for _, side in { -1, 1 } do
-					put("MR_HangingLantern", s, side * 12, 1.6, side < 0 and 0 or 180)
-					lamp(s, side * 10.5, 9.5, hex("CFF5EC"), 22)
-				end
-			end
+			scatterProps({ "SH_Rubble", "SH_Crate", "SH_Barrel", "SH_Rubble" }, 10, 16, 50, 3)
 		elseif d.Name == "roadVillage" then
-			-- Paved square, timbered houses on both sides, a well and carts
-			for s = d.From + 4, d.To - 4, 8 do
-				for x = -half + 4, half - 4, 8 do
-					if rng:NextNumber() < 0.1 then
-						part(folder, "Flagstone", Vector3.new(7.6, 0.05, 7.6), at(s, x, 0.025), hex(d.Floor):Lerp(Color3.new(1, 1, 1), rng:NextNumber(0.05, 0.16)))
-					end
-				end
+			-- Long timbered houses along both walls with gaps between, carts, wells, dead trees, broken fences,
+			-- crates and barrels; lanterns over the path
+			alongWalls({ "AV_HouseLongA", "AV_HouseLongB" }, 60.8, 8.5, 20, 18, 30)
+			for k = 1, 3 do
+				prop("AV_Well", rng:NextNumber(d.From + 40, d.ArenaFrom - 30), (k % 2 == 0 and -1 or 1) * rng:NextNumber(22, 34), nil, 1, 6)
+				prop("AV_Cart", rng:NextNumber(d.From + 40, d.ArenaFrom - 30), (k % 2 == 1 and -1 or 1) * rng:NextNumber(22, 40), nil, 1, 8)
 			end
-			for _, side in { -1, 1 } do
-				for s = d.From + 30 + (side > 0 and 55 or 0), d.To - 25, 110 do -- every 110 studs, not 62 (2026-11-14)
-					put("MR_VillageHouse", s, side * 55, rng:NextNumber(1.8, 2.1), side < 0 and -90 or 90)
-					block(s, side * 55, Vector3.new(26, 26, 28))
-				end
-			end
-			for s = d.From + 70, d.To - 40, 130 do
-				if not busy(s, -26, 5) then
-					put("MR_Well", s, -26, 1.5)
-				end
-				if not busy(s + 50, 28, 6) then
-					put("MR_Cart", s + 50, 28, 1.7, 25)
-				end
-			end
-			scatter("MR_GrassClump", 14, 8, 44, 1.2, 2, 1)
+			scatterProps({ "AV_DeadTree", "AV_FenceBroken", "SH_Crate", "SH_Barrel", "AV_DeadTree", "SH_Barrel" }, 14, 18, 50, 4)
 			for s = d.From + 30, d.To - 10, 90 do
 				for _, side in { -1, 1 } do
 					put("MR_HangingLantern", s, side * 13, 1.6, side < 0 and 0 or 180)
 					lamp(s, side * 11.5, 9.5, hex("FFC46B"), 24)
 				end
 			end
-		elseif d.Name == "roadCave" then
-			-- Rock arches along the walls, skulls, rune stones, red banners and torches that always burn
-			for _, side in { -1, 1 } do
-				for s = d.From + 40 + (side > 0 and 70 or 0), d.To - 30, 140 do -- every 140 studs, not 90 (2026-11-14)
-					put("MR_CultCave", s, side * 56, 2.4, side < 0 and -90 or 90)
-					block(s, side * 58, Vector3.new(12, 20, 40))
-				end
-				for s = d.From + 10, d.To - 10, 40 do
-					part(folder, "Banner", Vector3.new(0.3, 9, 5), at(s, side * (half - 0.3), 12), hex("8E1F35"))
-					part(folder, "BannerSigil", Vector3.new(0.35, 2.4, 2.4), at(s, side * (half - 0.4), 12.5) * CFrame.Angles(math.rad(45), 0, 0), hex("E4B34A"))
+		elseif d.Name == "roadParasitown" then
+			-- Grey checkered paving with a lighter lane down the middle, charcoal facades eaten by dark red growth along
+			-- both walls, a few flat infected patches close to them; nothing grows out into the road (the tentacles are
+			-- the boss arena's alone)
+			for s = d.From + 6, d.To - 6, 12 do
+				for x = -half + 6, half - 6, 12 do
+					if (math.floor(s / 12) + math.floor(x / 12)) % 2 == 0 and math.abs(x) > 10 then
+						part(folder, "Tile", Vector3.new(11.9, 0.04, 11.9), at(s, x, 0.02), hex("9C9A9A"))
+					end
 				end
 			end
-			scatter("MR_CultSkulls", 8, 12, 40, 1.8, 2.6) -- thinned 2026-11-14
-			scatter("MR_RuneStone", 5, 16, 46, 2, 2.8)
-			scatter("MR_Rocks", 5, 14, 60, 2, 3.4)
+			alongWalls({ "PT_InfectedFacadeA", "PT_InfectedFacadeB" }, 65, 8.6, 21, 2)
+			for _, side in { -1, 1 } do
+				for s = d.From + 50 + (side > 0 and 90 or 0), d.ArenaFrom - 20, 180 do
+					if wallFree(s - 6, s + 6, side) then
+						prop("PT_InfectionPatch", s, side * (half - 12), side < 0 and -90 or 90, 1, 5)
+					end
+				end
+			end
+			for s = d.From + 30, d.To - 10, 90 do
+				for _, side in { -1, 1 } do
+					put("MR_HangingLantern", s, side * 12, 1.6, side < 0 and 0 or 180)
+					lamp(s, side * 10.5, 9.5, hex("DDE8E6"), 22)
+				end
+			end
+		elseif d.Name == "roadCave" then
+			-- The blood mine, kept readable: grey-brown rock walls with mine mouths (a red glow inside the open ones),
+			-- carts on broken rails, ore, timber, rubble and torches that always burn
+			alongWalls({ "BM_RockWall", "BM_EntranceOpen", "BM_RockWall", "BM_EntranceBoarded" }, 56.5, 7.5, 16, 1)
+			for k = 1, 5 do
+				local s = rng:NextNumber(d.From + 30, d.ArenaFrom - 30)
+				local x = (k % 2 == 0 and -1 or 1) * rng:NextNumber(20, 40)
+				if not busy(s, x, 8) and not nearBush(s, x, 8) then
+					prop("BM_RailBroken", s, x, rng:NextInteger(-10, 10), 1, 7)
+					prop("BM_Minecart", s + 3, x, rng:NextInteger(-15, 15), 1, 0)
+				end
+			end
+			scatterProps({ "BM_OreCluster", "BM_TimberPile", "SH_Rubble", "BM_OreCluster", "SH_Rubble" }, 16, 16, 52, 4)
 			for s = d.From + 25, d.To - 10, 70 do
 				for _, side in { -1, 1 } do
-					put("MR_CultTorch", s, side * 13, 2.2)
+					if hasArt("BM_Torch") then
+						put("BM_Torch", s, side * 13, 1, 0)
+					end
 					lamp(s, side * 13, 8, hex("FF8A3D"), 20, true)
-				end
-			end
-		elseif d.Name == "roadFactory" then
-			-- Concrete, yellow lines, brick factory halls, boilers, tanks, barrels and pipes along the walls
-			for s = d.From + 5, d.To - 5, 14 do
-				part(folder, "LaneDash", Vector3.new(1, 0.07, 7), at(s, 0, 0.04), hex("FFD23F"))
-			end
-			for _, side in { -1, 1 } do
-				strip("LaneEdge", 1, 0.07, side * 30, 0.04, hex("FFD23F"))
-				for s = d.From + 60 + (side > 0 and 75 or 0), d.To - 60, 150 do
-					put("MR_Factory", s, side * 54, 2.1, side < 0 and -90 or 90)
-					block(s, side * 54, Vector3.new(32, 28, 46))
-				end
-				strip("Pipe", 2.4, 2.4, side * (half - 1.5), 14, hex("8D9AA3"), Enum.Material.Metal, Enum.PartType.Cylinder, CFrame.Angles(0, math.pi / 2, 0))
-				for s = d.From + 20, d.To - 10, 60 do
-					part(folder, "PipeDrop", Vector3.new(14, 1.6, 1.6), at(s, side * (half - 1.5), 7) * CFrame.Angles(0, 0, math.pi / 2), hex("6E7A82"), Enum.Material.Metal, Enum.PartType.Cylinder)
-				end
-			end
-			scatter("MR_Boiler", 4, 34, 44, 1.6, 1.9, 6) -- thinned 2026-11-14
-			scatter("MR_RustTank", 4, 34, 44, 1.5, 1.8, 6)
-			for _ = 1, 10 do
-				local s = rng:NextNumber(d.From + 8, d.To - 8)
-				local x = (rng:NextNumber() < 0.5 and -1 or 1) * rng:NextNumber(32, 44)
-				if not busy(s, x, 3) then
-					part(folder, "Barrel", Vector3.new(3, 2.4, 2.4), at(s, x, 1.5) * CFrame.Angles(0, 0, math.pi / 2), hex(rng:NextNumber() < 0.5 and "4FAE5B" or "D9A62E"), nil, Enum.PartType.Cylinder)
-				end
-			end
-			for s = d.From + 40, d.To - 10, 100 do
-				for _, side in { -1, 1 } do
-					put("MR_HangingLantern", s, side * 13, 1.6, side < 0 and 0 or 180)
-					lamp(s, side * 11.5, 9.5, hex("FFE29A"), 26)
 				end
 			end
 		end
@@ -560,18 +652,20 @@ function A.Build(world, at, C, districts, P)
 end
 
 -- The entrance (owner, 2026-11-12: "improve the gate to the ruins, make it presentable and fitting"). Two castle
--- towers in the island wall's lavender stone stand where that wall meets the road and close its ends; a battlemented
--- bridge spans the road between them with the big sign hanging on chains under it, banners and lanterns either side.
--- Iron gate leaves stand swung open against the towers, torches burn on their faces, and a paved threshold covers the
+-- towers in the island wall's stone stand where that wall meets the road and close its ends; a battlemented
+-- bridge spans the road between them with the big sign hanging on chains under it, banners either side.
+-- Iron gate leaves stand swung open against the towers, and a paved threshold covers the
 -- seam between the island lawn and the road.
 function A.BuildEntrance(world, at, C, P)
 	local m = Instance.new("Model")
 	m.Name = "RoadEntrance"
 	m.Parent = world
 	local half = C.Width / 2
-	local stones = { hex("C2B5E2"), hex("CDC1EA"), hex("DCD2F2"), hex("E7DEF7") }
-	local coping, merlonColor, inner = hex("8C6BD6"), hex("A58BE6"), hex("625474")
-	local roof, roofDark, iron, gold, wood = hex("8C4BFF"), hex("6A2FD0"), hex("3B3150"), hex("FFD34D"), hex("6B3F8F")
+	-- Gloomy since 2026-11-15 (owner: "the purple gate and walls no longer fit the game"): weathered dark stone, slate
+	-- roofs, tarnished brass and dark wood; no lights on it (no torches, lanterns or lit windows).
+	local stones = { hex("5B5760"), hex("524E57"), hex("635F68"), hex("4A4750") }
+	local coping, merlonColor, inner = hex("3A3640"), hex("45414B"), hex("2B2830")
+	local roof, roofDark, iron, gold, wood = hex("3A3342"), hex("2A2530"), hex("26232B"), hex("8F7A44"), hex("4A3527")
 	local rng = Random.new(512)
 	local function piece(name, size, cf, color, material, shape)
 		local q = Instance.new("Part")
@@ -588,18 +682,10 @@ function A.BuildEntrance(world, at, C, P)
 		q.Parent = m
 		return q
 	end
-	local function flame(cf, size, range)
-		local f = piece("Flame", Vector3.one * size, cf, hex("FF9A3D"), Enum.Material.Neon, Enum.PartType.Ball)
-		local light = Instance.new("PointLight")
-		light.Color, light.Range, light.Brightness, light.Shadows = hex("FFB45C"), range or 18, 1.2, false
-		light.Parent = f
-		return f
-	end
-
 	-- Paved threshold over the seam: cobbles from the lawn into the road
-	piece("Threshold", Vector3.new(C.Width + 30, 0.2, 18), at(0, 0, -0.02), hex("A79FC2"), Enum.Material.Cobblestone)
+	piece("Threshold", Vector3.new(C.Width + 30, 0.2, 18), at(0, 0, -0.02), hex("6E6A70"), Enum.Material.Cobblestone)
 	for _, s in { -8.6, 8.6 } do
-		piece("ThresholdKerb", Vector3.new(C.Width + 30, 0.3, 1.2), at(s, 0, 0.03), hex("8C83AA"), Enum.Material.Slate)
+		piece("ThresholdKerb", Vector3.new(C.Width + 30, 0.3, 1.2), at(s, 0, 0.03), hex("55515A"), Enum.Material.Slate)
 	end
 
 	-- Towers: block rows like the island wall, battlements, a purple spire with a pennant
@@ -628,9 +714,9 @@ function A.BuildEntrance(world, at, C, P)
 			for k = -1, 1, 2 do
 				piece("TowerMerlon", Vector3.new(3.4, 3, 1.6), at(2, x, tall + 2.7) * CFrame.Angles(0, face * math.pi / 2, 0) * CFrame.new(k * 4.6, 0, -T / 2 - 0.2), merlonColor)
 			end
-			-- arrow slits and a glowing window on every face
+			-- arrow slits and a dark window on every face (they glowed until 2026-11-15)
 			piece("TowerSlit", Vector3.new(1, 4.5, 0.4), at(2, x, 20) * CFrame.Angles(0, face * math.pi / 2, 0) * CFrame.new(0, 0, -T / 2 - 0.1), iron)
-			piece("TowerWindow", Vector3.new(3.2, 4.4, 0.3), at(2, x, 40) * CFrame.Angles(0, face * math.pi / 2, 0) * CFrame.new(0, 0, -T / 2 - 0.12), hex("FFD98A"), Enum.Material.Neon)
+			piece("TowerWindow", Vector3.new(3.2, 4.4, 0.3), at(2, x, 40) * CFrame.Angles(0, face * math.pi / 2, 0) * CFrame.new(0, 0, -T / 2 - 0.12), hex("1C1A20"))
 			piece("TowerWindowArch", Vector3.new(4.2, 0.8, 0.5), at(2, x, 42.5) * CFrame.Angles(0, face * math.pi / 2, 0) * CFrame.new(0, 0, -T / 2 - 0.15), coping)
 		end
 		-- spire: stacked discs narrowing upwards
@@ -640,14 +726,8 @@ function A.BuildEntrance(world, at, C, P)
 		end
 		piece("SpireFinial", Vector3.new(1.4, 1.4, 1.4), at(2, x, tall + 19.4), gold, Enum.Material.Metal, Enum.PartType.Ball)
 		piece("FlagPole", Vector3.new(0.35, 6, 0.35), at(2, x, tall + 22.4), gold, Enum.Material.Metal)
-		piece("Pennant", Vector3.new(0.15, 2.4, 4.2), at(2, x, tall + 24.2) * CFrame.new(0, 0, side * 2.2), hex("FF5468"))
-		-- torches on both faces, low enough to light the threshold and the road
-		for _, f in { -1, 1 } do
-			local face = at(2 + f * (T / 2 + 0.6), x - side * 3.5, 9)
-			piece("TorchBracket", Vector3.new(0.6, 0.6, 1.4), face, iron)
-			piece("TorchCup", Vector3.new(1.4, 1.2, 1.4), face * CFrame.new(0, 0.7, 0), iron)
-			flame(face * CFrame.new(0, 1.8, 0), 1.6, 20)
-		end
+		piece("Pennant", Vector3.new(0.15, 2.4, 4.2), at(2, x, tall + 24.2) * CFrame.new(0, 0, side * 2.2), hex("7A1A2A"))
+		-- (no torches on the towers since 2026-11-15)
 		-- The shutter (owner, 2026-11-13: "on a Blood Moon, gate shutters that close the way to the ruins"): a great
 		-- leaf of planks and iron, hinged at the tower. It is built shut, across its half of the road, then swung open
 		-- against the road's edge; FarmGateVisuals swings it shut on the client while workspace.RoadClosed is set.
@@ -665,7 +745,7 @@ function A.BuildEntrance(world, at, C, P)
 		local planks = math.ceil(leafLen / 4.6)
 		for k = 0, planks - 1 do
 			local w = leafLen / planks
-			piece("ShutterPlank", Vector3.new(w - 0.12, leafTall - (k % 2) * 0.8, 1.2), onLeaf((k + 0.5) * w, 0.4 + (leafTall - (k % 2) * 0.8) / 2), k % 2 == 0 and wood or hex("5A3478"), Enum.Material.WoodPlanks).Parent = shutter
+			piece("ShutterPlank", Vector3.new(w - 0.12, leafTall - (k % 2) * 0.8, 1.2), onLeaf((k + 0.5) * w, 0.4 + (leafTall - (k % 2) * 0.8) / 2), k % 2 == 0 and wood or hex("3D2B20"), Enum.Material.WoodPlanks).Parent = shutter
 		end
 		for _, y in { 3, leafTall / 2, leafTall - 2.5 } do
 			piece("ShutterBand", Vector3.new(leafLen - 0.4, 1.1, 1.5), onLeaf(leafLen / 2, y), iron, Enum.Material.Metal).Parent = shutter
@@ -719,7 +799,7 @@ function A.BuildEntrance(world, at, C, P)
 		piece("SkullJaw", Vector3.new(3.2, 1.6, 3.4), skull * CFrame.new(0, -2.2, 0), hex("E6DCCB"))
 		for _, f in { 0, math.pi } do
 			for _, ex in { -0.95, 0.95 } do
-				piece("SkullEye", Vector3.new(1.3, 1.3, 1.3), skull * CFrame.Angles(0, f, 0) * CFrame.new(ex, 0.3, -1.85), hex("8CFF5A"), Enum.Material.Neon, Enum.PartType.Ball)
+				piece("SkullEye", Vector3.new(1.3, 1.3, 1.3), skull * CFrame.Angles(0, f, 0) * CFrame.new(ex, 0.3, -1.85), hex("1A181C"), nil, Enum.PartType.Ball) -- dark hollows (they glowed green until 2026-11-15)
 			end
 		end
 	end
@@ -732,20 +812,12 @@ function A.BuildEntrance(world, at, C, P)
 		stroke.Parent = label
 	end
 
-	-- Banners and lanterns hanging from the bridge
-	for _, x in { -46, -30, 30, 46 } do
-		local banner = math.abs(x) == 46
-		if banner then
-			for _, e in { -1, 1 } do
-				piece("Banner", Vector3.new(6, 13, 0.3), at(2 + e * (depth / 2 + 0.25), x, y0 - 6.6), hex("8E1F35"))
-				piece("BannerSigil", Vector3.new(2.6, 2.6, 0.35), at(2 + e * (depth / 2 + 0.3), x, y0 - 5) * CFrame.Angles(0, 0, math.rad(45)), gold)
-				piece("BannerTail", Vector3.new(6, 1.2, 0.32), at(2 + e * (depth / 2 + 0.25), x, y0 - 13.4), hex("6B1427"))
-			end
-		else
-			piece("LanternChain", Vector3.new(0.4, 4, 0.4), at(2, x, y0 - 2.4), iron, Enum.Material.Metal)
-			piece("LanternTop", Vector3.new(2.8, 0.6, 2.8), at(2, x, y0 - 4.2), iron, Enum.Material.Metal)
-			piece("LanternBottom", Vector3.new(2.4, 0.5, 2.4), at(2, x, y0 - 7.2), iron, Enum.Material.Metal)
-			flame(at(2, x, y0 - 5.7), 1.9, 26)
+	-- Banners hanging from the bridge (its two lanterns went on 2026-11-15)
+	for _, x in { -46, 46 } do
+		for _, e in { -1, 1 } do
+			piece("Banner", Vector3.new(6, 13, 0.3), at(2 + e * (depth / 2 + 0.25), x, y0 - 6.6), hex("8E1F35"))
+			piece("BannerSigil", Vector3.new(2.6, 2.6, 0.35), at(2 + e * (depth / 2 + 0.3), x, y0 - 5) * CFrame.Angles(0, 0, math.rad(45)), gold)
+			piece("BannerTail", Vector3.new(6, 1.2, 0.32), at(2 + e * (depth / 2 + 0.25), x, y0 - 13.4), hex("6B1427"))
 		end
 	end
 	return m

@@ -29,5 +29,5 @@ return {
  Spot={X=20,Z=-17.5},Depth=17,Width=20, -- where it stands on the plot; the door looks at the farm's central path
  -- The house stands across the back-right corner at 45 degrees: its back corners touch both fences, so it
  -- closes the corner like a piece of the fence, and its door looks at the farm centre.
- Scale=1,FloorY=.7,RoomX=-24.73,RoomY=-.5,RoomZ=24.73,RoomYaw=-45,RoomWidth=32,RoomDepth=27,RoomHeight=38, -- the room is directly under the plot, so it still counts as being on the farm
+ Scale=1,FloorY=.7,RoomX=-26.73,RoomY=-.5,RoomZ=26.73,RoomYaw=-45,RoomWidth=32,RoomDepth=27,RoomHeight=38, -- the room is directly under the plot, so it still counts as being on the farm
 }

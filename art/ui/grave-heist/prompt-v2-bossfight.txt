@@ -1,0 +1,20 @@
+Edit the attached Russian game tutorial modal into a BOSS FIGHT themed version. Input image is the edit target and reference for the SAME premium polished cartoon game illustration quality, same landscape aspect ratio, same three-column tutorial structure, SAME teal hulking boss and small blocky adventurer. The user specifically rejects its current NIGHT NOTIFICATION design. Completely redesign the outer frame and visual identity to read as a BOSS ARENA / GRAVE HEIST tutorial.
+
+REPLACE purple tiled cottage roof, crescent moons, stars, lanterns, vines, cozy wood and parchment with a broad imposing sculpted dark iron-and-stone arena frame: riveted armor plates, chunky bevelled bronze/gold trims, deep crimson banner behind the title, restrained diagonal claw scratches, chains at the upper corners, and a central skull shield with crossed shovels as the upper crest. Broad rectangular silhouette, NO roof silhouette. Small stone fang / horn details at corners, friendly stylized game art not horror realism. Make the frame clean and readable, cohesive and not cluttered. Bottom central crest is skull/ crossed shovels, never moon. Three card heading ribbons dark red with gold edges; body panels warm pale sandstone with very dark brown legible text. Main title bright ivory-gold on red. Green acknowledgement button stays glossy green, metallic gold rim. Red X close at upper right stays.
+
+Backdrop and the three illustrated scenes should depict the SAME boss arena with stone amphitheatre walls, green grass and warm neutral daylight, rather than a purple moonlit cemetery. The actual gameplay: boss sleeps in a huge bed among graves in his arena; stealing a grave wakes him and triggers a chase; attacking him instead starts a boss fight and seals the arena with a red energy wall. First panel huge teal boss asleep in a chunky bed, purple skull gravestones clustered around, floating Zzz. Second panel same adventurer running away carrying a purple skull gravestone, same angry awakened boss chasing, dust and action lines. Third panel same adventurer swinging shovel against same boss, bright impact flash, curved red energy barrier across the distant arena entrance, no blood. Keep art energetic, playful, saturated with teal boss versus red UI; polished painterly 3D-style mobile / Roblox fantasy game UI with strong shapes. NO moons, NO stars, NO lanterns, NO violet night sky, NO purple shingles anywhere.
+
+Text must remain EXACT, clean correctly spelled Cyrillic:
+Main title: "Похищай могилы"
+Left ribbon: "Босс спит"
+Left body: "Босс крепко спит"
+Center ribbon: "Хватай и беги!"
+Center body: "Своруй могилу и убеги от него"
+Right ribbon: "Стань боссом!"
+Right body: "Либо покажи ему кто здесь настоящий босс начав драку"
+Button: "Понятно"
+Unchecked checkbox: "Больше не показывать"
+Fit right body in balanced 3–4 lines, no truncation. No new labels or UI elements implying new mechanics. No countdown. Keep complete frame and button inside canvas. This must look like a genuinely new battle-themed modal, not a recolored night announcement.
+
+Generator: built-in image_gen; edit reference: grave-heist-modal-v1.png.
+Output: grave-heist-modal-v2-bossfight.png. Visual reference; not wired into runtime UI.

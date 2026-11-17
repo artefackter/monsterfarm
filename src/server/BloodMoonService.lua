@@ -1,4 +1,4 @@
--- Blood Moon (owner, 2026-11-12; BloodMoonConfig). On a Blood Moon night the road shuts, the sky turns crimson and a
+-- Blood Moon (owner, 2026-11-12; BloodMoonConfig). On a Blood Moon night (the road stays open since 2026-11-15) the sky turns crimson and a
 -- giant ruins boss appears in its own arena across the island from the road (2026-11-13), and never leaves it. It
 -- hunts the nearest player inside the arena:
 -- a Roar around itself, a Stomp when you are close, a Smash where you stand when you keep your distance. Every blow
@@ -22,11 +22,11 @@ local function rootOf(p) return p.Character and p.Character:FindFirstChild("Huma
 function B.Start()
  if B.Active then return false end
  local boss=Rules.Bosses[rng:NextInteger(1,#Rules.Bosses)]
- local Road=road();Road.SetClosed(true)
+ -- The road's gates stay open through a Blood Moon (owner, 2026-11-15); they shut while the giant was out before.
  -- it appears in the middle of its arena, facing the way in
  local center=C.ArenaCenter();local feet=CFrame.lookAt(Vector3.new(center.X,GROUND,center.Z),Vector3.new(0,GROUND,0))
  local a=M.SpawnGiant(boss.Kind,feet,boss,C.Height)
- if not a then Road.SetClosed(false);return false end
+ if not a then return false end
  local hp=math.min(C.MaxHealth,C.HealthPerPlayer+C.ExtraPlayerHealth*math.max(0,#Players:GetPlayers()-1))
  a.hp=hp;a.maxHp=hp;a.rewardMult=C.RewardMult;a.damagers={}
  local m=a.model;m:SetAttribute("Health",hp);m:SetAttribute("MaxHealth",hp);m:SetAttribute("BossName",boss.Name)
@@ -133,7 +133,7 @@ local function grave(spot,kind)
  local final=CFrame.new((hit and hit.Position or spot)+Vector3.new(0,.25,0))*CFrame.Angles(0,rng:NextNumber(0,math.pi*2),0)
  local m=Instance.new("Model");m.Name="BloodMoonGrave";m:SetAttribute("Dropped",true);m:SetAttribute("GraveType",kind)
  Art.Spawn("Grave_V3_"..kind,m,final) -- the cartoon V3 grave (2026-11-14)
- local ring=Instance.new("Part");ring.Name="RoadGlow";ring.Shape=Enum.PartType.Cylinder;ring.Size=Vector3.new(.14,9,9);ring.CFrame=final*CFrame.new(0,-.1,0)*CFrame.Angles(0,0,math.pi/2);ring.Color=Color3.fromHex("FF3B5C");ring.Material=Enum.Material.Neon;ring.Transparency=.25;ring.Parent=m
+ local ring=Instance.new("Part");ring.Name="RoadGlow";ring.Shape=Enum.PartType.Cylinder;ring.Size=Vector3.new(.14,7,7);ring.CFrame=final*CFrame.new(0,-.1,0)*CFrame.Angles(0,0,math.pi/2);ring.Color=Color3.fromHex("FF3B5C");ring.Material=Enum.Material.Neon;ring.Transparency=.62;ring.Parent=m -- a soft glow (2026-11-15)
  local spotPart=Instance.new("Part");spotPart.Name="RoadGrabSpot";spotPart.Size=Vector3.new(4,4,4);spotPart.CFrame=final*CFrame.new(0,2,0);spotPart.Transparency=1;spotPart.Parent=m
  for _,q in m:GetDescendants() do if q:IsA("BasePart") then q.Anchored=true;q.CanCollide=false;q.CanQuery=false;q.CanTouch=false;q.CastShadow=q.Name~="RoadGlow" end end
  local pr=Instance.new("ProximityPrompt");pr.Name="RoadGrab";pr.ActionText="roadGrab";pr.HoldDuration=.6;pr.MaxActivationDistance=12;pr.RequiresLineOfSight=false;pr:SetAttribute("Grave",kind);pr.Parent=spotPart

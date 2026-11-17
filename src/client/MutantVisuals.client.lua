@@ -112,6 +112,11 @@ RS:WaitForChild("Remotes"):WaitForChild("MutantFX").OnClientEvent:Connect(functi
  if typeof(pos)~="Vector3" then return end
  local far=(pos-workspace.CurrentCamera.CFrame.Position).Magnitude
  if kind=="BossSpawn" then if far<220 then Sfx.play("BossRoar",1,Sfx.at(pos,40,220));shockwave(pos,Color3.fromHex("9E63CF"),18,.8) end;return end
+ -- a boss goes down on its knees; the finisher's blow lands (2026-11-15)
+ if kind=="Stagger" then if far<220 then Sfx.play("BossScream",.8,Sfx.at(pos,40,220));shockwave(pos,Color3.fromHex("FFE7A3"),12,.5) end;return end
+ -- (extra: true - the blow that does the damage, "soft" - a saw's grinding hit, only a thud; extra2: which finisher)
+ if kind=="Finisher" and extra=="soft" then if far<220 then Sfx.play("ImpHit",.25,Sfx.at(pos,40,220)) end;return end
+ if kind=="Finisher" then if far<220 then Sfx.play("ImpHit",1);Sfx.play("BossRoar",1,Sfx.at(pos,40,220));shockwave(pos,Color3.fromHex("FF5468"),7,.35);for _=1,2 do smoke(pos+Vector3.new(math.random(-3,3),math.random(2,6),math.random(-3,3))) end end;return end
  if kind=="BossDeath" then if far<220 then Sfx.play("BossRoar",1,Sfx.at(pos,40,220));for _=1,3 do smoke(pos+Vector3.new(math.random(-4,4),math.random(0,4),math.random(-4,4))) end end;return end
  -- the Blood Moon giant's blows are seen from much further away
  local source=id and id~="0" and modelById(id)
@@ -182,6 +187,15 @@ RS:WaitForChild("Remotes"):WaitForChild("MutantFX").OnClientEvent:Connect(functi
  elseif kind=="BossCue" then
   if extra=="Dash" then Sfx.play("BossCharge",.5,Sfx.at(pos,30,180)) end
  elseif kind=="Bite" then Sfx.play("ImpBite",.5,Sfx.at(pos,20,C.AnimateDistance))
+ elseif kind=="BiteCue" then
+  -- a boss's summoned monster about to bite (RoadConfig.Boss.MinionBite): it flares red for the wind-up, with a
+  -- red ring at its feet
+  shockwave(pos,RED_WARN,5,.3)
+  local m=modelById(id)
+  if m then
+   local h=Instance.new("Highlight");h.Name="BiteCue";h.FillColor=RED_WARN;h.OutlineColor=RED_WARN;h.FillTransparency=.8;h.OutlineTransparency=.1;h.DepthMode=Enum.HighlightDepthMode.Occluded;h.Parent=m
+   Tween:Create(h,TweenInfo.new(value or .45),{FillTransparency=.2,OutlineTransparency=0}):Play();Debris:AddItem(h,(value or .45)+.12)
+  end
  -- the farm gate (FenceService): splinters on every blow, a burst of smoke and a thud when it gives way
  elseif kind=="GateHit" then splash(pos,Color3.fromHex("8A6A4E"),1.6);Sfx.play("ImpBite",.4,Sfx.at(pos,20,C.AnimateDistance))
  elseif kind=="GateBreak" then
@@ -205,13 +219,27 @@ local function topOf(m,root)
 end
 local GREEN,YELLOW,RED=Color3.fromHex("7DF04A"),Color3.fromHex("FFD23F"),Color3.fromHex("FF4F4F")
 local function round(f,r) local c=Instance.new("UICorner");c.CornerRadius=UDim.new(r or 1,0);c.Parent=f end
+-- The Locale key of a road monster's name: a boss by its own name, the rest by their road kind (Locale roadName_*).
+local function nameKey(m)
+ if m:GetAttribute("Giant") then return nil end
+ local boss=m:GetAttribute("BossName");if boss then return boss end
+ local kind=m:GetAttribute("Biome") and m:GetAttribute("CollectionType")
+ return kind and "roadName_"..kind or nil
+end
+p:GetAttributeChangedSignal("Language"):Connect(function()
+ for _,data in pairs(models) do if data.nameKey and data.nameTag then data.nameTag.Text=L.text(data.nameKey,L.lang()) end end
+end)
 -- A health bar that floats over the head (not inside it) and follows the smoothed body, not the raw server hitbox.
 local function makeBar(m,root,data)
- local b=Instance.new("BillboardGui");b.Name="MutantHealth";b.Size=UDim2.fromOffset(62,9);b.LightInfluence=0;b.MaxDistance=C.AnimateDistance;b.Adornee=root;b.Parent=root
- local alert=Instance.new('TextLabel',b);alert.Name='Alert';alert.Size=UDim2.fromOffset(62,30);alert.Position=UDim2.fromOffset(0,-32);alert.BackgroundTransparency=1;alert.TextColor3=Color3.fromRGB(255,221,71);alert.TextStrokeTransparency=0;alert.Font=Enum.Font.GothamBlack;alert.TextSize=34;data.alert=alert
- local stars=Instance.new('Frame',b);stars.Name='StunStars';stars.Size=UDim2.fromOffset(62,22);stars.Position=UDim2.fromOffset(0,-26);stars.BackgroundTransparency=1;data.stars=stars
+ -- 180 x 110 with the bar in the very middle (where the 62 x 9 billboard was), so the name, the "!" and the stun
+ -- stars above it all lie inside the billboard (2026-11-15: the name over the bar)
+ local b=Instance.new("BillboardGui");b.Name="MutantHealth";b.Size=UDim2.fromOffset(180,110);b.LightInfluence=0;b.MaxDistance=C.AnimateDistance;b.Adornee=root;b.Parent=root
+ -- the road monster's name right over the bar (owner, 2026-11-15); the "!" and the stun stars sit above it
+ local name=Instance.new('TextLabel',b);name.Name='NameTag';name.Size=UDim2.fromOffset(180,16);name.Position=UDim2.fromOffset(0,33);name.BackgroundTransparency=1;name.TextColor3=Color3.new(1,1,1);name.TextStrokeTransparency=.2;name.Font=Enum.Font.GothamBold;name.TextSize=14;name.Text='';name.AutoLocalize=false;data.nameTag=name;data.nameTries=0
+ local alert=Instance.new('TextLabel',b);alert.Name='Alert';alert.Size=UDim2.fromOffset(62,30);alert.Position=UDim2.fromOffset(59,2);alert.BackgroundTransparency=1;alert.TextColor3=Color3.fromRGB(255,221,71);alert.TextStrokeTransparency=0;alert.Font=Enum.Font.GothamBlack;alert.TextSize=34;data.alert=alert
+ local stars=Instance.new('Frame',b);stars.Name='StunStars';stars.Size=UDim2.fromOffset(62,22);stars.Position=UDim2.fromOffset(59,9);stars.BackgroundTransparency=1;data.stars=stars
  for i=1,3 do local star=Instance.new('ImageLabel',stars);star.Size=UDim2.fromOffset(20,20);star.Position=UDim2.fromOffset((i-1)*21,0);star.BackgroundTransparency=1;star.Image=require(S.Icons).star end
- local back=Instance.new("Frame",b);back.Name="Back";back.Size=UDim2.fromScale(1,1);back.BackgroundColor3=Color3.fromHex("2A1630");back.BorderSizePixel=0;round(back)
+ local back=Instance.new("Frame",b);back.Name="Back";back.Size=UDim2.fromOffset(62,9);back.Position=UDim2.fromOffset(59,50.5);back.BackgroundColor3=Color3.fromHex("2A1630");back.BorderSizePixel=0;round(back)
  local stroke=Instance.new("UIStroke",back);stroke.Color=Color3.fromHex("140A18");stroke.Thickness=1.5
  local lag=Instance.new("Frame",back);lag.Name="Lag";lag.Size=UDim2.fromScale(1,1);lag.BackgroundColor3=Color3.new(1,1,1);lag.BorderSizePixel=0;round(lag);data.lag=lag
  local fill=Instance.new("Frame",back);fill.Name="Fill";fill.Size=UDim2.fromScale(1,1);fill.BackgroundColor3=RED;fill.BorderSizePixel=0;round(fill);data.bar=fill
@@ -221,15 +249,23 @@ local function makeBar(m,root,data)
 end
 Run.PreSimulation:Connect(function(dt)
  local now=os.clock();local cam=workspace.CurrentCamera.CFrame.Position
+ local cine=workspace:GetServerTimeNow()<(p:GetAttribute("FinisherAt") or -100)+RoadC.Boss.Finisher.Of(p).Seconds -- you are finishing a boss
  for m,data in pairs(models) do
   local root=m.PrimaryPart
   if not m.Parent then models[m]=nil
   elseif root then
    if not data.bar then makeBar(m,root,data) end
+   -- no bars in the finisher's shots (FinisherController)
+   if data.cine~=cine then data.cine=cine;data.gui.Enabled=not cine and not m:GetAttribute("Giant") end
+   -- the name arrives with the road's attributes (a boss's BossName, the others' kind); a farm raider has neither
+   if data.nameTries<90 then data.nameTries+=1;local key=nameKey(m);if key then data.nameKey=key;data.nameTag.Text=L.text(key,L.lang());data.nameTries=90 end end
    local serverNow=workspace:GetServerTimeNow();local stunned=serverNow<(m:GetAttribute('StunnedUntil') or 0);local notice=serverNow-(m:GetAttribute('NoticedAt') or -100)
    data.alert.Text=not stunned and notice<.8 and '!' or '';data.stars.Visible=stunned;data.stars.Rotation=math.sin(now*5)*8
    local frac=math.clamp((m:GetAttribute("Health") or 0)/math.max(1,m:GetAttribute("MaxHealth") or 30),0,1)
    data.bar.Size=UDim2.fromScale(frac,1);data.bar.Visible=frac>0
+   -- no bar over a boss while it wakes, chases a thief or walks back to bed: it can't be hurt then (owner, 2026-11-15)
+   local mode=m:GetAttribute("BossMode")
+   if mode~=nil then local show=not (mode=="wake" or mode=="chase" or mode=="return");if data.bar.Parent.Visible~=show then data.bar.Parent.Visible=show end end
    -- always red (owner, 2026-11-14: red and compact; it was green, yellow, then red as it emptied)
    data.shown=frac<data.shown and data.shown+(frac-data.shown)*(1-math.exp(-dt*4)) or frac
    data.lag.Size=UDim2.fromScale(data.shown,1)
@@ -285,6 +321,7 @@ local bossLag=Instance.new("Frame",bossBack);bossLag.Size=UDim2.fromScale(1,1);b
 local bossFill=Instance.new("Frame",bossBack);bossFill.Size=UDim2.fromScale(1,1);bossFill.BackgroundColor3=Color3.fromHex("E8364F");bossFill.BorderSizePixel=0;round(bossFill,.5)
 local bossShown,bossModel=1,nil
 Run.Heartbeat:Connect(function(dt)
+ if workspace:GetServerTimeNow()<(p:GetAttribute("FinisherAt") or -100)+RoadC.Boss.Finisher.Of(p).Seconds then bossGui.Enabled=false;return end -- not over the finisher's shots
  local root=p.Character and p.Character:FindFirstChild("HumanoidRootPart");local found
  -- the Blood Moon giant is shown to everyone, wherever they are
  for m in pairs(models) do if m.Parent and m:GetAttribute("Giant") and (m:GetAttribute("Health") or 0)>0 then found=m;break end end

@@ -1,0 +1,197 @@
+{
+  "backrooms": {
+    "BR_WallPanel": [
+      -35,
+      0,
+      0
+    ],
+    "BR_DoorPartition": [
+      1,
+      0,
+      -1
+    ],
+    "BR_CornerPartition": [
+      32,
+      0,
+      -1
+    ],
+    "BR_Pillar": [
+      -20,
+      0,
+      -24
+    ],
+    "BR_Fluorescent": [
+      12,
+      0,
+      -24
+    ]
+  },
+  "blood_mine": {
+    "BM_EntranceOpen": [
+      -58,
+      0,
+      0
+    ],
+    "BM_EntranceBoarded": [
+      0,
+      0,
+      0
+    ],
+    "BM_RockWall": [
+      58,
+      0,
+      0
+    ],
+    "BM_OreCluster": [
+      -65,
+      0,
+      -29
+    ],
+    "BM_Minecart": [
+      -42,
+      0,
+      -29
+    ],
+    "BM_RailBroken": [
+      -17,
+      0,
+      -29
+    ],
+    "BM_TimberPile": [
+      12,
+      0,
+      -29
+    ],
+    "BM_Torch": [
+      38,
+      0,
+      -29
+    ],
+    "SH_Rubble": [
+      64,
+      0,
+      -29
+    ]
+  },
+  "village": {
+    "AV_HouseLongA": [
+      -34,
+      0,
+      0
+    ],
+    "AV_HouseLongB": [
+      34,
+      0,
+      0
+    ],
+    "AV_FenceBroken": [
+      -53,
+      0,
+      -28
+    ],
+    "AV_Well": [
+      -30,
+      0,
+      -28
+    ],
+    "AV_Cart": [
+      -5,
+      0,
+      -30
+    ],
+    "AV_DeadTree": [
+      23,
+      0,
+      -30
+    ],
+    "SH_Crate": [
+      48,
+      0,
+      -25
+    ],
+    "SH_Barrel": [
+      56,
+      0,
+      -34
+    ]
+  },
+  "city": {
+    "AC_FacadeLongA": [
+      -35,
+      0,
+      0
+    ],
+    "AC_FacadeLongB": [
+      35,
+      0,
+      0
+    ],
+    "AC_CarBlue": [
+      -53,
+      0,
+      -28
+    ],
+    "AC_CarRust": [
+      -32,
+      0,
+      -28
+    ],
+    "AC_Streetlight": [
+      -8,
+      0,
+      -30
+    ],
+    "AC_PlanterTree": [
+      18,
+      0,
+      -30
+    ],
+    "SH_Crate": [
+      44,
+      0,
+      -25
+    ],
+    "SH_Barrel": [
+      54,
+      0,
+      -25
+    ],
+    "SH_Rubble": [
+      49,
+      0,
+      -38
+    ]
+  },
+  "parasitown": {
+    "PT_InfectedFacadeA": [
+      -35,
+      0,
+      0
+    ],
+    "PT_InfectedFacadeB": [
+      35,
+      0,
+      0
+    ],
+    "PT_InfectionPatch": [
+      -50,
+      0,
+      -30
+    ],
+    "PT_WallGrowth": [
+      -20,
+      0,
+      -28
+    ],
+    "PT_ArenaTentacleTall": [
+      14,
+      0,
+      -33
+    ],
+    "PT_ArenaTentacleHook": [
+      46,
+      0,
+      -33
+    ]
+  }
+}

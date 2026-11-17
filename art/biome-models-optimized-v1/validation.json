@@ -1,0 +1,332 @@
+{
+  "status": "PASS",
+  "model_count": 34,
+  "biome_pack_count": 5,
+  "unique_triangles": 15942,
+  "checks": [
+    "valid GLB containers",
+    "finite positions",
+    "unit normals",
+    "index ranges",
+    "nonzero triangle areas",
+    "unique names",
+    "linear vertex colors",
+    "no external textures or buffers",
+    "each mesh under 10000 triangles",
+    "all biome catalog entries exported"
+  ],
+  "files": [
+    {
+      "file": "biome-packs/backrooms.glb",
+      "bytes": 40296,
+      "sha256": "9362ecc536702aab470112715f8e938d9ad9225f62317e82d4eb67d47fbffa89",
+      "meshes": 6,
+      "triangles": 456,
+      "max_part_triangles": 156
+    },
+    {
+      "file": "biome-packs/blood_mine.glb",
+      "bytes": 226292,
+      "sha256": "fceb16ab8d57569ea2ed30e47ec21160d0bab708c33b5ae502424ef5d4d7d59b",
+      "meshes": 11,
+      "triangles": 2668,
+      "max_part_triangles": 644
+    },
+    {
+      "file": "biome-packs/city.glb",
+      "bytes": 235772,
+      "sha256": "61ca9fa802770ccfd64103c561a3872fae729d1492e79af4a237ff5ef71aa1de",
+      "meshes": 10,
+      "triangles": 3416,
+      "max_part_triangles": 672
+    },
+    {
+      "file": "biome-packs/parasitown.glb",
+      "bytes": 281340,
+      "sha256": "4514f8fe8085b67ec91c02569d1358e39d37a74ae047a373829735e6ff411dff",
+      "meshes": 6,
+      "triangles": 4230,
+      "max_part_triangles": 1432
+    },
+    {
+      "file": "biome-packs/village.glb",
+      "bytes": 388944,
+      "sha256": "df8f785c54aada42ec9850a352f036c27adec745765500e3f2f1354d87efe4db",
+      "meshes": 8,
+      "triangles": 5760,
+      "max_part_triangles": 1716
+    },
+    {
+      "file": "models/AC_CarBlue.glb",
+      "bytes": 32516,
+      "sha256": "c8f6fc43e860e9a392934bf912adff2e48abc3be5e4639632f5a3bbee4d20b2b",
+      "meshes": 1,
+      "triangles": 500,
+      "max_part_triangles": 500
+    },
+    {
+      "file": "models/AC_CarRust.glb",
+      "bytes": 32516,
+      "sha256": "deafa3a9b853c9b45e5e0ac077b572f15eedd32f491bc13694c103d8444f6adf",
+      "meshes": 1,
+      "triangles": 500,
+      "max_part_triangles": 500
+    },
+    {
+      "file": "models/AC_FacadeLongA.glb",
+      "bytes": 46828,
+      "sha256": "71a542368e9e4d213d9466ae47ac0c0b0d3c28506e0e4f50a53f388ad606422c",
+      "meshes": 1,
+      "triangles": 672,
+      "max_part_triangles": 672
+    },
+    {
+      "file": "models/AC_FacadeLongB.glb",
+      "bytes": 46012,
+      "sha256": "15d5a4ae961a8c1547d0fe8be361720519efd0a3bada1c13eeceefed0f7a2665",
+      "meshes": 1,
+      "triangles": 656,
+      "max_part_triangles": 656
+    },
+    {
+      "file": "models/AC_PlanterTree.glb",
+      "bytes": 21936,
+      "sha256": "87da84761ccae489d750ec83529d28d19cae11e386133ff4389820b6ca82ceb8",
+      "meshes": 1,
+      "triangles": 324,
+      "max_part_triangles": 324
+    },
+    {
+      "file": "models/AC_Streetlight.glb",
+      "bytes": 15100,
+      "sha256": "19f17dfd9165e25fd47bbfcb598b7a6fbf679e969bee7de65eaf4095fc3d7089",
+      "meshes": 2,
+      "triangles": 176,
+      "max_part_triangles": 132
+    },
+    {
+      "file": "models/AV_Cart.glb",
+      "bytes": 29404,
+      "sha256": "c080051d62538728202765a59f99d309aaa6b4bd479f0f5c152e3760dc87a6c9",
+      "meshes": 1,
+      "triangles": 504,
+      "max_part_triangles": 504
+    },
+    {
+      "file": "models/AV_DeadTree.glb",
+      "bytes": 21808,
+      "sha256": "8f9fe831804f2155e967f8c981bd484bb1081d4115b9e241d1b054f20920f6cf",
+      "meshes": 1,
+      "triangles": 304,
+      "max_part_triangles": 304
+    },
+    {
+      "file": "models/AV_FenceBroken.glb",
+      "bytes": 6996,
+      "sha256": "72145c3331d41febff22f3b362825e561b531cff7154001c881fb1ea9923226b",
+      "meshes": 1,
+      "triangles": 84,
+      "max_part_triangles": 84
+    },
+    {
+      "file": "models/AV_HouseLongA.glb",
+      "bytes": 111300,
+      "sha256": "e3e038881b120c3c83e2cb73902b00c067574c3642097b256518bc8897c10f8e",
+      "meshes": 1,
+      "triangles": 1648,
+      "max_part_triangles": 1648
+    },
+    {
+      "file": "models/AV_HouseLongB.glb",
+      "bytes": 116032,
+      "sha256": "39913bc30dcd4445d9431f44c0ad55d55d0359c8be5f64e76c754bfde8919072",
+      "meshes": 1,
+      "triangles": 1716,
+      "max_part_triangles": 1716
+    },
+    {
+      "file": "models/AV_Well.glb",
+      "bytes": 71292,
+      "sha256": "bbd8675428606d591f70974417bbce8b20f59028df3e1a17399e246e3a5bc309",
+      "meshes": 1,
+      "triangles": 996,
+      "max_part_triangles": 996
+    },
+    {
+      "file": "models/BM_EntranceBoarded.glb",
+      "bytes": 51616,
+      "sha256": "4c60ab9236cee0271799f69439d58f4d5eb57a470453a36e2390d7d64564b8e2",
+      "meshes": 1,
+      "triangles": 604,
+      "max_part_triangles": 604
+    },
+    {
+      "file": "models/BM_EntranceOpen.glb",
+      "bytes": 57668,
+      "sha256": "a139149aa696cad6489857ee20378dc460eb92965e77dd789a5b88c0ce9b90c6",
+      "meshes": 2,
+      "triangles": 672,
+      "max_part_triangles": 644
+    },
+    {
+      "file": "models/BM_Minecart.glb",
+      "bytes": 30404,
+      "sha256": "c5f850ed4193cc038d4dde92d79f7648900e180047961968b2e713d87e711fd3",
+      "meshes": 1,
+      "triangles": 448,
+      "max_part_triangles": 448
+    },
+    {
+      "file": "models/BM_OreCluster.glb",
+      "bytes": 8532,
+      "sha256": "367fdf2246f1e26f1aa661266750a3db8a3aa120f1a01607c4ad527e23c77536",
+      "meshes": 1,
+      "triangles": 80,
+      "max_part_triangles": 80
+    },
+    {
+      "file": "models/BM_RailBroken.glb",
+      "bytes": 6984,
+      "sha256": "ce1d9b3b8f9a9ad93ab295ff485455551823536a04439dcfffbc87e423ccf07d",
+      "meshes": 1,
+      "triangles": 84,
+      "max_part_triangles": 84
+    },
+    {
+      "file": "models/BM_RockWall.glb",
+      "bytes": 43156,
+      "sha256": "722864d41d67b5fdf2ed7d2b7c2c58a3e032f43a4a019e23a7ff40418324336e",
+      "meshes": 1,
+      "triangles": 460,
+      "max_part_triangles": 460
+    },
+    {
+      "file": "models/BM_TimberPile.glb",
+      "bytes": 10880,
+      "sha256": "39631b3f057b86990aefc3a0b53c0a380de542145d7a4c16941937f4d42149de",
+      "meshes": 1,
+      "triangles": 132,
+      "max_part_triangles": 132
+    },
+    {
+      "file": "models/BM_Torch.glb",
+      "bytes": 10856,
+      "sha256": "d70a035bd39098c12b6923cf50d382a3cf72e04e1156e1d8a6ccb28efa673c27",
+      "meshes": 2,
+      "triangles": 108,
+      "max_part_triangles": 68
+    },
+    {
+      "file": "models/BR_CornerPartition.glb",
+      "bytes": 7960,
+      "sha256": "2c483e34679173e0c00b4dcbc44207de588329b5b01f6182092c2e836d99b9cb",
+      "meshes": 1,
+      "triangles": 88,
+      "max_part_triangles": 88
+    },
+    {
+      "file": "models/BR_DoorPartition.glb",
+      "bytes": 12848,
+      "sha256": "9874a275dd14768fa1f8f05bf2f6b3c53c74d236d1442c201e9032698e2aa605",
+      "meshes": 1,
+      "triangles": 156,
+      "max_part_triangles": 156
+    },
+    {
+      "file": "models/BR_Fluorescent.glb",
+      "bytes": 9268,
+      "sha256": "c35d09eac4c2601c1925745d2651b416dc7c699d9c83b6aa48d4e695b9ec02b1",
+      "meshes": 2,
+      "triangles": 88,
+      "max_part_triangles": 44
+    },
+    {
+      "file": "models/BR_Pillar.glb",
+      "bytes": 5352,
+      "sha256": "0069bb1da41c3b9cbc0ff431f36a6a281312c204655f4d8e3d1720abd2b91037",
+      "meshes": 1,
+      "triangles": 56,
+      "max_part_triangles": 56
+    },
+    {
+      "file": "models/BR_WallPanel.glb",
+      "bytes": 6356,
+      "sha256": "0e8dea9e8897002d7402487fde48f053600705e1d24f7a1f73ea1dea6bf3b4a2",
+      "meshes": 1,
+      "triangles": 68,
+      "max_part_triangles": 68
+    },
+    {
+      "file": "models/PT_ArenaTentacleHook.glb",
+      "bytes": 34420,
+      "sha256": "c91868670e6bd29ccdc22bb6190fb8f9783e7dee5ca683fe905e77dfcc5df116",
+      "meshes": 1,
+      "triangles": 536,
+      "max_part_triangles": 536
+    },
+    {
+      "file": "models/PT_ArenaTentacleTall.glb",
+      "bytes": 34244,
+      "sha256": "dc84820c372a9eff265691ef57e72b3612efcd750c5b6fe360056b51211af1a3",
+      "meshes": 1,
+      "triangles": 536,
+      "max_part_triangles": 536
+    },
+    {
+      "file": "models/PT_InfectedFacadeA.glb",
+      "bytes": 93944,
+      "sha256": "3975603eb42da6bcfc4b78419a394272c21b4abf293b9fd405d55888680f3cb9",
+      "meshes": 1,
+      "triangles": 1388,
+      "max_part_triangles": 1388
+    },
+    {
+      "file": "models/PT_InfectedFacadeB.glb",
+      "bytes": 97084,
+      "sha256": "9cd024f019f1f57fc0789c46f104af173f6a5c321fcf2a304fa4b3abc59c21fb",
+      "meshes": 1,
+      "triangles": 1432,
+      "max_part_triangles": 1432
+    },
+    {
+      "file": "models/PT_InfectionPatch.glb",
+      "bytes": 15032,
+      "sha256": "a75ea7f32696883ccf1d6db7e7892198d01762da98920b5bcc5a0df590e5c27b",
+      "meshes": 1,
+      "triangles": 232,
+      "max_part_triangles": 232
+    },
+    {
+      "file": "models/PT_WallGrowth.glb",
+      "bytes": 8500,
+      "sha256": "2b9fc533b4cd792d62dd32bb72d0f4d043f1b9eecf8546598690ac4d0bbddcf2",
+      "meshes": 1,
+      "triangles": 106,
+      "max_part_triangles": 106
+    },
+    {
+      "file": "models/SH_Barrel.glb",
+      "bytes": 15868,
+      "sha256": "5b0f8b06f13e50b0247014e9d1b4cf19a7ee7a2759e461daf77c3ac4c3690c21",
+      "meshes": 1,
+      "triangles": 248,
+      "max_part_triangles": 248
+    },
+    {
+      "file": "models/SH_Crate.glb",
+      "bytes": 18816,
+      "sha256": "7d691438faa981366178f2ea39d444714b66a3ac3bfe920a02fa62c1c0ac488e",
+      "meshes": 1,
+      "triangles": 260,
+      "max_part_triangles": 260
+    },
+    {
+      "file": "models/SH_Rubble.glb",
+      "bytes": 9112,
+      "sha256": "01b9b5f8d5513600bb2dfbe0c0d765a9b26d02508e9179a8e192fb27b50f09c9",
+      "meshes": 1,
+      "triangles": 80,
+      "max_part_triangles": 80
+    }
+  ]
+}

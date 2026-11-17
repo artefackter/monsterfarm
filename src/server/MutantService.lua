@@ -45,7 +45,8 @@ end
 function M.Damage(a,damage,killer,crit)
  if not a or not M.Live[a.id] or a.hp<=0 or a.state=="Spawning" then return false end
  -- A sleeping boss is woken only from inside its arena, and a shut arena's fight is its fighters' (RoadService)
- if a.canHurt and killer and not a.canHurt(a,killer) then return false end
+ -- (canHurt may answer with a number: that share of the damage lands - a boss on its knees)
+ if a.canHurt and killer then local ok=a.canHurt(a,killer);if not ok then return false end;if type(ok)=="number" then damage*=ok end end
  a.model:SetAttribute("HitAt",workspace:GetServerTimeNow())
  a.hp=math.max(0,a.hp-damage);a.model:SetAttribute("Health",a.hp)
  if a.onHurt and killer and a.hp>0 then a.onHurt(a,killer) end
@@ -97,7 +98,7 @@ function M.Spawn(p,kind)
  local d=D.Profiles[p];local plot=P.Assigned[p];kind=kind or variant and variant.Kind or C.DefaultType
  if not d or not plot or not d.tutorialDone or not C.Types[kind] or M.Count()>=C.ServerLimit then return end
  M.Serial+=1;local id=tostring(M.Serial);local radius=rng:NextNumber(C.SpawnMin,C.SpawnMax);local side=rng:NextNumber(-C.SpawnSide,C.SpawnSide)
- local edge=require(S.Config.ZoneConfig).FarmHalf+6;local pos=(plot.Base*CFrame.new(-edge,C.RootHeight,side)).Position -- the -x side only: the cemetery yard is on +x (2026-11-14)
+ local edge=require(S.Config.ZoneConfig).FarmHalf+6;local pos=(plot.Base*CFrame.new(rng:NextNumber()<.5 and -edge or edge,C.RootHeight,side)).Position -- either side again: the cemetery is inside the farm (2026-11-15)
  local cf=CFrame.lookAt(pos,Vector3.new(plot.Base.X,pos.Y,plot.Base.Z));local model=Model.Build(kind,cf,variant)
  local a={id=id,owner=p,profile=d,kind=kind,hp=C.Types[kind].Health,model=model,spawn=pos,alarmed=false}
  if not M.ChooseTarget(a) then model:Destroy();return end

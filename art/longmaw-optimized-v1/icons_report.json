@@ -1,0 +1,974 @@
+{
+  "passed": true,
+  "artwork_regenerated": false,
+  "alpha_resampled_with_artwork": true,
+  "source_files_unchanged": 306,
+  "icons": [
+    {
+      "id": "LongmawFarmer",
+      "role": "Farmer",
+      "ru": "Фермер",
+      "source": "/Users/wingman/Documents/Codex/GrowAMonster-Git-2026-11-12/art/longmaw-icons-v1/icons/LongmawFarmer.png",
+      "source_sha256": "11f79b9686adcc79083902e7bc6af71aea17853f2a8f57a4385426ad56105315",
+      "source_bytes": 938190,
+      "source_size": [
+        1254,
+        1254
+      ],
+      "variants": {
+        "ui512": {
+          "file": "icons/ui512/LongmawFarmer.png",
+          "bytes": 199879,
+          "size": [
+            512,
+            512
+          ],
+          "sha256": "04ab007a0e40d8ec1d56fcb0e871c2c4a1b374426828fe2c252e3dd077399b51",
+          "png_encoding_lossless_after_resize": true,
+          "rgba8_base_level_bytes": 1048576,
+          "ui_comparison": [
+            {
+              "display_px": 64,
+              "background": "#EDE6F2",
+              "rmse_255": 0.7059,
+              "psnr_db": 51.16
+            },
+            {
+              "display_px": 64,
+              "background": "#20212B",
+              "rmse_255": 0.6353,
+              "psnr_db": 52.07
+            },
+            {
+              "display_px": 96,
+              "background": "#EDE6F2",
+              "rmse_255": 0.7895,
+              "psnr_db": 50.18
+            },
+            {
+              "display_px": 96,
+              "background": "#20212B",
+              "rmse_255": 0.6985,
+              "psnr_db": 51.25
+            },
+            {
+              "display_px": 128,
+              "background": "#EDE6F2",
+              "rmse_255": 0.8465,
+              "psnr_db": 49.58
+            },
+            {
+              "display_px": 128,
+              "background": "#20212B",
+              "rmse_255": 0.7212,
+              "psnr_db": 50.97
+            }
+          ]
+        },
+        "small256": {
+          "file": "icons/small256/LongmawFarmer.png",
+          "bytes": 65494,
+          "size": [
+            256,
+            256
+          ],
+          "sha256": "19465aa48ddb5d9328129ac7f15568efd9b0a95652c3ef3ca3b46e021dc3be03",
+          "png_encoding_lossless_after_resize": true,
+          "rgba8_base_level_bytes": 262144,
+          "ui_comparison": [
+            {
+              "display_px": 64,
+              "background": "#EDE6F2",
+              "rmse_255": 1.012,
+              "psnr_db": 48.03
+            },
+            {
+              "display_px": 64,
+              "background": "#20212B",
+              "rmse_255": 0.8001,
+              "psnr_db": 50.07
+            },
+            {
+              "display_px": 96,
+              "background": "#EDE6F2",
+              "rmse_255": 1.2907,
+              "psnr_db": 45.91
+            },
+            {
+              "display_px": 96,
+              "background": "#20212B",
+              "rmse_255": 0.9017,
+              "psnr_db": 49.03
+            },
+            {
+              "display_px": 128,
+              "background": "#EDE6F2",
+              "rmse_255": 1.4744,
+              "psnr_db": 44.76
+            },
+            {
+              "display_px": 128,
+              "background": "#20212B",
+              "rmse_255": 0.9647,
+              "psnr_db": 48.44
+            }
+          ]
+        },
+        "large1024": {
+          "file": "icons/large1024/LongmawFarmer.png",
+          "bytes": 653731,
+          "size": [
+            1024,
+            1024
+          ],
+          "sha256": "809737a10a37658367f16a48bb8c521c4341edb826385e00860879102e8d180e",
+          "png_encoding_lossless_after_resize": true,
+          "rgba8_base_level_bytes": 4194304,
+          "ui_comparison": [
+            {
+              "display_px": 64,
+              "background": "#EDE6F2",
+              "rmse_255": 0.6604,
+              "psnr_db": 51.73
+            },
+            {
+              "display_px": 64,
+              "background": "#20212B",
+              "rmse_255": 0.6217,
+              "psnr_db": 52.26
+            },
+            {
+              "display_px": 96,
+              "background": "#EDE6F2",
+              "rmse_255": 0.6812,
+              "psnr_db": 51.47
+            },
+            {
+              "display_px": 96,
+              "background": "#20212B",
+              "rmse_255": 0.6356,
+              "psnr_db": 52.07
+            },
+            {
+              "display_px": 128,
+              "background": "#EDE6F2",
+              "rmse_255": 0.6896,
+              "psnr_db": 51.36
+            },
+            {
+              "display_px": 128,
+              "background": "#20212B",
+              "rmse_255": 0.6507,
+              "psnr_db": 51.86
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "LongmawMiner",
+      "role": "Miner",
+      "ru": "Шахтёр",
+      "source": "/Users/wingman/Documents/Codex/GrowAMonster-Git-2026-11-12/art/longmaw-icons-v1/icons/LongmawMiner.png",
+      "source_sha256": "66be9913b7403cad9db5ba0e25630bd0befddec82410bb162e2c9113eaf4e0eb",
+      "source_bytes": 958110,
+      "source_size": [
+        1254,
+        1254
+      ],
+      "variants": {
+        "ui512": {
+          "file": "icons/ui512/LongmawMiner.png",
+          "bytes": 200998,
+          "size": [
+            512,
+            512
+          ],
+          "sha256": "5e4d49396bf73e27a3610ff2584a471c235eb903f75a6993d63f604784414d1d",
+          "png_encoding_lossless_after_resize": true,
+          "rgba8_base_level_bytes": 1048576,
+          "ui_comparison": [
+            {
+              "display_px": 64,
+              "background": "#EDE6F2",
+              "rmse_255": 0.6759,
+              "psnr_db": 51.53
+            },
+            {
+              "display_px": 64,
+              "background": "#20212B",
+              "rmse_255": 0.5958,
+              "psnr_db": 52.63
+            },
+            {
+              "display_px": 96,
+              "background": "#EDE6F2",
+              "rmse_255": 0.7381,
+              "psnr_db": 50.77
+            },
+            {
+              "display_px": 96,
+              "background": "#20212B",
+              "rmse_255": 0.65,
+              "psnr_db": 51.87
+            },
+            {
+              "display_px": 128,
+              "background": "#EDE6F2",
+              "rmse_255": 0.8001,
+              "psnr_db": 50.07
+            },
+            {
+              "display_px": 128,
+              "background": "#20212B",
+              "rmse_255": 0.6768,
+              "psnr_db": 51.52
+            }
+          ]
+        },
+        "small256": {
+          "file": "icons/small256/LongmawMiner.png",
+          "bytes": 64798,
+          "size": [
+            256,
+            256
+          ],
+          "sha256": "5391f531e6dc8818c1a1a1e6868d3f6bd891534f4af4c330ccd034cd7e91d35c",
+          "png_encoding_lossless_after_resize": true,
+          "rgba8_base_level_bytes": 262144,
+          "ui_comparison": [
+            {
+              "display_px": 64,
+              "background": "#EDE6F2",
+              "rmse_255": 1.007,
+              "psnr_db": 48.07
+            },
+            {
+              "display_px": 64,
+              "background": "#20212B",
+              "rmse_255": 0.7642,
+              "psnr_db": 50.47
+            },
+            {
+              "display_px": 96,
+              "background": "#EDE6F2",
+              "rmse_255": 1.2964,
+              "psnr_db": 45.88
+            },
+            {
+              "display_px": 96,
+              "background": "#20212B",
+              "rmse_255": 0.8897,
+              "psnr_db": 49.15
+            },
+            {
+              "display_px": 128,
+              "background": "#EDE6F2",
+              "rmse_255": 1.5083,
+              "psnr_db": 44.56
+            },
+            {
+              "display_px": 128,
+              "background": "#20212B",
+              "rmse_255": 0.9458,
+              "psnr_db": 48.61
+            }
+          ]
+        },
+        "large1024": {
+          "file": "icons/large1024/LongmawMiner.png",
+          "bytes": 666242,
+          "size": [
+            1024,
+            1024
+          ],
+          "sha256": "b13532198bbf4b73c6986132dcec0600433b5474d8242a9af9e99058b0055e68",
+          "png_encoding_lossless_after_resize": true,
+          "rgba8_base_level_bytes": 4194304,
+          "ui_comparison": [
+            {
+              "display_px": 64,
+              "background": "#EDE6F2",
+              "rmse_255": 0.5937,
+              "psnr_db": 52.66
+            },
+            {
+              "display_px": 64,
+              "background": "#20212B",
+              "rmse_255": 0.5663,
+              "psnr_db": 53.07
+            },
+            {
+              "display_px": 96,
+              "background": "#EDE6F2",
+              "rmse_255": 0.6173,
+              "psnr_db": 52.32
+            },
+            {
+              "display_px": 96,
+              "background": "#20212B",
+              "rmse_255": 0.5867,
+              "psnr_db": 52.76
+            },
+            {
+              "display_px": 128,
+              "background": "#EDE6F2",
+              "rmse_255": 0.6363,
+              "psnr_db": 52.06
+            },
+            {
+              "display_px": 128,
+              "background": "#20212B",
+              "rmse_255": 0.6019,
+              "psnr_db": 52.54
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "LongmawPrincess",
+      "role": "Princess",
+      "ru": "Принцесса",
+      "source": "/Users/wingman/Documents/Codex/GrowAMonster-Git-2026-11-12/art/longmaw-icons-v1/icons/LongmawPrincess.png",
+      "source_sha256": "0904f6f6e5cbca8107834d0212512a54adeb0e9d887b4a9369717feaa9cd5d50",
+      "source_bytes": 910530,
+      "source_size": [
+        1254,
+        1254
+      ],
+      "variants": {
+        "ui512": {
+          "file": "icons/ui512/LongmawPrincess.png",
+          "bytes": 195260,
+          "size": [
+            512,
+            512
+          ],
+          "sha256": "e4e050a7c78b49006016b924d71951500363a6beb60eef3014d01240a4c47491",
+          "png_encoding_lossless_after_resize": true,
+          "rgba8_base_level_bytes": 1048576,
+          "ui_comparison": [
+            {
+              "display_px": 64,
+              "background": "#EDE6F2",
+              "rmse_255": 0.7089,
+              "psnr_db": 51.12
+            },
+            {
+              "display_px": 64,
+              "background": "#20212B",
+              "rmse_255": 0.6269,
+              "psnr_db": 52.19
+            },
+            {
+              "display_px": 96,
+              "background": "#EDE6F2",
+              "rmse_255": 0.7596,
+              "psnr_db": 50.52
+            },
+            {
+              "display_px": 96,
+              "background": "#20212B",
+              "rmse_255": 0.6719,
+              "psnr_db": 51.58
+            },
+            {
+              "display_px": 128,
+              "background": "#EDE6F2",
+              "rmse_255": 0.8231,
+              "psnr_db": 49.82
+            },
+            {
+              "display_px": 128,
+              "background": "#20212B",
+              "rmse_255": 0.7052,
+              "psnr_db": 51.16
+            }
+          ]
+        },
+        "small256": {
+          "file": "icons/small256/LongmawPrincess.png",
+          "bytes": 63708,
+          "size": [
+            256,
+            256
+          ],
+          "sha256": "5c559b6b3c832bb72ad9fd57ef8d0650acd8909a0dc91412a898b917c0eab0ca",
+          "png_encoding_lossless_after_resize": true,
+          "rgba8_base_level_bytes": 262144,
+          "ui_comparison": [
+            {
+              "display_px": 64,
+              "background": "#EDE6F2",
+              "rmse_255": 1.0078,
+              "psnr_db": 48.06
+            },
+            {
+              "display_px": 64,
+              "background": "#20212B",
+              "rmse_255": 0.7719,
+              "psnr_db": 50.38
+            },
+            {
+              "display_px": 96,
+              "background": "#EDE6F2",
+              "rmse_255": 1.3051,
+              "psnr_db": 45.82
+            },
+            {
+              "display_px": 96,
+              "background": "#20212B",
+              "rmse_255": 0.8694,
+              "psnr_db": 49.35
+            },
+            {
+              "display_px": 128,
+              "background": "#EDE6F2",
+              "rmse_255": 1.4657,
+              "psnr_db": 44.81
+            },
+            {
+              "display_px": 128,
+              "background": "#20212B",
+              "rmse_255": 0.9308,
+              "psnr_db": 48.75
+            }
+          ]
+        },
+        "large1024": {
+          "file": "icons/large1024/LongmawPrincess.png",
+          "bytes": 632325,
+          "size": [
+            1024,
+            1024
+          ],
+          "sha256": "d125d699c67e6cf821a8ebdf47d5e12161ab30bb256b5db385e91bde0844e2a2",
+          "png_encoding_lossless_after_resize": true,
+          "rgba8_base_level_bytes": 4194304,
+          "ui_comparison": [
+            {
+              "display_px": 64,
+              "background": "#EDE6F2",
+              "rmse_255": 0.6358,
+              "psnr_db": 52.06
+            },
+            {
+              "display_px": 64,
+              "background": "#20212B",
+              "rmse_255": 0.5916,
+              "psnr_db": 52.69
+            },
+            {
+              "display_px": 96,
+              "background": "#EDE6F2",
+              "rmse_255": 0.6552,
+              "psnr_db": 51.8
+            },
+            {
+              "display_px": 96,
+              "background": "#20212B",
+              "rmse_255": 0.6203,
+              "psnr_db": 52.28
+            },
+            {
+              "display_px": 128,
+              "background": "#EDE6F2",
+              "rmse_255": 0.6623,
+              "psnr_db": 51.71
+            },
+            {
+              "display_px": 128,
+              "background": "#20212B",
+              "rmse_255": 0.6281,
+              "psnr_db": 52.17
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "LongmawKnight",
+      "role": "Knight",
+      "ru": "Рыцарь",
+      "source": "/Users/wingman/Documents/Codex/GrowAMonster-Git-2026-11-12/art/longmaw-icons-v1/icons/LongmawKnight.png",
+      "source_sha256": "3110fa44baf3a2ecb4dd8c1acb075ae135360ba736db79a413538b4dff3f7f02",
+      "source_bytes": 960725,
+      "source_size": [
+        1254,
+        1254
+      ],
+      "variants": {
+        "ui512": {
+          "file": "icons/ui512/LongmawKnight.png",
+          "bytes": 207683,
+          "size": [
+            512,
+            512
+          ],
+          "sha256": "a53d7ad6836721ff9bd5094e97205dc4b9a59124f2c8947f86da4cc5ec69e2e3",
+          "png_encoding_lossless_after_resize": true,
+          "rgba8_base_level_bytes": 1048576,
+          "ui_comparison": [
+            {
+              "display_px": 64,
+              "background": "#EDE6F2",
+              "rmse_255": 0.6895,
+              "psnr_db": 51.36
+            },
+            {
+              "display_px": 64,
+              "background": "#20212B",
+              "rmse_255": 0.6115,
+              "psnr_db": 52.4
+            },
+            {
+              "display_px": 96,
+              "background": "#EDE6F2",
+              "rmse_255": 0.7435,
+              "psnr_db": 50.71
+            },
+            {
+              "display_px": 96,
+              "background": "#20212B",
+              "rmse_255": 0.6532,
+              "psnr_db": 51.83
+            },
+            {
+              "display_px": 128,
+              "background": "#EDE6F2",
+              "rmse_255": 0.8083,
+              "psnr_db": 49.98
+            },
+            {
+              "display_px": 128,
+              "background": "#20212B",
+              "rmse_255": 0.6905,
+              "psnr_db": 51.35
+            }
+          ]
+        },
+        "small256": {
+          "file": "icons/small256/LongmawKnight.png",
+          "bytes": 67786,
+          "size": [
+            256,
+            256
+          ],
+          "sha256": "7e0aa22bf0da621017eaf36e2927d162deb239f27d67e4a822767a78649d1822",
+          "png_encoding_lossless_after_resize": true,
+          "rgba8_base_level_bytes": 262144,
+          "ui_comparison": [
+            {
+              "display_px": 64,
+              "background": "#EDE6F2",
+              "rmse_255": 0.9972,
+              "psnr_db": 48.16
+            },
+            {
+              "display_px": 64,
+              "background": "#20212B",
+              "rmse_255": 0.7853,
+              "psnr_db": 50.23
+            },
+            {
+              "display_px": 96,
+              "background": "#EDE6F2",
+              "rmse_255": 1.3105,
+              "psnr_db": 45.78
+            },
+            {
+              "display_px": 96,
+              "background": "#20212B",
+              "rmse_255": 0.8877,
+              "psnr_db": 49.17
+            },
+            {
+              "display_px": 128,
+              "background": "#EDE6F2",
+              "rmse_255": 1.472,
+              "psnr_db": 44.77
+            },
+            {
+              "display_px": 128,
+              "background": "#20212B",
+              "rmse_255": 0.9522,
+              "psnr_db": 48.56
+            }
+          ]
+        },
+        "large1024": {
+          "file": "icons/large1024/LongmawKnight.png",
+          "bytes": 671822,
+          "size": [
+            1024,
+            1024
+          ],
+          "sha256": "18fed3ece0bf6eedbf97e34ffce379baa4b6c746f2f0c0163bc7ebddce330253",
+          "png_encoding_lossless_after_resize": true,
+          "rgba8_base_level_bytes": 4194304,
+          "ui_comparison": [
+            {
+              "display_px": 64,
+              "background": "#EDE6F2",
+              "rmse_255": 0.5867,
+              "psnr_db": 52.76
+            },
+            {
+              "display_px": 64,
+              "background": "#20212B",
+              "rmse_255": 0.5546,
+              "psnr_db": 53.25
+            },
+            {
+              "display_px": 96,
+              "background": "#EDE6F2",
+              "rmse_255": 0.6119,
+              "psnr_db": 52.4
+            },
+            {
+              "display_px": 96,
+              "background": "#20212B",
+              "rmse_255": 0.5808,
+              "psnr_db": 52.85
+            },
+            {
+              "display_px": 128,
+              "background": "#EDE6F2",
+              "rmse_255": 0.633,
+              "psnr_db": 52.1
+            },
+            {
+              "display_px": 128,
+              "background": "#20212B",
+              "rmse_255": 0.5978,
+              "psnr_db": 52.6
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "LongmawPunk",
+      "role": "Punk",
+      "ru": "Нефор",
+      "source": "/Users/wingman/Documents/Codex/GrowAMonster-Git-2026-11-12/art/longmaw-icons-v1/icons/LongmawPunk.png",
+      "source_sha256": "d68be2e2454161e2b97cf71d580bcd71a2e8607fbf68587dc02ecbe35a1f4b00",
+      "source_bytes": 904981,
+      "source_size": [
+        1254,
+        1254
+      ],
+      "variants": {
+        "ui512": {
+          "file": "icons/ui512/LongmawPunk.png",
+          "bytes": 195705,
+          "size": [
+            512,
+            512
+          ],
+          "sha256": "fb8556fabf0b4e00855ba41aa5abdfbf8c3bb55902f3acc02922a6d75565cc13",
+          "png_encoding_lossless_after_resize": true,
+          "rgba8_base_level_bytes": 1048576,
+          "ui_comparison": [
+            {
+              "display_px": 64,
+              "background": "#EDE6F2",
+              "rmse_255": 0.6643,
+              "psnr_db": 51.68
+            },
+            {
+              "display_px": 64,
+              "background": "#20212B",
+              "rmse_255": 0.6003,
+              "psnr_db": 52.56
+            },
+            {
+              "display_px": 96,
+              "background": "#EDE6F2",
+              "rmse_255": 0.7233,
+              "psnr_db": 50.94
+            },
+            {
+              "display_px": 96,
+              "background": "#20212B",
+              "rmse_255": 0.6312,
+              "psnr_db": 52.13
+            },
+            {
+              "display_px": 128,
+              "background": "#EDE6F2",
+              "rmse_255": 0.7807,
+              "psnr_db": 50.28
+            },
+            {
+              "display_px": 128,
+              "background": "#20212B",
+              "rmse_255": 0.6589,
+              "psnr_db": 51.75
+            }
+          ]
+        },
+        "small256": {
+          "file": "icons/small256/LongmawPunk.png",
+          "bytes": 63970,
+          "size": [
+            256,
+            256
+          ],
+          "sha256": "eaa9c3a31bfc7831500f6e1141ea2096c0a6e2ef76fc5efa41dc8d7523426ef6",
+          "png_encoding_lossless_after_resize": true,
+          "rgba8_base_level_bytes": 262144,
+          "ui_comparison": [
+            {
+              "display_px": 64,
+              "background": "#EDE6F2",
+              "rmse_255": 0.9392,
+              "psnr_db": 48.68
+            },
+            {
+              "display_px": 64,
+              "background": "#20212B",
+              "rmse_255": 0.7148,
+              "psnr_db": 51.05
+            },
+            {
+              "display_px": 96,
+              "background": "#EDE6F2",
+              "rmse_255": 1.2464,
+              "psnr_db": 46.22
+            },
+            {
+              "display_px": 96,
+              "background": "#20212B",
+              "rmse_255": 0.8001,
+              "psnr_db": 50.07
+            },
+            {
+              "display_px": 128,
+              "background": "#EDE6F2",
+              "rmse_255": 1.3991,
+              "psnr_db": 45.21
+            },
+            {
+              "display_px": 128,
+              "background": "#20212B",
+              "rmse_255": 0.8595,
+              "psnr_db": 49.45
+            }
+          ]
+        },
+        "large1024": {
+          "file": "icons/large1024/LongmawPunk.png",
+          "bytes": 629191,
+          "size": [
+            1024,
+            1024
+          ],
+          "sha256": "7f4a8a67c4f187213ecdc7779d6245db8db533732b3bffb82c9cc6f0d984991b",
+          "png_encoding_lossless_after_resize": true,
+          "rgba8_base_level_bytes": 4194304,
+          "ui_comparison": [
+            {
+              "display_px": 64,
+              "background": "#EDE6F2",
+              "rmse_255": 0.5812,
+              "psnr_db": 52.84
+            },
+            {
+              "display_px": 64,
+              "background": "#20212B",
+              "rmse_255": 0.5492,
+              "psnr_db": 53.34
+            },
+            {
+              "display_px": 96,
+              "background": "#EDE6F2",
+              "rmse_255": 0.6149,
+              "psnr_db": 52.35
+            },
+            {
+              "display_px": 96,
+              "background": "#20212B",
+              "rmse_255": 0.5807,
+              "psnr_db": 52.85
+            },
+            {
+              "display_px": 128,
+              "background": "#EDE6F2",
+              "rmse_255": 0.6365,
+              "psnr_db": 52.05
+            },
+            {
+              "display_px": 128,
+              "background": "#20212B",
+              "rmse_255": 0.5913,
+              "psnr_db": 52.69
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "LongmawAssassin",
+      "role": "Assassin",
+      "ru": "Убийца",
+      "source": "/Users/wingman/Documents/Codex/GrowAMonster-Git-2026-11-12/art/longmaw-icons-v1/icons/LongmawAssassin.png",
+      "source_sha256": "5e0d4e48bc9fe6f9dedcd09596355548cda3f2cf502de04ddcf29c9482a1dd60",
+      "source_bytes": 914194,
+      "source_size": [
+        1254,
+        1254
+      ],
+      "variants": {
+        "ui512": {
+          "file": "icons/ui512/LongmawAssassin.png",
+          "bytes": 193666,
+          "size": [
+            512,
+            512
+          ],
+          "sha256": "a3f03e799cd2e461549db202a84c6b61045ea30bab2b20946d2d4651c59824e0",
+          "png_encoding_lossless_after_resize": true,
+          "rgba8_base_level_bytes": 1048576,
+          "ui_comparison": [
+            {
+              "display_px": 64,
+              "background": "#EDE6F2",
+              "rmse_255": 0.6798,
+              "psnr_db": 51.48
+            },
+            {
+              "display_px": 64,
+              "background": "#20212B",
+              "rmse_255": 0.5921,
+              "psnr_db": 52.68
+            },
+            {
+              "display_px": 96,
+              "background": "#EDE6F2",
+              "rmse_255": 0.7304,
+              "psnr_db": 50.86
+            },
+            {
+              "display_px": 96,
+              "background": "#20212B",
+              "rmse_255": 0.6391,
+              "psnr_db": 52.02
+            },
+            {
+              "display_px": 128,
+              "background": "#EDE6F2",
+              "rmse_255": 0.814,
+              "psnr_db": 49.92
+            },
+            {
+              "display_px": 128,
+              "background": "#20212B",
+              "rmse_255": 0.6804,
+              "psnr_db": 51.48
+            }
+          ]
+        },
+        "small256": {
+          "file": "icons/small256/LongmawAssassin.png",
+          "bytes": 63456,
+          "size": [
+            256,
+            256
+          ],
+          "sha256": "fc0ed1e7f363f2d52b8a3d14971757ea9da89c68b444278f402d6f85c18def49",
+          "png_encoding_lossless_after_resize": true,
+          "rgba8_base_level_bytes": 262144,
+          "ui_comparison": [
+            {
+              "display_px": 64,
+              "background": "#EDE6F2",
+              "rmse_255": 0.9857,
+              "psnr_db": 48.26
+            },
+            {
+              "display_px": 64,
+              "background": "#20212B",
+              "rmse_255": 0.7193,
+              "psnr_db": 50.99
+            },
+            {
+              "display_px": 96,
+              "background": "#EDE6F2",
+              "rmse_255": 1.2682,
+              "psnr_db": 46.07
+            },
+            {
+              "display_px": 96,
+              "background": "#20212B",
+              "rmse_255": 0.8222,
+              "psnr_db": 49.83
+            },
+            {
+              "display_px": 128,
+              "background": "#EDE6F2",
+              "rmse_255": 1.4562,
+              "psnr_db": 44.87
+            },
+            {
+              "display_px": 128,
+              "background": "#20212B",
+              "rmse_255": 0.8959,
+              "psnr_db": 49.09
+            }
+          ]
+        },
+        "large1024": {
+          "file": "icons/large1024/LongmawAssassin.png",
+          "bytes": 634637,
+          "size": [
+            1024,
+            1024
+          ],
+          "sha256": "2a6d968e14391b767405a3fe245139bd5c803fa080823a4c0a29e25bfef08989",
+          "png_encoding_lossless_after_resize": true,
+          "rgba8_base_level_bytes": 4194304,
+          "ui_comparison": [
+            {
+              "display_px": 64,
+              "background": "#EDE6F2",
+              "rmse_255": 0.6046,
+              "psnr_db": 52.5
+            },
+            {
+              "display_px": 64,
+              "background": "#20212B",
+              "rmse_255": 0.5618,
+              "psnr_db": 53.14
+            },
+            {
+              "display_px": 96,
+              "background": "#EDE6F2",
+              "rmse_255": 0.6247,
+              "psnr_db": 52.22
+            },
+            {
+              "display_px": 96,
+              "background": "#20212B",
+              "rmse_255": 0.589,
+              "psnr_db": 52.73
+            },
+            {
+              "display_px": 128,
+              "background": "#EDE6F2",
+              "rmse_255": 0.6484,
+              "psnr_db": 51.89
+            },
+            {
+              "display_px": 128,
+              "background": "#20212B",
+              "rmse_255": 0.6052,
+              "psnr_db": 52.49
+            }
+          ]
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,215 @@
+{
+  "available_assets_passed": true,
+  "complete": true,
+  "requested_count": 12,
+  "completed_count": 12,
+  "assets": [
+    {
+      "id": "GrandfatherFarmer",
+      "file": "icons/GrandfatherFarmer.png",
+      "width": 1254,
+      "height": 1254,
+      "mode": "RGBA",
+      "alpha_min": 0,
+      "alpha_max": 255,
+      "corner_alpha": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "transparent_fraction": 0.7386,
+      "sha256": "f1b5edfefc9af0fadc8d51044c4cfbc307633e831bbf1efc6ffde79b18450ce2"
+    },
+    {
+      "id": "GrandfatherMiner",
+      "file": "icons/GrandfatherMiner.png",
+      "width": 1254,
+      "height": 1254,
+      "mode": "RGBA",
+      "alpha_min": 0,
+      "alpha_max": 255,
+      "corner_alpha": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "transparent_fraction": 0.7295,
+      "sha256": "b42d285aeda0d22d3a7aff386c7cda9c58c46f7c608581ff7ccb22b77ef133b3"
+    },
+    {
+      "id": "GrandfatherKnight",
+      "file": "icons/GrandfatherKnight.png",
+      "width": 1254,
+      "height": 1254,
+      "mode": "RGBA",
+      "alpha_min": 0,
+      "alpha_max": 255,
+      "corner_alpha": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "transparent_fraction": 0.7449,
+      "sha256": "66315a690f81058913157339ef5f3335340f7307538b026ab0ff022165dd8157"
+    },
+    {
+      "id": "GrandfatherPunk",
+      "file": "icons/GrandfatherPunk.png",
+      "width": 1254,
+      "height": 1254,
+      "mode": "RGBA",
+      "alpha_min": 0,
+      "alpha_max": 255,
+      "corner_alpha": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "transparent_fraction": 0.7587,
+      "sha256": "92063895a65af6173955d48ff96f044fb4b5d3b18c84f738f58b3f7eeb8325cb"
+    },
+    {
+      "id": "GrandfatherAssassin",
+      "file": "icons/GrandfatherAssassin.png",
+      "width": 1254,
+      "height": 1254,
+      "mode": "RGBA",
+      "alpha_min": 0,
+      "alpha_max": 255,
+      "corner_alpha": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "transparent_fraction": 0.6987,
+      "sha256": "b5c6a05f8ba4e2bb86fa706dc0b1b49b6d0c123f58770f8babbca083239fd6b4"
+    },
+    {
+      "id": "GrannyFarmer",
+      "file": "icons/GrannyFarmer.png",
+      "width": 1254,
+      "height": 1254,
+      "mode": "RGBA",
+      "alpha_min": 0,
+      "alpha_max": 255,
+      "corner_alpha": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "transparent_fraction": 0.7023,
+      "sha256": "31c9c287f8a8c56f6d7e5395ae1afdf60c76c68aa02c0af8eb6144ce25af8554"
+    },
+    {
+      "id": "GrannyMiner",
+      "file": "icons/GrannyMiner.png",
+      "width": 1254,
+      "height": 1254,
+      "mode": "RGBA",
+      "alpha_min": 0,
+      "alpha_max": 255,
+      "corner_alpha": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "transparent_fraction": 0.7003,
+      "sha256": "9b63ceb8aa819ee796a836d9c91422ae97f5ff3ac888c9c4b386b8013606e804"
+    },
+    {
+      "id": "GrannyPrincess",
+      "file": "icons/GrannyPrincess.png",
+      "width": 1254,
+      "height": 1254,
+      "mode": "RGBA",
+      "alpha_min": 0,
+      "alpha_max": 255,
+      "corner_alpha": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "transparent_fraction": 0.6862,
+      "sha256": "60074605eff2eb53b3e6ebe142e12c854772a8c04d065d2434954680ea782595"
+    },
+    {
+      "id": "GrannyKnight",
+      "file": "icons/GrannyKnight.png",
+      "width": 1254,
+      "height": 1254,
+      "mode": "RGBA",
+      "alpha_min": 0,
+      "alpha_max": 255,
+      "corner_alpha": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "transparent_fraction": 0.7142,
+      "sha256": "33a9bab2d7873b38544296a9958c4d61e2e726a1ee488cca1f6c7c101599cb64"
+    },
+    {
+      "id": "GrannyPunk",
+      "file": "icons/GrannyPunk.png",
+      "width": 1254,
+      "height": 1254,
+      "mode": "RGBA",
+      "alpha_min": 0,
+      "alpha_max": 255,
+      "corner_alpha": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "transparent_fraction": 0.7166,
+      "sha256": "6f00898045796310fef12c88d7ae5a0701f27f274702b1dbc2c84a37bdc70ecf"
+    },
+    {
+      "id": "GrannyAssassin",
+      "file": "icons/GrannyAssassin.png",
+      "width": 1254,
+      "height": 1254,
+      "mode": "RGBA",
+      "alpha_min": 0,
+      "alpha_max": 255,
+      "corner_alpha": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "transparent_fraction": 0.6714,
+      "sha256": "08f83bb82aac77015fc1b6fa0d5a6085cba0ff00a8143590ae1c6ee81d317aeb"
+    },
+    {
+      "id": "GrandfatherKing",
+      "file": "icons/GrandfatherKing.png",
+      "width": 1254,
+      "height": 1254,
+      "mode": "RGBA",
+      "alpha_min": 0,
+      "alpha_max": 255,
+      "corner_alpha": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "transparent_fraction": 0.664,
+      "sha256": "870465f0d17ae65dea5292f3935356157d204b84c2e50168e8a095c37638ab78"
+    }
+  ],
+  "blocked": [],
+  "candidate_images_modified": false,
+  "status": "awaiting_wrist_and_king_approval"
+}

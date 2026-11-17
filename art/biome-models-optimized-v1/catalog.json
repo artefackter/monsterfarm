@@ -1,0 +1,1990 @@
+{
+  "version": 1,
+  "status": "LOCAL_REVIEW_NOT_APPROVED_FOR_INTEGRATION",
+  "reference": "road-reskin-screenshot-concepts-v5",
+  "assets": {
+    "BR_WallPanel": {
+      "title": "Стеновая панель",
+      "biomes": [
+        "backrooms"
+      ],
+      "placement": "wall",
+      "note": "Продольный модуль у стены; ширина 32 studs.",
+      "pivot": "floor_back_center",
+      "intended_studs_per_unit": 1,
+      "front_axis": "-Z",
+      "up_axis": "+Y",
+      "default_collision": false,
+      "parts": [
+        {
+          "part": "Body",
+          "mesh": "BR_WallPanel.Body",
+          "offset": [
+            0.0,
+            7.075,
+            -0.863
+          ],
+          "size": [
+            32.2,
+            14.15,
+            1.725
+          ],
+          "tint": null,
+          "attach": null,
+          "material": "SmoothPlastic",
+          "transparency": 0.0,
+          "collide": false,
+          "cast": true,
+          "tris": 68
+        }
+      ],
+      "triangles": 68,
+      "bounds": {
+        "min": [
+          -16.1,
+          0.0,
+          -1.726
+        ],
+        "max": [
+          16.1,
+          14.15,
+          -0.0
+        ],
+        "size": [
+          32.2,
+          14.15,
+          1.725
+        ]
+      },
+      "file": "models/BR_WallPanel.glb"
+    },
+    "BR_DoorPartition": {
+      "title": "Перегородка с проходом",
+      "biomes": [
+        "backrooms"
+      ],
+      "placement": "road_edge",
+      "note": "Ставить поперёк от края; открытый проём 6 × 9 studs, не перекрывать центр дороги.",
+      "pivot": "floor_center",
+      "intended_studs_per_unit": 1,
+      "front_axis": "-Z",
+      "up_axis": "+Y",
+      "default_collision": false,
+      "parts": [
+        {
+          "part": "Body",
+          "mesh": "BR_DoorPartition.Body",
+          "offset": [
+            0.0,
+            7.0,
+            -0.05
+          ],
+          "size": [
+            28.0,
+            14.0,
+            1.7
+          ],
+          "tint": null,
+          "attach": null,
+          "material": "SmoothPlastic",
+          "transparency": 0.0,
+          "collide": false,
+          "cast": true,
+          "tris": 156
+        }
+      ],
+      "triangles": 156,
+      "bounds": {
+        "min": [
+          -14.0,
+          0.0,
+          -0.9
+        ],
+        "max": [
+          14.0,
+          14.0,
+          0.8
+        ],
+        "size": [
+          28.0,
+          14.0,
+          1.7
+        ]
+      },
+      "file": "models/BR_DoorPartition.glb"
+    },
+    "BR_CornerPartition": {
+      "title": "Угловая перегородка",
+      "biomes": [
+        "backrooms"
+      ],
+      "placement": "road_edge",
+      "note": "Короткая Г-образная секция, без потолка.",
+      "pivot": "floor_center",
+      "intended_studs_per_unit": 1,
+      "front_axis": "-Z",
+      "up_axis": "+Y",
+      "default_collision": false,
+      "parts": [
+        {
+          "part": "Body",
+          "mesh": "BR_CornerPartition.Body",
+          "offset": [
+            0.0,
+            7.0,
+            4.45
+          ],
+          "size": [
+            20.0,
+            14.0,
+            10.5
+          ],
+          "tint": null,
+          "attach": null,
+          "material": "SmoothPlastic",
+          "transparency": 0.0,
+          "collide": false,
+          "cast": true,
+          "tris": 88
+        }
+      ],
+      "triangles": 88,
+      "bounds": {
+        "min": [
+          -10.0,
+          0.0,
+          -0.8
+        ],
+        "max": [
+          10.0,
+          14.0,
+          9.7
+        ],
+        "size": [
+          20.0,
+          14.0,
+          10.5
+        ]
+      },
+      "file": "models/BR_CornerPartition.glb"
+    },
+    "BR_Pillar": {
+      "title": "Квадратная колонна",
+      "biomes": [
+        "backrooms"
+      ],
+      "placement": "road",
+      "note": "",
+      "pivot": "floor_center",
+      "intended_studs_per_unit": 1,
+      "front_axis": "-Z",
+      "up_axis": "+Y",
+      "default_collision": false,
+      "parts": [
+        {
+          "part": "Body",
+          "mesh": "BR_Pillar.Body",
+          "offset": [
+            0.0,
+            8.0,
+            0.0
+          ],
+          "size": [
+            3.9,
+            16.0,
+            3.9
+          ],
+          "tint": null,
+          "attach": null,
+          "material": "SmoothPlastic",
+          "transparency": 0.0,
+          "collide": false,
+          "cast": true,
+          "tris": 56
+        }
+      ],
+      "triangles": 56,
+      "bounds": {
+        "min": [
+          -1.95,
+          0.0,
+          -1.95
+        ],
+        "max": [
+          1.95,
+          16.0,
+          1.95
+        ],
+        "size": [
+          3.9,
+          16.0,
+          3.9
+        ]
+      },
+      "file": "models/BR_Pillar.glb"
+    },
+    "BR_Fluorescent": {
+      "title": "Настенный светильник",
+      "biomes": [
+        "backrooms"
+      ],
+      "placement": "wall_mount",
+      "note": "Настенный модуль; светящаяся геометрия отдельно от корпуса. Источник света при интеграции.",
+      "pivot": "floor_center",
+      "intended_studs_per_unit": 1,
+      "front_axis": "-Z",
+      "up_axis": "+Y",
+      "default_collision": false,
+      "light_anchor": [
+        0,
+        0.65,
+        -0.8
+      ],
+      "parts": [
+        {
+          "part": "Body",
+          "mesh": "BR_Fluorescent.Body",
+          "offset": [
+            0.0,
+            0.65,
+            0.0
+          ],
+          "size": [
+            7.5,
+            1.3,
+            0.6
+          ],
+          "tint": null,
+          "attach": null,
+          "material": "SmoothPlastic",
+          "transparency": 0.0,
+          "collide": false,
+          "cast": true,
+          "tris": 44
+        },
+        {
+          "part": "Light",
+          "mesh": "BR_Fluorescent.Light",
+          "offset": [
+            0.0,
+            0.65,
+            -0.42
+          ],
+          "size": [
+            6.8,
+            0.64,
+            0.3
+          ],
+          "tint": null,
+          "attach": null,
+          "material": "Neon",
+          "transparency": 0.0,
+          "collide": false,
+          "cast": false,
+          "tris": 44,
+          "emission_srgb": "FFF5CC"
+        }
+      ],
+      "triangles": 88,
+      "bounds": {
+        "min": [
+          -3.75,
+          0.0,
+          -0.57
+        ],
+        "max": [
+          3.75,
+          1.3,
+          0.3
+        ],
+        "size": [
+          7.5,
+          1.3,
+          0.87
+        ]
+      },
+      "file": "models/BR_Fluorescent.glb"
+    },
+    "BM_EntranceOpen": {
+      "title": "Открытый вход шахты",
+      "biomes": [
+        "blood_mine"
+      ],
+      "placement": "wall",
+      "note": "Неглубокая скальная полоса; затемнена только ниша входа.",
+      "pivot": "floor_back_center",
+      "intended_studs_per_unit": 1,
+      "front_axis": "-Z",
+      "up_axis": "+Y",
+      "default_collision": false,
+      "light_anchor": [
+        0,
+        3,
+        -3
+      ],
+      "parts": [
+        {
+          "part": "Body",
+          "mesh": "BM_EntranceOpen.Body",
+          "offset": [
+            -0.07,
+            8.309,
+            -3.82
+          ],
+          "size": [
+            55.776,
+            16.619,
+            7.64
+          ],
+          "tint": null,
+          "attach": null,
+          "material": "SmoothPlastic",
+          "transparency": 0.0,
+          "collide": false,
+          "cast": true,
+          "tris": 644
+        },
+        {
+          "part": "OreGlow",
+          "mesh": "BM_EntranceOpen.OreGlow",
+          "offset": [
+            1.712,
+            4.215,
+            -2.067
+          ],
+          "size": [
+            6.701,
+            3.124,
+            0.23
+          ],
+          "tint": null,
+          "attach": null,
+          "material": "Neon",
+          "transparency": 0.0,
+          "collide": false,
+          "cast": false,
+          "tris": 28,
+          "emission_srgb": "8E3339"
+        }
+      ],
+      "triangles": 672,
+      "bounds": {
+        "min": [
+          -27.958,
+          -0.001,
+          -7.64
+        ],
+        "max": [
+          27.818,
+          16.618,
+          0.0
+        ],
+        "size": [
+          55.776,
+          16.619,
+          7.64
+        ]
+      },
+      "file": "models/BM_EntranceOpen.glb"
+    },
+    "BM_EntranceBoarded": {
+      "title": "Заколоченный вход",
+      "biomes": [
+        "blood_mine"
+      ],
+      "placement": "wall",
+      "note": "Неглубокая скальная полоса; затемнена только ниша входа.",
+      "pivot": "floor_back_center",
+      "intended_studs_per_unit": 1,
+      "front_axis": "-Z",
+      "up_axis": "+Y",
+      "default_collision": false,
+      "parts": [
+        {
+          "part": "Body",
+          "mesh": "BM_EntranceBoarded.Body",
+          "offset": [
+            -0.147,
+            8.348,
+            -3.742
+          ],
+          "size": [
+            57.357,
+            16.696,
+            7.485
+          ],
+          "tint": null,
+          "attach": null,
+          "material": "SmoothPlastic",
+          "transparency": 0.0,
+          "collide": false,
+          "cast": true,
+          "tris": 604
+        }
+      ],
+      "triangles": 604,
+      "bounds": {
+        "min": [
+          -28.825,
+          0.0,
+          -7.485
+        ],
+        "max": [
+          28.532,
+          16.696,
+          0.001
+        ],
+        "size": [
+          57.357,
+          16.696,
+          7.485
+        ]
+      },
+      "file": "models/BM_EntranceBoarded.glb"
+    },
+    "BM_RockWall": {
+      "title": "Скальная полоса",
+      "biomes": [
+        "blood_mine"
+      ],
+      "placement": "wall",
+      "note": "Неглубокая скальная полоса; затемнена только ниша входа.",
+      "pivot": "floor_back_center",
+      "intended_studs_per_unit": 1,
+      "front_axis": "-Z",
+      "up_axis": "+Y",
+      "default_collision": false,
+      "parts": [
+        {
+          "part": "Body",
+          "mesh": "BM_RockWall.Body",
+          "offset": [
+            0.153,
+            7.239,
+            -3.735
+          ],
+          "size": [
+            56.283,
+            14.479,
+            7.47
+          ],
+          "tint": null,
+          "attach": null,
+          "material": "SmoothPlastic",
+          "transparency": 0.0,
+          "collide": false,
+          "cast": true,
+          "tris": 460
+        }
+      ],
+      "triangles": 460,
+      "bounds": {
+        "min": [
+          -27.989,
+          -0.0,
+          -7.47
+        ],
+        "max": [
+          28.294,
+          14.479,
+          0.0
+        ],
+        "size": [
+          56.283,
+          14.479,
+          7.47
+        ]
+      },
+      "file": "models/BM_RockWall.glb"
+    },
+    "BM_OreCluster": {
+      "title": "Камни с кровавой рудой",
+      "biomes": [
+        "blood_mine"
+      ],
+      "placement": "road",
+      "note": "",
+      "pivot": "floor_center",
+      "intended_studs_per_unit": 1,
+      "front_axis": "-Z",
+      "up_axis": "+Y",
+      "default_collision": false,
+      "parts": [
+        {
+          "part": "Body",
+          "mesh": "BM_OreCluster.Body",
+          "offset": [
+            -0.536,
+            2.624,
+            -0.356
+          ],
+          "size": [
+            7.638,
+            5.249,
+            5.464
+          ],
+          "tint": null,
+          "attach": null,
+          "material": "SmoothPlastic",
+          "transparency": 0.0,
+          "collide": false,
+          "cast": true,
+          "tris": 80
+        }
+      ],
+      "triangles": 80,
+      "bounds": {
+        "min": [
+          -4.355,
+          -0.0,
+          -3.088
+        ],
+        "max": [
+          3.283,
+          5.248,
+          2.376
+        ],
+        "size": [
+          7.638,
+          5.249,
+          5.464
+        ]
+      },
+      "file": "models/BM_OreCluster.glb"
+    },
+    "BM_Minecart": {
+      "title": "Ржавая вагонетка",
+      "biomes": [
+        "blood_mine"
+      ],
+      "placement": "road",
+      "note": "",
+      "pivot": "floor_center",
+      "intended_studs_per_unit": 1,
+      "front_axis": "-Z",
+      "up_axis": "+Y",
+      "default_collision": false,
+      "parts": [
+        {
+          "part": "Body",
+          "mesh": "BM_Minecart.Body",
+          "offset": [
+            0.0,
+            2.93,
+            0.0
+          ],
+          "size": [
+            8.361,
+            5.86,
+            6.86
+          ],
+          "tint": null,
+          "attach": null,
+          "material": "SmoothPlastic",
+          "transparency": 0.0,
+          "collide": false,
+          "cast": true,
+          "tris": 448
+        }
+      ],
+      "triangles": 448,
+      "bounds": {
+        "min": [
+          -4.181,
+          0.0,
+          -3.43
+        ],
+        "max": [
+          4.181,
+          5.86,
+          3.43
+        ],
+        "size": [
+          8.361,
+          5.86,
+          6.86
+        ]
+      },
+      "file": "models/BM_Minecart.glb"
+    },
+    "BM_RailBroken": {
+      "title": "Короткие рельсы",
+      "biomes": [
+        "blood_mine"
+      ],
+      "placement": "road",
+      "note": "",
+      "pivot": "floor_center",
+      "intended_studs_per_unit": 1,
+      "front_axis": "-Z",
+      "up_axis": "+Y",
+      "default_collision": false,
+      "parts": [
+        {
+          "part": "Body",
+          "mesh": "BM_RailBroken.Body",
+          "offset": [
+            0.0,
+            0.445,
+            0.0
+          ],
+          "size": [
+            8.044,
+            0.89,
+            13.0
+          ],
+          "tint": null,
+          "attach": null,
+          "material": "SmoothPlastic",
+          "transparency": 0.0,
+          "collide": false,
+          "cast": true,
+          "tris": 84
+        }
+      ],
+      "triangles": 84,
+      "bounds": {
+        "min": [
+          -4.022,
+          0.0,
+          -6.5
+        ],
+        "max": [
+          4.022,
+          0.89,
+          6.5
+        ],
+        "size": [
+          8.044,
+          0.89,
+          13.0
+        ]
+      },
+      "file": "models/BM_RailBroken.glb"
+    },
+    "BM_TimberPile": {
+      "title": "Сломанные крепи",
+      "biomes": [
+        "blood_mine"
+      ],
+      "placement": "road",
+      "note": "",
+      "pivot": "floor_center",
+      "intended_studs_per_unit": 1,
+      "front_axis": "-Z",
+      "up_axis": "+Y",
+      "default_collision": false,
+      "parts": [
+        {
+          "part": "Body",
+          "mesh": "BM_TimberPile.Body",
+          "offset": [
+            0.0,
+            1.005,
+            0.046
+          ],
+          "size": [
+            11.929,
+            2.01,
+            6.051
+          ],
+          "tint": null,
+          "attach": null,
+          "material": "SmoothPlastic",
+          "transparency": 0.0,
+          "collide": false,
+          "cast": true,
+          "tris": 132
+        }
+      ],
+      "triangles": 132,
+      "bounds": {
+        "min": [
+          -5.965,
+          0.0,
+          -2.98
+        ],
+        "max": [
+          5.965,
+          2.01,
+          3.071
+        ],
+        "size": [
+          11.929,
+          2.01,
+          6.051
+        ]
+      },
+      "file": "models/BM_TimberPile.glb"
+    },
+    "BM_Torch": {
+      "title": "Факел шахты",
+      "biomes": [
+        "blood_mine"
+      ],
+      "placement": "road",
+      "note": "",
+      "pivot": "floor_center",
+      "intended_studs_per_unit": 1,
+      "front_axis": "-Z",
+      "up_axis": "+Y",
+      "default_collision": false,
+      "light_anchor": [
+        0,
+        7.6,
+        0
+      ],
+      "parts": [
+        {
+          "part": "Body",
+          "mesh": "BM_Torch.Body",
+          "offset": [
+            0.0,
+            3.525,
+            0.037
+          ],
+          "size": [
+            1.462,
+            7.05,
+            1.426
+          ],
+          "tint": null,
+          "attach": null,
+          "material": "SmoothPlastic",
+          "transparency": 0.0,
+          "collide": false,
+          "cast": true,
+          "tris": 68
+        },
+        {
+          "part": "Flame",
+          "mesh": "BM_Torch.Flame",
+          "offset": [
+            0.0,
+            7.6,
+            -0.022
+          ],
+          "size": [
+            1.163,
+            2.2,
+            0.981
+          ],
+          "tint": null,
+          "attach": null,
+          "material": "Neon",
+          "transparency": 0.0,
+          "collide": false,
+          "cast": false,
+          "tris": 40,
+          "emission_srgb": "FFB94F"
+        }
+      ],
+      "triangles": 108,
+      "bounds": {
+        "min": [
+          -0.731,
+          0.0,
+          -0.676
+        ],
+        "max": [
+          0.731,
+          8.7,
+          0.75
+        ],
+        "size": [
+          1.462,
+          8.7,
+          1.426
+        ]
+      },
+      "file": "models/BM_Torch.glb"
+    },
+    "AV_HouseLongA": {
+      "title": "Длинный деревенский дом",
+      "biomes": [
+        "village"
+      ],
+      "placement": "wall",
+      "note": "Вытянутый фасад, плоская задняя грань. Кровля и декор остаются в неглубокой полосе у стены.",
+      "pivot": "floor_back_center",
+      "intended_studs_per_unit": 1,
+      "front_axis": "-Z",
+      "up_axis": "+Y",
+      "default_collision": false,
+      "parts": [
+        {
+          "part": "Body",
+          "mesh": "AV_HouseLongA.Body",
+          "offset": [
+            0.0,
+            9.874,
+            -4.238
+          ],
+          "size": [
+            60.8,
+            19.749,
+            8.477
+          ],
+          "tint": null,
+          "attach": null,
+          "material": "SmoothPlastic",
+          "transparency": 0.0,
+          "collide": false,
+          "cast": true,
+          "tris": 1648
+        }
+      ],
+      "triangles": 1648,
+      "bounds": {
+        "min": [
+          -30.4,
+          -0.0,
+          -8.477
+        ],
+        "max": [
+          30.4,
+          19.748,
+          0.0
+        ],
+        "size": [
+          60.8,
+          19.749,
+          8.477
+        ]
+      },
+      "file": "models/AV_HouseLongA.glb"
+    },
+    "AV_HouseLongB": {
+      "title": "Дом с заколоченной дверью",
+      "biomes": [
+        "village"
+      ],
+      "placement": "wall",
+      "note": "Вытянутый фасад, плоская задняя грань. Кровля и декор остаются в неглубокой полосе у стены.",
+      "pivot": "floor_back_center",
+      "intended_studs_per_unit": 1,
+      "front_axis": "-Z",
+      "up_axis": "+Y",
+      "default_collision": false,
+      "parts": [
+        {
+          "part": "Body",
+          "mesh": "AV_HouseLongB.Body",
+          "offset": [
+            0.0,
+            11.213,
+            -4.271
+          ],
+          "size": [
+            60.8,
+            22.425,
+            8.542
+          ],
+          "tint": null,
+          "attach": null,
+          "material": "SmoothPlastic",
+          "transparency": 0.0,
+          "collide": false,
+          "cast": true,
+          "tris": 1716
+        }
+      ],
+      "triangles": 1716,
+      "bounds": {
+        "min": [
+          -30.4,
+          0.0,
+          -8.542
+        ],
+        "max": [
+          30.4,
+          22.425,
+          0.0
+        ],
+        "size": [
+          60.8,
+          22.425,
+          8.542
+        ]
+      },
+      "file": "models/AV_HouseLongB.glb"
+    },
+    "AV_FenceBroken": {
+      "title": "Сломанный забор",
+      "biomes": [
+        "village"
+      ],
+      "placement": "road_edge",
+      "note": "",
+      "pivot": "floor_center",
+      "intended_studs_per_unit": 1,
+      "front_axis": "-Z",
+      "up_axis": "+Y",
+      "default_collision": false,
+      "parts": [
+        {
+          "part": "Body",
+          "mesh": "AV_FenceBroken.Body",
+          "offset": [
+            0.0,
+            1.714,
+            -0.1
+          ],
+          "size": [
+            12.6,
+            3.429,
+            0.9
+          ],
+          "tint": null,
+          "attach": null,
+          "material": "SmoothPlastic",
+          "transparency": 0.0,
+          "collide": false,
+          "cast": true,
+          "tris": 84
+        }
+      ],
+      "triangles": 84,
+      "bounds": {
+        "min": [
+          -6.3,
+          -0.0,
+          -0.55
+        ],
+        "max": [
+          6.3,
+          3.428,
+          0.35
+        ],
+        "size": [
+          12.6,
+          3.429,
+          0.9
+        ]
+      },
+      "file": "models/AV_FenceBroken.glb"
+    },
+    "AV_Well": {
+      "title": "Старый колодец",
+      "biomes": [
+        "village"
+      ],
+      "placement": "road",
+      "note": "",
+      "pivot": "floor_center",
+      "intended_studs_per_unit": 1,
+      "front_axis": "-Z",
+      "up_axis": "+Y",
+      "default_collision": false,
+      "parts": [
+        {
+          "part": "Body",
+          "mesh": "AV_Well.Body",
+          "offset": [
+            0.0,
+            4.0,
+            0.0
+          ],
+          "size": [
+            8.0,
+            8.0,
+            7.066
+          ],
+          "tint": null,
+          "attach": null,
+          "material": "SmoothPlastic",
+          "transparency": 0.0,
+          "collide": false,
+          "cast": true,
+          "tris": 996
+        }
+      ],
+      "triangles": 996,
+      "bounds": {
+        "min": [
+          -4.0,
+          0.0,
+          -3.533
+        ],
+        "max": [
+          4.0,
+          8.0,
+          3.533
+        ],
+        "size": [
+          8.0,
+          8.0,
+          7.066
+        ]
+      },
+      "file": "models/AV_Well.glb"
+    },
+    "AV_Cart": {
+      "title": "Деревянная телега",
+      "biomes": [
+        "village"
+      ],
+      "placement": "road",
+      "note": "",
+      "pivot": "floor_center",
+      "intended_studs_per_unit": 1,
+      "front_axis": "-Z",
+      "up_axis": "+Y",
+      "default_collision": false,
+      "parts": [
+        {
+          "part": "Body",
+          "mesh": "AV_Cart.Body",
+          "offset": [
+            0.0,
+            2.71,
+            -3.499
+          ],
+          "size": [
+            8.84,
+            5.42,
+            14.998
+          ],
+          "tint": null,
+          "attach": null,
+          "material": "SmoothPlastic",
+          "transparency": 0.0,
+          "collide": false,
+          "cast": true,
+          "tris": 504
+        }
+      ],
+      "triangles": 504,
+      "bounds": {
+        "min": [
+          -4.42,
+          0.0,
+          -10.998
+        ],
+        "max": [
+          4.42,
+          5.42,
+          4.0
+        ],
+        "size": [
+          8.84,
+          5.42,
+          14.998
+        ]
+      },
+      "file": "models/AV_Cart.glb"
+    },
+    "AV_DeadTree": {
+      "title": "Сухое дерево",
+      "biomes": [
+        "village"
+      ],
+      "placement": "road",
+      "note": "",
+      "pivot": "floor_center",
+      "intended_studs_per_unit": 1,
+      "front_axis": "-Z",
+      "up_axis": "+Y",
+      "default_collision": false,
+      "parts": [
+        {
+          "part": "Body",
+          "mesh": "AV_DeadTree.Body",
+          "offset": [
+            -0.483,
+            8.577,
+            0.57
+          ],
+          "size": [
+            13.047,
+            17.154,
+            4.951
+          ],
+          "tint": null,
+          "attach": null,
+          "material": "SmoothPlastic",
+          "transparency": 0.0,
+          "collide": false,
+          "cast": true,
+          "tris": 304
+        }
+      ],
+      "triangles": 304,
+      "bounds": {
+        "min": [
+          -7.006,
+          0.0,
+          -1.905
+        ],
+        "max": [
+          6.041,
+          17.154,
+          3.045
+        ],
+        "size": [
+          13.047,
+          17.154,
+          4.951
+        ]
+      },
+      "file": "models/AV_DeadTree.glb"
+    },
+    "AC_FacadeLongA": {
+      "title": "Длинный городской фасад",
+      "biomes": [
+        "city"
+      ],
+      "placement": "wall",
+      "note": "Низкий длинный городской фасад с плоской задней гранью.",
+      "pivot": "floor_back_center",
+      "intended_studs_per_unit": 1,
+      "front_axis": "-Z",
+      "up_axis": "+Y",
+      "default_collision": false,
+      "parts": [
+        {
+          "part": "Body",
+          "mesh": "AC_FacadeLongA.Body",
+          "offset": [
+            0.0,
+            11.6,
+            -3.832
+          ],
+          "size": [
+            64.7,
+            23.2,
+            7.665
+          ],
+          "tint": null,
+          "attach": null,
+          "material": "SmoothPlastic",
+          "transparency": 0.0,
+          "collide": false,
+          "cast": true,
+          "tris": 672
+        }
+      ],
+      "triangles": 672,
+      "bounds": {
+        "min": [
+          -32.35,
+          0.0,
+          -7.665
+        ],
+        "max": [
+          32.35,
+          23.2,
+          0.001
+        ],
+        "size": [
+          64.7,
+          23.2,
+          7.665
+        ]
+      },
+      "file": "models/AC_FacadeLongA.glb"
+    },
+    "AC_FacadeLongB": {
+      "title": "Фасад с глухой секцией",
+      "biomes": [
+        "city"
+      ],
+      "placement": "wall",
+      "note": "Низкий длинный городской фасад с плоской задней гранью.",
+      "pivot": "floor_back_center",
+      "intended_studs_per_unit": 1,
+      "front_axis": "-Z",
+      "up_axis": "+Y",
+      "default_collision": false,
+      "parts": [
+        {
+          "part": "Body",
+          "mesh": "AC_FacadeLongB.Body",
+          "offset": [
+            0.0,
+            11.6,
+            -3.832
+          ],
+          "size": [
+            64.7,
+            23.2,
+            7.665
+          ],
+          "tint": null,
+          "attach": null,
+          "material": "SmoothPlastic",
+          "transparency": 0.0,
+          "collide": false,
+          "cast": true,
+          "tris": 656
+        }
+      ],
+      "triangles": 656,
+      "bounds": {
+        "min": [
+          -32.35,
+          0.0,
+          -7.665
+        ],
+        "max": [
+          32.35,
+          23.2,
+          0.001
+        ],
+        "size": [
+          64.7,
+          23.2,
+          7.665
+        ]
+      },
+      "file": "models/AC_FacadeLongB.glb"
+    },
+    "AC_CarBlue": {
+      "title": "Брошенная синяя машина",
+      "biomes": [
+        "city"
+      ],
+      "placement": "road",
+      "note": "",
+      "pivot": "floor_center",
+      "intended_studs_per_unit": 1,
+      "front_axis": "-Z",
+      "up_axis": "+Y",
+      "default_collision": false,
+      "parts": [
+        {
+          "part": "Body",
+          "mesh": "AC_CarBlue.Body",
+          "offset": [
+            0.0,
+            2.794,
+            0.0
+          ],
+          "size": [
+            6.82,
+            5.589,
+            12.5
+          ],
+          "tint": null,
+          "attach": null,
+          "material": "SmoothPlastic",
+          "transparency": 0.0,
+          "collide": false,
+          "cast": true,
+          "tris": 500
+        }
+      ],
+      "triangles": 500,
+      "bounds": {
+        "min": [
+          -3.41,
+          -0.001,
+          -6.25
+        ],
+        "max": [
+          3.41,
+          5.588,
+          6.25
+        ],
+        "size": [
+          6.82,
+          5.589,
+          12.5
+        ]
+      },
+      "file": "models/AC_CarBlue.glb"
+    },
+    "AC_CarRust": {
+      "title": "Брошенная ржавая машина",
+      "biomes": [
+        "city"
+      ],
+      "placement": "road",
+      "note": "",
+      "pivot": "floor_center",
+      "intended_studs_per_unit": 1,
+      "front_axis": "-Z",
+      "up_axis": "+Y",
+      "default_collision": false,
+      "parts": [
+        {
+          "part": "Body",
+          "mesh": "AC_CarRust.Body",
+          "offset": [
+            0.0,
+            2.794,
+            0.0
+          ],
+          "size": [
+            6.82,
+            5.589,
+            12.5
+          ],
+          "tint": null,
+          "attach": null,
+          "material": "SmoothPlastic",
+          "transparency": 0.0,
+          "collide": false,
+          "cast": true,
+          "tris": 500
+        }
+      ],
+      "triangles": 500,
+      "bounds": {
+        "min": [
+          -3.41,
+          -0.001,
+          -6.25
+        ],
+        "max": [
+          3.41,
+          5.588,
+          6.25
+        ],
+        "size": [
+          6.82,
+          5.589,
+          12.5
+        ]
+      },
+      "file": "models/AC_CarRust.glb"
+    },
+    "AC_Streetlight": {
+      "title": "Наклонённый фонарь",
+      "biomes": [
+        "city"
+      ],
+      "placement": "road",
+      "note": "",
+      "pivot": "floor_center",
+      "intended_studs_per_unit": 1,
+      "front_axis": "-Z",
+      "up_axis": "+Y",
+      "default_collision": false,
+      "light_anchor": [
+        5,
+        17,
+        -0.1
+      ],
+      "parts": [
+        {
+          "part": "Body",
+          "mesh": "AC_Streetlight.Body",
+          "offset": [
+            3.158,
+            9.1,
+            0.0
+          ],
+          "size": [
+            6.784,
+            18.2,
+            1.3
+          ],
+          "tint": null,
+          "attach": null,
+          "material": "SmoothPlastic",
+          "transparency": 0.0,
+          "collide": false,
+          "cast": true,
+          "tris": 132
+        },
+        {
+          "part": "Light",
+          "mesh": "AC_Streetlight.Light",
+          "offset": [
+            5.0,
+            17.453,
+            -0.1
+          ],
+          "size": [
+            2.6,
+            0.12,
+            1.0
+          ],
+          "tint": null,
+          "attach": null,
+          "material": "Neon",
+          "transparency": 0.0,
+          "collide": false,
+          "cast": false,
+          "tris": 44,
+          "emission_srgb": "E9D18B"
+        }
+      ],
+      "triangles": 176,
+      "bounds": {
+        "min": [
+          -0.234,
+          0.0,
+          -0.65
+        ],
+        "max": [
+          6.55,
+          18.2,
+          0.65
+        ],
+        "size": [
+          6.784,
+          18.2,
+          1.3
+        ]
+      },
+      "file": "models/AC_Streetlight.glb"
+    },
+    "AC_PlanterTree": {
+      "title": "Сухое дерево в клумбе",
+      "biomes": [
+        "city"
+      ],
+      "placement": "road",
+      "note": "",
+      "pivot": "floor_center",
+      "intended_studs_per_unit": 1,
+      "front_axis": "-Z",
+      "up_axis": "+Y",
+      "default_collision": false,
+      "parts": [
+        {
+          "part": "Body",
+          "mesh": "AC_PlanterTree.Body",
+          "offset": [
+            -0.435,
+            7.977,
+            0.0
+          ],
+          "size": [
+            11.742,
+            15.954,
+            8.0
+          ],
+          "tint": null,
+          "attach": null,
+          "material": "SmoothPlastic",
+          "transparency": 0.0,
+          "collide": false,
+          "cast": true,
+          "tris": 324
+        }
+      ],
+      "triangles": 324,
+      "bounds": {
+        "min": [
+          -6.306,
+          0.0,
+          -4.0
+        ],
+        "max": [
+          5.436,
+          15.954,
+          4.0
+        ],
+        "size": [
+          11.742,
+          15.954,
+          8.0
+        ]
+      },
+      "file": "models/AC_PlanterTree.glb"
+    },
+    "PT_InfectedFacadeA": {
+      "title": "Заражённый фасад A",
+      "biomes": [
+        "parasitown"
+      ],
+      "placement": "wall",
+      "note": "Фасад вдоль стены; заражение прилегает к зданию, щупалец на дороге нет.",
+      "pivot": "floor_back_center",
+      "intended_studs_per_unit": 1,
+      "front_axis": "-Z",
+      "up_axis": "+Y",
+      "default_collision": false,
+      "parts": [
+        {
+          "part": "Body",
+          "mesh": "PT_InfectedFacadeA.Body",
+          "offset": [
+            0.331,
+            10.85,
+            -4.278
+          ],
+          "size": [
+            65.362,
+            21.7,
+            8.555
+          ],
+          "tint": null,
+          "attach": null,
+          "material": "SmoothPlastic",
+          "transparency": 0.0,
+          "collide": false,
+          "cast": true,
+          "tris": 1388
+        }
+      ],
+      "triangles": 1388,
+      "bounds": {
+        "min": [
+          -32.35,
+          0.0,
+          -8.555
+        ],
+        "max": [
+          33.012,
+          21.7,
+          -0.0
+        ],
+        "size": [
+          65.362,
+          21.7,
+          8.555
+        ]
+      },
+      "file": "models/PT_InfectedFacadeA.glb"
+    },
+    "PT_InfectedFacadeB": {
+      "title": "Заражённый фасад B",
+      "biomes": [
+        "parasitown"
+      ],
+      "placement": "wall",
+      "note": "Фасад вдоль стены; заражение прилегает к зданию, щупалец на дороге нет.",
+      "pivot": "floor_back_center",
+      "intended_studs_per_unit": 1,
+      "front_axis": "-Z",
+      "up_axis": "+Y",
+      "default_collision": false,
+      "parts": [
+        {
+          "part": "Body",
+          "mesh": "PT_InfectedFacadeB.Body",
+          "offset": [
+            0.0,
+            10.85,
+            -4.278
+          ],
+          "size": [
+            64.7,
+            21.7,
+            8.555
+          ],
+          "tint": null,
+          "attach": null,
+          "material": "SmoothPlastic",
+          "transparency": 0.0,
+          "collide": false,
+          "cast": true,
+          "tris": 1432
+        }
+      ],
+      "triangles": 1432,
+      "bounds": {
+        "min": [
+          -32.35,
+          0.0,
+          -8.555
+        ],
+        "max": [
+          32.35,
+          21.7,
+          -0.0
+        ],
+        "size": [
+          64.7,
+          21.7,
+          8.555
+        ]
+      },
+      "file": "models/PT_InfectedFacadeB.glb"
+    },
+    "PT_InfectionPatch": {
+      "title": "Плоский очаг заражения",
+      "biomes": [
+        "parasitown"
+      ],
+      "placement": "wall_base",
+      "note": "Только у подножия фасада или на арене, не заполнять проезжую часть.",
+      "pivot": "floor_center",
+      "intended_studs_per_unit": 1,
+      "front_axis": "-Z",
+      "up_axis": "+Y",
+      "default_collision": false,
+      "parts": [
+        {
+          "part": "Body",
+          "mesh": "PT_InfectionPatch.Body",
+          "offset": [
+            0.167,
+            0.045,
+            0.279
+          ],
+          "size": [
+            7.988,
+            0.09,
+            9.609
+          ],
+          "tint": null,
+          "attach": null,
+          "material": "SmoothPlastic",
+          "transparency": 0.0,
+          "collide": false,
+          "cast": true,
+          "tris": 232
+        }
+      ],
+      "triangles": 232,
+      "bounds": {
+        "min": [
+          -3.827,
+          0.0,
+          -4.526
+        ],
+        "max": [
+          4.161,
+          0.09,
+          5.083
+        ],
+        "size": [
+          7.988,
+          0.09,
+          9.609
+        ]
+      },
+      "file": "models/PT_InfectionPatch.glb"
+    },
+    "PT_WallGrowth": {
+      "title": "Пристенный нарост",
+      "biomes": [
+        "parasitown"
+      ],
+      "placement": "wall_mount",
+      "note": "Прилегает к плоскости стены; не использовать как щупальце на дороге.",
+      "pivot": "floor_center",
+      "intended_studs_per_unit": 1,
+      "front_axis": "-Z",
+      "up_axis": "+Y",
+      "default_collision": false,
+      "parts": [
+        {
+          "part": "Body",
+          "mesh": "PT_WallGrowth.Body",
+          "offset": [
+            1.458,
+            8.034,
+            -0.0
+          ],
+          "size": [
+            7.092,
+            16.068,
+            1.399
+          ],
+          "tint": null,
+          "attach": null,
+          "material": "SmoothPlastic",
+          "transparency": 0.0,
+          "collide": false,
+          "cast": true,
+          "tris": 106
+        }
+      ],
+      "triangles": 106,
+      "bounds": {
+        "min": [
+          -2.088,
+          0.0,
+          -0.7
+        ],
+        "max": [
+          5.004,
+          16.068,
+          0.7
+        ],
+        "size": [
+          7.092,
+          16.068,
+          1.399
+        ]
+      },
+      "file": "models/PT_WallGrowth.glb"
+    },
+    "PT_ArenaTentacleTall": {
+      "title": "Щупальце арены — высокое",
+      "biomes": [
+        "parasitown"
+      ],
+      "placement": "arena_only",
+      "note": "ТОЛЬКО АРЕНА. На дороге не размещать.",
+      "pivot": "floor_center",
+      "intended_studs_per_unit": 1,
+      "front_axis": "-Z",
+      "up_axis": "+Y",
+      "default_collision": false,
+      "road_allowed": false,
+      "parts": [
+        {
+          "part": "Body",
+          "mesh": "PT_ArenaTentacleTall.Body",
+          "offset": [
+            0.234,
+            12.134,
+            0.39
+          ],
+          "size": [
+            11.184,
+            24.267,
+            13.452
+          ],
+          "tint": null,
+          "attach": null,
+          "material": "SmoothPlastic",
+          "transparency": 0.0,
+          "collide": false,
+          "cast": true,
+          "tris": 536
+        }
+      ],
+      "triangles": 536,
+      "bounds": {
+        "min": [
+          -5.358,
+          0.001,
+          -6.336
+        ],
+        "max": [
+          5.826,
+          24.267,
+          7.116
+        ],
+        "size": [
+          11.184,
+          24.267,
+          13.452
+        ]
+      },
+      "file": "models/PT_ArenaTentacleTall.glb"
+    },
+    "PT_ArenaTentacleHook": {
+      "title": "Щупальце арены — изогнутое",
+      "biomes": [
+        "parasitown"
+      ],
+      "placement": "arena_only",
+      "note": "ТОЛЬКО АРЕНА. На дороге не размещать.",
+      "pivot": "floor_center",
+      "intended_studs_per_unit": 1,
+      "front_axis": "-Z",
+      "up_axis": "+Y",
+      "default_collision": false,
+      "road_allowed": false,
+      "parts": [
+        {
+          "part": "Body",
+          "mesh": "PT_ArenaTentacleHook.Body",
+          "offset": [
+            0.297,
+            9.409,
+            0.39
+          ],
+          "size": [
+            11.31,
+            18.818,
+            13.452
+          ],
+          "tint": null,
+          "attach": null,
+          "material": "SmoothPlastic",
+          "transparency": 0.0,
+          "collide": false,
+          "cast": true,
+          "tris": 536
+        }
+      ],
+      "triangles": 536,
+      "bounds": {
+        "min": [
+          -5.358,
+          0.0,
+          -6.336
+        ],
+        "max": [
+          5.952,
+          18.818,
+          7.116
+        ],
+        "size": [
+          11.31,
+          18.818,
+          13.452
+        ]
+      },
+      "file": "models/PT_ArenaTentacleHook.glb"
+    },
+    "SH_Crate": {
+      "title": "Деревянный ящик",
+      "biomes": [
+        "village",
+        "city"
+      ],
+      "placement": "road",
+      "note": "",
+      "pivot": "floor_center",
+      "intended_studs_per_unit": 1,
+      "front_axis": "-Z",
+      "up_axis": "+Y",
+      "default_collision": false,
+      "parts": [
+        {
+          "part": "Body",
+          "mesh": "SH_Crate.Body",
+          "offset": [
+            0.0,
+            2.1,
+            0.0
+          ],
+          "size": [
+            4.6,
+            4.2,
+            4.67
+          ],
+          "tint": null,
+          "attach": null,
+          "material": "SmoothPlastic",
+          "transparency": 0.0,
+          "collide": false,
+          "cast": true,
+          "tris": 260
+        }
+      ],
+      "triangles": 260,
+      "bounds": {
+        "min": [
+          -2.3,
+          0.0,
+          -2.335
+        ],
+        "max": [
+          2.3,
+          4.2,
+          2.335
+        ],
+        "size": [
+          4.6,
+          4.2,
+          4.67
+        ]
+      },
+      "file": "models/SH_Crate.glb"
+    },
+    "SH_Barrel": {
+      "title": "Деревянная бочка",
+      "biomes": [
+        "village",
+        "city"
+      ],
+      "placement": "road",
+      "note": "",
+      "pivot": "floor_center",
+      "intended_studs_per_unit": 1,
+      "front_axis": "-Z",
+      "up_axis": "+Y",
+      "default_collision": false,
+      "parts": [
+        {
+          "part": "Body",
+          "mesh": "SH_Barrel.Body",
+          "offset": [
+            0.0,
+            2.395,
+            0.0
+          ],
+          "size": [
+            4.0,
+            4.79,
+            4.0
+          ],
+          "tint": null,
+          "attach": null,
+          "material": "SmoothPlastic",
+          "transparency": 0.0,
+          "collide": false,
+          "cast": true,
+          "tris": 248
+        }
+      ],
+      "triangles": 248,
+      "bounds": {
+        "min": [
+          -2.0,
+          0.0,
+          -2.0
+        ],
+        "max": [
+          2.0,
+          4.79,
+          2.0
+        ],
+        "size": [
+          4.0,
+          4.79,
+          4.0
+        ]
+      },
+      "file": "models/SH_Barrel.glb"
+    },
+    "SH_Rubble": {
+      "title": "Небольшой каменный завал",
+      "biomes": [
+        "blood_mine",
+        "city"
+      ],
+      "placement": "road",
+      "note": "",
+      "pivot": "floor_center",
+      "intended_studs_per_unit": 1,
+      "front_axis": "-Z",
+      "up_axis": "+Y",
+      "default_collision": false,
+      "parts": [
+        {
+          "part": "Body",
+          "mesh": "SH_Rubble.Body",
+          "offset": [
+            -0.188,
+            1.915,
+            -0.021
+          ],
+          "size": [
+            7.596,
+            3.83,
+            5.603
+          ],
+          "tint": null,
+          "attach": null,
+          "material": "SmoothPlastic",
+          "transparency": 0.0,
+          "collide": false,
+          "cast": true,
+          "tris": 80
+        }
+      ],
+      "triangles": 80,
+      "bounds": {
+        "min": [
+          -3.986,
+          0.0,
+          -2.822
+        ],
+        "max": [
+          3.61,
+          3.83,
+          2.78
+        ],
+        "size": [
+          7.596,
+          3.83,
+          5.603
+        ]
+      },
+      "file": "models/SH_Rubble.glb"
+    }
+  }
+}

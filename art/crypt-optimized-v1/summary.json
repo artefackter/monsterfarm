@@ -1,0 +1,57 @@
+{
+  "before": {
+    "triangles": 7822,
+    "meshes": 8,
+    "primitives": 30,
+    "materials": 13,
+    "bytes": 634560
+  },
+  "after": {
+    "triangles": 3751,
+    "meshes": 5,
+    "primitives": 5,
+    "materials": 5,
+    "bytes": 286220
+  },
+  "reduction_percent": {
+    "triangles": 52.05,
+    "meshes": 37.5,
+    "primitives": 83.33,
+    "materials": 61.54,
+    "bytes": 54.89
+  },
+  "max_linear_color_error": 7.311355581525458e-06,
+  "position_normal_precision": "float32",
+  "indices": "uint16",
+  "palette": "linear UNORM16",
+  "external_dependencies": false,
+  "special_compression_decoder": false,
+  "groups": [
+    {
+      "name": "StoneAndRoof",
+      "vertices": 6373,
+      "triangles": 2965
+    },
+    {
+      "name": "Bronze",
+      "vertices": 352,
+      "triangles": 156
+    },
+    {
+      "name": "VioletInlays",
+      "vertices": 424,
+      "triangles": 192
+    },
+    {
+      "name": "Iron",
+      "vertices": 728,
+      "triangles": 350
+    },
+    {
+      "name": "LanternLight",
+      "vertices": 192,
+      "triangles": 88
+    }
+  ],
+  "sha256": "8f3505789a50ddbac6076368b3c33925b0a59d8a5035d4d6bd4a74db927060e7"
+}

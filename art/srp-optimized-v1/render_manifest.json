@@ -1,0 +1,101 @@
+{
+  "renders": [
+    {
+      "id": "DredgeKing",
+      "pose": "rest",
+      "profile": "original",
+      "file": "previews/original/DredgeKing_rest.png"
+    },
+    {
+      "id": "DredgeKing",
+      "pose": "rest",
+      "profile": "optimized",
+      "file": "previews/optimized/DredgeKing_rest.png"
+    },
+    {
+      "id": "DredgeKing",
+      "pose": "posed",
+      "profile": "original",
+      "file": "previews/original/DredgeKing_posed.png"
+    },
+    {
+      "id": "DredgeKing",
+      "pose": "posed",
+      "profile": "optimized",
+      "file": "previews/optimized/DredgeKing_posed.png"
+    },
+    {
+      "id": "AssimilatedAdventurerFarmer",
+      "pose": "rest",
+      "profile": "original",
+      "file": "previews/original/AssimilatedAdventurerFarmer_rest.png"
+    },
+    {
+      "id": "AssimilatedAdventurerFarmer",
+      "pose": "rest",
+      "profile": "optimized",
+      "file": "previews/optimized/AssimilatedAdventurerFarmer_rest.png"
+    },
+    {
+      "id": "AssimilatedAdventurerFarmer",
+      "pose": "posed",
+      "profile": "original",
+      "file": "previews/original/AssimilatedAdventurerFarmer_posed.png"
+    },
+    {
+      "id": "AssimilatedAdventurerFarmer",
+      "pose": "posed",
+      "profile": "optimized",
+      "file": "previews/optimized/AssimilatedAdventurerFarmer_posed.png"
+    },
+    {
+      "id": "PrimitiveSummonerNefor",
+      "pose": "rest",
+      "profile": "original",
+      "file": "previews/original/PrimitiveSummonerNefor_rest.png"
+    },
+    {
+      "id": "PrimitiveSummonerNefor",
+      "pose": "rest",
+      "profile": "optimized",
+      "file": "previews/optimized/PrimitiveSummonerNefor_rest.png"
+    },
+    {
+      "id": "PrimitiveSummonerNefor",
+      "pose": "posed",
+      "profile": "original",
+      "file": "previews/original/PrimitiveSummonerNefor_posed.png"
+    },
+    {
+      "id": "PrimitiveSummonerNefor",
+      "pose": "posed",
+      "profile": "optimized",
+      "file": "previews/optimized/PrimitiveSummonerNefor_posed.png"
+    },
+    {
+      "id": "AdaptedVisceraKnight",
+      "pose": "rest",
+      "profile": "original",
+      "file": "previews/original/AdaptedVisceraKnight_rest.png"
+    },
+    {
+      "id": "AdaptedVisceraKnight",
+      "pose": "rest",
+      "profile": "optimized",
+      "file": "previews/optimized/AdaptedVisceraKnight_rest.png"
+    },
+    {
+      "id": "AdaptedVisceraKnight",
+      "pose": "posed",
+      "profile": "original",
+      "file": "previews/original/AdaptedVisceraKnight_posed.png"
+    },
+    {
+      "id": "AdaptedVisceraKnight",
+      "pose": "posed",
+      "profile": "optimized",
+      "file": "previews/optimized/AdaptedVisceraKnight_posed.png"
+    }
+  ],
+  "source_files_unchanged": 837
+}

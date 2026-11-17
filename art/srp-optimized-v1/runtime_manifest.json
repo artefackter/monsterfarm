@@ -1,0 +1,752 @@
+{
+  "status": "optimized_offline_copies_pending_visual_approval",
+  "game_integrated": false,
+  "models": [
+    {
+      "id": "DredgeFarmer",
+      "character": "Dredge",
+      "role": "Farmer",
+      "file": "models/DredgeFarmer.glb",
+      "sha256": "c5d7909c32b6ad1594408f54240fd62d03b34a8e02249a2b4237373125936db9",
+      "input_bytes": 1093384,
+      "output_bytes": 871428,
+      "input_vertices": 18502,
+      "output_vertices": 18502,
+      "triangles": 7994,
+      "bones": 29,
+      "meshes": 1,
+      "materials": 1,
+      "animation_clips": 0,
+      "max_linear_color_error": 7.626171914965063e-06,
+      "max_weight_error": 7.629510948348184e-06,
+      "extensions_preserved": [
+        "KHR_materials_specular"
+      ],
+      "geometry_changed": false
+    },
+    {
+      "id": "DredgeMiner",
+      "character": "Dredge",
+      "role": "Miner",
+      "file": "models/DredgeMiner.glb",
+      "sha256": "faa3cb4942a550eaf3e6c8d9792d874a5f00d01c8179c124c4f89d2016bab2cd",
+      "input_bytes": 1021836,
+      "output_bytes": 814572,
+      "input_vertices": 17278,
+      "output_vertices": 17278,
+      "triangles": 7494,
+      "bones": 29,
+      "meshes": 1,
+      "materials": 1,
+      "animation_clips": 0,
+      "max_linear_color_error": 7.626171914965063e-06,
+      "max_weight_error": 7.629510948348184e-06,
+      "extensions_preserved": [
+        "KHR_materials_specular"
+      ],
+      "geometry_changed": false
+    },
+    {
+      "id": "DredgeKing",
+      "character": "Dredge",
+      "role": "King",
+      "file": "models/DredgeKing.glb",
+      "sha256": "8bc4bf56b01d8024a1bea4761b93a3b1c0d69d7bb469089e0ae6f287769e6861",
+      "input_bytes": 1108340,
+      "output_bytes": 883312,
+      "input_vertices": 18758,
+      "output_vertices": 18758,
+      "triangles": 8098,
+      "bones": 29,
+      "meshes": 1,
+      "materials": 1,
+      "animation_clips": 0,
+      "max_linear_color_error": 7.626171914965063e-06,
+      "max_weight_error": 7.629510948348184e-06,
+      "extensions_preserved": [
+        "KHR_materials_specular"
+      ],
+      "geometry_changed": false
+    },
+    {
+      "id": "DredgeKnight",
+      "character": "Dredge",
+      "role": "Knight",
+      "file": "models/DredgeKnight.glb",
+      "sha256": "2c20ce3364d41957109b07fa7fbf276b60dd9036428d86cdd389f2759267d8f8",
+      "input_bytes": 1027480,
+      "output_bytes": 819060,
+      "input_vertices": 17374,
+      "output_vertices": 17374,
+      "triangles": 7538,
+      "bones": 29,
+      "meshes": 1,
+      "materials": 1,
+      "animation_clips": 0,
+      "max_linear_color_error": 7.626171914965063e-06,
+      "max_weight_error": 7.629510948348184e-06,
+      "extensions_preserved": [
+        "KHR_materials_specular"
+      ],
+      "geometry_changed": false
+    },
+    {
+      "id": "DredgeNefor",
+      "character": "Dredge",
+      "role": "Nefor",
+      "file": "models/DredgeNefor.glb",
+      "sha256": "5a7ac9b2b9ca332feb8c36fdedf28fb73fd2ad4000542c68ce9b72e2cf3f9f47",
+      "input_bytes": 1264860,
+      "output_bytes": 1007340,
+      "input_vertices": 21466,
+      "output_vertices": 21466,
+      "triangles": 8910,
+      "bones": 29,
+      "meshes": 1,
+      "materials": 1,
+      "animation_clips": 0,
+      "max_linear_color_error": 7.626171914965063e-06,
+      "max_weight_error": 7.629510948348184e-06,
+      "extensions_preserved": [
+        "KHR_materials_specular"
+      ],
+      "geometry_changed": false
+    },
+    {
+      "id": "DredgeKiller",
+      "character": "Dredge",
+      "role": "Killer",
+      "file": "models/DredgeKiller.glb",
+      "sha256": "a2c2a05d0943fe5250d58ccd6900b26b0bb8ae149b3f7f9e19682eb6107bdf37",
+      "input_bytes": 1020488,
+      "output_bytes": 813484,
+      "input_vertices": 17256,
+      "output_vertices": 17256,
+      "triangles": 7474,
+      "bones": 29,
+      "meshes": 1,
+      "materials": 1,
+      "animation_clips": 0,
+      "max_linear_color_error": 7.626171914965063e-06,
+      "max_weight_error": 7.629510948348184e-06,
+      "extensions_preserved": [
+        "KHR_materials_specular"
+      ],
+      "geometry_changed": false
+    },
+    {
+      "id": "AssimilatedAdventurerFarmer",
+      "character": "AssimilatedAdventurer",
+      "role": "Farmer",
+      "file": "models/AssimilatedAdventurerFarmer.glb",
+      "sha256": "74d6bc1641cabd0289ff2dcdf4c50c5992c3f4766883c1e5b87ef733a30e92ac",
+      "input_bytes": 473228,
+      "output_bytes": 378044,
+      "input_vertices": 7938,
+      "output_vertices": 7938,
+      "triangles": 3540,
+      "bones": 21,
+      "meshes": 1,
+      "materials": 1,
+      "animation_clips": 0,
+      "max_linear_color_error": 7.626171914965063e-06,
+      "max_weight_error": 0.0,
+      "extensions_preserved": [
+        "KHR_materials_specular"
+      ],
+      "geometry_changed": false
+    },
+    {
+      "id": "AssimilatedAdventurerMiner",
+      "character": "AssimilatedAdventurer",
+      "role": "Miner",
+      "file": "models/AssimilatedAdventurerMiner.glb",
+      "sha256": "d88a7ce9a201a7a687a988d90aee9266693f9c061312664ee4a2957877ff213e",
+      "input_bytes": 397892,
+      "output_bytes": 318184,
+      "input_vertices": 6648,
+      "output_vertices": 6648,
+      "triangles": 3024,
+      "bones": 21,
+      "meshes": 1,
+      "materials": 1,
+      "animation_clips": 0,
+      "max_linear_color_error": 7.626171914965063e-06,
+      "max_weight_error": 0.0,
+      "extensions_preserved": [
+        "KHR_materials_specular"
+      ],
+      "geometry_changed": false
+    },
+    {
+      "id": "AssimilatedAdventurerKing",
+      "character": "AssimilatedAdventurer",
+      "role": "King",
+      "file": "models/AssimilatedAdventurerKing.glb",
+      "sha256": "ecfdb0d65a1ac62fafe13826009482022456ddb7852c6e61d951f0779a59460a",
+      "input_bytes": 495928,
+      "output_bytes": 396136,
+      "input_vertices": 8322,
+      "output_vertices": 8322,
+      "triangles": 3740,
+      "bones": 21,
+      "meshes": 1,
+      "materials": 1,
+      "animation_clips": 0,
+      "max_linear_color_error": 7.626171914965063e-06,
+      "max_weight_error": 0.0,
+      "extensions_preserved": [
+        "KHR_materials_specular"
+      ],
+      "geometry_changed": false
+    },
+    {
+      "id": "AssimilatedAdventurerKnight",
+      "character": "AssimilatedAdventurer",
+      "role": "Knight",
+      "file": "models/AssimilatedAdventurerKnight.glb",
+      "sha256": "9e5cef29d3bff0e312deee732f537ff8347d50c56efc28d5f27b186dd7cb3a5a",
+      "input_bytes": 405644,
+      "output_bytes": 324352,
+      "input_vertices": 6780,
+      "output_vertices": 6780,
+      "triangles": 3084,
+      "bones": 21,
+      "meshes": 1,
+      "materials": 1,
+      "animation_clips": 0,
+      "max_linear_color_error": 7.626171914965063e-06,
+      "max_weight_error": 0.0,
+      "extensions_preserved": [
+        "KHR_materials_specular"
+      ],
+      "geometry_changed": false
+    },
+    {
+      "id": "AssimilatedAdventurerNefor",
+      "character": "AssimilatedAdventurer",
+      "role": "Nefor",
+      "file": "models/AssimilatedAdventurerNefor.glb",
+      "sha256": "d4fd677fd21e2ccc1558b6321419a80f4bf85ae85e42d84843550d18add0fe32",
+      "input_bytes": 642868,
+      "output_bytes": 512508,
+      "input_vertices": 10869,
+      "output_vertices": 10869,
+      "triangles": 4456,
+      "bones": 21,
+      "meshes": 1,
+      "materials": 1,
+      "animation_clips": 0,
+      "max_linear_color_error": 7.626171914965063e-06,
+      "max_weight_error": 0.0,
+      "extensions_preserved": [
+        "KHR_materials_specular"
+      ],
+      "geometry_changed": false
+    },
+    {
+      "id": "AssimilatedAdventurerKiller",
+      "character": "AssimilatedAdventurer",
+      "role": "Killer",
+      "file": "models/AssimilatedAdventurerKiller.glb",
+      "sha256": "e595bebcd4e9ed3fb6083fe542ce90aa1454e6f8c4e1a7d0c15069599866d3cc",
+      "input_bytes": 412636,
+      "output_bytes": 329932,
+      "input_vertices": 6898,
+      "output_vertices": 6898,
+      "triangles": 3148,
+      "bones": 21,
+      "meshes": 1,
+      "materials": 1,
+      "animation_clips": 0,
+      "max_linear_color_error": 7.626171914965063e-06,
+      "max_weight_error": 0.0,
+      "extensions_preserved": [
+        "KHR_materials_specular"
+      ],
+      "geometry_changed": false
+    },
+    {
+      "id": "PrimitiveSummonerFarmer",
+      "character": "PrimitiveSummoner",
+      "role": "Farmer",
+      "file": "models/PrimitiveSummonerFarmer.glb",
+      "sha256": "1412e6021ced79f11ac0123bb2da13b4a735a8d7761b6c6bac59e8682e234b4b",
+      "input_bytes": 467800,
+      "output_bytes": 373380,
+      "input_vertices": 7874,
+      "output_vertices": 7874,
+      "triangles": 3456,
+      "bones": 16,
+      "meshes": 1,
+      "materials": 1,
+      "animation_clips": 0,
+      "max_linear_color_error": 7.626171914965063e-06,
+      "max_weight_error": 0.0,
+      "extensions_preserved": [
+        "KHR_materials_specular"
+      ],
+      "geometry_changed": false
+    },
+    {
+      "id": "PrimitiveSummonerMiner",
+      "character": "PrimitiveSummoner",
+      "role": "Miner",
+      "file": "models/PrimitiveSummonerMiner.glb",
+      "sha256": "beffcfed58045febd480cb00d7ed36d60442c2a0f9d27e706e25dd92018d5da9",
+      "input_bytes": 402156,
+      "output_bytes": 321272,
+      "input_vertices": 6746,
+      "output_vertices": 6746,
+      "triangles": 3044,
+      "bones": 16,
+      "meshes": 1,
+      "materials": 1,
+      "animation_clips": 0,
+      "max_linear_color_error": 7.626171914965063e-06,
+      "max_weight_error": 0.0,
+      "extensions_preserved": [
+        "KHR_materials_specular"
+      ],
+      "geometry_changed": false
+    },
+    {
+      "id": "PrimitiveSummonerKing",
+      "character": "PrimitiveSummoner",
+      "role": "King",
+      "file": "models/PrimitiveSummonerKing.glb",
+      "sha256": "d7691afda47adfc0e702ffa5490d3091069685a7b9b5f1d3e5aa643516a02aaa",
+      "input_bytes": 528076,
+      "output_bytes": 421396,
+      "input_vertices": 8896,
+      "output_vertices": 8896,
+      "triangles": 3964,
+      "bones": 16,
+      "meshes": 1,
+      "materials": 1,
+      "animation_clips": 0,
+      "max_linear_color_error": 7.626171914965063e-06,
+      "max_weight_error": 0.0,
+      "extensions_preserved": [
+        "KHR_materials_specular"
+      ],
+      "geometry_changed": false
+    },
+    {
+      "id": "PrimitiveSummonerKnight",
+      "character": "PrimitiveSummoner",
+      "role": "Knight",
+      "file": "models/PrimitiveSummonerKnight.glb",
+      "sha256": "68d7dc782016f94e01d000192480fa9bd6aa5a6651952793f3b7a43f927c53b8",
+      "input_bytes": 407796,
+      "output_bytes": 325764,
+      "input_vertices": 6842,
+      "output_vertices": 6842,
+      "triangles": 3088,
+      "bones": 16,
+      "meshes": 1,
+      "materials": 1,
+      "animation_clips": 0,
+      "max_linear_color_error": 7.626171914965063e-06,
+      "max_weight_error": 0.0,
+      "extensions_preserved": [
+        "KHR_materials_specular"
+      ],
+      "geometry_changed": false
+    },
+    {
+      "id": "PrimitiveSummonerNefor",
+      "character": "PrimitiveSummoner",
+      "role": "Nefor",
+      "file": "models/PrimitiveSummonerNefor.glb",
+      "sha256": "f0c6c6a02ebc0d07eea9bf2f58a967b772cda12553899b3513fa85f17ba38dd5",
+      "input_bytes": 646916,
+      "output_bytes": 515420,
+      "input_vertices": 10964,
+      "output_vertices": 10964,
+      "triangles": 4468,
+      "bones": 16,
+      "meshes": 1,
+      "materials": 1,
+      "animation_clips": 0,
+      "max_linear_color_error": 7.626171914965063e-06,
+      "max_weight_error": 0.0,
+      "extensions_preserved": [
+        "KHR_materials_specular"
+      ],
+      "geometry_changed": false
+    },
+    {
+      "id": "PrimitiveSummonerKiller",
+      "character": "PrimitiveSummoner",
+      "role": "Killer",
+      "file": "models/PrimitiveSummonerKiller.glb",
+      "sha256": "81f1ea4354a6803b2b99dafde577722cab6fe136b549fe4dad73a63675192cdc",
+      "input_bytes": 411012,
+      "output_bytes": 328260,
+      "input_vertices": 6902,
+      "output_vertices": 6902,
+      "triangles": 3064,
+      "bones": 16,
+      "meshes": 1,
+      "materials": 1,
+      "animation_clips": 0,
+      "max_linear_color_error": 7.626171914965063e-06,
+      "max_weight_error": 0.0,
+      "extensions_preserved": [
+        "KHR_materials_specular"
+      ],
+      "geometry_changed": false
+    },
+    {
+      "id": "AdaptedVisceraFarmer",
+      "character": "AdaptedViscera",
+      "role": "Farmer",
+      "file": "models/AdaptedVisceraFarmer.glb",
+      "sha256": "4f1c088771940a2de293eed398d883c4d4adef95aa11ee2f71ca4ccd163ea682",
+      "input_bytes": 1533828,
+      "output_bytes": 1222392,
+      "input_vertices": 25959,
+      "output_vertices": 25959,
+      "triangles": 10704,
+      "bones": 46,
+      "meshes": 1,
+      "materials": 1,
+      "animation_clips": 0,
+      "max_linear_color_error": 7.626171914965063e-06,
+      "max_weight_error": 0.0,
+      "extensions_preserved": [
+        "KHR_materials_specular"
+      ],
+      "geometry_changed": false
+    },
+    {
+      "id": "AdaptedVisceraMiner",
+      "character": "AdaptedViscera",
+      "role": "Miner",
+      "file": "models/AdaptedVisceraMiner.glb",
+      "sha256": "954570e45862c61fddc0f3d974758232dac8dd9de94549b478d1651d0230244b",
+      "input_bytes": 1482376,
+      "output_bytes": 1181548,
+      "input_vertices": 25075,
+      "output_vertices": 25075,
+      "triangles": 10380,
+      "bones": 46,
+      "meshes": 1,
+      "materials": 1,
+      "animation_clips": 0,
+      "max_linear_color_error": 7.626171914965063e-06,
+      "max_weight_error": 0.0,
+      "extensions_preserved": [
+        "KHR_materials_specular"
+      ],
+      "geometry_changed": false
+    },
+    {
+      "id": "AdaptedVisceraKing",
+      "character": "AdaptedViscera",
+      "role": "King",
+      "file": "models/AdaptedVisceraKing.glb",
+      "sha256": "6fcd03884e8c7267896d16a513875ca7853b72e3a5093c0cf89a42d2a904ac6a",
+      "input_bytes": 1582332,
+      "output_bytes": 1260984,
+      "input_vertices": 26785,
+      "output_vertices": 26785,
+      "triangles": 11080,
+      "bones": 46,
+      "meshes": 1,
+      "materials": 1,
+      "animation_clips": 0,
+      "max_linear_color_error": 7.626171914965063e-06,
+      "max_weight_error": 0.0,
+      "extensions_preserved": [
+        "KHR_materials_specular"
+      ],
+      "geometry_changed": false
+    },
+    {
+      "id": "AdaptedVisceraKnight",
+      "character": "AdaptedViscera",
+      "role": "Knight",
+      "file": "models/AdaptedVisceraKnight.glb",
+      "sha256": "1e3765d92d5feaa4ad162121637fadcd76e988276e518528eab6ba6cfbec9aca",
+      "input_bytes": 1488020,
+      "output_bytes": 1186040,
+      "input_vertices": 25171,
+      "output_vertices": 25171,
+      "triangles": 10424,
+      "bones": 46,
+      "meshes": 1,
+      "materials": 1,
+      "animation_clips": 0,
+      "max_linear_color_error": 7.626171914965063e-06,
+      "max_weight_error": 0.0,
+      "extensions_preserved": [
+        "KHR_materials_specular"
+      ],
+      "geometry_changed": false
+    },
+    {
+      "id": "AdaptedVisceraNefor",
+      "character": "AdaptedViscera",
+      "role": "Nefor",
+      "file": "models/AdaptedVisceraNefor.glb",
+      "sha256": "29a22f91a4fff9a5995c04f24b588a4ac95d99d3a469d6ca29d8225cea3902ae",
+      "input_bytes": 1722136,
+      "output_bytes": 1371772,
+      "input_vertices": 29203,
+      "output_vertices": 29203,
+      "triangles": 11812,
+      "bones": 46,
+      "meshes": 1,
+      "materials": 1,
+      "animation_clips": 0,
+      "max_linear_color_error": 7.626171914965063e-06,
+      "max_weight_error": 0.0,
+      "extensions_preserved": [
+        "KHR_materials_specular"
+      ],
+      "geometry_changed": false
+    },
+    {
+      "id": "AdaptedVisceraKiller",
+      "character": "AdaptedViscera",
+      "role": "Killer",
+      "file": "models/AdaptedVisceraKiller.glb",
+      "sha256": "7a72642ebbcc475007098a64f8b923a25e6d83028bce9b3acd2da9210d94479b",
+      "input_bytes": 1475696,
+      "output_bytes": 1176212,
+      "input_vertices": 24963,
+      "output_vertices": 24963,
+      "triangles": 10312,
+      "bones": 46,
+      "meshes": 1,
+      "materials": 1,
+      "animation_clips": 0,
+      "max_linear_color_error": 7.626171914965063e-06,
+      "max_weight_error": 0.0,
+      "extensions_preserved": [
+        "KHR_materials_specular"
+      ],
+      "geometry_changed": false
+    }
+  ],
+  "icons": [
+    {
+      "id": "DredgeFarmer",
+      "file": "icons/ui512/DredgeFarmer.png",
+      "sha256": "dcaff8ea97f215425eca5efded15cfe20d43c21a52e347ddb3c0b3518cfe658c",
+      "size": [
+        512,
+        512
+      ]
+    },
+    {
+      "id": "DredgeMiner",
+      "file": "icons/ui512/DredgeMiner.png",
+      "sha256": "6a411a6dc30cb4c05b8c979272e36eca2ad4cd16ca8122717f7dcdcba49dc48a",
+      "size": [
+        512,
+        512
+      ]
+    },
+    {
+      "id": "DredgeKing",
+      "file": "icons/ui512/DredgeKing.png",
+      "sha256": "f6b9e4c4a29fa535ef3f34295fead3d8a1e5810db1aa45a71ab77e2fa1b3f0e6",
+      "size": [
+        512,
+        512
+      ]
+    },
+    {
+      "id": "DredgeKnight",
+      "file": "icons/ui512/DredgeKnight.png",
+      "sha256": "85911fae2dc67e5ecab9d3073ce29cf5210cf45cf0ffffcbda23b588f1b24e44",
+      "size": [
+        512,
+        512
+      ]
+    },
+    {
+      "id": "DredgeNefor",
+      "file": "icons/ui512/DredgeNefor.png",
+      "sha256": "12e2e9e7de3faa4adc9a70e97c87694649456cce9f62dcd6287f32ea2089af2a",
+      "size": [
+        512,
+        512
+      ]
+    },
+    {
+      "id": "DredgeKiller",
+      "file": "icons/ui512/DredgeKiller.png",
+      "sha256": "c51ff7b5d09b3ab61ce6625f8f2bb1e5b1a23babb2060ce84d8e59d69e168a88",
+      "size": [
+        512,
+        512
+      ]
+    },
+    {
+      "id": "AssimilatedAdventurerFarmer",
+      "file": "icons/ui512/AssimilatedAdventurerFarmer.png",
+      "sha256": "c93a9b8d3993c5f3cc377fb744e36b0b3df91ac7912c99a72639a97086029398",
+      "size": [
+        512,
+        512
+      ]
+    },
+    {
+      "id": "AssimilatedAdventurerMiner",
+      "file": "icons/ui512/AssimilatedAdventurerMiner.png",
+      "sha256": "ffa0e550367f80a406f72c54892ddf8e49457adaf3bdf32cf42dec5d3f8224b9",
+      "size": [
+        512,
+        512
+      ]
+    },
+    {
+      "id": "AssimilatedAdventurerKing",
+      "file": "icons/ui512/AssimilatedAdventurerKing.png",
+      "sha256": "5097660c9a015ac4e6e9a5d1973256540d899d23660c2ff1c546d128fd841473",
+      "size": [
+        512,
+        512
+      ]
+    },
+    {
+      "id": "AssimilatedAdventurerKnight",
+      "file": "icons/ui512/AssimilatedAdventurerKnight.png",
+      "sha256": "88c852470212176c079c4f67d7a505f166e856d94bc67e784d0b6ed538c931a7",
+      "size": [
+        512,
+        512
+      ]
+    },
+    {
+      "id": "AssimilatedAdventurerNefor",
+      "file": "icons/ui512/AssimilatedAdventurerNefor.png",
+      "sha256": "81a224d451efc598d3c125b978e1faccd22dd7330c5dad394c95249205586479",
+      "size": [
+        512,
+        512
+      ]
+    },
+    {
+      "id": "AssimilatedAdventurerKiller",
+      "file": "icons/ui512/AssimilatedAdventurerKiller.png",
+      "sha256": "bc8495cbbd566decf823923ec44f43c60ec8c23adcb10f91d1e7016f96913f7b",
+      "size": [
+        512,
+        512
+      ]
+    },
+    {
+      "id": "PrimitiveSummonerFarmer",
+      "file": "icons/ui512/PrimitiveSummonerFarmer.png",
+      "sha256": "b4b3dd5b7f9a4a1565588c255267b4b58d0110714825a88b441ca1dd18f8466c",
+      "size": [
+        512,
+        512
+      ]
+    },
+    {
+      "id": "PrimitiveSummonerMiner",
+      "file": "icons/ui512/PrimitiveSummonerMiner.png",
+      "sha256": "366d2e45f299b9187b8a50351e455c886822b8985c71a80cee1f7126a86dcd27",
+      "size": [
+        512,
+        512
+      ]
+    },
+    {
+      "id": "PrimitiveSummonerKing",
+      "file": "icons/ui512/PrimitiveSummonerKing.png",
+      "sha256": "4a1050e7dc27841436cea2b50d858f50420ca2c9579d771a576f8a254b69a374",
+      "size": [
+        512,
+        512
+      ]
+    },
+    {
+      "id": "PrimitiveSummonerKnight",
+      "file": "icons/ui512/PrimitiveSummonerKnight.png",
+      "sha256": "a0b24d2378eb45b9ee02a00ee03527fbf41d84acf1c70f85ccb125fd277a7673",
+      "size": [
+        512,
+        512
+      ]
+    },
+    {
+      "id": "PrimitiveSummonerNefor",
+      "file": "icons/ui512/PrimitiveSummonerNefor.png",
+      "sha256": "175bfcd7a6c6e48384cc9c0c7ae669b777fcdd8d9f0064579a4487071db0578d",
+      "size": [
+        512,
+        512
+      ]
+    },
+    {
+      "id": "PrimitiveSummonerKiller",
+      "file": "icons/ui512/PrimitiveSummonerKiller.png",
+      "sha256": "731cb2176c7fc897ce951cb4e5d8ff05b18aaf69b7b28e62065157d868e85b69",
+      "size": [
+        512,
+        512
+      ]
+    },
+    {
+      "id": "AdaptedVisceraFarmer",
+      "file": "icons/ui512/AdaptedVisceraFarmer.png",
+      "sha256": "3ecf12a356b5519acb8cc267eae4a8c76ed5eefa3bcfe2f207e06adecaf6e5c9",
+      "size": [
+        512,
+        512
+      ]
+    },
+    {
+      "id": "AdaptedVisceraMiner",
+      "file": "icons/ui512/AdaptedVisceraMiner.png",
+      "sha256": "8c64891f967226a5b0f23edde5443a70cef224761cbdffe9f0cdfc9fbcef4dab",
+      "size": [
+        512,
+        512
+      ]
+    },
+    {
+      "id": "AdaptedVisceraKing",
+      "file": "icons/ui512/AdaptedVisceraKing.png",
+      "sha256": "7e376470fde64d5120a5e54946678bc1e2c59437d8b5bb30691ad6c403759cd9",
+      "size": [
+        512,
+        512
+      ]
+    },
+    {
+      "id": "AdaptedVisceraKnight",
+      "file": "icons/ui512/AdaptedVisceraKnight.png",
+      "sha256": "6ad44e221b62128f43d942ef20d50364eb4be05b68ddf5053742a05b6479b946",
+      "size": [
+        512,
+        512
+      ]
+    },
+    {
+      "id": "AdaptedVisceraNefor",
+      "file": "icons/ui512/AdaptedVisceraNefor.png",
+      "sha256": "76336ef30ddce3819e92cbfcc2dcd641d49ab381276271c733f3daa1bb2fe873",
+      "size": [
+        512,
+        512
+      ]
+    },
+    {
+      "id": "AdaptedVisceraKiller",
+      "file": "icons/ui512/AdaptedVisceraKiller.png",
+      "sha256": "e35b4db996f70c9206b6b750e9135ad487bdf24b48932c7ebe6dac5ef99c8330",
+      "size": [
+        512,
+        512
+      ]
+    }
+  ]
+}

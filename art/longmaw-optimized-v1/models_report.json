@@ -1,0 +1,847 @@
+{
+  "models": [
+    {
+      "id": "Longmaw_Idle",
+      "role": "Base",
+      "ru": "Базовый",
+      "state": "Idle",
+      "source": "/Users/wingman/Documents/Codex/GrowAMonster-Git-2026-11-12/art/longmaw-v5/models/Longmaw_Idle.glb",
+      "source_sha256": "d9191dcf1644f5c4fbb5984e68bac9c3fffe084fb106386b1c01be2ddffceec3",
+      "profiles": {
+        "models": {
+          "file": "models/Longmaw_Idle.glb",
+          "input_bytes": 909904,
+          "output_bytes": 706732,
+          "input_vertices": 15445,
+          "output_vertices": 15039,
+          "removed_identical_records": 406,
+          "triangles": 6048,
+          "meshes": 1,
+          "materials": 1,
+          "bones": 23,
+          "textures": 0,
+          "geometry_normal_triangle_changes": false,
+          "max_linear_color_error": 7.4454603194197555e-06,
+          "max_weight_error": 7.41513273383454e-06,
+          "extensions_required": [],
+          "sha256": "53c41c4310122111d17c76d4cf7bcd2c4c5be3aba0ec1f212b7e9e4a50a1f688",
+          "packing_validation": {
+            "passed": true,
+            "expanded_positions_normals_joints_exact": true,
+            "triangle_order_exact": true,
+            "skeleton_exact": true,
+            "normalized_weights": true
+          }
+        },
+        "mobile": {
+          "file": "mobile/Longmaw_Idle.glb",
+          "input_bytes": 828972,
+          "output_bytes": 636608,
+          "input_vertices": 14046,
+          "output_vertices": 13504,
+          "removed_identical_records": 542,
+          "triangles": 5576,
+          "meshes": 1,
+          "materials": 1,
+          "bones": 23,
+          "textures": 0,
+          "geometry_normal_triangle_changes": false,
+          "max_linear_color_error": 7.4454603194197555e-06,
+          "max_weight_error": 7.41513273383454e-06,
+          "extensions_required": [],
+          "sha256": "2112ba252c20135b0fc9a3c3e0ac07eeedeeba4a5075791938960b11dee231e6",
+          "packing_validation": {
+            "passed": true,
+            "expanded_positions_normals_joints_exact": true,
+            "triangle_order_exact": true,
+            "skeleton_exact": true,
+            "normalized_weights": true
+          }
+        }
+      }
+    },
+    {
+      "id": "Longmaw_Aggressive",
+      "role": "Base",
+      "ru": "Базовый",
+      "state": "Aggressive",
+      "source": "/Users/wingman/Documents/Codex/GrowAMonster-Git-2026-11-12/art/longmaw-v5/models/Longmaw_Aggressive.glb",
+      "source_sha256": "ebe600c607a8b4904c85442201db305a6e3fbbb46674d0c4c20c0304c4845728",
+      "profiles": {
+        "models": {
+          "file": "models/Longmaw_Aggressive.glb",
+          "input_bytes": 909192,
+          "output_bytes": 706188,
+          "input_vertices": 15431,
+          "output_vertices": 15025,
+          "removed_identical_records": 406,
+          "triangles": 6048,
+          "meshes": 1,
+          "materials": 1,
+          "bones": 23,
+          "textures": 0,
+          "geometry_normal_triangle_changes": false,
+          "max_linear_color_error": 7.4454603194197555e-06,
+          "max_weight_error": 7.513697391381413e-06,
+          "extensions_required": [],
+          "sha256": "6502d1f49e6f0e70bc7a878affac20bff7a157f05940a72844ee2dea7e48963c",
+          "packing_validation": {
+            "passed": true,
+            "expanded_positions_normals_joints_exact": true,
+            "triangle_order_exact": true,
+            "skeleton_exact": true,
+            "normalized_weights": true
+          }
+        },
+        "mobile": {
+          "file": "mobile/Longmaw_Aggressive.glb",
+          "input_bytes": 828168,
+          "output_bytes": 637288,
+          "input_vertices": 14032,
+          "output_vertices": 13520,
+          "removed_identical_records": 512,
+          "triangles": 5576,
+          "meshes": 1,
+          "materials": 1,
+          "bones": 23,
+          "textures": 0,
+          "geometry_normal_triangle_changes": false,
+          "max_linear_color_error": 7.4454603194197555e-06,
+          "max_weight_error": 7.513697391381413e-06,
+          "extensions_required": [],
+          "sha256": "9e67844851548fb17ce04b915cb13cfaca7c56ae7706435c8f5fad8e95bc4d99",
+          "packing_validation": {
+            "passed": true,
+            "expanded_positions_normals_joints_exact": true,
+            "triangle_order_exact": true,
+            "skeleton_exact": true,
+            "normalized_weights": true
+          }
+        }
+      }
+    },
+    {
+      "id": "Longmaw_Farmer_Idle",
+      "role": "Farmer",
+      "ru": "Фермер",
+      "state": "Idle",
+      "source": "/Users/wingman/Documents/Codex/GrowAMonster-Git-2026-11-12/art/longmaw-forms-v1/models/Longmaw_Farmer_Idle.glb",
+      "source_sha256": "57506a32f41ea031d42f8f72785571b1b5fef68f81fdee8a8052891a8d99d47f",
+      "profiles": {
+        "models": {
+          "file": "models/Longmaw_Farmer_Idle.glb",
+          "input_bytes": 1178944,
+          "output_bytes": 920544,
+          "input_vertices": 20040,
+          "output_vertices": 19632,
+          "removed_identical_records": 408,
+          "triangles": 7994,
+          "meshes": 1,
+          "materials": 1,
+          "bones": 23,
+          "textures": 0,
+          "geometry_normal_triangle_changes": false,
+          "max_linear_color_error": 7.626171914965063e-06,
+          "max_weight_error": 7.467184643616953e-06,
+          "extensions_required": [],
+          "sha256": "cfbc374c602ab98950abaf4aa68ce2aefe939d66f02d122ce13675905cc69371",
+          "packing_validation": {
+            "passed": true,
+            "expanded_positions_normals_joints_exact": true,
+            "triangle_order_exact": true,
+            "skeleton_exact": true,
+            "normalized_weights": true
+          }
+        },
+        "mobile": {
+          "file": "mobile/Longmaw_Farmer_Idle.glb",
+          "input_bytes": 1075824,
+          "output_bytes": 831656,
+          "input_vertices": 18271,
+          "output_vertices": 17704,
+          "removed_identical_records": 567,
+          "triangles": 7279,
+          "meshes": 1,
+          "materials": 1,
+          "bones": 23,
+          "textures": 0,
+          "geometry_normal_triangle_changes": false,
+          "max_linear_color_error": 7.626171914965063e-06,
+          "max_weight_error": 7.467184643616953e-06,
+          "extensions_required": [],
+          "sha256": "9e7b5227108e36ccfe1edae36c9a238e0e2d0941d6da3a610eabf21d42d0a12b",
+          "packing_validation": {
+            "passed": true,
+            "expanded_positions_normals_joints_exact": true,
+            "triangle_order_exact": true,
+            "skeleton_exact": true,
+            "normalized_weights": true
+          }
+        }
+      }
+    },
+    {
+      "id": "Longmaw_Farmer_Aggressive",
+      "role": "Farmer",
+      "ru": "Фермер",
+      "state": "Aggressive",
+      "source": "/Users/wingman/Documents/Codex/GrowAMonster-Git-2026-11-12/art/longmaw-forms-v1/models/Longmaw_Farmer_Aggressive.glb",
+      "source_sha256": "d54e16b787b9f446c9b17964ecb75410520ea60754689ee266805cdfe1ca53e0",
+      "profiles": {
+        "models": {
+          "file": "models/Longmaw_Farmer_Aggressive.glb",
+          "input_bytes": 1178236,
+          "output_bytes": 920004,
+          "input_vertices": 20026,
+          "output_vertices": 19618,
+          "removed_identical_records": 408,
+          "triangles": 7994,
+          "meshes": 1,
+          "materials": 1,
+          "bones": 23,
+          "textures": 0,
+          "geometry_normal_triangle_changes": false,
+          "max_linear_color_error": 7.626171914965063e-06,
+          "max_weight_error": 7.513697391381413e-06,
+          "extensions_required": [],
+          "sha256": "1e37e854603838ea7c9e94265792093e0b5fd81c33b793b0a4bc0b5f0f9448da",
+          "packing_validation": {
+            "passed": true,
+            "expanded_positions_normals_joints_exact": true,
+            "triangle_order_exact": true,
+            "skeleton_exact": true,
+            "normalized_weights": true
+          }
+        },
+        "mobile": {
+          "file": "mobile/Longmaw_Farmer_Aggressive.glb",
+          "input_bytes": 1075012,
+          "output_bytes": 832328,
+          "input_vertices": 18257,
+          "output_vertices": 17720,
+          "removed_identical_records": 537,
+          "triangles": 7279,
+          "meshes": 1,
+          "materials": 1,
+          "bones": 23,
+          "textures": 0,
+          "geometry_normal_triangle_changes": false,
+          "max_linear_color_error": 7.626171914965063e-06,
+          "max_weight_error": 7.513697391381413e-06,
+          "extensions_required": [],
+          "sha256": "7cecc512d90206a8e9dd667e2de54345338390adfc2a9f9d4b65c69bb901cd4a",
+          "packing_validation": {
+            "passed": true,
+            "expanded_positions_normals_joints_exact": true,
+            "triangle_order_exact": true,
+            "skeleton_exact": true,
+            "normalized_weights": true
+          }
+        }
+      }
+    },
+    {
+      "id": "Longmaw_Miner_Idle",
+      "role": "Miner",
+      "ru": "Шахтёр",
+      "state": "Idle",
+      "source": "/Users/wingman/Documents/Codex/GrowAMonster-Git-2026-11-12/art/longmaw-forms-v1/models/Longmaw_Miner_Idle.glb",
+      "source_sha256": "bd2cb3f8b7c2e54b7df438ecfd896eca0780139cbaa96d82fbc38972628c9ab6",
+      "profiles": {
+        "models": {
+          "file": "models/Longmaw_Miner_Idle.glb",
+          "input_bytes": 1220812,
+          "output_bytes": 953892,
+          "input_vertices": 20750,
+          "output_vertices": 20342,
+          "removed_identical_records": 408,
+          "triangles": 8346,
+          "meshes": 1,
+          "materials": 1,
+          "bones": 23,
+          "textures": 0,
+          "geometry_normal_triangle_changes": false,
+          "max_linear_color_error": 7.626171914965063e-06,
+          "max_weight_error": 7.467184643616953e-06,
+          "extensions_required": [],
+          "sha256": "fae3952cf07a8a4a142b8d552a0e6feba53647ab388be74d046994233f2caeb0",
+          "packing_validation": {
+            "passed": true,
+            "expanded_positions_normals_joints_exact": true,
+            "triangle_order_exact": true,
+            "skeleton_exact": true,
+            "normalized_weights": true
+          }
+        },
+        "mobile": {
+          "file": "mobile/Longmaw_Miner_Idle.glb",
+          "input_bytes": 1095740,
+          "output_bytes": 848144,
+          "input_vertices": 18615,
+          "output_vertices": 18064,
+          "removed_identical_records": 551,
+          "triangles": 7388,
+          "meshes": 1,
+          "materials": 1,
+          "bones": 23,
+          "textures": 0,
+          "geometry_normal_triangle_changes": false,
+          "max_linear_color_error": 7.626171914965063e-06,
+          "max_weight_error": 7.467184643616953e-06,
+          "extensions_required": [],
+          "sha256": "bcbc5ae458228d51cc0abfade656b89ca49e383aa8f0495544cfe891f5d3f7f7",
+          "packing_validation": {
+            "passed": true,
+            "expanded_positions_normals_joints_exact": true,
+            "triangle_order_exact": true,
+            "skeleton_exact": true,
+            "normalized_weights": true
+          }
+        }
+      }
+    },
+    {
+      "id": "Longmaw_Miner_Aggressive",
+      "role": "Miner",
+      "ru": "Шахтёр",
+      "state": "Aggressive",
+      "source": "/Users/wingman/Documents/Codex/GrowAMonster-Git-2026-11-12/art/longmaw-forms-v1/models/Longmaw_Miner_Aggressive.glb",
+      "source_sha256": "bb002cc6c789b1224705dc5ee1aff70c3a3fad1bca959913405f40cbd8b136a2",
+      "profiles": {
+        "models": {
+          "file": "models/Longmaw_Miner_Aggressive.glb",
+          "input_bytes": 1220104,
+          "output_bytes": 953352,
+          "input_vertices": 20736,
+          "output_vertices": 20328,
+          "removed_identical_records": 408,
+          "triangles": 8346,
+          "meshes": 1,
+          "materials": 1,
+          "bones": 23,
+          "textures": 0,
+          "geometry_normal_triangle_changes": false,
+          "max_linear_color_error": 7.626171914965063e-06,
+          "max_weight_error": 7.513697391381413e-06,
+          "extensions_required": [],
+          "sha256": "fa0b5b50d33eb6827bf511c5a5cb247feadd7f0f803762986dd7e6ee0972c81d",
+          "packing_validation": {
+            "passed": true,
+            "expanded_positions_normals_joints_exact": true,
+            "triangle_order_exact": true,
+            "skeleton_exact": true,
+            "normalized_weights": true
+          }
+        },
+        "mobile": {
+          "file": "mobile/Longmaw_Miner_Aggressive.glb",
+          "input_bytes": 1094924,
+          "output_bytes": 848820,
+          "input_vertices": 18601,
+          "output_vertices": 18080,
+          "removed_identical_records": 521,
+          "triangles": 7388,
+          "meshes": 1,
+          "materials": 1,
+          "bones": 23,
+          "textures": 0,
+          "geometry_normal_triangle_changes": false,
+          "max_linear_color_error": 7.626171914965063e-06,
+          "max_weight_error": 7.513697391381413e-06,
+          "extensions_required": [],
+          "sha256": "c74f7bee745a8e7870b03c8f9f1c1f79bb03e2e48cb9bf80579566327428fdbd",
+          "packing_validation": {
+            "passed": true,
+            "expanded_positions_normals_joints_exact": true,
+            "triangle_order_exact": true,
+            "skeleton_exact": true,
+            "normalized_weights": true
+          }
+        }
+      }
+    },
+    {
+      "id": "Longmaw_Princess_Idle",
+      "role": "Princess",
+      "ru": "Принцесса",
+      "state": "Idle",
+      "source": "/Users/wingman/Documents/Codex/GrowAMonster-Git-2026-11-12/art/longmaw-forms-v1/models/Longmaw_Princess_Idle.glb",
+      "source_sha256": "e3d47f009e22dc4112b07883d36c225e7fe63f02e9859cca29f450da512c5083",
+      "profiles": {
+        "models": {
+          "file": "models/Longmaw_Princess_Idle.glb",
+          "input_bytes": 1330664,
+          "output_bytes": 1040648,
+          "input_vertices": 22675,
+          "output_vertices": 22267,
+          "removed_identical_records": 408,
+          "triangles": 8686,
+          "meshes": 1,
+          "materials": 1,
+          "bones": 23,
+          "textures": 0,
+          "geometry_normal_triangle_changes": false,
+          "max_linear_color_error": 7.5809354593558975e-06,
+          "max_weight_error": 7.58806646139476e-06,
+          "extensions_required": [],
+          "sha256": "a0d9cfb1c8df10876f5eb4188caa4a42d102ec623801dfb4aee3892a467b0387",
+          "packing_validation": {
+            "passed": true,
+            "expanded_positions_normals_joints_exact": true,
+            "triangle_order_exact": true,
+            "skeleton_exact": true,
+            "normalized_weights": true
+          }
+        },
+        "mobile": {
+          "file": "mobile/Longmaw_Princess_Idle.glb",
+          "input_bytes": 1222384,
+          "output_bytes": 948740,
+          "input_vertices": 20819,
+          "output_vertices": 20277,
+          "removed_identical_records": 542,
+          "triangles": 7923,
+          "meshes": 1,
+          "materials": 1,
+          "bones": 23,
+          "textures": 0,
+          "geometry_normal_triangle_changes": false,
+          "max_linear_color_error": 7.5809354593558975e-06,
+          "max_weight_error": 7.573627670787175e-06,
+          "extensions_required": [],
+          "sha256": "2b0b16789e5b9d4a42c1c60bd866ac9bb7177791c0aff363bcb6303d651b0445",
+          "packing_validation": {
+            "passed": true,
+            "expanded_positions_normals_joints_exact": true,
+            "triangle_order_exact": true,
+            "skeleton_exact": true,
+            "normalized_weights": true
+          }
+        }
+      }
+    },
+    {
+      "id": "Longmaw_Princess_Aggressive",
+      "role": "Princess",
+      "ru": "Принцесса",
+      "state": "Aggressive",
+      "source": "/Users/wingman/Documents/Codex/GrowAMonster-Git-2026-11-12/art/longmaw-forms-v1/models/Longmaw_Princess_Aggressive.glb",
+      "source_sha256": "0b8f41da63dc197ad8c1c45ae2575d6c4e8f082ad077752a1c461575f241de44",
+      "profiles": {
+        "models": {
+          "file": "models/Longmaw_Princess_Aggressive.glb",
+          "input_bytes": 1329956,
+          "output_bytes": 1040104,
+          "input_vertices": 22661,
+          "output_vertices": 22253,
+          "removed_identical_records": 408,
+          "triangles": 8686,
+          "meshes": 1,
+          "materials": 1,
+          "bones": 23,
+          "textures": 0,
+          "geometry_normal_triangle_changes": false,
+          "max_linear_color_error": 7.5809354593558975e-06,
+          "max_weight_error": 7.58806646139476e-06,
+          "extensions_required": [],
+          "sha256": "c0a9181416846da934d1eb9d1c2656dd6ed21995e8c55b2e3849cc131aa8989d",
+          "packing_validation": {
+            "passed": true,
+            "expanded_positions_normals_joints_exact": true,
+            "triangle_order_exact": true,
+            "skeleton_exact": true,
+            "normalized_weights": true
+          }
+        },
+        "mobile": {
+          "file": "mobile/Longmaw_Princess_Aggressive.glb",
+          "input_bytes": 1221568,
+          "output_bytes": 949412,
+          "input_vertices": 20805,
+          "output_vertices": 20293,
+          "removed_identical_records": 512,
+          "triangles": 7923,
+          "meshes": 1,
+          "materials": 1,
+          "bones": 23,
+          "textures": 0,
+          "geometry_normal_triangle_changes": false,
+          "max_linear_color_error": 7.5809354593558975e-06,
+          "max_weight_error": 7.573627670787175e-06,
+          "extensions_required": [],
+          "sha256": "84404a7434d986044477c15a14e4f83bb37654a1ecf036c9d93eeec76b4e5306",
+          "packing_validation": {
+            "passed": true,
+            "expanded_positions_normals_joints_exact": true,
+            "triangle_order_exact": true,
+            "skeleton_exact": true,
+            "normalized_weights": true
+          }
+        }
+      }
+    },
+    {
+      "id": "Longmaw_Knight_Idle",
+      "role": "Knight",
+      "ru": "Рыцарь",
+      "state": "Idle",
+      "source": "/Users/wingman/Documents/Codex/GrowAMonster-Git-2026-11-12/art/longmaw-forms-v1/models/Longmaw_Knight_Idle.glb",
+      "source_sha256": "581d7b5e3493831908eecdd6fd24b27dbcb06bb3f03e807dc6eec0d8fe72b097",
+      "profiles": {
+        "models": {
+          "file": "models/Longmaw_Knight_Idle.glb",
+          "input_bytes": 1321400,
+          "output_bytes": 1033876,
+          "input_vertices": 22467,
+          "output_vertices": 22059,
+          "removed_identical_records": 408,
+          "triangles": 9084,
+          "meshes": 1,
+          "materials": 1,
+          "bones": 23,
+          "textures": 0,
+          "geometry_normal_triangle_changes": false,
+          "max_linear_color_error": 7.626171914965063e-06,
+          "max_weight_error": 7.581727045402609e-06,
+          "extensions_required": [],
+          "sha256": "eaf89339ff0f419192dcbbf5e3d7550eb8314bb95f18a8a22be1a81113253d8f",
+          "packing_validation": {
+            "passed": true,
+            "expanded_positions_normals_joints_exact": true,
+            "triangle_order_exact": true,
+            "skeleton_exact": true,
+            "normalized_weights": true
+          }
+        },
+        "mobile": {
+          "file": "mobile/Longmaw_Knight_Idle.glb",
+          "input_bytes": 1183944,
+          "output_bytes": 917176,
+          "input_vertices": 20132,
+          "output_vertices": 19559,
+          "removed_identical_records": 573,
+          "triangles": 7929,
+          "meshes": 1,
+          "materials": 1,
+          "bones": 23,
+          "textures": 0,
+          "geometry_normal_triangle_changes": false,
+          "max_linear_color_error": 7.626171914965063e-06,
+          "max_weight_error": 7.581727045402609e-06,
+          "extensions_required": [],
+          "sha256": "6863c2e4132a5f2d89d9d5773ea5ba806bff17608e1138d1974bb0ec78499df1",
+          "packing_validation": {
+            "passed": true,
+            "expanded_positions_normals_joints_exact": true,
+            "triangle_order_exact": true,
+            "skeleton_exact": true,
+            "normalized_weights": true
+          }
+        }
+      }
+    },
+    {
+      "id": "Longmaw_Knight_Aggressive",
+      "role": "Knight",
+      "ru": "Рыцарь",
+      "state": "Aggressive",
+      "source": "/Users/wingman/Documents/Codex/GrowAMonster-Git-2026-11-12/art/longmaw-forms-v1/models/Longmaw_Knight_Aggressive.glb",
+      "source_sha256": "5c5fae7b26359201b843b34daf761d077f902ede4b170e62ecf9b85b3a693673",
+      "profiles": {
+        "models": {
+          "file": "models/Longmaw_Knight_Aggressive.glb",
+          "input_bytes": 1320688,
+          "output_bytes": 1033332,
+          "input_vertices": 22453,
+          "output_vertices": 22045,
+          "removed_identical_records": 408,
+          "triangles": 9084,
+          "meshes": 1,
+          "materials": 1,
+          "bones": 23,
+          "textures": 0,
+          "geometry_normal_triangle_changes": false,
+          "max_linear_color_error": 7.626171914965063e-06,
+          "max_weight_error": 7.581727045402609e-06,
+          "extensions_required": [],
+          "sha256": "9a067e92668766ee264bc9d7ca4f4403b2b7e86c9664d4704c7d033b0263320a",
+          "packing_validation": {
+            "passed": true,
+            "expanded_positions_normals_joints_exact": true,
+            "triangle_order_exact": true,
+            "skeleton_exact": true,
+            "normalized_weights": true
+          }
+        },
+        "mobile": {
+          "file": "mobile/Longmaw_Knight_Aggressive.glb",
+          "input_bytes": 1183128,
+          "output_bytes": 917852,
+          "input_vertices": 20118,
+          "output_vertices": 19575,
+          "removed_identical_records": 543,
+          "triangles": 7929,
+          "meshes": 1,
+          "materials": 1,
+          "bones": 23,
+          "textures": 0,
+          "geometry_normal_triangle_changes": false,
+          "max_linear_color_error": 7.626171914965063e-06,
+          "max_weight_error": 7.581727045402609e-06,
+          "extensions_required": [],
+          "sha256": "0407d8c3dbdcd81346306fc426e273e456f81be3581897c97a916a02a2f38b3c",
+          "packing_validation": {
+            "passed": true,
+            "expanded_positions_normals_joints_exact": true,
+            "triangle_order_exact": true,
+            "skeleton_exact": true,
+            "normalized_weights": true
+          }
+        }
+      }
+    },
+    {
+      "id": "Longmaw_Punk_Idle",
+      "role": "Punk",
+      "ru": "Нефор",
+      "state": "Idle",
+      "source": "/Users/wingman/Documents/Codex/GrowAMonster-Git-2026-11-12/art/longmaw-forms-v1/models/Longmaw_Punk_Idle.glb",
+      "source_sha256": "45deb97d4c4ac0d74eea31ca1d1d54673f119303f1ee498a0ba9dd82da08fab8",
+      "profiles": {
+        "models": {
+          "file": "models/Longmaw_Punk_Idle.glb",
+          "input_bytes": 1768668,
+          "output_bytes": 1389632,
+          "input_vertices": 30093,
+          "output_vertices": 29685,
+          "removed_identical_records": 408,
+          "triangles": 12454,
+          "meshes": 1,
+          "materials": 1,
+          "bones": 23,
+          "textures": 0,
+          "geometry_normal_triangle_changes": false,
+          "max_linear_color_error": 7.626171914965063e-06,
+          "max_weight_error": 7.620058653401429e-06,
+          "extensions_required": [],
+          "sha256": "8c2abf3b0e186179a180d04bd379bc36000f61192819c0866eb956d468300c57",
+          "packing_validation": {
+            "passed": true,
+            "expanded_positions_normals_joints_exact": true,
+            "triangle_order_exact": true,
+            "skeleton_exact": true,
+            "normalized_weights": true
+          }
+        },
+        "mobile": {
+          "file": "mobile/Longmaw_Punk_Idle.glb",
+          "input_bytes": 1563640,
+          "output_bytes": 1218880,
+          "input_vertices": 26687,
+          "output_vertices": 26129,
+          "removed_identical_records": 558,
+          "triangles": 10033,
+          "meshes": 1,
+          "materials": 1,
+          "bones": 23,
+          "textures": 0,
+          "geometry_normal_triangle_changes": false,
+          "max_linear_color_error": 7.5809354593558975e-06,
+          "max_weight_error": 1.3569508501620753e-05,
+          "extensions_required": [],
+          "sha256": "a5b35c5b7077b183bad1d70169a39da61d5276ff9363c9862bf84efe8457160c",
+          "packing_validation": {
+            "passed": true,
+            "expanded_positions_normals_joints_exact": true,
+            "triangle_order_exact": true,
+            "skeleton_exact": true,
+            "normalized_weights": true
+          }
+        }
+      }
+    },
+    {
+      "id": "Longmaw_Punk_Aggressive",
+      "role": "Punk",
+      "ru": "Нефор",
+      "state": "Aggressive",
+      "source": "/Users/wingman/Documents/Codex/GrowAMonster-Git-2026-11-12/art/longmaw-forms-v1/models/Longmaw_Punk_Aggressive.glb",
+      "source_sha256": "86b33bed37b0dc81f5ea4b50b68e5fd37329693085654f4b81a676eac2c7946d",
+      "profiles": {
+        "models": {
+          "file": "models/Longmaw_Punk_Aggressive.glb",
+          "input_bytes": 1767960,
+          "output_bytes": 1389092,
+          "input_vertices": 30079,
+          "output_vertices": 29671,
+          "removed_identical_records": 408,
+          "triangles": 12454,
+          "meshes": 1,
+          "materials": 1,
+          "bones": 23,
+          "textures": 0,
+          "geometry_normal_triangle_changes": false,
+          "max_linear_color_error": 7.626171914965063e-06,
+          "max_weight_error": 7.620058653401429e-06,
+          "extensions_required": [],
+          "sha256": "64dbfe58d5ae95dd53c7668d3ab21e6cb02a2a4f119e7ad6a6fefb809817ec77",
+          "packing_validation": {
+            "passed": true,
+            "expanded_positions_normals_joints_exact": true,
+            "triangle_order_exact": true,
+            "skeleton_exact": true,
+            "normalized_weights": true
+          }
+        },
+        "mobile": {
+          "file": "mobile/Longmaw_Punk_Aggressive.glb",
+          "input_bytes": 1562828,
+          "output_bytes": 1219552,
+          "input_vertices": 26673,
+          "output_vertices": 26145,
+          "removed_identical_records": 528,
+          "triangles": 10033,
+          "meshes": 1,
+          "materials": 1,
+          "bones": 23,
+          "textures": 0,
+          "geometry_normal_triangle_changes": false,
+          "max_linear_color_error": 7.5809354593558975e-06,
+          "max_weight_error": 1.3569508501620753e-05,
+          "extensions_required": [],
+          "sha256": "ef0c8b5fc5e0bdd55e781673f50a8daf629a2c0dab2ccbdee42edff0186e9721",
+          "packing_validation": {
+            "passed": true,
+            "expanded_positions_normals_joints_exact": true,
+            "triangle_order_exact": true,
+            "skeleton_exact": true,
+            "normalized_weights": true
+          }
+        }
+      }
+    },
+    {
+      "id": "Longmaw_Assassin_Idle",
+      "role": "Assassin",
+      "ru": "Убийца",
+      "state": "Idle",
+      "source": "/Users/wingman/Documents/Codex/GrowAMonster-Git-2026-11-12/art/longmaw-forms-v1/models/Longmaw_Assassin_Idle.glb",
+      "source_sha256": "584d8b52965ab3e3841ed141f3eaa64a876b8c8724281fd94c26cab687db19a6",
+      "profiles": {
+        "models": {
+          "file": "models/Longmaw_Assassin_Idle.glb",
+          "input_bytes": 1211552,
+          "output_bytes": 946384,
+          "input_vertices": 20604,
+          "output_vertices": 20196,
+          "removed_identical_records": 408,
+          "triangles": 8163,
+          "meshes": 1,
+          "materials": 1,
+          "bones": 23,
+          "textures": 0,
+          "geometry_normal_triangle_changes": false,
+          "max_linear_color_error": 7.5809354593558975e-06,
+          "max_weight_error": 7.467184643616953e-06,
+          "extensions_required": [],
+          "sha256": "3540f2c14996f5bf67b649f86e409bf6725ead79cdc2f47de17db5e5999c5f6a",
+          "packing_validation": {
+            "passed": true,
+            "expanded_positions_normals_joints_exact": true,
+            "triangle_order_exact": true,
+            "skeleton_exact": true,
+            "normalized_weights": true
+          }
+        },
+        "mobile": {
+          "file": "mobile/Longmaw_Assassin_Idle.glb",
+          "input_bytes": 1089860,
+          "output_bytes": 843388,
+          "input_vertices": 18518,
+          "output_vertices": 17966,
+          "removed_identical_records": 552,
+          "triangles": 7312,
+          "meshes": 1,
+          "materials": 1,
+          "bones": 23,
+          "textures": 0,
+          "geometry_normal_triangle_changes": false,
+          "max_linear_color_error": 7.5809354593558975e-06,
+          "max_weight_error": 7.467184643616953e-06,
+          "extensions_required": [],
+          "sha256": "bb81bb66a8b5f5e0d39c533f1572278fbd43cef74d2d4a170aca2e65451e4093",
+          "packing_validation": {
+            "passed": true,
+            "expanded_positions_normals_joints_exact": true,
+            "triangle_order_exact": true,
+            "skeleton_exact": true,
+            "normalized_weights": true
+          }
+        }
+      }
+    },
+    {
+      "id": "Longmaw_Assassin_Aggressive",
+      "role": "Assassin",
+      "ru": "Убийца",
+      "state": "Aggressive",
+      "source": "/Users/wingman/Documents/Codex/GrowAMonster-Git-2026-11-12/art/longmaw-forms-v1/models/Longmaw_Assassin_Aggressive.glb",
+      "source_sha256": "a9fcbef6be0a186073c0f9ceddf2d909695fcb541be75f1bd2b501cb8afaa1b9",
+      "profiles": {
+        "models": {
+          "file": "models/Longmaw_Assassin_Aggressive.glb",
+          "input_bytes": 1210844,
+          "output_bytes": 945844,
+          "input_vertices": 20590,
+          "output_vertices": 20182,
+          "removed_identical_records": 408,
+          "triangles": 8163,
+          "meshes": 1,
+          "materials": 1,
+          "bones": 23,
+          "textures": 0,
+          "geometry_normal_triangle_changes": false,
+          "max_linear_color_error": 7.5809354593558975e-06,
+          "max_weight_error": 7.513697391381413e-06,
+          "extensions_required": [],
+          "sha256": "c7cc26d8ecb3d1760496fc0367ffc34439386a76870599dd2ca5a883e5135ae8",
+          "packing_validation": {
+            "passed": true,
+            "expanded_positions_normals_joints_exact": true,
+            "triangle_order_exact": true,
+            "skeleton_exact": true,
+            "normalized_weights": true
+          }
+        },
+        "mobile": {
+          "file": "mobile/Longmaw_Assassin_Aggressive.glb",
+          "input_bytes": 1089044,
+          "output_bytes": 844060,
+          "input_vertices": 18504,
+          "output_vertices": 17982,
+          "removed_identical_records": 522,
+          "triangles": 7312,
+          "meshes": 1,
+          "materials": 1,
+          "bones": 23,
+          "textures": 0,
+          "geometry_normal_triangle_changes": false,
+          "max_linear_color_error": 7.5809354593558975e-06,
+          "max_weight_error": 7.513697391381413e-06,
+          "extensions_required": [],
+          "sha256": "c4988f88c9c9ac7f2e20879c644c64505b6c66ccba07da96c64c673023041d47",
+          "packing_validation": {
+            "passed": true,
+            "expanded_positions_normals_joints_exact": true,
+            "triangle_order_exact": true,
+            "skeleton_exact": true,
+            "normalized_weights": true
+          }
+        }
+      }
+    }
+  ],
+  "source_files_unchanged": 306,
+  "status": "optimized_copies_for_review",
+  "integrated": false
+}

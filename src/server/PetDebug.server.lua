@@ -40,18 +40,44 @@ local function execute(p,command,arg,value)
   a.canHurt=nil -- from anywhere, asleep or not
   return require(script.Parent.MutantService).Damage(a,a.hp,p)
  elseif command=="poke" then
-  -- /poke n: hit boss n once for 1 by the usual rules (false: it can't be hurt now - asleep, or a theft is on)
+  -- /poke n [part]: hit boss n by the usual rules for 1, or for that part of its whole health (/poke 1 0.31 to see a
+  -- stagger); false: it can't be hurt now - asleep, or a theft is on. /finish [kind]: the finisher, as the target
+  -- does; kind (RoadConfig.Boss.Finisher.Kinds: SawPlunge ... PickSpike) picks which, whatever the weapon.
+  -- /melee id: own and hold that melee weapon (ShovelConfig.Order).
   local Road=require(script.Parent.RoadService);local cfg=Road.BossCfg[tonumber(arg) or 0];local a=cfg and cfg.Live
   if not a then return false end
-  return require(script.Parent.MutantService).Damage(a,1,p),a.mode
+  return require(script.Parent.MutantService).Damage(a,tonumber(value) and (a.maxHp or a.hp)*tonumber(value) or 1,p),a.mode,a.hp
+ elseif command=="finish" then return require(script.Parent.RoadService).Finish(p,arg)
+ elseif command=="melee" then
+  local Melee=require(game.ReplicatedStorage.Shared.Config.ShovelConfig);if not Melee[arg or ""] or not table.find(Melee.Order,arg) then return false end
+  d.shovels[arg]=true;d.equippedShovel=arg;require(script.Parent.ActionService).Push(p);return true
+ elseif command=="hold" then
+  -- /hold n [seconds]: keep boss n, already on its knees, down for that long (to look at a finisher's poses)
+  local Road=require(script.Parent.RoadService);local cfg=Road.BossCfg[tonumber(arg) or 0];local a=cfg and cfg.Live
+  if not a or not a.staggerUntil then return false end
+  local seconds=tonumber(value) or 120;a.staggerUntil=os.clock()+seconds;a.model:SetAttribute("StaggeredUntil",workspace:GetServerTimeNow()+seconds)
  elseif command=="graves" then
   -- /graves Wooden,Stone,Marble,Golden,Lunar: plant those graves in the first grave spots (to look at the art); the
   -- grave slot is taken the way the hotbar does (planting needs it)
   local G=require(script.Parent.GraveService);d.tutorialDone=true
   for i,kind in string.split(arg or "",",") do
-   local g=G.New(kind);table.insert(d.graveInventory,g);G.Select(p,g.id);G.Plant(p,i)
+   local k,family=string.match(kind,"^(%a+):?(%a*)$") -- Stone:Deer plants a deer's grave (GraveService.Family)
+   -- planted straight into the first free spot of the cemetery (no walking up to it), already ripe
+   local g=G.New(k or kind);if family and family~="" then g.family=family end
+   local slot=G.Slot(d);local point=require(game.ReplicatedStorage.Shared.PlacementRules).FindFree(d,"Grave")
+   if slot and point then g.slot=slot;g.pos=point;g.plantedAt=0;g.progress=nil;table.insert(d.graves,g) end
   end
   G.Render(p,d)
+ elseif command=="bag" then
+  -- /bag Stone:Deer,Marble: graves into the bag, unplanted (the crypt's icon flashes for them)
+  local G=require(script.Parent.GraveService)
+  for _,kind in string.split(arg or "",",") do
+   local k,family=string.match(kind,"^(%a+):?(%a*)$");local g=G.New(k or kind);if family and family~="" then g.family=family end;table.insert(d.graveInventory,g)
+  end
+ elseif command=="tutorial" then
+  -- /tutorial n: put the tutorial on step n (0-8; 9 = done), to check a step
+  local n=tonumber(arg);if not n or n<0 or n>9 then return false end
+  d.tutorialStep=n;d.tutorialDone=n>=9;require(script.Parent.InterfaceService).Refresh(p);require(script.Parent.WeaponService).Push(p)
  elseif command=="traps" then
   -- /traps n: n traps in the bag
   local n=tonumber(arg);if not n then return false end
@@ -97,7 +123,7 @@ local function execute(p,command,arg,value)
   d.tutorialDone=true;local n=math.clamp(tonumber(arg) or 4,1,16);local placed=0
   for gz=-4,32,7 do for gx=-34,34,7 do
    if placed<n then local z=Z.Roll({100},false,false,1);local point=Place.Point(gx,gz)
-    if not Place.Check(d,"Zombie",point,z) then z.zone="Field";z.slot=placed+1;z.pos=point;table.insert(d.zombies,z);placed+=1 end
+    if Place.InYard(point,Place.Radius("Zombie",z)) then z.zone="Field";z.slot=placed+1;z.pos=point;table.insert(d.zombies,z);placed+=1 end
    end
   end end
   Z.Render(p,d)
@@ -109,7 +135,7 @@ local function execute(p,command,arg,value)
   for gz=-4,40,9 do for gx=-36,36,9 do
    local id=queue[placed+1]
    if id and tierOf[id] then local z=Z.Roll({100},false,false,1);z.type=id;z.tier=tierOf[id];local point=Place.Point(gx,gz)
-    if not Place.Check(d,"Zombie",point,z) then z.zone="Field";z.slot=#d.zombies+1;z.pos=point;table.insert(d.zombies,z);placed+=1 end
+    if Place.InYard(point,Place.Radius("Zombie",z)) then z.zone="Field";z.slot=#d.zombies+1;z.pos=point;table.insert(d.zombies,z);placed+=1 end
    end
   end end
   Z.Render(p,d)

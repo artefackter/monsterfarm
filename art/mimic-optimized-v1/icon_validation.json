@@ -1,0 +1,617 @@
+{
+  "passed": true,
+  "checks": [
+    {
+      "id": "MimicFarmer",
+      "profile": "ui512",
+      "display_px": 64,
+      "comparisons": [
+        {
+          "background": "#EDE5F3",
+          "mae_rgb255": 0.4713,
+          "psnr_db": 50.75
+        },
+        {
+          "background": "#252230",
+          "mae_rgb255": 0.4294,
+          "psnr_db": 51.28
+        }
+      ]
+    },
+    {
+      "id": "MimicFarmer",
+      "profile": "ui512",
+      "display_px": 96,
+      "comparisons": [
+        {
+          "background": "#EDE5F3",
+          "mae_rgb255": 0.5359,
+          "psnr_db": 50.0
+        },
+        {
+          "background": "#252230",
+          "mae_rgb255": 0.4851,
+          "psnr_db": 50.53
+        }
+      ]
+    },
+    {
+      "id": "MimicFarmer",
+      "profile": "ui512",
+      "display_px": 128,
+      "comparisons": [
+        {
+          "background": "#EDE5F3",
+          "mae_rgb255": 0.5621,
+          "psnr_db": 49.49
+        },
+        {
+          "background": "#252230",
+          "mae_rgb255": 0.5065,
+          "psnr_db": 50.12
+        }
+      ]
+    },
+    {
+      "id": "MimicFarmer",
+      "profile": "small256",
+      "display_px": 64,
+      "comparisons": [
+        {
+          "background": "#EDE5F3",
+          "mae_rgb255": 0.7144,
+          "psnr_db": 47.31
+        },
+        {
+          "background": "#252230",
+          "mae_rgb255": 0.5969,
+          "psnr_db": 48.49
+        }
+      ]
+    },
+    {
+      "id": "MimicFarmer",
+      "profile": "small256",
+      "display_px": 96,
+      "comparisons": [
+        {
+          "background": "#EDE5F3",
+          "mae_rgb255": 0.8264,
+          "psnr_db": 45.69
+        },
+        {
+          "background": "#252230",
+          "mae_rgb255": 0.6704,
+          "psnr_db": 47.27
+        }
+      ]
+    },
+    {
+      "id": "MimicFarmer",
+      "profile": "small256",
+      "display_px": 128,
+      "comparisons": [
+        {
+          "background": "#EDE5F3",
+          "mae_rgb255": 0.8702,
+          "psnr_db": 44.87
+        },
+        {
+          "background": "#252230",
+          "mae_rgb255": 0.7006,
+          "psnr_db": 46.53
+        }
+      ]
+    },
+    {
+      "id": "MimicMiner",
+      "profile": "ui512",
+      "display_px": 64,
+      "comparisons": [
+        {
+          "background": "#EDE5F3",
+          "mae_rgb255": 0.4625,
+          "psnr_db": 50.82
+        },
+        {
+          "background": "#252230",
+          "mae_rgb255": 0.429,
+          "psnr_db": 51.25
+        }
+      ]
+    },
+    {
+      "id": "MimicMiner",
+      "profile": "ui512",
+      "display_px": 96,
+      "comparisons": [
+        {
+          "background": "#EDE5F3",
+          "mae_rgb255": 0.5236,
+          "psnr_db": 50.12
+        },
+        {
+          "background": "#252230",
+          "mae_rgb255": 0.48,
+          "psnr_db": 50.63
+        }
+      ]
+    },
+    {
+      "id": "MimicMiner",
+      "profile": "ui512",
+      "display_px": 128,
+      "comparisons": [
+        {
+          "background": "#EDE5F3",
+          "mae_rgb255": 0.5759,
+          "psnr_db": 49.35
+        },
+        {
+          "background": "#252230",
+          "mae_rgb255": 0.5146,
+          "psnr_db": 50.07
+        }
+      ]
+    },
+    {
+      "id": "MimicMiner",
+      "profile": "small256",
+      "display_px": 64,
+      "comparisons": [
+        {
+          "background": "#EDE5F3",
+          "mae_rgb255": 0.705,
+          "psnr_db": 47.37
+        },
+        {
+          "background": "#252230",
+          "mae_rgb255": 0.6123,
+          "psnr_db": 48.13
+        }
+      ]
+    },
+    {
+      "id": "MimicMiner",
+      "profile": "small256",
+      "display_px": 96,
+      "comparisons": [
+        {
+          "background": "#EDE5F3",
+          "mae_rgb255": 0.8321,
+          "psnr_db": 45.62
+        },
+        {
+          "background": "#252230",
+          "mae_rgb255": 0.685,
+          "psnr_db": 46.98
+        }
+      ]
+    },
+    {
+      "id": "MimicMiner",
+      "profile": "small256",
+      "display_px": 128,
+      "comparisons": [
+        {
+          "background": "#EDE5F3",
+          "mae_rgb255": 0.9107,
+          "psnr_db": 44.42
+        },
+        {
+          "background": "#252230",
+          "mae_rgb255": 0.7185,
+          "psnr_db": 46.16
+        }
+      ]
+    },
+    {
+      "id": "MimicPrincess",
+      "profile": "ui512",
+      "display_px": 64,
+      "comparisons": [
+        {
+          "background": "#EDE5F3",
+          "mae_rgb255": 0.4861,
+          "psnr_db": 50.7
+        },
+        {
+          "background": "#252230",
+          "mae_rgb255": 0.4533,
+          "psnr_db": 51.13
+        }
+      ]
+    },
+    {
+      "id": "MimicPrincess",
+      "profile": "ui512",
+      "display_px": 96,
+      "comparisons": [
+        {
+          "background": "#EDE5F3",
+          "mae_rgb255": 0.5379,
+          "psnr_db": 50.04
+        },
+        {
+          "background": "#252230",
+          "mae_rgb255": 0.4915,
+          "psnr_db": 50.57
+        }
+      ]
+    },
+    {
+      "id": "MimicPrincess",
+      "profile": "ui512",
+      "display_px": 128,
+      "comparisons": [
+        {
+          "background": "#EDE5F3",
+          "mae_rgb255": 0.5924,
+          "psnr_db": 49.23
+        },
+        {
+          "background": "#252230",
+          "mae_rgb255": 0.5332,
+          "psnr_db": 49.94
+        }
+      ]
+    },
+    {
+      "id": "MimicPrincess",
+      "profile": "small256",
+      "display_px": 64,
+      "comparisons": [
+        {
+          "background": "#EDE5F3",
+          "mae_rgb255": 0.7314,
+          "psnr_db": 47.53
+        },
+        {
+          "background": "#252230",
+          "mae_rgb255": 0.621,
+          "psnr_db": 48.57
+        }
+      ]
+    },
+    {
+      "id": "MimicPrincess",
+      "profile": "small256",
+      "display_px": 96,
+      "comparisons": [
+        {
+          "background": "#EDE5F3",
+          "mae_rgb255": 0.8306,
+          "psnr_db": 45.99
+        },
+        {
+          "background": "#252230",
+          "mae_rgb255": 0.6852,
+          "psnr_db": 47.47
+        }
+      ]
+    },
+    {
+      "id": "MimicPrincess",
+      "profile": "small256",
+      "display_px": 128,
+      "comparisons": [
+        {
+          "background": "#EDE5F3",
+          "mae_rgb255": 0.9013,
+          "psnr_db": 44.96
+        },
+        {
+          "background": "#252230",
+          "mae_rgb255": 0.7292,
+          "psnr_db": 46.64
+        }
+      ]
+    },
+    {
+      "id": "MimicKnight",
+      "profile": "ui512",
+      "display_px": 64,
+      "comparisons": [
+        {
+          "background": "#EDE5F3",
+          "mae_rgb255": 0.4624,
+          "psnr_db": 50.88
+        },
+        {
+          "background": "#252230",
+          "mae_rgb255": 0.424,
+          "psnr_db": 51.38
+        }
+      ]
+    },
+    {
+      "id": "MimicKnight",
+      "profile": "ui512",
+      "display_px": 96,
+      "comparisons": [
+        {
+          "background": "#EDE5F3",
+          "mae_rgb255": 0.5258,
+          "psnr_db": 50.1
+        },
+        {
+          "background": "#252230",
+          "mae_rgb255": 0.4774,
+          "psnr_db": 50.7
+        }
+      ]
+    },
+    {
+      "id": "MimicKnight",
+      "profile": "ui512",
+      "display_px": 128,
+      "comparisons": [
+        {
+          "background": "#EDE5F3",
+          "mae_rgb255": 0.5735,
+          "psnr_db": 49.45
+        },
+        {
+          "background": "#252230",
+          "mae_rgb255": 0.5087,
+          "psnr_db": 50.23
+        }
+      ]
+    },
+    {
+      "id": "MimicKnight",
+      "profile": "small256",
+      "display_px": 64,
+      "comparisons": [
+        {
+          "background": "#EDE5F3",
+          "mae_rgb255": 0.6942,
+          "psnr_db": 47.76
+        },
+        {
+          "background": "#252230",
+          "mae_rgb255": 0.5815,
+          "psnr_db": 48.91
+        }
+      ]
+    },
+    {
+      "id": "MimicKnight",
+      "profile": "small256",
+      "display_px": 96,
+      "comparisons": [
+        {
+          "background": "#EDE5F3",
+          "mae_rgb255": 0.8135,
+          "psnr_db": 46.0
+        },
+        {
+          "background": "#252230",
+          "mae_rgb255": 0.6486,
+          "psnr_db": 47.98
+        }
+      ]
+    },
+    {
+      "id": "MimicKnight",
+      "profile": "small256",
+      "display_px": 128,
+      "comparisons": [
+        {
+          "background": "#EDE5F3",
+          "mae_rgb255": 0.8786,
+          "psnr_db": 45.15
+        },
+        {
+          "background": "#252230",
+          "mae_rgb255": 0.6862,
+          "psnr_db": 47.34
+        }
+      ]
+    },
+    {
+      "id": "MimicPunk",
+      "profile": "ui512",
+      "display_px": 64,
+      "comparisons": [
+        {
+          "background": "#EDE5F3",
+          "mae_rgb255": 0.4314,
+          "psnr_db": 51.16
+        },
+        {
+          "background": "#252230",
+          "mae_rgb255": 0.3788,
+          "psnr_db": 51.91
+        }
+      ]
+    },
+    {
+      "id": "MimicPunk",
+      "profile": "ui512",
+      "display_px": 96,
+      "comparisons": [
+        {
+          "background": "#EDE5F3",
+          "mae_rgb255": 0.4814,
+          "psnr_db": 50.48
+        },
+        {
+          "background": "#252230",
+          "mae_rgb255": 0.425,
+          "psnr_db": 51.21
+        }
+      ]
+    },
+    {
+      "id": "MimicPunk",
+      "profile": "ui512",
+      "display_px": 128,
+      "comparisons": [
+        {
+          "background": "#EDE5F3",
+          "mae_rgb255": 0.5292,
+          "psnr_db": 49.76
+        },
+        {
+          "background": "#252230",
+          "mae_rgb255": 0.4652,
+          "psnr_db": 50.59
+        }
+      ]
+    },
+    {
+      "id": "MimicPunk",
+      "profile": "small256",
+      "display_px": 64,
+      "comparisons": [
+        {
+          "background": "#EDE5F3",
+          "mae_rgb255": 0.6125,
+          "psnr_db": 48.32
+        },
+        {
+          "background": "#252230",
+          "mae_rgb255": 0.4897,
+          "psnr_db": 49.91
+        }
+      ]
+    },
+    {
+      "id": "MimicPunk",
+      "profile": "small256",
+      "display_px": 96,
+      "comparisons": [
+        {
+          "background": "#EDE5F3",
+          "mae_rgb255": 0.7365,
+          "psnr_db": 46.57
+        },
+        {
+          "background": "#252230",
+          "mae_rgb255": 0.5759,
+          "psnr_db": 48.58
+        }
+      ]
+    },
+    {
+      "id": "MimicPunk",
+      "profile": "small256",
+      "display_px": 128,
+      "comparisons": [
+        {
+          "background": "#EDE5F3",
+          "mae_rgb255": 0.8171,
+          "psnr_db": 45.4
+        },
+        {
+          "background": "#252230",
+          "mae_rgb255": 0.614,
+          "psnr_db": 47.92
+        }
+      ]
+    },
+    {
+      "id": "MimicAssassin",
+      "profile": "ui512",
+      "display_px": 64,
+      "comparisons": [
+        {
+          "background": "#EDE5F3",
+          "mae_rgb255": 0.4198,
+          "psnr_db": 51.35
+        },
+        {
+          "background": "#252230",
+          "mae_rgb255": 0.3796,
+          "psnr_db": 51.94
+        }
+      ]
+    },
+    {
+      "id": "MimicAssassin",
+      "profile": "ui512",
+      "display_px": 96,
+      "comparisons": [
+        {
+          "background": "#EDE5F3",
+          "mae_rgb255": 0.4668,
+          "psnr_db": 50.8
+        },
+        {
+          "background": "#252230",
+          "mae_rgb255": 0.4142,
+          "psnr_db": 51.44
+        }
+      ]
+    },
+    {
+      "id": "MimicAssassin",
+      "profile": "ui512",
+      "display_px": 128,
+      "comparisons": [
+        {
+          "background": "#EDE5F3",
+          "mae_rgb255": 0.5037,
+          "psnr_db": 50.13
+        },
+        {
+          "background": "#252230",
+          "mae_rgb255": 0.4456,
+          "psnr_db": 50.96
+        }
+      ]
+    },
+    {
+      "id": "MimicAssassin",
+      "profile": "small256",
+      "display_px": 64,
+      "comparisons": [
+        {
+          "background": "#EDE5F3",
+          "mae_rgb255": 0.6106,
+          "psnr_db": 48.61
+        },
+        {
+          "background": "#252230",
+          "mae_rgb255": 0.4945,
+          "psnr_db": 50.08
+        }
+      ]
+    },
+    {
+      "id": "MimicAssassin",
+      "profile": "small256",
+      "display_px": 96,
+      "comparisons": [
+        {
+          "background": "#EDE5F3",
+          "mae_rgb255": 0.717,
+          "psnr_db": 46.89
+        },
+        {
+          "background": "#252230",
+          "mae_rgb255": 0.5533,
+          "psnr_db": 49.05
+        }
+      ]
+    },
+    {
+      "id": "MimicAssassin",
+      "profile": "small256",
+      "display_px": 128,
+      "comparisons": [
+        {
+          "background": "#EDE5F3",
+          "mae_rgb255": 0.7851,
+          "psnr_db": 45.87
+        },
+        {
+          "background": "#252230",
+          "mae_rgb255": 0.6036,
+          "psnr_db": 48.16
+        }
+      ]
+    }
+  ]
+}

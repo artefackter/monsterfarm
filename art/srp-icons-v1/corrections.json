@@ -1,0 +1,17 @@
+[
+  {
+    "id": "PrimitiveSummonerKing",
+    "prompt": "Use case: precise-object-edit. Image 1 is the edit target, a finished transparent 2D game icon. Preserve this exact character, its FOUR legs, royal costume, colors, cel shading and dark outline. Change ONLY framing: scale the entire complete character down to occupy at most 88% of canvas width and height, center on a square canvas with at least 6% transparent margin on every side. Restore the tiny clipped extreme right foot edge to complete its existing angular shape. No anatomy, costume or pose changes. Genuine transparent background. No shadow, text or props.",
+    "references": [
+      "/Users/wingman/.codex/generated_images/01a1d9d4-d34e-7b10-a745-1167fae292c7/exec-c8d97818-68ad-4c55-abb9-d105f6f08501.png"
+    ]
+  },
+  {
+    "id": "AdaptedVisceraKing",
+    "prompt": "Use case: precise-object-edit. Image 1 is the finished 2D icon to correct; Image 2 is the authoritative 3D anatomy reference. Keep image 1 illustration style, king costume, crown, colors, pose, shell and all existing limbs. Restore the ONE missing upper feeding appendage shown in Image 2: a shorter burgundy segmented tooth-lined arm with pale tip rising diagonally up-left in front of the crown, immediately right of the tallest upward arm. It must connect to the upper mouth rim, be distinct from the tall arm, matching the reference. Exactly EIGHT feeding appendages in total (image 1 currently has seven). Do not add or remove any other anatomy. Preserve six walking legs with natural occlusion. Center the complete character with 5% transparent margin all around, no cropped parts. Genuine transparent background. No props, ground, shadow or text.",
+    "references": [
+      "/Users/wingman/.codex/generated_images/01a1d9d4-d34e-7b10-a745-1167fae292c7/exec-fbd31346-228e-4a6d-871d-3e0556ad8cf2.png",
+      "/Users/wingman/Documents/Codex/GrowAMonster-Git-2026-11-12/art/srp-character-variants-v1/previews/AdaptedVisceraKing_ThreeQuarter.png"
+    ]
+  }
+]

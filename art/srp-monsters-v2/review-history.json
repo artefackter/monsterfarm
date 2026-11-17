@@ -1,0 +1,22 @@
+{
+  "date": "2026-11-14",
+  "timezone": "Europe/Moscow",
+  "dredge": "Approved in chat: Да, подходит. Binaries and previews unchanged.",
+  "owner_steering": [
+    "Crux",
+    "Crux'а делать не нужно",
+    "Он уже есть",
+    "Надо адаптировать существующего, его зовут Паразит"
+  ],
+  "final_scope": "Three new models and a separate adaptation of existing Parasite_Root_Aggressive.",
+  "pending_visual_approval": [
+    "AssimilatedAdventurer",
+    "PrimitiveSummoner",
+    "ParasiteAdapted",
+    "AdaptedViscera"
+  ],
+  "new_crux": "Superseded locally, excluded from delivery.",
+  "game_integrated": false,
+  "uploaded": false,
+  "studio_modified": false
+}

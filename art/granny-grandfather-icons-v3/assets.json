@@ -1,0 +1,187 @@
+{
+  "mode": "built-in image_gen edits; unchanged approved Grandfather icons copied",
+  "status": "awaiting_wrist_and_king_approval",
+  "requested_count": 12,
+  "completed_count": 12,
+  "grip_approved": false,
+  "game_integration_authorized": false,
+  "assets": [
+    {
+      "id": "GrandfatherFarmer",
+      "character": "Grandfather",
+      "role": "Farmer",
+      "ru": "Фермер",
+      "file": "icons/GrandfatherFarmer.png",
+      "generated_source": "/Users/wingman/.codex/generated_images/01a1d8f4-a23c-7433-95f8-26752371abb7/exec-945d2c6c-56cd-4917-b5f5-5a66845ce62c.png",
+      "references": [
+        "/Users/wingman/Documents/Codex/GrowAMonster-Git-2026-11-12/art/granny-grandfather-icons-v1/icons/GrandfatherFarmer.png",
+        "/Users/wingman/Documents/Codex/GrowAMonster-Git-2026-11-12/art/granny-grandfather-forms-v2/previews/Grandfather_Farmer_Idle.png",
+        "/Users/wingman/Documents/Codex/GrowAMonster-Git-2026-11-12/art/granny-grandfather-v3/previews/Grandfather_GripReference.png"
+      ],
+      "status": "approved",
+      "grip_approved": true,
+      "copied_from": "art/granny-grandfather-icons-v2/icons/GrandfatherFarmer.png"
+    },
+    {
+      "id": "GrandfatherMiner",
+      "character": "Grandfather",
+      "role": "Miner",
+      "ru": "Шахтёр",
+      "file": "icons/GrandfatherMiner.png",
+      "generated_source": "/Users/wingman/.codex/generated_images/01a1d8f4-a23c-7433-95f8-26752371abb7/exec-0e78a94e-f3aa-48e2-ab5a-96cca7f75a18.png",
+      "references": [
+        "/Users/wingman/Documents/Codex/GrowAMonster-Git-2026-11-12/art/granny-grandfather-icons-v2/iterations/first-pass/GrandfatherMiner.png",
+        "/Users/wingman/Documents/Codex/GrowAMonster-Git-2026-11-12/art/granny-grandfather-icons-v2/icons/GrandfatherFarmer.png"
+      ],
+      "status": "approved",
+      "grip_approved": true,
+      "copied_from": "art/granny-grandfather-icons-v2/icons/GrandfatherMiner.png"
+    },
+    {
+      "id": "GrandfatherKnight",
+      "character": "Grandfather",
+      "role": "Knight",
+      "ru": "Рыцарь",
+      "file": "icons/GrandfatherKnight.png",
+      "generated_source": "/Users/wingman/.codex/generated_images/01a1d8f4-a23c-7433-95f8-26752371abb7/exec-bea064fa-876b-49ce-a8cf-14dc9cd20428.png",
+      "references": [
+        "/Users/wingman/Documents/Codex/GrowAMonster-Git-2026-11-12/art/granny-grandfather-icons-v2/iterations/first-pass/GrandfatherKnight.png",
+        "/Users/wingman/Documents/Codex/GrowAMonster-Git-2026-11-12/art/granny-grandfather-icons-v2/icons/GrandfatherFarmer.png"
+      ],
+      "status": "approved",
+      "grip_approved": true,
+      "copied_from": "art/granny-grandfather-icons-v2/icons/GrandfatherKnight.png"
+    },
+    {
+      "id": "GrandfatherPunk",
+      "character": "Grandfather",
+      "role": "Punk",
+      "ru": "Нефор",
+      "file": "icons/GrandfatherPunk.png",
+      "generated_source": "/Users/wingman/.codex/generated_images/01a1d8f4-a23c-7433-95f8-26752371abb7/exec-c1b093f6-ca12-45b7-9159-e221bf256bea.png",
+      "references": [
+        "/Users/wingman/Documents/Codex/GrowAMonster-Git-2026-11-12/art/granny-grandfather-icons-v2/iterations/first-pass/GrandfatherPunk.png",
+        "/Users/wingman/Documents/Codex/GrowAMonster-Git-2026-11-12/art/granny-grandfather-icons-v2/icons/GrandfatherFarmer.png"
+      ],
+      "status": "approved",
+      "grip_approved": true,
+      "copied_from": "art/granny-grandfather-icons-v2/icons/GrandfatherPunk.png"
+    },
+    {
+      "id": "GrandfatherAssassin",
+      "character": "Grandfather",
+      "role": "Assassin",
+      "ru": "Убийца",
+      "file": "icons/GrandfatherAssassin.png",
+      "generated_source": "/Users/wingman/.codex/generated_images/01a1d8f4-a23c-7433-95f8-26752371abb7/exec-3bb416d7-affa-4485-a9db-198ca176392b.png",
+      "references": [
+        "/Users/wingman/Documents/Codex/GrowAMonster-Git-2026-11-12/art/granny-grandfather-icons-v1/icons/GrandfatherAssassin.png",
+        "/Users/wingman/Documents/Codex/GrowAMonster-Git-2026-11-12/art/granny-grandfather-icons-v2/icons/GrandfatherFarmer.png",
+        "/Users/wingman/Documents/Codex/GrowAMonster-Git-2026-11-12/art/granny-grandfather-forms-v2/previews/Grandfather_Assassin_Idle.png"
+      ],
+      "status": "approved",
+      "grip_matches_approved_reference": true,
+      "copied_from": "art/granny-grandfather-icons-v2/icons/GrandfatherAssassin.png",
+      "grip_approved": true
+    },
+    {
+      "id": "GrannyFarmer",
+      "character": "Granny",
+      "role": "Farmer",
+      "ru": "Фермер",
+      "file": "icons/GrannyFarmer.png",
+      "generated_source": "/Users/wingman/.codex/generated_images/01a1d8f4-a23c-7433-95f8-26752371abb7/exec-6ca729b0-dc3f-4346-8544-874c9b1f3f40.png",
+      "references": [
+        "/Users/wingman/Documents/Codex/GrowAMonster-Git-2026-11-12/art/granny-grandfather-icons-v2/icons/GrannyFarmer.png",
+        "/Users/wingman/Documents/Codex/GrowAMonster-Git-2026-11-12/art/granny-grandfather-v4/previews/Granny_Idle_GripR.png",
+        "/Users/wingman/Documents/Codex/GrowAMonster-Git-2026-11-12/art/granny-grandfather-forms-v3/previews/Granny_Farmer_Idle.png"
+      ],
+      "status": "awaiting_wrist_approval"
+    },
+    {
+      "id": "GrannyMiner",
+      "character": "Granny",
+      "role": "Miner",
+      "ru": "Шахтёр",
+      "file": "icons/GrannyMiner.png",
+      "generated_source": "/Users/wingman/.codex/generated_images/01a1d8f4-a23c-7433-95f8-26752371abb7/exec-ea5f8ac5-22b9-49ab-8175-90ac027b2e65.png",
+      "references": [
+        "/Users/wingman/Documents/Codex/GrowAMonster-Git-2026-11-12/art/granny-grandfather-icons-v2/icons/GrannyMiner.png",
+        "/Users/wingman/Documents/Codex/GrowAMonster-Git-2026-11-12/art/granny-grandfather-v4/previews/Granny_Idle_GripR.png",
+        "/Users/wingman/Documents/Codex/GrowAMonster-Git-2026-11-12/art/granny-grandfather-forms-v3/previews/Granny_Miner_Idle.png"
+      ],
+      "status": "awaiting_wrist_approval"
+    },
+    {
+      "id": "GrannyPrincess",
+      "character": "Granny",
+      "role": "Princess",
+      "ru": "Принцесса",
+      "file": "icons/GrannyPrincess.png",
+      "generated_source": "/Users/wingman/.codex/generated_images/01a1d8f4-a23c-7433-95f8-26752371abb7/exec-cc59c31a-b8fb-49b5-bd57-5d69dd070113.png",
+      "references": [
+        "/Users/wingman/Documents/Codex/GrowAMonster-Git-2026-11-12/art/granny-grandfather-icons-v2/icons/GrannyPrincess.png",
+        "/Users/wingman/Documents/Codex/GrowAMonster-Git-2026-11-12/art/granny-grandfather-v4/previews/Granny_Idle_GripR.png",
+        "/Users/wingman/Documents/Codex/GrowAMonster-Git-2026-11-12/art/granny-grandfather-forms-v3/previews/Granny_Princess_Idle.png"
+      ],
+      "status": "awaiting_wrist_approval"
+    },
+    {
+      "id": "GrannyKnight",
+      "character": "Granny",
+      "role": "Knight",
+      "ru": "Рыцарь",
+      "file": "icons/GrannyKnight.png",
+      "generated_source": "/Users/wingman/.codex/generated_images/01a1d8f4-a23c-7433-95f8-26752371abb7/exec-b464b3bb-72d2-4e2a-a3aa-ca49217d89f7.png",
+      "references": [
+        "/Users/wingman/Documents/Codex/GrowAMonster-Git-2026-11-12/art/granny-grandfather-icons-v2/icons/GrannyKnight.png",
+        "/Users/wingman/Documents/Codex/GrowAMonster-Git-2026-11-12/art/granny-grandfather-v4/previews/Granny_Idle_GripR.png",
+        "/Users/wingman/Documents/Codex/GrowAMonster-Git-2026-11-12/art/granny-grandfather-forms-v3/previews/Granny_Knight_Idle.png"
+      ],
+      "status": "awaiting_wrist_approval"
+    },
+    {
+      "id": "GrannyPunk",
+      "character": "Granny",
+      "role": "Punk",
+      "ru": "Нефор",
+      "file": "icons/GrannyPunk.png",
+      "generated_source": "/Users/wingman/.codex/generated_images/01a1d8f4-a23c-7433-95f8-26752371abb7/exec-f8964ae4-c176-4a06-9435-30f177d14b90.png",
+      "references": [
+        "/Users/wingman/Documents/Codex/GrowAMonster-Git-2026-11-12/art/granny-grandfather-icons-v2/icons/GrannyPunk.png",
+        "/Users/wingman/Documents/Codex/GrowAMonster-Git-2026-11-12/art/granny-grandfather-v4/previews/Granny_Idle_GripR.png",
+        "/Users/wingman/Documents/Codex/GrowAMonster-Git-2026-11-12/art/granny-grandfather-forms-v3/previews/Granny_Punk_Idle.png"
+      ],
+      "status": "awaiting_wrist_approval"
+    },
+    {
+      "id": "GrannyAssassin",
+      "character": "Granny",
+      "role": "Assassin",
+      "ru": "Убийца",
+      "file": "icons/GrannyAssassin.png",
+      "generated_source": "/Users/wingman/.codex/generated_images/01a1d8f4-a23c-7433-95f8-26752371abb7/exec-f801270b-f199-436e-bb63-c55461d9d2ea.png",
+      "references": [
+        "/Users/wingman/Documents/Codex/GrowAMonster-Git-2026-11-12/art/granny-grandfather-icons-v2/icons/GrannyAssassin.png",
+        "/Users/wingman/Documents/Codex/GrowAMonster-Git-2026-11-12/art/granny-grandfather-v4/previews/Granny_Idle_GripR.png",
+        "/Users/wingman/Documents/Codex/GrowAMonster-Git-2026-11-12/art/granny-grandfather-forms-v3/previews/Granny_Assassin_Idle.png"
+      ],
+      "status": "awaiting_wrist_approval"
+    },
+    {
+      "id": "GrandfatherKing",
+      "character": "Grandfather",
+      "role": "King",
+      "ru": "Король",
+      "file": "icons/GrandfatherKing.png",
+      "generated_source": "/Users/wingman/.codex/generated_images/01a1d8f4-a23c-7433-95f8-26752371abb7/exec-d8d59ebe-a4e7-49fd-8d82-54c642acc019.png",
+      "references": [
+        "/Users/wingman/Documents/Codex/GrowAMonster-Git-2026-11-12/art/granny-grandfather-icons-v2/icons/GrandfatherPrincess.png",
+        "/Users/wingman/Documents/Codex/GrowAMonster-Git-2026-11-12/art/granny-grandfather-forms-v3/previews/Grandfather_King_Idle.png",
+        "/Users/wingman/Documents/Codex/GrowAMonster-Git-2026-11-12/art/ui/monster-outfits/DeerKing.png"
+      ],
+      "status": "awaiting_king_approval"
+    }
+  ],
+  "blocked": []
+}

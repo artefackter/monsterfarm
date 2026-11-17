@@ -372,3 +372,210 @@ return {}
 -- planted there. The crypt holds any number of monsters now: "Store all" stores everything, "Place best" puts the
 -- best earners out (swapping weaker ones in), and the crypt upgrade left the house menu. (5) Progress reset: profiles
 -- live in GrowAMonster_v2 and the leaderboard in GrowAMonster_IncomeBoard_v2; the v1 stores are kept as a backup.
+-- 2026-11-15 (owner: the cemetery stuck out beside the farm and took too much room; a red circle on a screenshot):
+-- the cemetery moved over the farm's back-left corner (+x, +z), 22 studs round, 16 studs in from the side fence and
+-- 11 from the back one, so it sticks out past both: the farm's fence stops at its ring and the farm bulges there (owner:
+-- "the cemetery goes out past the farm and the farm becomes convex"). Its opening and the crypt's steps face the
+-- farm centre; a path from the middle mirrors the one to the house. The farm grew to 100 x 100 (FarmHalf 50; the
+-- house moved with its corner) and the farms moved 8 studs closer to the plaza
+-- (PlotRadius 167) - closer still would crowd neighbours' front corners (53 degrees apart). Monsters stay out of the
+-- cemetery; the fence cat walks round its outside; raiders come from either side again. Layout version 49 re-places
+-- graves and monsters that no longer fit.
+-- 2026-11-15 road reskin (owner, with art/road-reskin-screenshot-concepts-v5 and the biome props of
+-- art/biome-models-optimized-v1, uploaded as ArtModels): the six locations are now 1 Dark Forest (deer, Verity,
+-- stalker; boss the Chief Physician, who replaced the Horned Alpha), 2 Backrooms (Longmaw, RingMaw, Siren Head;
+-- boss RingMaw), 3 Abandoned City (Stranger, Slenderman, Mimic; boss the Stranger), 4 Abandoned Village (Granny,
+-- Grandpa, Slendrina's Mom; boss Slendrina), 5 Parasitown (Assimilant, Dredge, Viscera; boss Patient Zero), 6 Abandoned Cave (cave dwellers,
+-- Summoner, Dealer; boss the Cave Dweller). Three kinds of monster per location; a location's graves give its
+-- monsters and its boss's family. Long shallow buildings and walls stand along the road's walls with solid blocks,
+-- the middle stays clear; obstructions dress by location; no slime pools. Each boss arena takes its location's look
+-- (antlers, candles on an orange rim, red banners, a plank ring with candles, tentacles, torches and ore). The last
+-- boss's main grave can still hatch the Chief Physician. No looks on the road (owner, the same day): every road
+-- monster and boss but the Chief is its family's plain form (the new families' base models, cut and uploaded too).
+-- 2026-11-15 (owner): a road monster notices only runners in its own location, though one already after a runner
+-- chases them back across the line; no "the imps got you" notice; five wooden graves near the start of the dark
+-- forest for the tutorial (unguarded, back in 30 s); guns don't aim at a boss that is awake but not fighting (it
+-- can't be hurt then anyway: BossMode on its model).
+-- 2026-11-15 boss arenas v6 (owner's circle on a screenshot): no slanted corridor; each arena's circle stands against
+-- the road 55 studs before the location's end and reaches 20 studs into it, open to the road along its arc (about
+-- 125 studs wide), so the arena and its boss are in plain view. A fight puts the red barrier along that arc; the
+-- arena's part of the road counts as inside it. The boss's name hangs on a board over the far side.
+-- 2026-11-15 (owner): the tutorial gained a last step, "⑤ visit the gunsmith and take the Double barrel": after the
+-- first road grave is planted the arrow leads to the gunsmith, whose menu offers the Double free (WeaponConfig.
+-- TutorialGun); taking it ends the tutorial and brings the starter cat. Step 5 is "done" now. No footstep sounds.
+-- 2026-11-15 (owner): four more tutorial steps after the Double - ⑥ upgrade a gun at the workbench, ⑦ the treadmill,
+-- ⑧ the gate, ⑨ the house - each upgrade free once on its own step (TutorialService; the boards show it as a credit,
+-- the workbench as "FREE!"); the tutorial ends with the house and brings the starter cat. Music plays only on the
+-- player's own farm. Graves grow far faster: 20 s, 1, 3, 8, 10, 12, 15 and 20 min.
+-- 2026-11-15 (owner: no surprise mutations): monsters no longer roll Golden/Lunar/Rainbow mutations (ZombieConfig
+-- chances 0, ProfileV3 clears old ones); a monster's label is just its look and rarity again - Farmer Common, Miner
+-- Uncommon, Punk Rare, Knight Epic, Assassin Legendary, King Mythic - with no glints.
+-- 2026-11-15 performance (owner: phones run hot; the streaming radius stays): fewer night lights (every other path
+-- lantern, one cemetery lantern, every fourth road lamp, no brazier or corner-lamp lights), no bloom, the location
+-- tint pass only on the road, shadows only from houses, trees and farm monsters, monster labels rebuilt only when
+-- they change and monsters over 60 studs away animated every other frame. The 84 new monster models were cut from
+-- about 6,900 to about 3,500 triangles (art/roblox-import-v1/monsters-lite).
+-- 2026-11-15 (owner): graves stand along the road again as before 2026-11-14 - one per 180 studs of each location's
+-- regular stretch (at least two), left and right in turn, from the location's pool, back 40 s after being taken. They
+-- replace the five tutorial-only wooden graves: the dark forest's own are nearly all wooden, and the tutorial's arrow
+-- leads to the nearest one but never to a boss's hoard. The disc under a road grave is soft now (no neon).
+-- 2026-11-15 (owner): no lanterns in the central area (the plaza's pole lanterns and the lanterns along the walkways
+-- to the farms and the ruins gate); the road's gates stay open through a Blood Moon; no health bar over a boss while
+-- it wakes, chases or walks back; no "loses 1 rarity" line at the portal. The crypt works from anywhere: a monster
+-- taken out away from the farm stays in your arms until you put it down at home (a grave picked up, or a faint, sends
+-- it back). The crypt's new Graves tab lists the farm's graves with the time each has left and digs a ripe one from
+-- wherever you are, the monster straight into the crypt with its reveal.
+-- 2026-11-15, the owner's final list: the boss arenas' stands run right to the road's walls (the void showed through
+-- where they stopped short); the crypt's Graves tab has a "Dig all" button; road monsters show their name over the
+-- health bar (Verity, Longmaw, Granny...; a boss its own name); the miners' helmet lamps don't glow; the ruins gate has
+-- no lights (no torches, lanterns, lit windows or glowing skull eyes) and it and the island wall are weathered dark
+-- stone instead of lavender. Road graves appear only in one mini cemetery per location: the farm's round purple patch
+-- and weathered fence, open to the road's middle, about the middle of the stretch on a side clear of obstructions,
+-- with one grave per 180 studs of the location (at least four) in a ring inside.
+-- 2026-11-15 (owner): each mini cemetery moved to its location's end, just short of where the boss arena opens onto
+-- the road, on the side across from the arena; the disc under a road grave glows softly again (neon at .62
+-- transparency: the old .25 looked cheap, the plain disc that replaced it was too dim).
+-- 2026-11-15 boss fights (owner; the finisher was redone the same day, see the next note): (1) Stagger and finisher - at 70%, 40% and 12% of its health a boss drops to its
+-- knees for 8 s with a pulsing "Finish it" target on it; a fighter within reach who taps it leaps at its head and
+-- drives the shovel in, drawn from behind the back (2.8 s, the blow at 1.45 s for 15% of its whole health, so the last
+-- one kills), with cut camera shots and black bars for whoever does it; nobody hurts the finisher meanwhile. It gets
+-- up by itself otherwise, and each time it gets up it attacks 15% more often. (2) Monster animation v3 - joints ease
+-- to their poses, the body leans into speeding up and banks into turns, the head follows the nearest player, a blow
+-- settles. (3) Harder bosses - health x5 (was x2.4), and by location more attacks a second, shorter telegraphs, more
+-- speed, and from the backrooms on the boss calls in its location's monsters (RoadConfig.Boss.Level).
+-- 2026-11-15 finisher v2 (owner: "not cinematic; like a Dead by Daylight kill; and no shooting once the monster is
+-- down"): a staggered boss can't be shot (guns don't aim at it, the server refuses the damage) - only finished, from
+-- within 28 studs. The finisher is 5.2 s: the player walks to its flank, vaults onto its back, draws the shovel from
+-- behind the back and raises it slowly, drives it into the head (3.1 s, the damage), twists, shoves it in again,
+-- wrenches it out and jumps down in front. The boss sags under the rider, heaves and claws up at them, shudders at
+-- each blow. Six moving camera shots with depth of field, a darker grade, a red flash and black bars; no interface.
+-- 2026-11-15 finisher v3 (owner: animation files put in the project, then "an animation pack with a heavy 4-hit
+-- combo"; The Legion's memento mori for the look): the player's whole body now plays a real animation clip instead
+-- of coded poses - Sword_Heavy_Combo of Quaternius' Universal Animation Library 2 (CC0), retargeted to R15 by
+-- art/roblox-import-v1/tools/finisher_clips.py into shared/FinisherClips (joint transforms CombatPose plays straight
+-- onto the Motor6Ds: no Animation asset to publish), its travel scaled to four studs. The shovel is held like a sword,
+-- by the top of its shaft. The player walks to in front of the boss's head (it sinks low, propped on its arms, face
+-- lifted), four blows land (the boss shudders at each; the last, an overhead chop 3.43 s in, does the damage), 4.7 s
+-- in all. The camera keeps both in frame: behind the shoulder between blows, from the side at each hit, low beside
+-- its head before the last, wide after it. Monsters are still rigid parts moved by code (no skeletons yet).
+-- 2026-11-15 skinned bosses (owner: "the monsters are built of rigid parts - you have Blender, fix it"; bosses first):
+-- a skinned GLB uploaded through Open Cloud keeps its skeleton (Bone instances inside the MeshPart). The Stranger (28
+-- bones) and Slendrina (19) bosses are built from their skinned models (ReplicatedStorage.ArtSkinned; RoadMonsterRules
+-- Skinned) and MutantAnimation moves their bones with the same poses the rigid groups take - the spine bends, elbows
+-- and knees flex, on its knees it really kneels. The other four bosses (the Chief, RingMaw, the Parasite, the Cave
+-- Dweller) were modelled as separate rigid pieces with no skeleton: they are still rigid until one is built for them.
+-- 2026-11-15 the animation pack in general (owner: "let's adapt the pack's animations to our game in general"):
+-- clips live one a module in shared/Clips and play through ClipPlayer (the finisher's FinisherClips module is gone).
+-- The player's shovel swing is the pack's sword cut on the upper body (it was a coded spin) and a knockout is its
+-- knockback and getting-up clips (coded tilts before). A skinned monster (the Stranger and Slendrina bosses) walks,
+-- stands and claws by the pack's zombie clips, in step with the ground; its attacks, kneeling and sleep stay coded.
+-- Not used: carrying, farming, sliding, shield and idle clips (nothing in the game they fit), and the dig stays the
+-- coded shovel dig.
+-- 2026-11-15, evening: finishers (owner: "add other finishers, make the finisher less frequent; the most important -
+-- one of them must be with a chainsaw"). (1) Once a fight: a boss goes down once, at a fifth of its health, and the
+-- finisher is the kill (it was at .7, .4 and .12 for .15 each); boss health is 3.5x, not 5x, so there is as much to
+-- shoot off as before. (2) Three kinds (RoadConfig.Boss.Finisher.Kinds; the server picks: a player's first is the
+-- chainsaw, after that any but their last): Heavy - the four-hit shovel combo; Flurry - a rush with a cut, then four
+-- quick cuts; Chainsaw - the saw comes from behind the back, two pulls of the starter cord, raised, driven into the
+-- boss's head and ground in (sparks, chips, smoke, the chain running), torn out and held high. The saw is built of
+-- plain parts in code (ChainsawModel), its pose is coded (ShovelMotion, CombatPose.SawPose), its sounds are the
+-- library's chainsaw (SoundConfig; picked by title, not by ear). (3) The cinematic keeps the lens clear: it rises
+-- over a limb of the boss that gets in its way, and the arena's other monsters are not drawn for the finisher while
+-- it runs. A boss with a wide head is finished from further off (RoadMonsterRules FinisherOff: the RingMaw).
+-- Studio: /finish Chainsaw|Heavy|Flurry, /hold n seconds (keep a staggered boss down to look at poses).
+-- 2026-11-15, evening: skeletons for the other four bosses (owner: "make skeletons for the other four bosses"). None
+-- had a skinned source, so art/roblox-import-v1/tools/rig_bosses.py builds one: the rigid pieces put together where
+-- the game puts them, joined into one mesh and bound to bones standing on the game's own joint points, with an elbow
+-- and a knee found in every limb and the weights blended across them (glowing pieces stay a second, Neon mesh on the
+-- head bone). All six bosses are skinned now. The two-legged ones walk by the pack's zombie clips like the first
+-- two; the RingMaw, four-legged, keeps its coded gait on bones (its hind legs bend at the knee above its back) and
+-- lies flat when asleep or staggered; the Parasite's tendrils whip on bones of their own. A skinned model carries
+-- HeadCentre - the middle of its head from the Head bone - so a finisher aims at the head, not the neck.
+-- 2026-11-15, evening: "Place best" (owner: "it doesn't put out every monster it could; and let it place them nearer
+-- the farm's centre"). It took the first free cell of a sparse grid from the front corner and stopped at the first
+-- monster that found none - with big monsters that was long before the house's limit (36 in the crypt, limit 28:
+-- 18 came out). Now the best go out first, each as near the middle of the farm as there is room (rings outward,
+-- every 2 studs), and when the yard is full at the usual spacing the spacing is eased until it fits, so the farm
+-- always fills to the limit. Monsters already on the farm keep their places.
+-- 2026-11-15, evening: no collisions when placing by hand (owner: "the green/red mark depends on the monster's size
+-- and won't let it go anywhere on the farm; a monster must go anywhere at all, a grave too, even into one another -
+-- no collision whatever"; then: "graves only in the cemetery, monsters only on the farm"). A monster may be put at
+-- any point of the farm's yard - in a building, in another monster - whatever its size, but not in the cemetery; a
+-- grave anywhere in the cemetery off the crypt and the walk to it, in another grave too. The mark is red only off
+-- the farm or in the cemetery (a grave: off the cemetery), and its ring is one size. What is left:
+-- your own farm, within PlaceDistance of you, the house's limit of monsters. What the server places by itself
+-- ("Place best", migration) still looks for room clear of buildings and of what stands there.
+-- 2026-11-15, evening: the shovel swing is the coded spin again (owner: "the player used to spin like Axe from Dota,
+-- and now the animation has come out clumsy"). The pack's sword cut, put on the swing earlier that day, is gone
+-- with its clips (Swing, SwingBack); the knockout and the skinned monsters keep theirs.
+-- 2026-11-16 boss fights, damage (owner: "the boss's damage registration is unreal - you stand at the other end of
+-- the arena and it still counts"). Measured with a runner circling the arena and every lost heart logged: the
+-- boss's own attacks never reached him from afar (none hit at all at 24 studs/s; a slow runner is hit by charges as
+-- they pass within 5-11 studs). The hearts lost far from the boss are the bites of the monsters the bosses of
+-- locations 2-6 summon (since 2026-11-15) - two hearts every half second at the fourth boss, of five. The summons
+-- were taken out for a few hours and put back the same day, unchanged, with the damage (owner: "don't remove the
+-- summon, it was a very cool feature; and don't lower the damage, that is the point of the difficulty").
+-- The same day: a summoned monster's bite is seen coming (owner: "yes, add" to a visible wind-up before the bite,
+-- the damage as it is). For .45 s before it bites it flares red and rears, still chasing; the bite lands if its
+-- prey is within its lunge then, and misses otherwise. A bite costs what it did and comes as often (the first one
+-- .45 s later than before). Only the monsters a boss summons: the road's own bite as they always did.
+-- 2026-11-16 the finisher from afar (owner: "the Finish button must show from further away; and let the boss still be
+-- killable by shots, the damage just registering smaller"). The target over a boss on its knees shows and works
+-- from 90 studs (was 28): from further than 16 the finisher begins with a sprint to the boss (up to 1.5 s, the
+-- finisher's clock starting when it is over). A boss on its knees takes 35% of any damage (it took none) and can die
+-- of it; while someone is finishing it, only that blow lands.
+-- 2026-11-16 the interface round (owner's list; the texts agreed beforehand).
+-- One reveal jingle at a time (owner: "dig several graves and music starts" - every grave played its own, 2.7 s, or
+-- 6.1 s for a rare monster, on top of the last; chosen: "one jingle, no overlap"). Sfx.jingle: while one sounds,
+-- another of its rank or lower is not started; a rare monster's stops a common one and plays instead. Every use of
+-- Reveal and RareReveal goes through it (a grave dug or brought home, the house built, the invite rewards).
+-- Pet pumpkins are cases (owner: "it isn't clear the pets' pumpkins are cases - maybe a tap should open an interface
+-- like CS:GO's"). A pumpkin's card (the picture or the price button) opens its case window: every pet that can be
+-- inside with its chance - kind's weight x rarity's weight, the server's own dice - and "Open - price". The purchase
+-- is the old PetHatch; the server's answer spins a strip of 40 pets under a marker for 4.6 s, slowing to stop on the
+-- one hatched (a click a card), then shows it as before. The pet is in the inventory from the server's answer, so
+-- closing the window mid-spin loses nothing. The starter cat keeps its rocking pumpkin.
+-- Small farm monsters (owner: "a setting to shrink your monsters' models to the size of pets", and of "for you only
+-- or for everyone": "only me"). Settings > Small farm monsters, off by default (InterfaceConfig.Settings). On, the
+-- player's own monsters standing on their farm are drawn about 2.4 studs tall on their own screen (ZombieVisuals:
+-- scaled locally about the pivot and lowered onto their feet; a merged one stays a little bigger). The server's
+-- models, other players' views and other players' monsters are untouched; so are the crypt's and the one in your arms.
+-- The Monsterdex icon counts and flashes (owner: "a notice and flashing on the Monsterdex icon when there are monsters
+-- to take a bonus for"): a counter dot with the monsters found and not claimed, as the window lists them, and the
+-- tutorial's outline flash while there is one. The crypt icon flashes while there is a grave to plant (owner: "flash
+-- the crypt icon when there are graves that can be placed"): one in the inventory or a voucher, and room in the
+-- cemetery (State.graveCap). Opened from the flashing icon the crypt shows its Graves tab, where the unplanted graves
+-- now come first, each with the inventory's Select button. Neither flashes during the tutorial, whose own hint is the
+-- only flashing icon then; an icon that stops flashing gets its painted outline back.
+-- The crypt sells (owner: "a Sell button in the crypt, and show the sum of the monsters selected"): a tap on a
+-- monster's card marks it (a gold rim and a tick; Take and "..." work as they did), and a third button at the foot
+-- reads "Sell: N - $sum", the sum being the server's own price for each (income a second x ZombieConfig.SaleSeconds).
+-- The first press asks "Sell for sure?", a second within 3 s sells (Intent "sellMany", 60 ids at most, each checked
+-- like a single sale; the monster in your arms is skipped). Marks are dropped when the crypt is opened again.
+-- UIController's main chunk stands at Luau's limit of 200 locals: all of the above lives in its one table, More, and
+-- six dead locals were removed (dexPage, dexSelected, DEX_PAGE_COLOR, mergeAfterEnter, tutorialDoneAt, petFilter).
+-- 2026-11-16 melee weapons (owner: "let's replace the shovels with other weapons: a chainsaw, the Reaper's scythe, a
+-- katana, a chainsword (like in Warhammer), the Sting Mimicry knife, a butterfly knife, a diamond pickaxe; each must
+-- have finisher animations of its own, two each"). Seven weapons took the seven shovels' places in his order -
+-- numbers, prices and the Monsterdex rewards as they were (ShovelConfig; an old profile's shovels become the weapons
+-- in their places). The chainsaw and the chainsword are built of parts with running chains (ChainsawModel); the
+-- scythe, katana, dagger, butterfly knife and pickaxe are new models (art/roblox-import-v1/tools/build_melee.py,
+-- uploaded, ReplicatedStorage.ArtModels Melee_*). The dagger is our own design and name ("Mimicry Dagger", his
+-- choice of the two offered) - not a copy of the Standoff 2 skin in his picture. Graves are still dug with a plain
+-- shovel. The swing is the same spin for all; one-hand weapons keep the left hand off.
+-- Finishers: fourteen (RoadConfig.Boss.Finisher.Kinds), two a weapon, played turn about - sequences of the animation
+-- pack's clips (new ones: single cuts, a wide cut, a chop, an overhand slam, a stab, an uppercut, a leap, a jump, a
+-- landing, a roll, a low rush), jumps and rushes moved by code (the pack's jumps have no height), plus coded parts:
+-- the chainsaw's two (plunge, and a new cut across from the side), the scythe's whirl (the swing's spin three times
+-- round) and the butterfly knife's flourish (its blade and second handle really turn). The slot's name is "Melee".
+-- The same day, graves say what they hold (owner: "it should be clear from a grave which mob drops - a coffin with
+-- horns, then a deer; with a smile, Verity; its rarity is the random part"): a grave has a monster family
+-- (GraveService.Family: picked once by the odds a dig always had), that monster's head sits on its headstone on the
+-- farm, its card names it ("Stone grave · Deer"), and a dig rolls only the rarity, within the family.
+-- 2026-11-17 two corrections (owner: "the marks on graves were meant for the graves in the ruins - so that you see on
+-- them which monster family drops"; "the smaller monsters should not be miniature - just down to the player's
+-- size"). A ruins grave gets its family as it appears (RoadService.spawnGrave: by its kind and location) and wears
+-- that monster's head on its headstone; the prompt over it names it ("Stone grave · Deer"); the family goes with
+-- the grave onto the carrier's back (the head rides there too), into a dropped grave, into the bag and onto the
+-- farm. The farm's graves keep their marks. The Small farm monsters setting now draws them about as tall as the
+-- player's own character (it was 2.4 studs, a pet's), a rarer or merged one a little taller.

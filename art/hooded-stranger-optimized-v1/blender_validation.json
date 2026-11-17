@@ -1,0 +1,221 @@
+{
+  "passed": true,
+  "imports": 14,
+  "bones_per_model": 28,
+  "mesh_count_optimized": 2,
+  "checks": [
+    {
+      "id": "HoodedStranger",
+      "pose": "Rest",
+      "max_position_error": 4.1006806230061134e-22
+    },
+    {
+      "id": "HoodedStranger",
+      "pose": "Head",
+      "max_position_error": 4.1006806230061134e-22
+    },
+    {
+      "id": "HoodedStranger",
+      "pose": "UpperArmR",
+      "max_position_error": 4.1006806230061134e-22
+    },
+    {
+      "id": "HoodedStranger",
+      "pose": "Finger2L",
+      "max_position_error": 4.1006806230061134e-22
+    },
+    {
+      "id": "HoodedStranger",
+      "pose": "ShinL",
+      "max_position_error": 4.1006806230061134e-22
+    },
+    {
+      "id": "HoodedStranger",
+      "pose": "Spine",
+      "max_position_error": 6.536159574824962e-07
+    },
+    {
+      "id": "HoodedStranger_Farmer",
+      "pose": "Rest",
+      "max_position_error": 4.1006806230061134e-22
+    },
+    {
+      "id": "HoodedStranger_Farmer",
+      "pose": "Head",
+      "max_position_error": 4.1006806230061134e-22
+    },
+    {
+      "id": "HoodedStranger_Farmer",
+      "pose": "UpperArmR",
+      "max_position_error": 4.1006806230061134e-22
+    },
+    {
+      "id": "HoodedStranger_Farmer",
+      "pose": "Finger2L",
+      "max_position_error": 4.1006806230061134e-22
+    },
+    {
+      "id": "HoodedStranger_Farmer",
+      "pose": "ShinL",
+      "max_position_error": 4.1006806230061134e-22
+    },
+    {
+      "id": "HoodedStranger_Farmer",
+      "pose": "Spine",
+      "max_position_error": 6.536159574824962e-07
+    },
+    {
+      "id": "HoodedStranger_Miner",
+      "pose": "Rest",
+      "max_position_error": 4.1006806230061134e-22
+    },
+    {
+      "id": "HoodedStranger_Miner",
+      "pose": "Head",
+      "max_position_error": 4.1006806230061134e-22
+    },
+    {
+      "id": "HoodedStranger_Miner",
+      "pose": "UpperArmR",
+      "max_position_error": 4.1006806230061134e-22
+    },
+    {
+      "id": "HoodedStranger_Miner",
+      "pose": "Finger2L",
+      "max_position_error": 4.1006806230061134e-22
+    },
+    {
+      "id": "HoodedStranger_Miner",
+      "pose": "ShinL",
+      "max_position_error": 4.1006806230061134e-22
+    },
+    {
+      "id": "HoodedStranger_Miner",
+      "pose": "Spine",
+      "max_position_error": 6.536159574824962e-07
+    },
+    {
+      "id": "HoodedStranger_King",
+      "pose": "Rest",
+      "max_position_error": 4.1006806230061134e-22
+    },
+    {
+      "id": "HoodedStranger_King",
+      "pose": "Head",
+      "max_position_error": 4.1006806230061134e-22
+    },
+    {
+      "id": "HoodedStranger_King",
+      "pose": "UpperArmR",
+      "max_position_error": 4.1006806230061134e-22
+    },
+    {
+      "id": "HoodedStranger_King",
+      "pose": "Finger2L",
+      "max_position_error": 4.1006806230061134e-22
+    },
+    {
+      "id": "HoodedStranger_King",
+      "pose": "ShinL",
+      "max_position_error": 4.1006806230061134e-22
+    },
+    {
+      "id": "HoodedStranger_King",
+      "pose": "Spine",
+      "max_position_error": 6.536159574824962e-07
+    },
+    {
+      "id": "HoodedStranger_Knight",
+      "pose": "Rest",
+      "max_position_error": 4.1006806230061134e-22
+    },
+    {
+      "id": "HoodedStranger_Knight",
+      "pose": "Head",
+      "max_position_error": 4.1006806230061134e-22
+    },
+    {
+      "id": "HoodedStranger_Knight",
+      "pose": "UpperArmR",
+      "max_position_error": 4.1006806230061134e-22
+    },
+    {
+      "id": "HoodedStranger_Knight",
+      "pose": "Finger2L",
+      "max_position_error": 4.1006806230061134e-22
+    },
+    {
+      "id": "HoodedStranger_Knight",
+      "pose": "ShinL",
+      "max_position_error": 4.1006806230061134e-22
+    },
+    {
+      "id": "HoodedStranger_Knight",
+      "pose": "Spine",
+      "max_position_error": 6.536159574824962e-07
+    },
+    {
+      "id": "HoodedStranger_Punk",
+      "pose": "Rest",
+      "max_position_error": 4.1006806230061134e-22
+    },
+    {
+      "id": "HoodedStranger_Punk",
+      "pose": "Head",
+      "max_position_error": 4.1006806230061134e-22
+    },
+    {
+      "id": "HoodedStranger_Punk",
+      "pose": "UpperArmR",
+      "max_position_error": 4.1006806230061134e-22
+    },
+    {
+      "id": "HoodedStranger_Punk",
+      "pose": "Finger2L",
+      "max_position_error": 4.1006806230061134e-22
+    },
+    {
+      "id": "HoodedStranger_Punk",
+      "pose": "ShinL",
+      "max_position_error": 4.1006806230061134e-22
+    },
+    {
+      "id": "HoodedStranger_Punk",
+      "pose": "Spine",
+      "max_position_error": 6.536159574824962e-07
+    },
+    {
+      "id": "HoodedStranger_Assassin",
+      "pose": "Rest",
+      "max_position_error": 4.1006806230061134e-22
+    },
+    {
+      "id": "HoodedStranger_Assassin",
+      "pose": "Head",
+      "max_position_error": 4.1006806230061134e-22
+    },
+    {
+      "id": "HoodedStranger_Assassin",
+      "pose": "UpperArmR",
+      "max_position_error": 4.1006806230061134e-22
+    },
+    {
+      "id": "HoodedStranger_Assassin",
+      "pose": "Finger2L",
+      "max_position_error": 4.1006806230061134e-22
+    },
+    {
+      "id": "HoodedStranger_Assassin",
+      "pose": "ShinL",
+      "max_position_error": 4.1006806230061134e-22
+    },
+    {
+      "id": "HoodedStranger_Assassin",
+      "pose": "Spine",
+      "max_position_error": 6.536159574824962e-07
+    }
+  ],
+  "poses": 6,
+  "max_position_error": 6.536159574824962e-07,
+  "scope": "Blender roundtrip and posed geometry; Roblox not modified"
+}

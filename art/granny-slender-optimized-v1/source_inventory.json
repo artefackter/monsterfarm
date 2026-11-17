@@ -1,0 +1,2135 @@
+{
+  "roots": [
+    "granny-grandfather-v4",
+    "granny-grandfather-forms-v3",
+    "granny-grandfather-icons-v3",
+    "slender-family-v1",
+    "slender-family-forms-v1"
+  ],
+  "files": {
+    "art/granny-grandfather-v4/README.md": {
+      "bytes": 2544,
+      "sha256": "093b4bcc01692dbea719016133fa32337db4bf29e74528a6516c80c0d8f8c35f"
+    },
+    "art/granny-grandfather-v4/animation.py": {
+      "bytes": 5444,
+      "sha256": "c9d354afa39a9e973090f406ff3bf227c0be12c4f68bf607c70a01ad150af470"
+    },
+    "art/granny-grandfather-v4/build.py": {
+      "bytes": 13575,
+      "sha256": "503717c02bf206bfaa5001fe34925615ad1b8eb7774953df21401dd3d17a5f1e"
+    },
+    "art/granny-grandfather-v4/characters.py": {
+      "bytes": 26417,
+      "sha256": "742ba5b668aa704707ef1b7ec413d58abeae8e22cf93a6c0e7c2a9f31c6fa5b0"
+    },
+    "art/granny-grandfather-v4/compose_review.py": {
+      "bytes": 3341,
+      "sha256": "688fd60b8e0bdb1a3e6290db330aafa21eaa7506b0715e2fd50ac9b356325f1c"
+    },
+    "art/granny-grandfather-v4/export-check.json": {
+      "bytes": 1661,
+      "sha256": "f62eda1b6be7f87b4b299f68e80e7cd05d98738a97b54a8a9a21dd4aaac6df4f"
+    },
+    "art/granny-grandfather-v4/geometry/Grandfather.ArmL.json": {
+      "bytes": 17776,
+      "sha256": "3346ce29e09039a6c15d81abff72caf4d9fcb7afdf6e288ceea761324046c3be"
+    },
+    "art/granny-grandfather-v4/geometry/Grandfather.ArmR.json": {
+      "bytes": 17707,
+      "sha256": "9939fddb2caf39286e979702e82640ba3ef034b4454e50a2491fdb2595a5e272"
+    },
+    "art/granny-grandfather-v4/geometry/Grandfather.Body.json": {
+      "bytes": 108572,
+      "sha256": "dc6b513259526dd82e0985d72718d6fb940982cd34c9923b28775df9e23ce1c6"
+    },
+    "art/granny-grandfather-v4/geometry/Grandfather.Eyes.json": {
+      "bytes": 24349,
+      "sha256": "da85c206fd599bee829ad82dc54a8ed30db78ab3405e1f1721b400b5fac37131"
+    },
+    "art/granny-grandfather-v4/geometry/Grandfather.FootL.json": {
+      "bytes": 14086,
+      "sha256": "243dcc36752fee947d439ceeb70cc055ea459fe129b9417d31dcd7ade683af39"
+    },
+    "art/granny-grandfather-v4/geometry/Grandfather.FootR.json": {
+      "bytes": 14090,
+      "sha256": "d14335b859a028577a34264409d9cc321a9e641f16a12f2fff0754697585e745"
+    },
+    "art/granny-grandfather-v4/geometry/Grandfather.ForearmL.json": {
+      "bytes": 5943,
+      "sha256": "6e76ac06e32ed29c70d0e1f95f62c689bf98e7c78750975da845857e3369ab2b"
+    },
+    "art/granny-grandfather-v4/geometry/Grandfather.ForearmR.json": {
+      "bytes": 5913,
+      "sha256": "75fae1cab54ccfa3d3cdeef996a762f787395eaca1c6c83d65ba79738688b746"
+    },
+    "art/granny-grandfather-v4/geometry/Grandfather.Hair.json": {
+      "bytes": 16593,
+      "sha256": "dc8ef92b9381255c0c7b8e0c4a2c8e1e12b235e25ac961a1062d5b9320cca319"
+    },
+    "art/granny-grandfather-v4/geometry/Grandfather.HandItem.json": {
+      "bytes": 104194,
+      "sha256": "90067fee2fc4db9f4a79941008396512f7c027af58eae90e5c6f5e4230776bb2"
+    },
+    "art/granny-grandfather-v4/geometry/Grandfather.HandL.json": {
+      "bytes": 56259,
+      "sha256": "355d97ee389bc930cb1ddeb12b60718b19cb56bb1c0011ff79028f7dc8060bb2"
+    },
+    "art/granny-grandfather-v4/geometry/Grandfather.HandR.json": {
+      "bytes": 65830,
+      "sha256": "77b2e3b8ea4a5c320f2707c20811cc68e56f81886c60d5499d1a0d2f44247981"
+    },
+    "art/granny-grandfather-v4/geometry/Grandfather.Head.json": {
+      "bytes": 142630,
+      "sha256": "da4e86a29b81875e6b66890258c51393d4e2db9ac01d8246bd9e4dce2c2df9ca"
+    },
+    "art/granny-grandfather-v4/geometry/Grandfather.LegL.json": {
+      "bytes": 5832,
+      "sha256": "5348041a67297026fdfa253995cf3fdd836c25a6396b7cdbbeaaadb26d08e26b"
+    },
+    "art/granny-grandfather-v4/geometry/Grandfather.LegR.json": {
+      "bytes": 5818,
+      "sha256": "249b44300cc149bb678277b85e39770f909fe8a22b46051dd97f85cb3cf7d994"
+    },
+    "art/granny-grandfather-v4/geometry/Grandfather.ShinL.json": {
+      "bytes": 15393,
+      "sha256": "1068b04e8b5c01bba6b7960c98353194500ef3ab2349f9e854950a8a92fc52b5"
+    },
+    "art/granny-grandfather-v4/geometry/Grandfather.ShinR.json": {
+      "bytes": 15393,
+      "sha256": "60ea19c4c61a79a79586abb0091df14e029a3267b0bc2b3fcd200e5d3499a2c9"
+    },
+    "art/granny-grandfather-v4/geometry/Granny.ArmL.json": {
+      "bytes": 8826,
+      "sha256": "10b4b9e2816632f571da04d7bce90326a2f037bf28e9a9d60e3494318d43408f"
+    },
+    "art/granny-grandfather-v4/geometry/Granny.ArmR.json": {
+      "bytes": 8796,
+      "sha256": "01aa272f5c8a3c00c12c532dddc1e26b68b028570271d0ed97c154983b7da5db"
+    },
+    "art/granny-grandfather-v4/geometry/Granny.Body.json": {
+      "bytes": 102775,
+      "sha256": "13514b33c34119c5ff980d28e69cdc5dd92c9bab779dd0260561628dbee7a37c"
+    },
+    "art/granny-grandfather-v4/geometry/Granny.Eyes.json": {
+      "bytes": 5912,
+      "sha256": "b565636d23f528c85f2e19fc6cc77fc24c5b3ad9fd57426d55bbea52b704a085"
+    },
+    "art/granny-grandfather-v4/geometry/Granny.FootL.json": {
+      "bytes": 16747,
+      "sha256": "2a18354925f35cf0f41f112fc74736baf1146bbcc405483856973b2e7254705d"
+    },
+    "art/granny-grandfather-v4/geometry/Granny.FootR.json": {
+      "bytes": 16739,
+      "sha256": "a89f8e8df6fb32524a3fbdf8adc1fb8eed6ede0214e8284b611b1793746b2b1f"
+    },
+    "art/granny-grandfather-v4/geometry/Granny.ForearmL.json": {
+      "bytes": 10788,
+      "sha256": "cdeebc8e4c02f58722ab7614ea3be15353efe6c631e0488641f9925c6c3bf6ca"
+    },
+    "art/granny-grandfather-v4/geometry/Granny.ForearmR.json": {
+      "bytes": 10688,
+      "sha256": "70be53e39fe91efd49b4878e3a7ae8b25711750f2101d084bc2cba8786e4158b"
+    },
+    "art/granny-grandfather-v4/geometry/Granny.Hair.json": {
+      "bytes": 67575,
+      "sha256": "592b528bbed25eafe0ef67b45b9e3e35ef8e2820ad9258a4b92882c4455f0cc4"
+    },
+    "art/granny-grandfather-v4/geometry/Granny.HandItem.json": {
+      "bytes": 56423,
+      "sha256": "a7b95999172032f0d83297f87c9ead83a50a5284efb73ac30c49ac349faa71f2"
+    },
+    "art/granny-grandfather-v4/geometry/Granny.HandL.json": {
+      "bytes": 52207,
+      "sha256": "72fabfbe84e7a75ccc855b481b68733c35391ef17a1c4bbc1cce8469ac7d2444"
+    },
+    "art/granny-grandfather-v4/geometry/Granny.HandR.json": {
+      "bytes": 70263,
+      "sha256": "d6410e67b328134b894b840b205c029055736d129efd4d2cec6390c107a5bd14"
+    },
+    "art/granny-grandfather-v4/geometry/Granny.Head.json": {
+      "bytes": 133030,
+      "sha256": "1cc43407216d607a4b9d99a9c97d0522c8f5a8b3db83cfef96419c678d87a2ee"
+    },
+    "art/granny-grandfather-v4/geometry/Granny.LegL.json": {
+      "bytes": 5798,
+      "sha256": "4850218b1972f7a2b064c3734369e93f4c0abecd886de96602e15f1396065fe6"
+    },
+    "art/granny-grandfather-v4/geometry/Granny.LegR.json": {
+      "bytes": 5784,
+      "sha256": "3db0aa4a24932fadb45e7ff5d527e9b040da2e61aed80681f589decfbe3f15db"
+    },
+    "art/granny-grandfather-v4/geometry/Granny.ShinL.json": {
+      "bytes": 5782,
+      "sha256": "7ad6516a7a008372e7ad595cc947e362eceb68af4d7e453a72ae641653ddeb04"
+    },
+    "art/granny-grandfather-v4/geometry/Granny.ShinR.json": {
+      "bytes": 5782,
+      "sha256": "45a6b675f3de1f98ebf3456f940de2d4288e390344dfa02d93e04ec1f57a52b0"
+    },
+    "art/granny-grandfather-v4/geometry/Granny.Skirt.json": {
+      "bytes": 190081,
+      "sha256": "8f42e8abfe5ce6befe8cf57ba395cc1587216169e32ebb3c7d581e0870bdda4d"
+    },
+    "art/granny-grandfather-v4/geometry/_manifest.json": {
+      "bytes": 13236,
+      "sha256": "50879a6e515d90aa08fea312a314e843a8c2abaeaea4c6a801748459f790a660"
+    },
+    "art/granny-grandfather-v4/geometry/_rig.json": {
+      "bytes": 3218,
+      "sha256": "4f9ca2d0db2a477dfe62e96612e0a59697ed25d51863d88782568998b49f4431"
+    },
+    "art/granny-grandfather-v4/grip-check.json": {
+      "bytes": 4017,
+      "sha256": "2d5f6ce6fe4fe0aeab5b6f9ac414cd419250a725433900dd85dbecbe1f41b577"
+    },
+    "art/granny-grandfather-v4/grip.py": {
+      "bytes": 773,
+      "sha256": "ebd3a9a2869c3402552f063e8985ebe775b82932294713393b366a47499a6580"
+    },
+    "art/granny-grandfather-v4/models/Grandfather.fbx": {
+      "bytes": 788956,
+      "sha256": "07f4da9c7712f7c5e6e81ff4f79d90b42d033235202a683b807d7b55c9045811"
+    },
+    "art/granny-grandfather-v4/models/Grandfather.glb": {
+      "bytes": 769532,
+      "sha256": "e95d1b6beee7e320ead34989db7359a21f1c461d192e4f2b7010cb58e536ead3"
+    },
+    "art/granny-grandfather-v4/models/Grandfather_Aggressive.glb": {
+      "bytes": 484008,
+      "sha256": "2eac4edfbd00352797725b498df01c479954c140d3fd9b3a54a9c301accf6fc0"
+    },
+    "art/granny-grandfather-v4/models/Grandfather_Idle.glb": {
+      "bytes": 483912,
+      "sha256": "07d9072529261f03a34b2bcf2068e2e06143f3c79106545e93faa6629d28f2f6"
+    },
+    "art/granny-grandfather-v4/models/Granny.fbx": {
+      "bytes": 941612,
+      "sha256": "8a09bbd0b0e78d536bd6e81c7f083a6960883991cea734721074794d6d9b7457"
+    },
+    "art/granny-grandfather-v4/models/Granny.glb": {
+      "bytes": 922708,
+      "sha256": "df3472ddca4fc603d9408b7da52ba94888c3b5e22fb6db55aec51b9091849634"
+    },
+    "art/granny-grandfather-v4/models/GrannyGrandfather.blend": {
+      "bytes": 729926,
+      "sha256": "c0ef4100fcdf7b90277dc4d8d02bd823398db555b734191faa9176d20905b254"
+    },
+    "art/granny-grandfather-v4/models/GrannyGrandfather_GameParts.glb": {
+      "bytes": 1268964,
+      "sha256": "905870dba81f62ff5afdbb480bff959c0a2268603ad224cf3c366e5997e94979"
+    },
+    "art/granny-grandfather-v4/models/Granny_Aggressive.glb": {
+      "bytes": 585120,
+      "sha256": "6ea7d7b5427bc0c7e5813bfecfb075e54b12fe6680d56ec20e005251d5b88c82"
+    },
+    "art/granny-grandfather-v4/models/Granny_Idle.glb": {
+      "bytes": 585016,
+      "sha256": "f2252217f683c82b1f3f41d900b488da2e6a294b0194f8dcfbc2f9f5ee14df7d"
+    },
+    "art/granny-grandfather-v4/previews/Grandfather_Aggressive.png": {
+      "bytes": 1323795,
+      "sha256": "07493791e0a8d156bab78598b710848da9fb9bfdd475db7baff26cbb915cdca1"
+    },
+    "art/granny-grandfather-v4/previews/Grandfather_Aggressive_GripL.png": {
+      "bytes": 1096459,
+      "sha256": "f4a17801a64ee4ad3aa8f28269c38022ca98df31be459abce0cc46f5dbe6f468"
+    },
+    "art/granny-grandfather-v4/previews/Grandfather_Aggressive_GripR.png": {
+      "bytes": 1090503,
+      "sha256": "ca23ad4832656c8e41868e11fa018115e93077a0db9ec361086522356f871c6f"
+    },
+    "art/granny-grandfather-v4/previews/Grandfather_Aggressive_Weapon.png": {
+      "bytes": 1094612,
+      "sha256": "75bf4dc1894f6c2233aca25c1483af91f9d25e4ce03c6c493f80616715fc0ed8"
+    },
+    "art/granny-grandfather-v4/previews/Grandfather_Back.png": {
+      "bytes": 941146,
+      "sha256": "65c69dfe230a6a523284042a7210289cd7e647af119d4fa3f4e19adc93b2edc1"
+    },
+    "art/granny-grandfather-v4/previews/Grandfather_Face.png": {
+      "bytes": 818395,
+      "sha256": "a01cb89cf3f8466015f5edd1113b8cd04562d6f918ad2cf2a5d18da36890493b"
+    },
+    "art/granny-grandfather-v4/previews/Grandfather_Idle.png": {
+      "bytes": 1336711,
+      "sha256": "bde602a6da55c6bfbf472c6620be1599991930d3fe07295acc08a43dcea67f9c"
+    },
+    "art/granny-grandfather-v4/previews/Grandfather_Idle_GripL.png": {
+      "bytes": 1113417,
+      "sha256": "26776a98493f523e5e47f820b3ecbbb88e3f7e1d9d3b639ba61381e9b68d7975"
+    },
+    "art/granny-grandfather-v4/previews/Grandfather_Idle_GripR.png": {
+      "bytes": 1111435,
+      "sha256": "2eefb5956e2710701410b01c3afede654e72af589d0d0748b275414a896c7d6c"
+    },
+    "art/granny-grandfather-v4/previews/Grandfather_Idle_Weapon.png": {
+      "bytes": 1102699,
+      "sha256": "2caf01bb9ca94aeea24587444a0244b402c515b7d886ab2d81d30a1343df5555"
+    },
+    "art/granny-grandfather-v4/previews/Granny_Aggressive.png": {
+      "bytes": 1327170,
+      "sha256": "bf4bd44719ccf1f2f9e5e78348199eb18197ea47797d7d0b17c458a1e16d40f5"
+    },
+    "art/granny-grandfather-v4/previews/Granny_Aggressive_GripR.png": {
+      "bytes": 1038585,
+      "sha256": "3f7ca2076fd12771fc223cf7f994e512a9979ea9de28ff2e934abbb5e498139e"
+    },
+    "art/granny-grandfather-v4/previews/Granny_Back.png": {
+      "bytes": 942711,
+      "sha256": "ea6d7fba421ed93a998eebf64fe443bfea55ac73e24f6ccf82deb6357e56e4a8"
+    },
+    "art/granny-grandfather-v4/previews/Granny_Face.png": {
+      "bytes": 769974,
+      "sha256": "ddeca4fc7f7ad64cb207e9ab9d423ba8b53f1a8f9ada0c9d33ad3b9660e4aec2"
+    },
+    "art/granny-grandfather-v4/previews/Granny_Idle.png": {
+      "bytes": 1308995,
+      "sha256": "8a14d61bbc4c6c7251c046e3ed0604f4fa580584a4ca9cab0edd2adfec100cb7"
+    },
+    "art/granny-grandfather-v4/previews/Granny_Idle_GripR.png": {
+      "bytes": 1011269,
+      "sha256": "ee9c2433cdc0f23302b7ecda7003d1ae34161e3970766e1691ad33c909a74a2f"
+    },
+    "art/granny-grandfather-v4/previews/Granny_Wrist_BeforeAfter.png": {
+      "bytes": 2631800,
+      "sha256": "9c5eb8a141655428c04beca9609663027f887feb804e50d55ae2333bb9f051d5"
+    },
+    "art/granny-grandfather-v4/previews/Granny_Wrist_Review.png": {
+      "bytes": 1081011,
+      "sha256": "6e10b4afd0bcdf0ccbfd54d5dc1b3a6329ba2cd68e200c0ea41ac4be7edd7ad2"
+    },
+    "art/granny-grandfather-v4/previews/Male_Kings_Review.png": {
+      "bytes": 1408322,
+      "sha256": "c98c599abb06f6241fd16e3cac11068ca9448dd432d82dc2d4f3109197e6cb27"
+    },
+    "art/granny-grandfather-v4/previews/Pair.png": {
+      "bytes": 2309047,
+      "sha256": "1a9b1d79c97551537772e7c235f75cf9924834b265bcdaf340be45a0b8ca5657"
+    },
+    "art/granny-grandfather-v4/review_grips.py": {
+      "bytes": 3987,
+      "sha256": "6a349ac24731413cd62f45cbb6a72c5498f6d18fe0e74c380dd2ac3c27d95e64"
+    },
+    "art/granny-grandfather-v4/validation.json": {
+      "bytes": 2126,
+      "sha256": "feafae410083138e7b852321e4373ce7e0fda0bf37ff77ffd5a592ba2c66f2be"
+    },
+    "art/granny-grandfather-v4/verify_exports.py": {
+      "bytes": 5706,
+      "sha256": "3bf87b24a65fddcf86c6d769ac72e2136c8b99f4f5f0dce9643adde80f3f2b2c"
+    },
+    "art/granny-grandfather-forms-v3/README.md": {
+      "bytes": 2756,
+      "sha256": "94c56737c5603fd2142efa50bd84145ca200516a47316c2d977f04493cdc9d9a"
+    },
+    "art/granny-grandfather-forms-v3/build.py": {
+      "bytes": 9951,
+      "sha256": "8d52d7cb92437ce03f1175d9f1c4ae366e45bbe03c96a2602e72030c8557742b"
+    },
+    "art/granny-grandfather-forms-v3/catalog.json": {
+      "bytes": 21760,
+      "sha256": "3b203e10e727d0c5ec2219a7ec5649b476367462153bb65053552b3d94ded4fd"
+    },
+    "art/granny-grandfather-forms-v3/compose_review.py": {
+      "bytes": 3184,
+      "sha256": "9df6800b4184dd58bdc17b089499efde33583a5044fa204ddfbdcd72dfaabcb1"
+    },
+    "art/granny-grandfather-forms-v3/models/Grandfather_Assassin.blend": {
+      "bytes": 518623,
+      "sha256": "ec9b300f3f1f529a7239c7b5c32921e5fe8fd409510bde39326f93be55f368cc"
+    },
+    "art/granny-grandfather-forms-v3/models/Grandfather_Assassin.fbx": {
+      "bytes": 1009516,
+      "sha256": "fa087f3b401e2c49ed37bbab81a07ecc820736297e8e62e0496d985b99730b4c"
+    },
+    "art/granny-grandfather-forms-v3/models/Grandfather_Assassin.glb": {
+      "bytes": 984108,
+      "sha256": "9e06189d5ce9f55bb5fff8757e11a60acd7a558dd0d2e61894f39f3fd2f591e2"
+    },
+    "art/granny-grandfather-forms-v3/models/Grandfather_Assassin_Aggressive.glb": {
+      "bytes": 626528,
+      "sha256": "4a6986e1846f9735ee37ac5b821998d338a94a35c42c4f56f45e24d6c22af874"
+    },
+    "art/granny-grandfather-forms-v3/models/Grandfather_Assassin_Idle.glb": {
+      "bytes": 624840,
+      "sha256": "47b3438177a91b9c58be84a15c001a7387d2a2be5a4a6626f8387caf952f06dd"
+    },
+    "art/granny-grandfather-forms-v3/models/Grandfather_Farmer.blend": {
+      "bytes": 510420,
+      "sha256": "238e3346c4974ff1d7773dacbe77982c835c54f2b4efc34031c114c0714e56ae"
+    },
+    "art/granny-grandfather-forms-v3/models/Grandfather_Farmer.fbx": {
+      "bytes": 889292,
+      "sha256": "906e4e5ac17d02a142bf547cfe37c7be25acb9f08ade1a6f47b07895f1582582"
+    },
+    "art/granny-grandfather-forms-v3/models/Grandfather_Farmer.glb": {
+      "bytes": 951448,
+      "sha256": "0f1d65231ef8edad8715de0cd41eac7307af8f89d797226bc30e5ac25681c9a2"
+    },
+    "art/granny-grandfather-forms-v3/models/Grandfather_Farmer_Aggressive.glb": {
+      "bytes": 606900,
+      "sha256": "ce467d76850f9d32f4dcd8249753e3ce2bfe97b34be414d76fa5a9e68adee072"
+    },
+    "art/granny-grandfather-forms-v3/models/Grandfather_Farmer_Idle.glb": {
+      "bytes": 610388,
+      "sha256": "86c97f1b44de1e2f220c8ca44f28a94fe463853b63e563320717d8bfb918ff97"
+    },
+    "art/granny-grandfather-forms-v3/models/Grandfather_King.blend": {
+      "bytes": 532719,
+      "sha256": "e54138553998cb17da4be0ba339be483e996c0cf5cc67c79254b7a91667fb816"
+    },
+    "art/granny-grandfather-forms-v3/models/Grandfather_King.fbx": {
+      "bytes": 988348,
+      "sha256": "5c4af40684d08efe6760e767c19449b4386e4657ab0efd914a708e6267ab530b"
+    },
+    "art/granny-grandfather-forms-v3/models/Grandfather_King.glb": {
+      "bytes": 1079452,
+      "sha256": "d52a8f8eea2ac591b79e15d38ce80f548c8ae83d629fa90011fcc4b453dafd14"
+    },
+    "art/granny-grandfather-forms-v3/models/Grandfather_King_Aggressive.glb": {
+      "bytes": 689252,
+      "sha256": "d17abe79d23b928fcc4ad84ddaeee1aa8c4e5610bfaf9867ab177b4c5a8b9699"
+    },
+    "art/granny-grandfather-forms-v3/models/Grandfather_King_Idle.glb": {
+      "bytes": 689368,
+      "sha256": "7eff48b0365fd787edbac0aa6c57e1217fc638e92e415398418b5e3243e054c2"
+    },
+    "art/granny-grandfather-forms-v3/models/Grandfather_Knight.blend": {
+      "bytes": 524218,
+      "sha256": "783c9010106d1e54232dfc175fbd6e5c05d032d81698d705c7a4cb1606a83284"
+    },
+    "art/granny-grandfather-forms-v3/models/Grandfather_Knight.fbx": {
+      "bytes": 1017388,
+      "sha256": "9908396cb6794d5569b8fda5c45cc62205a934aa463360e009e3d616a6d370c8"
+    },
+    "art/granny-grandfather-forms-v3/models/Grandfather_Knight.glb": {
+      "bytes": 1030216,
+      "sha256": "bc374b79bc6acf7ee730c9298b8908dd841ad58ea444021b0497c677033ba53c"
+    },
+    "art/granny-grandfather-forms-v3/models/Grandfather_Knight_Aggressive.glb": {
+      "bytes": 657420,
+      "sha256": "839077593ba3ee4b1e305137426e7ab1a165dfd8bbe765c4f6f301ffbd31cd48"
+    },
+    "art/granny-grandfather-forms-v3/models/Grandfather_Knight_Idle.glb": {
+      "bytes": 657708,
+      "sha256": "a22f514c116c2b008b59bed1b44cda72fae6c95d17150bf88cab66625922948f"
+    },
+    "art/granny-grandfather-forms-v3/models/Grandfather_Miner.blend": {
+      "bytes": 509572,
+      "sha256": "2bfa6386dfa0c43a84cd406de59f75d4e032c2f8b70be910cbde66618841a228"
+    },
+    "art/granny-grandfather-forms-v3/models/Grandfather_Miner.fbx": {
+      "bytes": 907900,
+      "sha256": "43b42106104096e3729486a734a43615b4a4ecc792841b84af8e1a4249b14a1e"
+    },
+    "art/granny-grandfather-forms-v3/models/Grandfather_Miner.glb": {
+      "bytes": 954240,
+      "sha256": "4089aadda14e3c76c8772fd4eaa668460c9ebc976e161646887d322d9e307fda"
+    },
+    "art/granny-grandfather-forms-v3/models/Grandfather_Miner_Aggressive.glb": {
+      "bytes": 607748,
+      "sha256": "fbf872de3cb4ed95407b1d953c5808320913457fa350e2c642ab8c7bdbcdcf5d"
+    },
+    "art/granny-grandfather-forms-v3/models/Grandfather_Miner_Idle.glb": {
+      "bytes": 608748,
+      "sha256": "f28d5097138668ca6d692ecadc0d4e90a29f7029e1cb8ea6d00688b371eec6b5"
+    },
+    "art/granny-grandfather-forms-v3/models/Grandfather_Punk.blend": {
+      "bytes": 547535,
+      "sha256": "0ee7427ad70b7fdf8bc2243577ac3f24f5a075318b0327dfb8e1509df84387a0"
+    },
+    "art/granny-grandfather-forms-v3/models/Grandfather_Punk.fbx": {
+      "bytes": 999084,
+      "sha256": "4100bf7c4c7e5501bf128e49c0e8e641a959d7f62d8d72c7909a038b1ccaf047"
+    },
+    "art/granny-grandfather-forms-v3/models/Grandfather_Punk.glb": {
+      "bytes": 1115396,
+      "sha256": "e1006b3c4d6e17dca74e40c8cd658bbf5e525617c72b81cc50a9a598af17ae04"
+    },
+    "art/granny-grandfather-forms-v3/models/Grandfather_Punk_Aggressive.glb": {
+      "bytes": 712396,
+      "sha256": "e78a7746e41f96c05e81011385a71be3c97eec59647d8a24498ae7c7b33e6e83"
+    },
+    "art/granny-grandfather-forms-v3/models/Grandfather_Punk_Idle.glb": {
+      "bytes": 710792,
+      "sha256": "613dc9b5d658d08b64d0a34b6ecd5573eac548d2acdf8c159aa6c14126ef21a5"
+    },
+    "art/granny-grandfather-forms-v3/models/Granny_Assassin.blend": {
+      "bytes": 585847,
+      "sha256": "8a9f9ffb9d2ae8e7d56f1e5dd272115e2eb8524821101cf7e0290c875b73a84a"
+    },
+    "art/granny-grandfather-forms-v3/models/Granny_Assassin.fbx": {
+      "bytes": 1170252,
+      "sha256": "6bf4b7c8126c13474f4367b947a0cce164bbbd1bf6783686bd32ef0f9774da85"
+    },
+    "art/granny-grandfather-forms-v3/models/Granny_Assassin.glb": {
+      "bytes": 1133484,
+      "sha256": "84a291d38763852a5771e6717292af3fd18d5bcc18d14fdcb90be4fbb8d9ddda"
+    },
+    "art/granny-grandfather-forms-v3/models/Granny_Assassin_Aggressive.glb": {
+      "bytes": 730680,
+      "sha256": "9177733fbef68590cb046a9dbe2fd4c405c18e381b3f0980a3c56e0f19b1f9ba"
+    },
+    "art/granny-grandfather-forms-v3/models/Granny_Assassin_Idle.glb": {
+      "bytes": 730844,
+      "sha256": "9fddf8afbee0087021cc44a8515028a9c0ef8bfc37a0530c2c2eb469873e470b"
+    },
+    "art/granny-grandfather-forms-v3/models/Granny_Farmer.blend": {
+      "bytes": 582967,
+      "sha256": "7dc6f6498f57bed29a42c5cb8589ae2be3b0e6240de0f7a9df8c460231b03743"
+    },
+    "art/granny-grandfather-forms-v3/models/Granny_Farmer.fbx": {
+      "bytes": 1045372,
+      "sha256": "7b3a8b976ed7942f1f587ca43c691dc8c9ff4b64766a9481e17a8563a91ce78e"
+    },
+    "art/granny-grandfather-forms-v3/models/Granny_Farmer.glb": {
+      "bytes": 1105352,
+      "sha256": "a8a27ae406199634a9bbfe97baa406e75981f25ccebfd7b60150c957ca1ea1f9"
+    },
+    "art/granny-grandfather-forms-v3/models/Granny_Farmer_Aggressive.glb": {
+      "bytes": 711004,
+      "sha256": "c0676796d4a21214e07129fab5a4d3c54015fa5e026057b539a61f13d918b37f"
+    },
+    "art/granny-grandfather-forms-v3/models/Granny_Farmer_Idle.glb": {
+      "bytes": 710988,
+      "sha256": "cf86a54f1eed2a4caf2ac28202a1380298ffa01d45478591870f6fb013b1605e"
+    },
+    "art/granny-grandfather-forms-v3/models/Granny_Knight.blend": {
+      "bytes": 593036,
+      "sha256": "ee392c07d0a56026739fa9e4b8357ca6e1e6b354f227278dfdf0d6b592f9d674"
+    },
+    "art/granny-grandfather-forms-v3/models/Granny_Knight.fbx": {
+      "bytes": 1178588,
+      "sha256": "6469565a0c27502e04eb8dfddf8d249c2c1fccd541b7a68ef7b51b72413cc3e8"
+    },
+    "art/granny-grandfather-forms-v3/models/Granny_Knight.glb": {
+      "bytes": 1180140,
+      "sha256": "3065368cbfc8e5554eeb03348e1c01e48438771d69c3906150fbc0040f3136be"
+    },
+    "art/granny-grandfather-forms-v3/models/Granny_Knight_Aggressive.glb": {
+      "bytes": 760532,
+      "sha256": "afbb65ed3ef58fc78f6f31279ff87ac6b26198a8283af47fde9b0e4b37eb0edd"
+    },
+    "art/granny-grandfather-forms-v3/models/Granny_Knight_Idle.glb": {
+      "bytes": 760300,
+      "sha256": "a5ece1861e79fccac6a4fcae4b1e7b296dcc47f725b2138bd7908cd73a4b5ea1"
+    },
+    "art/granny-grandfather-forms-v3/models/Granny_Miner.blend": {
+      "bytes": 582909,
+      "sha256": "a5407ec7899c03a919e8d266f4338c0f4fdf3728f61ece61b8bf611821606142"
+    },
+    "art/granny-grandfather-forms-v3/models/Granny_Miner.fbx": {
+      "bytes": 1064988,
+      "sha256": "80518d0c3d5c7705adc536f44531f5365c8425f808c161afd5690f887c50ecd0"
+    },
+    "art/granny-grandfather-forms-v3/models/Granny_Miner.glb": {
+      "bytes": 1107572,
+      "sha256": "ee7ea2bc601c948fc75c7ed96d0718b29e261e52ea10bee9597fa0f270459c1e"
+    },
+    "art/granny-grandfather-forms-v3/models/Granny_Miner_Aggressive.glb": {
+      "bytes": 712600,
+      "sha256": "2525c3c34bf6b8d280f5a9da88ebd3d5415a79ef6c9a7af39277123663c21198"
+    },
+    "art/granny-grandfather-forms-v3/models/Granny_Miner_Idle.glb": {
+      "bytes": 711424,
+      "sha256": "bace7cddf3b6e87f8416b08a1da6ff7e55422abaffb4cbee9b4376b9e430a367"
+    },
+    "art/granny-grandfather-forms-v3/models/Granny_Princess.blend": {
+      "bytes": 614600,
+      "sha256": "90b489658a7172f46767d81f89eaa96f5cc8c0f94e85b026dc978612a83743a7"
+    },
+    "art/granny-grandfather-forms-v3/models/Granny_Princess.fbx": {
+      "bytes": 1192124,
+      "sha256": "5ea0e98f06ee1e491ab12fdea1dd8f90c99c9fefba72c5a4e6c2b583f805dd1e"
+    },
+    "art/granny-grandfather-forms-v3/models/Granny_Princess.glb": {
+      "bytes": 1340220,
+      "sha256": "93ae37dabe205f1feb528cedc13d568f6cb28b13c1592b6ee21b45c9fa8f2bab"
+    },
+    "art/granny-grandfather-forms-v3/models/Granny_Princess_Aggressive.glb": {
+      "bytes": 866204,
+      "sha256": "e3662f523f058f5759afb89f6cce3a6e519c81d19b409bd8e2a72dc2ac2c1eac"
+    },
+    "art/granny-grandfather-forms-v3/models/Granny_Princess_Idle.glb": {
+      "bytes": 865940,
+      "sha256": "50c4d8db93e42278f15db9a24386e48e85279b5be91b3db2243bbc4c4b8c027c"
+    },
+    "art/granny-grandfather-forms-v3/models/Granny_Punk.blend": {
+      "bytes": 612652,
+      "sha256": "7e10815be9d2ebf3a2f5df893c0a69195f608e2c7bd89648937666de9dbd0575"
+    },
+    "art/granny-grandfather-forms-v3/models/Granny_Punk.fbx": {
+      "bytes": 1159132,
+      "sha256": "d0674f1ec364ccd188bcc3db9d7be737a1562cfe894feb4470fdcc0051c4e98d"
+    },
+    "art/granny-grandfather-forms-v3/models/Granny_Punk.glb": {
+      "bytes": 1264360,
+      "sha256": "4d6d29d18c2a200e6ec2a5bf2964b4f42d844dc1207e975b62de6bfbdfec5297"
+    },
+    "art/granny-grandfather-forms-v3/models/Granny_Punk_Aggressive.glb": {
+      "bytes": 819124,
+      "sha256": "6545773b839c850a0d11c39c56a7b16225dc9b39432c017c8b2a70a169d7843c"
+    },
+    "art/granny-grandfather-forms-v3/models/Granny_Punk_Idle.glb": {
+      "bytes": 817032,
+      "sha256": "1578c2a4b830b609719b8e977ffb0342b653c7b235a65b3038ac8fc8a247dd4c"
+    },
+    "art/granny-grandfather-forms-v3/outfits.py": {
+      "bytes": 16001,
+      "sha256": "51f86204dddda94684199220adc7566eccfb4b40e15c3d9b583cebffd42e616e"
+    },
+    "art/granny-grandfather-forms-v3/previews/Both_All_Idle.png": {
+      "bytes": 1194443,
+      "sha256": "f64a090c196a1142b9eff0f57b3ac92d6785b41347ab698cac142fd1447250e7"
+    },
+    "art/granny-grandfather-forms-v3/previews/Grandfather_All_Aggressive.png": {
+      "bytes": 2357331,
+      "sha256": "1c85d8f14a0f86a8c227308532e6d3273a330c0fe31350654310b34f1335b38f"
+    },
+    "art/granny-grandfather-forms-v3/previews/Grandfather_All_Idle.png": {
+      "bytes": 2377770,
+      "sha256": "8f8d31edbff72baa924628f2abb3b3fd73f126e6f2f64a522e7110db1760473d"
+    },
+    "art/granny-grandfather-forms-v3/previews/Grandfather_Assassin_Aggressive.png": {
+      "bytes": 1130967,
+      "sha256": "34fa289b93628bfce9dedec88e097c7fb4ab9eed8de8cad9181f0e71074ddc3b"
+    },
+    "art/granny-grandfather-forms-v3/previews/Grandfather_Assassin_Back.png": {
+      "bytes": 1073717,
+      "sha256": "1621b09d35c56de407133f84cf385b2395c194e8919b0d5c43ac36525a99c5cf"
+    },
+    "art/granny-grandfather-forms-v3/previews/Grandfather_Assassin_Idle.png": {
+      "bytes": 1138186,
+      "sha256": "1d802d465ae4223a03f7c05fb6ee46435df8ef94bcddd45e6f0ee95b10308ec3"
+    },
+    "art/granny-grandfather-forms-v3/previews/Grandfather_Assassin_States.png": {
+      "bytes": 1053704,
+      "sha256": "314880a5f2e3e7da5cb810239df163703a0d13f9a56ded8c00bb2efc09d94060"
+    },
+    "art/granny-grandfather-forms-v3/previews/Grandfather_Farmer_Aggressive.png": {
+      "bytes": 1122875,
+      "sha256": "952d43a0230e4b763afd5333a6474d151a2d20113a7a387ed8625dddae6fbdd5"
+    },
+    "art/granny-grandfather-forms-v3/previews/Grandfather_Farmer_Back.png": {
+      "bytes": 1114635,
+      "sha256": "73cebf494d5264d37398c19ca5aa09624f45e1ca45348df063afad86002028ca"
+    },
+    "art/granny-grandfather-forms-v3/previews/Grandfather_Farmer_Idle.png": {
+      "bytes": 1131583,
+      "sha256": "1c7d905dfd07e46aee2556c5237691872280ad05dfe8fc6674c0135f2b6ae38e"
+    },
+    "art/granny-grandfather-forms-v3/previews/Grandfather_Farmer_States.png": {
+      "bytes": 1059515,
+      "sha256": "ce33967f37617b1db841ba5a2ed6e85e9e61997acfadae93a4520f1cbd5b0fd9"
+    },
+    "art/granny-grandfather-forms-v3/previews/Grandfather_King_Aggressive.png": {
+      "bytes": 1125001,
+      "sha256": "16e441c7eeeab2d0b94993c3e61e91b69732781251d3b5aafa487f950c0b8ee8"
+    },
+    "art/granny-grandfather-forms-v3/previews/Grandfather_King_Back.png": {
+      "bytes": 1107031,
+      "sha256": "04a2c3e4c3722a4135ccc1ba4890bf45f399416500511da36b2f935596e7aee5"
+    },
+    "art/granny-grandfather-forms-v3/previews/Grandfather_King_Idle.png": {
+      "bytes": 1136356,
+      "sha256": "d66eea0b811846a6b17e04de28bef889c4bf4299095cc1c44920e548b7464731"
+    },
+    "art/granny-grandfather-forms-v3/previews/Grandfather_King_States.png": {
+      "bytes": 1058929,
+      "sha256": "06c1d8325d7868bea1973005d38291cc6417d84ac1d16f7a060b167a500dce1b"
+    },
+    "art/granny-grandfather-forms-v3/previews/Grandfather_Knight_Aggressive.png": {
+      "bytes": 1127045,
+      "sha256": "29e11a75cf288cf7add280145143ad634650aff4efebbe46fe492555d0d69574"
+    },
+    "art/granny-grandfather-forms-v3/previews/Grandfather_Knight_Back.png": {
+      "bytes": 1122069,
+      "sha256": "4990d3099539220b063cd2481edbe147285cd1772fba744a43c848878fda185c"
+    },
+    "art/granny-grandfather-forms-v3/previews/Grandfather_Knight_Idle.png": {
+      "bytes": 1131586,
+      "sha256": "6ae1f37a6dbc404d40b3a199f9af13afd0e39293436a58c0445e72d17e70e427"
+    },
+    "art/granny-grandfather-forms-v3/previews/Grandfather_Knight_States.png": {
+      "bytes": 1055212,
+      "sha256": "702696d711900324adce7f7eeac8427d350662a4306d8f34ee94bc602879ac7b"
+    },
+    "art/granny-grandfather-forms-v3/previews/Grandfather_Miner_Aggressive.png": {
+      "bytes": 1120612,
+      "sha256": "332b5442861216e3f206b84599deaf10922f285b9c3ee7e1f485761d3c1fb684"
+    },
+    "art/granny-grandfather-forms-v3/previews/Grandfather_Miner_Back.png": {
+      "bytes": 1119847,
+      "sha256": "577fd00aac7b7046971338b4054741192e9200330da037fd97b865f4d8e44215"
+    },
+    "art/granny-grandfather-forms-v3/previews/Grandfather_Miner_Idle.png": {
+      "bytes": 1134397,
+      "sha256": "92b6343ceb9a4a9d66de5ea9ce30dcbfb20f44b609f71207d877c973c116501f"
+    },
+    "art/granny-grandfather-forms-v3/previews/Grandfather_Miner_States.png": {
+      "bytes": 1049400,
+      "sha256": "f5d41bd800674abaf7db7dfcb973081147e547e4b395a76a4777fc65a22982f3"
+    },
+    "art/granny-grandfather-forms-v3/previews/Grandfather_Punk_Aggressive.png": {
+      "bytes": 1113220,
+      "sha256": "bf784a774f5bc4efbe2c3090db2ceebb46df9bb32c29298145bf91aa05578a81"
+    },
+    "art/granny-grandfather-forms-v3/previews/Grandfather_Punk_Back.png": {
+      "bytes": 1086033,
+      "sha256": "f119ba221e9c739631a68b6f7445d48509d99079ea98f66928dff8b3476df4df"
+    },
+    "art/granny-grandfather-forms-v3/previews/Grandfather_Punk_Idle.png": {
+      "bytes": 1124334,
+      "sha256": "38c5e03a02c5e125c8bddb16910a18ce9761432e13cb1e6292de471f40d67d17"
+    },
+    "art/granny-grandfather-forms-v3/previews/Grandfather_Punk_States.png": {
+      "bytes": 1027447,
+      "sha256": "23e6a8fd1343f3f323e1c4d6343d9c3566108f8d45d5b96cb37a0118a8fe9065"
+    },
+    "art/granny-grandfather-forms-v3/previews/Granny_All_Aggressive.png": {
+      "bytes": 2355256,
+      "sha256": "b24490514edd85181f7aba7da9d8bcccaa46c075e8f88823732963a5c387e433"
+    },
+    "art/granny-grandfather-forms-v3/previews/Granny_All_Idle.png": {
+      "bytes": 2302362,
+      "sha256": "d4f66aec5bf41bc605a17a177baa427cc570e48b5e2b2a0c99c1770b51d3107c"
+    },
+    "art/granny-grandfather-forms-v3/previews/Granny_Assassin_Aggressive.png": {
+      "bytes": 1138897,
+      "sha256": "f4da73ba7e538a1afb46029b016e7747fde60489055b43b74a211bf1ce93a029"
+    },
+    "art/granny-grandfather-forms-v3/previews/Granny_Assassin_Back.png": {
+      "bytes": 1074699,
+      "sha256": "71dc3c87db43e7fcc17bf1623db039f7a386a1ec7d3ca25ef6ea54b96577b947"
+    },
+    "art/granny-grandfather-forms-v3/previews/Granny_Assassin_Idle.png": {
+      "bytes": 1119798,
+      "sha256": "e018eb27760082eb59d3f0627385ae50c5668f1061bcbca2830e101da1ab568c"
+    },
+    "art/granny-grandfather-forms-v3/previews/Granny_Assassin_States.png": {
+      "bytes": 1110711,
+      "sha256": "7a69a18691369c1e12c7e7dc8b3e188d04ab699ed3011d76b1fdefbcac6dd174"
+    },
+    "art/granny-grandfather-forms-v3/previews/Granny_Farmer_Aggressive.png": {
+      "bytes": 1135421,
+      "sha256": "7d75f920913d34a5cf55c3f08b2dec96d8492e89350b8b388aff1e528b4aebcc"
+    },
+    "art/granny-grandfather-forms-v3/previews/Granny_Farmer_Back.png": {
+      "bytes": 1114840,
+      "sha256": "40dc6d291778b7fe1a51cd6846f302c9354750ed0e9e7f6c8279a3e6c61a4ce8"
+    },
+    "art/granny-grandfather-forms-v3/previews/Granny_Farmer_Idle.png": {
+      "bytes": 1123104,
+      "sha256": "0a7cb0d6b75549f3870ddb922b88fe211065318d3885ac49216ff2a7f33dc094"
+    },
+    "art/granny-grandfather-forms-v3/previews/Granny_Farmer_States.png": {
+      "bytes": 1111903,
+      "sha256": "3b0bcb1cca0dd8c037ae36efc57d82579b0fc2a95bac0d23195458cdd1cd3432"
+    },
+    "art/granny-grandfather-forms-v3/previews/Granny_Knight_Aggressive.png": {
+      "bytes": 1129509,
+      "sha256": "e05c52d2c33a8274eb2c72e80d248b0be39afca7ab46925a5b6c5d56670f5f74"
+    },
+    "art/granny-grandfather-forms-v3/previews/Granny_Knight_Back.png": {
+      "bytes": 1118649,
+      "sha256": "452110a847574822c35f6e400a1c084e12aac332a2c5b45fa62ebb4c71867c59"
+    },
+    "art/granny-grandfather-forms-v3/previews/Granny_Knight_Idle.png": {
+      "bytes": 1119830,
+      "sha256": "6039221f289ddd7453da067df8d936655bdf9bedefc7343a0125d5ba8b693352"
+    },
+    "art/granny-grandfather-forms-v3/previews/Granny_Knight_States.png": {
+      "bytes": 1107707,
+      "sha256": "a40fa61d4cd4d0ff323b75281471c53656f4cba01effaa824b5c8e637887a2d3"
+    },
+    "art/granny-grandfather-forms-v3/previews/Granny_Miner_Aggressive.png": {
+      "bytes": 1137316,
+      "sha256": "d89df22c2a71d57313e2b7f5c5cddbc466ec827dde2dd5a955bf1b94d1feea40"
+    },
+    "art/granny-grandfather-forms-v3/previews/Granny_Miner_Back.png": {
+      "bytes": 1128471,
+      "sha256": "88baeb11cd1b11669cef960fca0440666827e9a4e0258b12a9b72686a57b8630"
+    },
+    "art/granny-grandfather-forms-v3/previews/Granny_Miner_Idle.png": {
+      "bytes": 1126139,
+      "sha256": "9723114998e4b1b4434a17659e9e1bcdc3b73ed57b364be1829858c1c385a0b2"
+    },
+    "art/granny-grandfather-forms-v3/previews/Granny_Miner_States.png": {
+      "bytes": 1115286,
+      "sha256": "7c0a465e76902f91c27cc84857d79c8be4b78e595a34d9e2a77c31f53ec1f284"
+    },
+    "art/granny-grandfather-forms-v3/previews/Granny_Princess_Aggressive.png": {
+      "bytes": 1161586,
+      "sha256": "37ec2f6dce40dd1e73904131b6f8da34351bbc19c31f8c8a062a87d98d27ac70"
+    },
+    "art/granny-grandfather-forms-v3/previews/Granny_Princess_Back.png": {
+      "bytes": 1110439,
+      "sha256": "c04bb29768e6e12d4a64de251ed66fbf8f581c239cd83d1d1b27afebc94827ac"
+    },
+    "art/granny-grandfather-forms-v3/previews/Granny_Princess_Idle.png": {
+      "bytes": 1148140,
+      "sha256": "eb13adcfc0942726d79c3b153c7b3fa6ccee73e6e0b21f105b824b61f097b425"
+    },
+    "art/granny-grandfather-forms-v3/previews/Granny_Princess_States.png": {
+      "bytes": 1150419,
+      "sha256": "9b6031ea6522c86d0e687211c7dfdcefa291be9bcd74b37036dadd996e66279c"
+    },
+    "art/granny-grandfather-forms-v3/previews/Granny_Punk_Aggressive.png": {
+      "bytes": 1135185,
+      "sha256": "6fc632abf02570db5f6facd70edcd8dacff4c40a7db127bb5a63aa0f5c44de7b"
+    },
+    "art/granny-grandfather-forms-v3/previews/Granny_Punk_Back.png": {
+      "bytes": 1095009,
+      "sha256": "649fb17a8d2c41a0bd0d9b044379a8968ee4e50f5f9bc24c88910d5f7584274b"
+    },
+    "art/granny-grandfather-forms-v3/previews/Granny_Punk_Idle.png": {
+      "bytes": 1128654,
+      "sha256": "17428168e384d739f5ae43dfeb456de91b7789f28407112fd64c35dc95ecce0c"
+    },
+    "art/granny-grandfather-forms-v3/previews/Granny_Punk_States.png": {
+      "bytes": 1113803,
+      "sha256": "0191114490d2ac1571e56c1e5b0d299d93a35d6afe536463565aeecd345cec93"
+    },
+    "art/granny-grandfather-forms-v3/references.json": {
+      "bytes": 1338,
+      "sha256": "7cc5d76f5c2057677128658a2d458b4d96b21b76b4470aaa58082fc10b7ae7f1"
+    },
+    "art/granny-grandfather-forms-v3/reports/Grandfather_Assassin.json": {
+      "bytes": 1711,
+      "sha256": "67397bad402235baba8d8207ed7681b7bfaddf8a1b2a6660d2a898a491486601"
+    },
+    "art/granny-grandfather-forms-v3/reports/Grandfather_Farmer.json": {
+      "bytes": 1472,
+      "sha256": "83195223221ec5e5661c5453d2f981b7c1199f98b61a0759b081fe9ca31a4eee"
+    },
+    "art/granny-grandfather-forms-v3/reports/Grandfather_King.json": {
+      "bytes": 1595,
+      "sha256": "5117eb9ecc5ab2305aadbed91ffefc562af301c40f801386919794e488222843"
+    },
+    "art/granny-grandfather-forms-v3/reports/Grandfather_Knight.json": {
+      "bytes": 1697,
+      "sha256": "5b3ef95c41bb03dcab5769ab73b1d62031134caee6cb84d3bdb44a26ac838d66"
+    },
+    "art/granny-grandfather-forms-v3/reports/Grandfather_Miner.json": {
+      "bytes": 1503,
+      "sha256": "61b917d14f46839ce6743bbaa401191e8470e2f30316c58d9c885e1fd38418fb"
+    },
+    "art/granny-grandfather-forms-v3/reports/Grandfather_Punk.json": {
+      "bytes": 1594,
+      "sha256": "f00a08b1bb86adf2b510914d8defbc3e366f53e71ea4aaee305bfd416f40273e"
+    },
+    "art/granny-grandfather-forms-v3/reports/Granny_Assassin.json": {
+      "bytes": 1552,
+      "sha256": "d298a084d58b9e7f09077e15c172b8b8d13fddeb6ae265c6fdcdbedb5e97e53a"
+    },
+    "art/granny-grandfather-forms-v3/reports/Granny_Farmer.json": {
+      "bytes": 1343,
+      "sha256": "edc543a5559f76a5f9f43a4f8cbc1e96025b4383d5073b923ae405c94d964423"
+    },
+    "art/granny-grandfather-forms-v3/reports/Granny_Knight.json": {
+      "bytes": 1538,
+      "sha256": "eaf1d57a444b951544f0b176c89134910805db45865b4bd2774f403a3f2da1e5"
+    },
+    "art/granny-grandfather-forms-v3/reports/Granny_Miner.json": {
+      "bytes": 1369,
+      "sha256": "f738a1eda6bc7dbb71c73c63f95293fa168340d35bf450a22483aaa8e361f001"
+    },
+    "art/granny-grandfather-forms-v3/reports/Granny_Princess.json": {
+      "bytes": 1524,
+      "sha256": "e970abf1b3c24049d2f01ab1a82b60d2975da7799ac4a1e496f38b446931798b"
+    },
+    "art/granny-grandfather-forms-v3/reports/Granny_Punk.json": {
+      "bytes": 1446,
+      "sha256": "49ec1654b4ac47f1668d5c227db2e7e2c7619ed1b7aa98cf2ced5a6a43f0ba08"
+    },
+    "art/granny-grandfather-forms-v3/validation.json": {
+      "bytes": 10612,
+      "sha256": "366274cb34351630151b2d1b2306246d674e75e58477345db0b9ecb7371590d5"
+    },
+    "art/granny-grandfather-forms-v3/verify.py": {
+      "bytes": 8374,
+      "sha256": "e1f51513da24d1cb7455ba7827f8d9908be503fb139f2aee06941ece113b9442"
+    },
+    "art/granny-grandfather-icons-v3/README.md": {
+      "bytes": 2716,
+      "sha256": "1d90b2f1944f2dfa24c5dd96979cbbcb3f5bfc2563d67663bac40c166a9f37ab"
+    },
+    "art/granny-grandfather-icons-v3/assets.json": {
+      "bytes": 9851,
+      "sha256": "2abe14fc8ec79a6443dfd2ce57b795857e9c21b849f38c484604e554e5e21409"
+    },
+    "art/granny-grandfather-icons-v3/compose_review.py": {
+      "bytes": 6464,
+      "sha256": "70fedd4504355741330e0e591cf460f91104adaa1370c2ea9eb3adfd167c1cbd"
+    },
+    "art/granny-grandfather-icons-v3/icons/GrandfatherAssassin.png": {
+      "bytes": 867721,
+      "sha256": "b5c6a05f8ba4e2bb86fa706dc0b1b49b6d0c123f58770f8babbca083239fd6b4"
+    },
+    "art/granny-grandfather-icons-v3/icons/GrandfatherFarmer.png": {
+      "bytes": 778017,
+      "sha256": "f1b5edfefc9af0fadc8d51044c4cfbc307633e831bbf1efc6ffde79b18450ce2"
+    },
+    "art/granny-grandfather-icons-v3/icons/GrandfatherKing.png": {
+      "bytes": 941378,
+      "sha256": "870465f0d17ae65dea5292f3935356157d204b84c2e50168e8a095c37638ab78"
+    },
+    "art/granny-grandfather-icons-v3/icons/GrandfatherKnight.png": {
+      "bytes": 806457,
+      "sha256": "66315a690f81058913157339ef5f3335340f7307538b026ab0ff022165dd8157"
+    },
+    "art/granny-grandfather-icons-v3/icons/GrandfatherMiner.png": {
+      "bytes": 841702,
+      "sha256": "b42d285aeda0d22d3a7aff386c7cda9c58c46f7c608581ff7ccb22b77ef133b3"
+    },
+    "art/granny-grandfather-icons-v3/icons/GrandfatherPunk.png": {
+      "bytes": 759981,
+      "sha256": "92063895a65af6173955d48ff96f044fb4b5d3b18c84f738f58b3f7eeb8325cb"
+    },
+    "art/granny-grandfather-icons-v3/icons/GrannyAssassin.png": {
+      "bytes": 803529,
+      "sha256": "08f83bb82aac77015fc1b6fa0d5a6085cba0ff00a8143590ae1c6ee81d317aeb"
+    },
+    "art/granny-grandfather-icons-v3/icons/GrannyFarmer.png": {
+      "bytes": 781462,
+      "sha256": "31c9c287f8a8c56f6d7e5395ae1afdf60c76c68aa02c0af8eb6144ce25af8554"
+    },
+    "art/granny-grandfather-icons-v3/icons/GrannyKnight.png": {
+      "bytes": 793151,
+      "sha256": "33a9bab2d7873b38544296a9958c4d61e2e726a1ee488cca1f6c7c101599cb64"
+    },
+    "art/granny-grandfather-icons-v3/icons/GrannyMiner.png": {
+      "bytes": 822014,
+      "sha256": "9b63ceb8aa819ee796a836d9c91422ae97f5ff3ac888c9c4b386b8013606e804"
+    },
+    "art/granny-grandfather-icons-v3/icons/GrannyPrincess.png": {
+      "bytes": 861646,
+      "sha256": "60074605eff2eb53b3e6ebe142e12c854772a8c04d065d2434954680ea782595"
+    },
+    "art/granny-grandfather-icons-v3/icons/GrannyPunk.png": {
+      "bytes": 784887,
+      "sha256": "6f00898045796310fef12c88d7ae5a0701f27f274702b1dbc2c84a37bdc70ecf"
+    },
+    "art/granny-grandfather-icons-v3/previews/Grandfather_Icons_Review.png": {
+      "bytes": 1461082,
+      "sha256": "e6ed283f83b13af10598bdbeab99dc2e37c4ebef28c305e163aff0a151ab85f3"
+    },
+    "art/granny-grandfather-icons-v3/previews/Grandfather_Icons_SmallSizes.png": {
+      "bytes": 92034,
+      "sha256": "57972f44d902946e126ef6a615857df831b8c628f9b7dd63cd6e82c626cd79cb"
+    },
+    "art/granny-grandfather-icons-v3/previews/Granny_Icons_Review.png": {
+      "bytes": 1415106,
+      "sha256": "493e7fd2c18fb7842f76c923bc33acb145e113081d0d5c3fe12cd6e25173947d"
+    },
+    "art/granny-grandfather-icons-v3/previews/Granny_Icons_SmallSizes.png": {
+      "bytes": 91507,
+      "sha256": "69f3f3cbb5901f6c6cc3647a6b3c1cfaac2ee3b7d065dcefd1b78e3c0dc604d5"
+    },
+    "art/granny-grandfather-icons-v3/previews/Grip_Fixes_Review.png": {
+      "bytes": 1074007,
+      "sha256": "3502d533f0853100f578a90ddfab17138a6c75723bbe6ba98817a291b8cd0714"
+    },
+    "art/granny-grandfather-icons-v3/previews/Style_Comparison.png": {
+      "bytes": 533112,
+      "sha256": "877ff97434b32ed816996a329e0c183996c201c27fafeff8c02037d2f375f692"
+    },
+    "art/granny-grandfather-icons-v3/prompts.json": {
+      "bytes": 14778,
+      "sha256": "75b37d3715a775ae3f405d8620d8128669c4a260c511934333b7826f7fddd0cf"
+    },
+    "art/granny-grandfather-icons-v3/validation.json": {
+      "bytes": 4952,
+      "sha256": "9927440d31152fb7967d6c5dd2ec3fa6e4807d0afe12c19659ffcd23d8a04808"
+    },
+    "art/slender-family-v1/README.md": {
+      "bytes": 6378,
+      "sha256": "017007a7c9a10b52b5537e3b3b3edc6d1b3f39f472a984d30cd23df9d0860ff3"
+    },
+    "art/slender-family-v1/approval.json": {
+      "bytes": 2691,
+      "sha256": "bd1cf8df5363affe13bd614db322183e8f9c3c9486ca10784f876d83763e25da"
+    },
+    "art/slender-family-v1/build.py": {
+      "bytes": 12037,
+      "sha256": "9acab98dc969cc67b4747367439ac11418eb4e3997889c8e8afcae3eeabb4d9b"
+    },
+    "art/slender-family-v1/characters.py": {
+      "bytes": 14322,
+      "sha256": "7824673971acfc804e34ed7101e2ed6822332c75e72bf4c0d01b94ac7655aeb6"
+    },
+    "art/slender-family-v1/compose_review.py": {
+      "bytes": 2108,
+      "sha256": "44fd027820a27456afa7213160f05a634681ba552953d79d643153919d869b38"
+    },
+    "art/slender-family-v1/geometry/Slenderman.ArmL.json": {
+      "bytes": 5844,
+      "sha256": "9baafbdf3559e4fdcbdfe8b183c300581ea512cfc1c06bde9c98e5e2b5b7d467"
+    },
+    "art/slender-family-v1/geometry/Slenderman.ArmR.json": {
+      "bytes": 5808,
+      "sha256": "f1f0a9289dc43dbdcfc364cd73870949b1f43e18a3f45533c7fa32e338e7bfca"
+    },
+    "art/slender-family-v1/geometry/Slenderman.Body.json": {
+      "bytes": 83656,
+      "sha256": "8ffb2b808fc888097973ae1e4e742c7a0e8cdbb91bacfbcafe6dfc8eb9dfd2d1"
+    },
+    "art/slender-family-v1/geometry/Slenderman.FootL.json": {
+      "bytes": 9297,
+      "sha256": "e2d05c853e9456770e04bcf00e5c053367b743684cc9be02999b203db85ed5d8"
+    },
+    "art/slender-family-v1/geometry/Slenderman.FootR.json": {
+      "bytes": 9297,
+      "sha256": "a61ee416d697dbe1b0ca3b091f3ef01050800340a83d93675b6a30755f5cfbec"
+    },
+    "art/slender-family-v1/geometry/Slenderman.ForearmL.json": {
+      "bytes": 12029,
+      "sha256": "d507c2de24813e471b7d4e988991cd3656f22bfc8ba0ef0fbad58a3be3622a71"
+    },
+    "art/slender-family-v1/geometry/Slenderman.ForearmR.json": {
+      "bytes": 11891,
+      "sha256": "f2a9e2e51d5e0264c14145f4051e30e2a7cd4cc575fac40a1d820d32610073b5"
+    },
+    "art/slender-family-v1/geometry/Slenderman.HandL.json": {
+      "bytes": 18633,
+      "sha256": "e2d29d880ce2ad2d6e194c78f2d7694f869678e66fc6b429f6b3d465968bfba1"
+    },
+    "art/slender-family-v1/geometry/Slenderman.HandR.json": {
+      "bytes": 18465,
+      "sha256": "7b356a4f86b6c90aa7a6e28823d3fe736d4d6101b8997800c46cd1fe1098c06f"
+    },
+    "art/slender-family-v1/geometry/Slenderman.Head.json": {
+      "bytes": 27837,
+      "sha256": "10b6f568f0ba869e120aaf2226df094308187c7a6f76719dbcc6f9d417d5af49"
+    },
+    "art/slender-family-v1/geometry/Slenderman.LegL.json": {
+      "bytes": 5783,
+      "sha256": "5d4d802d9ce05e89519b7000057ee97dce12e5ef3b603967663acbfcf8d1aec4"
+    },
+    "art/slender-family-v1/geometry/Slenderman.LegR.json": {
+      "bytes": 5769,
+      "sha256": "72e9b8adc7b3cba880eded996939930f638fe3ff5a40dee7b8d17e53f0b949fd"
+    },
+    "art/slender-family-v1/geometry/Slenderman.ShinL.json": {
+      "bytes": 5644,
+      "sha256": "1e9dd00330340909785bed219c934a49b32c087b37cc5dc8285c031b0fa0b06d"
+    },
+    "art/slender-family-v1/geometry/Slenderman.ShinR.json": {
+      "bytes": 5636,
+      "sha256": "6afff1d7be8c82445c2b442a241909e8508bc70ac44f7c8145f8877ba67df68a"
+    },
+    "art/slender-family-v1/geometry/Slendrina.ArmL.json": {
+      "bytes": 5903,
+      "sha256": "c23013ff5a18be67ae98d6e01e840af562b4966239c0cc553df89d14a2b400f0"
+    },
+    "art/slender-family-v1/geometry/Slendrina.ArmR.json": {
+      "bytes": 5875,
+      "sha256": "baa938b2ef598a4344edaf82a355fb1e82e1b1286335e04857a9db460e2e89dc"
+    },
+    "art/slender-family-v1/geometry/Slendrina.Eyes.json": {
+      "bytes": 5983,
+      "sha256": "0bfc7aba29cabb0dbf882e30d69ba83bccb0da01536852970a0f3aae901521ac"
+    },
+    "art/slender-family-v1/geometry/Slendrina.FootL.json": {
+      "bytes": 4628,
+      "sha256": "50ddb2c420743c01e0563d30427e2c3c3489bb4dd07fac6e0bf5f120ece52db2"
+    },
+    "art/slender-family-v1/geometry/Slendrina.FootR.json": {
+      "bytes": 4628,
+      "sha256": "d9b794514c888c110e705c5ca2e8001914f612a3e39c93755647293b1bb570ea"
+    },
+    "art/slender-family-v1/geometry/Slendrina.ForearmL.json": {
+      "bytes": 5948,
+      "sha256": "e48b03cd8d9d383f8ac666bc237802fe221439fc828ad6a871e269496a9b6f8f"
+    },
+    "art/slender-family-v1/geometry/Slendrina.ForearmR.json": {
+      "bytes": 5919,
+      "sha256": "2fa04f1a98a0a247050340300baa27052bd9acbf7098c91b9c73ca2e8e10b1af"
+    },
+    "art/slender-family-v1/geometry/Slendrina.Gown.json": {
+      "bytes": 207903,
+      "sha256": "827d07b94295208541b242ba92e24a717889917b43c9d6f4e182fc8fa8f3e4f9"
+    },
+    "art/slender-family-v1/geometry/Slendrina.HairBack.json": {
+      "bytes": 29446,
+      "sha256": "efdb7567e239a76e2697ed18fe3724356cc9690bb83c3782a42a09d4f7c79522"
+    },
+    "art/slender-family-v1/geometry/Slendrina.HairCap.json": {
+      "bytes": 8013,
+      "sha256": "39eab3cd2fffd4decb9123ad8b5e08bea1d9891c0bd779dba8720afa086f336d"
+    },
+    "art/slender-family-v1/geometry/Slendrina.HairL.json": {
+      "bytes": 18146,
+      "sha256": "75f6564b2df3a6d5ca31b05536df2eb9db97ba06a29748268160a6e66cd68c54"
+    },
+    "art/slender-family-v1/geometry/Slendrina.HairR.json": {
+      "bytes": 17899,
+      "sha256": "657980c58aabe52b0d61ffb8d7edb4bb916e69a49df3c0fe3ad8f728613087df"
+    },
+    "art/slender-family-v1/geometry/Slendrina.HandL.json": {
+      "bytes": 24833,
+      "sha256": "c23ae5b2d3b559d05ff4a059921e027bcf9b9b765fd0dc0f60c99a5d6b3fc234"
+    },
+    "art/slender-family-v1/geometry/Slendrina.HandR.json": {
+      "bytes": 24668,
+      "sha256": "c2fcc74eeaeffad0a1b37067ce7654a865e714b3fac28477845eca373b49ebf2"
+    },
+    "art/slender-family-v1/geometry/Slendrina.Head.json": {
+      "bytes": 62177,
+      "sha256": "3caea66cc577aa91d402ee6ed89120b051552cdeb6eb61f269b7942400ea1de4"
+    },
+    "art/slender-family-v1/geometry/Slendrina.LegL.json": {
+      "bytes": 5473,
+      "sha256": "328780166a633ff27adc078ceac1f006a17803767ebcfe6e9be2450e5104e585"
+    },
+    "art/slender-family-v1/geometry/Slendrina.LegR.json": {
+      "bytes": 5477,
+      "sha256": "815538311adeb4ab6bef63fa3f2e0d10d17204f964348bce68293debc9bd73cc"
+    },
+    "art/slender-family-v1/geometry/Slendrina.Neck.json": {
+      "bytes": 8852,
+      "sha256": "a3f37479fd687fe243fdf77584e89214c6ad54d2c02348f1eb712113593d1794"
+    },
+    "art/slender-family-v1/geometry/Slendrina.ShinL.json": {
+      "bytes": 5787,
+      "sha256": "9d021d0914d1b8cf5b4283fa20756d284093a76bac442d691bd463a8bb46d1d3"
+    },
+    "art/slender-family-v1/geometry/Slendrina.ShinR.json": {
+      "bytes": 5778,
+      "sha256": "d2efcebbc1645e35c212b43d5cd6b22d6d9a80194e85ae532aa030d105a6d2f0"
+    },
+    "art/slender-family-v1/geometry/SpiderMom.Body.json": {
+      "bytes": 11690,
+      "sha256": "15c7c246aacff4d9d3c79b32ef60e25ab44b7312603742c37d557149e1ac7a17"
+    },
+    "art/slender-family-v1/geometry/SpiderMom.CoxaL1.json": {
+      "bytes": 5027,
+      "sha256": "3e52e341b3888e901025da1de8f9677b416e050cacef0673162f2debf41dd8b4"
+    },
+    "art/slender-family-v1/geometry/SpiderMom.CoxaL2.json": {
+      "bytes": 5080,
+      "sha256": "48726e12809760e1966bc426bbac26336008474928767a00eb630ef936fe12ac"
+    },
+    "art/slender-family-v1/geometry/SpiderMom.CoxaL3.json": {
+      "bytes": 5030,
+      "sha256": "eed625cd5060b197b516a7b7895f6bc0a5c8f897ceae4644a682e64d33356802"
+    },
+    "art/slender-family-v1/geometry/SpiderMom.CoxaR1.json": {
+      "bytes": 5058,
+      "sha256": "f02714de61e7175e19a7c2ac4ad4e5ff2dc6862829adb69ac090276848ce9fce"
+    },
+    "art/slender-family-v1/geometry/SpiderMom.CoxaR2.json": {
+      "bytes": 5040,
+      "sha256": "54034b76799f7b3bf8cec9087f79582e981250588d97019ea1a428ff836a4849"
+    },
+    "art/slender-family-v1/geometry/SpiderMom.CoxaR3.json": {
+      "bytes": 5038,
+      "sha256": "a9a72ea49ed4a3a45a9efc863d8d57176b1bc7e1b9719a11cfd3ddd1ae581d97"
+    },
+    "art/slender-family-v1/geometry/SpiderMom.Eyes.json": {
+      "bytes": 30627,
+      "sha256": "0b628734291a5e033ef85d8656ae82df16341314844de7e87efb35b806f7682f"
+    },
+    "art/slender-family-v1/geometry/SpiderMom.Hair.json": {
+      "bytes": 65699,
+      "sha256": "5aaba9269460a6d2c528fa76797c05abf51e45e0aadd359f3f3460283083adf6"
+    },
+    "art/slender-family-v1/geometry/SpiderMom.Head.json": {
+      "bytes": 141461,
+      "sha256": "735f39bacd7d897154eaad22fe9adba9b82d852aa237c64c7363f44f9c333780"
+    },
+    "art/slender-family-v1/geometry/SpiderMom.TarsusL1.json": {
+      "bytes": 5052,
+      "sha256": "7ef1fed424887b430f854701b4d837297e552ac0d9a2107ec7e8b415c14433e9"
+    },
+    "art/slender-family-v1/geometry/SpiderMom.TarsusL2.json": {
+      "bytes": 5052,
+      "sha256": "d87175133746130b71ac01331b9467f9b69231468625f4a732c86292bdc3d089"
+    },
+    "art/slender-family-v1/geometry/SpiderMom.TarsusL3.json": {
+      "bytes": 5052,
+      "sha256": "1702f01c0ee1dc111883bf618550cdc1f626c6d5abf13445d2d84f377c5b6071"
+    },
+    "art/slender-family-v1/geometry/SpiderMom.TarsusR1.json": {
+      "bytes": 5042,
+      "sha256": "8999f3e83779757d94c59233d520111a5aaa094170add058ee64341eeae9eb02"
+    },
+    "art/slender-family-v1/geometry/SpiderMom.TarsusR2.json": {
+      "bytes": 5042,
+      "sha256": "268fff90643bac31e9d6e7458bffca16a9dcc7686a080cc4c4a7a10f2dd14f13"
+    },
+    "art/slender-family-v1/geometry/SpiderMom.TarsusR3.json": {
+      "bytes": 5042,
+      "sha256": "8c140b7212679743ecbd170b4cbe63e8b889ab1ee592779a0e7d8ae0f28dfed4"
+    },
+    "art/slender-family-v1/geometry/SpiderMom.TibiaL1.json": {
+      "bytes": 5026,
+      "sha256": "69680a1c9efcd24cf9dfa0d669d65258baeb47a23ff20796ce809c116888b821"
+    },
+    "art/slender-family-v1/geometry/SpiderMom.TibiaL2.json": {
+      "bytes": 5046,
+      "sha256": "4d75365948c4bbc219c6a3488eb6aa46013e9dbfdc18c14267db2b999a704aec"
+    },
+    "art/slender-family-v1/geometry/SpiderMom.TibiaL3.json": {
+      "bytes": 5051,
+      "sha256": "ebe10fcb398b34f3846b3fcced5961104a984f3b7e36138ef8ddcfafc93c1f7e"
+    },
+    "art/slender-family-v1/geometry/SpiderMom.TibiaR1.json": {
+      "bytes": 5043,
+      "sha256": "0424f8f49847f2e453a4ae4d6b82bd80a9132c0078c6b235dc58029eb2e37092"
+    },
+    "art/slender-family-v1/geometry/SpiderMom.TibiaR2.json": {
+      "bytes": 5034,
+      "sha256": "51fc8fb4f92c75e43c3ee6406886c90a0bee10775d0f1f182dd39488e59bf22a"
+    },
+    "art/slender-family-v1/geometry/SpiderMom.TibiaR3.json": {
+      "bytes": 5028,
+      "sha256": "86b1b68f5262900ef0d5c356ed3ccf79566240819f3e9cb0adcef21256cad531"
+    },
+    "art/slender-family-v1/geometry/_manifest.json": {
+      "bytes": 21269,
+      "sha256": "750b34a5c022ce5df23db4ffa257e0f95f76d229b4c2ffeacf94e0eaa62e2861"
+    },
+    "art/slender-family-v1/geometry/_rig.json": {
+      "bytes": 8631,
+      "sha256": "352f5b974d91bcbb85ff355fa56995aac9d3351fbdea0a3a8c6dc12889150a97"
+    },
+    "art/slender-family-v1/models/Slenderman.blend": {
+      "bytes": 742815,
+      "sha256": "4bc4190bc7683294f67dcecaba001692122edb52893a4fe05c144f2e8bdb0d2c"
+    },
+    "art/slender-family-v1/models/Slenderman.fbx": {
+      "bytes": 555276,
+      "sha256": "6a83d12dd4dc78a015929760cb28b6bcd251044a252661293e0f76789a36400b"
+    },
+    "art/slender-family-v1/models/Slenderman.glb": {
+      "bytes": 344248,
+      "sha256": "4067f2f626d00aa78a876c33adf2661df140ed62cddc555ed283c55994991cdf"
+    },
+    "art/slender-family-v1/models/Slenderman_Aggressive.glb": {
+      "bytes": 210924,
+      "sha256": "609570ef85fae349f47857e08ee8d4dd4bf457227c35242c019c326c075608c2"
+    },
+    "art/slender-family-v1/models/Slenderman_Idle.glb": {
+      "bytes": 209988,
+      "sha256": "e90811b94036b92b026fd650108f1708ff84f60d9579249245ed12fc3e6cb3d3"
+    },
+    "art/slender-family-v1/models/Slendrina.blend": {
+      "bytes": 743103,
+      "sha256": "5a2d2c6d051f3979b14fa10ac267c8872f81957eb37646827008c0aade32479e"
+    },
+    "art/slender-family-v1/models/Slendrina.fbx": {
+      "bytes": 869180,
+      "sha256": "6c23fca3a605e9dbc573b37bce74bbf5057863653a7c3a5674c8c437d0d1d900"
+    },
+    "art/slender-family-v1/models/Slendrina.glb": {
+      "bytes": 825728,
+      "sha256": "4c3a06a87c7724afb8a624611e87b4e23d549452b3c1fc7dd2ec7f482598d46c"
+    },
+    "art/slender-family-v1/models/Slendrina_Aggressive.glb": {
+      "bytes": 513368,
+      "sha256": "b6f3d05d35e9d4f48f2c4d2f592e198109340f09681c64a7f1e4d6549f6ce504"
+    },
+    "art/slender-family-v1/models/Slendrina_Idle.glb": {
+      "bytes": 514816,
+      "sha256": "a296af5ed98bfa2f02d37399ae2c81643a4a3b1596efa97d53cbf1a742090feb"
+    },
+    "art/slender-family-v1/models/SpiderMom.blend": {
+      "bytes": 742787,
+      "sha256": "47f029c499b58afbfa099f5cc4c2a483da8d355d67eab237ef1d0a2601629a10"
+    },
+    "art/slender-family-v1/models/SpiderMom.fbx": {
+      "bytes": 893372,
+      "sha256": "208cad4b644c3282b3d00e003547e7d191c41588ff66491f5afe9c198f26429d"
+    },
+    "art/slender-family-v1/models/SpiderMom.glb": {
+      "bytes": 530008,
+      "sha256": "4f552641cfd35a18f7fc728a6c3af9f93a279bb649352a3ae468b7eb4b8d3617"
+    },
+    "art/slender-family-v1/models/SpiderMom_Aggressive.glb": {
+      "bytes": 320936,
+      "sha256": "18a9033c944f0832c7e80235f3cc146e68808940c7ba2775f5cdf82bf90741c4"
+    },
+    "art/slender-family-v1/models/SpiderMom_Idle.glb": {
+      "bytes": 321496,
+      "sha256": "e3881452e1ffa304ecaab7dab5ac708b1d0086f2a140300fecfb4608ec029426"
+    },
+    "art/slender-family-v1/previews/All_Aggressive.png": {
+      "bytes": 1423374,
+      "sha256": "d7cb1c5489e0b3d891fed8c61f7a4f28f4786432d70c4bc5997d857289a1d087"
+    },
+    "art/slender-family-v1/previews/All_Idle.png": {
+      "bytes": 1411464,
+      "sha256": "d2c5d2062256aaaff38f1d38b21c7829615dd7897641706bf51b0b3a6ae0e8b3"
+    },
+    "art/slender-family-v1/previews/Slenderman_Aggressive.png": {
+      "bytes": 1480720,
+      "sha256": "684393fc6ebb4a8fe731db61dc53869403865efb160ecf8bc5720e9cc2dbc0ff"
+    },
+    "art/slender-family-v1/previews/Slenderman_Back.png": {
+      "bytes": 1107735,
+      "sha256": "4d68ae1541dcd4bb25bc0f081f524542c06bce2e55d4a30d77b2f025f4ef47d0"
+    },
+    "art/slender-family-v1/previews/Slenderman_Face.png": {
+      "bytes": 822493,
+      "sha256": "a59275615b73c80d258a9b7077b91200532cc4aeb03512cf6c1a570061450f88"
+    },
+    "art/slender-family-v1/previews/Slenderman_Idle.png": {
+      "bytes": 1477402,
+      "sha256": "6f92942eb4ea96d5c3065175e82f04fd8aeb202d7b4e0ffb08f7a41df2ebae74"
+    },
+    "art/slender-family-v1/previews/Slenderman_States.png": {
+      "bytes": 1077916,
+      "sha256": "73769787a0a02166cf4fb7d638c5a2d41afe7b01ccf90bc24f7fb9ad6952881f"
+    },
+    "art/slender-family-v1/previews/Slendrina_Aggressive.png": {
+      "bytes": 1524806,
+      "sha256": "a3ad614e3d75d53d6f7018069e3f46693b35023b8b31facec0c2cedb8814fb12"
+    },
+    "art/slender-family-v1/previews/Slendrina_Back.png": {
+      "bytes": 1139415,
+      "sha256": "78a15eb7299c79f6134f6fdc43e886b97c99b969ce2cb2f66dbad2268606358b"
+    },
+    "art/slender-family-v1/previews/Slendrina_Face.png": {
+      "bytes": 908145,
+      "sha256": "4f3681ae88d2ca68396fbdbb01a54a37a7ed6c821387dc55ae1620629f0dc327"
+    },
+    "art/slender-family-v1/previews/Slendrina_Idle.png": {
+      "bytes": 1513336,
+      "sha256": "044ae2f9e34f087283c8df41adcdec44ef8c80a21d1022e9e37efb90cfc9cf09"
+    },
+    "art/slender-family-v1/previews/Slendrina_States.png": {
+      "bytes": 1206459,
+      "sha256": "317e33a41c19289309531980e7d004f61fdd55c63ee699ca135d75f4ca1380d1"
+    },
+    "art/slender-family-v1/previews/SpiderMom_Aggressive.png": {
+      "bytes": 1606231,
+      "sha256": "7a4eca9faa13c158661e841a760fa376e0721c176e72d29570dd1d88ecf173b9"
+    },
+    "art/slender-family-v1/previews/SpiderMom_Back.png": {
+      "bytes": 1273652,
+      "sha256": "3704c432041629086bd2331877cdd4a626952f286dc70536a3ecd3b66dc7613d"
+    },
+    "art/slender-family-v1/previews/SpiderMom_Face.png": {
+      "bytes": 940610,
+      "sha256": "278a41baee9d2afd6cc7d091ac3c866f1869fbec18b715679ed2ce23453aedfc"
+    },
+    "art/slender-family-v1/previews/SpiderMom_Idle.png": {
+      "bytes": 1607745,
+      "sha256": "6d439336a73fe7b14d86f26dc267f247b3e413334557f7e0ce4ca91db12b7c22"
+    },
+    "art/slender-family-v1/previews/SpiderMom_States.png": {
+      "bytes": 883026,
+      "sha256": "5d32722bb8ea8cecdb451c44e631057f14236c81b7b6153688a5550f4f4cb979"
+    },
+    "art/slender-family-v1/references/Slendrina.jpg": {
+      "bytes": 75404,
+      "sha256": "1fec67c08bc1cba5184699ea19b7c8af8ebac02407007dbbf3b44b42553ff059"
+    },
+    "art/slender-family-v1/references/SpiderMom.png": {
+      "bytes": 46934,
+      "sha256": "683bdabda6f02f4fd0f8f3364ab91eb4e86af7e664de2a28d9392283f1b856bd"
+    },
+    "art/slender-family-v1/references.json": {
+      "bytes": 1370,
+      "sha256": "c4d9c815350c4c6671b1ac3a7b6abc27c7bca732085895d7af9de66a5bc65e96"
+    },
+    "art/slender-family-v1/report.json": {
+      "bytes": 740,
+      "sha256": "6184d8ef1024cbe929366526847d7234f27122297667edc19ab5dce1673ea5d1"
+    },
+    "art/slender-family-v1/validation.json": {
+      "bytes": 2384,
+      "sha256": "f15cb7c80cf1cec5a2858863c5fcf250573bfbefd0a00a87e0354d7d3655c86d"
+    },
+    "art/slender-family-v1/verify.py": {
+      "bytes": 6074,
+      "sha256": "0cc6a32cc8337d961285a51c7879320df6aa87e5dd4b3a489d3ebc556a129817"
+    },
+    "art/slender-family-forms-v1/README.md": {
+      "bytes": 4220,
+      "sha256": "09e183790708cb1c91b0db50c149b09e77bad656c2fcd67192542df94cb392e9"
+    },
+    "art/slender-family-forms-v1/build.py": {
+      "bytes": 9725,
+      "sha256": "42972a22cdfa22a4585c435e8800245284d4d4d203a6ee5d6d5a02fe705aa3bd"
+    },
+    "art/slender-family-forms-v1/catalog.json": {
+      "bytes": 34189,
+      "sha256": "1d474e0492fd4dc7c570ef6ffd945c1f54d07e7f1e901acc0fffd32405a7c3da"
+    },
+    "art/slender-family-forms-v1/compose_review.py": {
+      "bytes": 3482,
+      "sha256": "4194c060b2d1d2aeb7baa7b12666681c9d8f9836ecd7c1c2512171dd46aa5fb6"
+    },
+    "art/slender-family-forms-v1/costumes.py": {
+      "bytes": 7787,
+      "sha256": "cb1ca78eb6441cd352ad6a27df71d639501c8790ab66e188d567831adc8df7f7"
+    },
+    "art/slender-family-forms-v1/models/Slenderman_Assassin.blend": {
+      "bytes": 516202,
+      "sha256": "8a433322d4864e109b4953cd58fa2fd7d956ca3b4395d9a5bf43f8a1521b7966"
+    },
+    "art/slender-family-forms-v1/models/Slenderman_Assassin.fbx": {
+      "bytes": 780076,
+      "sha256": "9c7648e6e5995bf024eff492561c794bcd011a5d421bf09aa774cc9b73c4ffdf"
+    },
+    "art/slender-family-forms-v1/models/Slenderman_Assassin.glb": {
+      "bytes": 558472,
+      "sha256": "0b404b815e20dd34be6dc9490b3cdf22ed55129afa82dd243c452cfd6f06f12a"
+    },
+    "art/slender-family-forms-v1/models/Slenderman_Assassin_Aggressive.glb": {
+      "bytes": 356160,
+      "sha256": "0607c206c58de2aa408860e5d1da0d6b2177281c781fab9546a3379024577f89"
+    },
+    "art/slender-family-forms-v1/models/Slenderman_Assassin_Idle.glb": {
+      "bytes": 353712,
+      "sha256": "9f9085f9edaa29d63fb23ec063667e0fa88e6598e57b87bfb83e3ddd3c1ff42b"
+    },
+    "art/slender-family-forms-v1/models/Slenderman_Farmer.blend": {
+      "bytes": 509036,
+      "sha256": "bb0bc9109cb5ba85fc4ee54b495cda58b6ec5f094034540110dd0dbc557c423b"
+    },
+    "art/slender-family-forms-v1/models/Slenderman_Farmer.fbx": {
+      "bytes": 657948,
+      "sha256": "a3e7d6c6b4f0b6d8568ccb480f97170e6b4268c21a41f1b9ecf1b650a5cb76cd"
+    },
+    "art/slender-family-forms-v1/models/Slenderman_Farmer.glb": {
+      "bytes": 532636,
+      "sha256": "1a478a9296e31380d89b4626f950e60bbbe35260fb4a0f9795d8d45ede1ea0f2"
+    },
+    "art/slender-family-forms-v1/models/Slenderman_Farmer_Aggressive.glb": {
+      "bytes": 339612,
+      "sha256": "b92e4c0a18c17c1a7e9da81d9c893953ba16a695be8d1d698ddf228fde1264f0"
+    },
+    "art/slender-family-forms-v1/models/Slenderman_Farmer_Idle.glb": {
+      "bytes": 336280,
+      "sha256": "872da23982d00d82abdf71eb16493793980a5c4de40ef5c3b8f33722de96f8df"
+    },
+    "art/slender-family-forms-v1/models/Slenderman_King.blend": {
+      "bytes": 526501,
+      "sha256": "40dfb535adcec9463b80e2cf27242a759726c15b80e3dfb2ce4897c2e34ecd4c"
+    },
+    "art/slender-family-forms-v1/models/Slenderman_King.fbx": {
+      "bytes": 758908,
+      "sha256": "473829ebecb7da5e6a8087b44fcd2b75097c9d92498dcc7386bc8c6311b1a191"
+    },
+    "art/slender-family-forms-v1/models/Slenderman_King.glb": {
+      "bytes": 659160,
+      "sha256": "314bd4d1475cf0496f9a4afa271170dcc1c4b19b25e8fa55496e7e7241d23001"
+    },
+    "art/slender-family-forms-v1/models/Slenderman_King_Aggressive.glb": {
+      "bytes": 419836,
+      "sha256": "dcdbeaccaa1698ac54b5248dc7fbefa80cdeb6d626d26ace44b019c8812f9b8e"
+    },
+    "art/slender-family-forms-v1/models/Slenderman_King_Idle.glb": {
+      "bytes": 418648,
+      "sha256": "c0a5027953d004a7247f03dd95df69098bf55b933f412d2a6eae893ecdfaf1cb"
+    },
+    "art/slender-family-forms-v1/models/Slenderman_Knight.blend": {
+      "bytes": 525512,
+      "sha256": "8ec999b1d4fe14141538b62010f6b7821301d86dc684b19bb1466b683a303383"
+    },
+    "art/slender-family-forms-v1/models/Slenderman_Knight.fbx": {
+      "bytes": 787532,
+      "sha256": "d7309c2f327c7b8ea1e3e4da43064b98f020d05fb7aeab23365c10dae47e4e8d"
+    },
+    "art/slender-family-forms-v1/models/Slenderman_Knight.glb": {
+      "bytes": 604272,
+      "sha256": "fc0a73266767b1423b2f153d8ebb1359a1f7fb3d14d9e0f4afa97c682bd8d2f2"
+    },
+    "art/slender-family-forms-v1/models/Slenderman_Knight_Aggressive.glb": {
+      "bytes": 388488,
+      "sha256": "4197603abf598222a518b7f78e8d92e70f90b012540b201850fa91227702b293"
+    },
+    "art/slender-family-forms-v1/models/Slenderman_Knight_Idle.glb": {
+      "bytes": 385356,
+      "sha256": "744f4eea1f7733854c9d8e09c6e6003bb06df28f1505bc0c7fbd656bcdb33f1a"
+    },
+    "art/slender-family-forms-v1/models/Slenderman_Miner.blend": {
+      "bytes": 508783,
+      "sha256": "2b7f4a93712db1b51fa8487181183eacc89c75d1a0db5bdfe43ad856271ef5cd"
+    },
+    "art/slender-family-forms-v1/models/Slenderman_Miner.fbx": {
+      "bytes": 676252,
+      "sha256": "3729795fde3381375b35423276495ca85cc1819c67616691a3ffb6ceef9a50db"
+    },
+    "art/slender-family-forms-v1/models/Slenderman_Miner.glb": {
+      "bytes": 533128,
+      "sha256": "0c66cc36d9b57d074f6098ba04099bd4207d850581c9ca9195c80888ada102ca"
+    },
+    "art/slender-family-forms-v1/models/Slenderman_Miner_Aggressive.glb": {
+      "bytes": 338492,
+      "sha256": "d76b04d51d8436eff0bc472439b8a656b9d817e2a45dd3f6a4954e750d9bf994"
+    },
+    "art/slender-family-forms-v1/models/Slenderman_Miner_Idle.glb": {
+      "bytes": 335372,
+      "sha256": "1e2738185658b73405a9d57ee0e976f6bf22b056a5c436bd1f7d3d5a9283aec1"
+    },
+    "art/slender-family-forms-v1/models/Slenderman_Punk.blend": {
+      "bytes": 542677,
+      "sha256": "05470ae63b061ba8b9ef8d9a897ea00ad90f117c72b4dd0080d4cd66c7e5cd55"
+    },
+    "art/slender-family-forms-v1/models/Slenderman_Punk.fbx": {
+      "bytes": 771068,
+      "sha256": "197507c448cc7aaa0c5973c2274cfeb9a6f0dc0df5caee14d9dffb87d5bf04a6"
+    },
+    "art/slender-family-forms-v1/models/Slenderman_Punk.glb": {
+      "bytes": 692340,
+      "sha256": "35995f26e0dd73efd65a878a48b38be5ae17da2434b92c6412cbc23c131f3077"
+    },
+    "art/slender-family-forms-v1/models/Slenderman_Punk_Aggressive.glb": {
+      "bytes": 445016,
+      "sha256": "deb0f83f47322477f1d663b49966246c564f0958c4fb6e8239c504dd62878f17"
+    },
+    "art/slender-family-forms-v1/models/Slenderman_Punk_Idle.glb": {
+      "bytes": 442692,
+      "sha256": "957200829c1653b67b314b7e3846690659b3f630970bc922c000ebc840469bbe"
+    },
+    "art/slender-family-forms-v1/models/Slendrina_Assassin.blend": {
+      "bytes": 605242,
+      "sha256": "594f3462f58cb4f9fca3bc070684ad1c5c0aa3330e6929bee949613fea2be1e4"
+    },
+    "art/slender-family-forms-v1/models/Slendrina_Assassin.fbx": {
+      "bytes": 1111292,
+      "sha256": "52db69b8ae8299ffa22893c9ff8375e65fc27ae379a43e4dc597ce905ed32480"
+    },
+    "art/slender-family-forms-v1/models/Slendrina_Assassin.glb": {
+      "bytes": 1040632,
+      "sha256": "53542a8f1e1f3c4e678118f3292b544a2c176d66e47977079046005236033858"
+    },
+    "art/slender-family-forms-v1/models/Slendrina_Assassin_Aggressive.glb": {
+      "bytes": 655584,
+      "sha256": "947d26903f636b448b763ed5bed37b6794fc6ed49fd90266ea3bc522338df2c1"
+    },
+    "art/slender-family-forms-v1/models/Slendrina_Assassin_Idle.glb": {
+      "bytes": 656240,
+      "sha256": "887d0eaefdaaa9f464825d93aac1fe0fa1f553ad6de967012a4ecc502c30af67"
+    },
+    "art/slender-family-forms-v1/models/Slendrina_Farmer.blend": {
+      "bytes": 594051,
+      "sha256": "c2e23038f3d85e6814b5e4af45cf41cefea9a328dfb82f061ad68b7bf4bf41dc"
+    },
+    "art/slender-family-forms-v1/models/Slendrina_Farmer.fbx": {
+      "bytes": 972412,
+      "sha256": "c9c351febb026f628a95723d0e788a8a4537e6614bc31e85eeb2f43fc9feb21b"
+    },
+    "art/slender-family-forms-v1/models/Slendrina_Farmer.glb": {
+      "bytes": 1004060,
+      "sha256": "b342575d89ce9396f31fd30f140d6c91f4bf00566ad903dac33f2be675d606b6"
+    },
+    "art/slender-family-forms-v1/models/Slendrina_Farmer_Aggressive.glb": {
+      "bytes": 637552,
+      "sha256": "f8ce68af9311db22b55a49eb1d837e14cedce66b013569b83514e6ab015b0959"
+    },
+    "art/slender-family-forms-v1/models/Slendrina_Farmer_Idle.glb": {
+      "bytes": 636460,
+      "sha256": "59aae332a198ca1da18b5306d6bd6f68de114b5b9ddcb0ff836cfaa9f66ee50a"
+    },
+    "art/slender-family-forms-v1/models/Slendrina_Knight.blend": {
+      "bytes": 613292,
+      "sha256": "ba1fb45217eaf513d4531a4bd28bbcc8bb7973b4ce8b58fc2557fede34994ac4"
+    },
+    "art/slender-family-forms-v1/models/Slendrina_Knight.fbx": {
+      "bytes": 1119260,
+      "sha256": "d0e862cc6a85c3f734b574f6c0c944dd4a45b58190b36b250dd724e80ec72be2"
+    },
+    "art/slender-family-forms-v1/models/Slendrina_Knight.glb": {
+      "bytes": 1087432,
+      "sha256": "e2bceefd058d616a6d1744b19c9d0d1d2fb888efd37f09b22f14db5b257fd83f"
+    },
+    "art/slender-family-forms-v1/models/Slendrina_Knight_Aggressive.glb": {
+      "bytes": 689356,
+      "sha256": "94df4aa9d38fa678b1916c637e545c5ad1f191df15c9baa6915b28c59327e8bc"
+    },
+    "art/slender-family-forms-v1/models/Slendrina_Knight_Idle.glb": {
+      "bytes": 687232,
+      "sha256": "e7d441add9ecdbba0a68a73f33c6811a693d87d5d548940dfe02a32ad832ac35"
+    },
+    "art/slender-family-forms-v1/models/Slendrina_Miner.blend": {
+      "bytes": 594355,
+      "sha256": "43d1e739db06b13edb0271c79514e10e3930adc37c5932fdb185ff38b9d376c4"
+    },
+    "art/slender-family-forms-v1/models/Slendrina_Miner.fbx": {
+      "bytes": 993852,
+      "sha256": "67fc22d1dd426464da0e44a893e889edab48b8995f3e2e4d88b185f93085ecf0"
+    },
+    "art/slender-family-forms-v1/models/Slendrina_Miner.glb": {
+      "bytes": 1011508,
+      "sha256": "150f230588ae87191bf32551bf9fd05275b1ecd618af8f53cb84b3034615a356"
+    },
+    "art/slender-family-forms-v1/models/Slendrina_Miner_Aggressive.glb": {
+      "bytes": 639024,
+      "sha256": "265c0c876194b2e00ce63a5b0e2b5d12c65bb7529acad5fc7488d86839a2b30e"
+    },
+    "art/slender-family-forms-v1/models/Slendrina_Miner_Idle.glb": {
+      "bytes": 638644,
+      "sha256": "63e2828a3fcfb307bb3dcb4fc96d71443e5b16c9944f85076c5caa7c030cf709"
+    },
+    "art/slender-family-forms-v1/models/Slendrina_Princess.blend": {
+      "bytes": 624610,
+      "sha256": "1b7622562828eb29c7e24e06c901992298a1fd0f17fd38601b8b7b618fee1964"
+    },
+    "art/slender-family-forms-v1/models/Slendrina_Princess.fbx": {
+      "bytes": 1129228,
+      "sha256": "f6f923c187d2102b12bb967b5d69bb83e78137c0e19e165a8dcda2fee14108c6"
+    },
+    "art/slender-family-forms-v1/models/Slendrina_Princess.glb": {
+      "bytes": 1248068,
+      "sha256": "d19a78d85154f18baed2f439ec043065e854cd8d8d90bdf8c631ef0f6fd99b87"
+    },
+    "art/slender-family-forms-v1/models/Slendrina_Princess_Aggressive.glb": {
+      "bytes": 791640,
+      "sha256": "dbbde5824d9c33baa52aff3619474af0ad8d6de6aae696955118ff487b32490f"
+    },
+    "art/slender-family-forms-v1/models/Slendrina_Princess_Idle.glb": {
+      "bytes": 792944,
+      "sha256": "dd63fc90f1a3174818a9d0ed9460e90de556bfb2ff673880e85653405f30ae55"
+    },
+    "art/slender-family-forms-v1/models/Slendrina_Punk.blend": {
+      "bytes": 632097,
+      "sha256": "50fae4494f182aae891add1b496a1b93006cf2fcb279ea2387b62b495ae4ac24"
+    },
+    "art/slender-family-forms-v1/models/Slendrina_Punk.fbx": {
+      "bytes": 1097292,
+      "sha256": "9fb96fdb28a1376c5ae1ccb417e9d71c48af01f5ddbac157ef943a117166b6f7"
+    },
+    "art/slender-family-forms-v1/models/Slendrina_Punk.glb": {
+      "bytes": 1173508,
+      "sha256": "3a650bacfc354ab1ce11a0cdfa4b126eca8b21a0ef6a27b76621c8f5bd3766bc"
+    },
+    "art/slender-family-forms-v1/models/Slendrina_Punk_Aggressive.glb": {
+      "bytes": 745220,
+      "sha256": "5945372fe0143bcfe406ff8e5d6844fbcc1187cfe1b9b933ebf1941ae5ff0416"
+    },
+    "art/slender-family-forms-v1/models/Slendrina_Punk_Idle.glb": {
+      "bytes": 747796,
+      "sha256": "066bd62496e07ead76e700b4482b5f8d47fa91b148d71241a632964408a9b5b1"
+    },
+    "art/slender-family-forms-v1/models/SpiderMom_Assassin.blend": {
+      "bytes": 537775,
+      "sha256": "cb2a2a61f40623477493469a24afb216ef97563c668f51845b24c19b566b8101"
+    },
+    "art/slender-family-forms-v1/models/SpiderMom_Assassin.fbx": {
+      "bytes": 1136092,
+      "sha256": "9bcb6a5ab023d27e376587832717efa40651d342469fca091e2b47e6f8d64e52"
+    },
+    "art/slender-family-forms-v1/models/SpiderMom_Assassin.glb": {
+      "bytes": 646660,
+      "sha256": "ad60ec25b597a5ce80a9eeb90ce2c09bfc20c0ecd0354ca67a1ee9d0356bb467"
+    },
+    "art/slender-family-forms-v1/models/SpiderMom_Assassin_Aggressive.glb": {
+      "bytes": 397880,
+      "sha256": "c6e713157f4241226e8f6b17f5df80de4c21b8a4ed8ef49a8a92b2d528f4cd03"
+    },
+    "art/slender-family-forms-v1/models/SpiderMom_Assassin_Idle.glb": {
+      "bytes": 398304,
+      "sha256": "f598965392cbe547d3f5266c17bb1105df69eac974cfec164615c088869af896"
+    },
+    "art/slender-family-forms-v1/models/SpiderMom_Farmer.blend": {
+      "bytes": 542121,
+      "sha256": "b07c4496c88e4d6223b573c1f63203b47a6ca69b60bf40f63766e56a19fc7f48"
+    },
+    "art/slender-family-forms-v1/models/SpiderMom_Farmer.fbx": {
+      "bytes": 1122060,
+      "sha256": "40c29ef300a567444154f20999debf6728dcaa0a9aa5d4bd211f13bd64297256"
+    },
+    "art/slender-family-forms-v1/models/SpiderMom_Farmer.glb": {
+      "bytes": 686392,
+      "sha256": "491082719020c64c6f304e6ba5fb4145eda20c5f15a9dbf69701cde34a366464"
+    },
+    "art/slender-family-forms-v1/models/SpiderMom_Farmer_Aggressive.glb": {
+      "bytes": 425172,
+      "sha256": "e6285c05510bc01f29b8c26b739bb9852106db374c80885b4f76a5787bf517d2"
+    },
+    "art/slender-family-forms-v1/models/SpiderMom_Farmer_Idle.glb": {
+      "bytes": 426220,
+      "sha256": "1656a41920da645f599eddc78e46a53cd8e9e69762b73363c62b31b6141e6b9e"
+    },
+    "art/slender-family-forms-v1/models/SpiderMom_Knight.blend": {
+      "bytes": 547436,
+      "sha256": "68577d9dfcde9a1c27528636965b9e3147483e31ceea239aa280a3e3843e6d43"
+    },
+    "art/slender-family-forms-v1/models/SpiderMom_Knight.fbx": {
+      "bytes": 1151260,
+      "sha256": "5ce16b165ded85f544775d3ef12f2074c5edea076ec879e94ed350c925801476"
+    },
+    "art/slender-family-forms-v1/models/SpiderMom_Knight.glb": {
+      "bytes": 719988,
+      "sha256": "ff44941ea3d347c76c999864d62efa5686d2ffe6df372f72fdc0381ce61a21cd"
+    },
+    "art/slender-family-forms-v1/models/SpiderMom_Knight_Aggressive.glb": {
+      "bytes": 448648,
+      "sha256": "638b69c482c8dd2c0cf97069b0a8f0342562ff04294f32a98a38b15ab669d51f"
+    },
+    "art/slender-family-forms-v1/models/SpiderMom_Knight_Idle.glb": {
+      "bytes": 447656,
+      "sha256": "ffa8d39349af83c6b75d500de5991114582bf439cbd115426cfda7866c5167b4"
+    },
+    "art/slender-family-forms-v1/models/SpiderMom_Miner.blend": {
+      "bytes": 539003,
+      "sha256": "299f0a28ecafb2a0d312e40e12f0ea736b7096f29da9e629a3ce2428dff15718"
+    },
+    "art/slender-family-forms-v1/models/SpiderMom_Miner.fbx": {
+      "bytes": 1140620,
+      "sha256": "c3b1c88ddace3a29233fae321010475654998570e917f3e5f2b372cd8d7c2f0f"
+    },
+    "art/slender-family-forms-v1/models/SpiderMom_Miner.glb": {
+      "bytes": 670304,
+      "sha256": "92d1c093cf38d1b5ef07f6813c9a93df052a294629f3c937ca3d396d469cd15f"
+    },
+    "art/slender-family-forms-v1/models/SpiderMom_Miner_Aggressive.glb": {
+      "bytes": 416044,
+      "sha256": "a0973d96d400236b708833e9bea55013d806e6d8398d3f8da51ce7687c01a25f"
+    },
+    "art/slender-family-forms-v1/models/SpiderMom_Miner_Idle.glb": {
+      "bytes": 415712,
+      "sha256": "9a4efec48c8736d89b2e1c296d34fccb7055d582195e4be310df855cb378fc1b"
+    },
+    "art/slender-family-forms-v1/models/SpiderMom_Princess.blend": {
+      "bytes": 545514,
+      "sha256": "5e70dd6151fe46a2b14e400b8382d1401a5efb3a8136b35435bef5a24064bd19"
+    },
+    "art/slender-family-forms-v1/models/SpiderMom_Princess.fbx": {
+      "bytes": 1032892,
+      "sha256": "c420f053de4f7ced59a56a8ea8a069780344a0e575f1c132184647460e6f0593"
+    },
+    "art/slender-family-forms-v1/models/SpiderMom_Princess.glb": {
+      "bytes": 730256,
+      "sha256": "79daad8525cf493726206fa084f3328fbde8f38fb45f1b2e00ff608e168ae997"
+    },
+    "art/slender-family-forms-v1/models/SpiderMom_Princess_Aggressive.glb": {
+      "bytes": 453412,
+      "sha256": "3f0d1a9d1624fed82e7fc48e6b4e8b00968a12d528cd7e8d07d5c749b9d74889"
+    },
+    "art/slender-family-forms-v1/models/SpiderMom_Princess_Idle.glb": {
+      "bytes": 454168,
+      "sha256": "a7a886cf83730d7430785dc88c614e09b2e0432a64946ad8bb41f954157784ff"
+    },
+    "art/slender-family-forms-v1/models/SpiderMom_Punk.blend": {
+      "bytes": 551827,
+      "sha256": "64e1364be88662fb0681cb2e7d9dddbdd618a97d4245d0dfdf330c6e20829d0d"
+    },
+    "art/slender-family-forms-v1/models/SpiderMom_Punk.fbx": {
+      "bytes": 1152076,
+      "sha256": "1fab560c1f68c65632ee57e9443fb28f0a5a0770a1e557147f7ff4b3dc343b5a"
+    },
+    "art/slender-family-forms-v1/models/SpiderMom_Punk.glb": {
+      "bytes": 721632,
+      "sha256": "23ce6a24ead958b72a2464137dff025c4e34a06f63e535a7ead526c36913a246"
+    },
+    "art/slender-family-forms-v1/models/SpiderMom_Punk_Aggressive.glb": {
+      "bytes": 448684,
+      "sha256": "a2d6c271b477d76cf6311623365fce9f657da2a2206115b576ff2bd9a1b540cf"
+    },
+    "art/slender-family-forms-v1/models/SpiderMom_Punk_Idle.glb": {
+      "bytes": 448628,
+      "sha256": "85e14f0730d181068b2dab1ecf831ea263fbd7542123500a0879b6f3115ab0c7"
+    },
+    "art/slender-family-forms-v1/previews/All_18_Aggressive.png": {
+      "bytes": 1538724,
+      "sha256": "39034697761baf3b2989e30a36053e2e0bc8a0d3674157198fbbf005636554f9"
+    },
+    "art/slender-family-forms-v1/previews/All_18_Idle.png": {
+      "bytes": 1502912,
+      "sha256": "af3f3c87b8f30146a2b66329bd30c960e5d2b91d1ea2ba41d59de02b597c7f9d"
+    },
+    "art/slender-family-forms-v1/previews/Slenderman_All_Aggressive.png": {
+      "bytes": 2026052,
+      "sha256": "1acf89bbbb8d4479a9ed02cb49154198f746af5036a39480a3eef999ab5f67ba"
+    },
+    "art/slender-family-forms-v1/previews/Slenderman_All_Idle.png": {
+      "bytes": 1989672,
+      "sha256": "24d6da1b388c980cb74b36ab7ce8da83fb2ee650c6ef3a9a729aa4c32cc739f0"
+    },
+    "art/slender-family-forms-v1/previews/Slenderman_Assassin_Aggressive.png": {
+      "bytes": 1138887,
+      "sha256": "12ce39b91aac6819ff5efaf14c6c33215004f85cd72d4818ae78af18bf4c6a5e"
+    },
+    "art/slender-family-forms-v1/previews/Slenderman_Assassin_Back.png": {
+      "bytes": 1114309,
+      "sha256": "cf01a034a7bcb270d36b87c5536744c0e921f2338c14bcfbf3675d47838e675b"
+    },
+    "art/slender-family-forms-v1/previews/Slenderman_Assassin_Idle.png": {
+      "bytes": 1130771,
+      "sha256": "b78b5d6076189458eabddaf26e49c673413548224fd55b8565f5c61a1b13fe1f"
+    },
+    "art/slender-family-forms-v1/previews/Slenderman_Assassin_States.png": {
+      "bytes": 1049566,
+      "sha256": "8c3b2ea2f33b87844561d4da3c8cd540c495d4c7f19852d504a061e106ce04a3"
+    },
+    "art/slender-family-forms-v1/previews/Slenderman_Farmer_Aggressive.png": {
+      "bytes": 1120779,
+      "sha256": "1a0eda68f29dbbb53f9995bb98e52d49178a0065b8d8e059f8d8cabc33677024"
+    },
+    "art/slender-family-forms-v1/previews/Slenderman_Farmer_Back.png": {
+      "bytes": 1134004,
+      "sha256": "79460834041a0c00ec30a1447c69c514ed7607b5ad5d841f70113d7b8778a433"
+    },
+    "art/slender-family-forms-v1/previews/Slenderman_Farmer_Idle.png": {
+      "bytes": 1111119,
+      "sha256": "981ca2e0f15b17a84633715c8f933eb21c554f6ce965234af4d6e5820e344019"
+    },
+    "art/slender-family-forms-v1/previews/Slenderman_Farmer_States.png": {
+      "bytes": 1022589,
+      "sha256": "700fff69893e49b586654a006aa692a458c0d1e78123bd618b10db75a3d3aa68"
+    },
+    "art/slender-family-forms-v1/previews/Slenderman_King_Aggressive.png": {
+      "bytes": 1133369,
+      "sha256": "615670ae4980f76928312685a141dc5682b9209786824926515f35299013a0b2"
+    },
+    "art/slender-family-forms-v1/previews/Slenderman_King_Back.png": {
+      "bytes": 1125619,
+      "sha256": "c071f1c60545474a33b5174ce0a1a80aa4a2737665fcba411bdec5af267bab5b"
+    },
+    "art/slender-family-forms-v1/previews/Slenderman_King_Idle.png": {
+      "bytes": 1127532,
+      "sha256": "68e7ab57bb10e42d3e2f81ebb263e8bf24cd8421c912bfea9f0bb195684db6df"
+    },
+    "art/slender-family-forms-v1/previews/Slenderman_King_States.png": {
+      "bytes": 1049297,
+      "sha256": "de224ba04869139a8ab29ecaf99df9d40ea12bcf73ac6f5e398b4a61788c4421"
+    },
+    "art/slender-family-forms-v1/previews/Slenderman_Knight_Aggressive.png": {
+      "bytes": 1123060,
+      "sha256": "411dc0a4e53ae0a455e0f9195f4eb13aa9a0239525e6effbafa10c4e5a9b0c5b"
+    },
+    "art/slender-family-forms-v1/previews/Slenderman_Knight_Back.png": {
+      "bytes": 1142162,
+      "sha256": "bb4b5c67a471b3e0d4e6541111f72b025fd7992ed56446a73b08129db292f711"
+    },
+    "art/slender-family-forms-v1/previews/Slenderman_Knight_Idle.png": {
+      "bytes": 1119837,
+      "sha256": "9b9f15336dd34108e2f2ce5dc79e49559dcba00f6a4c6450f5fd5a6042366d41"
+    },
+    "art/slender-family-forms-v1/previews/Slenderman_Knight_States.png": {
+      "bytes": 1036257,
+      "sha256": "56e530d1d87f66bc23299e4b943b4ac6eec0ad5b2bd3a208898331382e694657"
+    },
+    "art/slender-family-forms-v1/previews/Slenderman_Miner_Aggressive.png": {
+      "bytes": 1120070,
+      "sha256": "4da445f7d688bcc2b6b2d26ae1d4a0d283e22b005ad1e371e82bdb3d838dbe4d"
+    },
+    "art/slender-family-forms-v1/previews/Slenderman_Miner_Back.png": {
+      "bytes": 1138991,
+      "sha256": "9f989dee2b4191fae160fa388edaaea783ab29196e18d2c373a82d4bf3d49db9"
+    },
+    "art/slender-family-forms-v1/previews/Slenderman_Miner_Idle.png": {
+      "bytes": 1113687,
+      "sha256": "b32d6caf87877e33dbe1de028c320699cd50527a5be5752a63a29bef7f569e8a"
+    },
+    "art/slender-family-forms-v1/previews/Slenderman_Miner_States.png": {
+      "bytes": 1018894,
+      "sha256": "339508a4684a3c29c017834b8ffe7947f440d4e3aab01c9f5ad14488f0067391"
+    },
+    "art/slender-family-forms-v1/previews/Slenderman_Punk_Aggressive.png": {
+      "bytes": 1117519,
+      "sha256": "9a54eda3b35207ec01a679eacc3aedf0f59e4f7f25b65bcafac4149e2fa36929"
+    },
+    "art/slender-family-forms-v1/previews/Slenderman_Punk_Back.png": {
+      "bytes": 1112272,
+      "sha256": "a34cac5fc17cca48dab4c071ea9a411ab92ad098e088ac1f9e958c28e05930ab"
+    },
+    "art/slender-family-forms-v1/previews/Slenderman_Punk_Idle.png": {
+      "bytes": 1114659,
+      "sha256": "d7f803550434f816628849dbc35785a4b56ca4e717c87a5f8154108a4e064587"
+    },
+    "art/slender-family-forms-v1/previews/Slenderman_Punk_States.png": {
+      "bytes": 1019946,
+      "sha256": "69d15954196e2c921bd325d64f69e2f73fa5ee398055d42b573f4b9c6e1259a0"
+    },
+    "art/slender-family-forms-v1/previews/Slendrina_All_Aggressive.png": {
+      "bytes": 2244361,
+      "sha256": "33a529323a135ae062e825668325aca9ec98f761abd07377b9d2b8cb9731ecde"
+    },
+    "art/slender-family-forms-v1/previews/Slendrina_All_Idle.png": {
+      "bytes": 2195929,
+      "sha256": "479d314ef8d43b7ad4f60ab8a2021d57a8956b17b70a044fcec26f62e9a0278d"
+    },
+    "art/slender-family-forms-v1/previews/Slendrina_Assassin_Aggressive.png": {
+      "bytes": 1148966,
+      "sha256": "d0af25115d56c0bf7e663ecbc048c274d4bc90e3a888f2a548af289f4b422bf7"
+    },
+    "art/slender-family-forms-v1/previews/Slendrina_Assassin_Back.png": {
+      "bytes": 1114714,
+      "sha256": "3079c1ad77f69be9b5dbadf23048321c4a6958bb1d2594bd2102d1d889142981"
+    },
+    "art/slender-family-forms-v1/previews/Slendrina_Assassin_Idle.png": {
+      "bytes": 1141974,
+      "sha256": "c0ac60c880675655b4c043cca6c8c049e1ea3708da683ebdda88259ceff53390"
+    },
+    "art/slender-family-forms-v1/previews/Slendrina_Assassin_States.png": {
+      "bytes": 1107940,
+      "sha256": "9fe05adee31e5dc0748dbdeb4c872e73160af3891b8976b189cf53aff975c338"
+    },
+    "art/slender-family-forms-v1/previews/Slendrina_Farmer_Aggressive.png": {
+      "bytes": 1152914,
+      "sha256": "23b0c53387cc11890a5b4229a820e385f7bbe002830c27535424ed69169dd2d8"
+    },
+    "art/slender-family-forms-v1/previews/Slendrina_Farmer_Back.png": {
+      "bytes": 1155089,
+      "sha256": "aa9aa6e753f1b1f1654b21ea476d966b1a7b8ea25afad3e1f3267c1ddfe5f02e"
+    },
+    "art/slender-family-forms-v1/previews/Slendrina_Farmer_Idle.png": {
+      "bytes": 1146832,
+      "sha256": "a997453cddfc4cb6b5ec1ae2536d68f47e64ede61a09731b7cc15c736c1750a5"
+    },
+    "art/slender-family-forms-v1/previews/Slendrina_Farmer_States.png": {
+      "bytes": 1111654,
+      "sha256": "a868992f1da287788bf0b8e05d24e054c7c4701fa275a98c39d78a042f5ddad8"
+    },
+    "art/slender-family-forms-v1/previews/Slendrina_Knight_Aggressive.png": {
+      "bytes": 1146886,
+      "sha256": "ab3b20924523423d1b0503f81726a729b89f7aa46e25869d1676b29a572bcaf3"
+    },
+    "art/slender-family-forms-v1/previews/Slendrina_Knight_Back.png": {
+      "bytes": 1159338,
+      "sha256": "66796be1816ea705fa686c900ee82060829fcaf46bbaa0f9ece2900f359f13e0"
+    },
+    "art/slender-family-forms-v1/previews/Slendrina_Knight_Idle.png": {
+      "bytes": 1146505,
+      "sha256": "b9ef39e9254048108bf318837ec2d61d113fc186b3eb456da05bff9f2862cd6b"
+    },
+    "art/slender-family-forms-v1/previews/Slendrina_Knight_States.png": {
+      "bytes": 1124391,
+      "sha256": "00f45ffd9d86ac1226835923e0b084e9b14aab7644dce838ea84740bfc75cd1d"
+    },
+    "art/slender-family-forms-v1/previews/Slendrina_Miner_Aggressive.png": {
+      "bytes": 1152062,
+      "sha256": "4ded5f8bfffadfc39931ea939cc782544906aa82af6d132ead0e4b4934d5fa3e"
+    },
+    "art/slender-family-forms-v1/previews/Slendrina_Miner_Back.png": {
+      "bytes": 1163121,
+      "sha256": "b73cd75ac9de415ba9f79b2e36a3ede22b8980c8a9e342ebeb777e1f6dced05c"
+    },
+    "art/slender-family-forms-v1/previews/Slendrina_Miner_Idle.png": {
+      "bytes": 1150081,
+      "sha256": "1e224d5a92d9f86cac0e61a2e0313991288c6b4ffa69adab0b7da916201cb555"
+    },
+    "art/slender-family-forms-v1/previews/Slendrina_Miner_States.png": {
+      "bytes": 1117357,
+      "sha256": "2918e7a1cfac6bba786578df94a5fa56d0e4b38ef12a731f8ba6a93d54ef6d19"
+    },
+    "art/slender-family-forms-v1/previews/Slendrina_Princess_Aggressive.png": {
+      "bytes": 1180196,
+      "sha256": "c6d23e66108db3798161de79329b632b84e248c9cd2d15cac0b0bb434f7b75a6"
+    },
+    "art/slender-family-forms-v1/previews/Slendrina_Princess_Back.png": {
+      "bytes": 1148486,
+      "sha256": "6835ded5133d2b3b41c01971d59d7da94bec4169af24f8f3026b5df604a2de82"
+    },
+    "art/slender-family-forms-v1/previews/Slendrina_Princess_Idle.png": {
+      "bytes": 1171512,
+      "sha256": "739eed24d2e8f7d007542a64f17cb6272d9baa327b68037e661587137c0cf8ab"
+    },
+    "art/slender-family-forms-v1/previews/Slendrina_Princess_States.png": {
+      "bytes": 1146700,
+      "sha256": "ed2d9f5d2135f901578b6c1bae59c49b78b37ef0c7d9f800e1503e5f0926ce90"
+    },
+    "art/slender-family-forms-v1/previews/Slendrina_Punk_Aggressive.png": {
+      "bytes": 1148074,
+      "sha256": "47f78b1acfd0833c0d6144bf1864547ec752bc5c56bace3400dfe416901d5cef"
+    },
+    "art/slender-family-forms-v1/previews/Slendrina_Punk_Back.png": {
+      "bytes": 1133954,
+      "sha256": "50cb5e56afbb537857c3f0a8f8cf697a9c47b0f007d11b65be4066ef585db21f"
+    },
+    "art/slender-family-forms-v1/previews/Slendrina_Punk_Idle.png": {
+      "bytes": 1148452,
+      "sha256": "71ca51340ea0a5225dc366ebc07648eaa4c31b13b32f51a5d5b6a60dd56d1f57"
+    },
+    "art/slender-family-forms-v1/previews/Slendrina_Punk_States.png": {
+      "bytes": 1105526,
+      "sha256": "3994fcebbbffcffd5032224c4aeddf2ac15be4050c1896568590b1acd6a48d75"
+    },
+    "art/slender-family-forms-v1/previews/SpiderMom_All_Aggressive.png": {
+      "bytes": 1405097,
+      "sha256": "91ac4c8e72d8d65e1da96f702d45494f8c63b978b8de1551d9547ca9b9fb52bd"
+    },
+    "art/slender-family-forms-v1/previews/SpiderMom_All_Idle.png": {
+      "bytes": 1405244,
+      "sha256": "94dd0f1b8f1bf835f957afa34c02a2f7eb585d3c448f111cbc4662d1fc31c8d0"
+    },
+    "art/slender-family-forms-v1/previews/SpiderMom_Assassin_Aggressive.png": {
+      "bytes": 1114688,
+      "sha256": "5c03b96577d1f6fd34827190bd159f27e77c043e17ac8ba22aff80127ffef00e"
+    },
+    "art/slender-family-forms-v1/previews/SpiderMom_Assassin_Back.png": {
+      "bytes": 1116642,
+      "sha256": "ee0b019c63a59e1784c325ed816725f8928ed4a12e91f10331a8714a30fe3bad"
+    },
+    "art/slender-family-forms-v1/previews/SpiderMom_Assassin_Idle.png": {
+      "bytes": 1117184,
+      "sha256": "edeb857fbcc16b4422afe1f60ab647931fea66074ebea4481f58cef01c292a6a"
+    },
+    "art/slender-family-forms-v1/previews/SpiderMom_Assassin_States.png": {
+      "bytes": 919977,
+      "sha256": "61bc1d3fea2e2fe9df297538a024e25394b4663272ff3b2e35d4bbc540a8b843"
+    },
+    "art/slender-family-forms-v1/previews/SpiderMom_Farmer_Aggressive.png": {
+      "bytes": 1118743,
+      "sha256": "1b6b14f2ba25e807e5070e95165439e59dee270d24335a98ac4b19e5a14d103b"
+    },
+    "art/slender-family-forms-v1/previews/SpiderMom_Farmer_Back.png": {
+      "bytes": 1135172,
+      "sha256": "ff234eb2cc75b0b07d84738d67d3d76b5e8e60f1e4ecaf4206183fb1504a2200"
+    },
+    "art/slender-family-forms-v1/previews/SpiderMom_Farmer_Idle.png": {
+      "bytes": 1117296,
+      "sha256": "22e1a1e5162a102a253a815be65a7d13d65fc337074e4a2eaa58a7a868662e61"
+    },
+    "art/slender-family-forms-v1/previews/SpiderMom_Farmer_States.png": {
+      "bytes": 948853,
+      "sha256": "06ee7267b98881511f4fb9aa4a0c71500b790913362878e2c1825d21b6946e7f"
+    },
+    "art/slender-family-forms-v1/previews/SpiderMom_Knight_Aggressive.png": {
+      "bytes": 1119516,
+      "sha256": "91444570dca356b7f047bce69b443873630d82c380b863f955b2205d24917bef"
+    },
+    "art/slender-family-forms-v1/previews/SpiderMom_Knight_Back.png": {
+      "bytes": 1138724,
+      "sha256": "6c226505215900ece6e008fb32b5d8c835afe5e339f5cc5a8469d56a1b38d3dd"
+    },
+    "art/slender-family-forms-v1/previews/SpiderMom_Knight_Idle.png": {
+      "bytes": 1120668,
+      "sha256": "56daeaedb912dc1e9435f665baea21f471746b04f71087451662a9a3e8c740f4"
+    },
+    "art/slender-family-forms-v1/previews/SpiderMom_Knight_States.png": {
+      "bytes": 948772,
+      "sha256": "80fbca466b51f1b6b6b959fedae8c051334c0a470819be0edd4d51ec3691e32f"
+    },
+    "art/slender-family-forms-v1/previews/SpiderMom_Miner_Aggressive.png": {
+      "bytes": 1123305,
+      "sha256": "1aa8618caf1056e6cc754bffdb3e669d2e31ea7329a609f6e11825ecef2fb0c7"
+    },
+    "art/slender-family-forms-v1/previews/SpiderMom_Miner_Back.png": {
+      "bytes": 1139241,
+      "sha256": "1a727efb446dff6f929511e646770277b4f15482ffc9b03a94cc1e255d44fb95"
+    },
+    "art/slender-family-forms-v1/previews/SpiderMom_Miner_Idle.png": {
+      "bytes": 1122786,
+      "sha256": "f4095748abe26f325783b8f6751cd9e31299cb0a90cc0f168ce55a79cf8abe46"
+    },
+    "art/slender-family-forms-v1/previews/SpiderMom_Miner_States.png": {
+      "bytes": 951138,
+      "sha256": "2deb779304947064a6237d21c2565dd6debfdaaeb2d307a967e1d7f0d15a3c4d"
+    },
+    "art/slender-family-forms-v1/previews/SpiderMom_Princess_Aggressive.png": {
+      "bytes": 1126027,
+      "sha256": "c32690f40138286684eab0f4a9b3c4bce89a5f2505faf4e1bba9642dcfd902d9"
+    },
+    "art/slender-family-forms-v1/previews/SpiderMom_Princess_Back.png": {
+      "bytes": 1146246,
+      "sha256": "6db73ece441f1ccadafd0efec11f4d344a5cdebee45211797961b8475ee24f57"
+    },
+    "art/slender-family-forms-v1/previews/SpiderMom_Princess_Idle.png": {
+      "bytes": 1125688,
+      "sha256": "1debe04c1a9641846be889048aa7ab5f0aeb7345c7dd3ebad1180fa221270544"
+    },
+    "art/slender-family-forms-v1/previews/SpiderMom_Princess_States.png": {
+      "bytes": 946886,
+      "sha256": "5da09b71df5e72f520cc0e32cebd8e6b3f00321475a371666c2d7ec8a856b620"
+    },
+    "art/slender-family-forms-v1/previews/SpiderMom_Punk_Aggressive.png": {
+      "bytes": 1119086,
+      "sha256": "a51905ba8feaefab16c852959f2c7fa1fe8e91036fc635d0f1ef822874dba819"
+    },
+    "art/slender-family-forms-v1/previews/SpiderMom_Punk_Back.png": {
+      "bytes": 1128839,
+      "sha256": "a838b07be42d4b3420c01b8ebccf70c7fdb1912dd8f849aca4cb34674ecc833a"
+    },
+    "art/slender-family-forms-v1/previews/SpiderMom_Punk_Idle.png": {
+      "bytes": 1120981,
+      "sha256": "0f4b1f949ad34ed0f7bcd1ccf33095abba9c20908dc06969315065728c2d21d8"
+    },
+    "art/slender-family-forms-v1/previews/SpiderMom_Punk_States.png": {
+      "bytes": 932708,
+      "sha256": "8235a09ddd8147c7aa584d3cd7aef53268ab2d6ee19ec1775ad23ec8eac747e8"
+    },
+    "art/slender-family-forms-v1/references.json": {
+      "bytes": 1102,
+      "sha256": "eb6006325e804ff39f10c26b1c14ae4c2ea17d3a27bfa17a3a8e80a86b744c74"
+    },
+    "art/slender-family-forms-v1/reports/Slenderman_Assassin.json": {
+      "bytes": 1600,
+      "sha256": "826722f0f108703b1a731aa8c5ff3318ce05f0a40868e2b06f4f970d508a290c"
+    },
+    "art/slender-family-forms-v1/reports/Slenderman_Farmer.json": {
+      "bytes": 1369,
+      "sha256": "ec0c884e93103f99abd482157fc32130c26b2170ad16decc1df1bc6a77b763c8"
+    },
+    "art/slender-family-forms-v1/reports/Slenderman_King.json": {
+      "bytes": 1490,
+      "sha256": "2d3c90d1ace10a11003a275d4df2a2d80967b79c3292b2600c92e0bf97d69da2"
+    },
+    "art/slender-family-forms-v1/reports/Slenderman_Knight.json": {
+      "bytes": 1588,
+      "sha256": "8a796d45033f72b608e4f0df975b8c86e31c02452fab92045041b9572a582bbb"
+    },
+    "art/slender-family-forms-v1/reports/Slenderman_Miner.json": {
+      "bytes": 1400,
+      "sha256": "6c28e25e8fea3a123bef7d090eb0c4a0d32985dfcaaae4f24daa033502e3ef94"
+    },
+    "art/slender-family-forms-v1/reports/Slenderman_Punk.json": {
+      "bytes": 1489,
+      "sha256": "cc2a7b0e55f2948e23cff360a86c0331f1877331481b8a442ce0b81b77eaad28"
+    },
+    "art/slender-family-forms-v1/reports/Slendrina_Assassin.json": {
+      "bytes": 1715,
+      "sha256": "e70854a1e62e0baea3dafaf12efd98e36120809446cd0e39ddededdb0cd1f76c"
+    },
+    "art/slender-family-forms-v1/reports/Slendrina_Farmer.json": {
+      "bytes": 1490,
+      "sha256": "c9ebc7e06be4e0f738010e1b56d657941381a09e78ed6b2220029f0f039750cd"
+    },
+    "art/slender-family-forms-v1/reports/Slendrina_Knight.json": {
+      "bytes": 1703,
+      "sha256": "a19716ca04eedf6be972e978cd9e578588fc8ab3a44a934120179a710a11ac58"
+    },
+    "art/slender-family-forms-v1/reports/Slendrina_Miner.json": {
+      "bytes": 1520,
+      "sha256": "9ee94eebba208d12b395f5a9dd109a92574ff17f220455a97eeec45f9dd27860"
+    },
+    "art/slender-family-forms-v1/reports/Slendrina_Princess.json": {
+      "bytes": 1683,
+      "sha256": "a82b2137000680a133d075e2d6769e97f01465df395fad09872311ce484ab6b6"
+    },
+    "art/slender-family-forms-v1/reports/Slendrina_Punk.json": {
+      "bytes": 1606,
+      "sha256": "44138b09ee95335191eeb6770756984ac478ddc167dc7d5dc776c1d23f8b34a1"
+    },
+    "art/slender-family-forms-v1/reports/SpiderMom_Assassin.json": {
+      "bytes": 1820,
+      "sha256": "ae11a28402531fe95b789ab3a4b8eb7e1033c4686712106fe206d8369a80a149"
+    },
+    "art/slender-family-forms-v1/reports/SpiderMom_Farmer.json": {
+      "bytes": 1772,
+      "sha256": "43af807046c246d7b0e4575c1ae6e8b9509f56a403be4310f9d05e12f14e0a70"
+    },
+    "art/slender-family-forms-v1/reports/SpiderMom_Knight.json": {
+      "bytes": 1810,
+      "sha256": "dca2753a640628d7a459765bc3b72b4d03ab1b92e540156d1b2b3d7b3409eb04"
+    },
+    "art/slender-family-forms-v1/reports/SpiderMom_Miner.json": {
+      "bytes": 1802,
+      "sha256": "9c1dee8f6640f6c90e05b1acdd8c0e10bad1ae54242d93452e0fcfb4bb07f278"
+    },
+    "art/slender-family-forms-v1/reports/SpiderMom_Princess.json": {
+      "bytes": 1633,
+      "sha256": "c9d1c303f6a3da38660582eb5b0d4a41dba4ff041b6c3b3bbce7e9e358c8467f"
+    },
+    "art/slender-family-forms-v1/reports/SpiderMom_Punk.json": {
+      "bytes": 1788,
+      "sha256": "978aebdec399faa85843285dfa2c1694bacb3576d9ef656140992570aff53c84"
+    },
+    "art/slender-family-forms-v1/validation.json": {
+      "bytes": 15692,
+      "sha256": "977f509ce62297a40110099c83065c6d91dc7defead0364ce6355cd47bf908bd"
+    },
+    "art/slender-family-forms-v1/verify.py": {
+      "bytes": 9201,
+      "sha256": "787e8bef41240e6488108840173b2f0b9a5c9f8c38ef9655452c87d1984ce0b2"
+    }
+  }
+}

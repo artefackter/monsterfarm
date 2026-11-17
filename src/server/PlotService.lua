@@ -79,15 +79,6 @@ P.SignText = signText
 P.Solid = solid
 P.PlazaTop = PLAZA_TOP
 
-local function addLantern(parent, cf)
-	local parts = Art.Spawn("W_Lantern", parent, cf)
-	local light = Instance.new("PointLight")
-	light.Color = Color3.fromRGB(255, 228, 170)
-	light.Range = 15
-	light.Brightness = 0.35
-	light.Parent = parts.Bulb
-	require(S.WorldArt).NightLight(light)
-end
 
 -- Toggled by the day/night loop in Main.
 function P.SetNight(night)
@@ -125,8 +116,9 @@ local function buildBoundary(w)
  end
  -- Round the island the wall is friendly: lilac blocks laid like bricks, a purple coping and battlements on top, a
  -- green tuft here and there. Taller since 2026-11-13 (owner: "raise the wall round the world"); a darker stone was
- -- tried the same day and taken back (owner: "bring back the old wall, at the new height").
- local stones = { Color3.fromHex("DCD2F2"), Color3.fromHex("CDC1EA"), Color3.fromHex("E7DEF7"), Color3.fromHex("C2B5E2") }
+ -- tried the same day and taken back (owner: "bring back the old wall, at the new height"). Gloomy after all since
+ -- 2026-11-15 (owner: "the purple gate and walls no longer fit the game"): weathered dark stone, the ruins gate's.
+ local stones = { Color3.fromHex("5B5760"), Color3.fromHex("524E57"), Color3.fromHex("635F68"), Color3.fromHex("4A4750") }
  -- Big stones since 2026-11-14 (performance: the wall was 3,500 parts): six courses of one block per segment (two
  -- halves on the shifted courses) instead of eleven courses of three; the same height.
  local COURSES = 6
@@ -163,14 +155,14 @@ local function buildBoundary(w)
    end
   end
   local top = bottom + 2.6 + COURSES * course
-  voxel("WallCoping", Vector3.new(cfg.Thickness + 0.8, 0.7, length + 0.2), cf * CFrame.new(0, top + 0.35, 0), Color3.fromHex("8C6BD6"))
+  voxel("WallCoping", Vector3.new(cfg.Thickness + 0.8, 0.7, length + 0.2), cf * CFrame.new(0, top + 0.35, 0), Color3.fromHex("3A3640"))
   local merlons = math.max(2, math.round(length / 4.4)) -- battlements keep their old rhythm
   local merlon = length / merlons
   for k = 0, merlons - 1, 2 do
    local z = -length / 2 + (k + 0.5) * merlon
-   voxel("WallMerlon", Vector3.new(cfg.Thickness + 0.4, 2, merlon * 0.8), cf * CFrame.new(0, top + 1.7, z), Color3.fromHex("A58BE6"))
+   voxel("WallMerlon", Vector3.new(cfg.Thickness + 0.4, 2, merlon * 0.8), cf * CFrame.new(0, top + 1.7, z), Color3.fromHex("45414B"))
    if rng:NextNumber() < 0.25 then
-    local tuft = voxel("WallTuft", Vector3.new(1.4, 1.4, 1.4), cf * CFrame.new(rng:NextNumber(-0.6, 0.6), top + 3, z), Color3.fromHex("7BDC4B"))
+    local tuft = voxel("WallTuft", Vector3.new(1.4, 1.4, 1.4), cf * CFrame.new(rng:NextNumber(-0.6, 0.6), top + 3, z), Color3.fromHex("4F6B3A"))
     tuft.Shape = Enum.PartType.Ball
    end
   end
@@ -392,10 +384,7 @@ local function decoratePlaza(w)
 		local base=Vector3.new(math.sin(a)*40.1,PLAZA_TOP,math.cos(a)*40.1)
 		deco('FestivalPole',Vector3.new(.55,8.5,.55),CFrame.new(base+Vector3.new(0,4.25,0)),'4A3A30')
 		deco('PoleFoot',Vector3.new(.35,1.5,1.5),CFrame.new(base+Vector3.new(0,.15,0))*CFrame.Angles(0,0,math.pi/2),'3A2E26',Enum.PartType.Cylinder)
-		local bulb=require(S.WorldArt).NightGlow(deco('PoleLantern',Vector3.new(1.25,1.25,1.25),CFrame.new(base+Vector3.new(0,8.8,0)),'FFF18A',Enum.PartType.Ball,Enum.Material.Neon))
-		if i%2==0 then
-			local light=Instance.new('PointLight');light.Color=Color3.fromHex('FFE9AF');light.Range=17;light.Brightness=.65;light.Parent=bulb;require(S.WorldArt).NightLight(light)
-		end
+		-- no lantern on top since 2026-11-15 (owner: fewer lights in the central area); the garland bulbs still glow
 		table.insert(tops,base+Vector3.new(0,8.5,0))
 	end
 	for i,a in tops do
@@ -473,7 +462,7 @@ local function buildWorld(w)
 			local a = math.rad(C.PlotAngles[i])
 			local c = Vector3.new(math.sin(a) * C.PlotRadius, 0, math.cos(a) * C.PlotRadius)
 			local v = CFrame.lookAt(c, Vector3.zero):PointToObjectSpace(pos)
-			-- the farm and its round cemetery on the +x side (PlacementConfig.Cemetery)
+			-- the farm and the cemetery sticking out over its back corner (2026-11-15)
 			local cb = require(S.Config.PlacementConfig).Cemetery
 			if math.abs(v.X) < C.FarmHalf + 3 and math.abs(v.Z) < C.FarmHalf + 3 or Vector2.new(v.X - cb.X, v.Z - cb.Z).Magnitude < cb.Radius + 5 then
 				return true
@@ -528,28 +517,21 @@ local function buildWorld(w)
 		CollectionService:AddTag(parts.Main, "ArtCloud")
 	end
 
-	-- The walkway from the plaza to the ruins gate in the island wall
+	-- The walkway from the plaza to the ruins gate in the island wall, and stepping stones from the plaza to every farm.
+	-- No lanterns along them since 2026-11-15 (owner: fewer lights in the central area; phones run hot).
 	do
 		local dir = RoadC.Dir.Unit
 		local start = dir * 41 + Vector3.new(0, ISLAND_TOP, 0)
-		local side = Vector3.new(dir.Z, 0, -dir.X) * 8
 		for k = 0, math.ceil((RoadC.Rim - 41) / 22.5) - 1 do
 			Art.Spawn("W_Path", w, CFrame.lookAt(start + dir * (k * 22.5), start + dir * (k * 22.5) - dir))
-			local spot = start + dir * (12 + k * 22.5)
-			addLantern(w, CFrame.lookAt(spot + (k % 2 == 0 and side or -side), spot))
 		end
 	end
-	-- Stepping stones from the plaza to every farm, each with a lantern
 	for i = 1, 6 do
 		local a = math.rad(C.PlotAngles[i])
 		local dir = Vector3.new(math.sin(a), 0, math.cos(a))
 		local start = dir * 41 + Vector3.new(0, ISLAND_TOP, 0)
-		local side = Vector3.new(dir.Z, 0, -dir.X) * 7
 		for k = 0, math.ceil((C.PlotRadius - C.FarmHalf - 41) / 22.5) - 1 do
 			Art.Spawn("W_Path", w, CFrame.lookAt(start + dir * (k * 22.5), start + dir * (k * 22.5) - dir))
-			local spot = start + dir * (12 + k * 22.5)
-			local across = k % 2 == 0 and side or -side
-			addLantern(w, CFrame.lookAt(spot + across, spot))
 		end
 	end
 end
@@ -589,7 +571,7 @@ local function buildGarden(m,at,index,F)
  -- the approved model (WorkbenchModel) faces +Z: turned round so its front faces the path like the corner's -Z
  local art=require(S.WorkbenchModel).Build(bench,corner*CFrame.Angles(0,math.pi,0))
  for _,q in art:GetDescendants() do
-  if q:IsA('BasePart') and (q.Name=='LanternGlow' or q.Name=='MutagenLiquid') then
+  if q:IsA('BasePart') and q.Name=='LanternGlow' then -- (the mutagen bottles lost their light on 2026-11-15, performance)
    local l=Instance.new('PointLight');l.Color=q.Color;l.Range=q.Name=='LanternGlow' and 12 or 7;l.Brightness=q.Name=='LanternGlow' and .6 or .4;l.Parent=q;WA.NightLight(l)
   end
  end
@@ -607,7 +589,9 @@ local function buildGarden(m,at,index,F)
   local bulb=WA.NightGlow(ball('LampBulb',Vector3.new(.75,.75,.75),post.CFrame*CFrame.new(0,2.05,0),Color3.fromHex('FFB45C')))
   if light then lit+=1;local l=Instance.new('PointLight');l.Color=Color3.fromHex('FFB45C');l.Range=13;l.Brightness=.6;l.Parent=bulb;WA.NightLight(l) end
  end
- for _,q in {{-8.6,-F-.6,true},{8.6,-F-.6,true},{F-.6,-F+.6,true},{-F+.6,-F+.6,true},{F-.6,F-.6,true},{F-.6,-16},{F-.6,26},{-F+.6,-18},{-F+.6,4},{-F+28,-F+.6},{F-28,-F+.6},{20,F-.6}} do lamp(q[1],q[2],q[3]) end
+ -- (the back-left corner and the stretches beside it are the cemetery's since 2026-11-15: no lamps there)
+ -- real light only by the gate since 2026-11-15 (performance); the corner lamps just glow
+ for _,q in {{-8.6,-F-.6,true},{8.6,-F-.6,true},{F-.6,-F+.6},{-F+.6,-F+.6},{F-.6,-16},{F-.6,4},{-F+.6,-18},{-F+.6,4},{-F+28,-F+.6},{F-28,-F+.6},{-18,F-.6}} do lamp(q[1],q[2],q[3]) end
  return garden,benchZone
 end
 
@@ -620,43 +604,61 @@ local function buildPlot(w,i)
  local function at(x,z,y) return base*CFrame.new(x,y or LAWN_TOP,z) end
  local function deco(asset,x,z,scale) return Art.Spawn(asset,m,at(x,z),{scale=scale or 1}) end
  solid(m,'Lawn',Vector3.new(2*H,1,2*H),at(0,0,LAWN_TOP-.5))
- -- Cemetery (owner's picture, 2026-11-14: "a round yard, a continuation of the farm"): a circle beside the farm's +x
- -- fence (PlacementConfig.Cemetery), the crypt in its middle, the owner's graves all round, its opening facing the
- -- farm. 2026-11-15 (owner: "you lost the purple ground and changed the fence against the farm's"): the ground is the
- -- old purple patch made round (ArtModels.Cemetery_Round, art/roblox-import-v1/tools/cemetery_round.py: W_Graveyard's
- -- tiles, rim stones and colours under the same tint) and the ring is the farm's own fence (fence() below, so
- -- FenceService dresses it with the upgrades too); the three hanging lanterns the old cemetery kept hang outside it.
- local cb=PC.Cemetery;local cc=at(cb.X,cb.Z)
+ -- Cemetery (owner's picture, 2026-11-14: "a round yard, a continuation of the farm"): a circle with the crypt in its
+ -- middle and the owner's graves all round. 2026-11-15 (owner: "you lost the purple ground and changed the fence
+ -- against the farm's"): the ground is the old purple patch made round (ArtModels.Cemetery_Round,
+ -- art/roblox-import-v1/tools/cemetery_round.py: W_Graveyard's tiles, rim stones and colours under the same tint) and
+ -- the ring is the farm's own fence (fence() below, so FenceService dresses it with the upgrades too). The same day
+ -- (owner: it stuck out beside the farm and took too much room; then "it goes out past the farm, the farm bulges") it
+ -- moved over the farm's back-left corner (PlacementConfig.Cemetery): the farm's fence stops where it meets the ring
+ -- and the ring's outer half is the farm's edge there. Its opening faces the farm centre; a hanging lantern either
+ -- side of the opening and one outside behind it.
+ local cb=PC.Cemetery
+ local cc=at(cb.X,cb.Z)*CFrame.Angles(0,math.rad(cb.Yaw),0) -- the cemetery's frame: -Z to the opening
  local cemetery=Instance.new('Model');cemetery.Name='Cemetery';cemetery.Parent=m
  local cemeteryRing={} -- the fence's corners from one side of the opening all the way round to the other, farm-local
+ local opening=math.atan2(-math.cos(math.rad(cb.Yaw)),-math.sin(math.rad(cb.Yaw))) -- the opening's direction as an angle in x, z
  do
   local WA=require(S.WorldArt)
   local round=Art.Has('Cemetery_Round')
-  if round then Art.Spawn('Cemetery_Round',cemetery,cc,{tints={Main=Color3.fromRGB(173,145,204)}}) end
+  -- the patch was made 24 studs round with its entrance on its -X side
+  local k=cb.Radius/24
+  if round then Art.Spawn('Cemetery_Round',cemetery,cc*CFrame.Angles(0,-math.pi/2,0),{scale=Vector3.new(k,1,k),tints={Main=Color3.fromRGB(173,145,204)}}) end
   -- a flat disc at the tiles' height for the placing ray (the patch takes no queries); seen only if the patch is missing
   local ground=P.Part(cemetery,'CemeteryGround',Vector3.new(.06,(cb.Radius-1)*2,(cb.Radius-1)*2),cc*CFrame.new(0,.12,0)*CFrame.Angles(0,0,math.pi/2),Color3.fromRGB(84,61,127))
   ground.Shape=Enum.PartType.Cylinder;ground.Material=Enum.Material.SmoothPlastic
   ground.CanCollide,ground.CanTouch,ground.CastShadow=false,false,false;ground.Transparency=round and 1 or 0
-  local gap=math.asin((cb.DoorTo-cb.DoorFrom)/2/cb.Radius);local n=18 -- stretches about as long as the farm's rails
-  local a0,step=math.pi+gap,(2*math.pi-2*gap)/n
-  for k=0,n do local a=a0+k*step;table.insert(cemeteryRing,Vector3.new(cb.X+math.cos(a)*cb.Radius,0,cb.Z+math.sin(a)*cb.Radius)) end
-  local function lantern(a)
-   local r=cb.Radius+1.6
+  -- round from one side of the opening to the other, with a corner exactly where each of the farm's fences ends on
+  -- it, in stretches no longer than the farm's rails (8 studs)
+  local gap=math.asin(cb.Gate/2/cb.Radius)
+  local a0,a1=opening+gap,opening+2*math.pi-gap
+  local stops={a0,a1}
+  for _,q in {{F,cb.SideCut},{cb.BackCut,F}} do
+   local a=math.atan2(q[2]-cb.Z,q[1]-cb.X);while a<a0 do a+=2*math.pi end;while a>=a0+2*math.pi do a-=2*math.pi end
+   if a<a1 then table.insert(stops,a) end
+  end
+  table.sort(stops)
+  for s=1,#stops-1 do
+   local from,to=stops[s],stops[s+1];local n=math.max(1,math.ceil((to-from)*cb.Radius/8))
+   for k=s==1 and 0 or 1,n do local a=from+(to-from)*k/n;table.insert(cemeteryRing,Vector3.new(cb.X+math.cos(a)*cb.Radius,0,cb.Z+math.sin(a)*cb.Radius)) end
+  end
+  local function lantern(a,r,lit) -- lit: carries a real light (only one of the three since 2026-11-15, performance)
    local parts=Art.Spawn('MR_HangingLantern',cemetery,at(cb.X+math.cos(a)*r,cb.Z+math.sin(a)*r)*CFrame.Angles(0,math.pi/2-a,0),{scale=.8})
    for _,q in parts do if typeof(q)=='Instance' and q:IsA('BasePart') then q.CanCollide=false;q.CanQuery=false;q.CanTouch=false end end
-   local main=parts and (parts.Main or parts.Bulb or select(2,next(parts)));if not main then return end
+   local main=parts and (parts.Main or parts.Bulb or select(2,next(parts)));if not main or not lit then return end
    local anchor=P.Part(cemetery,'LampLight',Vector3.one*.1,CFrame.new(main.Position+Vector3.new(0,2.4,0)),Color3.fromHex('CDEBFF'))
    anchor.Transparency=1;anchor.CanCollide=false;anchor.CanQuery=false;anchor.CanTouch=false;anchor.CastShadow=false
    local l=Instance.new('PointLight');l.Color=Color3.fromHex('CDEBFF');l.Range=10;l.Brightness=.55;l.Parent=anchor;WA.NightLight(l)
   end
-  for _,deg in {-55,0,55} do lantern(math.rad(deg)) end
+  local beside=gap+.3
+  lantern(opening-beside,cb.Radius+1.6,true);lantern(opening+beside,cb.Radius+1.6);lantern(opening+math.pi,cb.Radius+1.6)
  end
  -- The crypt (art/crypt-optimized-v1 as ArtModels.Crypt_V2, 2026-11-14) in the cemetery's middle, its steps (-Z) to
- -- the farm (-x). One invisible block keeps players out of the vault; its steps stay walkable. The menu ring lies on
+ -- the opening. One invisible block keeps players out of the vault; its steps stay walkable. The menu ring lies on
  -- the walk in front of the steps.
  do
   local pc=PC.Crypt;local s=pc.Scale
-  local cryptCf=at(pc.X,pc.Z)*CFrame.Angles(0,math.pi/2,0)
+  local cryptCf=at(pc.X,pc.Z)*CFrame.Angles(0,math.rad(pc.Yaw),0)
   local crypt=Instance.new('Model');crypt.Name='Crypt';crypt.Parent=cemetery
   if Art.Has('Crypt_V2') then Art.Spawn('Crypt_V2',crypt,cryptCf,{scale=s}) end
   solid(crypt,'CryptBlock',Vector3.new(10.4*s,8*s,6.6*s),cryptCf*CFrame.new(0,4*s,1.25*s))
@@ -684,13 +686,11 @@ local function buildPlot(w,i)
  local HC=require(S.Config.HouseConfig)
  -- The house closes the back-right corner at 45 degrees: both fences stop where its back corners touch them
  local cut=(HC.Looks[1].W+2)/math.sqrt(2)
- seg(7,-F,F,-F);seg(F,-F,F,cb.DoorFrom);seg(F,cb.DoorTo,F,F);seg(F,F,-F+cut,F);seg(-F,F-cut,-F,-F);seg(-F,-F,-7,-F)
- -- the short passage from the opening in the fence to the cemetery's, and the cemetery's ring (2026-11-14)
- local ring=cemeteryRing
- seg(F,cb.DoorFrom,ring[1].X,ring[1].Z);seg(F,cb.DoorTo,ring[#ring].X,ring[#ring].Z)
- for k=1,#ring-1 do fence(ring[k],ring[k+1]) end
- -- Each rail mesh includes its end post. Cap the two open starts only.
- for _,q in {{7,-F},{-F,F-cut},{-7,-F},{F,cb.DoorTo}} do Art.Spawn('W_FencePost',m,at(q[1],q[2]),{tints={Main=FENCE_TINT}}) end
+ -- the +x and back fences stop where they meet the cemetery's ring, which carries the farm's edge round the outside
+ seg(7,-F,F,-F);seg(F,-F,F,cb.SideCut);seg(cb.BackCut,F,-F+cut,F);seg(-F,F-cut,-F,-F);seg(-F,-F,-7,-F)
+ for k=1,#cemeteryRing-1 do fence(cemeteryRing[k],cemeteryRing[k+1]) end
+ -- Each rail mesh includes its end post. Cap the open starts only.
+ for _,q in {{7,-F},{-F,F-cut},{-7,-F},{cemeteryRing[1].X,cemeteryRing[1].Z}} do Art.Spawn('W_FencePost',m,at(q[1],q[2]),{tints={Main=FENCE_TINT}}) end
  local pb=PC.Pen -- Preserve existing zombie income positions.
  -- Gate arch with the owner's name; its leaves are FenceService's (raiders break them at night)
  plot.Gate=P.Part(m,'Gate',Vector3.new(12,.1,5),at(0,-F+2,LAWN_TOP+.05),Color.Grass or Color3.fromHex('86CF4B'));plot.Gate.Transparency=1
@@ -720,11 +720,13 @@ local function buildPlot(w,i)
  end
  local doorReach=(HC.Looks[1].D/2+2.5)/math.sqrt(2)
  path(0,-F,0,0);path(0,0,HC.RoomX+doorReach,HC.RoomZ-doorReach);path(0,-24,21,-24)
- path(0,-2,F+1,cb.Z) -- to the cemetery's passage; no stones across the purple ground, as before
- local guideCemetery=P.Part(m,'GuideCemetery',Vector3.one,at(cb.X-cb.Radius+7,cb.Z,1),Color.Panel);guideCemetery.Transparency=1;guideCemetery.CanCollide=false;guideCemetery.CanQuery=false
+ -- from the middle to the cemetery's opening, mirroring the way to the house; no stones across the purple ground
+ local door=(cc*CFrame.new(0,0,-(cb.Radius+.5))).Position;local doorLocal=base:PointToObjectSpace(door)
+ path(0,0,doorLocal.X,doorLocal.Z)
+ local guideCemetery=P.Part(m,'GuideCemetery',Vector3.one,cc*CFrame.new(0,1.5,-14),Color.Panel);guideCemetery.Transparency=1;guideCemetery.CanCollide=false;guideCemetery.CanQuery=false
  plot.BenchZone=select(2,buildGarden(m,at,i,F))
  local field=P.Part(m,'GuideField',Vector3.one,at((pb.MinX+pb.MaxX)/2,(pb.MinZ+pb.MaxZ)/2,1),Color.Panel);field.Transparency=1;field.CanCollide=false;field.CanQuery=false
- local guard=P.Part(m,'GuideGuard',Vector3.one,at(6,30,1),Color.Panel);guard.Transparency=1;guard.CanCollide=false;guard.CanQuery=false
+ local guard=P.Part(m,'GuideGuard',Vector3.one,at(1,34,1),Color.Panel);guard.Transparency=1;guard.CanCollide=false;guard.CanQuery=false
  m:SetAttribute('BasePosition',base.Position);m:SetAttribute('BaseYaw',math.atan2(-base.LookVector.X,-base.LookVector.Z))
 end
 
@@ -837,11 +839,9 @@ function P.Inside(p, plot)
 	if math.abs(v.X) <= C.FarmHalf + 1 and v.Z >= -C.FarmHalf - 1 and v.Z <= C.FarmHalf + 1 then
 		return true
 	end
-	-- the round cemetery beside it and the passage to it are the farm too (owner, 2026-11-14: "a continuation of the
-	-- farm"); before this, planting a grave from inside the cemetery was refused
+	-- the cemetery sticking out over the back corner is the farm too (2026-11-15)
 	local cb = require(S.Config.PlacementConfig).Cemetery
 	return Vector2.new(v.X - cb.X, v.Z - cb.Z).Magnitude <= cb.Radius + 1
-		or v.X >= C.FarmHalf and v.X <= cb.X and v.Z >= cb.DoorFrom - 1 and v.Z <= cb.DoorTo + 1
 end
 
 -- Players arrive on the path in front of their gate (owner, 2026-11-12), facing the arch and the farm behind it.

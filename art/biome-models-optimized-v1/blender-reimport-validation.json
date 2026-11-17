@@ -1,0 +1,379 @@
+{
+  "status": "PASS",
+  "models": [
+    {
+      "asset": "BR_WallPanel",
+      "meshes": 1,
+      "triangles": 68,
+      "size": [
+        32.2,
+        14.15,
+        1.726
+      ],
+      "floor_z": 0.0
+    },
+    {
+      "asset": "BR_DoorPartition",
+      "meshes": 1,
+      "triangles": 156,
+      "size": [
+        28.0,
+        14.0,
+        1.7
+      ],
+      "floor_z": 0.0
+    },
+    {
+      "asset": "BR_CornerPartition",
+      "meshes": 1,
+      "triangles": 88,
+      "size": [
+        20.0,
+        14.0,
+        10.5
+      ],
+      "floor_z": 0.0
+    },
+    {
+      "asset": "BR_Pillar",
+      "meshes": 1,
+      "triangles": 56,
+      "size": [
+        3.9,
+        16.0,
+        3.9
+      ],
+      "floor_z": 0.0
+    },
+    {
+      "asset": "BR_Fluorescent",
+      "meshes": 2,
+      "triangles": 88,
+      "size": [
+        7.5,
+        1.3,
+        0.87
+      ],
+      "floor_z": 0.0
+    },
+    {
+      "asset": "BM_EntranceOpen",
+      "meshes": 2,
+      "triangles": 672,
+      "size": [
+        55.776,
+        16.618,
+        7.64
+      ],
+      "floor_z": 0.0
+    },
+    {
+      "asset": "BM_EntranceBoarded",
+      "meshes": 1,
+      "triangles": 604,
+      "size": [
+        57.356,
+        16.696,
+        7.484
+      ],
+      "floor_z": 0.0
+    },
+    {
+      "asset": "BM_RockWall",
+      "meshes": 1,
+      "triangles": 460,
+      "size": [
+        56.282,
+        14.478,
+        7.47
+      ],
+      "floor_z": 0.0
+    },
+    {
+      "asset": "BM_OreCluster",
+      "meshes": 1,
+      "triangles": 80,
+      "size": [
+        7.638,
+        5.248,
+        5.464
+      ],
+      "floor_z": 0.0
+    },
+    {
+      "asset": "BM_Minecart",
+      "meshes": 1,
+      "triangles": 448,
+      "size": [
+        8.36,
+        5.86,
+        6.86
+      ],
+      "floor_z": 0.0
+    },
+    {
+      "asset": "BM_RailBroken",
+      "meshes": 1,
+      "triangles": 84,
+      "size": [
+        8.044,
+        0.89,
+        13.0
+      ],
+      "floor_z": 0.0
+    },
+    {
+      "asset": "BM_TimberPile",
+      "meshes": 1,
+      "triangles": 132,
+      "size": [
+        11.93,
+        2.01,
+        6.05
+      ],
+      "floor_z": 0.0
+    },
+    {
+      "asset": "BM_Torch",
+      "meshes": 2,
+      "triangles": 108,
+      "size": [
+        1.462,
+        8.7,
+        1.426
+      ],
+      "floor_z": 0.0
+    },
+    {
+      "asset": "AV_HouseLongA",
+      "meshes": 1,
+      "triangles": 1648,
+      "size": [
+        60.8,
+        19.748,
+        8.476
+      ],
+      "floor_z": 0.0
+    },
+    {
+      "asset": "AV_HouseLongB",
+      "meshes": 1,
+      "triangles": 1716,
+      "size": [
+        60.8,
+        22.426,
+        8.542
+      ],
+      "floor_z": 0.0
+    },
+    {
+      "asset": "AV_FenceBroken",
+      "meshes": 1,
+      "triangles": 84,
+      "size": [
+        12.6,
+        3.428,
+        0.9
+      ],
+      "floor_z": 0.0
+    },
+    {
+      "asset": "AV_Well",
+      "meshes": 1,
+      "triangles": 996,
+      "size": [
+        8.0,
+        8.0,
+        7.066
+      ],
+      "floor_z": 0.0
+    },
+    {
+      "asset": "AV_Cart",
+      "meshes": 1,
+      "triangles": 504,
+      "size": [
+        8.84,
+        5.42,
+        14.998
+      ],
+      "floor_z": 0.0
+    },
+    {
+      "asset": "AV_DeadTree",
+      "meshes": 1,
+      "triangles": 304,
+      "size": [
+        13.046,
+        17.154,
+        4.952
+      ],
+      "floor_z": 0.0
+    },
+    {
+      "asset": "AC_FacadeLongA",
+      "meshes": 1,
+      "triangles": 672,
+      "size": [
+        64.7,
+        23.2,
+        7.664
+      ],
+      "floor_z": 0.0
+    },
+    {
+      "asset": "AC_FacadeLongB",
+      "meshes": 1,
+      "triangles": 656,
+      "size": [
+        64.7,
+        23.2,
+        7.664
+      ],
+      "floor_z": 0.0
+    },
+    {
+      "asset": "AC_CarBlue",
+      "meshes": 1,
+      "triangles": 500,
+      "size": [
+        6.82,
+        5.588,
+        12.5
+      ],
+      "floor_z": 0.0
+    },
+    {
+      "asset": "AC_CarRust",
+      "meshes": 1,
+      "triangles": 500,
+      "size": [
+        6.82,
+        5.588,
+        12.5
+      ],
+      "floor_z": 0.0
+    },
+    {
+      "asset": "AC_Streetlight",
+      "meshes": 2,
+      "triangles": 176,
+      "size": [
+        6.784,
+        18.2,
+        1.3
+      ],
+      "floor_z": 0.0
+    },
+    {
+      "asset": "AC_PlanterTree",
+      "meshes": 1,
+      "triangles": 324,
+      "size": [
+        11.742,
+        15.954,
+        8.0
+      ],
+      "floor_z": 0.0
+    },
+    {
+      "asset": "PT_InfectedFacadeA",
+      "meshes": 1,
+      "triangles": 1388,
+      "size": [
+        65.362,
+        21.7,
+        8.556
+      ],
+      "floor_z": 0.0
+    },
+    {
+      "asset": "PT_InfectedFacadeB",
+      "meshes": 1,
+      "triangles": 1432,
+      "size": [
+        64.7,
+        21.7,
+        8.556
+      ],
+      "floor_z": 0.0
+    },
+    {
+      "asset": "PT_InfectionPatch",
+      "meshes": 1,
+      "triangles": 232,
+      "size": [
+        7.988,
+        0.09,
+        9.608
+      ],
+      "floor_z": 0.0
+    },
+    {
+      "asset": "PT_WallGrowth",
+      "meshes": 1,
+      "triangles": 106,
+      "size": [
+        7.092,
+        16.068,
+        1.4
+      ],
+      "floor_z": 0.0
+    },
+    {
+      "asset": "PT_ArenaTentacleTall",
+      "meshes": 1,
+      "triangles": 536,
+      "size": [
+        11.184,
+        24.268,
+        13.452
+      ],
+      "floor_z": 0.0
+    },
+    {
+      "asset": "PT_ArenaTentacleHook",
+      "meshes": 1,
+      "triangles": 536,
+      "size": [
+        11.31,
+        18.818,
+        13.452
+      ],
+      "floor_z": 0.0
+    },
+    {
+      "asset": "SH_Crate",
+      "meshes": 1,
+      "triangles": 260,
+      "size": [
+        4.6,
+        4.2,
+        4.67
+      ],
+      "floor_z": 0.0
+    },
+    {
+      "asset": "SH_Barrel",
+      "meshes": 1,
+      "triangles": 248,
+      "size": [
+        4.0,
+        4.79,
+        4.0
+      ],
+      "floor_z": 0.0
+    },
+    {
+      "asset": "SH_Rubble",
+      "meshes": 1,
+      "triangles": 80,
+      "size": [
+        7.596,
+        3.83,
+        5.602
+      ],
+      "floor_z": 0.0
+    }
+  ]
+}

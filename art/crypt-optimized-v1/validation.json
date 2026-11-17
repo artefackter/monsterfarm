@@ -1,0 +1,57 @@
+{
+  "valid": true,
+  "original_unchanged": true,
+  "bounds_unchanged": true,
+  "packing_preserves_all_surviving_triangles_normals_and_materials": true,
+  "max_linear_palette_error": 7.311355581525458e-06,
+  "original": {
+    "triangles": 7822,
+    "vertices": 17648,
+    "bounds": [
+      [
+        -5.449999809265137,
+        0.0,
+        -4.550000190734863
+      ],
+      [
+        5.449999809265137,
+        8.833246231079102,
+        6.845000267028809
+      ]
+    ]
+  },
+  "optimized": {
+    "triangles": 3751,
+    "vertices": 8069,
+    "bounds": [
+      [
+        -5.449999809265137,
+        0.0,
+        -4.550000190734863
+      ],
+      [
+        5.449999809265137,
+        8.833246231079102,
+        6.845000267028809
+      ]
+    ]
+  },
+  "visual_differences": {
+    "three_quarter": {
+      "mean_absolute_linear_rgb_difference": 0.004106882959604263,
+      "pixels_with_any_channel_difference_over_0_05_percent": 2.497638888888889
+    },
+    "front": {
+      "mean_absolute_linear_rgb_difference": 0.0033531980589032173,
+      "pixels_with_any_channel_difference_over_0_05_percent": 2.068263888888889
+    },
+    "back": {
+      "mean_absolute_linear_rgb_difference": 0.001725607318803668,
+      "pixels_with_any_channel_difference_over_0_05_percent": 1.019861111111111
+    }
+  },
+  "external_dependencies": false,
+  "runtime_performance_measured": false,
+  "studio_import_tested": false,
+  "visual_review": "front, three-quarter and back reviewed"
+}

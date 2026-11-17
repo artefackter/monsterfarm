@@ -1,0 +1,40 @@
+{
+  "status": "passed",
+  "exports": {
+    "Dredge": {
+      "glb": {
+        "triangles": 6614,
+        "bones": 29,
+        "meshes": 1,
+        "materials": 1,
+        "normalized_weights": true,
+        "vertex_colors": true,
+        "head_moved_vertices": 3026,
+        "tail_moved_vertices": 4258,
+        "head_did_not_move_tail": true,
+        "no_leg_bones": true,
+        "tail_bones": 14,
+        "animation_clips": 0,
+        "sha256": "f44639d2a311a39ad3a2e19162a248c08e7baeff246b0925fd8f9110a937a5dd"
+      },
+      "fbx": {
+        "triangles": 6614,
+        "bones": 29,
+        "meshes": 1,
+        "materials": 1,
+        "normalized_weights": true,
+        "vertex_colors": true,
+        "head_moved_vertices": 2974,
+        "tail_moved_vertices": 3890,
+        "head_did_not_move_tail": true,
+        "no_leg_bones": true,
+        "tail_bones": 14,
+        "animation_clips": 0,
+        "sha256": "9249bf88879b3e016cf942f2282b5e01e93d0e9d4637a2cd08d9dbcdd258937d"
+      }
+    }
+  },
+  "protected_game_files_checked": 175,
+  "protected_game_files_changed": [],
+  "scope": "Offline import and skinning only; not tested in Roblox Studio"
+}

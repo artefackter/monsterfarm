@@ -1,0 +1,50 @@
+{
+  "full": {
+    "models": 14,
+    "source_bytes": 26742292,
+    "output_bytes": 20777804,
+    "source_triangles": 171234,
+    "output_triangles": 171234,
+    "source_meshes": 613,
+    "output_meshes": 28,
+    "size_reduction_pct": 22.3,
+    "triangle_reduction_pct": 0.0
+  },
+  "mobile": {
+    "models": 14,
+    "source_bytes": 26742292,
+    "output_bytes": 17924180,
+    "source_triangles": 171234,
+    "output_triangles": 143852,
+    "source_meshes": 613,
+    "output_meshes": 28,
+    "size_reduction_pct": 32.97,
+    "triangle_reduction_pct": 15.99
+  },
+  "icons": {
+    "ui512": {
+      "files": 6,
+      "source_bytes": 5725219,
+      "output_bytes": 1203392,
+      "size_reduction_pct": 78.98,
+      "source_pixels": 9435096,
+      "output_pixels": 1572864
+    },
+    "small256": {
+      "files": 6,
+      "source_bytes": 5725219,
+      "output_bytes": 369610,
+      "size_reduction_pct": 93.54,
+      "source_pixels": 9435096,
+      "output_pixels": 393216
+    },
+    "large1024": {
+      "files": 6,
+      "source_bytes": 5725219,
+      "output_bytes": 4008466,
+      "size_reduction_pct": 29.99,
+      "source_pixels": 9435096,
+      "output_pixels": 6291456
+    }
+  }
+}

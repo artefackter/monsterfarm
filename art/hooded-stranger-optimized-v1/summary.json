@@ -1,0 +1,49 @@
+{
+  "models": {
+    "before_bytes": 5402952,
+    "after_bytes": 3806156,
+    "reduction_percent": 29.55
+  },
+  "mesh_count": {
+    "before": 229,
+    "after": 14
+  },
+  "triangles": {
+    "before": 41367,
+    "after": 41367
+  },
+  "bones_per_model": 28,
+  "source_originals_unchanged": true,
+  "runtime_load_time_measured": false,
+  "ui512": {
+    "before_bytes": 4773144,
+    "after_bytes": 1010340,
+    "reduction_percent": 78.83
+  },
+  "small256": {
+    "before_bytes": 4773144,
+    "after_bytes": 320260,
+    "reduction_percent": 93.29
+  },
+  "large1024": {
+    "before_bytes": 4773144,
+    "after_bytes": 3307003,
+    "reduction_percent": 30.72
+  },
+  "recommended_bundle": {
+    "before_bytes": 10176096,
+    "after_bytes": 4816496,
+    "reduction_percent": 52.67
+  },
+  "face_texture_pixels": {
+    "before": 562000,
+    "after": 65536,
+    "reduction_percent": 88.34,
+    "resampling": false
+  },
+  "icon_pixels_per_image": {
+    "before": 1572516,
+    "ui512": 262144,
+    "reduction_percent": 83.33
+  }
+}

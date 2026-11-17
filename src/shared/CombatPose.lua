@@ -116,6 +116,58 @@ function Pose:GunArms(aiming,tilt,reload)
  self.gunLeft=point~=nil and self:SolveArm('Left',torso,CFrame.new(point)*turn*CFrame.Angles(0,0,-.35),turn:VectorToWorldSpace(Vector3.new(-1,-1.6,.3)),1.08)~=nil
  return true
 end
+-- A clip (ClipPlayer: whole-body joint transforms from the animation pack) played over the Animate clips. Every joint
+-- eases to the clip's pose, so it blends in from standing and from one clip to the next. `upper` leaves the hips
+-- and legs to Animate, so a clip can play while you run.
+local Clip=require(script.Parent.ClipPlayer)
+local LOWER={LowerTorso=true,RightUpperLeg=true,RightLowerLeg=true,RightFoot=true,LeftUpperLeg=true,LeftLowerLeg=true,LeftFoot=true}
+function Pose:PlayClip(name,t,dt,upper,offset)
+ local clip=Clip.Get(name);if not clip then return end
+ if not self.byPart then
+  self.byPart={}
+  for _,j in self.joints do local ok,part=pcall(function() return j.Part1 end);if ok and part then self.byPart[part.Name]=j end end
+ end
+ local ease=1-math.exp(-dt*24);self.clipPose=self.clipPose or {}
+ for _,part in ipairs(clip.Parts) do
+  local j=self.byPart[part]
+  if j and j.Parent and not (upper and LOWER[part]) then
+   if not self.original[j] then self.original[j]=j.Transform end
+   local goal=Clip.Pose(clip,t,part)
+   if offset and part=='LowerTorso' then goal=CFrame.new(offset)*goal end -- where the clips before it left the body
+   local pose=(self.clipPose[part] or j.Transform):Lerp(goal,ease)
+   self.clipPose[part]=pose;j.Transform=pose
+  elseif upper then self.clipPose[part]=nil end
+ end
+end
+-- The chainsaw finisher (ShovelMotion's saw; owner, 2026-11-15): a braced stance - left foot forward, knees bent,
+-- the body lowered to match - the trunk leaning and twisting with the saw, and both arms solved onto it: the right
+-- hand on the rear handle, the left on the starter cord and then the front handle (where the saw really is, which
+-- follows the right hand).
+function Pose:SawPose(motion)
+ local root=self.character:FindFirstChild('HumanoidRootPart')
+ local rj=self.joints.Root or self.joints.RootJoint
+ if not root or not rj then return end
+ local st=motion.stance
+ if st>0 then
+  if not self.original[rj] then self.original[rj]=rj.Transform end
+  rj.Transform=rj.Transform:Lerp(CFrame.new(0,-.27,0)*CFrame.Angles(0,motion.twist*.35,0),st)
+  self:Apply('LeftHip',CFrame.Angles(.8,0,-.1),st);self:Apply('LeftKnee',CFrame.Angles(-1.15,0,0),st);self:Apply('LeftAnkle',CFrame.Angles(.35,0,0),st)
+  self:Apply('RightHip',CFrame.Angles(-.4,0,.12),st);self:Apply('RightKnee',CFrame.Angles(-.35,0,0),st);self:Apply('RightAnkle',CFrame.Angles(.75,0,0),st)
+ end
+ self:Apply('Waist',CFrame.Angles(-motion.lean,motion.twist*.65,0),1)
+ self:Apply('Neck',CFrame.Angles(motion.lean*.6,-motion.twist*.8,0),1)
+ local lower=self:JointFrame(rj,root.CFrame)
+ local torso=self.joints.Waist and self:JointFrame(self.joints.Waist,lower) or lower
+ local turn=root.CFrame
+ local sawAt=turn*motion.frame
+ local right=self:SolveArm('Right',torso,sawAt*motion.hand,turn:VectorToWorldSpace(Vector3.new(1,-1,.7)))
+ if motion.left>.02 then
+  local real=right and right*motion.hand:Inverse() or sawAt
+  local rest=turn:PointToWorldSpace(Vector3.new(-1.15,-.95,-.15))
+  local grip=real*CFrame.new(motion.leftAt)*CFrame.Angles(math.pi/2-.5,0,0)
+  self:SolveArm('Left',torso,grip.Rotation+rest:Lerp(grip.Position,motion.left),turn:VectorToWorldSpace(Vector3.new(-1,-.7,.4)))
+ end
+end
 function Pose:Kick(amount) self.recoil=math.min(self.recoil+amount,1.5) end
 function Pose:Apply(name,rotation,weight,additive)
  if self.character:GetAttribute('WeaponIKActive') and (name=='RightShoulder' or name=='RightElbow' or name=='RightWrist') then return end
@@ -143,16 +195,21 @@ function Pose:Step(dt,aim,id,reloading,batLeft,training,drawWeight)
  self.weight+=(target-self.weight)*(1-math.exp(-dt*(target==1 and 14 or 10)));self.recoil*=math.exp(-dt*(id=='AWP' and 11 or 18))
  local w=self.weight
  if knocked then
-  local left=koUntil-now;local fall=smooth((now-(attr('KnockedOutAt') or now))/.18);local rise=smooth(left/.28)
-  local rootJoint=self.joints.Root and 'Root' or 'RootJoint'
-  self:Apply(rootJoint,CFrame.new(0,-.7*fall*rise,0)*CFrame.Angles(-1.05*fall*rise,0,.16*fall*rise),1,true)
-  self:Apply('RightShoulder',CFrame.Angles(-.45,0,-.8),1);self:Apply('LeftShoulder',CFrame.Angles(-.45,0,.8),1)
-  self:Apply('RightHip',CFrame.Angles(.35,0,-.2),1);self:Apply('LeftHip',CFrame.Angles(-.2,0,.2),1)
-  self:Apply('RightKnee',CFrame.Angles(.65,0,0),1);self:Apply('LeftKnee',CFrame.Angles(.35,0,0),1);return
+  -- Knocked off your feet (the pack's Hit_Knockback: thrown onto your back, lying there), then up again over the
+  -- last moments of the knockout (LayToIdle, sped up to fit); coded tilts until 2026-11-15.
+  local at=attr('KnockedOutAt') or now;local total=math.max(.2,koUntil-at);local up=math.min(.8,total*.45)
+  local t=now-at;local rise=Clip.Get('GetUp')
+  if t<total-up or not rise then self:PlayClip('Knock',t,dt) else self:PlayClip('GetUp',(t-(total-up))/up*rise.Length,dt) end
+  return
  end
  -- Legs, hips and the idle arms belong to the Animate clips; this only layers the arms for actions.
  if not active and w<.01 then return end
  local motion=player and ShovelMotion.ForPlayer(player,now)
+ -- walking up to the boss and climbing it in a finisher: empty hands, the Animate clips alone
+ if not motion and now<(attr('FinisherUntil') or 0) then return end
+ if motion and motion.kind=='clip' then self:PlayClip(motion.clip,motion.t,dt,motion.upper,motion.offset);return end
+ self.clipPose=nil
+ if motion and motion.kind=='saw' then self:SawPose(motion);return end
  if motion then
   if motion.kind=='swing' then
    -- Rotate the rendered rig, not the physical root or camera. Keep jump/run

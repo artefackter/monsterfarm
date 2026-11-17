@@ -28,15 +28,18 @@ local function notice(p,k,args) rem.Notice:FireClient(p,k,args) end
 local function spot(arg) if type(arg)~="string" then return end;local x,z=arg:match("^(%-?[%d%.]+),(%-?[%d%.]+)$");return tonumber(x),tonumber(z) end
 local function push(p)
  local d=D.Profiles[p];if not d then return end;local night,left=Day.State();local stock,refresh=Shop.Stock(d,night);local graves={}
- for _,g in ipairs(d.graves) do table.insert(graves,{type=g.type,slot=g.slot,remaining=G.Remaining(d,g)}) end
- rem.State:FireClient(p,{settings=d.settings,dexClaims=d.dexClaims,freeGiftClaimed=d.freeGiftClaimed,upgradeCredits=d.upgradeCredits,coins=d.coins,income=Z.Income(d),zombies=d.zombies,graves=graves,graveInventory=d.graveInventory,selectedGrave=d.selectedGrave,tutorialDone=d.tutorialDone,dex=d.zombiedex,upgrades=d.upgrades,stock=stock,refresh=refresh,night=night,left=left,offline=d.offlinePending or 0,dailyStreak=d.dailyStreak,lastDailyAt=d.lastDailyAt,dailyReady=(Reward.Status(d)),dailyNext=select(2,Reward.Status(d)),step=d.tutorialStep,vouchers=d.vouchers,protection=math.max(0,NC.Newbie-d.playTime),quests=d.quests,peak=math.floor(d.peakIncome or 0),language=d.language,house=HouseRules.Level(d),houseLeft=HouseRules.Remaining(d),speed=d.speedPoints,slowMode=d.slowMode,showRanges=d.showRanges,shovels=d.shovels,equippedShovel=d.equippedShovel,treadmill=RoadRules.Level(d)})
+ for _,g in ipairs(d.graves) do table.insert(graves,{type=g.type,slot=g.slot,remaining=G.Remaining(d,g),family=G.Family(g)}) end
+ for _,g in ipairs(d.graveInventory) do G.Family(g) end -- (every grave in the bag knows whose it is: GraveService.Family)
+ rem.State:FireClient(p,{settings=d.settings,dexClaims=d.dexClaims,freeGiftClaimed=d.freeGiftClaimed,upgradeCredits=d.upgradeCredits,coins=d.coins,income=Z.Income(d),zombies=d.zombies,graves=graves,graveCap=Z.Cap(d,"Graves"),graveInventory=d.graveInventory,selectedGrave=d.selectedGrave,tutorialDone=d.tutorialDone,dex=d.zombiedex,upgrades=d.upgrades,stock=stock,refresh=refresh,night=night,left=left,offline=d.offlinePending or 0,dailyStreak=d.dailyStreak,lastDailyAt=d.lastDailyAt,dailyReady=(Reward.Status(d)),dailyNext=select(2,Reward.Status(d)),step=d.tutorialStep,vouchers=d.vouchers,protection=math.max(0,NC.Newbie-d.playTime),quests=d.quests,peak=math.floor(d.peakIncome or 0),language=d.language,house=HouseRules.Level(d),houseLeft=HouseRules.Remaining(d),speed=d.speedPoints,slowMode=d.slowMode,showRanges=d.showRanges,shovels=d.shovels,equippedShovel=d.equippedShovel,treadmill=RoadRules.Level(d)})
 end
 local UI=require(script.Parent.InterfaceService);UI.Init(push)
 local function dig(p,slot,source,petId)
- local d=D.Profiles[p];if source~="pet" and not require(script.Parent.ActionService).CanAct(p) then return end;if not d or (source~="pet" and not allowed(p)) then return end
- for i,g in ipairs(d.graves) do if g.slot==slot and not g.carriedBy and G.Remaining(d,g)==0 and (source=="pet" and not G.IsHeld(p,slot) or source~="pet" and P.Near(p,P.Position(p,"Graves",slot).Position,SC.DigDistance)) then
+ -- source: "pet" (a pet digs), "menu" (the crypt's Graves tab: anywhere, already rate-limited by the Intent), or the
+ -- dig prompt beside the grave
+ local d=D.Profiles[p];if source~="pet" and not require(script.Parent.ActionService).CanAct(p) then return end;if not d or (source~="pet" and source~="menu" and not allowed(p)) then return end
+ for i,g in ipairs(d.graves) do if g.slot==slot and not g.carriedBy and G.Remaining(d,g)==0 and (source=="pet" and not G.IsHeld(p,slot) or source=="menu" or source~="pet" and source~="menu" and P.Near(p,P.Position(p,"Graves",slot).Position,SC.DigDistance)) then
  local free=Z.Slot(d,"Crypt");if not free then notice(p,"error");return end
- local z=Z.Roll(GC[g.type].Weights,Day.State(),g.starter,Pets.GetBonuses(p).luckMult,GC[g.type].MinTier,g.location);if g.monsterType=="DeerChief" then z.type="DeerChief";z.tier=6 end;z.slot=free;table.remove(d.graves,i);table.insert(d.zombies,z);D.Claims[z.id]=p.UserId;d.zombiedex[z.type..":"..z.mutation]=true;Q.Track(p,"dig",1);if z.tier>=2 then Q.Track(p,"rare",1) end
+ local z=Z.Roll(GC[g.type].Weights,Day.State(),g.starter,Pets.GetBonuses(p).luckMult,GC[g.type].MinTier,g.location,G.Family(g));if g.monsterType=="DeerChief" then z.type="DeerChief";z.tier=6 end;z.slot=free;table.remove(d.graves,i);table.insert(d.zombies,z);D.Claims[z.id]=p.UserId;d.zombiedex[z.type..":"..z.mutation]=true;Q.Track(p,"dig",1);if z.tier>=2 then Q.Track(p,"rare",1) end
  if d.tutorialStep==0 then d.tutorialStep=1;A.Step(p,1) end
  G.Render(p,d);Z.Render(p,d);if source=="pet" then rem.Notice:FireClient(p,"petDug",{rarity=require(S.Config.ZombieConfig).Tiers[z.tier],type=z.type}) else rem.Notice:FireClient(p,"reveal",z) end
  if z.tier>=3 then rem.Notice:FireAllClients("rare",{name=p.DisplayName,rarity=require(S.Config.ZombieConfig).Tiers[z.tier],type=z.type}) end;push(p);return z end end
@@ -45,7 +48,8 @@ end
 G.OnDig=dig;G.Dig=dig
 -- No stealing graves from other players' farms any more (owner, 2026-11-13): graves get no "Steal" prompt.
 local function action(p,op,arg,zone)
- if type(op)~="string" or (arg~=nil and type(arg)~="string") or (zone~=nil and type(zone)~="string") or (arg and #arg>100) or not allowed(p) then return end
+ -- (sellMany carries up to 60 monster ids, 36 characters each and a comma)
+ if type(op)~="string" or (arg~=nil and type(arg)~="string") or (zone~=nil and type(zone)~="string") or (arg and #arg>(op=="sellMany" and 2300 or 100)) or not allowed(p) then return end
  local d=D.Profiles[p];if not d then return end;local before=d.coins;local ok,reason=false,nil
  if op=="sync" then push(p);return
  elseif not require(script.Parent.ActionService).CanAct(p) then return
@@ -57,9 +61,30 @@ local function action(p,op,arg,zone)
  elseif op=="dropZombie" then Z.Drop(p);ok=true
  elseif op=="placeBest" then Z.PlaceBest(p,d);ok=true -- the crypt's buttons (2026-11-14): nothing to do is not an error
  elseif op=="storeAll" then Z.StoreAll(p,d);ok=true
- elseif op=="move" and zone=="Field" and not P.Inside(p,P.Assigned[p]) then reason="takeOnFarm" -- the hotbar can ask from anywhere
+ -- the crypt's Graves tab digs a ripe grave from anywhere, the reward at once (owner, 2026-11-15)
+ elseif op=="digGrave" then dig(p,tonumber(arg),"menu");return
+ -- its Dig all button: every ripe grave at once, each monster to the crypt (the last one's card stays on screen)
+ elseif op=="digAll" then
+  local slots={};for _,g in ipairs(d.graves) do if not g.carriedBy and G.Remaining(d,g)==0 then table.insert(slots,g.slot) end end
+  if #slots==0 then notice(p,"error");return end
+  for _,slot in slots do dig(p,slot,"menu") end;return
+ -- the crypt's Sell button (owner, 2026-11-16: "a Sell button in the crypt, showing the sum of the monsters chosen"):
+ -- the monsters marked there at once, their ids joined by commas (60 at most). Each is checked and paid like a single
+ -- sale below; the one in your arms is left alone.
+ elseif op=="sellMany" then
+  local sold=0
+  for _,id in string.split(arg or "",",") do
+   if sold>=60 then break end
+   local z,i=Z.Find(d,id)
+   if z and not z.carriedBy and not z.pendingTransfer and not Raid.Carriers[p] and not (Z.Holding[p] and Z.Holding[p].id==z.id) then
+    d.coins+=Z.Rate(z)*require(S.Config.ZombieConfig).SaleSeconds;table.remove(d.zombies,i);Z.Remove(z.id);D.Claims[z.id]=nil;sold+=1
+   end
+  end
+  ok=sold>0
+ -- the crypt works from anywhere (owner, 2026-11-15): a monster taken out away from the farm stays in your arms until
+ -- you put it down at home (it said "take monsters out on your own farm" before)
  elseif op=="move" or op=="sell" then
- local z,i=Z.Find(d,arg);if z and not z.carriedBy and not z.pendingTransfer and P.Inside(p,P.Assigned[p]) and not Raid.Carriers[p] then
+ local z,i=Z.Find(d,arg);if z and not z.carriedBy and not z.pendingTransfer and not Raid.Carriers[p] then
  if op=="sell" then d.coins+=Z.Rate(z)*require(S.Config.ZombieConfig).SaleSeconds;table.remove(d.zombies,i);Z.Remove(z.id);D.Claims[z.id]=nil;ok=true
  elseif zone=="Field" then ok=Z.Hold(p,d,z.id)
  elseif zone=="Crypt" then
@@ -120,18 +145,30 @@ local function join(p)
 end
 Players.PlayerAdded:Connect(join);for _,p in ipairs(Players:GetPlayers()) do task.spawn(join,p) end
 Players.PlayerRemoving:Connect(function(p) Z.Drop(p);Raid.Leave(p);Board.Flush(p);Board.Forget(p.UserId);Ref.Forget(p);Slots.Forget(p);Road.Forget(p);UI.Forget(p);local departing=D.Profiles[p];if departing then for _,z in ipairs(departing.zombies) do Z.Remove(z.id) end end;D.Release(p);local plot=P.Assigned[p];if plot then local prompt=plot.Gate:FindFirstChild("LockPrompt");if prompt then prompt:Destroy() end end;House.Forget(p);require(script.Parent.FenceService).Reset(P.Assigned[p]);P.Release(p);G.Models[p]=nil;joining[p]=nil;last[p]=nil;accumulated[p]=nil;nightParticipants[p]=nil end)
-task.spawn(function() while task.wait(1) do for holder in pairs(Z.Holding) do local h=holder.Character and holder.Character:FindFirstChildOfClass('Humanoid');if not holder.Parent or not h or h.Health<=0 or not P.Inside(holder,P.Assigned[holder]) then Z.Drop(holder);if holder.Parent then notice(holder,'placeReturned') end end end;local night=Day.Update();if lanternState~=night then lanternState=night;P.SetNight(night) end;if wasNight and not night then for p in pairs(nightParticipants) do if p.Parent and D.Profiles[p] then A.Step(p,4);Q.Track(p,"dawn",1) end end;nightParticipants={} end;wasNight=night;for p,d in pairs(D.Profiles) do if P.Assigned[p] then local n=I.Tick(d);Bank.Add(p,d,0);UI.Refresh(p);House.Tick(p,d);Board.Observe(d,n);Q.Track(p,"earn",n);Q.Track(p,"time",1);Ref.Tick(p,d);if night then nightParticipants[p]=true end;accumulated[p]=(accumulated[p] or 0)+n;if p:FindFirstChild("leaderstats") then p.leaderstats["Income/s"].Value=require(S.Locale).compact(n,require(S.Locale).lang(p));p.leaderstats.Speed.Value=require(S.Locale).compact(d.speedPoints,require(S.Locale).lang(p)) end;G.Render(p,d);Z.Render(p,d);Slots.Render(p,d);push(p);Pets.Push(p) end end end end)
+task.spawn(function() while task.wait(1) do for holder in pairs(Z.Holding) do local h=holder.Character and holder.Character:FindFirstChildOfClass('Humanoid');if not holder.Parent or not h or h.Health<=0 or holder:GetAttribute("CarryingGrave") then Z.Drop(holder);if holder.Parent then notice(holder,'placeReturned') end end end;local night=Day.Update();if lanternState~=night then lanternState=night;P.SetNight(night) end;if wasNight and not night then for p in pairs(nightParticipants) do if p.Parent and D.Profiles[p] then A.Step(p,4);Q.Track(p,"dawn",1) end end;nightParticipants={} end;wasNight=night;for p,d in pairs(D.Profiles) do if P.Assigned[p] then local n=I.Tick(d);Bank.Add(p,d,0);UI.Refresh(p);House.Tick(p,d);Board.Observe(d,n);Q.Track(p,"earn",n);Q.Track(p,"time",1);Ref.Tick(p,d);if night then nightParticipants[p]=true end;accumulated[p]=(accumulated[p] or 0)+n;if p:FindFirstChild("leaderstats") then p.leaderstats["Income/s"].Value=require(S.Locale).compact(n,require(S.Locale).lang(p));p.leaderstats.Speed.Value=require(S.Locale).compact(d.speedPoints,require(S.Locale).lang(p)) end;G.Render(p,d);Z.Render(p,d);Slots.Render(p,d);push(p);Pets.Push(p) end end end end)
 task.spawn(function() while task.wait(NC.Poll) do Raid.Tick() end end)
 task.spawn(function() while task.wait(SC.Autosave) do for p in pairs(D.Profiles) do task.spawn(function() local gain=accumulated[p] or 0;if gain>0 then A.Economy(p,gain,D.Profiles[p].coins,"FarmIncome");accumulated[p]=0 end;if not D.Save(p) then p:Kick(require(S.Locale).text("savingError",require(S.Locale).lang(p))) end end) end end end)
 game:BindToClose(function() local pending=0;for p in pairs(D.Profiles) do pending+=1;task.spawn(function() Raid.Leave(p);Board.Flush(p);D.Save(p,true);pending-=1 end) end;while pending>0 do task.wait(.1) end end)
 workspace:SetAttribute("GameBuild","v3-stage6-motion-2026-11-07")
 -- Performance (owner, 2026-11-14: phones run hot): small scenery and anything invisible casts no shadow. The world had
 -- about 20,000 shadow casters; shadows from props smaller than a person add nothing you notice.
+-- Since 2026-11-15 (phones ran hot again) only the houses, the trees and the farm monsters cast shadows: walls,
+-- facades, fences, stands and props no longer do, and the rule holds for parts built later too (the road, arenas).
 do local n=0
- for _,q in workspace.DigAZombie:GetDescendants() do
-  if q:IsA("BasePart") and q.CastShadow and (q.Transparency>=.95 or math.max(q.Size.X,q.Size.Y,q.Size.Z)<6) then q.CastShadow=false;n+=1 end
+ local TREES={W_TreeA=true,W_TreeB=true,W_TreeC=true,MR_ForestTree=true,MR_TwistedTree=true,AV_DeadTree=true,AC_PlanterTree=true}
+ local function keeps(q)
+  if q.Transparency<.95 and TREES[q:GetAttribute("ArtAsset") or ""] then return true end
+  local m=q:FindFirstAncestorWhichIsA("Model")
+  while m do
+   if m.Name=="House" or m.Name=="Zombie" then return q.Transparency<.95 end
+   m=m.Parent and m.Parent:FindFirstAncestorWhichIsA("Model")
+  end
+  return false
  end
- print("Shadows off for",n,"small parts")
+ local function trim(q) if q:IsA("BasePart") and q.CastShadow and not keeps(q) then q.CastShadow=false;n+=1 end end
+ for _,q in workspace.DigAZombie:GetDescendants() do trim(q) end
+ workspace.DigAZombie.DescendantAdded:Connect(trim)
+ print("Shadows off for",n,"parts")
 end
 print("DigAZombie ready; Studio memory:",D.Memory)
 

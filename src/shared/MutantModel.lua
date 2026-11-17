@@ -11,7 +11,23 @@ function M.Build(kind,cf,variant)
  local asset=variant and variant.Asset or spec.Model;local visualScale=1
  if Art.Has(asset) then
   local scale,lo,hi=Art.MonsterScale(asset);visualScale=scale
-  pieces=Art.Spawn(asset,m,cf*CFrame.new(0,-C.RootHeight-lo.Y*scale,0),{scale=scale})
+  -- A skinned monster (owner, 2026-11-15: "the monsters are built of rigid parts - fix it"; bosses first): its model
+  -- from ReplicatedStorage.ArtSkinned (art/roblox-import-v1/tools/skinned_srgb.py, normalize_skinned.lua), sized to
+  -- the rigid asset's height, its feet on the floor. Every part of it hangs on the root by a "Skin" joint (the whole
+  -- body's movement); MutantAnimation bends the bones inside.
+  local skins=variant and variant.Skinned and game:GetService("ReplicatedStorage"):FindFirstChild("ArtSkinned")
+  local skin=skins and skins:FindFirstChild(variant.Skinned)
+  if skin then
+   local fit=(hi.Y-lo.Y)*scale/(skin:GetAttribute("Height") or (hi.Y-lo.Y)*scale)
+   local body=skin:Clone();body:ScaleTo(fit);body:PivotTo(cf*CFrame.new(0,-C.RootHeight,0))
+   -- where the middle of its head is from the Head bone (a finisher aims there: ShovelMotion.BossHead)
+   local centre=skin:GetAttribute("HeadCentre");if centre then m:SetAttribute("HeadCentre",centre*fit) end
+   pieces={};local n=0
+   for _,p in body:GetChildren() do if p:IsA("BasePart") then n+=1;p:SetAttribute("Attach","Skin");p.Parent=m;pieces["Skin"..n]=p end end
+   body:Destroy();m:SetAttribute("Skinned",true)
+  else
+   pieces=Art.Spawn(asset,m,cf*CFrame.new(0,-C.RootHeight-lo.Y*scale,0),{scale=scale})
+  end
   local size=(hi-lo)*scale;root.Size=Vector3.new(math.clamp(size.X*.6,3,9),size.Y,math.clamp(size.Z*.6,3,9))
   m:SetAttribute("MonsterHeight",size.Y);m:SetAttribute("ArtAsset",asset);m:SetAttribute("CollectionType",variant and variant.Id or "DeerChief")
   m:SetAttribute("Family",variant and variant.Family or "Deer")

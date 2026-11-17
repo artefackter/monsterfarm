@@ -1,0 +1,270 @@
+{
+  "mode": "built-in image_gen",
+  "transparent_background": true,
+  "items": [
+    {
+      "id": "DredgeFarmer",
+      "character": "Dredge",
+      "role": "Farmer",
+      "prompt": "Use case: style-transfer. Asset type: one polished 2D illustrated game collection icon.\nReference 1 is ONLY the current game's illustration style; do not copy its deer anatomy, big eyes, pose, shovel or objects. Reference 2 is the exact 3D subject and costume design to faithfully redraw.\nStyle: match the existing icon: clean bold dark-plum outline, crisp hand-drawn cartoon contours, saturated but harmonious colors, angular cel-shaded volume with soft painted transitions and bright selective highlights. A finished 2D illustration, not a flat silhouette, not a 3D render. Simplify fine geometry for clear reading at 96 pixels while retaining the monster's distinctive anatomy.\nComposition: ONE complete full-body character, centered in a square canvas, comfortable transparent margin on all sides, fully visible extremities. Preserve the source pose and readable three-quarter orientation; do not crop tail, feet, limbs, hat or crown.\nBackground: genuine transparent alpha, no scene, no floor, no ground shadow, no glow halo, no border, no sticker backing, no text, no labels, no logos or watermark.\nBoth hands and all appendages remain EMPTY. No tools, weapons, shields, scepters, carried objects or additional accessories. Preserve the actual costume in reference 2. No realistic gore or added wounds.\nSubject: Dredge. A single narrow pale skull with a long central split, four short radial bony struts around the one head, a slim exposed ribbed red torso, exactly two long clawed arms, and one continuous segmented U-curled snake tail. NO walking legs, NO extra heads.\nCostume: straw hat, open blue-teal work clothing and olive shoulder pieces. Match its placement and proportions in reference 2.",
+      "references": [
+        "/Users/wingman/Documents/Codex/GrowAMonster-Git-2026-11-12/art/ui/modal-refresh/DeerFarmer.png",
+        "/Users/wingman/Documents/Codex/GrowAMonster-Git-2026-11-12/art/srp-character-variants-v1/previews/DredgeFarmer_ThreeQuarter.png"
+      ],
+      "status": "generated_pending_user_approval"
+    },
+    {
+      "id": "DredgeMiner",
+      "character": "Dredge",
+      "role": "Miner",
+      "prompt": "Use case: style-transfer. Asset type: one polished 2D illustrated game collection icon.\nReference 1 is ONLY the current game's illustration style; do not copy its deer anatomy, big eyes, pose, shovel or objects. Reference 2 is the exact 3D subject and costume design to faithfully redraw.\nStyle: match the existing icon: clean bold dark-plum outline, crisp hand-drawn cartoon contours, saturated but harmonious colors, angular cel-shaded volume with soft painted transitions and bright selective highlights. A finished 2D illustration, not a flat silhouette, not a 3D render. Simplify fine geometry for clear reading at 96 pixels while retaining the monster's distinctive anatomy.\nComposition: ONE complete full-body character, centered in a square canvas, comfortable transparent margin on all sides, fully visible extremities. Preserve the source pose and readable three-quarter orientation; do not crop tail, feet, limbs, hat or crown.\nBackground: genuine transparent alpha, no scene, no floor, no ground shadow, no glow halo, no border, no sticker backing, no text, no labels, no logos or watermark.\nBoth hands and all appendages remain EMPTY. No tools, weapons, shields, scepters, carried objects or additional accessories. Preserve the actual costume in reference 2. No realistic gore or added wounds.\nSubject: Dredge. A single narrow pale skull with a long central split, four short radial bony struts around the one head, a slim exposed ribbed red torso, exactly two long clawed arms, and one continuous segmented U-curled snake tail. NO walking legs, NO extra heads.\nCostume: ochre hardhat with square headlamp, ochre work clothing and small backpack. Match its placement and proportions in reference 2.",
+      "references": [
+        "/Users/wingman/Documents/Codex/GrowAMonster-Git-2026-11-12/art/ui/modal-refresh/DeerFarmer.png",
+        "/Users/wingman/Documents/Codex/GrowAMonster-Git-2026-11-12/art/srp-character-variants-v1/previews/DredgeMiner_ThreeQuarter.png"
+      ],
+      "status": "generated_pending_user_approval"
+    },
+    {
+      "id": "DredgeKing",
+      "character": "Dredge",
+      "role": "King",
+      "prompt": "Use case: style-transfer. Asset type: one polished 2D illustrated game collection icon.\nReference 1 is ONLY the current game's illustration style; do not copy its deer anatomy, big eyes, pose, shovel or objects. Reference 2 is the exact 3D subject and costume design to faithfully redraw.\nStyle: match the existing icon: clean bold dark-plum outline, crisp hand-drawn cartoon contours, saturated but harmonious colors, angular cel-shaded volume with soft painted transitions and bright selective highlights. A finished 2D illustration, not a flat silhouette, not a 3D render. Simplify fine geometry for clear reading at 96 pixels while retaining the monster's distinctive anatomy.\nComposition: ONE complete full-body character, centered in a square canvas, comfortable transparent margin on all sides, fully visible extremities. Preserve the source pose and readable three-quarter orientation; do not crop tail, feet, limbs, hat or crown.\nBackground: genuine transparent alpha, no scene, no floor, no ground shadow, no glow halo, no border, no sticker backing, no text, no labels, no logos or watermark.\nBoth hands and all appendages remain EMPTY. No tools, weapons, shields, scepters, carried objects or additional accessories. Preserve the actual costume in reference 2. No realistic gore or added wounds.\nSubject: Dredge. A single narrow pale skull with a long central split, four short radial bony struts around the one head, a slim exposed ribbed red torso, exactly two long clawed arms, and one continuous segmented U-curled snake tail. NO walking legs, NO extra heads.\nCostume: gold crown with green jewel, purple regal clothing, cream fur collar and burgundy gold-trimmed cape; KING, masculine royal costume. Match its placement and proportions in reference 2.",
+      "references": [
+        "/Users/wingman/Documents/Codex/GrowAMonster-Git-2026-11-12/art/ui/modal-refresh/DeerFarmer.png",
+        "/Users/wingman/Documents/Codex/GrowAMonster-Git-2026-11-12/art/srp-character-variants-v1/previews/DredgeKing_ThreeQuarter.png"
+      ],
+      "status": "generated_pending_user_approval"
+    },
+    {
+      "id": "DredgeKnight",
+      "character": "Dredge",
+      "role": "Knight",
+      "prompt": "Use case: style-transfer. Asset type: one polished 2D illustrated game collection icon.\nReference 1 is ONLY the current game's illustration style; do not copy its deer anatomy, big eyes, pose, shovel or objects. Reference 2 is the exact 3D subject and costume design to faithfully redraw.\nStyle: match the existing icon: clean bold dark-plum outline, crisp hand-drawn cartoon contours, saturated but harmonious colors, angular cel-shaded volume with soft painted transitions and bright selective highlights. A finished 2D illustration, not a flat silhouette, not a 3D render. Simplify fine geometry for clear reading at 96 pixels while retaining the monster's distinctive anatomy.\nComposition: ONE complete full-body character, centered in a square canvas, comfortable transparent margin on all sides, fully visible extremities. Preserve the source pose and readable three-quarter orientation; do not crop tail, feet, limbs, hat or crown.\nBackground: genuine transparent alpha, no scene, no floor, no ground shadow, no glow halo, no border, no sticker backing, no text, no labels, no logos or watermark.\nBoth hands and all appendages remain EMPTY. No tools, weapons, shields, scepters, carried objects or additional accessories. Preserve the actual costume in reference 2. No realistic gore or added wounds.\nSubject: Dredge. A single narrow pale skull with a long central split, four short radial bony struts around the one head, a slim exposed ribbed red torso, exactly two long clawed arms, and one continuous segmented U-curled snake tail. NO walking legs, NO extra heads.\nCostume: open blue-steel helmet with small burgundy crest, steel armor panels. Match its placement and proportions in reference 2.",
+      "references": [
+        "/Users/wingman/Documents/Codex/GrowAMonster-Git-2026-11-12/art/ui/modal-refresh/DeerFarmer.png",
+        "/Users/wingman/Documents/Codex/GrowAMonster-Git-2026-11-12/art/srp-character-variants-v1/previews/DredgeKnight_ThreeQuarter.png"
+      ],
+      "status": "generated_pending_user_approval"
+    },
+    {
+      "id": "DredgeNefor",
+      "character": "Dredge",
+      "role": "Nefor",
+      "prompt": "Use case: style-transfer. Asset type: one polished 2D illustrated game collection icon.\nReference 1 is ONLY the current game's illustration style; do not copy its deer anatomy, big eyes, pose, shovel or objects. Reference 2 is the exact 3D subject and costume design to faithfully redraw.\nStyle: match the existing icon: clean bold dark-plum outline, crisp hand-drawn cartoon contours, saturated but harmonious colors, angular cel-shaded volume with soft painted transitions and bright selective highlights. A finished 2D illustration, not a flat silhouette, not a 3D render. Simplify fine geometry for clear reading at 96 pixels while retaining the monster's distinctive anatomy.\nComposition: ONE complete full-body character, centered in a square canvas, comfortable transparent margin on all sides, fully visible extremities. Preserve the source pose and readable three-quarter orientation; do not crop tail, feet, limbs, hat or crown.\nBackground: genuine transparent alpha, no scene, no floor, no ground shadow, no glow halo, no border, no sticker backing, no text, no labels, no logos or watermark.\nBoth hands and all appendages remain EMPTY. No tools, weapons, shields, scepters, carried objects or additional accessories. Preserve the actual costume in reference 2. No realistic gore or added wounds.\nSubject: Dredge. A single narrow pale skull with a long central split, four short radial bony struts around the one head, a slim exposed ribbed red torso, exactly two long clawed arms, and one continuous segmented U-curled snake tail. NO walking legs, NO extra heads.\nCostume: purple punk mohawk, dark biker clothing, silver piercings, chains and small spikes. Match its placement and proportions in reference 2.",
+      "references": [
+        "/Users/wingman/Documents/Codex/GrowAMonster-Git-2026-11-12/art/ui/modal-refresh/DeerFarmer.png",
+        "/Users/wingman/Documents/Codex/GrowAMonster-Git-2026-11-12/art/srp-character-variants-v1/previews/DredgeNefor_ThreeQuarter.png"
+      ],
+      "status": "generated_pending_user_approval"
+    },
+    {
+      "id": "DredgeKiller",
+      "character": "Dredge",
+      "role": "Killer",
+      "prompt": "Use case: style-transfer. Asset type: one polished 2D illustrated game collection icon.\nReference 1 is ONLY the current game's illustration style; do not copy its deer anatomy, big eyes, pose, shovel or objects. Reference 2 is the exact 3D subject and costume design to faithfully redraw.\nStyle: match the existing icon: clean bold dark-plum outline, crisp hand-drawn cartoon contours, saturated but harmonious colors, angular cel-shaded volume with soft painted transitions and bright selective highlights. A finished 2D illustration, not a flat silhouette, not a 3D render. Simplify fine geometry for clear reading at 96 pixels while retaining the monster's distinctive anatomy.\nComposition: ONE complete full-body character, centered in a square canvas, comfortable transparent margin on all sides, fully visible extremities. Preserve the source pose and readable three-quarter orientation; do not crop tail, feet, limbs, hat or crown.\nBackground: genuine transparent alpha, no scene, no floor, no ground shadow, no glow halo, no border, no sticker backing, no text, no labels, no logos or watermark.\nBoth hands and all appendages remain EMPTY. No tools, weapons, shields, scepters, carried objects or additional accessories. Preserve the actual costume in reference 2. No realistic gore or added wounds.\nSubject: Dredge. A single narrow pale skull with a long central split, four short radial bony struts around the one head, a slim exposed ribbed red torso, exactly two long clawed arms, and one continuous segmented U-curled snake tail. NO walking legs, NO extra heads.\nCostume: open dark hood, dark muted clothing and cloak. Match its placement and proportions in reference 2.",
+      "references": [
+        "/Users/wingman/Documents/Codex/GrowAMonster-Git-2026-11-12/art/ui/modal-refresh/DeerFarmer.png",
+        "/Users/wingman/Documents/Codex/GrowAMonster-Git-2026-11-12/art/srp-character-variants-v1/previews/DredgeKiller_ThreeQuarter.png"
+      ],
+      "status": "generated_pending_user_approval"
+    },
+    {
+      "id": "AssimilatedAdventurerFarmer",
+      "character": "AssimilatedAdventurer",
+      "role": "Farmer",
+      "prompt": "Use case: style-transfer. Asset type: one polished 2D illustrated game collection icon.\nReference 1 is ONLY the current game's illustration style; do not copy its deer anatomy, big eyes, pose, shovel or objects. Reference 2 is the exact 3D subject and costume design to faithfully redraw.\nStyle: match the existing icon: clean bold dark-plum outline, crisp hand-drawn cartoon contours, saturated but harmonious colors, angular cel-shaded volume with soft painted transitions and bright selective highlights. A finished 2D illustration, not a flat silhouette, not a 3D render. Simplify fine geometry for clear reading at 96 pixels while retaining the monster's distinctive anatomy.\nComposition: ONE complete full-body character, centered in a square canvas, comfortable transparent margin on all sides, fully visible extremities. Preserve the source pose and readable three-quarter orientation; do not crop tail, feet, limbs, hat or crown.\nBackground: genuine transparent alpha, no scene, no floor, no ground shadow, no glow halo, no border, no sticker backing, no text, no labels, no logos or watermark.\nBoth hands and all appendages remain EMPTY. No tools, weapons, shields, scepters, carried objects or additional accessories. Preserve the actual costume in reference 2. No realistic gore or added wounds.\nSubject: AssimilatedAdventurer. A tall grey helmet above a neutral rectangular humanoid face with two small dark eyes; split-open red chest with two toothed side flaps and visible spine; exactly two arms, two hands and two walking legs. Preserve the split chest.\nCostume: straw hat, open blue-teal work clothing and olive shoulder pieces. Match its placement and proportions in reference 2.",
+      "references": [
+        "/Users/wingman/Documents/Codex/GrowAMonster-Git-2026-11-12/art/ui/modal-refresh/DeerFarmer.png",
+        "/Users/wingman/Documents/Codex/GrowAMonster-Git-2026-11-12/art/srp-character-variants-v1/previews/AssimilatedAdventurerFarmer_ThreeQuarter.png"
+      ],
+      "status": "generated_pending_user_approval"
+    },
+    {
+      "id": "AssimilatedAdventurerMiner",
+      "character": "AssimilatedAdventurer",
+      "role": "Miner",
+      "prompt": "Use case: style-transfer. Asset type: one polished 2D illustrated game collection icon.\nReference 1 is ONLY the current game's illustration style; do not copy its deer anatomy, big eyes, pose, shovel or objects. Reference 2 is the exact 3D subject and costume design to faithfully redraw.\nStyle: match the existing icon: clean bold dark-plum outline, crisp hand-drawn cartoon contours, saturated but harmonious colors, angular cel-shaded volume with soft painted transitions and bright selective highlights. A finished 2D illustration, not a flat silhouette, not a 3D render. Simplify fine geometry for clear reading at 96 pixels while retaining the monster's distinctive anatomy.\nComposition: ONE complete full-body character, centered in a square canvas, comfortable transparent margin on all sides, fully visible extremities. Preserve the source pose and readable three-quarter orientation; do not crop tail, feet, limbs, hat or crown.\nBackground: genuine transparent alpha, no scene, no floor, no ground shadow, no glow halo, no border, no sticker backing, no text, no labels, no logos or watermark.\nBoth hands and all appendages remain EMPTY. No tools, weapons, shields, scepters, carried objects or additional accessories. Preserve the actual costume in reference 2. No realistic gore or added wounds.\nSubject: AssimilatedAdventurer. A tall grey helmet above a neutral rectangular humanoid face with two small dark eyes; split-open red chest with two toothed side flaps and visible spine; exactly two arms, two hands and two walking legs. Preserve the split chest.\nCostume: ochre hardhat with square headlamp, ochre work clothing and small backpack. Match its placement and proportions in reference 2.",
+      "references": [
+        "/Users/wingman/Documents/Codex/GrowAMonster-Git-2026-11-12/art/ui/modal-refresh/DeerFarmer.png",
+        "/Users/wingman/Documents/Codex/GrowAMonster-Git-2026-11-12/art/srp-character-variants-v1/previews/AssimilatedAdventurerMiner_ThreeQuarter.png"
+      ],
+      "status": "generated_pending_user_approval"
+    },
+    {
+      "id": "AssimilatedAdventurerKing",
+      "character": "AssimilatedAdventurer",
+      "role": "King",
+      "prompt": "Use case: style-transfer. Asset type: one polished 2D illustrated game collection icon.\nReference 1 is ONLY the current game's illustration style; do not copy its deer anatomy, big eyes, pose, shovel or objects. Reference 2 is the exact 3D subject and costume design to faithfully redraw.\nStyle: match the existing icon: clean bold dark-plum outline, crisp hand-drawn cartoon contours, saturated but harmonious colors, angular cel-shaded volume with soft painted transitions and bright selective highlights. A finished 2D illustration, not a flat silhouette, not a 3D render. Simplify fine geometry for clear reading at 96 pixels while retaining the monster's distinctive anatomy.\nComposition: ONE complete full-body character, centered in a square canvas, comfortable transparent margin on all sides, fully visible extremities. Preserve the source pose and readable three-quarter orientation; do not crop tail, feet, limbs, hat or crown.\nBackground: genuine transparent alpha, no scene, no floor, no ground shadow, no glow halo, no border, no sticker backing, no text, no labels, no logos or watermark.\nBoth hands and all appendages remain EMPTY. No tools, weapons, shields, scepters, carried objects or additional accessories. Preserve the actual costume in reference 2. No realistic gore or added wounds.\nSubject: AssimilatedAdventurer. A tall grey helmet above a neutral rectangular humanoid face with two small dark eyes; split-open red chest with two toothed side flaps and visible spine; exactly two arms, two hands and two walking legs. Preserve the split chest.\nCostume: gold crown with green jewel, purple regal clothing, cream fur collar and burgundy gold-trimmed cape; KING, masculine royal costume. Match its placement and proportions in reference 2.",
+      "references": [
+        "/Users/wingman/Documents/Codex/GrowAMonster-Git-2026-11-12/art/ui/modal-refresh/DeerFarmer.png",
+        "/Users/wingman/Documents/Codex/GrowAMonster-Git-2026-11-12/art/srp-character-variants-v1/previews/AssimilatedAdventurerKing_ThreeQuarter.png"
+      ],
+      "status": "generated_pending_user_approval"
+    },
+    {
+      "id": "AssimilatedAdventurerKnight",
+      "character": "AssimilatedAdventurer",
+      "role": "Knight",
+      "prompt": "Use case: style-transfer. Asset type: one polished 2D illustrated game collection icon.\nReference 1 is ONLY the current game's illustration style; do not copy its deer anatomy, big eyes, pose, shovel or objects. Reference 2 is the exact 3D subject and costume design to faithfully redraw.\nStyle: match the existing icon: clean bold dark-plum outline, crisp hand-drawn cartoon contours, saturated but harmonious colors, angular cel-shaded volume with soft painted transitions and bright selective highlights. A finished 2D illustration, not a flat silhouette, not a 3D render. Simplify fine geometry for clear reading at 96 pixels while retaining the monster's distinctive anatomy.\nComposition: ONE complete full-body character, centered in a square canvas, comfortable transparent margin on all sides, fully visible extremities. Preserve the source pose and readable three-quarter orientation; do not crop tail, feet, limbs, hat or crown.\nBackground: genuine transparent alpha, no scene, no floor, no ground shadow, no glow halo, no border, no sticker backing, no text, no labels, no logos or watermark.\nBoth hands and all appendages remain EMPTY. No tools, weapons, shields, scepters, carried objects or additional accessories. Preserve the actual costume in reference 2. No realistic gore or added wounds.\nSubject: AssimilatedAdventurer. A tall grey helmet above a neutral rectangular humanoid face with two small dark eyes; split-open red chest with two toothed side flaps and visible spine; exactly two arms, two hands and two walking legs. Preserve the split chest.\nCostume: open blue-steel helmet with small burgundy crest, steel armor panels. Match its placement and proportions in reference 2.",
+      "references": [
+        "/Users/wingman/Documents/Codex/GrowAMonster-Git-2026-11-12/art/ui/modal-refresh/DeerFarmer.png",
+        "/Users/wingman/Documents/Codex/GrowAMonster-Git-2026-11-12/art/srp-character-variants-v1/previews/AssimilatedAdventurerKnight_ThreeQuarter.png"
+      ],
+      "status": "generated_pending_user_approval"
+    },
+    {
+      "id": "AssimilatedAdventurerNefor",
+      "character": "AssimilatedAdventurer",
+      "role": "Nefor",
+      "prompt": "Use case: style-transfer. Asset type: one polished 2D illustrated game collection icon.\nReference 1 is ONLY the current game's illustration style; do not copy its deer anatomy, big eyes, pose, shovel or objects. Reference 2 is the exact 3D subject and costume design to faithfully redraw.\nStyle: match the existing icon: clean bold dark-plum outline, crisp hand-drawn cartoon contours, saturated but harmonious colors, angular cel-shaded volume with soft painted transitions and bright selective highlights. A finished 2D illustration, not a flat silhouette, not a 3D render. Simplify fine geometry for clear reading at 96 pixels while retaining the monster's distinctive anatomy.\nComposition: ONE complete full-body character, centered in a square canvas, comfortable transparent margin on all sides, fully visible extremities. Preserve the source pose and readable three-quarter orientation; do not crop tail, feet, limbs, hat or crown.\nBackground: genuine transparent alpha, no scene, no floor, no ground shadow, no glow halo, no border, no sticker backing, no text, no labels, no logos or watermark.\nBoth hands and all appendages remain EMPTY. No tools, weapons, shields, scepters, carried objects or additional accessories. Preserve the actual costume in reference 2. No realistic gore or added wounds.\nSubject: AssimilatedAdventurer. A tall grey helmet above a neutral rectangular humanoid face with two small dark eyes; split-open red chest with two toothed side flaps and visible spine; exactly two arms, two hands and two walking legs. Preserve the split chest.\nCostume: purple punk mohawk, dark biker clothing, silver piercings, chains and small spikes. Match its placement and proportions in reference 2.",
+      "references": [
+        "/Users/wingman/Documents/Codex/GrowAMonster-Git-2026-11-12/art/ui/modal-refresh/DeerFarmer.png",
+        "/Users/wingman/Documents/Codex/GrowAMonster-Git-2026-11-12/art/srp-character-variants-v1/previews/AssimilatedAdventurerNefor_ThreeQuarter.png"
+      ],
+      "status": "generated_pending_user_approval"
+    },
+    {
+      "id": "AssimilatedAdventurerKiller",
+      "character": "AssimilatedAdventurer",
+      "role": "Killer",
+      "prompt": "Use case: style-transfer. Asset type: one polished 2D illustrated game collection icon.\nReference 1 is ONLY the current game's illustration style; do not copy its deer anatomy, big eyes, pose, shovel or objects. Reference 2 is the exact 3D subject and costume design to faithfully redraw.\nStyle: match the existing icon: clean bold dark-plum outline, crisp hand-drawn cartoon contours, saturated but harmonious colors, angular cel-shaded volume with soft painted transitions and bright selective highlights. A finished 2D illustration, not a flat silhouette, not a 3D render. Simplify fine geometry for clear reading at 96 pixels while retaining the monster's distinctive anatomy.\nComposition: ONE complete full-body character, centered in a square canvas, comfortable transparent margin on all sides, fully visible extremities. Preserve the source pose and readable three-quarter orientation; do not crop tail, feet, limbs, hat or crown.\nBackground: genuine transparent alpha, no scene, no floor, no ground shadow, no glow halo, no border, no sticker backing, no text, no labels, no logos or watermark.\nBoth hands and all appendages remain EMPTY. No tools, weapons, shields, scepters, carried objects or additional accessories. Preserve the actual costume in reference 2. No realistic gore or added wounds.\nSubject: AssimilatedAdventurer. A tall grey helmet above a neutral rectangular humanoid face with two small dark eyes; split-open red chest with two toothed side flaps and visible spine; exactly two arms, two hands and two walking legs. Preserve the split chest.\nCostume: open dark hood, dark muted clothing and cloak. Match its placement and proportions in reference 2.",
+      "references": [
+        "/Users/wingman/Documents/Codex/GrowAMonster-Git-2026-11-12/art/ui/modal-refresh/DeerFarmer.png",
+        "/Users/wingman/Documents/Codex/GrowAMonster-Git-2026-11-12/art/srp-character-variants-v1/previews/AssimilatedAdventurerKiller_ThreeQuarter.png"
+      ],
+      "status": "generated_pending_user_approval"
+    },
+    {
+      "id": "PrimitiveSummonerFarmer",
+      "character": "PrimitiveSummoner",
+      "role": "Farmer",
+      "prompt": "Use case: style-transfer. Asset type: one polished 2D illustrated game collection icon.\nReference 1 is ONLY the current game's illustration style; do not copy its deer anatomy, big eyes, pose, shovel or objects. Reference 2 is the exact 3D subject and costume design to faithfully redraw.\nStyle: match the existing icon: clean bold dark-plum outline, crisp hand-drawn cartoon contours, saturated but harmonious colors, angular cel-shaded volume with soft painted transitions and bright selective highlights. A finished 2D illustration, not a flat silhouette, not a 3D render. Simplify fine geometry for clear reading at 96 pixels while retaining the monster's distinctive anatomy.\nComposition: ONE complete full-body character, centered in a square canvas, comfortable transparent margin on all sides, fully visible extremities. Preserve the source pose and readable three-quarter orientation; do not crop tail, feet, limbs, hat or crown.\nBackground: genuine transparent alpha, no scene, no floor, no ground shadow, no glow halo, no border, no sticker backing, no text, no labels, no logos or watermark.\nBoth hands and all appendages remain EMPTY. No tools, weapons, shields, scepters, carried objects or additional accessories. Preserve the actual costume in reference 2. No realistic gore or added wounds.\nSubject: PrimitiveSummoner. A compact rectangular flesh mouth with separate upper and lower jaws, long cream teeth and exactly FOUR tall raised angular spiderlike support legs. No human head, no humanoid torso, no round spider abdomen. Headwear sits on the upper jaw.\nCostume: straw hat, open blue-teal work clothing and olive shoulder pieces. Match its placement and proportions in reference 2.",
+      "references": [
+        "/Users/wingman/Documents/Codex/GrowAMonster-Git-2026-11-12/art/ui/modal-refresh/DeerFarmer.png",
+        "/Users/wingman/Documents/Codex/GrowAMonster-Git-2026-11-12/art/srp-character-variants-v1/previews/PrimitiveSummonerFarmer_ThreeQuarter.png"
+      ],
+      "status": "generated_pending_user_approval"
+    },
+    {
+      "id": "PrimitiveSummonerMiner",
+      "character": "PrimitiveSummoner",
+      "role": "Miner",
+      "prompt": "Use case: style-transfer. Asset type: one polished 2D illustrated game collection icon.\nReference 1 is ONLY the current game's illustration style; do not copy its deer anatomy, big eyes, pose, shovel or objects. Reference 2 is the exact 3D subject and costume design to faithfully redraw.\nStyle: match the existing icon: clean bold dark-plum outline, crisp hand-drawn cartoon contours, saturated but harmonious colors, angular cel-shaded volume with soft painted transitions and bright selective highlights. A finished 2D illustration, not a flat silhouette, not a 3D render. Simplify fine geometry for clear reading at 96 pixels while retaining the monster's distinctive anatomy.\nComposition: ONE complete full-body character, centered in a square canvas, comfortable transparent margin on all sides, fully visible extremities. Preserve the source pose and readable three-quarter orientation; do not crop tail, feet, limbs, hat or crown.\nBackground: genuine transparent alpha, no scene, no floor, no ground shadow, no glow halo, no border, no sticker backing, no text, no labels, no logos or watermark.\nBoth hands and all appendages remain EMPTY. No tools, weapons, shields, scepters, carried objects or additional accessories. Preserve the actual costume in reference 2. No realistic gore or added wounds.\nSubject: PrimitiveSummoner. A compact rectangular flesh mouth with separate upper and lower jaws, long cream teeth and exactly FOUR tall raised angular spiderlike support legs. No human head, no humanoid torso, no round spider abdomen. Headwear sits on the upper jaw.\nCostume: ochre hardhat with square headlamp, ochre work clothing and small backpack. Match its placement and proportions in reference 2.",
+      "references": [
+        "/Users/wingman/Documents/Codex/GrowAMonster-Git-2026-11-12/art/ui/modal-refresh/DeerFarmer.png",
+        "/Users/wingman/Documents/Codex/GrowAMonster-Git-2026-11-12/art/srp-character-variants-v1/previews/PrimitiveSummonerMiner_ThreeQuarter.png"
+      ],
+      "status": "generated_pending_user_approval"
+    },
+    {
+      "id": "PrimitiveSummonerKing",
+      "character": "PrimitiveSummoner",
+      "role": "King",
+      "prompt": "Use case: style-transfer. Asset type: one polished 2D illustrated game collection icon.\nReference 1 is ONLY the current game's illustration style; do not copy its deer anatomy, big eyes, pose, shovel or objects. Reference 2 is the exact 3D subject and costume design to faithfully redraw.\nStyle: match the existing icon: clean bold dark-plum outline, crisp hand-drawn cartoon contours, saturated but harmonious colors, angular cel-shaded volume with soft painted transitions and bright selective highlights. A finished 2D illustration, not a flat silhouette, not a 3D render. Simplify fine geometry for clear reading at 96 pixels while retaining the monster's distinctive anatomy.\nComposition: ONE complete full-body character, centered in a square canvas, comfortable transparent margin on all sides, fully visible extremities. Preserve the source pose and readable three-quarter orientation; do not crop tail, feet, limbs, hat or crown.\nBackground: genuine transparent alpha, no scene, no floor, no ground shadow, no glow halo, no border, no sticker backing, no text, no labels, no logos or watermark.\nBoth hands and all appendages remain EMPTY. No tools, weapons, shields, scepters, carried objects or additional accessories. Preserve the actual costume in reference 2. No realistic gore or added wounds.\nSubject: PrimitiveSummoner. A compact rectangular flesh mouth with separate upper and lower jaws, long cream teeth and exactly FOUR tall raised angular spiderlike support legs. No human head, no humanoid torso, no round spider abdomen. Headwear sits on the upper jaw.\nCostume: gold crown with green jewel, purple regal clothing, cream fur collar and burgundy gold-trimmed cape; KING, masculine royal costume. Match its placement and proportions in reference 2.",
+      "references": [
+        "/Users/wingman/Documents/Codex/GrowAMonster-Git-2026-11-12/art/ui/modal-refresh/DeerFarmer.png",
+        "/Users/wingman/Documents/Codex/GrowAMonster-Git-2026-11-12/art/srp-character-variants-v1/previews/PrimitiveSummonerKing_ThreeQuarter.png"
+      ],
+      "status": "generated_pending_user_approval"
+    },
+    {
+      "id": "PrimitiveSummonerKnight",
+      "character": "PrimitiveSummoner",
+      "role": "Knight",
+      "prompt": "Use case: style-transfer. Asset type: one polished 2D illustrated game collection icon.\nReference 1 is ONLY the current game's illustration style; do not copy its deer anatomy, big eyes, pose, shovel or objects. Reference 2 is the exact 3D subject and costume design to faithfully redraw.\nStyle: match the existing icon: clean bold dark-plum outline, crisp hand-drawn cartoon contours, saturated but harmonious colors, angular cel-shaded volume with soft painted transitions and bright selective highlights. A finished 2D illustration, not a flat silhouette, not a 3D render. Simplify fine geometry for clear reading at 96 pixels while retaining the monster's distinctive anatomy.\nComposition: ONE complete full-body character, centered in a square canvas, comfortable transparent margin on all sides, fully visible extremities. Preserve the source pose and readable three-quarter orientation; do not crop tail, feet, limbs, hat or crown.\nBackground: genuine transparent alpha, no scene, no floor, no ground shadow, no glow halo, no border, no sticker backing, no text, no labels, no logos or watermark.\nBoth hands and all appendages remain EMPTY. No tools, weapons, shields, scepters, carried objects or additional accessories. Preserve the actual costume in reference 2. No realistic gore or added wounds.\nSubject: PrimitiveSummoner. A compact rectangular flesh mouth with separate upper and lower jaws, long cream teeth and exactly FOUR tall raised angular spiderlike support legs. No human head, no humanoid torso, no round spider abdomen. Headwear sits on the upper jaw.\nCostume: open blue-steel helmet with small burgundy crest, steel armor panels. Match its placement and proportions in reference 2.",
+      "references": [
+        "/Users/wingman/Documents/Codex/GrowAMonster-Git-2026-11-12/art/ui/modal-refresh/DeerFarmer.png",
+        "/Users/wingman/Documents/Codex/GrowAMonster-Git-2026-11-12/art/srp-character-variants-v1/previews/PrimitiveSummonerKnight_ThreeQuarter.png"
+      ],
+      "status": "generated_pending_user_approval"
+    },
+    {
+      "id": "PrimitiveSummonerNefor",
+      "character": "PrimitiveSummoner",
+      "role": "Nefor",
+      "prompt": "Use case: style-transfer. Asset type: one polished 2D illustrated game collection icon.\nReference 1 is ONLY the current game's illustration style; do not copy its deer anatomy, big eyes, pose, shovel or objects. Reference 2 is the exact 3D subject and costume design to faithfully redraw.\nStyle: match the existing icon: clean bold dark-plum outline, crisp hand-drawn cartoon contours, saturated but harmonious colors, angular cel-shaded volume with soft painted transitions and bright selective highlights. A finished 2D illustration, not a flat silhouette, not a 3D render. Simplify fine geometry for clear reading at 96 pixels while retaining the monster's distinctive anatomy.\nComposition: ONE complete full-body character, centered in a square canvas, comfortable transparent margin on all sides, fully visible extremities. Preserve the source pose and readable three-quarter orientation; do not crop tail, feet, limbs, hat or crown.\nBackground: genuine transparent alpha, no scene, no floor, no ground shadow, no glow halo, no border, no sticker backing, no text, no labels, no logos or watermark.\nBoth hands and all appendages remain EMPTY. No tools, weapons, shields, scepters, carried objects or additional accessories. Preserve the actual costume in reference 2. No realistic gore or added wounds.\nSubject: PrimitiveSummoner. A compact rectangular flesh mouth with separate upper and lower jaws, long cream teeth and exactly FOUR tall raised angular spiderlike support legs. No human head, no humanoid torso, no round spider abdomen. Headwear sits on the upper jaw.\nCostume: purple punk mohawk, dark biker clothing, silver piercings, chains and small spikes. Match its placement and proportions in reference 2.",
+      "references": [
+        "/Users/wingman/Documents/Codex/GrowAMonster-Git-2026-11-12/art/ui/modal-refresh/DeerFarmer.png",
+        "/Users/wingman/Documents/Codex/GrowAMonster-Git-2026-11-12/art/srp-character-variants-v1/previews/PrimitiveSummonerNefor_ThreeQuarter.png"
+      ],
+      "status": "generated_pending_user_approval"
+    },
+    {
+      "id": "PrimitiveSummonerKiller",
+      "character": "PrimitiveSummoner",
+      "role": "Killer",
+      "prompt": "Use case: style-transfer. Asset type: one polished 2D illustrated game collection icon.\nReference 1 is ONLY the current game's illustration style; do not copy its deer anatomy, big eyes, pose, shovel or objects. Reference 2 is the exact 3D subject and costume design to faithfully redraw.\nStyle: match the existing icon: clean bold dark-plum outline, crisp hand-drawn cartoon contours, saturated but harmonious colors, angular cel-shaded volume with soft painted transitions and bright selective highlights. A finished 2D illustration, not a flat silhouette, not a 3D render. Simplify fine geometry for clear reading at 96 pixels while retaining the monster's distinctive anatomy.\nComposition: ONE complete full-body character, centered in a square canvas, comfortable transparent margin on all sides, fully visible extremities. Preserve the source pose and readable three-quarter orientation; do not crop tail, feet, limbs, hat or crown.\nBackground: genuine transparent alpha, no scene, no floor, no ground shadow, no glow halo, no border, no sticker backing, no text, no labels, no logos or watermark.\nBoth hands and all appendages remain EMPTY. No tools, weapons, shields, scepters, carried objects or additional accessories. Preserve the actual costume in reference 2. No realistic gore or added wounds.\nSubject: PrimitiveSummoner. A compact rectangular flesh mouth with separate upper and lower jaws, long cream teeth and exactly FOUR tall raised angular spiderlike support legs. No human head, no humanoid torso, no round spider abdomen. Headwear sits on the upper jaw.\nCostume: open dark hood, dark muted clothing and cloak. Match its placement and proportions in reference 2.",
+      "references": [
+        "/Users/wingman/Documents/Codex/GrowAMonster-Git-2026-11-12/art/ui/modal-refresh/DeerFarmer.png",
+        "/Users/wingman/Documents/Codex/GrowAMonster-Git-2026-11-12/art/srp-character-variants-v1/previews/PrimitiveSummonerKiller_ThreeQuarter.png"
+      ],
+      "status": "generated_pending_user_approval"
+    },
+    {
+      "id": "AdaptedVisceraFarmer",
+      "character": "AdaptedViscera",
+      "role": "Farmer",
+      "prompt": "Use case: style-transfer. Asset type: one polished 2D illustrated game collection icon.\nReference 1 is ONLY the current game's illustration style; do not copy its deer anatomy, big eyes, pose, shovel or objects. Reference 2 is the exact 3D subject and costume design to faithfully redraw.\nStyle: match the existing icon: clean bold dark-plum outline, crisp hand-drawn cartoon contours, saturated but harmonious colors, angular cel-shaded volume with soft painted transitions and bright selective highlights. A finished 2D illustration, not a flat silhouette, not a 3D render. Simplify fine geometry for clear reading at 96 pixels while retaining the monster's distinctive anatomy.\nComposition: ONE complete full-body character, centered in a square canvas, comfortable transparent margin on all sides, fully visible extremities. Preserve the source pose and readable three-quarter orientation; do not crop tail, feet, limbs, hat or crown.\nBackground: genuine transparent alpha, no scene, no floor, no ground shadow, no glow halo, no border, no sticker backing, no text, no labels, no logos or watermark.\nBoth hands and all appendages remain EMPTY. No tools, weapons, shields, scepters, carried objects or additional accessories. Preserve the actual costume in reference 2. No realistic gore or added wounds.\nSubject: AdaptedViscera. A thick pale and burgundy nautilus-like shell around an open vertical dark blue-grey mouth; exactly EIGHT long segmented tooth-lined appendages radiating forward from the mouth and SIX thin jointed walking support legs. Do not confuse the eight feeding appendages with the six walking legs. Preserve the long spidery silhouette.\nCostume: straw hat, open blue-teal work clothing and olive shoulder pieces. Match its placement and proportions in reference 2.",
+      "references": [
+        "/Users/wingman/Documents/Codex/GrowAMonster-Git-2026-11-12/art/ui/modal-refresh/DeerFarmer.png",
+        "/Users/wingman/Documents/Codex/GrowAMonster-Git-2026-11-12/art/srp-character-variants-v1/previews/AdaptedVisceraFarmer_ThreeQuarter.png"
+      ],
+      "status": "generated_pending_user_approval"
+    },
+    {
+      "id": "AdaptedVisceraMiner",
+      "character": "AdaptedViscera",
+      "role": "Miner",
+      "prompt": "Use case: style-transfer. Asset type: one polished 2D illustrated game collection icon.\nReference 1 is ONLY the current game's illustration style; do not copy its deer anatomy, big eyes, pose, shovel or objects. Reference 2 is the exact 3D subject and costume design to faithfully redraw.\nStyle: match the existing icon: clean bold dark-plum outline, crisp hand-drawn cartoon contours, saturated but harmonious colors, angular cel-shaded volume with soft painted transitions and bright selective highlights. A finished 2D illustration, not a flat silhouette, not a 3D render. Simplify fine geometry for clear reading at 96 pixels while retaining the monster's distinctive anatomy.\nComposition: ONE complete full-body character, centered in a square canvas, comfortable transparent margin on all sides, fully visible extremities. Preserve the source pose and readable three-quarter orientation; do not crop tail, feet, limbs, hat or crown.\nBackground: genuine transparent alpha, no scene, no floor, no ground shadow, no glow halo, no border, no sticker backing, no text, no labels, no logos or watermark.\nBoth hands and all appendages remain EMPTY. No tools, weapons, shields, scepters, carried objects or additional accessories. Preserve the actual costume in reference 2. No realistic gore or added wounds.\nSubject: AdaptedViscera. A thick pale and burgundy nautilus-like shell around an open vertical dark blue-grey mouth; exactly EIGHT long segmented tooth-lined appendages radiating forward from the mouth and SIX thin jointed walking support legs. Do not confuse the eight feeding appendages with the six walking legs. Preserve the long spidery silhouette.\nCostume: ochre hardhat with square headlamp, ochre work clothing and small backpack. Match its placement and proportions in reference 2.",
+      "references": [
+        "/Users/wingman/Documents/Codex/GrowAMonster-Git-2026-11-12/art/ui/modal-refresh/DeerFarmer.png",
+        "/Users/wingman/Documents/Codex/GrowAMonster-Git-2026-11-12/art/srp-character-variants-v1/previews/AdaptedVisceraMiner_ThreeQuarter.png"
+      ],
+      "status": "generated_pending_user_approval"
+    },
+    {
+      "id": "AdaptedVisceraKing",
+      "character": "AdaptedViscera",
+      "role": "King",
+      "prompt": "Use case: style-transfer. Asset type: one polished 2D illustrated game collection icon.\nReference 1 is ONLY the current game's illustration style; do not copy its deer anatomy, big eyes, pose, shovel or objects. Reference 2 is the exact 3D subject and costume design to faithfully redraw.\nStyle: match the existing icon: clean bold dark-plum outline, crisp hand-drawn cartoon contours, saturated but harmonious colors, angular cel-shaded volume with soft painted transitions and bright selective highlights. A finished 2D illustration, not a flat silhouette, not a 3D render. Simplify fine geometry for clear reading at 96 pixels while retaining the monster's distinctive anatomy.\nComposition: ONE complete full-body character, centered in a square canvas, comfortable transparent margin on all sides, fully visible extremities. Preserve the source pose and readable three-quarter orientation; do not crop tail, feet, limbs, hat or crown.\nBackground: genuine transparent alpha, no scene, no floor, no ground shadow, no glow halo, no border, no sticker backing, no text, no labels, no logos or watermark.\nBoth hands and all appendages remain EMPTY. No tools, weapons, shields, scepters, carried objects or additional accessories. Preserve the actual costume in reference 2. No realistic gore or added wounds.\nSubject: AdaptedViscera. A thick pale and burgundy nautilus-like shell around an open vertical dark blue-grey mouth; exactly EIGHT long segmented tooth-lined appendages radiating forward from the mouth and SIX thin jointed walking support legs. Do not confuse the eight feeding appendages with the six walking legs. Preserve the long spidery silhouette.\nCostume: gold crown with green jewel, purple regal clothing, cream fur collar and burgundy gold-trimmed cape; KING, masculine royal costume. Match its placement and proportions in reference 2.",
+      "references": [
+        "/Users/wingman/Documents/Codex/GrowAMonster-Git-2026-11-12/art/ui/modal-refresh/DeerFarmer.png",
+        "/Users/wingman/Documents/Codex/GrowAMonster-Git-2026-11-12/art/srp-character-variants-v1/previews/AdaptedVisceraKing_ThreeQuarter.png"
+      ],
+      "status": "generated_pending_user_approval"
+    },
+    {
+      "id": "AdaptedVisceraKnight",
+      "character": "AdaptedViscera",
+      "role": "Knight",
+      "prompt": "Use case: style-transfer. Asset type: one polished 2D illustrated game collection icon.\nReference 1 is ONLY the current game's illustration style; do not copy its deer anatomy, big eyes, pose, shovel or objects. Reference 2 is the exact 3D subject and costume design to faithfully redraw.\nStyle: match the existing icon: clean bold dark-plum outline, crisp hand-drawn cartoon contours, saturated but harmonious colors, angular cel-shaded volume with soft painted transitions and bright selective highlights. A finished 2D illustration, not a flat silhouette, not a 3D render. Simplify fine geometry for clear reading at 96 pixels while retaining the monster's distinctive anatomy.\nComposition: ONE complete full-body character, centered in a square canvas, comfortable transparent margin on all sides, fully visible extremities. Preserve the source pose and readable three-quarter orientation; do not crop tail, feet, limbs, hat or crown.\nBackground: genuine transparent alpha, no scene, no floor, no ground shadow, no glow halo, no border, no sticker backing, no text, no labels, no logos or watermark.\nBoth hands and all appendages remain EMPTY. No tools, weapons, shields, scepters, carried objects or additional accessories. Preserve the actual costume in reference 2. No realistic gore or added wounds.\nSubject: AdaptedViscera. A thick pale and burgundy nautilus-like shell around an open vertical dark blue-grey mouth; exactly EIGHT long segmented tooth-lined appendages radiating forward from the mouth and SIX thin jointed walking support legs. Do not confuse the eight feeding appendages with the six walking legs. Preserve the long spidery silhouette.\nCostume: open blue-steel helmet with small burgundy crest, steel armor panels. Match its placement and proportions in reference 2.",
+      "references": [
+        "/Users/wingman/Documents/Codex/GrowAMonster-Git-2026-11-12/art/ui/modal-refresh/DeerFarmer.png",
+        "/Users/wingman/Documents/Codex/GrowAMonster-Git-2026-11-12/art/srp-character-variants-v1/previews/AdaptedVisceraKnight_ThreeQuarter.png"
+      ],
+      "status": "generated_pending_user_approval"
+    },
+    {
+      "id": "AdaptedVisceraNefor",
+      "character": "AdaptedViscera",
+      "role": "Nefor",
+      "prompt": "Use case: style-transfer. Asset type: one polished 2D illustrated game collection icon.\nReference 1 is ONLY the current game's illustration style; do not copy its deer anatomy, big eyes, pose, shovel or objects. Reference 2 is the exact 3D subject and costume design to faithfully redraw.\nStyle: match the existing icon: clean bold dark-plum outline, crisp hand-drawn cartoon contours, saturated but harmonious colors, angular cel-shaded volume with soft painted transitions and bright selective highlights. A finished 2D illustration, not a flat silhouette, not a 3D render. Simplify fine geometry for clear reading at 96 pixels while retaining the monster's distinctive anatomy.\nComposition: ONE complete full-body character, centered in a square canvas, comfortable transparent margin on all sides, fully visible extremities. Preserve the source pose and readable three-quarter orientation; do not crop tail, feet, limbs, hat or crown.\nBackground: genuine transparent alpha, no scene, no floor, no ground shadow, no glow halo, no border, no sticker backing, no text, no labels, no logos or watermark.\nBoth hands and all appendages remain EMPTY. No tools, weapons, shields, scepters, carried objects or additional accessories. Preserve the actual costume in reference 2. No realistic gore or added wounds.\nSubject: AdaptedViscera. A thick pale and burgundy nautilus-like shell around an open vertical dark blue-grey mouth; exactly EIGHT long segmented tooth-lined appendages radiating forward from the mouth and SIX thin jointed walking support legs. Do not confuse the eight feeding appendages with the six walking legs. Preserve the long spidery silhouette.\nCostume: purple punk mohawk, dark biker clothing, silver piercings, chains and small spikes. Match its placement and proportions in reference 2.",
+      "references": [
+        "/Users/wingman/Documents/Codex/GrowAMonster-Git-2026-11-12/art/ui/modal-refresh/DeerFarmer.png",
+        "/Users/wingman/Documents/Codex/GrowAMonster-Git-2026-11-12/art/srp-character-variants-v1/previews/AdaptedVisceraNefor_ThreeQuarter.png"
+      ],
+      "status": "generated_pending_user_approval"
+    },
+    {
+      "id": "AdaptedVisceraKiller",
+      "character": "AdaptedViscera",
+      "role": "Killer",
+      "prompt": "Use case: style-transfer. Asset type: one polished 2D illustrated game collection icon.\nReference 1 is ONLY the current game's illustration style; do not copy its deer anatomy, big eyes, pose, shovel or objects. Reference 2 is the exact 3D subject and costume design to faithfully redraw.\nStyle: match the existing icon: clean bold dark-plum outline, crisp hand-drawn cartoon contours, saturated but harmonious colors, angular cel-shaded volume with soft painted transitions and bright selective highlights. A finished 2D illustration, not a flat silhouette, not a 3D render. Simplify fine geometry for clear reading at 96 pixels while retaining the monster's distinctive anatomy.\nComposition: ONE complete full-body character, centered in a square canvas, comfortable transparent margin on all sides, fully visible extremities. Preserve the source pose and readable three-quarter orientation; do not crop tail, feet, limbs, hat or crown.\nBackground: genuine transparent alpha, no scene, no floor, no ground shadow, no glow halo, no border, no sticker backing, no text, no labels, no logos or watermark.\nBoth hands and all appendages remain EMPTY. No tools, weapons, shields, scepters, carried objects or additional accessories. Preserve the actual costume in reference 2. No realistic gore or added wounds.\nSubject: AdaptedViscera. A thick pale and burgundy nautilus-like shell around an open vertical dark blue-grey mouth; exactly EIGHT long segmented tooth-lined appendages radiating forward from the mouth and SIX thin jointed walking support legs. Do not confuse the eight feeding appendages with the six walking legs. Preserve the long spidery silhouette.\nCostume: open dark hood, dark muted clothing and cloak. Match its placement and proportions in reference 2.",
+      "references": [
+        "/Users/wingman/Documents/Codex/GrowAMonster-Git-2026-11-12/art/ui/modal-refresh/DeerFarmer.png",
+        "/Users/wingman/Documents/Codex/GrowAMonster-Git-2026-11-12/art/srp-character-variants-v1/previews/AdaptedVisceraKiller_ThreeQuarter.png"
+      ],
+      "status": "generated_pending_user_approval"
+    }
+  ]
+}

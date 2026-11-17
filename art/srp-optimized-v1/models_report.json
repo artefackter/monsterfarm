@@ -1,0 +1,630 @@
+{
+  "models": [
+    {
+      "id": "DredgeFarmer",
+      "character": "Dredge",
+      "role": "Farmer",
+      "source": "/Users/wingman/Documents/Codex/GrowAMonster-Git-2026-11-12/art/srp-character-variants-v1/models/DredgeFarmer.glb",
+      "output": "models/DredgeFarmer.glb",
+      "source_sha256": "4aee30551d6f8787d6f3bde6fecdf8f16b1a87543f5a3f4a095fae712e3f2c1d",
+      "output_sha256": "c5d7909c32b6ad1594408f54240fd62d03b34a8e02249a2b4237373125936db9",
+      "stats": {
+        "input_bytes": 1093384,
+        "output_bytes": 871428,
+        "input_vertices": 18502,
+        "output_vertices": 18502,
+        "triangles": 7994,
+        "bones": 29,
+        "meshes": 1,
+        "materials": 1,
+        "animation_clips": 0,
+        "max_linear_color_error": 7.626171914965063e-06,
+        "max_weight_error": 7.629510948348184e-06,
+        "extensions_preserved": [
+          "KHR_materials_specular"
+        ],
+        "geometry_changed": false
+      }
+    },
+    {
+      "id": "DredgeMiner",
+      "character": "Dredge",
+      "role": "Miner",
+      "source": "/Users/wingman/Documents/Codex/GrowAMonster-Git-2026-11-12/art/srp-character-variants-v1/models/DredgeMiner.glb",
+      "output": "models/DredgeMiner.glb",
+      "source_sha256": "2a6696063a36b926f2025b7bd8c97f6c366e28dda0fa0ce92d20e2a0bbbf967e",
+      "output_sha256": "faa3cb4942a550eaf3e6c8d9792d874a5f00d01c8179c124c4f89d2016bab2cd",
+      "stats": {
+        "input_bytes": 1021836,
+        "output_bytes": 814572,
+        "input_vertices": 17278,
+        "output_vertices": 17278,
+        "triangles": 7494,
+        "bones": 29,
+        "meshes": 1,
+        "materials": 1,
+        "animation_clips": 0,
+        "max_linear_color_error": 7.626171914965063e-06,
+        "max_weight_error": 7.629510948348184e-06,
+        "extensions_preserved": [
+          "KHR_materials_specular"
+        ],
+        "geometry_changed": false
+      }
+    },
+    {
+      "id": "DredgeKing",
+      "character": "Dredge",
+      "role": "King",
+      "source": "/Users/wingman/Documents/Codex/GrowAMonster-Git-2026-11-12/art/srp-character-variants-v1/models/DredgeKing.glb",
+      "output": "models/DredgeKing.glb",
+      "source_sha256": "ae7a232c626b6355f043eae1b9ed251bab55d1c278039ed44107a08d002d94da",
+      "output_sha256": "8bc4bf56b01d8024a1bea4761b93a3b1c0d69d7bb469089e0ae6f287769e6861",
+      "stats": {
+        "input_bytes": 1108340,
+        "output_bytes": 883312,
+        "input_vertices": 18758,
+        "output_vertices": 18758,
+        "triangles": 8098,
+        "bones": 29,
+        "meshes": 1,
+        "materials": 1,
+        "animation_clips": 0,
+        "max_linear_color_error": 7.626171914965063e-06,
+        "max_weight_error": 7.629510948348184e-06,
+        "extensions_preserved": [
+          "KHR_materials_specular"
+        ],
+        "geometry_changed": false
+      }
+    },
+    {
+      "id": "DredgeKnight",
+      "character": "Dredge",
+      "role": "Knight",
+      "source": "/Users/wingman/Documents/Codex/GrowAMonster-Git-2026-11-12/art/srp-character-variants-v1/models/DredgeKnight.glb",
+      "output": "models/DredgeKnight.glb",
+      "source_sha256": "959895ea898b18825d03cd51a43c55040d75ebe67a30f3fe4f0310d6975e9241",
+      "output_sha256": "2c20ce3364d41957109b07fa7fbf276b60dd9036428d86cdd389f2759267d8f8",
+      "stats": {
+        "input_bytes": 1027480,
+        "output_bytes": 819060,
+        "input_vertices": 17374,
+        "output_vertices": 17374,
+        "triangles": 7538,
+        "bones": 29,
+        "meshes": 1,
+        "materials": 1,
+        "animation_clips": 0,
+        "max_linear_color_error": 7.626171914965063e-06,
+        "max_weight_error": 7.629510948348184e-06,
+        "extensions_preserved": [
+          "KHR_materials_specular"
+        ],
+        "geometry_changed": false
+      }
+    },
+    {
+      "id": "DredgeNefor",
+      "character": "Dredge",
+      "role": "Nefor",
+      "source": "/Users/wingman/Documents/Codex/GrowAMonster-Git-2026-11-12/art/srp-character-variants-v1/models/DredgeNefor.glb",
+      "output": "models/DredgeNefor.glb",
+      "source_sha256": "f0e9c266faf64e97e92d3bfb384520c8fd743c56033aae0335edd8e6026382b3",
+      "output_sha256": "5a7ac9b2b9ca332feb8c36fdedf28fb73fd2ad4000542c68ce9b72e2cf3f9f47",
+      "stats": {
+        "input_bytes": 1264860,
+        "output_bytes": 1007340,
+        "input_vertices": 21466,
+        "output_vertices": 21466,
+        "triangles": 8910,
+        "bones": 29,
+        "meshes": 1,
+        "materials": 1,
+        "animation_clips": 0,
+        "max_linear_color_error": 7.626171914965063e-06,
+        "max_weight_error": 7.629510948348184e-06,
+        "extensions_preserved": [
+          "KHR_materials_specular"
+        ],
+        "geometry_changed": false
+      }
+    },
+    {
+      "id": "DredgeKiller",
+      "character": "Dredge",
+      "role": "Killer",
+      "source": "/Users/wingman/Documents/Codex/GrowAMonster-Git-2026-11-12/art/srp-character-variants-v1/models/DredgeKiller.glb",
+      "output": "models/DredgeKiller.glb",
+      "source_sha256": "f868f4be75830256e2893b45d22896246689c99bbae56d8d945cee438ef1b861",
+      "output_sha256": "a2c2a05d0943fe5250d58ccd6900b26b0bb8ae149b3f7f9e19682eb6107bdf37",
+      "stats": {
+        "input_bytes": 1020488,
+        "output_bytes": 813484,
+        "input_vertices": 17256,
+        "output_vertices": 17256,
+        "triangles": 7474,
+        "bones": 29,
+        "meshes": 1,
+        "materials": 1,
+        "animation_clips": 0,
+        "max_linear_color_error": 7.626171914965063e-06,
+        "max_weight_error": 7.629510948348184e-06,
+        "extensions_preserved": [
+          "KHR_materials_specular"
+        ],
+        "geometry_changed": false
+      }
+    },
+    {
+      "id": "AssimilatedAdventurerFarmer",
+      "character": "AssimilatedAdventurer",
+      "role": "Farmer",
+      "source": "/Users/wingman/Documents/Codex/GrowAMonster-Git-2026-11-12/art/srp-character-variants-v1/models/AssimilatedAdventurerFarmer.glb",
+      "output": "models/AssimilatedAdventurerFarmer.glb",
+      "source_sha256": "0b213a88d0b85a41cd78b3e77f44fdcfda346762fc74c502dd2265e27e944c47",
+      "output_sha256": "74d6bc1641cabd0289ff2dcdf4c50c5992c3f4766883c1e5b87ef733a30e92ac",
+      "stats": {
+        "input_bytes": 473228,
+        "output_bytes": 378044,
+        "input_vertices": 7938,
+        "output_vertices": 7938,
+        "triangles": 3540,
+        "bones": 21,
+        "meshes": 1,
+        "materials": 1,
+        "animation_clips": 0,
+        "max_linear_color_error": 7.626171914965063e-06,
+        "max_weight_error": 0.0,
+        "extensions_preserved": [
+          "KHR_materials_specular"
+        ],
+        "geometry_changed": false
+      }
+    },
+    {
+      "id": "AssimilatedAdventurerMiner",
+      "character": "AssimilatedAdventurer",
+      "role": "Miner",
+      "source": "/Users/wingman/Documents/Codex/GrowAMonster-Git-2026-11-12/art/srp-character-variants-v1/models/AssimilatedAdventurerMiner.glb",
+      "output": "models/AssimilatedAdventurerMiner.glb",
+      "source_sha256": "92b1fdb4e2663a439d2459c286b369ac2ca6593074fbac217421f35d045e6df6",
+      "output_sha256": "d88a7ce9a201a7a687a988d90aee9266693f9c061312664ee4a2957877ff213e",
+      "stats": {
+        "input_bytes": 397892,
+        "output_bytes": 318184,
+        "input_vertices": 6648,
+        "output_vertices": 6648,
+        "triangles": 3024,
+        "bones": 21,
+        "meshes": 1,
+        "materials": 1,
+        "animation_clips": 0,
+        "max_linear_color_error": 7.626171914965063e-06,
+        "max_weight_error": 0.0,
+        "extensions_preserved": [
+          "KHR_materials_specular"
+        ],
+        "geometry_changed": false
+      }
+    },
+    {
+      "id": "AssimilatedAdventurerKing",
+      "character": "AssimilatedAdventurer",
+      "role": "King",
+      "source": "/Users/wingman/Documents/Codex/GrowAMonster-Git-2026-11-12/art/srp-character-variants-v1/models/AssimilatedAdventurerKing.glb",
+      "output": "models/AssimilatedAdventurerKing.glb",
+      "source_sha256": "1329210c4f9cf6130c2c2d536948e6f1380665c00532928c01bc387fafdf3b02",
+      "output_sha256": "ecfdb0d65a1ac62fafe13826009482022456ddb7852c6e61d951f0779a59460a",
+      "stats": {
+        "input_bytes": 495928,
+        "output_bytes": 396136,
+        "input_vertices": 8322,
+        "output_vertices": 8322,
+        "triangles": 3740,
+        "bones": 21,
+        "meshes": 1,
+        "materials": 1,
+        "animation_clips": 0,
+        "max_linear_color_error": 7.626171914965063e-06,
+        "max_weight_error": 0.0,
+        "extensions_preserved": [
+          "KHR_materials_specular"
+        ],
+        "geometry_changed": false
+      }
+    },
+    {
+      "id": "AssimilatedAdventurerKnight",
+      "character": "AssimilatedAdventurer",
+      "role": "Knight",
+      "source": "/Users/wingman/Documents/Codex/GrowAMonster-Git-2026-11-12/art/srp-character-variants-v1/models/AssimilatedAdventurerKnight.glb",
+      "output": "models/AssimilatedAdventurerKnight.glb",
+      "source_sha256": "f4a167ef351eaf24d6724c4052b1b6713ef0f081402f47f557fe8204bd4826a7",
+      "output_sha256": "9e5cef29d3bff0e312deee732f537ff8347d50c56efc28d5f27b186dd7cb3a5a",
+      "stats": {
+        "input_bytes": 405644,
+        "output_bytes": 324352,
+        "input_vertices": 6780,
+        "output_vertices": 6780,
+        "triangles": 3084,
+        "bones": 21,
+        "meshes": 1,
+        "materials": 1,
+        "animation_clips": 0,
+        "max_linear_color_error": 7.626171914965063e-06,
+        "max_weight_error": 0.0,
+        "extensions_preserved": [
+          "KHR_materials_specular"
+        ],
+        "geometry_changed": false
+      }
+    },
+    {
+      "id": "AssimilatedAdventurerNefor",
+      "character": "AssimilatedAdventurer",
+      "role": "Nefor",
+      "source": "/Users/wingman/Documents/Codex/GrowAMonster-Git-2026-11-12/art/srp-character-variants-v1/models/AssimilatedAdventurerNefor.glb",
+      "output": "models/AssimilatedAdventurerNefor.glb",
+      "source_sha256": "f7e89843328ae56c0685375c64468909c7d46455b3e7fdae12b3f50480916385",
+      "output_sha256": "d4fd677fd21e2ccc1558b6321419a80f4bf85ae85e42d84843550d18add0fe32",
+      "stats": {
+        "input_bytes": 642868,
+        "output_bytes": 512508,
+        "input_vertices": 10869,
+        "output_vertices": 10869,
+        "triangles": 4456,
+        "bones": 21,
+        "meshes": 1,
+        "materials": 1,
+        "animation_clips": 0,
+        "max_linear_color_error": 7.626171914965063e-06,
+        "max_weight_error": 0.0,
+        "extensions_preserved": [
+          "KHR_materials_specular"
+        ],
+        "geometry_changed": false
+      }
+    },
+    {
+      "id": "AssimilatedAdventurerKiller",
+      "character": "AssimilatedAdventurer",
+      "role": "Killer",
+      "source": "/Users/wingman/Documents/Codex/GrowAMonster-Git-2026-11-12/art/srp-character-variants-v1/models/AssimilatedAdventurerKiller.glb",
+      "output": "models/AssimilatedAdventurerKiller.glb",
+      "source_sha256": "b1d655e0e41dceff47fc8b3b07e1975be8112b18674d50b8dbd8ff4e8d3db38e",
+      "output_sha256": "e595bebcd4e9ed3fb6083fe542ce90aa1454e6f8c4e1a7d0c15069599866d3cc",
+      "stats": {
+        "input_bytes": 412636,
+        "output_bytes": 329932,
+        "input_vertices": 6898,
+        "output_vertices": 6898,
+        "triangles": 3148,
+        "bones": 21,
+        "meshes": 1,
+        "materials": 1,
+        "animation_clips": 0,
+        "max_linear_color_error": 7.626171914965063e-06,
+        "max_weight_error": 0.0,
+        "extensions_preserved": [
+          "KHR_materials_specular"
+        ],
+        "geometry_changed": false
+      }
+    },
+    {
+      "id": "PrimitiveSummonerFarmer",
+      "character": "PrimitiveSummoner",
+      "role": "Farmer",
+      "source": "/Users/wingman/Documents/Codex/GrowAMonster-Git-2026-11-12/art/srp-character-variants-v1/models/PrimitiveSummonerFarmer.glb",
+      "output": "models/PrimitiveSummonerFarmer.glb",
+      "source_sha256": "83e9c865e71bd96d246e34c2c35465b25492c3007759b597a935085532d54698",
+      "output_sha256": "1412e6021ced79f11ac0123bb2da13b4a735a8d7761b6c6bac59e8682e234b4b",
+      "stats": {
+        "input_bytes": 467800,
+        "output_bytes": 373380,
+        "input_vertices": 7874,
+        "output_vertices": 7874,
+        "triangles": 3456,
+        "bones": 16,
+        "meshes": 1,
+        "materials": 1,
+        "animation_clips": 0,
+        "max_linear_color_error": 7.626171914965063e-06,
+        "max_weight_error": 0.0,
+        "extensions_preserved": [
+          "KHR_materials_specular"
+        ],
+        "geometry_changed": false
+      }
+    },
+    {
+      "id": "PrimitiveSummonerMiner",
+      "character": "PrimitiveSummoner",
+      "role": "Miner",
+      "source": "/Users/wingman/Documents/Codex/GrowAMonster-Git-2026-11-12/art/srp-character-variants-v1/models/PrimitiveSummonerMiner.glb",
+      "output": "models/PrimitiveSummonerMiner.glb",
+      "source_sha256": "e3af5872432c832004d751e865d483c89ec1546b6e5b6e512c468c5b5a4a334e",
+      "output_sha256": "beffcfed58045febd480cb00d7ed36d60442c2a0f9d27e706e25dd92018d5da9",
+      "stats": {
+        "input_bytes": 402156,
+        "output_bytes": 321272,
+        "input_vertices": 6746,
+        "output_vertices": 6746,
+        "triangles": 3044,
+        "bones": 16,
+        "meshes": 1,
+        "materials": 1,
+        "animation_clips": 0,
+        "max_linear_color_error": 7.626171914965063e-06,
+        "max_weight_error": 0.0,
+        "extensions_preserved": [
+          "KHR_materials_specular"
+        ],
+        "geometry_changed": false
+      }
+    },
+    {
+      "id": "PrimitiveSummonerKing",
+      "character": "PrimitiveSummoner",
+      "role": "King",
+      "source": "/Users/wingman/Documents/Codex/GrowAMonster-Git-2026-11-12/art/srp-character-variants-v1/models/PrimitiveSummonerKing.glb",
+      "output": "models/PrimitiveSummonerKing.glb",
+      "source_sha256": "c4c7ff700797370f3b775027f46ada9b9b3cf446b06a7a001163aadcbd1c9663",
+      "output_sha256": "d7691afda47adfc0e702ffa5490d3091069685a7b9b5f1d3e5aa643516a02aaa",
+      "stats": {
+        "input_bytes": 528076,
+        "output_bytes": 421396,
+        "input_vertices": 8896,
+        "output_vertices": 8896,
+        "triangles": 3964,
+        "bones": 16,
+        "meshes": 1,
+        "materials": 1,
+        "animation_clips": 0,
+        "max_linear_color_error": 7.626171914965063e-06,
+        "max_weight_error": 0.0,
+        "extensions_preserved": [
+          "KHR_materials_specular"
+        ],
+        "geometry_changed": false
+      }
+    },
+    {
+      "id": "PrimitiveSummonerKnight",
+      "character": "PrimitiveSummoner",
+      "role": "Knight",
+      "source": "/Users/wingman/Documents/Codex/GrowAMonster-Git-2026-11-12/art/srp-character-variants-v1/models/PrimitiveSummonerKnight.glb",
+      "output": "models/PrimitiveSummonerKnight.glb",
+      "source_sha256": "9df51c72cbd47658a47f1dfa6815f771083717b4795946706ab0fda0418083e8",
+      "output_sha256": "68d7dc782016f94e01d000192480fa9bd6aa5a6651952793f3b7a43f927c53b8",
+      "stats": {
+        "input_bytes": 407796,
+        "output_bytes": 325764,
+        "input_vertices": 6842,
+        "output_vertices": 6842,
+        "triangles": 3088,
+        "bones": 16,
+        "meshes": 1,
+        "materials": 1,
+        "animation_clips": 0,
+        "max_linear_color_error": 7.626171914965063e-06,
+        "max_weight_error": 0.0,
+        "extensions_preserved": [
+          "KHR_materials_specular"
+        ],
+        "geometry_changed": false
+      }
+    },
+    {
+      "id": "PrimitiveSummonerNefor",
+      "character": "PrimitiveSummoner",
+      "role": "Nefor",
+      "source": "/Users/wingman/Documents/Codex/GrowAMonster-Git-2026-11-12/art/srp-character-variants-v1/models/PrimitiveSummonerNefor.glb",
+      "output": "models/PrimitiveSummonerNefor.glb",
+      "source_sha256": "048b219310bd7f79a857636ad73a9098cf823afb0d68d0818978dc1ecea7b0de",
+      "output_sha256": "f0c6c6a02ebc0d07eea9bf2f58a967b772cda12553899b3513fa85f17ba38dd5",
+      "stats": {
+        "input_bytes": 646916,
+        "output_bytes": 515420,
+        "input_vertices": 10964,
+        "output_vertices": 10964,
+        "triangles": 4468,
+        "bones": 16,
+        "meshes": 1,
+        "materials": 1,
+        "animation_clips": 0,
+        "max_linear_color_error": 7.626171914965063e-06,
+        "max_weight_error": 0.0,
+        "extensions_preserved": [
+          "KHR_materials_specular"
+        ],
+        "geometry_changed": false
+      }
+    },
+    {
+      "id": "PrimitiveSummonerKiller",
+      "character": "PrimitiveSummoner",
+      "role": "Killer",
+      "source": "/Users/wingman/Documents/Codex/GrowAMonster-Git-2026-11-12/art/srp-character-variants-v1/models/PrimitiveSummonerKiller.glb",
+      "output": "models/PrimitiveSummonerKiller.glb",
+      "source_sha256": "2a743fc01fd11372968df43e245b74760695f70f2c4beff4f78e4917ec6e54fe",
+      "output_sha256": "81f1ea4354a6803b2b99dafde577722cab6fe136b549fe4dad73a63675192cdc",
+      "stats": {
+        "input_bytes": 411012,
+        "output_bytes": 328260,
+        "input_vertices": 6902,
+        "output_vertices": 6902,
+        "triangles": 3064,
+        "bones": 16,
+        "meshes": 1,
+        "materials": 1,
+        "animation_clips": 0,
+        "max_linear_color_error": 7.626171914965063e-06,
+        "max_weight_error": 0.0,
+        "extensions_preserved": [
+          "KHR_materials_specular"
+        ],
+        "geometry_changed": false
+      }
+    },
+    {
+      "id": "AdaptedVisceraFarmer",
+      "character": "AdaptedViscera",
+      "role": "Farmer",
+      "source": "/Users/wingman/Documents/Codex/GrowAMonster-Git-2026-11-12/art/srp-character-variants-v1/models/AdaptedVisceraFarmer.glb",
+      "output": "models/AdaptedVisceraFarmer.glb",
+      "source_sha256": "d7a2b26697d35693d09d2cc1df5cc97a4613ed37bd0f981e88e2426d4029c331",
+      "output_sha256": "4f1c088771940a2de293eed398d883c4d4adef95aa11ee2f71ca4ccd163ea682",
+      "stats": {
+        "input_bytes": 1533828,
+        "output_bytes": 1222392,
+        "input_vertices": 25959,
+        "output_vertices": 25959,
+        "triangles": 10704,
+        "bones": 46,
+        "meshes": 1,
+        "materials": 1,
+        "animation_clips": 0,
+        "max_linear_color_error": 7.626171914965063e-06,
+        "max_weight_error": 0.0,
+        "extensions_preserved": [
+          "KHR_materials_specular"
+        ],
+        "geometry_changed": false
+      }
+    },
+    {
+      "id": "AdaptedVisceraMiner",
+      "character": "AdaptedViscera",
+      "role": "Miner",
+      "source": "/Users/wingman/Documents/Codex/GrowAMonster-Git-2026-11-12/art/srp-character-variants-v1/models/AdaptedVisceraMiner.glb",
+      "output": "models/AdaptedVisceraMiner.glb",
+      "source_sha256": "85dac3af659b7c3269449f591a1316ced1f14ae4119e357c69f1e05f7dcd8dba",
+      "output_sha256": "954570e45862c61fddc0f3d974758232dac8dd9de94549b478d1651d0230244b",
+      "stats": {
+        "input_bytes": 1482376,
+        "output_bytes": 1181548,
+        "input_vertices": 25075,
+        "output_vertices": 25075,
+        "triangles": 10380,
+        "bones": 46,
+        "meshes": 1,
+        "materials": 1,
+        "animation_clips": 0,
+        "max_linear_color_error": 7.626171914965063e-06,
+        "max_weight_error": 0.0,
+        "extensions_preserved": [
+          "KHR_materials_specular"
+        ],
+        "geometry_changed": false
+      }
+    },
+    {
+      "id": "AdaptedVisceraKing",
+      "character": "AdaptedViscera",
+      "role": "King",
+      "source": "/Users/wingman/Documents/Codex/GrowAMonster-Git-2026-11-12/art/srp-character-variants-v1/models/AdaptedVisceraKing.glb",
+      "output": "models/AdaptedVisceraKing.glb",
+      "source_sha256": "2ef41442a318e23e932269be6d0bdf4c812f0b3d90cd61abf330bd9dd8f546dc",
+      "output_sha256": "6fcd03884e8c7267896d16a513875ca7853b72e3a5093c0cf89a42d2a904ac6a",
+      "stats": {
+        "input_bytes": 1582332,
+        "output_bytes": 1260984,
+        "input_vertices": 26785,
+        "output_vertices": 26785,
+        "triangles": 11080,
+        "bones": 46,
+        "meshes": 1,
+        "materials": 1,
+        "animation_clips": 0,
+        "max_linear_color_error": 7.626171914965063e-06,
+        "max_weight_error": 0.0,
+        "extensions_preserved": [
+          "KHR_materials_specular"
+        ],
+        "geometry_changed": false
+      }
+    },
+    {
+      "id": "AdaptedVisceraKnight",
+      "character": "AdaptedViscera",
+      "role": "Knight",
+      "source": "/Users/wingman/Documents/Codex/GrowAMonster-Git-2026-11-12/art/srp-character-variants-v1/models/AdaptedVisceraKnight.glb",
+      "output": "models/AdaptedVisceraKnight.glb",
+      "source_sha256": "d8e6ddd4c07e77d5399f3183c12d92f414f0cff2d2352362bd6c86e54f7a8b37",
+      "output_sha256": "1e3765d92d5feaa4ad162121637fadcd76e988276e518528eab6ba6cfbec9aca",
+      "stats": {
+        "input_bytes": 1488020,
+        "output_bytes": 1186040,
+        "input_vertices": 25171,
+        "output_vertices": 25171,
+        "triangles": 10424,
+        "bones": 46,
+        "meshes": 1,
+        "materials": 1,
+        "animation_clips": 0,
+        "max_linear_color_error": 7.626171914965063e-06,
+        "max_weight_error": 0.0,
+        "extensions_preserved": [
+          "KHR_materials_specular"
+        ],
+        "geometry_changed": false
+      }
+    },
+    {
+      "id": "AdaptedVisceraNefor",
+      "character": "AdaptedViscera",
+      "role": "Nefor",
+      "source": "/Users/wingman/Documents/Codex/GrowAMonster-Git-2026-11-12/art/srp-character-variants-v1/models/AdaptedVisceraNefor.glb",
+      "output": "models/AdaptedVisceraNefor.glb",
+      "source_sha256": "9093a6471b7b80f49b151f8ce7306d14fd7b6f424bd0bdd0fb95a6e557871748",
+      "output_sha256": "29a22f91a4fff9a5995c04f24b588a4ac95d99d3a469d6ca29d8225cea3902ae",
+      "stats": {
+        "input_bytes": 1722136,
+        "output_bytes": 1371772,
+        "input_vertices": 29203,
+        "output_vertices": 29203,
+        "triangles": 11812,
+        "bones": 46,
+        "meshes": 1,
+        "materials": 1,
+        "animation_clips": 0,
+        "max_linear_color_error": 7.626171914965063e-06,
+        "max_weight_error": 0.0,
+        "extensions_preserved": [
+          "KHR_materials_specular"
+        ],
+        "geometry_changed": false
+      }
+    },
+    {
+      "id": "AdaptedVisceraKiller",
+      "character": "AdaptedViscera",
+      "role": "Killer",
+      "source": "/Users/wingman/Documents/Codex/GrowAMonster-Git-2026-11-12/art/srp-character-variants-v1/models/AdaptedVisceraKiller.glb",
+      "output": "models/AdaptedVisceraKiller.glb",
+      "source_sha256": "6f0aff524fdf96d5fe867118decd2b7af2c8e1e9be6d37937b4ec9fdf4ccb343",
+      "output_sha256": "7a72642ebbcc475007098a64f8b923a25e6d83028bce9b3acd2da9210d94479b",
+      "stats": {
+        "input_bytes": 1475696,
+        "output_bytes": 1176212,
+        "input_vertices": 24963,
+        "output_vertices": 24963,
+        "triangles": 10312,
+        "bones": 46,
+        "meshes": 1,
+        "materials": 1,
+        "animation_clips": 0,
+        "max_linear_color_error": 7.626171914965063e-06,
+        "max_weight_error": 0.0,
+        "extensions_preserved": [
+          "KHR_materials_specular"
+        ],
+        "geometry_changed": false
+      }
+    }
+  ],
+  "game_integrated": false,
+  "runtime_load_time_measured": false
+}

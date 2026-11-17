@@ -1,0 +1,49 @@
+{
+  "status": "approved",
+  "date": "2026-11-14",
+  "timezone": "Europe/Moscow",
+  "basis": "Explicit owner approval in this chat: Да, подходит",
+  "scope": "Dredge base appearance and this degree of stylization. Other four models require visual review. No game integration or asset upload authorized.",
+  "files": {
+    "models/Dredge.blend": {
+      "sha256": "54f9ca938818289046d42c9c638f15d1acccc45524d74cc8a059a46cc06693bc",
+      "bytes": 302960
+    },
+    "models/Dredge.fbx": {
+      "sha256": "9249bf88879b3e016cf942f2282b5e01e93d0e9d4637a2cd08d9dbcdd258937d",
+      "bytes": 323884
+    },
+    "models/Dredge.glb": {
+      "sha256": "f44639d2a311a39ad3a2e19162a248c08e7baeff246b0925fd8f9110a937a5dd",
+      "bytes": 908684
+    },
+    "previews/Dredge_Back.png": {
+      "sha256": "64ddab49fb04a66a27b2d070f2e1eb64836f610c7aa844e33f306243a012c6c2",
+      "bytes": 1361052
+    },
+    "previews/Dredge_Detail.png": {
+      "sha256": "75d46247b0bc73bbd466a194f8d8a23db8da7a011482bb4b8f22d77c99ae7fba",
+      "bytes": 1163075
+    },
+    "previews/Dredge_Reference_Review.png": {
+      "sha256": "8de626f0a2f431f1e2ac90c1b9775a129df8a52c9e1e328116c2cdd064509ce5",
+      "bytes": 2029046
+    },
+    "previews/Dredge_Side.png": {
+      "sha256": "c71ff4b053ded2217b61da932688d1c3ae2effd159a749cae3af9ea2fbdbf596",
+      "bytes": 1156891
+    },
+    "previews/Dredge_ThreeQuarter.png": {
+      "sha256": "41c8097d23a5edb38a632afca9bbb78302a085a9941967655f9dc66838029590",
+      "bytes": 1335178
+    },
+    "previews/Dredge_Views.png": {
+      "sha256": "34a353541fd9f86a00b665fbb213f9d0484e38bb171a2e5fe2c8bf1bf634cf08",
+      "bytes": 1260203
+    },
+    "previews/User_Reference_Dredge_Crop.png": {
+      "sha256": "de59a0f6567287cc172c0e75bd82059a8f4be6e4b8c775136f2fc8c5dc189854",
+      "bytes": 1395269
+    }
+  }
+}

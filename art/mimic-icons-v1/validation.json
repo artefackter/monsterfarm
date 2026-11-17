@@ -1,0 +1,126 @@
+{
+  "passed": true,
+  "transparent_alpha": true,
+  "files": [
+    {
+      "id": "MimicFarmer",
+      "size": [
+        1254,
+        1254
+      ],
+      "mode": "RGBA",
+      "alpha_range": [
+        0,
+        255
+      ],
+      "alpha_bbox": [
+        25,
+        13,
+        1226,
+        1254
+      ],
+      "sha256": "ef8e7c8af45b8b7cf2835e6eb48ba37262f47b1b285a70eefac5e1e61634a41e",
+      "bytes": 963342
+    },
+    {
+      "id": "MimicMiner",
+      "size": [
+        1254,
+        1254
+      ],
+      "mode": "RGBA",
+      "alpha_range": [
+        0,
+        255
+      ],
+      "alpha_bbox": [
+        0,
+        19,
+        1234,
+        1254
+      ],
+      "sha256": "09fdfba5d5dd7f0269ff11a992192ab0c8825a0da041e17c0bd3c53ddd10b347",
+      "bytes": 941271
+    },
+    {
+      "id": "MimicPrincess",
+      "size": [
+        1254,
+        1254
+      ],
+      "mode": "RGBA",
+      "alpha_range": [
+        0,
+        255
+      ],
+      "alpha_bbox": [
+        41,
+        4,
+        1226,
+        1254
+      ],
+      "sha256": "9f1f1efa63a78d3dbfb0a6b99cd1b6247eb4f49e7f877f53a3918188bfaf1811",
+      "bytes": 990056
+    },
+    {
+      "id": "MimicKnight",
+      "size": [
+        1254,
+        1254
+      ],
+      "mode": "RGBA",
+      "alpha_range": [
+        0,
+        255
+      ],
+      "alpha_bbox": [
+        49,
+        11,
+        1186,
+        1254
+      ],
+      "sha256": "8804c181e08571ffbc5a95eaccaf17b9bba37ceae4327cfecab25846292cd700",
+      "bytes": 891723
+    },
+    {
+      "id": "MimicPunk",
+      "size": [
+        1254,
+        1254
+      ],
+      "mode": "RGBA",
+      "alpha_range": [
+        0,
+        255
+      ],
+      "alpha_bbox": [
+        0,
+        0,
+        1200,
+        1254
+      ],
+      "sha256": "cdacb8da69afa9e8d96406b43ae9cddc48ed4bfa31638d38f12a7e2d10202740",
+      "bytes": 992183
+    },
+    {
+      "id": "MimicAssassin",
+      "size": [
+        1254,
+        1254
+      ],
+      "mode": "RGBA",
+      "alpha_range": [
+        0,
+        255
+      ],
+      "alpha_bbox": [
+        0,
+        6,
+        1186,
+        1254
+      ],
+      "sha256": "b62e20b53b19f4e9d96130a78361ba5c88881c1e539e89f741dcd5df6c9fa74c",
+      "bytes": 946644
+    }
+  ]
+}

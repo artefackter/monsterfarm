@@ -83,7 +83,14 @@ end
 -- The fence top path, one way (it walks there and back); the two hops take it down to the lawn across the gate.
 local function catPath(f)
  local F=f.half-1;local cut=(HC.Looks[1].W+2)/math.sqrt(2);local top=3.05
- return {{-F+cut,F,top},{F,F,top},{F,-F,top},{7,-F,top},{5.5,-F+2,0,true},{-5.5,-F+2,0},{-7,-F,top,true},{-F,-F,top},{-F,F-cut,top}}
+ -- round the outside of the cemetery where it sticks out over the back corner (2026-11-15)
+ local c=PlC.Cemetery;local path={{-F+cut,F,top},{c.BackCut,F,top}}
+ local from,to=math.atan2(F-c.Z,c.BackCut-c.X),math.atan2(c.SideCut-c.Z,F-c.X)
+ while to>from do to-=2*math.pi end
+ local n=math.ceil((from-to)*c.Radius/4)
+ for k=1,n-1 do local a=from+(to-from)*k/n;table.insert(path,{c.X+math.cos(a)*c.Radius,c.Z+math.sin(a)*c.Radius,top}) end
+ for _,q in {{F,c.SideCut,top},{F,-F,top},{7,-F,top},{5.5,-F+2,0,true},{-5.5,-F+2,0},{-7,-F,top,true},{-F,-F,top},{-F,F-cut,top}} do table.insert(path,q) end
+ return path
 end
 local function pathPoint(path,s)
  local left=s

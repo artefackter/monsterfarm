@@ -1,0 +1,602 @@
+{
+  "passed": true,
+  "models": [
+    {
+      "id": "Granny",
+      "passed": true,
+      "exact_triangle_corner_geometry": true,
+      "exact_normals": true,
+      "bone_names_hierarchy_and_bind_matrices_preserved": true,
+      "moving_animation_keys_preserved": true,
+      "clips": [
+        "Idle",
+        "Aggressive"
+      ],
+      "pose_samples": 14,
+      "max_world_bone_matrix_error": 0,
+      "max_deformed_vertex_distance": 9.508899487729783e-07,
+      "max_linear_color_error": 7.626171914965063e-06,
+      "max_weight_error": 7.615449945708175e-06
+    },
+    {
+      "id": "Grandfather",
+      "passed": true,
+      "exact_triangle_corner_geometry": true,
+      "exact_normals": true,
+      "bone_names_hierarchy_and_bind_matrices_preserved": true,
+      "moving_animation_keys_preserved": true,
+      "clips": [
+        "Idle",
+        "Aggressive"
+      ],
+      "pose_samples": 14,
+      "max_world_bone_matrix_error": 0,
+      "max_deformed_vertex_distance": 0,
+      "max_linear_color_error": 7.626171914965063e-06,
+      "max_weight_error": 0
+    },
+    {
+      "id": "Slenderman",
+      "passed": true,
+      "exact_triangle_corner_geometry": true,
+      "exact_normals": true,
+      "bone_names_hierarchy_and_bind_matrices_preserved": true,
+      "moving_animation_keys_preserved": true,
+      "clips": [
+        "Idle",
+        "Aggressive"
+      ],
+      "pose_samples": 14,
+      "max_world_bone_matrix_error": 0,
+      "max_deformed_vertex_distance": 8.708593714148643e-07,
+      "max_linear_color_error": 7.5809354593558975e-06,
+      "max_weight_error": 7.364832582790193e-06
+    },
+    {
+      "id": "Slendrina",
+      "passed": true,
+      "exact_triangle_corner_geometry": true,
+      "exact_normals": true,
+      "bone_names_hierarchy_and_bind_matrices_preserved": true,
+      "moving_animation_keys_preserved": true,
+      "clips": [
+        "Idle",
+        "Aggressive"
+      ],
+      "pose_samples": 14,
+      "max_world_bone_matrix_error": 0,
+      "max_deformed_vertex_distance": 8.53645774323928e-07,
+      "max_linear_color_error": 7.626171914965063e-06,
+      "max_weight_error": 7.584659214854295e-06
+    },
+    {
+      "id": "SpiderMom",
+      "passed": true,
+      "exact_triangle_corner_geometry": true,
+      "exact_normals": true,
+      "bone_names_hierarchy_and_bind_matrices_preserved": true,
+      "moving_animation_keys_preserved": true,
+      "clips": [
+        "Idle",
+        "Aggressive"
+      ],
+      "pose_samples": 14,
+      "max_world_bone_matrix_error": 0,
+      "max_deformed_vertex_distance": 0,
+      "max_linear_color_error": 7.626171914965063e-06,
+      "max_weight_error": 0
+    },
+    {
+      "id": "Granny_Farmer",
+      "passed": true,
+      "exact_triangle_corner_geometry": true,
+      "exact_normals": true,
+      "bone_names_hierarchy_and_bind_matrices_preserved": true,
+      "moving_animation_keys_preserved": true,
+      "clips": [
+        "Idle",
+        "Aggressive"
+      ],
+      "pose_samples": 14,
+      "max_world_bone_matrix_error": 0,
+      "max_deformed_vertex_distance": 1.0194804979193874e-06,
+      "max_linear_color_error": 7.626171914965063e-06,
+      "max_weight_error": 7.615449945708175e-06
+    },
+    {
+      "id": "Granny_Miner",
+      "passed": true,
+      "exact_triangle_corner_geometry": true,
+      "exact_normals": true,
+      "bone_names_hierarchy_and_bind_matrices_preserved": true,
+      "moving_animation_keys_preserved": true,
+      "clips": [
+        "Idle",
+        "Aggressive"
+      ],
+      "pose_samples": 14,
+      "max_world_bone_matrix_error": 0,
+      "max_deformed_vertex_distance": 1.0194804979193874e-06,
+      "max_linear_color_error": 7.626171914965063e-06,
+      "max_weight_error": 7.615449945708175e-06
+    },
+    {
+      "id": "Granny_Princess",
+      "passed": true,
+      "exact_triangle_corner_geometry": true,
+      "exact_normals": true,
+      "bone_names_hierarchy_and_bind_matrices_preserved": true,
+      "moving_animation_keys_preserved": true,
+      "clips": [
+        "Idle",
+        "Aggressive"
+      ],
+      "pose_samples": 14,
+      "max_world_bone_matrix_error": 0,
+      "max_deformed_vertex_distance": 9.508899487729783e-07,
+      "max_linear_color_error": 7.626171914965063e-06,
+      "max_weight_error": 7.615449945708175e-06
+    },
+    {
+      "id": "Granny_Knight",
+      "passed": true,
+      "exact_triangle_corner_geometry": true,
+      "exact_normals": true,
+      "bone_names_hierarchy_and_bind_matrices_preserved": true,
+      "moving_animation_keys_preserved": true,
+      "clips": [
+        "Idle",
+        "Aggressive"
+      ],
+      "pose_samples": 14,
+      "max_world_bone_matrix_error": 0,
+      "max_deformed_vertex_distance": 1.0918573464473422e-06,
+      "max_linear_color_error": 7.626171914965063e-06,
+      "max_weight_error": 7.615449945708175e-06
+    },
+    {
+      "id": "Granny_Punk",
+      "passed": true,
+      "exact_triangle_corner_geometry": true,
+      "exact_normals": true,
+      "bone_names_hierarchy_and_bind_matrices_preserved": true,
+      "moving_animation_keys_preserved": true,
+      "clips": [
+        "Idle",
+        "Aggressive"
+      ],
+      "pose_samples": 14,
+      "max_world_bone_matrix_error": 0,
+      "max_deformed_vertex_distance": 1.0100489413876752e-06,
+      "max_linear_color_error": 7.626171914965063e-06,
+      "max_weight_error": 7.615449945708175e-06
+    },
+    {
+      "id": "Granny_Assassin",
+      "passed": true,
+      "exact_triangle_corner_geometry": true,
+      "exact_normals": true,
+      "bone_names_hierarchy_and_bind_matrices_preserved": true,
+      "moving_animation_keys_preserved": true,
+      "clips": [
+        "Idle",
+        "Aggressive"
+      ],
+      "pose_samples": 14,
+      "max_world_bone_matrix_error": 0,
+      "max_deformed_vertex_distance": 9.983771012794079e-07,
+      "max_linear_color_error": 7.626171914965063e-06,
+      "max_weight_error": 7.615449945708175e-06
+    },
+    {
+      "id": "Grandfather_Farmer",
+      "passed": true,
+      "exact_triangle_corner_geometry": true,
+      "exact_normals": true,
+      "bone_names_hierarchy_and_bind_matrices_preserved": true,
+      "moving_animation_keys_preserved": true,
+      "clips": [
+        "Idle",
+        "Aggressive"
+      ],
+      "pose_samples": 14,
+      "max_world_bone_matrix_error": 0,
+      "max_deformed_vertex_distance": 0,
+      "max_linear_color_error": 7.626171914965063e-06,
+      "max_weight_error": 0
+    },
+    {
+      "id": "Grandfather_Miner",
+      "passed": true,
+      "exact_triangle_corner_geometry": true,
+      "exact_normals": true,
+      "bone_names_hierarchy_and_bind_matrices_preserved": true,
+      "moving_animation_keys_preserved": true,
+      "clips": [
+        "Idle",
+        "Aggressive"
+      ],
+      "pose_samples": 14,
+      "max_world_bone_matrix_error": 0,
+      "max_deformed_vertex_distance": 0,
+      "max_linear_color_error": 7.626171914965063e-06,
+      "max_weight_error": 0
+    },
+    {
+      "id": "Grandfather_King",
+      "passed": true,
+      "exact_triangle_corner_geometry": true,
+      "exact_normals": true,
+      "bone_names_hierarchy_and_bind_matrices_preserved": true,
+      "moving_animation_keys_preserved": true,
+      "clips": [
+        "Idle",
+        "Aggressive"
+      ],
+      "pose_samples": 14,
+      "max_world_bone_matrix_error": 0,
+      "max_deformed_vertex_distance": 0,
+      "max_linear_color_error": 7.626171914965063e-06,
+      "max_weight_error": 0
+    },
+    {
+      "id": "Grandfather_Knight",
+      "passed": true,
+      "exact_triangle_corner_geometry": true,
+      "exact_normals": true,
+      "bone_names_hierarchy_and_bind_matrices_preserved": true,
+      "moving_animation_keys_preserved": true,
+      "clips": [
+        "Idle",
+        "Aggressive"
+      ],
+      "pose_samples": 14,
+      "max_world_bone_matrix_error": 0,
+      "max_deformed_vertex_distance": 0,
+      "max_linear_color_error": 7.626171914965063e-06,
+      "max_weight_error": 0
+    },
+    {
+      "id": "Grandfather_Punk",
+      "passed": true,
+      "exact_triangle_corner_geometry": true,
+      "exact_normals": true,
+      "bone_names_hierarchy_and_bind_matrices_preserved": true,
+      "moving_animation_keys_preserved": true,
+      "clips": [
+        "Idle",
+        "Aggressive"
+      ],
+      "pose_samples": 14,
+      "max_world_bone_matrix_error": 0,
+      "max_deformed_vertex_distance": 0,
+      "max_linear_color_error": 7.626171914965063e-06,
+      "max_weight_error": 0
+    },
+    {
+      "id": "Grandfather_Assassin",
+      "passed": true,
+      "exact_triangle_corner_geometry": true,
+      "exact_normals": true,
+      "bone_names_hierarchy_and_bind_matrices_preserved": true,
+      "moving_animation_keys_preserved": true,
+      "clips": [
+        "Idle",
+        "Aggressive"
+      ],
+      "pose_samples": 14,
+      "max_world_bone_matrix_error": 0,
+      "max_deformed_vertex_distance": 0,
+      "max_linear_color_error": 7.626171914965063e-06,
+      "max_weight_error": 0
+    },
+    {
+      "id": "Slenderman_Farmer",
+      "passed": true,
+      "exact_triangle_corner_geometry": true,
+      "exact_normals": true,
+      "bone_names_hierarchy_and_bind_matrices_preserved": true,
+      "moving_animation_keys_preserved": true,
+      "clips": [
+        "Idle",
+        "Aggressive"
+      ],
+      "pose_samples": 14,
+      "max_world_bone_matrix_error": 0,
+      "max_deformed_vertex_distance": 8.708593714148643e-07,
+      "max_linear_color_error": 7.626171914965063e-06,
+      "max_weight_error": 7.364832582790193e-06
+    },
+    {
+      "id": "Slenderman_Miner",
+      "passed": true,
+      "exact_triangle_corner_geometry": true,
+      "exact_normals": true,
+      "bone_names_hierarchy_and_bind_matrices_preserved": true,
+      "moving_animation_keys_preserved": true,
+      "clips": [
+        "Idle",
+        "Aggressive"
+      ],
+      "pose_samples": 14,
+      "max_world_bone_matrix_error": 0,
+      "max_deformed_vertex_distance": 8.708593714148643e-07,
+      "max_linear_color_error": 7.626171914965063e-06,
+      "max_weight_error": 7.364832582790193e-06
+    },
+    {
+      "id": "Slenderman_King",
+      "passed": true,
+      "exact_triangle_corner_geometry": true,
+      "exact_normals": true,
+      "bone_names_hierarchy_and_bind_matrices_preserved": true,
+      "moving_animation_keys_preserved": true,
+      "clips": [
+        "Idle",
+        "Aggressive"
+      ],
+      "pose_samples": 14,
+      "max_world_bone_matrix_error": 0,
+      "max_deformed_vertex_distance": 8.708593714148643e-07,
+      "max_linear_color_error": 7.626171914965063e-06,
+      "max_weight_error": 7.364832582790193e-06
+    },
+    {
+      "id": "Slenderman_Knight",
+      "passed": true,
+      "exact_triangle_corner_geometry": true,
+      "exact_normals": true,
+      "bone_names_hierarchy_and_bind_matrices_preserved": true,
+      "moving_animation_keys_preserved": true,
+      "clips": [
+        "Idle",
+        "Aggressive"
+      ],
+      "pose_samples": 14,
+      "max_world_bone_matrix_error": 0,
+      "max_deformed_vertex_distance": 8.708593714148643e-07,
+      "max_linear_color_error": 7.626171914965063e-06,
+      "max_weight_error": 7.364832582790193e-06
+    },
+    {
+      "id": "Slenderman_Punk",
+      "passed": true,
+      "exact_triangle_corner_geometry": true,
+      "exact_normals": true,
+      "bone_names_hierarchy_and_bind_matrices_preserved": true,
+      "moving_animation_keys_preserved": true,
+      "clips": [
+        "Idle",
+        "Aggressive"
+      ],
+      "pose_samples": 14,
+      "max_world_bone_matrix_error": 0,
+      "max_deformed_vertex_distance": 8.708593714148643e-07,
+      "max_linear_color_error": 7.626171914965063e-06,
+      "max_weight_error": 7.364832582790193e-06
+    },
+    {
+      "id": "Slenderman_Assassin",
+      "passed": true,
+      "exact_triangle_corner_geometry": true,
+      "exact_normals": true,
+      "bone_names_hierarchy_and_bind_matrices_preserved": true,
+      "moving_animation_keys_preserved": true,
+      "clips": [
+        "Idle",
+        "Aggressive"
+      ],
+      "pose_samples": 14,
+      "max_world_bone_matrix_error": 0,
+      "max_deformed_vertex_distance": 8.708593714148643e-07,
+      "max_linear_color_error": 7.626171914965063e-06,
+      "max_weight_error": 7.364832582790193e-06
+    },
+    {
+      "id": "Slendrina_Farmer",
+      "passed": true,
+      "exact_triangle_corner_geometry": true,
+      "exact_normals": true,
+      "bone_names_hierarchy_and_bind_matrices_preserved": true,
+      "moving_animation_keys_preserved": true,
+      "clips": [
+        "Idle",
+        "Aggressive"
+      ],
+      "pose_samples": 14,
+      "max_world_bone_matrix_error": 0,
+      "max_deformed_vertex_distance": 8.53645774323928e-07,
+      "max_linear_color_error": 7.626171914965063e-06,
+      "max_weight_error": 7.584659214854295e-06
+    },
+    {
+      "id": "Slendrina_Miner",
+      "passed": true,
+      "exact_triangle_corner_geometry": true,
+      "exact_normals": true,
+      "bone_names_hierarchy_and_bind_matrices_preserved": true,
+      "moving_animation_keys_preserved": true,
+      "clips": [
+        "Idle",
+        "Aggressive"
+      ],
+      "pose_samples": 14,
+      "max_world_bone_matrix_error": 0,
+      "max_deformed_vertex_distance": 8.53645774323928e-07,
+      "max_linear_color_error": 7.626171914965063e-06,
+      "max_weight_error": 7.584659214854295e-06
+    },
+    {
+      "id": "Slendrina_Princess",
+      "passed": true,
+      "exact_triangle_corner_geometry": true,
+      "exact_normals": true,
+      "bone_names_hierarchy_and_bind_matrices_preserved": true,
+      "moving_animation_keys_preserved": true,
+      "clips": [
+        "Idle",
+        "Aggressive"
+      ],
+      "pose_samples": 14,
+      "max_world_bone_matrix_error": 0,
+      "max_deformed_vertex_distance": 8.53645774323928e-07,
+      "max_linear_color_error": 7.626171914965063e-06,
+      "max_weight_error": 7.584659214854295e-06
+    },
+    {
+      "id": "Slendrina_Knight",
+      "passed": true,
+      "exact_triangle_corner_geometry": true,
+      "exact_normals": true,
+      "bone_names_hierarchy_and_bind_matrices_preserved": true,
+      "moving_animation_keys_preserved": true,
+      "clips": [
+        "Idle",
+        "Aggressive"
+      ],
+      "pose_samples": 14,
+      "max_world_bone_matrix_error": 0,
+      "max_deformed_vertex_distance": 8.53645774323928e-07,
+      "max_linear_color_error": 7.626171914965063e-06,
+      "max_weight_error": 7.584659214854295e-06
+    },
+    {
+      "id": "Slendrina_Punk",
+      "passed": true,
+      "exact_triangle_corner_geometry": true,
+      "exact_normals": true,
+      "bone_names_hierarchy_and_bind_matrices_preserved": true,
+      "moving_animation_keys_preserved": true,
+      "clips": [
+        "Idle",
+        "Aggressive"
+      ],
+      "pose_samples": 14,
+      "max_world_bone_matrix_error": 0,
+      "max_deformed_vertex_distance": 8.53645774323928e-07,
+      "max_linear_color_error": 7.626171914965063e-06,
+      "max_weight_error": 7.584659214854295e-06
+    },
+    {
+      "id": "Slendrina_Assassin",
+      "passed": true,
+      "exact_triangle_corner_geometry": true,
+      "exact_normals": true,
+      "bone_names_hierarchy_and_bind_matrices_preserved": true,
+      "moving_animation_keys_preserved": true,
+      "clips": [
+        "Idle",
+        "Aggressive"
+      ],
+      "pose_samples": 14,
+      "max_world_bone_matrix_error": 0,
+      "max_deformed_vertex_distance": 8.53645774323928e-07,
+      "max_linear_color_error": 7.626171914965063e-06,
+      "max_weight_error": 7.584659214854295e-06
+    },
+    {
+      "id": "SpiderMom_Farmer",
+      "passed": true,
+      "exact_triangle_corner_geometry": true,
+      "exact_normals": true,
+      "bone_names_hierarchy_and_bind_matrices_preserved": true,
+      "moving_animation_keys_preserved": true,
+      "clips": [
+        "Idle",
+        "Aggressive"
+      ],
+      "pose_samples": 14,
+      "max_world_bone_matrix_error": 0,
+      "max_deformed_vertex_distance": 0,
+      "max_linear_color_error": 7.626171914965063e-06,
+      "max_weight_error": 0
+    },
+    {
+      "id": "SpiderMom_Miner",
+      "passed": true,
+      "exact_triangle_corner_geometry": true,
+      "exact_normals": true,
+      "bone_names_hierarchy_and_bind_matrices_preserved": true,
+      "moving_animation_keys_preserved": true,
+      "clips": [
+        "Idle",
+        "Aggressive"
+      ],
+      "pose_samples": 14,
+      "max_world_bone_matrix_error": 0,
+      "max_deformed_vertex_distance": 0,
+      "max_linear_color_error": 7.626171914965063e-06,
+      "max_weight_error": 0
+    },
+    {
+      "id": "SpiderMom_Princess",
+      "passed": true,
+      "exact_triangle_corner_geometry": true,
+      "exact_normals": true,
+      "bone_names_hierarchy_and_bind_matrices_preserved": true,
+      "moving_animation_keys_preserved": true,
+      "clips": [
+        "Idle",
+        "Aggressive"
+      ],
+      "pose_samples": 14,
+      "max_world_bone_matrix_error": 0,
+      "max_deformed_vertex_distance": 0,
+      "max_linear_color_error": 7.626171914965063e-06,
+      "max_weight_error": 0
+    },
+    {
+      "id": "SpiderMom_Knight",
+      "passed": true,
+      "exact_triangle_corner_geometry": true,
+      "exact_normals": true,
+      "bone_names_hierarchy_and_bind_matrices_preserved": true,
+      "moving_animation_keys_preserved": true,
+      "clips": [
+        "Idle",
+        "Aggressive"
+      ],
+      "pose_samples": 14,
+      "max_world_bone_matrix_error": 0,
+      "max_deformed_vertex_distance": 0,
+      "max_linear_color_error": 7.626171914965063e-06,
+      "max_weight_error": 0
+    },
+    {
+      "id": "SpiderMom_Punk",
+      "passed": true,
+      "exact_triangle_corner_geometry": true,
+      "exact_normals": true,
+      "bone_names_hierarchy_and_bind_matrices_preserved": true,
+      "moving_animation_keys_preserved": true,
+      "clips": [
+        "Idle",
+        "Aggressive"
+      ],
+      "pose_samples": 14,
+      "max_world_bone_matrix_error": 0,
+      "max_deformed_vertex_distance": 0,
+      "max_linear_color_error": 7.626171914965063e-06,
+      "max_weight_error": 0
+    },
+    {
+      "id": "SpiderMom_Assassin",
+      "passed": true,
+      "exact_triangle_corner_geometry": true,
+      "exact_normals": true,
+      "bone_names_hierarchy_and_bind_matrices_preserved": true,
+      "moving_animation_keys_preserved": true,
+      "clips": [
+        "Idle",
+        "Aggressive"
+      ],
+      "pose_samples": 14,
+      "max_world_bone_matrix_error": 0,
+      "max_deformed_vertex_distance": 0,
+      "max_linear_color_error": 7.626171914965063e-06,
+      "max_weight_error": 0
+    }
+  ],
+  "source_files_unchanged": 531,
+  "method": "Exact triangle-corner and normal comparisons; all moving samples preserved; independent glTF skin evaluation at 14 times including subframes."
+}

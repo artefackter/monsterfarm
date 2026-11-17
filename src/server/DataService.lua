@@ -9,7 +9,8 @@ local memory=Run:IsStudio() and C.StudioMemory
 local store=not memory and DSS:GetDataStore("GrowAMonster_v2");local owners=not memory and DSS:GetDataStore("GrowAMonsterOwners_v1")
 local job=game.JobId~="" and game.JobId or game:GetService("HttpService"):GenerateGUID(false)
 local function retry(fn) for i=1,C.Retries do local ok,v=pcall(fn);if ok then return true,v end;warn("Data retry",i,v);task.wait(C.RetryDelay*i) end return false end
-local function fresh() return {coins=C.StartingCoins,zombies={},graves={{type="Wooden",slot=1,plantedAt=os.time()-require(game.ReplicatedStorage.Shared.Config.GraveConfig).Wooden.Seconds,starter=true}},upgrades={},zombiedex={},dailyStreak=0,lastDailyAt=0,lastSeenAt=os.time(),playTime=0,tutorialDone=false,tutorialStep=0,version=C.Version,vouchers={},shopUsed={}} end
+-- A new player starts with StartingSpeed speed points (owner, 2026-11-15: "the starting speed should be 900, not 0").
+local function fresh() return {coins=C.StartingCoins,speedPoints=C.StartingSpeed,zombies={},graves={{type="Wooden",slot=1,plantedAt=os.time()-require(game.ReplicatedStorage.Shared.Config.GraveConfig).Wooden.Seconds,starter=true}},upgrades={},zombiedex={},dailyStreak=0,lastDailyAt=0,lastSeenAt=os.time(),playTime=0,tutorialDone=false,tutorialStep=0,version=C.Version,vouchers={},shopUsed={}} end
 function D.Load(p)
  local data
  if memory then data=fresh() else
@@ -32,7 +33,7 @@ function D.Load(p)
  if z.stars~=2 and z.stars~=3 then z.stars=nil end
  require(game.ReplicatedStorage.Shared.MonsterCollection).Promote(z,data.zombiedex)
  if allowed then seen[z.id]=true;z.carriedBy=nil;z.pendingTransfer=nil;table.insert(clean,z) end end
- data.zombies=clean;data.vouchers=data.vouchers or {};data.shopUsed=data.shopUsed or {};data.tutorialStep=data.tutorialStep or (data.tutorialDone and 3 or 0)
+ data.zombies=clean;data.vouchers=data.vouchers or {};data.shopUsed=data.shopUsed or {};data.tutorialStep=data.tutorialStep or (data.tutorialDone and 9 or 0)
  for _,z in ipairs(clean) do D.Claims[z.id]=p.UserId end
  -- The ownership journal also resolves interrupted grave transfers on rejoin.
  for _,key in {"graves","graveInventory"} do

@@ -50,6 +50,7 @@ function U.Check(d,id,stat)
  if not C[id] or not table.find(U.Stats,stat) or not d.weapons or not d.weapons[id] then return "bad" end
  local level=U.Level(d,id,stat);if level>=U.Max then return "max" end
  local coins,mutagen=U.Cost(id,stat,level)
+ if d.freeUpgrade then return nil end -- the tutorial's workbench step (TutorialService): this one is free
  if (d.coins or 0)<coins then return "coins" end
  if (d.mutagen or 0)<mutagen then return "mutagen" end
  return nil
@@ -57,6 +58,7 @@ end
 function U.Buy(d,id,stat)
  if U.Check(d,id,stat) then return false end
  local level=U.Level(d,id,stat);local coins,mutagen=U.Cost(id,stat,level)
+ if d.freeUpgrade then coins,mutagen=0,0 end
  d.coins-=coins;d.mutagen-=mutagen;d.weaponUpgrades[id][stat]=level+1
  return true,coins,mutagen
 end

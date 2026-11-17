@@ -1,0 +1,43 @@
+{
+  "models": {
+    "before_bytes": 21512728,
+    "after_bytes": 17152792,
+    "reduction_percent": 20.27
+  },
+  "icons": {
+    "ui512": {
+      "before_bytes": 24165553,
+      "after_bytes": 5160039,
+      "reduction_percent": 78.65
+    },
+    "small256": {
+      "before_bytes": 24165553,
+      "after_bytes": 1662698,
+      "reduction_percent": 93.12
+    },
+    "large1024": {
+      "before_bytes": 24165553,
+      "after_bytes": 16828773,
+      "reduction_percent": 30.36
+    }
+  },
+  "primary_delivery": {
+    "before_bytes": 45678281,
+    "after_bytes": 22312831,
+    "reduction_percent": 51.15
+  },
+  "archive": {
+    "file": "SRP_24_Models_Icons512.zip",
+    "bytes": 8142265,
+    "sha256": "3570e1e45c60ff4c676c38eee088f1c3b79b20491c7f6e188dac2cc7d6d6ba9f",
+    "entries": 50,
+    "crc_and_unpacked_bytes_verified": true
+  },
+  "triangles_preserved": 154296,
+  "bones_preserved": 672,
+  "source_files_unchanged": 837,
+  "game_integrated": false,
+  "roblox_import_tested": false,
+  "load_times_measured": false,
+  "interpretation": "Size comparison covers equivalent GLB + one PNG resolution set, excludes authoring sources, FBX, review images and alternative resolutions. Original folders were retained."
+}

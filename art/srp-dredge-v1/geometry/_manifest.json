@@ -1,0 +1,592 @@
+{
+  "Dredge": [
+    {
+      "part": "Body",
+      "mesh": "Dredge.Body",
+      "offset": [
+        0.0,
+        4.021,
+        -0.065
+      ],
+      "size": [
+        1.72,
+        2.09,
+        1.013
+      ],
+      "tint": null,
+      "attach": "Body",
+      "material": "SmoothPlastic",
+      "transparency": 0.0,
+      "collide": false,
+      "cast": true,
+      "tris": 696
+    },
+    {
+      "part": "Neck",
+      "mesh": "Dredge.Neck",
+      "offset": [
+        0.0,
+        5.252,
+        -0.006
+      ],
+      "size": [
+        0.53,
+        0.742,
+        0.469
+      ],
+      "tint": null,
+      "attach": "Neck",
+      "material": "SmoothPlastic",
+      "transparency": 0.0,
+      "collide": false,
+      "cast": true,
+      "tris": 60
+    },
+    {
+      "part": "Head",
+      "mesh": "Dredge.Head",
+      "offset": [
+        -0.0,
+        6.092,
+        -0.08
+      ],
+      "size": [
+        1.218,
+        1.369,
+        1.185
+      ],
+      "tint": null,
+      "attach": "Head",
+      "material": "SmoothPlastic",
+      "transparency": 0.0,
+      "collide": false,
+      "cast": true,
+      "tris": 734
+    },
+    {
+      "part": "Jaw",
+      "mesh": "Dredge.Jaw",
+      "offset": [
+        0.009,
+        5.351,
+        -0.465
+      ],
+      "size": [
+        0.524,
+        0.23,
+        0.33
+      ],
+      "tint": null,
+      "attach": "Jaw",
+      "material": "SmoothPlastic",
+      "transparency": 0.0,
+      "collide": false,
+      "cast": true,
+      "tris": 84
+    },
+    {
+      "part": "CrownR1",
+      "mesh": "Dredge.CrownR1",
+      "offset": [
+        0.857,
+        6.176,
+        0.231
+      ],
+      "size": [
+        0.846,
+        0.416,
+        0.438
+      ],
+      "tint": null,
+      "attach": "CrownR1",
+      "material": "SmoothPlastic",
+      "transparency": 0.0,
+      "collide": false,
+      "cast": true,
+      "tris": 132
+    },
+    {
+      "part": "CrownR2",
+      "mesh": "Dredge.CrownR2",
+      "offset": [
+        0.745,
+        6.69,
+        0.341
+      ],
+      "size": [
+        0.71,
+        0.538,
+        0.658
+      ],
+      "tint": null,
+      "attach": "CrownR2",
+      "material": "SmoothPlastic",
+      "transparency": 0.0,
+      "collide": false,
+      "cast": true,
+      "tris": 132
+    },
+    {
+      "part": "ArmR",
+      "mesh": "Dredge.ArmR",
+      "offset": [
+        1.172,
+        4.429,
+        -0.005
+      ],
+      "size": [
+        1.055,
+        1.094,
+        0.497
+      ],
+      "tint": null,
+      "attach": "ArmR",
+      "material": "SmoothPlastic",
+      "transparency": 0.0,
+      "collide": false,
+      "cast": true,
+      "tris": 60
+    },
+    {
+      "part": "ForearmR",
+      "mesh": "Dredge.ForearmR",
+      "offset": [
+        2.14,
+        3.808,
+        -0.235
+      ],
+      "size": [
+        1.274,
+        0.657,
+        0.697
+      ],
+      "tint": null,
+      "attach": "ForearmR",
+      "material": "SmoothPlastic",
+      "transparency": 0.0,
+      "collide": false,
+      "cast": true,
+      "tris": 60
+    },
+    {
+      "part": "HandR",
+      "mesh": "Dredge.HandR",
+      "offset": [
+        3.032,
+        3.332,
+        -0.535
+      ],
+      "size": [
+        0.756,
+        0.846,
+        0.565
+      ],
+      "tint": null,
+      "attach": "HandR",
+      "material": "SmoothPlastic",
+      "transparency": 0.0,
+      "collide": false,
+      "cast": true,
+      "tris": 178
+    },
+    {
+      "part": "CrownL1",
+      "mesh": "Dredge.CrownL1",
+      "offset": [
+        -0.857,
+        6.176,
+        0.231
+      ],
+      "size": [
+        0.846,
+        0.416,
+        0.438
+      ],
+      "tint": null,
+      "attach": "CrownL1",
+      "material": "SmoothPlastic",
+      "transparency": 0.0,
+      "collide": false,
+      "cast": true,
+      "tris": 132
+    },
+    {
+      "part": "CrownL2",
+      "mesh": "Dredge.CrownL2",
+      "offset": [
+        -0.745,
+        6.69,
+        0.341
+      ],
+      "size": [
+        0.71,
+        0.538,
+        0.658
+      ],
+      "tint": null,
+      "attach": "CrownL2",
+      "material": "SmoothPlastic",
+      "transparency": 0.0,
+      "collide": false,
+      "cast": true,
+      "tris": 132
+    },
+    {
+      "part": "ArmL",
+      "mesh": "Dredge.ArmL",
+      "offset": [
+        -1.172,
+        4.429,
+        -0.005
+      ],
+      "size": [
+        1.055,
+        1.094,
+        0.497
+      ],
+      "tint": null,
+      "attach": "ArmL",
+      "material": "SmoothPlastic",
+      "transparency": 0.0,
+      "collide": false,
+      "cast": true,
+      "tris": 60
+    },
+    {
+      "part": "ForearmL",
+      "mesh": "Dredge.ForearmL",
+      "offset": [
+        -2.14,
+        3.808,
+        -0.235
+      ],
+      "size": [
+        1.274,
+        0.657,
+        0.697
+      ],
+      "tint": null,
+      "attach": "ForearmL",
+      "material": "SmoothPlastic",
+      "transparency": 0.0,
+      "collide": false,
+      "cast": true,
+      "tris": 60
+    },
+    {
+      "part": "HandL",
+      "mesh": "Dredge.HandL",
+      "offset": [
+        -3.036,
+        3.332,
+        -0.535
+      ],
+      "size": [
+        0.764,
+        0.846,
+        0.568
+      ],
+      "tint": null,
+      "attach": "HandL",
+      "material": "SmoothPlastic",
+      "transparency": 0.0,
+      "collide": false,
+      "cast": true,
+      "tris": 178
+    },
+    {
+      "part": "TailSkin",
+      "mesh": "Dredge.TailSkin",
+      "offset": [
+        0.0,
+        2.214,
+        1.406
+      ],
+      "size": [
+        0.976,
+        4.428,
+        3.626
+      ],
+      "tint": null,
+      "attach": "Body",
+      "material": "SmoothPlastic",
+      "transparency": 0.0,
+      "collide": false,
+      "cast": true,
+      "tris": 460
+    },
+    {
+      "part": "Tail01",
+      "mesh": "Dredge.Tail01",
+      "offset": [
+        0.0,
+        2.981,
+        0.08
+      ],
+      "size": [
+        1.009,
+        0.459,
+        0.936
+      ],
+      "tint": null,
+      "attach": "Tail01",
+      "material": "SmoothPlastic",
+      "transparency": 0.0,
+      "collide": false,
+      "cast": true,
+      "tris": 264
+    },
+    {
+      "part": "Tail02",
+      "mesh": "Dredge.Tail02",
+      "offset": [
+        0.0,
+        2.447,
+        0.09
+      ],
+      "size": [
+        1.019,
+        0.536,
+        0.961
+      ],
+      "tint": null,
+      "attach": "Tail02",
+      "material": "SmoothPlastic",
+      "transparency": 0.0,
+      "collide": false,
+      "cast": true,
+      "tris": 264
+    },
+    {
+      "part": "Tail03",
+      "mesh": "Dredge.Tail03",
+      "offset": [
+        0.0,
+        1.873,
+        0.129
+      ],
+      "size": [
+        1.009,
+        0.621,
+        0.98
+      ],
+      "tint": null,
+      "attach": "Tail03",
+      "material": "SmoothPlastic",
+      "transparency": 0.0,
+      "collide": false,
+      "cast": true,
+      "tris": 264
+    },
+    {
+      "part": "Tail04",
+      "mesh": "Dredge.Tail04",
+      "offset": [
+        0.0,
+        1.292,
+        0.227
+      ],
+      "size": [
+        0.967,
+        0.715,
+        0.986
+      ],
+      "tint": null,
+      "attach": "Tail04",
+      "material": "SmoothPlastic",
+      "transparency": 0.0,
+      "collide": false,
+      "cast": true,
+      "tris": 264
+    },
+    {
+      "part": "Tail05",
+      "mesh": "Dredge.Tail05",
+      "offset": [
+        0.0,
+        0.775,
+        0.454
+      ],
+      "size": [
+        0.905,
+        0.865,
+        0.949
+      ],
+      "tint": null,
+      "attach": "Tail05",
+      "material": "SmoothPlastic",
+      "transparency": 0.0,
+      "collide": false,
+      "cast": true,
+      "tris": 264
+    },
+    {
+      "part": "Tail06",
+      "mesh": "Dredge.Tail06",
+      "offset": [
+        0.0,
+        0.464,
+        0.87
+      ],
+      "size": [
+        0.842,
+        0.872,
+        0.671
+      ],
+      "tint": null,
+      "attach": "Tail06",
+      "material": "SmoothPlastic",
+      "transparency": 0.0,
+      "collide": false,
+      "cast": true,
+      "tris": 264
+    },
+    {
+      "part": "Tail07",
+      "mesh": "Dredge.Tail07",
+      "offset": [
+        0.0,
+        0.468,
+        1.418
+      ],
+      "size": [
+        0.77,
+        0.824,
+        0.709
+      ],
+      "tint": null,
+      "attach": "Tail07",
+      "material": "SmoothPlastic",
+      "transparency": 0.0,
+      "collide": false,
+      "cast": true,
+      "tris": 264
+    },
+    {
+      "part": "Tail08",
+      "mesh": "Dredge.Tail08",
+      "offset": [
+        -0.0,
+        0.758,
+        1.955
+      ],
+      "size": [
+        1.455,
+        0.836,
+        0.829
+      ],
+      "tint": null,
+      "attach": "Tail08",
+      "material": "SmoothPlastic",
+      "transparency": 0.0,
+      "collide": false,
+      "cast": true,
+      "tris": 296
+    },
+    {
+      "part": "Tail09",
+      "mesh": "Dredge.Tail09",
+      "offset": [
+        0.0,
+        1.24,
+        2.519
+      ],
+      "size": [
+        2.565,
+        0.784,
+        1.066
+      ],
+      "tint": null,
+      "attach": "Tail09",
+      "material": "SmoothPlastic",
+      "transparency": 0.0,
+      "collide": false,
+      "cast": true,
+      "tris": 392
+    },
+    {
+      "part": "Tail10",
+      "mesh": "Dredge.Tail10",
+      "offset": [
+        0.0,
+        1.824,
+        2.666
+      ],
+      "size": [
+        1.335,
+        0.719,
+        0.681
+      ],
+      "tint": null,
+      "attach": "Tail10",
+      "material": "SmoothPlastic",
+      "transparency": 0.0,
+      "collide": false,
+      "cast": true,
+      "tris": 296
+    },
+    {
+      "part": "Tail11",
+      "mesh": "Dredge.Tail11",
+      "offset": [
+        0.0,
+        2.448,
+        2.857
+      ],
+      "size": [
+        1.275,
+        0.671,
+        0.59
+      ],
+      "tint": null,
+      "attach": "Tail11",
+      "material": "SmoothPlastic",
+      "transparency": 0.0,
+      "collide": false,
+      "cast": true,
+      "tris": 296
+    },
+    {
+      "part": "Tail12",
+      "mesh": "Dredge.Tail12",
+      "offset": [
+        0.0,
+        3.059,
+        2.988
+      ],
+      "size": [
+        1.195,
+        0.589,
+        0.472
+      ],
+      "tint": null,
+      "attach": "Tail12",
+      "material": "SmoothPlastic",
+      "transparency": 0.0,
+      "collide": false,
+      "cast": true,
+      "tris": 296
+    },
+    {
+      "part": "Tail13",
+      "mesh": "Dredge.Tail13",
+      "offset": [
+        0.0,
+        3.615,
+        3.019
+      ],
+      "size": [
+        1.095,
+        0.225,
+        0.19
+      ],
+      "tint": null,
+      "attach": "Tail13",
+      "material": "SmoothPlastic",
+      "transparency": 0.0,
+      "collide": false,
+      "cast": true,
+      "tris": 32
+    }
+  ]
+}

@@ -1,0 +1,605 @@
+{
+  "status": "awaiting_owner_review",
+  "integration_authorized": false,
+  "choose_one_model_profile_and_one_icon_size": true,
+  "models": [
+    {
+      "id": "Longmaw_Idle",
+      "role": "Base",
+      "state": "Idle",
+      "source_sha256": "d9191dcf1644f5c4fbb5984e68bac9c3fffe084fb106386b1c01be2ddffceec3",
+      "profiles": {
+        "models": {
+          "file": "models/Longmaw_Idle.glb",
+          "sha256": "53c41c4310122111d17c76d4cf7bcd2c4c5be3aba0ec1f212b7e9e4a50a1f688",
+          "output_bytes": 706732,
+          "triangles": 6048,
+          "bones": 23,
+          "meshes": 1,
+          "materials": 1,
+          "textures": 0
+        },
+        "mobile": {
+          "file": "mobile/Longmaw_Idle.glb",
+          "sha256": "2112ba252c20135b0fc9a3c3e0ac07eeedeeba4a5075791938960b11dee231e6",
+          "output_bytes": 636608,
+          "triangles": 5576,
+          "bones": 23,
+          "meshes": 1,
+          "materials": 1,
+          "textures": 0
+        }
+      }
+    },
+    {
+      "id": "Longmaw_Aggressive",
+      "role": "Base",
+      "state": "Aggressive",
+      "source_sha256": "ebe600c607a8b4904c85442201db305a6e3fbbb46674d0c4c20c0304c4845728",
+      "profiles": {
+        "models": {
+          "file": "models/Longmaw_Aggressive.glb",
+          "sha256": "6502d1f49e6f0e70bc7a878affac20bff7a157f05940a72844ee2dea7e48963c",
+          "output_bytes": 706188,
+          "triangles": 6048,
+          "bones": 23,
+          "meshes": 1,
+          "materials": 1,
+          "textures": 0
+        },
+        "mobile": {
+          "file": "mobile/Longmaw_Aggressive.glb",
+          "sha256": "9e67844851548fb17ce04b915cb13cfaca7c56ae7706435c8f5fad8e95bc4d99",
+          "output_bytes": 637288,
+          "triangles": 5576,
+          "bones": 23,
+          "meshes": 1,
+          "materials": 1,
+          "textures": 0
+        }
+      }
+    },
+    {
+      "id": "Longmaw_Farmer_Idle",
+      "role": "Farmer",
+      "state": "Idle",
+      "source_sha256": "57506a32f41ea031d42f8f72785571b1b5fef68f81fdee8a8052891a8d99d47f",
+      "profiles": {
+        "models": {
+          "file": "models/Longmaw_Farmer_Idle.glb",
+          "sha256": "cfbc374c602ab98950abaf4aa68ce2aefe939d66f02d122ce13675905cc69371",
+          "output_bytes": 920544,
+          "triangles": 7994,
+          "bones": 23,
+          "meshes": 1,
+          "materials": 1,
+          "textures": 0
+        },
+        "mobile": {
+          "file": "mobile/Longmaw_Farmer_Idle.glb",
+          "sha256": "9e7b5227108e36ccfe1edae36c9a238e0e2d0941d6da3a610eabf21d42d0a12b",
+          "output_bytes": 831656,
+          "triangles": 7279,
+          "bones": 23,
+          "meshes": 1,
+          "materials": 1,
+          "textures": 0
+        }
+      }
+    },
+    {
+      "id": "Longmaw_Farmer_Aggressive",
+      "role": "Farmer",
+      "state": "Aggressive",
+      "source_sha256": "d54e16b787b9f446c9b17964ecb75410520ea60754689ee266805cdfe1ca53e0",
+      "profiles": {
+        "models": {
+          "file": "models/Longmaw_Farmer_Aggressive.glb",
+          "sha256": "1e37e854603838ea7c9e94265792093e0b5fd81c33b793b0a4bc0b5f0f9448da",
+          "output_bytes": 920004,
+          "triangles": 7994,
+          "bones": 23,
+          "meshes": 1,
+          "materials": 1,
+          "textures": 0
+        },
+        "mobile": {
+          "file": "mobile/Longmaw_Farmer_Aggressive.glb",
+          "sha256": "7cecc512d90206a8e9dd667e2de54345338390adfc2a9f9d4b65c69bb901cd4a",
+          "output_bytes": 832328,
+          "triangles": 7279,
+          "bones": 23,
+          "meshes": 1,
+          "materials": 1,
+          "textures": 0
+        }
+      }
+    },
+    {
+      "id": "Longmaw_Miner_Idle",
+      "role": "Miner",
+      "state": "Idle",
+      "source_sha256": "bd2cb3f8b7c2e54b7df438ecfd896eca0780139cbaa96d82fbc38972628c9ab6",
+      "profiles": {
+        "models": {
+          "file": "models/Longmaw_Miner_Idle.glb",
+          "sha256": "fae3952cf07a8a4a142b8d552a0e6feba53647ab388be74d046994233f2caeb0",
+          "output_bytes": 953892,
+          "triangles": 8346,
+          "bones": 23,
+          "meshes": 1,
+          "materials": 1,
+          "textures": 0
+        },
+        "mobile": {
+          "file": "mobile/Longmaw_Miner_Idle.glb",
+          "sha256": "bcbc5ae458228d51cc0abfade656b89ca49e383aa8f0495544cfe891f5d3f7f7",
+          "output_bytes": 848144,
+          "triangles": 7388,
+          "bones": 23,
+          "meshes": 1,
+          "materials": 1,
+          "textures": 0
+        }
+      }
+    },
+    {
+      "id": "Longmaw_Miner_Aggressive",
+      "role": "Miner",
+      "state": "Aggressive",
+      "source_sha256": "bb002cc6c789b1224705dc5ee1aff70c3a3fad1bca959913405f40cbd8b136a2",
+      "profiles": {
+        "models": {
+          "file": "models/Longmaw_Miner_Aggressive.glb",
+          "sha256": "fa0b5b50d33eb6827bf511c5a5cb247feadd7f0f803762986dd7e6ee0972c81d",
+          "output_bytes": 953352,
+          "triangles": 8346,
+          "bones": 23,
+          "meshes": 1,
+          "materials": 1,
+          "textures": 0
+        },
+        "mobile": {
+          "file": "mobile/Longmaw_Miner_Aggressive.glb",
+          "sha256": "c74f7bee745a8e7870b03c8f9f1c1f79bb03e2e48cb9bf80579566327428fdbd",
+          "output_bytes": 848820,
+          "triangles": 7388,
+          "bones": 23,
+          "meshes": 1,
+          "materials": 1,
+          "textures": 0
+        }
+      }
+    },
+    {
+      "id": "Longmaw_Princess_Idle",
+      "role": "Princess",
+      "state": "Idle",
+      "source_sha256": "e3d47f009e22dc4112b07883d36c225e7fe63f02e9859cca29f450da512c5083",
+      "profiles": {
+        "models": {
+          "file": "models/Longmaw_Princess_Idle.glb",
+          "sha256": "a0d9cfb1c8df10876f5eb4188caa4a42d102ec623801dfb4aee3892a467b0387",
+          "output_bytes": 1040648,
+          "triangles": 8686,
+          "bones": 23,
+          "meshes": 1,
+          "materials": 1,
+          "textures": 0
+        },
+        "mobile": {
+          "file": "mobile/Longmaw_Princess_Idle.glb",
+          "sha256": "2b0b16789e5b9d4a42c1c60bd866ac9bb7177791c0aff363bcb6303d651b0445",
+          "output_bytes": 948740,
+          "triangles": 7923,
+          "bones": 23,
+          "meshes": 1,
+          "materials": 1,
+          "textures": 0
+        }
+      }
+    },
+    {
+      "id": "Longmaw_Princess_Aggressive",
+      "role": "Princess",
+      "state": "Aggressive",
+      "source_sha256": "0b8f41da63dc197ad8c1c45ae2575d6c4e8f082ad077752a1c461575f241de44",
+      "profiles": {
+        "models": {
+          "file": "models/Longmaw_Princess_Aggressive.glb",
+          "sha256": "c0a9181416846da934d1eb9d1c2656dd6ed21995e8c55b2e3849cc131aa8989d",
+          "output_bytes": 1040104,
+          "triangles": 8686,
+          "bones": 23,
+          "meshes": 1,
+          "materials": 1,
+          "textures": 0
+        },
+        "mobile": {
+          "file": "mobile/Longmaw_Princess_Aggressive.glb",
+          "sha256": "84404a7434d986044477c15a14e4f83bb37654a1ecf036c9d93eeec76b4e5306",
+          "output_bytes": 949412,
+          "triangles": 7923,
+          "bones": 23,
+          "meshes": 1,
+          "materials": 1,
+          "textures": 0
+        }
+      }
+    },
+    {
+      "id": "Longmaw_Knight_Idle",
+      "role": "Knight",
+      "state": "Idle",
+      "source_sha256": "581d7b5e3493831908eecdd6fd24b27dbcb06bb3f03e807dc6eec0d8fe72b097",
+      "profiles": {
+        "models": {
+          "file": "models/Longmaw_Knight_Idle.glb",
+          "sha256": "eaf89339ff0f419192dcbbf5e3d7550eb8314bb95f18a8a22be1a81113253d8f",
+          "output_bytes": 1033876,
+          "triangles": 9084,
+          "bones": 23,
+          "meshes": 1,
+          "materials": 1,
+          "textures": 0
+        },
+        "mobile": {
+          "file": "mobile/Longmaw_Knight_Idle.glb",
+          "sha256": "6863c2e4132a5f2d89d9d5773ea5ba806bff17608e1138d1974bb0ec78499df1",
+          "output_bytes": 917176,
+          "triangles": 7929,
+          "bones": 23,
+          "meshes": 1,
+          "materials": 1,
+          "textures": 0
+        }
+      }
+    },
+    {
+      "id": "Longmaw_Knight_Aggressive",
+      "role": "Knight",
+      "state": "Aggressive",
+      "source_sha256": "5c5fae7b26359201b843b34daf761d077f902ede4b170e62ecf9b85b3a693673",
+      "profiles": {
+        "models": {
+          "file": "models/Longmaw_Knight_Aggressive.glb",
+          "sha256": "9a067e92668766ee264bc9d7ca4f4403b2b7e86c9664d4704c7d033b0263320a",
+          "output_bytes": 1033332,
+          "triangles": 9084,
+          "bones": 23,
+          "meshes": 1,
+          "materials": 1,
+          "textures": 0
+        },
+        "mobile": {
+          "file": "mobile/Longmaw_Knight_Aggressive.glb",
+          "sha256": "0407d8c3dbdcd81346306fc426e273e456f81be3581897c97a916a02a2f38b3c",
+          "output_bytes": 917852,
+          "triangles": 7929,
+          "bones": 23,
+          "meshes": 1,
+          "materials": 1,
+          "textures": 0
+        }
+      }
+    },
+    {
+      "id": "Longmaw_Punk_Idle",
+      "role": "Punk",
+      "state": "Idle",
+      "source_sha256": "45deb97d4c4ac0d74eea31ca1d1d54673f119303f1ee498a0ba9dd82da08fab8",
+      "profiles": {
+        "models": {
+          "file": "models/Longmaw_Punk_Idle.glb",
+          "sha256": "8c2abf3b0e186179a180d04bd379bc36000f61192819c0866eb956d468300c57",
+          "output_bytes": 1389632,
+          "triangles": 12454,
+          "bones": 23,
+          "meshes": 1,
+          "materials": 1,
+          "textures": 0
+        },
+        "mobile": {
+          "file": "mobile/Longmaw_Punk_Idle.glb",
+          "sha256": "a5b35c5b7077b183bad1d70169a39da61d5276ff9363c9862bf84efe8457160c",
+          "output_bytes": 1218880,
+          "triangles": 10033,
+          "bones": 23,
+          "meshes": 1,
+          "materials": 1,
+          "textures": 0
+        }
+      }
+    },
+    {
+      "id": "Longmaw_Punk_Aggressive",
+      "role": "Punk",
+      "state": "Aggressive",
+      "source_sha256": "86b33bed37b0dc81f5ea4b50b68e5fd37329693085654f4b81a676eac2c7946d",
+      "profiles": {
+        "models": {
+          "file": "models/Longmaw_Punk_Aggressive.glb",
+          "sha256": "64dbfe58d5ae95dd53c7668d3ab21e6cb02a2a4f119e7ad6a6fefb809817ec77",
+          "output_bytes": 1389092,
+          "triangles": 12454,
+          "bones": 23,
+          "meshes": 1,
+          "materials": 1,
+          "textures": 0
+        },
+        "mobile": {
+          "file": "mobile/Longmaw_Punk_Aggressive.glb",
+          "sha256": "ef0c8b5fc5e0bdd55e781673f50a8daf629a2c0dab2ccbdee42edff0186e9721",
+          "output_bytes": 1219552,
+          "triangles": 10033,
+          "bones": 23,
+          "meshes": 1,
+          "materials": 1,
+          "textures": 0
+        }
+      }
+    },
+    {
+      "id": "Longmaw_Assassin_Idle",
+      "role": "Assassin",
+      "state": "Idle",
+      "source_sha256": "584d8b52965ab3e3841ed141f3eaa64a876b8c8724281fd94c26cab687db19a6",
+      "profiles": {
+        "models": {
+          "file": "models/Longmaw_Assassin_Idle.glb",
+          "sha256": "3540f2c14996f5bf67b649f86e409bf6725ead79cdc2f47de17db5e5999c5f6a",
+          "output_bytes": 946384,
+          "triangles": 8163,
+          "bones": 23,
+          "meshes": 1,
+          "materials": 1,
+          "textures": 0
+        },
+        "mobile": {
+          "file": "mobile/Longmaw_Assassin_Idle.glb",
+          "sha256": "bb81bb66a8b5f5e0d39c533f1572278fbd43cef74d2d4a170aca2e65451e4093",
+          "output_bytes": 843388,
+          "triangles": 7312,
+          "bones": 23,
+          "meshes": 1,
+          "materials": 1,
+          "textures": 0
+        }
+      }
+    },
+    {
+      "id": "Longmaw_Assassin_Aggressive",
+      "role": "Assassin",
+      "state": "Aggressive",
+      "source_sha256": "a9fcbef6be0a186073c0f9ceddf2d909695fcb541be75f1bd2b501cb8afaa1b9",
+      "profiles": {
+        "models": {
+          "file": "models/Longmaw_Assassin_Aggressive.glb",
+          "sha256": "c7cc26d8ecb3d1760496fc0367ffc34439386a76870599dd2ca5a883e5135ae8",
+          "output_bytes": 945844,
+          "triangles": 8163,
+          "bones": 23,
+          "meshes": 1,
+          "materials": 1,
+          "textures": 0
+        },
+        "mobile": {
+          "file": "mobile/Longmaw_Assassin_Aggressive.glb",
+          "sha256": "c4988f88c9c9ac7f2e20879c644c64505b6c66ccba07da96c64c673023041d47",
+          "output_bytes": 844060,
+          "triangles": 7312,
+          "bones": 23,
+          "meshes": 1,
+          "materials": 1,
+          "textures": 0
+        }
+      }
+    }
+  ],
+  "icons": [
+    {
+      "id": "LongmawFarmer",
+      "role": "Farmer",
+      "source_sha256": "11f79b9686adcc79083902e7bc6af71aea17853f2a8f57a4385426ad56105315",
+      "variants": {
+        "ui512": {
+          "file": "icons/ui512/LongmawFarmer.png",
+          "sha256": "04ab007a0e40d8ec1d56fcb0e871c2c4a1b374426828fe2c252e3dd077399b51",
+          "bytes": 199879,
+          "size": [
+            512,
+            512
+          ]
+        },
+        "small256": {
+          "file": "icons/small256/LongmawFarmer.png",
+          "sha256": "19465aa48ddb5d9328129ac7f15568efd9b0a95652c3ef3ca3b46e021dc3be03",
+          "bytes": 65494,
+          "size": [
+            256,
+            256
+          ]
+        },
+        "large1024": {
+          "file": "icons/large1024/LongmawFarmer.png",
+          "sha256": "809737a10a37658367f16a48bb8c521c4341edb826385e00860879102e8d180e",
+          "bytes": 653731,
+          "size": [
+            1024,
+            1024
+          ]
+        }
+      }
+    },
+    {
+      "id": "LongmawMiner",
+      "role": "Miner",
+      "source_sha256": "66be9913b7403cad9db5ba0e25630bd0befddec82410bb162e2c9113eaf4e0eb",
+      "variants": {
+        "ui512": {
+          "file": "icons/ui512/LongmawMiner.png",
+          "sha256": "5e4d49396bf73e27a3610ff2584a471c235eb903f75a6993d63f604784414d1d",
+          "bytes": 200998,
+          "size": [
+            512,
+            512
+          ]
+        },
+        "small256": {
+          "file": "icons/small256/LongmawMiner.png",
+          "sha256": "5391f531e6dc8818c1a1a1e6868d3f6bd891534f4af4c330ccd034cd7e91d35c",
+          "bytes": 64798,
+          "size": [
+            256,
+            256
+          ]
+        },
+        "large1024": {
+          "file": "icons/large1024/LongmawMiner.png",
+          "sha256": "b13532198bbf4b73c6986132dcec0600433b5474d8242a9af9e99058b0055e68",
+          "bytes": 666242,
+          "size": [
+            1024,
+            1024
+          ]
+        }
+      }
+    },
+    {
+      "id": "LongmawPrincess",
+      "role": "Princess",
+      "source_sha256": "0904f6f6e5cbca8107834d0212512a54adeb0e9d887b4a9369717feaa9cd5d50",
+      "variants": {
+        "ui512": {
+          "file": "icons/ui512/LongmawPrincess.png",
+          "sha256": "e4e050a7c78b49006016b924d71951500363a6beb60eef3014d01240a4c47491",
+          "bytes": 195260,
+          "size": [
+            512,
+            512
+          ]
+        },
+        "small256": {
+          "file": "icons/small256/LongmawPrincess.png",
+          "sha256": "5c559b6b3c832bb72ad9fd57ef8d0650acd8909a0dc91412a898b917c0eab0ca",
+          "bytes": 63708,
+          "size": [
+            256,
+            256
+          ]
+        },
+        "large1024": {
+          "file": "icons/large1024/LongmawPrincess.png",
+          "sha256": "d125d699c67e6cf821a8ebdf47d5e12161ab30bb256b5db385e91bde0844e2a2",
+          "bytes": 632325,
+          "size": [
+            1024,
+            1024
+          ]
+        }
+      }
+    },
+    {
+      "id": "LongmawKnight",
+      "role": "Knight",
+      "source_sha256": "3110fa44baf3a2ecb4dd8c1acb075ae135360ba736db79a413538b4dff3f7f02",
+      "variants": {
+        "ui512": {
+          "file": "icons/ui512/LongmawKnight.png",
+          "sha256": "a53d7ad6836721ff9bd5094e97205dc4b9a59124f2c8947f86da4cc5ec69e2e3",
+          "bytes": 207683,
+          "size": [
+            512,
+            512
+          ]
+        },
+        "small256": {
+          "file": "icons/small256/LongmawKnight.png",
+          "sha256": "7e0aa22bf0da621017eaf36e2927d162deb239f27d67e4a822767a78649d1822",
+          "bytes": 67786,
+          "size": [
+            256,
+            256
+          ]
+        },
+        "large1024": {
+          "file": "icons/large1024/LongmawKnight.png",
+          "sha256": "18fed3ece0bf6eedbf97e34ffce379baa4b6c746f2f0c0163bc7ebddce330253",
+          "bytes": 671822,
+          "size": [
+            1024,
+            1024
+          ]
+        }
+      }
+    },
+    {
+      "id": "LongmawPunk",
+      "role": "Punk",
+      "source_sha256": "d68be2e2454161e2b97cf71d580bcd71a2e8607fbf68587dc02ecbe35a1f4b00",
+      "variants": {
+        "ui512": {
+          "file": "icons/ui512/LongmawPunk.png",
+          "sha256": "fb8556fabf0b4e00855ba41aa5abdfbf8c3bb55902f3acc02922a6d75565cc13",
+          "bytes": 195705,
+          "size": [
+            512,
+            512
+          ]
+        },
+        "small256": {
+          "file": "icons/small256/LongmawPunk.png",
+          "sha256": "eaa9c3a31bfc7831500f6e1141ea2096c0a6e2ef76fc5efa41dc8d7523426ef6",
+          "bytes": 63970,
+          "size": [
+            256,
+            256
+          ]
+        },
+        "large1024": {
+          "file": "icons/large1024/LongmawPunk.png",
+          "sha256": "7f4a8a67c4f187213ecdc7779d6245db8db533732b3bffb82c9cc6f0d984991b",
+          "bytes": 629191,
+          "size": [
+            1024,
+            1024
+          ]
+        }
+      }
+    },
+    {
+      "id": "LongmawAssassin",
+      "role": "Assassin",
+      "source_sha256": "5e0d4e48bc9fe6f9dedcd09596355548cda3f2cf502de04ddcf29c9482a1dd60",
+      "variants": {
+        "ui512": {
+          "file": "icons/ui512/LongmawAssassin.png",
+          "sha256": "a3f03e799cd2e461549db202a84c6b61045ea30bab2b20946d2d4651c59824e0",
+          "bytes": 193666,
+          "size": [
+            512,
+            512
+          ]
+        },
+        "small256": {
+          "file": "icons/small256/LongmawAssassin.png",
+          "sha256": "fc0ed1e7f363f2d52b8a3d14971757ea9da89c68b444278f402d6f85c18def49",
+          "bytes": 63456,
+          "size": [
+            256,
+            256
+          ]
+        },
+        "large1024": {
+          "file": "icons/large1024/LongmawAssassin.png",
+          "sha256": "2a6d968e14391b767405a3fe245139bd5c803fa080823a4c0a29e25bfef08989",
+          "bytes": 634637,
+          "size": [
+            1024,
+            1024
+          ]
+        }
+      }
+    }
+  ]
+}

@@ -23,3 +23,20 @@
   сиреневые камни по краю без камней у входа, косточки и травинки. Цвета взяты из старой модели W_Graveyard, в игре
   деталь подкрашивается тем же оттенком (173,145,204). Генератор: tools/cemetery_round.py (Blender), Cemetery_Round.json
   — центр габаритов в координатах glTF для normalize_v5.lua.
+
+Дорога (2026-11-15)
+- biomes/*.glb — 34 декоративные модели локаций из art/biome-models-optimized-v1/models с цветами вершин, переведёнными
+  в sRGB (tools/biome_srgb.py). В Studio лежат в ReplicatedStorage.ArtModels под теми же именами (AC_, AV_, BM_, BR_,
+  PT_, SH_), развёрнуты лицом в -Z, опора как в catalog.json; светящиеся части (Light, Flame, OreGlow) — Neon.
+  Id ассетов в assets.csv.
+- monsters/<Семейство>.glb (Granny, Longmaw, Dredge и др., 12 шт.) — базовые формы без образов для дороги, нарезаны
+  тем же rigidify.py из базовых моделей паков (granny-slender/hooded-stranger/longmaw/mimic-optimized-v1,
+  srp-monsters-v2, srp-dredge-v1). В ArtModels под именами семейств.
+
+Облегчённые монстры (2026-11-15, телефоны грелись)
+- monsters-lite/*.glb — те же 84 модели (72 образа + 12 базовых форм), упрощённые tools/decimate_monsters.py (Blender,
+  Decimate Collapse): в среднем 6 909 -> 3 517 треугольников. Мелкие детали (до 150 треугольников) и текстурное лицо
+  Незнакомца не трогаются; часть, которая теряет больше 14% площади или 5% габарита (тонкие ноги Длиннорота),
+  упрощается мягче. Цвета вершин и имена частей прежние. decimate_report.json — треугольники до и после.
+- monsters-lite/*.json — JSON конвертации с габаритами упрощённого меша (опорные точки те же).
+- Загружены заново и заменили модели в ArtModels под теми же именами; новые id — в assets.csv.

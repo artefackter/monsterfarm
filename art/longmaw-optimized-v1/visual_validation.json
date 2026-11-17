@@ -1,0 +1,19 @@
+{
+  "reviewed_by": "Codex visual inspection",
+  "passed_at_rendered_resolution": true,
+  "views": [
+    "three-quarter, all seven looks, Idle and Aggressive",
+    "head close-up: Base, Knight, Punk, Assassin",
+    "all six icons, original/512/256",
+    "icons at 96 and 64 px, light and dark backgrounds"
+  ],
+  "preserved_appearance": [
+    "four long legs",
+    "pointed hump",
+    "long tapering mouth",
+    "small white eyes",
+    "no animal ears or tail"
+  ],
+  "mobile_tradeoff": "Minor ornament and paw detail surfaces simplified; inspect comparisons before integration.",
+  "Roblox_tested": false
+}

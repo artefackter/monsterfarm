@@ -1,0 +1,96 @@
+{
+  "mode": "built-in image_gen edit",
+  "assets": [
+    {
+      "id": "GrannyFarmer",
+      "character": "Granny",
+      "role": "Farmer",
+      "ru": "Фермер",
+      "file": "icons/GrannyFarmer.png",
+      "prompt": "Use case: precise-object-edit. IMAGE 1 is the existing illustrated Granny Farmer inventory icon to edit. Preserve her exact head, face, hair, costume, colours, full-body proportions, dark plum contours, cel shading and glossy highlights. Change only her RIGHT hand (image-left) and its wrist orientation on the bat. Her current fist is anatomically reversed. IMAGE 2 is the newly corrected actual 3D RIGHT HAND in the neutral carry: follow its anatomical orientation. IMAGE 3 is this same corrected hand on the actual Farmer costume. Keep the drawn style of image 1, not a 3D-render style. Turn the grip halfway around the bat shaft: the BACK OF THE HAND is on the OUTER/lateral side (image-left, away from her thigh), the PALM faces INWARD toward her right thigh, and the THUMB is on the FRONT/camera-facing side of the shaft. A broad back-of-hand plane should be visible, with the thumb crossing the front above the curled fingers; the four fingers curl around the far/inner side of the shaft. The original four-horizontal-finger-bands-across-the-front grip must be replaced with this new handed orientation. Keep a continuous natural right forearm and wrist, not a twisted or detached hand. Grip the narrow handle just below the knob, bat's red thick end down. Exactly one thumb plus four fingers. Preserve the bat, other hand, pose and all costume details. One full character fully inside the square image with margins. Preserve genuine transparent alpha, including gaps. No background, floor, shadow, border, text or watermark.",
+      "references": [
+        "/Users/wingman/Documents/Codex/GrowAMonster-Git-2026-11-12/art/granny-grandfather-icons-v2/icons/GrannyFarmer.png",
+        "/Users/wingman/Documents/Codex/GrowAMonster-Git-2026-11-12/art/granny-grandfather-v4/previews/Granny_Idle_GripR.png",
+        "/Users/wingman/Documents/Codex/GrowAMonster-Git-2026-11-12/art/granny-grandfather-forms-v3/previews/Granny_Farmer_Idle.png"
+      ]
+    },
+    {
+      "id": "GrannyMiner",
+      "character": "Granny",
+      "role": "Miner",
+      "ru": "Шахтёр",
+      "file": "icons/GrannyMiner.png",
+      "prompt": "Use case: precise-object-edit. IMAGE 1 is the existing illustrated Granny Miner inventory icon to edit. Preserve her exact head, face, hair, costume, colours, full-body proportions, dark plum contours, cel shading and glossy highlights. Change only her RIGHT hand (image-left) and its wrist orientation on the bat. Her current fist is anatomically reversed. IMAGE 2 is the newly corrected actual 3D RIGHT HAND in the neutral carry: follow its anatomical orientation. IMAGE 3 is this same corrected hand on the actual Miner costume. Keep the drawn style of image 1, not a 3D-render style. Turn the grip halfway around the bat shaft: the BACK OF THE HAND is on the OUTER/lateral side (image-left, away from her thigh), the PALM faces INWARD toward her right thigh, and the THUMB is on the FRONT/camera-facing side of the shaft. A broad back-of-hand plane should be visible, with the thumb crossing the front above the curled fingers; the four fingers curl around the far/inner side of the shaft. The original four-horizontal-finger-bands-across-the-front grip must be replaced with this new handed orientation. Keep a continuous natural right forearm and wrist, not a twisted or detached hand. Grip the narrow handle just below the knob, bat's red thick end down. Exactly one thumb plus four fingers. Preserve the bat, other hand, pose and all costume details. One full character fully inside the square image with margins. Preserve genuine transparent alpha, including gaps. No background, floor, shadow, border, text or watermark.",
+      "references": [
+        "/Users/wingman/Documents/Codex/GrowAMonster-Git-2026-11-12/art/granny-grandfather-icons-v2/icons/GrannyMiner.png",
+        "/Users/wingman/Documents/Codex/GrowAMonster-Git-2026-11-12/art/granny-grandfather-v4/previews/Granny_Idle_GripR.png",
+        "/Users/wingman/Documents/Codex/GrowAMonster-Git-2026-11-12/art/granny-grandfather-forms-v3/previews/Granny_Miner_Idle.png"
+      ]
+    },
+    {
+      "id": "GrannyPrincess",
+      "character": "Granny",
+      "role": "Princess",
+      "ru": "Принцесса",
+      "file": "icons/GrannyPrincess.png",
+      "prompt": "Use case: precise-object-edit. IMAGE 1 is the existing illustrated Granny Princess inventory icon to edit. Preserve her exact head, face, hair, costume, colours, full-body proportions, dark plum contours, cel shading and glossy highlights. Change only her RIGHT hand (image-left) and its wrist orientation on the bat. Her current fist is anatomically reversed. IMAGE 2 is the newly corrected actual 3D RIGHT HAND in the neutral carry: follow its anatomical orientation. IMAGE 3 is this same corrected hand on the actual Princess costume. Keep the drawn style of image 1, not a 3D-render style. Turn the grip halfway around the bat shaft: the BACK OF THE HAND is on the OUTER/lateral side (image-left, away from her thigh), the PALM faces INWARD toward her right thigh, and the THUMB is on the FRONT/camera-facing side of the shaft. A broad back-of-hand plane should be visible, with the thumb crossing the front above the curled fingers; the four fingers curl around the far/inner side of the shaft. The original four-horizontal-finger-bands-across-the-front grip must be replaced with this new handed orientation. Keep a continuous natural right forearm and wrist, not a twisted or detached hand. Grip the narrow handle just below the knob, bat's red thick end down. Exactly one thumb plus four fingers. Preserve the bat, other hand, pose and all costume details. One full character fully inside the square image with margins. Preserve genuine transparent alpha, including gaps. No background, floor, shadow, border, text or watermark.",
+      "references": [
+        "/Users/wingman/Documents/Codex/GrowAMonster-Git-2026-11-12/art/granny-grandfather-icons-v2/icons/GrannyPrincess.png",
+        "/Users/wingman/Documents/Codex/GrowAMonster-Git-2026-11-12/art/granny-grandfather-v4/previews/Granny_Idle_GripR.png",
+        "/Users/wingman/Documents/Codex/GrowAMonster-Git-2026-11-12/art/granny-grandfather-forms-v3/previews/Granny_Princess_Idle.png"
+      ]
+    },
+    {
+      "id": "GrannyKnight",
+      "character": "Granny",
+      "role": "Knight",
+      "ru": "Рыцарь",
+      "file": "icons/GrannyKnight.png",
+      "prompt": "Use case: precise-object-edit. IMAGE 1 is the existing illustrated Granny Knight inventory icon to edit. Preserve her exact head, face, hair, costume, colours, full-body proportions, dark plum contours, cel shading and glossy highlights. Change only her RIGHT hand (image-left) and its wrist orientation on the bat. Her current fist is anatomically reversed. IMAGE 2 is the newly corrected actual 3D RIGHT HAND in the neutral carry: follow its anatomical orientation. IMAGE 3 is this same corrected hand on the actual Knight costume. Keep the drawn style of image 1, not a 3D-render style. Turn the grip halfway around the bat shaft: the BACK OF THE HAND is on the OUTER/lateral side (image-left, away from her thigh), the PALM faces INWARD toward her right thigh, and the THUMB is on the FRONT/camera-facing side of the shaft. A broad back-of-hand plane should be visible, with the thumb crossing the front above the curled fingers; the four fingers curl around the far/inner side of the shaft. The original four-horizontal-finger-bands-across-the-front grip must be replaced with this new handed orientation. Keep a continuous natural right forearm and wrist, not a twisted or detached hand. Grip the narrow handle just below the knob, bat's red thick end down. Exactly one thumb plus four fingers. Preserve the bat, other hand, pose and all costume details. One full character fully inside the square image with margins. Preserve genuine transparent alpha, including gaps. No background, floor, shadow, border, text or watermark.",
+      "references": [
+        "/Users/wingman/Documents/Codex/GrowAMonster-Git-2026-11-12/art/granny-grandfather-icons-v2/icons/GrannyKnight.png",
+        "/Users/wingman/Documents/Codex/GrowAMonster-Git-2026-11-12/art/granny-grandfather-v4/previews/Granny_Idle_GripR.png",
+        "/Users/wingman/Documents/Codex/GrowAMonster-Git-2026-11-12/art/granny-grandfather-forms-v3/previews/Granny_Knight_Idle.png"
+      ]
+    },
+    {
+      "id": "GrannyPunk",
+      "character": "Granny",
+      "role": "Punk",
+      "ru": "Нефор",
+      "file": "icons/GrannyPunk.png",
+      "prompt": "Use case: precise-object-edit. IMAGE 1 is the existing illustrated Granny Punk inventory icon to edit. Preserve her exact head, face, hair, costume, colours, full-body proportions, dark plum contours, cel shading and glossy highlights. Change only her RIGHT hand (image-left) and its wrist orientation on the bat. Her current fist is anatomically reversed. IMAGE 2 is the newly corrected actual 3D RIGHT HAND in the neutral carry: follow its anatomical orientation. IMAGE 3 is this same corrected hand on the actual Punk costume. Keep the drawn style of image 1, not a 3D-render style. Turn the grip halfway around the bat shaft: the BACK OF THE HAND is on the OUTER/lateral side (image-left, away from her thigh), the PALM faces INWARD toward her right thigh, and the THUMB is on the FRONT/camera-facing side of the shaft. A broad back-of-hand plane should be visible, with the thumb crossing the front above the curled fingers; the four fingers curl around the far/inner side of the shaft. The original four-horizontal-finger-bands-across-the-front grip must be replaced with this new handed orientation. Keep a continuous natural right forearm and wrist, not a twisted or detached hand. Grip the narrow handle just below the knob, bat's red thick end down. Exactly one thumb plus four fingers. Preserve the bat, other hand, pose and all costume details. One full character fully inside the square image with margins. Preserve genuine transparent alpha, including gaps. No background, floor, shadow, border, text or watermark.",
+      "references": [
+        "/Users/wingman/Documents/Codex/GrowAMonster-Git-2026-11-12/art/granny-grandfather-icons-v2/icons/GrannyPunk.png",
+        "/Users/wingman/Documents/Codex/GrowAMonster-Git-2026-11-12/art/granny-grandfather-v4/previews/Granny_Idle_GripR.png",
+        "/Users/wingman/Documents/Codex/GrowAMonster-Git-2026-11-12/art/granny-grandfather-forms-v3/previews/Granny_Punk_Idle.png"
+      ]
+    },
+    {
+      "id": "GrannyAssassin",
+      "character": "Granny",
+      "role": "Assassin",
+      "ru": "Убийца",
+      "file": "icons/GrannyAssassin.png",
+      "prompt": "Use case: precise-object-edit. IMAGE 1 is the existing illustrated Granny Assassin inventory icon to edit. Preserve her exact head, face, hair, costume, colours, full-body proportions, dark plum contours, cel shading and glossy highlights. Change only her RIGHT hand (image-left) and its wrist orientation on the bat. Her current fist is anatomically reversed. IMAGE 2 is the newly corrected actual 3D RIGHT HAND in the neutral carry: follow its anatomical orientation. IMAGE 3 is this same corrected hand on the actual Assassin costume. Keep the drawn style of image 1, not a 3D-render style. Turn the grip halfway around the bat shaft: the BACK OF THE HAND is on the OUTER/lateral side (image-left, away from her thigh), the PALM faces INWARD toward her right thigh, and the THUMB is on the FRONT/camera-facing side of the shaft. A broad back-of-hand plane should be visible, with the thumb crossing the front above the curled fingers; the four fingers curl around the far/inner side of the shaft. The original four-horizontal-finger-bands-across-the-front grip must be replaced with this new handed orientation. Keep a continuous natural right forearm and wrist, not a twisted or detached hand. Grip the narrow handle just below the knob, bat's red thick end down. Exactly one thumb plus four fingers. Preserve the bat, other hand, pose and all costume details. One full character fully inside the square image with margins. Preserve genuine transparent alpha, including gaps. No background, floor, shadow, border, text or watermark.",
+      "references": [
+        "/Users/wingman/Documents/Codex/GrowAMonster-Git-2026-11-12/art/granny-grandfather-icons-v2/icons/GrannyAssassin.png",
+        "/Users/wingman/Documents/Codex/GrowAMonster-Git-2026-11-12/art/granny-grandfather-v4/previews/Granny_Idle_GripR.png",
+        "/Users/wingman/Documents/Codex/GrowAMonster-Git-2026-11-12/art/granny-grandfather-forms-v3/previews/Granny_Assassin_Idle.png"
+      ]
+    },
+    {
+      "id": "GrandfatherKing",
+      "character": "Grandfather",
+      "role": "King",
+      "ru": "Король",
+      "file": "icons/GrandfatherKing.png",
+      "prompt": "Use case: precise-object-edit. IMAGE 1 is the current illustrated Grandfather in the Princess costume, used as the identity, composition and drawing-style edit target. The user requests a KING for this male character. IMAGE 2 is the actual newly modelled Grandfather KING costume: use its royal-blue tunic, navy trousers, squared royal shoulder fittings, red velvet mantle with ivory ermine collar and gold edging, gold crown with red/blue jewels, ruby-and-gold pendant, brown/dark royal belt, dark boots. Replace the pink princess garment, sash and puffed sleeves with this clearly masculine KING costume. IMAGE 3 is the original Deer King visual reference for the costume vocabulary. Preserve Grandfather's exact elderly face, white eyes, sparse grey hair, head/body proportions, bold plum ink contours, glossy cel-shaded illustrated finish and full-body icon framing. Keep his already approved double-barrel hunting shotgun and two-handed resting carry exactly like image 1: right hand at the wooden stock neck, index straight outside trigger guard, left hand beneath the wooden fore-end, one buttstock and pale skin forearms. Static nonviolent inventory icon, no firing or action scene. Entire crown, cape, boots and shotgun inside the square with safe margins. Transparent alpha background, no floor, shadow, text, border or watermark.",
+      "references": [
+        "/Users/wingman/Documents/Codex/GrowAMonster-Git-2026-11-12/art/granny-grandfather-icons-v2/icons/GrandfatherPrincess.png",
+        "/Users/wingman/Documents/Codex/GrowAMonster-Git-2026-11-12/art/granny-grandfather-forms-v3/previews/Grandfather_King_Idle.png",
+        "/Users/wingman/Documents/Codex/GrowAMonster-Git-2026-11-12/art/ui/monster-outfits/DeerKing.png"
+      ]
+    }
+  ]
+}

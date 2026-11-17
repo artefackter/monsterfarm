@@ -1,0 +1,167 @@
+{
+  "passed": true,
+  "complete": true,
+  "status": "awaiting_icon_approval",
+  "mode": "built-in image_gen",
+  "candidate_png_modified": false,
+  "game_integration_performed": false,
+  "source_model_renders_unchanged": true,
+  "assets": [
+    {
+      "id": "HoodedStrangerFarmer",
+      "file": "icons/HoodedStrangerFarmer.png",
+      "size": [
+        1254,
+        1254
+      ],
+      "format": "PNG",
+      "mode": "RGBA",
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "visible_bbox_alpha128": [
+        322,
+        20,
+        907,
+        1235
+      ],
+      "visible_fraction": 0.2842,
+      "transparent_fraction_alpha5": 0.7118,
+      "max_boundary_alpha": 1,
+      "generated_pixels_and_alpha_unchanged": true,
+      "sha256": "6f98420a152fd3cea49d7628c2da872317b7c72c34c9553e52c7b7c04a117bd0",
+      "bytes": 786089
+    },
+    {
+      "id": "HoodedStrangerMiner",
+      "file": "icons/HoodedStrangerMiner.png",
+      "size": [
+        1254,
+        1254
+      ],
+      "format": "PNG",
+      "mode": "RGBA",
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "visible_bbox_alpha128": [
+        320,
+        11,
+        908,
+        1236
+      ],
+      "visible_fraction": 0.2792,
+      "transparent_fraction_alpha5": 0.717,
+      "max_boundary_alpha": 1,
+      "generated_pixels_and_alpha_unchanged": true,
+      "sha256": "efa2721fa8e3dbc517ecb169266fceb6722b0a95f85a87bf24b3ab610fd98317",
+      "bytes": 787212
+    },
+    {
+      "id": "HoodedStrangerKing",
+      "file": "icons/HoodedStrangerKing.png",
+      "size": [
+        1254,
+        1254
+      ],
+      "format": "PNG",
+      "mode": "RGBA",
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "visible_bbox_alpha128": [
+        320,
+        11,
+        912,
+        1236
+      ],
+      "visible_fraction": 0.3151,
+      "transparent_fraction_alpha5": 0.6821,
+      "max_boundary_alpha": 1,
+      "generated_pixels_and_alpha_unchanged": true,
+      "sha256": "012194bf4d0628fde4cc7e776631b0fcde54724e36eee7b1b669c8e866814f3f",
+      "bytes": 876728
+    },
+    {
+      "id": "HoodedStrangerKnight",
+      "file": "icons/HoodedStrangerKnight.png",
+      "size": [
+        1254,
+        1254
+      ],
+      "format": "PNG",
+      "mode": "RGBA",
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "visible_bbox_alpha128": [
+        327,
+        6,
+        914,
+        1233
+      ],
+      "visible_fraction": 0.2734,
+      "transparent_fraction_alpha5": 0.7232,
+      "max_boundary_alpha": 3,
+      "generated_pixels_and_alpha_unchanged": true,
+      "sha256": "2f43a1db96d83bde95dd1a6729710f64ca49f87d98a08b495ea96d27a2565bd3",
+      "bytes": 792060
+    },
+    {
+      "id": "HoodedStrangerPunk",
+      "file": "icons/HoodedStrangerPunk.png",
+      "size": [
+        1254,
+        1254
+      ],
+      "format": "PNG",
+      "mode": "RGBA",
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "visible_bbox_alpha128": [
+        330,
+        17,
+        900,
+        1234
+      ],
+      "visible_fraction": 0.251,
+      "transparent_fraction_alpha5": 0.7455,
+      "max_boundary_alpha": 1,
+      "generated_pixels_and_alpha_unchanged": true,
+      "sha256": "ef1d765bde043a3c21a171a237ea7fa2826f08e2f01ab6331d7d45ffcfb60fc1",
+      "bytes": 726873
+    },
+    {
+      "id": "HoodedStrangerAssassin",
+      "file": "icons/HoodedStrangerAssassin.png",
+      "size": [
+        1254,
+        1254
+      ],
+      "format": "PNG",
+      "mode": "RGBA",
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "visible_bbox_alpha128": [
+        317,
+        30,
+        926,
+        1221
+      ],
+      "visible_fraction": 0.3128,
+      "transparent_fraction_alpha5": 0.684,
+      "max_boundary_alpha": 1,
+      "generated_pixels_and_alpha_unchanged": true,
+      "sha256": "b5a868c5f5a9f1f1b498546d1efb3bbbd5987620ee7bf8a02a92a9ec0ba42b5f",
+      "bytes": 804182
+    }
+  ]
+}

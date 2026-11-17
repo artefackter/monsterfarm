@@ -1,0 +1,2334 @@
+{
+  "passed": true,
+  "artwork_regenerated": false,
+  "icons": [
+    {
+      "id": "GrandfatherFarmer",
+      "character": "Grandfather",
+      "role": "Farmer",
+      "source": "/Users/wingman/Documents/Codex/GrowAMonster-Git-2026-11-12/art/granny-grandfather-icons-v3/icons/GrandfatherFarmer.png",
+      "source_bytes": 778017,
+      "source_sha256": "f1b5edfefc9af0fadc8d51044c4cfbc307633e831bbf1efc6ffde79b18450ce2",
+      "source_size": [
+        1254,
+        1254
+      ],
+      "variants": {
+        "large1024": {
+          "file": "icons/large1024/GrandfatherFarmer.png",
+          "bytes": 545830,
+          "size": [
+            1024,
+            1024
+          ],
+          "rgba8_uncompressed_bytes": 4194304,
+          "sha256": "7afa1be79c0c82498841473541bf3ff008f9605f1daba7407ee6cac2a2e27d50",
+          "corner_alpha": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "ui_comparison": [
+            {
+              "display_px": 64,
+              "background": "#F6EEDC",
+              "mean_rgb_error_255": 0.3883,
+              "rmse_255": 0.6501,
+              "psnr_db": 51.87
+            },
+            {
+              "display_px": 64,
+              "background": "#151C26",
+              "mean_rgb_error_255": 0.3594,
+              "rmse_255": 0.6169,
+              "psnr_db": 52.33
+            },
+            {
+              "display_px": 96,
+              "background": "#F6EEDC",
+              "mean_rgb_error_255": 0.4069,
+              "rmse_255": 0.665,
+              "psnr_db": 51.67
+            },
+            {
+              "display_px": 96,
+              "background": "#151C26",
+              "mean_rgb_error_255": 0.3789,
+              "rmse_255": 0.634,
+              "psnr_db": 52.09
+            },
+            {
+              "display_px": 128,
+              "background": "#F6EEDC",
+              "mean_rgb_error_255": 0.438,
+              "rmse_255": 0.6954,
+              "psnr_db": 51.29
+            },
+            {
+              "display_px": 128,
+              "background": "#151C26",
+              "mean_rgb_error_255": 0.4053,
+              "rmse_255": 0.6613,
+              "psnr_db": 51.72
+            }
+          ]
+        },
+        "ui512": {
+          "file": "icons/ui512/GrandfatherFarmer.png",
+          "bytes": 164569,
+          "size": [
+            512,
+            512
+          ],
+          "rgba8_uncompressed_bytes": 1048576,
+          "sha256": "8f8c1849f74fa59413e44d69c5d8ee232a127332f962e66ac28103657b313909",
+          "corner_alpha": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "ui_comparison": [
+            {
+              "display_px": 64,
+              "background": "#F6EEDC",
+              "mean_rgb_error_255": 0.4636,
+              "rmse_255": 0.7237,
+              "psnr_db": 50.94
+            },
+            {
+              "display_px": 64,
+              "background": "#151C26",
+              "mean_rgb_error_255": 0.3998,
+              "rmse_255": 0.6576,
+              "psnr_db": 51.77
+            },
+            {
+              "display_px": 96,
+              "background": "#F6EEDC",
+              "mean_rgb_error_255": 0.5018,
+              "rmse_255": 0.7697,
+              "psnr_db": 50.4
+            },
+            {
+              "display_px": 96,
+              "background": "#151C26",
+              "mean_rgb_error_255": 0.4411,
+              "rmse_255": 0.7028,
+              "psnr_db": 51.19
+            },
+            {
+              "display_px": 128,
+              "background": "#F6EEDC",
+              "mean_rgb_error_255": 0.5736,
+              "rmse_255": 0.8561,
+              "psnr_db": 49.48
+            },
+            {
+              "display_px": 128,
+              "background": "#151C26",
+              "mean_rgb_error_255": 0.488,
+              "rmse_255": 0.7562,
+              "psnr_db": 50.56
+            }
+          ]
+        },
+        "small256": {
+          "file": "icons/small256/GrandfatherFarmer.png",
+          "bytes": 51582,
+          "size": [
+            256,
+            256
+          ],
+          "rgba8_uncompressed_bytes": 262144,
+          "sha256": "3884bf791472b17749ca93696ec5c918676a6ed0cdbd66981226f5eb7765ee98",
+          "corner_alpha": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "ui_comparison": [
+            {
+              "display_px": 64,
+              "background": "#F6EEDC",
+              "mean_rgb_error_255": 0.7088,
+              "rmse_255": 1.0425,
+              "psnr_db": 47.77
+            },
+            {
+              "display_px": 64,
+              "background": "#151C26",
+              "mean_rgb_error_255": 0.5547,
+              "rmse_255": 0.8739,
+              "psnr_db": 49.3
+            },
+            {
+              "display_px": 96,
+              "background": "#F6EEDC",
+              "mean_rgb_error_255": 0.831,
+              "rmse_255": 1.3142,
+              "psnr_db": 45.76
+            },
+            {
+              "display_px": 96,
+              "background": "#151C26",
+              "mean_rgb_error_255": 0.6007,
+              "rmse_255": 0.9875,
+              "psnr_db": 48.24
+            },
+            {
+              "display_px": 128,
+              "background": "#F6EEDC",
+              "mean_rgb_error_255": 0.9207,
+              "rmse_255": 1.4503,
+              "psnr_db": 44.9
+            },
+            {
+              "display_px": 128,
+              "background": "#151C26",
+              "mean_rgb_error_255": 0.647,
+              "rmse_255": 1.0381,
+              "psnr_db": 47.81
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "GrandfatherMiner",
+      "character": "Grandfather",
+      "role": "Miner",
+      "source": "/Users/wingman/Documents/Codex/GrowAMonster-Git-2026-11-12/art/granny-grandfather-icons-v3/icons/GrandfatherMiner.png",
+      "source_bytes": 841702,
+      "source_sha256": "b42d285aeda0d22d3a7aff386c7cda9c58c46f7c608581ff7ccb22b77ef133b3",
+      "source_size": [
+        1254,
+        1254
+      ],
+      "variants": {
+        "large1024": {
+          "file": "icons/large1024/GrandfatherMiner.png",
+          "bytes": 590331,
+          "size": [
+            1024,
+            1024
+          ],
+          "rgba8_uncompressed_bytes": 4194304,
+          "sha256": "f97be4b10f26ae8d5b590bcac5371feacf0f918ab2cc15d348abcb451ddbbb10",
+          "corner_alpha": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "ui_comparison": [
+            {
+              "display_px": 64,
+              "background": "#F6EEDC",
+              "mean_rgb_error_255": 0.3776,
+              "rmse_255": 0.6315,
+              "psnr_db": 52.12
+            },
+            {
+              "display_px": 64,
+              "background": "#151C26",
+              "mean_rgb_error_255": 0.3556,
+              "rmse_255": 0.6097,
+              "psnr_db": 52.43
+            },
+            {
+              "display_px": 96,
+              "background": "#F6EEDC",
+              "mean_rgb_error_255": 0.4018,
+              "rmse_255": 0.6586,
+              "psnr_db": 51.76
+            },
+            {
+              "display_px": 96,
+              "background": "#151C26",
+              "mean_rgb_error_255": 0.3719,
+              "rmse_255": 0.6283,
+              "psnr_db": 52.17
+            },
+            {
+              "display_px": 128,
+              "background": "#F6EEDC",
+              "mean_rgb_error_255": 0.4217,
+              "rmse_255": 0.6753,
+              "psnr_db": 51.54
+            },
+            {
+              "display_px": 128,
+              "background": "#151C26",
+              "mean_rgb_error_255": 0.3972,
+              "rmse_255": 0.6526,
+              "psnr_db": 51.84
+            }
+          ]
+        },
+        "ui512": {
+          "file": "icons/ui512/GrandfatherMiner.png",
+          "bytes": 177172,
+          "size": [
+            512,
+            512
+          ],
+          "rgba8_uncompressed_bytes": 1048576,
+          "sha256": "77f68b2b25abe95c0e8eaa6da1687cdc298c7870da5eb687295e69140b49746d",
+          "corner_alpha": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "ui_comparison": [
+            {
+              "display_px": 64,
+              "background": "#F6EEDC",
+              "mean_rgb_error_255": 0.442,
+              "rmse_255": 0.7032,
+              "psnr_db": 51.19
+            },
+            {
+              "display_px": 64,
+              "background": "#151C26",
+              "mean_rgb_error_255": 0.391,
+              "rmse_255": 0.6494,
+              "psnr_db": 51.88
+            },
+            {
+              "display_px": 96,
+              "background": "#F6EEDC",
+              "mean_rgb_error_255": 0.5229,
+              "rmse_255": 0.79,
+              "psnr_db": 50.18
+            },
+            {
+              "display_px": 96,
+              "background": "#151C26",
+              "mean_rgb_error_255": 0.4528,
+              "rmse_255": 0.7208,
+              "psnr_db": 50.97
+            },
+            {
+              "display_px": 128,
+              "background": "#F6EEDC",
+              "mean_rgb_error_255": 0.5847,
+              "rmse_255": 0.8649,
+              "psnr_db": 49.39
+            },
+            {
+              "display_px": 128,
+              "background": "#151C26",
+              "mean_rgb_error_255": 0.5081,
+              "rmse_255": 0.7842,
+              "psnr_db": 50.24
+            }
+          ]
+        },
+        "small256": {
+          "file": "icons/small256/GrandfatherMiner.png",
+          "bytes": 54752,
+          "size": [
+            256,
+            256
+          ],
+          "rgba8_uncompressed_bytes": 262144,
+          "sha256": "15c427019d94ecf7fee408a75be8cd7929845be0549ce957490eb9dcec8bece5",
+          "corner_alpha": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "ui_comparison": [
+            {
+              "display_px": 64,
+              "background": "#F6EEDC",
+              "mean_rgb_error_255": 0.7398,
+              "rmse_255": 1.1013,
+              "psnr_db": 47.29
+            },
+            {
+              "display_px": 64,
+              "background": "#151C26",
+              "mean_rgb_error_255": 0.5721,
+              "rmse_255": 0.9152,
+              "psnr_db": 48.9
+            },
+            {
+              "display_px": 96,
+              "background": "#F6EEDC",
+              "mean_rgb_error_255": 0.8636,
+              "rmse_255": 1.3358,
+              "psnr_db": 45.62
+            },
+            {
+              "display_px": 96,
+              "background": "#151C26",
+              "mean_rgb_error_255": 0.633,
+              "rmse_255": 1.0131,
+              "psnr_db": 48.02
+            },
+            {
+              "display_px": 128,
+              "background": "#F6EEDC",
+              "mean_rgb_error_255": 0.9327,
+              "rmse_255": 1.4561,
+              "psnr_db": 44.87
+            },
+            {
+              "display_px": 128,
+              "background": "#151C26",
+              "mean_rgb_error_255": 0.6782,
+              "rmse_255": 1.0883,
+              "psnr_db": 47.4
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "GrandfatherKnight",
+      "character": "Grandfather",
+      "role": "Knight",
+      "source": "/Users/wingman/Documents/Codex/GrowAMonster-Git-2026-11-12/art/granny-grandfather-icons-v3/icons/GrandfatherKnight.png",
+      "source_bytes": 806457,
+      "source_sha256": "66315a690f81058913157339ef5f3335340f7307538b026ab0ff022165dd8157",
+      "source_size": [
+        1254,
+        1254
+      ],
+      "variants": {
+        "large1024": {
+          "file": "icons/large1024/GrandfatherKnight.png",
+          "bytes": 564788,
+          "size": [
+            1024,
+            1024
+          ],
+          "rgba8_uncompressed_bytes": 4194304,
+          "sha256": "63cc2e1ec1945e9d1dd0568c51004c17ee6bf63d62e26ed8d4db32653e7acef2",
+          "corner_alpha": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "ui_comparison": [
+            {
+              "display_px": 64,
+              "background": "#F6EEDC",
+              "mean_rgb_error_255": 0.3677,
+              "rmse_255": 0.6327,
+              "psnr_db": 52.11
+            },
+            {
+              "display_px": 64,
+              "background": "#151C26",
+              "mean_rgb_error_255": 0.336,
+              "rmse_255": 0.5928,
+              "psnr_db": 52.67
+            },
+            {
+              "display_px": 96,
+              "background": "#F6EEDC",
+              "mean_rgb_error_255": 0.3912,
+              "rmse_255": 0.6544,
+              "psnr_db": 51.81
+            },
+            {
+              "display_px": 96,
+              "background": "#151C26",
+              "mean_rgb_error_255": 0.3681,
+              "rmse_255": 0.6259,
+              "psnr_db": 52.2
+            },
+            {
+              "display_px": 128,
+              "background": "#F6EEDC",
+              "mean_rgb_error_255": 0.4194,
+              "rmse_255": 0.6796,
+              "psnr_db": 51.49
+            },
+            {
+              "display_px": 128,
+              "background": "#151C26",
+              "mean_rgb_error_255": 0.3934,
+              "rmse_255": 0.6524,
+              "psnr_db": 51.84
+            }
+          ]
+        },
+        "ui512": {
+          "file": "icons/ui512/GrandfatherKnight.png",
+          "bytes": 169975,
+          "size": [
+            512,
+            512
+          ],
+          "rgba8_uncompressed_bytes": 1048576,
+          "sha256": "7ea44fea2a78bb4e9bf527d1fcc5b67e7873871e31f5d0310b85145ff997a9eb",
+          "corner_alpha": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "ui_comparison": [
+            {
+              "display_px": 64,
+              "background": "#F6EEDC",
+              "mean_rgb_error_255": 0.4639,
+              "rmse_255": 0.7273,
+              "psnr_db": 50.9
+            },
+            {
+              "display_px": 64,
+              "background": "#151C26",
+              "mean_rgb_error_255": 0.4038,
+              "rmse_255": 0.6686,
+              "psnr_db": 51.63
+            },
+            {
+              "display_px": 96,
+              "background": "#F6EEDC",
+              "mean_rgb_error_255": 0.5269,
+              "rmse_255": 0.8027,
+              "psnr_db": 50.04
+            },
+            {
+              "display_px": 96,
+              "background": "#151C26",
+              "mean_rgb_error_255": 0.4557,
+              "rmse_255": 0.7286,
+              "psnr_db": 50.88
+            },
+            {
+              "display_px": 128,
+              "background": "#F6EEDC",
+              "mean_rgb_error_255": 0.5784,
+              "rmse_255": 0.8688,
+              "psnr_db": 49.35
+            },
+            {
+              "display_px": 128,
+              "background": "#151C26",
+              "mean_rgb_error_255": 0.501,
+              "rmse_255": 0.7862,
+              "psnr_db": 50.22
+            }
+          ]
+        },
+        "small256": {
+          "file": "icons/small256/GrandfatherKnight.png",
+          "bytes": 52326,
+          "size": [
+            256,
+            256
+          ],
+          "rgba8_uncompressed_bytes": 262144,
+          "sha256": "8aac9c995e8829712844883f26b90b4d80730f3bb5278ac9c10ecf4076d8638d",
+          "corner_alpha": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "ui_comparison": [
+            {
+              "display_px": 64,
+              "background": "#F6EEDC",
+              "mean_rgb_error_255": 0.7333,
+              "rmse_255": 1.0878,
+              "psnr_db": 47.4
+            },
+            {
+              "display_px": 64,
+              "background": "#151C26",
+              "mean_rgb_error_255": 0.5539,
+              "rmse_255": 0.8849,
+              "psnr_db": 49.19
+            },
+            {
+              "display_px": 96,
+              "background": "#F6EEDC",
+              "mean_rgb_error_255": 0.839,
+              "rmse_255": 1.3011,
+              "psnr_db": 45.84
+            },
+            {
+              "display_px": 96,
+              "background": "#151C26",
+              "mean_rgb_error_255": 0.632,
+              "rmse_255": 1.0404,
+              "psnr_db": 47.79
+            },
+            {
+              "display_px": 128,
+              "background": "#F6EEDC",
+              "mean_rgb_error_255": 0.9214,
+              "rmse_255": 1.4801,
+              "psnr_db": 44.72
+            },
+            {
+              "display_px": 128,
+              "background": "#151C26",
+              "mean_rgb_error_255": 0.678,
+              "rmse_255": 1.133,
+              "psnr_db": 47.05
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "GrandfatherPunk",
+      "character": "Grandfather",
+      "role": "Punk",
+      "source": "/Users/wingman/Documents/Codex/GrowAMonster-Git-2026-11-12/art/granny-grandfather-icons-v3/icons/GrandfatherPunk.png",
+      "source_bytes": 759981,
+      "source_sha256": "92063895a65af6173955d48ff96f044fb4b5d3b18c84f738f58b3f7eeb8325cb",
+      "source_size": [
+        1254,
+        1254
+      ],
+      "variants": {
+        "large1024": {
+          "file": "icons/large1024/GrandfatherPunk.png",
+          "bytes": 528934,
+          "size": [
+            1024,
+            1024
+          ],
+          "rgba8_uncompressed_bytes": 4194304,
+          "sha256": "2a0687577115465f89c92d95a25ad307af7cc6606b7e2c7e794874333a752cda",
+          "corner_alpha": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "ui_comparison": [
+            {
+              "display_px": 64,
+              "background": "#F6EEDC",
+              "mean_rgb_error_255": 0.3952,
+              "rmse_255": 0.6552,
+              "psnr_db": 51.8
+            },
+            {
+              "display_px": 64,
+              "background": "#151C26",
+              "mean_rgb_error_255": 0.3747,
+              "rmse_255": 0.6266,
+              "psnr_db": 52.19
+            },
+            {
+              "display_px": 96,
+              "background": "#F6EEDC",
+              "mean_rgb_error_255": 0.4335,
+              "rmse_255": 0.6864,
+              "psnr_db": 51.4
+            },
+            {
+              "display_px": 96,
+              "background": "#151C26",
+              "mean_rgb_error_255": 0.3983,
+              "rmse_255": 0.6489,
+              "psnr_db": 51.89
+            },
+            {
+              "display_px": 128,
+              "background": "#F6EEDC",
+              "mean_rgb_error_255": 0.4599,
+              "rmse_255": 0.7121,
+              "psnr_db": 51.08
+            },
+            {
+              "display_px": 128,
+              "background": "#151C26",
+              "mean_rgb_error_255": 0.4314,
+              "rmse_255": 0.6821,
+              "psnr_db": 51.45
+            }
+          ]
+        },
+        "ui512": {
+          "file": "icons/ui512/GrandfatherPunk.png",
+          "bytes": 159346,
+          "size": [
+            512,
+            512
+          ],
+          "rgba8_uncompressed_bytes": 1048576,
+          "sha256": "818c8ab0e8e158143ff9e9ee3745bf7c044883692fe35602d82bc9d6169daee2",
+          "corner_alpha": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "ui_comparison": [
+            {
+              "display_px": 64,
+              "background": "#F6EEDC",
+              "mean_rgb_error_255": 0.4731,
+              "rmse_255": 0.7358,
+              "psnr_db": 50.8
+            },
+            {
+              "display_px": 64,
+              "background": "#151C26",
+              "mean_rgb_error_255": 0.4135,
+              "rmse_255": 0.6705,
+              "psnr_db": 51.6
+            },
+            {
+              "display_px": 96,
+              "background": "#F6EEDC",
+              "mean_rgb_error_255": 0.5389,
+              "rmse_255": 0.7979,
+              "psnr_db": 50.09
+            },
+            {
+              "display_px": 96,
+              "background": "#151C26",
+              "mean_rgb_error_255": 0.4687,
+              "rmse_255": 0.7257,
+              "psnr_db": 50.92
+            },
+            {
+              "display_px": 128,
+              "background": "#F6EEDC",
+              "mean_rgb_error_255": 0.5995,
+              "rmse_255": 0.8679,
+              "psnr_db": 49.36
+            },
+            {
+              "display_px": 128,
+              "background": "#151C26",
+              "mean_rgb_error_255": 0.5108,
+              "rmse_255": 0.7701,
+              "psnr_db": 50.4
+            }
+          ]
+        },
+        "small256": {
+          "file": "icons/small256/GrandfatherPunk.png",
+          "bytes": 49445,
+          "size": [
+            256,
+            256
+          ],
+          "rgba8_uncompressed_bytes": 262144,
+          "sha256": "ceb47f6c5dbf7d3722854bbb2a35e783b43a137fc79747e220e0fc09b79c6411",
+          "corner_alpha": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "ui_comparison": [
+            {
+              "display_px": 64,
+              "background": "#F6EEDC",
+              "mean_rgb_error_255": 0.7464,
+              "rmse_255": 1.1029,
+              "psnr_db": 47.28
+            },
+            {
+              "display_px": 64,
+              "background": "#151C26",
+              "mean_rgb_error_255": 0.5671,
+              "rmse_255": 0.8883,
+              "psnr_db": 49.16
+            },
+            {
+              "display_px": 96,
+              "background": "#F6EEDC",
+              "mean_rgb_error_255": 0.8738,
+              "rmse_255": 1.3108,
+              "psnr_db": 45.78
+            },
+            {
+              "display_px": 96,
+              "background": "#151C26",
+              "mean_rgb_error_255": 0.6247,
+              "rmse_255": 0.9786,
+              "psnr_db": 48.32
+            },
+            {
+              "display_px": 128,
+              "background": "#F6EEDC",
+              "mean_rgb_error_255": 0.9821,
+              "rmse_255": 1.5173,
+              "psnr_db": 44.51
+            },
+            {
+              "display_px": 128,
+              "background": "#151C26",
+              "mean_rgb_error_255": 0.6754,
+              "rmse_255": 1.0626,
+              "psnr_db": 47.6
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "GrandfatherAssassin",
+      "character": "Grandfather",
+      "role": "Assassin",
+      "source": "/Users/wingman/Documents/Codex/GrowAMonster-Git-2026-11-12/art/granny-grandfather-icons-v3/icons/GrandfatherAssassin.png",
+      "source_bytes": 867721,
+      "source_sha256": "b5c6a05f8ba4e2bb86fa706dc0b1b49b6d0c123f58770f8babbca083239fd6b4",
+      "source_size": [
+        1254,
+        1254
+      ],
+      "variants": {
+        "large1024": {
+          "file": "icons/large1024/GrandfatherAssassin.png",
+          "bytes": 603393,
+          "size": [
+            1024,
+            1024
+          ],
+          "rgba8_uncompressed_bytes": 4194304,
+          "sha256": "d72563bbfe85234d2b9fd00390b30ee0c6a2ac78281509c3fa0e211623d1fdd9",
+          "corner_alpha": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "ui_comparison": [
+            {
+              "display_px": 64,
+              "background": "#F6EEDC",
+              "mean_rgb_error_255": 0.3713,
+              "rmse_255": 0.6259,
+              "psnr_db": 52.2
+            },
+            {
+              "display_px": 64,
+              "background": "#151C26",
+              "mean_rgb_error_255": 0.353,
+              "rmse_255": 0.6039,
+              "psnr_db": 52.51
+            },
+            {
+              "display_px": 96,
+              "background": "#F6EEDC",
+              "mean_rgb_error_255": 0.3984,
+              "rmse_255": 0.6545,
+              "psnr_db": 51.81
+            },
+            {
+              "display_px": 96,
+              "background": "#151C26",
+              "mean_rgb_error_255": 0.375,
+              "rmse_255": 0.6273,
+              "psnr_db": 52.18
+            },
+            {
+              "display_px": 128,
+              "background": "#F6EEDC",
+              "mean_rgb_error_255": 0.4259,
+              "rmse_255": 0.6784,
+              "psnr_db": 51.5
+            },
+            {
+              "display_px": 128,
+              "background": "#151C26",
+              "mean_rgb_error_255": 0.4004,
+              "rmse_255": 0.6531,
+              "psnr_db": 51.83
+            }
+          ]
+        },
+        "ui512": {
+          "file": "icons/ui512/GrandfatherAssassin.png",
+          "bytes": 183451,
+          "size": [
+            512,
+            512
+          ],
+          "rgba8_uncompressed_bytes": 1048576,
+          "sha256": "1de6639342028ef60bc260d85ed05bf9270ec280d9fe83ac47ed7ced499e643a",
+          "corner_alpha": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "ui_comparison": [
+            {
+              "display_px": 64,
+              "background": "#F6EEDC",
+              "mean_rgb_error_255": 0.4376,
+              "rmse_255": 0.6913,
+              "psnr_db": 51.34
+            },
+            {
+              "display_px": 64,
+              "background": "#151C26",
+              "mean_rgb_error_255": 0.3983,
+              "rmse_255": 0.6494,
+              "psnr_db": 51.88
+            },
+            {
+              "display_px": 96,
+              "background": "#F6EEDC",
+              "mean_rgb_error_255": 0.4925,
+              "rmse_255": 0.7547,
+              "psnr_db": 50.57
+            },
+            {
+              "display_px": 96,
+              "background": "#151C26",
+              "mean_rgb_error_255": 0.4321,
+              "rmse_255": 0.6923,
+              "psnr_db": 51.32
+            },
+            {
+              "display_px": 128,
+              "background": "#F6EEDC",
+              "mean_rgb_error_255": 0.5441,
+              "rmse_255": 0.8221,
+              "psnr_db": 49.83
+            },
+            {
+              "display_px": 128,
+              "background": "#151C26",
+              "mean_rgb_error_255": 0.4764,
+              "rmse_255": 0.7438,
+              "psnr_db": 50.7
+            }
+          ]
+        },
+        "small256": {
+          "file": "icons/small256/GrandfatherAssassin.png",
+          "bytes": 57159,
+          "size": [
+            256,
+            256
+          ],
+          "rgba8_uncompressed_bytes": 262144,
+          "sha256": "06c1997802e3cae0d35dd3f064e6d4d24c892d7e617623abc16b8464467c77d5",
+          "corner_alpha": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "ui_comparison": [
+            {
+              "display_px": 64,
+              "background": "#F6EEDC",
+              "mean_rgb_error_255": 0.6293,
+              "rmse_255": 0.9414,
+              "psnr_db": 48.66
+            },
+            {
+              "display_px": 64,
+              "background": "#151C26",
+              "mean_rgb_error_255": 0.5102,
+              "rmse_255": 0.7949,
+              "psnr_db": 50.12
+            },
+            {
+              "display_px": 96,
+              "background": "#F6EEDC",
+              "mean_rgb_error_255": 0.7762,
+              "rmse_255": 1.2065,
+              "psnr_db": 46.5
+            },
+            {
+              "display_px": 96,
+              "background": "#151C26",
+              "mean_rgb_error_255": 0.5751,
+              "rmse_255": 0.9092,
+              "psnr_db": 48.96
+            },
+            {
+              "display_px": 128,
+              "background": "#F6EEDC",
+              "mean_rgb_error_255": 0.8309,
+              "rmse_255": 1.3299,
+              "psnr_db": 45.65
+            },
+            {
+              "display_px": 128,
+              "background": "#151C26",
+              "mean_rgb_error_255": 0.6122,
+              "rmse_255": 0.9724,
+              "psnr_db": 48.37
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "GrannyFarmer",
+      "character": "Granny",
+      "role": "Farmer",
+      "source": "/Users/wingman/Documents/Codex/GrowAMonster-Git-2026-11-12/art/granny-grandfather-icons-v3/icons/GrannyFarmer.png",
+      "source_bytes": 781462,
+      "source_sha256": "31c9c287f8a8c56f6d7e5395ae1afdf60c76c68aa02c0af8eb6144ce25af8554",
+      "source_size": [
+        1254,
+        1254
+      ],
+      "variants": {
+        "large1024": {
+          "file": "icons/large1024/GrannyFarmer.png",
+          "bytes": 542750,
+          "size": [
+            1024,
+            1024
+          ],
+          "rgba8_uncompressed_bytes": 4194304,
+          "sha256": "3dbe80c17ef19b425403ec340bdaa188ede3bfb9ed857cf017dd53c7373d7e46",
+          "corner_alpha": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "ui_comparison": [
+            {
+              "display_px": 64,
+              "background": "#F6EEDC",
+              "mean_rgb_error_255": 0.3952,
+              "rmse_255": 0.653,
+              "psnr_db": 51.83
+            },
+            {
+              "display_px": 64,
+              "background": "#151C26",
+              "mean_rgb_error_255": 0.3648,
+              "rmse_255": 0.619,
+              "psnr_db": 52.3
+            },
+            {
+              "display_px": 96,
+              "background": "#F6EEDC",
+              "mean_rgb_error_255": 0.4048,
+              "rmse_255": 0.6635,
+              "psnr_db": 51.69
+            },
+            {
+              "display_px": 96,
+              "background": "#151C26",
+              "mean_rgb_error_255": 0.3746,
+              "rmse_255": 0.6314,
+              "psnr_db": 52.12
+            },
+            {
+              "display_px": 128,
+              "background": "#F6EEDC",
+              "mean_rgb_error_255": 0.4212,
+              "rmse_255": 0.6764,
+              "psnr_db": 51.53
+            },
+            {
+              "display_px": 128,
+              "background": "#151C26",
+              "mean_rgb_error_255": 0.3915,
+              "rmse_255": 0.6467,
+              "psnr_db": 51.92
+            }
+          ]
+        },
+        "ui512": {
+          "file": "icons/ui512/GrannyFarmer.png",
+          "bytes": 160913,
+          "size": [
+            512,
+            512
+          ],
+          "rgba8_uncompressed_bytes": 1048576,
+          "sha256": "8d940faa5fac47ad21ffc2ef0d6c6be6140bf1aa83d1a0a20e8537f7863e42de",
+          "corner_alpha": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "ui_comparison": [
+            {
+              "display_px": 64,
+              "background": "#F6EEDC",
+              "mean_rgb_error_255": 0.4578,
+              "rmse_255": 0.717,
+              "psnr_db": 51.02
+            },
+            {
+              "display_px": 64,
+              "background": "#151C26",
+              "mean_rgb_error_255": 0.3914,
+              "rmse_255": 0.652,
+              "psnr_db": 51.85
+            },
+            {
+              "display_px": 96,
+              "background": "#F6EEDC",
+              "mean_rgb_error_255": 0.508,
+              "rmse_255": 0.7766,
+              "psnr_db": 50.33
+            },
+            {
+              "display_px": 96,
+              "background": "#151C26",
+              "mean_rgb_error_255": 0.4273,
+              "rmse_255": 0.6898,
+              "psnr_db": 51.36
+            },
+            {
+              "display_px": 128,
+              "background": "#F6EEDC",
+              "mean_rgb_error_255": 0.5542,
+              "rmse_255": 0.8369,
+              "psnr_db": 49.68
+            },
+            {
+              "display_px": 128,
+              "background": "#151C26",
+              "mean_rgb_error_255": 0.4636,
+              "rmse_255": 0.7282,
+              "psnr_db": 50.89
+            }
+          ]
+        },
+        "small256": {
+          "file": "icons/small256/GrannyFarmer.png",
+          "bytes": 50540,
+          "size": [
+            256,
+            256
+          ],
+          "rgba8_uncompressed_bytes": 262144,
+          "sha256": "56e63b385436b084e35677668df259aaefbb910ca1acfba80ed1e0de325c28ee",
+          "corner_alpha": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "ui_comparison": [
+            {
+              "display_px": 64,
+              "background": "#F6EEDC",
+              "mean_rgb_error_255": 0.7103,
+              "rmse_255": 1.0773,
+              "psnr_db": 47.48
+            },
+            {
+              "display_px": 64,
+              "background": "#151C26",
+              "mean_rgb_error_255": 0.5289,
+              "rmse_255": 0.8636,
+              "psnr_db": 49.4
+            },
+            {
+              "display_px": 96,
+              "background": "#F6EEDC",
+              "mean_rgb_error_255": 0.8481,
+              "rmse_255": 1.3196,
+              "psnr_db": 45.72
+            },
+            {
+              "display_px": 96,
+              "background": "#151C26",
+              "mean_rgb_error_255": 0.5924,
+              "rmse_255": 0.9571,
+              "psnr_db": 48.51
+            },
+            {
+              "display_px": 128,
+              "background": "#F6EEDC",
+              "mean_rgb_error_255": 0.8917,
+              "rmse_255": 1.4691,
+              "psnr_db": 44.79
+            },
+            {
+              "display_px": 128,
+              "background": "#151C26",
+              "mean_rgb_error_255": 0.6117,
+              "rmse_255": 1.0144,
+              "psnr_db": 48.01
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "GrannyMiner",
+      "character": "Granny",
+      "role": "Miner",
+      "source": "/Users/wingman/Documents/Codex/GrowAMonster-Git-2026-11-12/art/granny-grandfather-icons-v3/icons/GrannyMiner.png",
+      "source_bytes": 822014,
+      "source_sha256": "9b63ceb8aa819ee796a836d9c91422ae97f5ff3ac888c9c4b386b8013606e804",
+      "source_size": [
+        1254,
+        1254
+      ],
+      "variants": {
+        "large1024": {
+          "file": "icons/large1024/GrannyMiner.png",
+          "bytes": 572707,
+          "size": [
+            1024,
+            1024
+          ],
+          "rgba8_uncompressed_bytes": 4194304,
+          "sha256": "0cab3b4772bfd4284a0cbbdd89486fb2b2e600f34d93ce94d36f1998f28dc321",
+          "corner_alpha": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "ui_comparison": [
+            {
+              "display_px": 64,
+              "background": "#F6EEDC",
+              "mean_rgb_error_255": 0.3736,
+              "rmse_255": 0.6321,
+              "psnr_db": 52.11
+            },
+            {
+              "display_px": 64,
+              "background": "#151C26",
+              "mean_rgb_error_255": 0.3491,
+              "rmse_255": 0.6083,
+              "psnr_db": 52.45
+            },
+            {
+              "display_px": 96,
+              "background": "#F6EEDC",
+              "mean_rgb_error_255": 0.4155,
+              "rmse_255": 0.6765,
+              "psnr_db": 51.53
+            },
+            {
+              "display_px": 96,
+              "background": "#151C26",
+              "mean_rgb_error_255": 0.3855,
+              "rmse_255": 0.6441,
+              "psnr_db": 51.95
+            },
+            {
+              "display_px": 128,
+              "background": "#F6EEDC",
+              "mean_rgb_error_255": 0.4216,
+              "rmse_255": 0.679,
+              "psnr_db": 51.49
+            },
+            {
+              "display_px": 128,
+              "background": "#151C26",
+              "mean_rgb_error_255": 0.39,
+              "rmse_255": 0.6459,
+              "psnr_db": 51.93
+            }
+          ]
+        },
+        "ui512": {
+          "file": "icons/ui512/GrannyMiner.png",
+          "bytes": 170172,
+          "size": [
+            512,
+            512
+          ],
+          "rgba8_uncompressed_bytes": 1048576,
+          "sha256": "467e5c497055fee5cf49357cc711695ebcaf5909604a3d6e769560f7851b859c",
+          "corner_alpha": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "ui_comparison": [
+            {
+              "display_px": 64,
+              "background": "#F6EEDC",
+              "mean_rgb_error_255": 0.4487,
+              "rmse_255": 0.7104,
+              "psnr_db": 51.1
+            },
+            {
+              "display_px": 64,
+              "background": "#151C26",
+              "mean_rgb_error_255": 0.3896,
+              "rmse_255": 0.6462,
+              "psnr_db": 51.92
+            },
+            {
+              "display_px": 96,
+              "background": "#F6EEDC",
+              "mean_rgb_error_255": 0.5174,
+              "rmse_255": 0.7899,
+              "psnr_db": 50.18
+            },
+            {
+              "display_px": 96,
+              "background": "#151C26",
+              "mean_rgb_error_255": 0.4396,
+              "rmse_255": 0.7085,
+              "psnr_db": 51.12
+            },
+            {
+              "display_px": 128,
+              "background": "#F6EEDC",
+              "mean_rgb_error_255": 0.5528,
+              "rmse_255": 0.8326,
+              "psnr_db": 49.72
+            },
+            {
+              "display_px": 128,
+              "background": "#151C26",
+              "mean_rgb_error_255": 0.4709,
+              "rmse_255": 0.742,
+              "psnr_db": 50.72
+            }
+          ]
+        },
+        "small256": {
+          "file": "icons/small256/GrannyMiner.png",
+          "bytes": 52919,
+          "size": [
+            256,
+            256
+          ],
+          "rgba8_uncompressed_bytes": 262144,
+          "sha256": "1137162abf328b61938f56e34ad3ed1684e677b908ceaad4e88bdbf21ca3a0ab",
+          "corner_alpha": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "ui_comparison": [
+            {
+              "display_px": 64,
+              "background": "#F6EEDC",
+              "mean_rgb_error_255": 0.6898,
+              "rmse_255": 1.0373,
+              "psnr_db": 47.81
+            },
+            {
+              "display_px": 64,
+              "background": "#151C26",
+              "mean_rgb_error_255": 0.5379,
+              "rmse_255": 0.8493,
+              "psnr_db": 49.55
+            },
+            {
+              "display_px": 96,
+              "background": "#F6EEDC",
+              "mean_rgb_error_255": 0.8243,
+              "rmse_255": 1.2754,
+              "psnr_db": 46.02
+            },
+            {
+              "display_px": 96,
+              "background": "#151C26",
+              "mean_rgb_error_255": 0.5915,
+              "rmse_255": 0.9359,
+              "psnr_db": 48.71
+            },
+            {
+              "display_px": 128,
+              "background": "#F6EEDC",
+              "mean_rgb_error_255": 0.901,
+              "rmse_255": 1.4332,
+              "psnr_db": 45.0
+            },
+            {
+              "display_px": 128,
+              "background": "#151C26",
+              "mean_rgb_error_255": 0.6215,
+              "rmse_255": 0.99,
+              "psnr_db": 48.22
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "GrannyPrincess",
+      "character": "Granny",
+      "role": "Princess",
+      "source": "/Users/wingman/Documents/Codex/GrowAMonster-Git-2026-11-12/art/granny-grandfather-icons-v3/icons/GrannyPrincess.png",
+      "source_bytes": 861646,
+      "source_sha256": "60074605eff2eb53b3e6ebe142e12c854772a8c04d065d2434954680ea782595",
+      "source_size": [
+        1254,
+        1254
+      ],
+      "variants": {
+        "large1024": {
+          "file": "icons/large1024/GrannyPrincess.png",
+          "bytes": 599648,
+          "size": [
+            1024,
+            1024
+          ],
+          "rgba8_uncompressed_bytes": 4194304,
+          "sha256": "1743a888cfff52592220471daba2338d05334d7181a98deb4d0ddbfbd0b7158c",
+          "corner_alpha": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "ui_comparison": [
+            {
+              "display_px": 64,
+              "background": "#F6EEDC",
+              "mean_rgb_error_255": 0.3602,
+              "rmse_255": 0.6311,
+              "psnr_db": 52.13
+            },
+            {
+              "display_px": 64,
+              "background": "#151C26",
+              "mean_rgb_error_255": 0.3368,
+              "rmse_255": 0.599,
+              "psnr_db": 52.58
+            },
+            {
+              "display_px": 96,
+              "background": "#F6EEDC",
+              "mean_rgb_error_255": 0.3842,
+              "rmse_255": 0.6465,
+              "psnr_db": 51.92
+            },
+            {
+              "display_px": 96,
+              "background": "#151C26",
+              "mean_rgb_error_255": 0.3602,
+              "rmse_255": 0.6218,
+              "psnr_db": 52.26
+            },
+            {
+              "display_px": 128,
+              "background": "#F6EEDC",
+              "mean_rgb_error_255": 0.4019,
+              "rmse_255": 0.6637,
+              "psnr_db": 51.69
+            },
+            {
+              "display_px": 128,
+              "background": "#151C26",
+              "mean_rgb_error_255": 0.3742,
+              "rmse_255": 0.6352,
+              "psnr_db": 52.07
+            }
+          ]
+        },
+        "ui512": {
+          "file": "icons/ui512/GrannyPrincess.png",
+          "bytes": 179675,
+          "size": [
+            512,
+            512
+          ],
+          "rgba8_uncompressed_bytes": 1048576,
+          "sha256": "890d5a2060b8824d9ed6a57e06248b64d4a6b3095564f5e17baf704cc338f039",
+          "corner_alpha": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "ui_comparison": [
+            {
+              "display_px": 64,
+              "background": "#F6EEDC",
+              "mean_rgb_error_255": 0.4526,
+              "rmse_255": 0.7296,
+              "psnr_db": 50.87
+            },
+            {
+              "display_px": 64,
+              "background": "#151C26",
+              "mean_rgb_error_255": 0.3961,
+              "rmse_255": 0.6693,
+              "psnr_db": 51.62
+            },
+            {
+              "display_px": 96,
+              "background": "#F6EEDC",
+              "mean_rgb_error_255": 0.51,
+              "rmse_255": 0.7905,
+              "psnr_db": 50.17
+            },
+            {
+              "display_px": 96,
+              "background": "#151C26",
+              "mean_rgb_error_255": 0.4388,
+              "rmse_255": 0.7177,
+              "psnr_db": 51.01
+            },
+            {
+              "display_px": 128,
+              "background": "#F6EEDC",
+              "mean_rgb_error_255": 0.5493,
+              "rmse_255": 0.8508,
+              "psnr_db": 49.53
+            },
+            {
+              "display_px": 128,
+              "background": "#151C26",
+              "mean_rgb_error_255": 0.4812,
+              "rmse_255": 0.7731,
+              "psnr_db": 50.37
+            }
+          ]
+        },
+        "small256": {
+          "file": "icons/small256/GrannyPrincess.png",
+          "bytes": 55460,
+          "size": [
+            256,
+            256
+          ],
+          "rgba8_uncompressed_bytes": 262144,
+          "sha256": "4f8149d63e5ab19b6ab1697fb85dd2e736b122d9521454d0b7f51e7d29b41603",
+          "corner_alpha": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "ui_comparison": [
+            {
+              "display_px": 64,
+              "background": "#F6EEDC",
+              "mean_rgb_error_255": 0.7717,
+              "rmse_255": 1.2102,
+              "psnr_db": 46.47
+            },
+            {
+              "display_px": 64,
+              "background": "#151C26",
+              "mean_rgb_error_255": 0.6257,
+              "rmse_255": 1.0592,
+              "psnr_db": 47.63
+            },
+            {
+              "display_px": 96,
+              "background": "#F6EEDC",
+              "mean_rgb_error_255": 0.8909,
+              "rmse_255": 1.456,
+              "psnr_db": 44.87
+            },
+            {
+              "display_px": 96,
+              "background": "#151C26",
+              "mean_rgb_error_255": 0.6764,
+              "rmse_255": 1.1684,
+              "psnr_db": 46.78
+            },
+            {
+              "display_px": 128,
+              "background": "#F6EEDC",
+              "mean_rgb_error_255": 0.9432,
+              "rmse_255": 1.6146,
+              "psnr_db": 43.97
+            },
+            {
+              "display_px": 128,
+              "background": "#151C26",
+              "mean_rgb_error_255": 0.7064,
+              "rmse_255": 1.2782,
+              "psnr_db": 46.0
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "GrannyKnight",
+      "character": "Granny",
+      "role": "Knight",
+      "source": "/Users/wingman/Documents/Codex/GrowAMonster-Git-2026-11-12/art/granny-grandfather-icons-v3/icons/GrannyKnight.png",
+      "source_bytes": 793151,
+      "source_sha256": "33a9bab2d7873b38544296a9958c4d61e2e726a1ee488cca1f6c7c101599cb64",
+      "source_size": [
+        1254,
+        1254
+      ],
+      "variants": {
+        "large1024": {
+          "file": "icons/large1024/GrannyKnight.png",
+          "bytes": 548380,
+          "size": [
+            1024,
+            1024
+          ],
+          "rgba8_uncompressed_bytes": 4194304,
+          "sha256": "63f05e0790a992b385d4adc8a5f3e6616e6ead4f920074fabf915874dcb61da7",
+          "corner_alpha": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "ui_comparison": [
+            {
+              "display_px": 64,
+              "background": "#F6EEDC",
+              "mean_rgb_error_255": 0.3981,
+              "rmse_255": 0.658,
+              "psnr_db": 51.77
+            },
+            {
+              "display_px": 64,
+              "background": "#151C26",
+              "mean_rgb_error_255": 0.3788,
+              "rmse_255": 0.6348,
+              "psnr_db": 52.08
+            },
+            {
+              "display_px": 96,
+              "background": "#F6EEDC",
+              "mean_rgb_error_255": 0.4287,
+              "rmse_255": 0.6878,
+              "psnr_db": 51.38
+            },
+            {
+              "display_px": 96,
+              "background": "#151C26",
+              "mean_rgb_error_255": 0.4025,
+              "rmse_255": 0.661,
+              "psnr_db": 51.73
+            },
+            {
+              "display_px": 128,
+              "background": "#F6EEDC",
+              "mean_rgb_error_255": 0.4417,
+              "rmse_255": 0.6945,
+              "psnr_db": 51.3
+            },
+            {
+              "display_px": 128,
+              "background": "#151C26",
+              "mean_rgb_error_255": 0.4167,
+              "rmse_255": 0.6707,
+              "psnr_db": 51.6
+            }
+          ]
+        },
+        "ui512": {
+          "file": "icons/ui512/GrannyKnight.png",
+          "bytes": 163823,
+          "size": [
+            512,
+            512
+          ],
+          "rgba8_uncompressed_bytes": 1048576,
+          "sha256": "2260c7c3c8cf7288815ac74665d41e7647737357e10ba8765f9998fbc347ec62",
+          "corner_alpha": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "ui_comparison": [
+            {
+              "display_px": 64,
+              "background": "#F6EEDC",
+              "mean_rgb_error_255": 0.4724,
+              "rmse_255": 0.7318,
+              "psnr_db": 50.84
+            },
+            {
+              "display_px": 64,
+              "background": "#151C26",
+              "mean_rgb_error_255": 0.4286,
+              "rmse_255": 0.6877,
+              "psnr_db": 51.38
+            },
+            {
+              "display_px": 96,
+              "background": "#F6EEDC",
+              "mean_rgb_error_255": 0.5302,
+              "rmse_255": 0.7998,
+              "psnr_db": 50.07
+            },
+            {
+              "display_px": 96,
+              "background": "#151C26",
+              "mean_rgb_error_255": 0.4671,
+              "rmse_255": 0.7348,
+              "psnr_db": 50.81
+            },
+            {
+              "display_px": 128,
+              "background": "#F6EEDC",
+              "mean_rgb_error_255": 0.5729,
+              "rmse_255": 0.856,
+              "psnr_db": 49.48
+            },
+            {
+              "display_px": 128,
+              "background": "#151C26",
+              "mean_rgb_error_255": 0.4948,
+              "rmse_255": 0.7674,
+              "psnr_db": 50.43
+            }
+          ]
+        },
+        "small256": {
+          "file": "icons/small256/GrannyKnight.png",
+          "bytes": 50583,
+          "size": [
+            256,
+            256
+          ],
+          "rgba8_uncompressed_bytes": 262144,
+          "sha256": "44efe86b86217f817870eac1d1ea2bff6f5d7b2428406ca625bc4c303e225707",
+          "corner_alpha": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "ui_comparison": [
+            {
+              "display_px": 64,
+              "background": "#F6EEDC",
+              "mean_rgb_error_255": 0.7065,
+              "rmse_255": 1.0636,
+              "psnr_db": 47.6
+            },
+            {
+              "display_px": 64,
+              "background": "#151C26",
+              "mean_rgb_error_255": 0.5475,
+              "rmse_255": 0.8679,
+              "psnr_db": 49.36
+            },
+            {
+              "display_px": 96,
+              "background": "#F6EEDC",
+              "mean_rgb_error_255": 0.8021,
+              "rmse_255": 1.2555,
+              "psnr_db": 46.15
+            },
+            {
+              "display_px": 96,
+              "background": "#151C26",
+              "mean_rgb_error_255": 0.5891,
+              "rmse_255": 0.9537,
+              "psnr_db": 48.54
+            },
+            {
+              "display_px": 128,
+              "background": "#F6EEDC",
+              "mean_rgb_error_255": 0.859,
+              "rmse_255": 1.3883,
+              "psnr_db": 45.28
+            },
+            {
+              "display_px": 128,
+              "background": "#151C26",
+              "mean_rgb_error_255": 0.6239,
+              "rmse_255": 1.0085,
+              "psnr_db": 48.06
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "GrannyPunk",
+      "character": "Granny",
+      "role": "Punk",
+      "source": "/Users/wingman/Documents/Codex/GrowAMonster-Git-2026-11-12/art/granny-grandfather-icons-v3/icons/GrannyPunk.png",
+      "source_bytes": 784887,
+      "source_sha256": "6f00898045796310fef12c88d7ae5a0701f27f274702b1dbc2c84a37bdc70ecf",
+      "source_size": [
+        1254,
+        1254
+      ],
+      "variants": {
+        "large1024": {
+          "file": "icons/large1024/GrannyPunk.png",
+          "bytes": 538216,
+          "size": [
+            1024,
+            1024
+          ],
+          "rgba8_uncompressed_bytes": 4194304,
+          "sha256": "9db8e2b24acb25aaeb3ee1cbd145737a1948d103dacd57031ed79500e3936a20",
+          "corner_alpha": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "ui_comparison": [
+            {
+              "display_px": 64,
+              "background": "#F6EEDC",
+              "mean_rgb_error_255": 0.4062,
+              "rmse_255": 0.6636,
+              "psnr_db": 51.69
+            },
+            {
+              "display_px": 64,
+              "background": "#151C26",
+              "mean_rgb_error_255": 0.3832,
+              "rmse_255": 0.6378,
+              "psnr_db": 52.04
+            },
+            {
+              "display_px": 96,
+              "background": "#F6EEDC",
+              "mean_rgb_error_255": 0.4513,
+              "rmse_255": 0.7041,
+              "psnr_db": 51.18
+            },
+            {
+              "display_px": 96,
+              "background": "#151C26",
+              "mean_rgb_error_255": 0.4167,
+              "rmse_255": 0.6672,
+              "psnr_db": 51.65
+            },
+            {
+              "display_px": 128,
+              "background": "#F6EEDC",
+              "mean_rgb_error_255": 0.4575,
+              "rmse_255": 0.705,
+              "psnr_db": 51.17
+            },
+            {
+              "display_px": 128,
+              "background": "#151C26",
+              "mean_rgb_error_255": 0.4227,
+              "rmse_255": 0.6711,
+              "psnr_db": 51.59
+            }
+          ]
+        },
+        "ui512": {
+          "file": "icons/ui512/GrannyPunk.png",
+          "bytes": 159519,
+          "size": [
+            512,
+            512
+          ],
+          "rgba8_uncompressed_bytes": 1048576,
+          "sha256": "386ff081f549c7282f6440d08e07ee38e1037b2528cb32b442d834ffe494e098",
+          "corner_alpha": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "ui_comparison": [
+            {
+              "display_px": 64,
+              "background": "#F6EEDC",
+              "mean_rgb_error_255": 0.5004,
+              "rmse_255": 0.7552,
+              "psnr_db": 50.57
+            },
+            {
+              "display_px": 64,
+              "background": "#151C26",
+              "mean_rgb_error_255": 0.4323,
+              "rmse_255": 0.6873,
+              "psnr_db": 51.39
+            },
+            {
+              "display_px": 96,
+              "background": "#F6EEDC",
+              "mean_rgb_error_255": 0.5524,
+              "rmse_255": 0.8087,
+              "psnr_db": 49.97
+            },
+            {
+              "display_px": 96,
+              "background": "#151C26",
+              "mean_rgb_error_255": 0.4774,
+              "rmse_255": 0.7348,
+              "psnr_db": 50.81
+            },
+            {
+              "display_px": 128,
+              "background": "#F6EEDC",
+              "mean_rgb_error_255": 0.6003,
+              "rmse_255": 0.8789,
+              "psnr_db": 49.25
+            },
+            {
+              "display_px": 128,
+              "background": "#151C26",
+              "mean_rgb_error_255": 0.5085,
+              "rmse_255": 0.7738,
+              "psnr_db": 50.36
+            }
+          ]
+        },
+        "small256": {
+          "file": "icons/small256/GrannyPunk.png",
+          "bytes": 49465,
+          "size": [
+            256,
+            256
+          ],
+          "rgba8_uncompressed_bytes": 262144,
+          "sha256": "2956b3ca11cdb5e59e9bdbfcf37bcfd8b990447315b4d270c2cc22127143004f",
+          "corner_alpha": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "ui_comparison": [
+            {
+              "display_px": 64,
+              "background": "#F6EEDC",
+              "mean_rgb_error_255": 0.7578,
+              "rmse_255": 1.094,
+              "psnr_db": 47.35
+            },
+            {
+              "display_px": 64,
+              "background": "#151C26",
+              "mean_rgb_error_255": 0.571,
+              "rmse_255": 0.8789,
+              "psnr_db": 49.25
+            },
+            {
+              "display_px": 96,
+              "background": "#F6EEDC",
+              "mean_rgb_error_255": 0.8722,
+              "rmse_255": 1.3084,
+              "psnr_db": 45.8
+            },
+            {
+              "display_px": 96,
+              "background": "#151C26",
+              "mean_rgb_error_255": 0.6307,
+              "rmse_255": 0.9739,
+              "psnr_db": 48.36
+            },
+            {
+              "display_px": 128,
+              "background": "#F6EEDC",
+              "mean_rgb_error_255": 0.943,
+              "rmse_255": 1.4887,
+              "psnr_db": 44.67
+            },
+            {
+              "display_px": 128,
+              "background": "#151C26",
+              "mean_rgb_error_255": 0.6556,
+              "rmse_255": 1.0343,
+              "psnr_db": 47.84
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "GrannyAssassin",
+      "character": "Granny",
+      "role": "Assassin",
+      "source": "/Users/wingman/Documents/Codex/GrowAMonster-Git-2026-11-12/art/granny-grandfather-icons-v3/icons/GrannyAssassin.png",
+      "source_bytes": 803529,
+      "source_sha256": "08f83bb82aac77015fc1b6fa0d5a6085cba0ff00a8143590ae1c6ee81d317aeb",
+      "source_size": [
+        1254,
+        1254
+      ],
+      "variants": {
+        "large1024": {
+          "file": "icons/large1024/GrannyAssassin.png",
+          "bytes": 554040,
+          "size": [
+            1024,
+            1024
+          ],
+          "rgba8_uncompressed_bytes": 4194304,
+          "sha256": "d7790e9295dd915470f7135fb95934a4bb1ddc16004ce0a4d3127b65a7dc02bd",
+          "corner_alpha": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "ui_comparison": [
+            {
+              "display_px": 64,
+              "background": "#F6EEDC",
+              "mean_rgb_error_255": 0.4131,
+              "rmse_255": 0.6667,
+              "psnr_db": 51.65
+            },
+            {
+              "display_px": 64,
+              "background": "#151C26",
+              "mean_rgb_error_255": 0.3878,
+              "rmse_255": 0.6405,
+              "psnr_db": 52.0
+            },
+            {
+              "display_px": 96,
+              "background": "#F6EEDC",
+              "mean_rgb_error_255": 0.4272,
+              "rmse_255": 0.6775,
+              "psnr_db": 51.51
+            },
+            {
+              "display_px": 96,
+              "background": "#151C26",
+              "mean_rgb_error_255": 0.4079,
+              "rmse_255": 0.6589,
+              "psnr_db": 51.75
+            },
+            {
+              "display_px": 128,
+              "background": "#F6EEDC",
+              "mean_rgb_error_255": 0.4447,
+              "rmse_255": 0.692,
+              "psnr_db": 51.33
+            },
+            {
+              "display_px": 128,
+              "background": "#151C26",
+              "mean_rgb_error_255": 0.4231,
+              "rmse_255": 0.6708,
+              "psnr_db": 51.6
+            }
+          ]
+        },
+        "ui512": {
+          "file": "icons/ui512/GrannyAssassin.png",
+          "bytes": 168445,
+          "size": [
+            512,
+            512
+          ],
+          "rgba8_uncompressed_bytes": 1048576,
+          "sha256": "5a8b2d953b600ad13f35bd0eb912cbcc41f72ec0309ca96578a16fecfa784155",
+          "corner_alpha": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "ui_comparison": [
+            {
+              "display_px": 64,
+              "background": "#F6EEDC",
+              "mean_rgb_error_255": 0.4711,
+              "rmse_255": 0.7206,
+              "psnr_db": 50.98
+            },
+            {
+              "display_px": 64,
+              "background": "#151C26",
+              "mean_rgb_error_255": 0.4187,
+              "rmse_255": 0.6688,
+              "psnr_db": 51.63
+            },
+            {
+              "display_px": 96,
+              "background": "#F6EEDC",
+              "mean_rgb_error_255": 0.5089,
+              "rmse_255": 0.7617,
+              "psnr_db": 50.5
+            },
+            {
+              "display_px": 96,
+              "background": "#151C26",
+              "mean_rgb_error_255": 0.4483,
+              "rmse_255": 0.7026,
+              "psnr_db": 51.2
+            },
+            {
+              "display_px": 128,
+              "background": "#F6EEDC",
+              "mean_rgb_error_255": 0.552,
+              "rmse_255": 0.8143,
+              "psnr_db": 49.92
+            },
+            {
+              "display_px": 128,
+              "background": "#151C26",
+              "mean_rgb_error_255": 0.4827,
+              "rmse_255": 0.7354,
+              "psnr_db": 50.8
+            }
+          ]
+        },
+        "small256": {
+          "file": "icons/small256/GrannyAssassin.png",
+          "bytes": 52240,
+          "size": [
+            256,
+            256
+          ],
+          "rgba8_uncompressed_bytes": 262144,
+          "sha256": "f98a358e215b28f4ef02ef3ae86f095468a907b8c37bf7f8c61b0c0e90fee1c1",
+          "corner_alpha": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "ui_comparison": [
+            {
+              "display_px": 64,
+              "background": "#F6EEDC",
+              "mean_rgb_error_255": 0.6489,
+              "rmse_255": 0.9742,
+              "psnr_db": 48.36
+            },
+            {
+              "display_px": 64,
+              "background": "#151C26",
+              "mean_rgb_error_255": 0.5075,
+              "rmse_255": 0.7949,
+              "psnr_db": 50.12
+            },
+            {
+              "display_px": 96,
+              "background": "#F6EEDC",
+              "mean_rgb_error_255": 0.7578,
+              "rmse_255": 1.1928,
+              "psnr_db": 46.6
+            },
+            {
+              "display_px": 96,
+              "background": "#151C26",
+              "mean_rgb_error_255": 0.5573,
+              "rmse_255": 0.8636,
+              "psnr_db": 49.4
+            },
+            {
+              "display_px": 128,
+              "background": "#F6EEDC",
+              "mean_rgb_error_255": 0.8229,
+              "rmse_255": 1.3189,
+              "psnr_db": 45.73
+            },
+            {
+              "display_px": 128,
+              "background": "#151C26",
+              "mean_rgb_error_255": 0.602,
+              "rmse_255": 0.9206,
+              "psnr_db": 48.85
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "GrandfatherKing",
+      "character": "Grandfather",
+      "role": "King",
+      "source": "/Users/wingman/Documents/Codex/GrowAMonster-Git-2026-11-12/art/granny-grandfather-icons-v3/icons/GrandfatherKing.png",
+      "source_bytes": 941378,
+      "source_sha256": "870465f0d17ae65dea5292f3935356157d204b84c2e50168e8a095c37638ab78",
+      "source_size": [
+        1254,
+        1254
+      ],
+      "variants": {
+        "large1024": {
+          "file": "icons/large1024/GrandfatherKing.png",
+          "bytes": 651303,
+          "size": [
+            1024,
+            1024
+          ],
+          "rgba8_uncompressed_bytes": 4194304,
+          "sha256": "2e518737de90289f4d2e425d078cf17cfc160f593207ace09e4c9b97305b570c",
+          "corner_alpha": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "ui_comparison": [
+            {
+              "display_px": 64,
+              "background": "#F6EEDC",
+              "mean_rgb_error_255": 0.3187,
+              "rmse_255": 0.5875,
+              "psnr_db": 52.75
+            },
+            {
+              "display_px": 64,
+              "background": "#151C26",
+              "mean_rgb_error_255": 0.3018,
+              "rmse_255": 0.5641,
+              "psnr_db": 53.1
+            },
+            {
+              "display_px": 96,
+              "background": "#F6EEDC",
+              "mean_rgb_error_255": 0.3436,
+              "rmse_255": 0.6051,
+              "psnr_db": 52.49
+            },
+            {
+              "display_px": 96,
+              "background": "#151C26",
+              "mean_rgb_error_255": 0.3248,
+              "rmse_255": 0.5851,
+              "psnr_db": 52.79
+            },
+            {
+              "display_px": 128,
+              "background": "#F6EEDC",
+              "mean_rgb_error_255": 0.364,
+              "rmse_255": 0.6271,
+              "psnr_db": 52.18
+            },
+            {
+              "display_px": 128,
+              "background": "#151C26",
+              "mean_rgb_error_255": 0.341,
+              "rmse_255": 0.6037,
+              "psnr_db": 52.51
+            }
+          ]
+        },
+        "ui512": {
+          "file": "icons/ui512/GrandfatherKing.png",
+          "bytes": 195529,
+          "size": [
+            512,
+            512
+          ],
+          "rgba8_uncompressed_bytes": 1048576,
+          "sha256": "0fe0a0deec1131f18909e3283c21e80c8e26ae8b7a34d80b7f7ab103769cad41",
+          "corner_alpha": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "ui_comparison": [
+            {
+              "display_px": 64,
+              "background": "#F6EEDC",
+              "mean_rgb_error_255": 0.3913,
+              "rmse_255": 0.6707,
+              "psnr_db": 51.6
+            },
+            {
+              "display_px": 64,
+              "background": "#151C26",
+              "mean_rgb_error_255": 0.3493,
+              "rmse_255": 0.6197,
+              "psnr_db": 52.29
+            },
+            {
+              "display_px": 96,
+              "background": "#F6EEDC",
+              "mean_rgb_error_255": 0.4654,
+              "rmse_255": 0.7379,
+              "psnr_db": 50.77
+            },
+            {
+              "display_px": 96,
+              "background": "#151C26",
+              "mean_rgb_error_255": 0.4065,
+              "rmse_255": 0.6802,
+              "psnr_db": 51.48
+            },
+            {
+              "display_px": 128,
+              "background": "#F6EEDC",
+              "mean_rgb_error_255": 0.4993,
+              "rmse_255": 0.7954,
+              "psnr_db": 50.12
+            },
+            {
+              "display_px": 128,
+              "background": "#151C26",
+              "mean_rgb_error_255": 0.434,
+              "rmse_255": 0.7165,
+              "psnr_db": 51.03
+            }
+          ]
+        },
+        "small256": {
+          "file": "icons/small256/GrandfatherKing.png",
+          "bytes": 60172,
+          "size": [
+            256,
+            256
+          ],
+          "rgba8_uncompressed_bytes": 262144,
+          "sha256": "08d7b0e8d1cb603c0c996b6f09c0c5cb59c701260c8c87cdef523eee52a572c5",
+          "corner_alpha": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "ui_comparison": [
+            {
+              "display_px": 64,
+              "background": "#F6EEDC",
+              "mean_rgb_error_255": 0.6977,
+              "rmse_255": 1.0855,
+              "psnr_db": 47.42
+            },
+            {
+              "display_px": 64,
+              "background": "#151C26",
+              "mean_rgb_error_255": 0.5752,
+              "rmse_255": 0.9525,
+              "psnr_db": 48.55
+            },
+            {
+              "display_px": 96,
+              "background": "#F6EEDC",
+              "mean_rgb_error_255": 0.8249,
+              "rmse_255": 1.3385,
+              "psnr_db": 45.6
+            },
+            {
+              "display_px": 96,
+              "background": "#151C26",
+              "mean_rgb_error_255": 0.6492,
+              "rmse_255": 1.0985,
+              "psnr_db": 47.31
+            },
+            {
+              "display_px": 128,
+              "background": "#F6EEDC",
+              "mean_rgb_error_255": 0.8857,
+              "rmse_255": 1.4834,
+              "psnr_db": 44.71
+            },
+            {
+              "display_px": 128,
+              "background": "#151C26",
+              "mean_rgb_error_255": 0.684,
+              "rmse_255": 1.1763,
+              "psnr_db": 46.72
+            }
+          ]
+        }
+      }
+    }
+  ]
+}

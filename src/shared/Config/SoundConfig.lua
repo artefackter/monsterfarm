@@ -4,6 +4,10 @@
 return {
  -- ProSoundEffects Creator Store verified 2026-11-07; spatial training loops.
  TreadmillMotor={Id=9112890980,Volume=.08,Speed=1},
+ -- The chainsaw finisher (2026-11-15; ActionVisuals): the starter cord, and the engine as a loop whose pitch follows
+ -- the revs. Picked by their titles in the library, not by ear.
+ ChainsawPull={Id=9113765339,Volume=.5,Speed=1}, -- Chainsaw Pull String 5
+ ChainsawEngine={Id=9113764523,Volume=.45,Speed=1}, -- Chainsaw Light Revs 2
  TreadmillWind={Id=9114057104,Volume=.06,Speed=1},
 
  -- Real firearm recordings (owner, 2026-11-12: the toy ray guns were too cartoonish). All ProSoundEffects, the same
@@ -59,6 +63,7 @@ return {
 	PetDigSound = { Id = 9114083746, Volume = 0.6, Speed = 1.3 }, -- Dirt Dig, 0.8 s, pitched up for a small pet
 	PetAlarmSound = { Id = 9113956178, Volume = 0.7 }, -- Coyotes, gruff barking, 1.1 s (no licensed dog bark found)
 	-- Music: looped and cross-faded by EffectsController
-	DayMusic = { Id = 1836295994, Volume = 0.035 }, -- Quiet spooky background; country track removed.
-	NightMusic = { Id = 1836295994, Volume = 0.035 }, -- Spooky Wooky 59, 64 s. Alt: 1839908929 Collywobbles
+	-- Half as loud since 2026-11-15 (owner: "turn the music down"); was 0.035.
+	DayMusic = { Id = 1836295994, Volume = 0.018 }, -- Quiet spooky background; country track removed.
+	NightMusic = { Id = 1836295994, Volume = 0.018 }, -- Spooky Wooky 59, 64 s. Alt: 1839908929 Collywobbles
 }

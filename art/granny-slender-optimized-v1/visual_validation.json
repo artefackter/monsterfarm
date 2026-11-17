@@ -1,0 +1,67 @@
+{
+  "passed": true,
+  "model_render_comparisons": [
+    {
+      "case": "Granny_Idle_full",
+      "mean_rgb_error_255": 0.00014,
+      "maximum_channel_error_255": 1
+    },
+    {
+      "case": "Granny_Aggressive_full",
+      "mean_rgb_error_255": 0.000186,
+      "maximum_channel_error_255": 1
+    },
+    {
+      "case": "Granny_Idle_grip",
+      "mean_rgb_error_255": 0.000133,
+      "maximum_channel_error_255": 1
+    },
+    {
+      "case": "Granny_Aggressive_grip",
+      "mean_rgb_error_255": 1.8e-05,
+      "maximum_channel_error_255": 1
+    },
+    {
+      "case": "Grandfather_King_Idle_full",
+      "mean_rgb_error_255": 6.3e-05,
+      "maximum_channel_error_255": 1
+    },
+    {
+      "case": "Grandfather_King_Aggressive_full",
+      "mean_rgb_error_255": 9.4e-05,
+      "maximum_channel_error_255": 3
+    },
+    {
+      "case": "Grandfather_King_Idle_weapon",
+      "mean_rgb_error_255": 0.0,
+      "maximum_channel_error_255": 0
+    },
+    {
+      "case": "Slenderman_King_Idle_full",
+      "mean_rgb_error_255": 1.3e-05,
+      "maximum_channel_error_255": 1
+    },
+    {
+      "case": "Slendrina_Punk_Aggressive_full",
+      "mean_rgb_error_255": 4.4e-05,
+      "maximum_channel_error_255": 1
+    },
+    {
+      "case": "SpiderMom_Knight_Idle_full",
+      "mean_rgb_error_255": 0.0,
+      "maximum_channel_error_255": 0
+    },
+    {
+      "case": "SpiderMom_Assassin_Aggressive_full",
+      "mean_rgb_error_255": 3.3e-05,
+      "maximum_channel_error_255": 1
+    }
+  ],
+  "icon_comparison_sizes": [
+    64,
+    96,
+    128
+  ],
+  "icon_metrics": "icons_report.json",
+  "note": "Review renders only; source and optimized model files are not changed by this script."
+}

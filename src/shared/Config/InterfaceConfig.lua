@@ -2,9 +2,11 @@
 return {
  GroupId=0,FreeGift={Speed=10000,Grave="Marble"},
  HomeCooldown=5,BoardDistance=16,ZoneRadius=7,ZoneDelay=.2,RemoteInterval=.2,
- Settings={ShowNightInfo=true,ShowHeistInfo=true,AutoFire=true,ShowRanges=true,GuideArrows=true,ShiftSlow=true,CameraShake=true,MusicVolume=.7,SfxVolume=1},
+ -- SmallMonsters (2026-11-16): off by default; the player's own farm monsters are drawn pet-sized on their own screen
+ -- only (ZombieVisuals).
+ Settings={ShowNightInfo=true,ShowHeistInfo=true,AutoFire=true,ShowRanges=true,GuideArrows=true,ShiftSlow=true,CameraShake=true,SmallMonsters=false,MusicVolume=.7,SfxVolume=1},
  Pages={"None","Golden","Lunar","Rainbow"},Thresholds={1,3,4},
- DexCoins={5000,50000,500000,5000000},DexSpeed={5000,50000,500000,5000000},DexShovels={"Bone","Golden","Lunar","Rainbow"},
+ DexCoins={5000,50000,500000,5000000},DexSpeed={5000,50000,500000,5000000},DexShovels={"Chainsword","Dagger","Butterfly","Pickaxe"},
  -- Each product buys one persistent upgrade credit. A credit waits safely if a house limit blocks use.
  Products={House={Id=0,Price=0},Field={Id=0,Price=0},Graves={Id=0,Price=0},Guards={Id=0,Price=0},Crypt={Id=0,Price=0},PetSlots={Id=0,Price=0},Treadmill={Id=0,Price=0}},
  -- Positions are the actual entry circles. Props sit slightly toward the outer edge.
@@ -21,5 +23,5 @@ return {
  -- Upgrade boards, spread out: the four place boards stand in a row along the right fence facing the yard.
  -- Prestige stands across the house's doorway from the House board (2026-11-12). The farm grew on 2026-11-13: the house
  -- moved 6 studs into the corner and its two boards with it; the Fence board stands by the gate (the Lock board went with grave theft, 2026-11-13).
- Boards={House={X=-3,Z=15,Yaw=-45},Prestige={X=-11,Z=-1,Yaw=45},Treadmill={X=37,Z=-24,Yaw=90},PetSlots={X=7,Z=45},Fence={X=12,Z=-45}}, -- no place boards: graves and pen zombies are unlimited
+ Boards={House={X=-3,Z=15,Yaw=-45},Prestige={X=-11,Z=-1,Yaw=45},Treadmill={X=37,Z=-24,Yaw=90},PetSlots={X=7,Z=47},Fence={X=12,Z=-47}}, -- no place boards: graves and pen zombies are unlimited
 }

@@ -36,20 +36,24 @@ function I.Quote(p,key)
   level=HR.Cap(d,key);max=level>=require(S.Config.ZoneConfig)[key].Max;price=UC[key].Price*UC[key].Factor^(d.upgrades[key] or 0)
   local need=HR.Need(d,key);if need then reason='houseLimit' end
  else return end
- local credit=(d.upgradeCredits[key] or 0)>0
- return {price=math.floor(price),level=level,next=level+(key=='Crypt' and 10 or 1),max=max,reason=reason,credit=credit,afford=not max and not reason and (credit or d.coins>=price)}
+ -- the tutorial's treadmill, gate and house steps: that board's next level is free (TutorialService), shown as a credit
+ local tutorial=require(script.Parent.TutorialService).FreeBoard(d,key)
+ local credit=tutorial or (d.upgradeCredits[key] or 0)>0
+ return {price=math.floor(price),level=level,next=level+(key=='Crypt' and 10 or 1),max=max,reason=reason,credit=credit,tutorial=tutorial or nil,afford=not max and not reason and (credit or d.coins>=price)}
 end
 function I.Buy(p,key)
  local d=D.Profiles[p];if not d or key=='Prestige' or not Act.CanAct(p) or not I.NearBoard(p,key) then return false end -- prestige only through its confirmation
  local q=I.Quote(p,key);if not q or not q.afford then return false end
  local before=d.coins
- if q.credit then d.upgradeCredits[key]-=1 else d.coins-=q.price end
+ if q.tutorial then -- free: the tutorial moves on
+ elseif q.credit then d.upgradeCredits[key]-=1 else d.coins-=q.price end
  if key=='House' then d.houseEnds=os.time()+HR.Next(d).Seconds
  elseif key=='Treadmill' then d.treadmill=RR.Level(d)+1;require(script.Parent.HouseService).RefreshTreadmill(p,d)
  elseif key=='PetSlots' then d.petSlots+=1;require(script.Parent.PetService).Refresh(p);require(script.Parent.PetService).Push(p)
  elseif key=='Fence' then require(script.Parent.FenceService).Upgrade(p,d)
  else d.upgrades[key]=(d.upgrades[key] or 0)+1 end
  require(script.Parent.QuestService).Track(p,'upgrade',1)
+ if q.tutorial then local T=require(script.Parent.TutorialService);T.Advance(p,d,T.Board[key]) end
  require(script.Parent.AnalyticsTracker).Economy(p,d.coins-before,d.coins,'Upgrade')
  require(script.Parent.SlotService).Render(p,d);return true
 end

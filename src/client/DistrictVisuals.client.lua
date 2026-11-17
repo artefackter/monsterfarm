@@ -24,6 +24,8 @@ Run.Heartbeat:Connect(function(dt)
  if v and not selected then local i=Progression.PocketAt(-v.Z,v.X,4);if i then selected=districts[i] end end
  local goal=selected and Color3.new(1,1,1):Lerp(Color3.fromHex(selected.Fog),.18) or Color3.new(1,1,1)
  tint.TintColor=tint.TintColor:Lerp(goal,1-math.exp(-dt*2));tint.Saturation=selected and .06 or 0
+ -- off the road the tint is plain white: switch the pass off (2026-11-15, performance) once it has faded out
+ tint.Enabled=selected~=nil or (Vector3.new(tint.TintColor.R,tint.TintColor.G,tint.TintColor.B)-Vector3.one).Magnitude>.01
  if selected~=current then current=selected;mist.Rate=selected and selected.Density*40 or 0;if selected then mist.Color=ColorSequence.new(Color3.fromHex(selected.Fog)) else mist:Clear() end end
  -- Announce only once after crossing into a zone; a brief dwell avoids boundary flicker.
  if selected~=pending then pending=selected;enteredAt=os.clock() end

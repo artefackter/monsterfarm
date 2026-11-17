@@ -1,0 +1,43 @@
+{
+  "status": "Dredge base appearance approved by owner, 2026-11-14; standalone assets only",
+  "models": {
+    "Dredge": {
+      "reference": 2,
+      "triangles": 6614,
+      "vertices": 13932,
+      "bones": 29,
+      "meshes": 1,
+      "materials": 1,
+      "textures": 0,
+      "animation_clips": 0,
+      "bounds": [
+        [
+          -3.409935712814331,
+          -0.8187857866287231,
+          0.0
+        ],
+        [
+          3.4180045127868652,
+          3.2238657474517822,
+          6.959596633911133
+        ]
+      ],
+      "height": 6.96,
+      "interpretation": "Dredge: one executioner-like skull, four bone crown struts, two clawed arms, open ribs and one continuous coiled snake body. No walking legs or extra heads."
+    }
+  },
+  "authoring_axes": {
+    "up": "Z",
+    "front": "-Y"
+  },
+  "export_axes": {
+    "up": "Y"
+  },
+  "unit": "One intended Roblox stud; scale not verified in Studio",
+  "rig": "Custom rigid-segment NPC skeletons; not Roblox R15",
+  "game_integrated": false,
+  "studio_modified": false,
+  "uploaded": false,
+  "scope": "One corrected Dredge anatomy pilot for approval before revising the other four models; no costume variants or animation clips",
+  "previews": "Rendered from the actual exported source geometry, no paintovers"
+}

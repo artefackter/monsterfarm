@@ -1,0 +1,293 @@
+{
+  "status": "PASS",
+  "before": {
+    "triangles": 27398,
+    "bytes": 1982712
+  },
+  "after": {
+    "triangles": 15942,
+    "bytes": 1140640
+  },
+  "reduction_percent": {
+    "triangles": 41.81,
+    "bytes": 42.47
+  },
+  "models": [
+    {
+      "name": "BR_WallPanel",
+      "before_triangles": 100,
+      "after_triangles": 68,
+      "before_bytes": 8708,
+      "after_bytes": 6356,
+      "max_bounds_delta_studs": 0.0
+    },
+    {
+      "name": "BR_DoorPartition",
+      "before_triangles": 156,
+      "after_triangles": 156,
+      "before_bytes": 12848,
+      "after_bytes": 12848,
+      "max_bounds_delta_studs": 0.0
+    },
+    {
+      "name": "BR_CornerPartition",
+      "before_triangles": 88,
+      "after_triangles": 88,
+      "before_bytes": 7960,
+      "after_bytes": 7960,
+      "max_bounds_delta_studs": 0.0
+    },
+    {
+      "name": "BR_Pillar",
+      "before_triangles": 88,
+      "after_triangles": 56,
+      "before_bytes": 7704,
+      "after_bytes": 5352,
+      "max_bounds_delta_studs": 0.0
+    },
+    {
+      "name": "BR_Fluorescent",
+      "before_triangles": 88,
+      "after_triangles": 88,
+      "before_bytes": 9268,
+      "after_bytes": 9268,
+      "max_bounds_delta_studs": 0.0
+    },
+    {
+      "name": "BM_EntranceOpen",
+      "before_triangles": 672,
+      "after_triangles": 672,
+      "before_bytes": 57668,
+      "after_bytes": 57668,
+      "max_bounds_delta_studs": 0.0
+    },
+    {
+      "name": "BM_EntranceBoarded",
+      "before_triangles": 764,
+      "after_triangles": 604,
+      "before_bytes": 63376,
+      "after_bytes": 51616,
+      "max_bounds_delta_studs": 0.0
+    },
+    {
+      "name": "BM_RockWall",
+      "before_triangles": 460,
+      "after_triangles": 460,
+      "before_bytes": 43156,
+      "after_bytes": 43156,
+      "max_bounds_delta_studs": 0.0
+    },
+    {
+      "name": "BM_OreCluster",
+      "before_triangles": 80,
+      "after_triangles": 80,
+      "before_bytes": 8532,
+      "after_bytes": 8532,
+      "max_bounds_delta_studs": 0.0
+    },
+    {
+      "name": "BM_Minecart",
+      "before_triangles": 800,
+      "after_triangles": 448,
+      "before_bytes": 56284,
+      "after_bytes": 30404,
+      "max_bounds_delta_studs": 0.032
+    },
+    {
+      "name": "BM_RailBroken",
+      "before_triangles": 308,
+      "after_triangles": 84,
+      "before_bytes": 23452,
+      "after_bytes": 6984,
+      "max_bounds_delta_studs": 0.006
+    },
+    {
+      "name": "BM_TimberPile",
+      "before_triangles": 132,
+      "after_triangles": 132,
+      "before_bytes": 10880,
+      "after_bytes": 10880,
+      "max_bounds_delta_studs": 0.0
+    },
+    {
+      "name": "BM_Torch",
+      "before_triangles": 108,
+      "after_triangles": 108,
+      "before_bytes": 10856,
+      "after_bytes": 10856,
+      "max_bounds_delta_studs": 0.0
+    },
+    {
+      "name": "AV_HouseLongA",
+      "before_triangles": 2736,
+      "after_triangles": 1648,
+      "before_bytes": 191268,
+      "after_bytes": 111300,
+      "max_bounds_delta_studs": 0.0
+    },
+    {
+      "name": "AV_HouseLongB",
+      "before_triangles": 2868,
+      "after_triangles": 1716,
+      "before_bytes": 200704,
+      "after_bytes": 116032,
+      "max_bounds_delta_studs": 0.0
+    },
+    {
+      "name": "AV_FenceBroken",
+      "before_triangles": 308,
+      "after_triangles": 84,
+      "before_bytes": 23464,
+      "after_bytes": 6996,
+      "max_bounds_delta_studs": 0.006
+    },
+    {
+      "name": "AV_Well",
+      "before_triangles": 1092,
+      "after_triangles": 996,
+      "before_bytes": 78348,
+      "after_bytes": 71292,
+      "max_bounds_delta_studs": 0.0
+    },
+    {
+      "name": "AV_Cart",
+      "before_triangles": 1336,
+      "after_triangles": 504,
+      "before_bytes": 90560,
+      "after_bytes": 29404,
+      "max_bounds_delta_studs": 0.005
+    },
+    {
+      "name": "AV_DeadTree",
+      "before_triangles": 304,
+      "after_triangles": 304,
+      "before_bytes": 21808,
+      "after_bytes": 21808,
+      "max_bounds_delta_studs": 0.0
+    },
+    {
+      "name": "AC_FacadeLongA",
+      "before_triangles": 1760,
+      "after_triangles": 672,
+      "before_bytes": 126800,
+      "after_bytes": 46828,
+      "max_bounds_delta_studs": 0.0
+    },
+    {
+      "name": "AC_FacadeLongB",
+      "before_triangles": 1616,
+      "after_triangles": 656,
+      "before_bytes": 116576,
+      "after_bytes": 46012,
+      "max_bounds_delta_studs": 0.0
+    },
+    {
+      "name": "AC_CarBlue",
+      "before_triangles": 884,
+      "after_triangles": 500,
+      "before_bytes": 60744,
+      "after_bytes": 32516,
+      "max_bounds_delta_studs": 0.0
+    },
+    {
+      "name": "AC_CarRust",
+      "before_triangles": 884,
+      "after_triangles": 500,
+      "before_bytes": 60744,
+      "after_bytes": 32516,
+      "max_bounds_delta_studs": 0.0
+    },
+    {
+      "name": "AC_Streetlight",
+      "before_triangles": 176,
+      "after_triangles": 176,
+      "before_bytes": 15100,
+      "after_bytes": 15100,
+      "max_bounds_delta_studs": 0.0
+    },
+    {
+      "name": "AC_PlanterTree",
+      "before_triangles": 484,
+      "after_triangles": 324,
+      "before_bytes": 33700,
+      "after_bytes": 21936,
+      "max_bounds_delta_studs": 0.0
+    },
+    {
+      "name": "PT_InfectedFacadeA",
+      "before_triangles": 3244,
+      "after_triangles": 1388,
+      "before_bytes": 230364,
+      "after_bytes": 93944,
+      "max_bounds_delta_studs": 0.0
+    },
+    {
+      "name": "PT_InfectedFacadeB",
+      "before_triangles": 3288,
+      "after_triangles": 1432,
+      "before_bytes": 233504,
+      "after_bytes": 97084,
+      "max_bounds_delta_studs": 0.0
+    },
+    {
+      "name": "PT_InfectionPatch",
+      "before_triangles": 232,
+      "after_triangles": 232,
+      "before_bytes": 15032,
+      "after_bytes": 15032,
+      "max_bounds_delta_studs": 0.0
+    },
+    {
+      "name": "PT_WallGrowth",
+      "before_triangles": 106,
+      "after_triangles": 106,
+      "before_bytes": 8500,
+      "after_bytes": 8500,
+      "max_bounds_delta_studs": 0.0
+    },
+    {
+      "name": "PT_ArenaTentacleTall",
+      "before_triangles": 536,
+      "after_triangles": 536,
+      "before_bytes": 34244,
+      "after_bytes": 34244,
+      "max_bounds_delta_studs": 0.0
+    },
+    {
+      "name": "PT_ArenaTentacleHook",
+      "before_triangles": 536,
+      "after_triangles": 536,
+      "before_bytes": 34420,
+      "after_bytes": 34420,
+      "max_bounds_delta_studs": 0.0
+    },
+    {
+      "name": "SH_Crate",
+      "before_triangles": 836,
+      "after_triangles": 260,
+      "before_bytes": 61160,
+      "after_bytes": 18816,
+      "max_bounds_delta_studs": 0.0
+    },
+    {
+      "name": "SH_Barrel",
+      "before_triangles": 248,
+      "after_triangles": 248,
+      "before_bytes": 15868,
+      "after_bytes": 15868,
+      "max_bounds_delta_studs": 0.0
+    },
+    {
+      "name": "SH_Rubble",
+      "before_triangles": 80,
+      "after_triangles": 80,
+      "before_bytes": 9112,
+      "after_bytes": 9112,
+      "max_bounds_delta_studs": 0.0
+    }
+  ],
+  "source_files_unchanged": true,
+  "icons_untouched": true,
+  "game_untouched": true,
+  "roblox_loading_time_measured": false
+}
