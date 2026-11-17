@@ -1,0 +1,335 @@
+{
+  "passed": true,
+  "count": 9,
+  "integrated": false,
+  "generator": "built-in image_gen",
+  "original_bytes": 6248056,
+  "ui512_bytes": 1267121,
+  "small256_bytes": 407025,
+  "assets": [
+    {
+      "id": "DragonHead",
+      "label": "Драконоголовый",
+      "suggested_icon_key": "modal_pet_DragonHead",
+      "original": "originals/DragonHead.png",
+      "original_bytes": 1133667,
+      "size": [
+        1254,
+        1254
+      ],
+      "alpha_bbox_gt8": [
+        42,
+        67,
+        1207,
+        1207
+      ],
+      "sha256": "f4b69a8bfc4957a9844fa6f3f8aa53f77be9ad4e0abc833e61c6d1b513ff7b76",
+      "variants": {
+        "ui512": {
+          "file": "icons/ui512/DragonHead.png",
+          "bytes": 208086,
+          "size": [
+            512,
+            512
+          ]
+        },
+        "small256": {
+          "file": "icons/small256/DragonHead.png",
+          "bytes": 66403,
+          "size": [
+            256,
+            256
+          ]
+        }
+      }
+    },
+    {
+      "id": "BedBanker",
+      "label": "Банкир-Кровать",
+      "suggested_icon_key": "modal_pet_BedBanker",
+      "original": "originals/BedBanker.png",
+      "original_bytes": 1128580,
+      "size": [
+        1254,
+        1254
+      ],
+      "alpha_bbox_gt8": [
+        33,
+        92,
+        1203,
+        1175
+      ],
+      "sha256": "5e6bbb23d3a21582b644a5653ffaebfcfe85c195117286c00ee6cfb9ce0dd6c0",
+      "variants": {
+        "ui512": {
+          "file": "icons/ui512/BedBanker.png",
+          "bytes": 219709,
+          "size": [
+            512,
+            512
+          ]
+        },
+        "small256": {
+          "file": "icons/small256/BedBanker.png",
+          "bytes": 69807,
+          "size": [
+            256,
+            256
+          ]
+        }
+      }
+    },
+    {
+      "id": "Chainsaw",
+      "label": "Бензопила",
+      "suggested_icon_key": "modal_shovel_Chainsaw",
+      "original": "originals/Chainsaw.png",
+      "original_bytes": 741787,
+      "size": [
+        1254,
+        1254
+      ],
+      "alpha_bbox_gt8": [
+        61,
+        133,
+        1208,
+        1172
+      ],
+      "sha256": "1393d4b3c1266521ca8cee5509a5a4366df8c2002752be928ea820578ec82d4d",
+      "variants": {
+        "ui512": {
+          "file": "icons/ui512/Chainsaw.png",
+          "bytes": 155275,
+          "size": [
+            512,
+            512
+          ]
+        },
+        "small256": {
+          "file": "icons/small256/Chainsaw.png",
+          "bytes": 49166,
+          "size": [
+            256,
+            256
+          ]
+        }
+      }
+    },
+    {
+      "id": "Scythe",
+      "label": "Коса Жатвы",
+      "suggested_icon_key": "modal_shovel_Scythe",
+      "original": "originals/Scythe.png",
+      "original_bytes": 442840,
+      "size": [
+        1254,
+        1254
+      ],
+      "alpha_bbox_gt8": [
+        83,
+        63,
+        1191,
+        1207
+      ],
+      "sha256": "8b42950fb03d89cd565900e1cacc5d717580d5030c53a0201ef6b4324a1c69e3",
+      "variants": {
+        "ui512": {
+          "file": "icons/ui512/Scythe.png",
+          "bytes": 94748,
+          "size": [
+            512,
+            512
+          ]
+        },
+        "small256": {
+          "file": "icons/small256/Scythe.png",
+          "bytes": 31432,
+          "size": [
+            256,
+            256
+          ]
+        }
+      }
+    },
+    {
+      "id": "Katana",
+      "label": "Катана",
+      "suggested_icon_key": "modal_shovel_Katana",
+      "original": "originals/Katana.png",
+      "original_bytes": 348639,
+      "size": [
+        1254,
+        1254
+      ],
+      "alpha_bbox_gt8": [
+        169,
+        60,
+        1177,
+        1208
+      ],
+      "sha256": "1d06898baeee4901037bcbb80e447485b913ca68324f0bfe7b31c022ada0ce04",
+      "variants": {
+        "ui512": {
+          "file": "icons/ui512/Katana.png",
+          "bytes": 73588,
+          "size": [
+            512,
+            512
+          ]
+        },
+        "small256": {
+          "file": "icons/small256/Katana.png",
+          "bytes": 23896,
+          "size": [
+            256,
+            256
+          ]
+        }
+      }
+    },
+    {
+      "id": "Chainsword",
+      "label": "Пила-меч",
+      "suggested_icon_key": "modal_shovel_Chainsword",
+      "original": "originals/Chainsword.png",
+      "original_bytes": 756079,
+      "size": [
+        1254,
+        1254
+      ],
+      "alpha_bbox_gt8": [
+        117,
+        62,
+        1172,
+        1216
+      ],
+      "sha256": "23533aae20073361fd39ddde49558245831ce81294cf1e6f6916c6a6faf1d1e3",
+      "variants": {
+        "ui512": {
+          "file": "icons/ui512/Chainsword.png",
+          "bytes": 158167,
+          "size": [
+            512,
+            512
+          ]
+        },
+        "small256": {
+          "file": "icons/small256/Chainsword.png",
+          "bytes": 49777,
+          "size": [
+            256,
+            256
+          ]
+        }
+      }
+    },
+    {
+      "id": "Dagger",
+      "label": "Кинжал Мимикрия",
+      "suggested_icon_key": "modal_shovel_Dagger",
+      "original": "originals/Dagger.png",
+      "original_bytes": 569353,
+      "size": [
+        1254,
+        1254
+      ],
+      "alpha_bbox_gt8": [
+        114,
+        65,
+        1184,
+        1194
+      ],
+      "sha256": "4176a63d6d5be620eb17403cfd6ee36d91f66ba2f7a4e0d066f01b939cc04206",
+      "variants": {
+        "ui512": {
+          "file": "icons/ui512/Dagger.png",
+          "bytes": 118559,
+          "size": [
+            512,
+            512
+          ]
+        },
+        "small256": {
+          "file": "icons/small256/Dagger.png",
+          "bytes": 38758,
+          "size": [
+            256,
+            256
+          ]
+        }
+      }
+    },
+    {
+      "id": "Butterfly",
+      "label": "Нож-бабочка",
+      "suggested_icon_key": "modal_shovel_Butterfly",
+      "original": "originals/Butterfly.png",
+      "original_bytes": 576418,
+      "size": [
+        1254,
+        1254
+      ],
+      "alpha_bbox_gt8": [
+        93,
+        81,
+        1174,
+        1219
+      ],
+      "sha256": "ebd8300aba476d2aa02cf2d616e8f35714a037c3cc92465e2238adc4e8bcd596",
+      "variants": {
+        "ui512": {
+          "file": "icons/ui512/Butterfly.png",
+          "bytes": 120625,
+          "size": [
+            512,
+            512
+          ]
+        },
+        "small256": {
+          "file": "icons/small256/Butterfly.png",
+          "bytes": 38922,
+          "size": [
+            256,
+            256
+          ]
+        }
+      }
+    },
+    {
+      "id": "Pickaxe",
+      "label": "Алмазная кирка",
+      "suggested_icon_key": "modal_shovel_Pickaxe",
+      "original": "originals/Pickaxe.png",
+      "original_bytes": 550693,
+      "size": [
+        1254,
+        1254
+      ],
+      "alpha_bbox_gt8": [
+        120,
+        48,
+        1183,
+        1224
+      ],
+      "sha256": "1ad05d6a8b4b8fa5ea059166988663d85a39c6efe1c6faf60e85482495755077",
+      "variants": {
+        "ui512": {
+          "file": "icons/ui512/Pickaxe.png",
+          "bytes": 118364,
+          "size": [
+            512,
+            512
+          ]
+        },
+        "small256": {
+          "file": "icons/small256/Pickaxe.png",
+          "bytes": 38864,
+          "size": [
+            256,
+            256
+          ]
+        }
+      }
+    }
+  ]
+}

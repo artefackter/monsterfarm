@@ -1,0 +1,95 @@
+{
+  "generator": "built-in image_gen",
+  "jobs": [
+    {
+      "id": "DragonHead",
+      "label": "Драконоголовый",
+      "category": "pet",
+      "prompt": "Use case: stylized-concept. Create ONE polished 2D hand-painted cartoon inventory icon for this existing game's UI. Input image 1 is STYLE reference ONLY (steel bear trap): match bold near-black plum outline, simplified curved shapes, crisp cel shading with soft painted transitions, bright highlights and saturated colors. Input image 2 is SUBJECT reference screenshot; use only the specified item, not the interface. This is a drawn illustration, not a 3D render, not voxel art. Preserve identity/colors/design of the specified game object. Square canvas, single centered isolated object, entire silhouette inside frame with 8% transparent padding, clear at 96 pixels. Genuine transparent background. No text, numbers, UI cards, frames, rarity colors, pedestal, cast ground shadow, detached decorations, hands or characters holding the item. Subject: The purple dragon-head pet repeated in the first screenshot's cards: a large broad purple cuboid-inspired head, big rounded rectangular lighter-purple snout, two dark nostrils, yellow squinting eyes under heavy dark purple angled eyebrows, two cream upward horns, small cream teeth at closed grin, dark-purple lower jaw. Tiny lime-green side wings, two tiny stubby purple feet; head is almost entire body, no humanoid torso. Friendly grumpy personality. Front three-quarter view, preserve recognizable head-heavy silhouette.",
+      "refs": [
+        "/Users/wingman/Documents/Codex/GrowAMonster-Git-2026-11-12/art/ui/modal-refresh/trap.png",
+        "/Users/wingman/Desktop/Screenshot 2026-11-17 at 06.25.17.png"
+      ]
+    },
+    {
+      "id": "BedBanker",
+      "label": "Банкир-Кровать",
+      "category": "pet",
+      "prompt": "Use case: stylized-concept. Create ONE polished 2D hand-painted cartoon inventory icon for this existing game's UI. Input image 1 is STYLE reference ONLY (steel bear trap): match bold near-black plum outline, simplified curved shapes, crisp cel shading with soft painted transitions, bright highlights and saturated colors. Input image 2 is SUBJECT reference screenshot; use only the specified item, not the interface. This is a drawn illustration, not a 3D render, not voxel art. Preserve identity/colors/design of the specified game object. Square canvas, single centered isolated object, entire silhouette inside frame with 8% transparent padding, clear at 96 pixels. Genuine transparent background. No text, numbers, UI cards, frames, rarity colors, pedestal, cast ground shadow, detached decorations, hands or characters holding the item. Subject: The wooden bed-monster pet repeated in screenshot cards. An entire small brown wooden bed with four posts, taller headboard at back, purple blanket/mattress and cream pillow. Under the footboard a black-plum shadow creature face with exactly two enormous yellow-green cat eyes, narrow vertical black pupils, and a little row of ivory teeth. Four orange cat-paw feet under bedposts, little orange tail behind. Front three-quarter view reveals mattress AND eyes underneath. No creature on top of bed. No coins or money, no additional characters.",
+      "refs": [
+        "/Users/wingman/Documents/Codex/GrowAMonster-Git-2026-11-12/art/ui/modal-refresh/trap.png",
+        "/Users/wingman/Desktop/Screenshot 2026-11-17 at 06.25.17.png"
+      ]
+    },
+    {
+      "id": "Chainsaw",
+      "label": "Бензопила",
+      "category": "shovel",
+      "prompt": "Use case: stylized-concept. Create ONE polished 2D hand-painted cartoon inventory icon for this existing game's UI. Input image 1 is STYLE reference ONLY (steel bear trap): match bold near-black plum outline, simplified curved shapes, crisp cel shading with soft painted transitions, bright highlights and saturated colors. Input image 2 is SUBJECT reference screenshot; use only the specified item, not the interface. This is a drawn illustration, not a 3D render, not voxel art. Preserve identity/colors/design of the specified game object. Square canvas, single centered isolated object, entire silhouette inside frame with 8% transparent padding, clear at 96 pixels. Genuine transparent background. No text, numbers, UI cards, frames, rarity colors, pedestal, cast ground shadow, detached decorations, hands or characters holding the item. Subject: The chainsaw in shop top row second card: orange compact engine housing, charcoal-black handle and grip, long silver steel rounded-tip guide bar surrounded by evenly spaced steel chain teeth. Whole saw diagonal from engine bottom-left to tip top-right, substantial engine fully visible. Blue-gray steel highlights, orange casing. No sawblade disc, no blood.",
+      "refs": [
+        "/Users/wingman/Documents/Codex/GrowAMonster-Git-2026-11-12/art/ui/modal-refresh/trap.png",
+        "/var/folders/g0/p39b0rv17qv4_m_fxvnm1zkr0000gn/T/codex-clipboard-624654f7-974a-4f8b-ab76-717ab44a528d.png"
+      ]
+    },
+    {
+      "id": "Scythe",
+      "label": "Коса Жатвы",
+      "category": "shovel",
+      "prompt": "Use case: stylized-concept. Create ONE polished 2D hand-painted cartoon inventory icon for this existing game's UI. Input image 1 is STYLE reference ONLY (steel bear trap): match bold near-black plum outline, simplified curved shapes, crisp cel shading with soft painted transitions, bright highlights and saturated colors. Input image 2 is SUBJECT reference screenshot; use only the specified item, not the interface. This is a drawn illustration, not a 3D render, not voxel art. Preserve identity/colors/design of the specified game object. Square canvas, single centered isolated object, entire silhouette inside frame with 8% transparent padding, clear at 96 pixels. Genuine transparent background. No text, numbers, UI cards, frames, rarity colors, pedestal, cast ground shadow, detached decorations, hands or characters holding the item. Subject: The Reaper's Scythe in top row third card: very long dark plum-brown shaft bottom-left to upper-right, two short attached perpendicular grip pegs, small ivory end cap, ivory wing-like collar at blade junction, large sweeping crescent blade at top with lavender-dark steel spine and bright silver sharp edge curling down right. Keep minimalist elegant existing silhouette. All pegs attached physically to shaft; do not copy floating black artifacts from screenshot. No skulls or ornaments beyond reference.",
+      "refs": [
+        "/Users/wingman/Documents/Codex/GrowAMonster-Git-2026-11-12/art/ui/modal-refresh/trap.png",
+        "/var/folders/g0/p39b0rv17qv4_m_fxvnm1zkr0000gn/T/codex-clipboard-624654f7-974a-4f8b-ab76-717ab44a528d.png"
+      ]
+    },
+    {
+      "id": "Katana",
+      "label": "Катана",
+      "category": "shovel",
+      "prompt": "Use case: stylized-concept. Create ONE polished 2D hand-painted cartoon inventory icon for this existing game's UI. Input image 1 is STYLE reference ONLY (steel bear trap): match bold near-black plum outline, simplified curved shapes, crisp cel shading with soft painted transitions, bright highlights and saturated colors. Input image 2 is SUBJECT reference screenshot; use only the specified item, not the interface. This is a drawn illustration, not a 3D render, not voxel art. Preserve identity/colors/design of the specified game object. Square canvas, single centered isolated object, entire silhouette inside frame with 8% transparent padding, clear at 96 pixels. Genuine transparent background. No text, numbers, UI cards, frames, rarity colors, pedestal, cast ground shadow, detached decorations, hands or characters holding the item. Subject: The katana in top row fourth card: long single-edged gently curved silver-white blade with cool pale blue shading, small oval gold tsuba guard, dark burgundy handle wrapped with dark crosshatched braid with small cream diamond openings, gold pommel. Diagonal hilt bottom-left to tip top-right. Whole blade and handle visible. No sheath or extra sword.",
+      "refs": [
+        "/Users/wingman/Documents/Codex/GrowAMonster-Git-2026-11-12/art/ui/modal-refresh/trap.png",
+        "/var/folders/g0/p39b0rv17qv4_m_fxvnm1zkr0000gn/T/codex-clipboard-624654f7-974a-4f8b-ab76-717ab44a528d.png"
+      ]
+    },
+    {
+      "id": "Chainsword",
+      "label": "Пила-меч",
+      "category": "shovel",
+      "prompt": "Use case: stylized-concept. Create ONE polished 2D hand-painted cartoon inventory icon for this existing game's UI. Input image 1 is STYLE reference ONLY (steel bear trap): match bold near-black plum outline, simplified curved shapes, crisp cel shading with soft painted transitions, bright highlights and saturated colors. Input image 2 is SUBJECT reference screenshot; use only the specified item, not the interface. This is a drawn illustration, not a 3D render, not voxel art. Preserve identity/colors/design of the specified game object. Square canvas, single centered isolated object, entire silhouette inside frame with 8% transparent padding, clear at 96 pixels. Genuine transparent background. No text, numbers, UI cards, frames, rarity colors, pedestal, cast ground shadow, detached decorations, hands or characters holding the item. Subject: The chainsword in bottom row first card: a sword with a long straight rounded-tip silver chainsaw blade with evenly spaced steel teeth, thin gold-colored rail along its back, round gold mechanism at blade base, broad golden crossguard, small red mechanical housing behind black handle and a gold pommel. Diagonal hilt bottom-left to tip top-right. Clearly sword grip with gold crossguard; retain red/black/gold colors, entire item.",
+      "refs": [
+        "/Users/wingman/Documents/Codex/GrowAMonster-Git-2026-11-12/art/ui/modal-refresh/trap.png",
+        "/var/folders/g0/p39b0rv17qv4_m_fxvnm1zkr0000gn/T/codex-clipboard-624654f7-974a-4f8b-ab76-717ab44a528d.png"
+      ]
+    },
+    {
+      "id": "Dagger",
+      "label": "Кинжал Мимикрия",
+      "category": "shovel",
+      "prompt": "Use case: stylized-concept. Create ONE polished 2D hand-painted cartoon inventory icon for this existing game's UI. Input image 1 is STYLE reference ONLY (steel bear trap): match bold near-black plum outline, simplified curved shapes, crisp cel shading with soft painted transitions, bright highlights and saturated colors. Input image 2 is SUBJECT reference screenshot; use only the specified item, not the interface. This is a drawn illustration, not a 3D render, not voxel art. Preserve identity/colors/design of the specified game object. Square canvas, single centered isolated object, entire silhouette inside frame with 8% transparent padding, clear at 96 pixels. Genuine transparent background. No text, numbers, UI cards, frames, rarity colors, pedestal, cast ground shadow, detached decorations, hands or characters holding the item. Subject: The Mimicry Dagger in bottom row second card: pointed leaf-shaped dagger blade with bright silver rim, interior irregular colorful patches of cyan magenta violet pink and small golden-yellow patches; curved turquoise crescent crossguard with pointed upturned ends, handle in smooth bands of orange coral pink purple to turquoise pommel. Diagonal handle bottom-left to blade tip top-right. Preserve vivid candy gradient and turquoise guard, single knife, no gemstones or eyes.",
+      "refs": [
+        "/Users/wingman/Documents/Codex/GrowAMonster-Git-2026-11-12/art/ui/modal-refresh/trap.png",
+        "/var/folders/g0/p39b0rv17qv4_m_fxvnm1zkr0000gn/T/codex-clipboard-624654f7-974a-4f8b-ab76-717ab44a528d.png"
+      ]
+    },
+    {
+      "id": "Butterfly",
+      "label": "Нож-бабочка",
+      "category": "shovel",
+      "prompt": "Use case: stylized-concept. Create ONE polished 2D hand-painted cartoon inventory icon for this existing game's UI. Input image 1 is STYLE reference ONLY (steel bear trap): match bold near-black plum outline, simplified curved shapes, crisp cel shading with soft painted transitions, bright highlights and saturated colors. Input image 2 is SUBJECT reference screenshot; use only the specified item, not the interface. This is a drawn illustration, not a 3D render, not voxel art. Preserve identity/colors/design of the specified game object. Square canvas, single centered isolated object, entire silhouette inside frame with 8% transparent padding, clear at 96 pixels. Genuine transparent background. No text, numbers, UI cards, frames, rarity colors, pedestal, cast ground shadow, detached decorations, hands or characters holding the item. Subject: The butterfly knife in bottom row third card: open balisong with a broad pointed silver-white blade cool pale blue shading, two parallel cobalt-blue to bright cyan handle halves below the blade, dark navy rectangular inset slots and small yellow-gold pivot pins. Handle halves together but clearly separate with narrow visible gap. Diagonal handle bottom-left to blade tip top-right, clean polished illustrated edge. Entire knife, no hand, no extra blades.",
+      "refs": [
+        "/Users/wingman/Documents/Codex/GrowAMonster-Git-2026-11-12/art/ui/modal-refresh/trap.png",
+        "/var/folders/g0/p39b0rv17qv4_m_fxvnm1zkr0000gn/T/codex-clipboard-624654f7-974a-4f8b-ab76-717ab44a528d.png"
+      ]
+    },
+    {
+      "id": "Pickaxe",
+      "label": "Алмазная кирка",
+      "category": "shovel",
+      "prompt": "Use case: stylized-concept. Create ONE polished 2D hand-painted cartoon inventory icon for this existing game's UI. Input image 1 is STYLE reference ONLY (steel bear trap): match bold near-black plum outline, simplified curved shapes, crisp cel shading with soft painted transitions, bright highlights and saturated colors. Input image 2 is SUBJECT reference screenshot; use only the specified item, not the interface. This is a drawn illustration, not a 3D render, not voxel art. Preserve identity/colors/design of the specified game object. Square canvas, single centered isolated object, entire silhouette inside frame with 8% transparent padding, clear at 96 pixels. Genuine transparent background. No text, numbers, UI cards, frames, rarity colors, pedestal, cast ground shadow, detached decorations, hands or characters holding the item. Subject: The diamond pickaxe in bottom row fourth card: long warm brown wooden shaft from bottom-left to upper-right, small golden ferrule at bottom, brilliant faceted cyan/ice-blue double-ended pickaxe head with central dark navy wrap and thin gold bands. Head one end shorter wedge left, other long downward-curving pointed blade right, small cyan top spike. Two small dark grip details ATTACHED to wooden shaft, do not reproduce detached black artifacts. Chunky blue crystal facets, crisp dark outlines, full item.",
+      "refs": [
+        "/Users/wingman/Documents/Codex/GrowAMonster-Git-2026-11-12/art/ui/modal-refresh/trap.png",
+        "/var/folders/g0/p39b0rv17qv4_m_fxvnm1zkr0000gn/T/codex-clipboard-624654f7-974a-4f8b-ab76-717ab44a528d.png"
+      ]
+    }
+  ]
+}
