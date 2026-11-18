@@ -1,0 +1,165 @@
+{
+  "passed": true,
+  "results": {
+    "PaleGrinner": {
+      "glb": {
+        "passed": true,
+        "checks": [
+          {
+            "bone": "Head",
+            "moved_vertices": 5675
+          },
+          {
+            "bone": "HandL",
+            "moved_vertices": 1294
+          }
+        ],
+        "triangles": 4516,
+        "bones": 27
+      },
+      "fbx": {
+        "passed": true,
+        "checks": [
+          {
+            "bone": "Head",
+            "moved_vertices": 5336
+          },
+          {
+            "bone": "HandL",
+            "moved_vertices": 1224
+          }
+        ],
+        "triangles": 4516,
+        "bones": 27
+      }
+    },
+    "Longfinger": {
+      "glb": {
+        "passed": true,
+        "checks": [
+          {
+            "bone": "Head",
+            "moved_vertices": 4677
+          },
+          {
+            "bone": "HandL",
+            "moved_vertices": 1278
+          }
+        ],
+        "triangles": 4752,
+        "bones": 27
+      },
+      "fbx": {
+        "passed": true,
+        "checks": [
+          {
+            "bone": "Head",
+            "moved_vertices": 4152
+          },
+          {
+            "bone": "HandL",
+            "moved_vertices": 1224
+          }
+        ],
+        "triangles": 4752,
+        "bones": 27
+      }
+    },
+    "FloatingGrin": {
+      "glb": {
+        "passed": true,
+        "checks": [
+          {
+            "bone": "Head",
+            "moved_vertices": 4646
+          },
+          {
+            "bone": "HandL",
+            "moved_vertices": 1342
+          }
+        ],
+        "triangles": 3316,
+        "bones": 14
+      },
+      "fbx": {
+        "passed": true,
+        "checks": [
+          {
+            "bone": "Head",
+            "moved_vertices": 4216
+          },
+          {
+            "bone": "HandL",
+            "moved_vertices": 1224
+          }
+        ],
+        "triangles": 3316,
+        "bones": 14
+      }
+    },
+    "BlindCrawler": {
+      "glb": {
+        "passed": true,
+        "checks": [
+          {
+            "bone": "Head",
+            "moved_vertices": 4036
+          },
+          {
+            "bone": "HandL",
+            "moved_vertices": 714
+          }
+        ],
+        "triangles": 3240,
+        "bones": 13
+      },
+      "fbx": {
+        "passed": true,
+        "checks": [
+          {
+            "bone": "Head",
+            "moved_vertices": 3936
+          },
+          {
+            "bone": "HandL",
+            "moved_vertices": 688
+          }
+        ],
+        "triangles": 3240,
+        "bones": 13
+      }
+    },
+    "DoorwayShade": {
+      "glb": {
+        "passed": true,
+        "checks": [
+          {
+            "bone": "Head",
+            "moved_vertices": 5732
+          },
+          {
+            "bone": "HandL",
+            "moved_vertices": 1282
+          }
+        ],
+        "triangles": 4516,
+        "bones": 27
+      },
+      "fbx": {
+        "passed": true,
+        "checks": [
+          {
+            "bone": "Head",
+            "moved_vertices": 5336
+          },
+          {
+            "bone": "HandL",
+            "moved_vertices": 1224
+          }
+        ],
+        "triangles": 4516,
+        "bones": 27
+      }
+    }
+  }
+}

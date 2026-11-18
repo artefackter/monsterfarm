@@ -1,0 +1,92 @@
+{
+  "FloatingGrin": {
+    "input_bytes": 299324,
+    "output_bytes": 228524,
+    "input_triangles": 7580,
+    "triangles": 5724,
+    "protected_triangles": 4148,
+    "input_vertices": 5636,
+    "vertices": 4708,
+    "bones": 14,
+    "animations": []
+  },
+  "FloatingGrinAggressive": {
+    "input_bytes": 309344,
+    "output_bytes": 238544,
+    "input_triangles": 7580,
+    "triangles": 5724,
+    "protected_triangles": 4148,
+    "input_vertices": 5636,
+    "vertices": 4708,
+    "bones": 14,
+    "animations": [
+      "OrbLunge"
+    ]
+  },
+  "FloatingGrinAssassin": {
+    "input_bytes": 411888,
+    "output_bytes": 331504,
+    "input_triangles": 8766,
+    "triangles": 6910,
+    "protected_triangles": 5334,
+    "input_vertices": 8032,
+    "vertices": 7104,
+    "bones": 14,
+    "animations": []
+  },
+  "FloatingGrinFarmer": {
+    "input_bytes": 446796,
+    "output_bytes": 363416,
+    "input_triangles": 9092,
+    "triangles": 7236,
+    "protected_triangles": 5660,
+    "input_vertices": 8781,
+    "vertices": 7853,
+    "bones": 14,
+    "animations": []
+  },
+  "FloatingGrinKing": {
+    "input_bytes": 565272,
+    "output_bytes": 471464,
+    "input_triangles": 9720,
+    "triangles": 7864,
+    "protected_triangles": 6288,
+    "input_vertices": 11388,
+    "vertices": 10460,
+    "bones": 14,
+    "animations": []
+  },
+  "FloatingGrinKnight": {
+    "input_bytes": 381648,
+    "output_bytes": 303768,
+    "input_triangles": 8318,
+    "triangles": 6462,
+    "protected_triangles": 4886,
+    "input_vertices": 7406,
+    "vertices": 6478,
+    "bones": 14,
+    "animations": []
+  },
+  "FloatingGrinMiner": {
+    "input_bytes": 394692,
+    "output_bytes": 315756,
+    "input_triangles": 8556,
+    "triangles": 6700,
+    "protected_triangles": 5124,
+    "input_vertices": 7670,
+    "vertices": 6742,
+    "bones": 14,
+    "animations": []
+  },
+  "FloatingGrinPunk": {
+    "input_bytes": 443416,
+    "output_bytes": 360736,
+    "input_triangles": 9820,
+    "triangles": 7964,
+    "protected_triangles": 6388,
+    "input_vertices": 8605,
+    "vertices": 7677,
+    "bones": 14,
+    "animations": []
+  }
+}

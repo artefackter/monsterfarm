@@ -1,0 +1,55 @@
+{
+  "models_bytes": {
+    "before": 3252380,
+    "after": 2613712,
+    "saved_percent": 19.64
+  },
+  "triangles": {
+    "before": 69432,
+    "after": 54584,
+    "saved_percent": 21.38
+  },
+  "render_vertices": {
+    "before": 63154,
+    "after": 55730,
+    "saved_percent": 11.76
+  },
+  "icons_bytes": {
+    "before": 356315,
+    "after": 332568,
+    "saved_percent": 6.66
+  },
+  "render_comparisons": {
+    "FloatingGrin": {
+      "silhouette_iou": 1.0,
+      "visible_psnr_db": 48.16
+    },
+    "FloatingGrinAggressive": {
+      "silhouette_iou": 0.99627,
+      "visible_psnr_db": 40.02
+    },
+    "FloatingGrinKing": {
+      "silhouette_iou": 0.99848,
+      "visible_psnr_db": 42.09
+    }
+  },
+  "blender_imports": 8,
+  "studio_load_time_measured": false,
+  "ui512_bytes": {
+    "before": 260252,
+    "after": 242829,
+    "saved_percent": 6.69
+  },
+  "small256_bytes": {
+    "before": 96063,
+    "after": 89739,
+    "saved_percent": 6.58
+  },
+  "total_bytes": {
+    "before": 3608695,
+    "after": 2946280,
+    "saved_percent": 18.36
+  },
+  "zip_bytes": 1237592,
+  "zip_sha256": "44bd7b2ebc74202ffab14d6c95ddeaaa839726654629d9e05fd38ebcb60972a6"
+}

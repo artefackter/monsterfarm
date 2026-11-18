@@ -1,0 +1,42 @@
+{
+  "PaleGrinner": {
+    "vertices": 10296,
+    "input_animation_keys": 0,
+    "animation_keys": 0
+  },
+  "PaleGrinnerAggressive": {
+    "vertices": 10075,
+    "input_animation_keys": 694,
+    "animation_keys": 480
+  },
+  "PaleGrinnerAssassin": {
+    "vertices": 14452,
+    "input_animation_keys": 0,
+    "animation_keys": 0
+  },
+  "PaleGrinnerFarmer": {
+    "vertices": 14942,
+    "input_animation_keys": 0,
+    "animation_keys": 0
+  },
+  "PaleGrinnerKing": {
+    "vertices": 17074,
+    "input_animation_keys": 0,
+    "animation_keys": 0
+  },
+  "PaleGrinnerKnight": {
+    "vertices": 14421,
+    "input_animation_keys": 0,
+    "animation_keys": 0
+  },
+  "PaleGrinnerMiner": {
+    "vertices": 14439,
+    "input_animation_keys": 0,
+    "animation_keys": 0
+  },
+  "PaleGrinnerPunk": {
+    "vertices": 16624,
+    "input_animation_keys": 0,
+    "animation_keys": 0
+  }
+}

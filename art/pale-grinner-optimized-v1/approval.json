@@ -1,0 +1,165 @@
+{
+  "status": "approved",
+  "approved_on": "2026-11-18",
+  "scope": "standalone optimized Pale Grinner V4 bundle, 8 models and 6 icons in two sizes",
+  "user_confirmation": "Меня устраивает, сохрани его.",
+  "game_integration_authorized": false,
+  "files": {
+    "PaleGrinner_Optimized.zip": {
+      "bytes": 8265771,
+      "sha256": "d40e57f08277cb0d51d8e64f03a169b7875a802cd9f6f914af48083b9702383d"
+    },
+    "icons/small256/PaleGrinnerAssassin.png": {
+      "bytes": 14453,
+      "sha256": "c6ac362f35b933caadc72b65e05577bc9a3359a204484a4ac41719384d6c3a68"
+    },
+    "icons/small256/PaleGrinnerFarmer.png": {
+      "bytes": 13362,
+      "sha256": "0c456a7f2c8f51d85db16be0cb6a58f602cfcbaae30e74860ccedaca3fef3b4e"
+    },
+    "icons/small256/PaleGrinnerKing.png": {
+      "bytes": 13785,
+      "sha256": "7ed1a28982dd11e99a661199cd68a359f3428903c6a79d0935ce0096ec75eee9"
+    },
+    "icons/small256/PaleGrinnerKnight.png": {
+      "bytes": 13542,
+      "sha256": "12be779609e32696bade2348d9c047be261720fe0315b69ce34bcb62d84d65ab"
+    },
+    "icons/small256/PaleGrinnerMiner.png": {
+      "bytes": 12404,
+      "sha256": "6538069ee540d277fab7de4b3ff457f93f30014e4357ae6be8304ed44ab0ed12"
+    },
+    "icons/small256/PaleGrinnerPunk.png": {
+      "bytes": 13631,
+      "sha256": "e2a5d8282176c83470af54e24030b91f91aa4fe60082dce7e7d1531be89738c2"
+    },
+    "icons/ui512/PaleGrinnerAssassin.png": {
+      "bytes": 43248,
+      "sha256": "6f6787553eaaa1da8265bc516a7f6cbba9a838cec89f555917ef61b600eaca31"
+    },
+    "icons/ui512/PaleGrinnerFarmer.png": {
+      "bytes": 38405,
+      "sha256": "53758242d26c30dedc0f13e9ff61bc079065d841409ba15f0cd9c2f1238c8b43"
+    },
+    "icons/ui512/PaleGrinnerKing.png": {
+      "bytes": 41531,
+      "sha256": "e05f1423df71eedb2b37a6a0666c92dc9542de58b2610501f1d0b65a12a98e05"
+    },
+    "icons/ui512/PaleGrinnerKnight.png": {
+      "bytes": 39535,
+      "sha256": "808790ca6b50463351525c6a78c025f8d58b0a03ed8d3712c51a685df799fb3e"
+    },
+    "icons/ui512/PaleGrinnerMiner.png": {
+      "bytes": 35623,
+      "sha256": "954a4271f1d664667e45e1eae57c42d37d8b52e934a3c8fd31d241557ba3e55f"
+    },
+    "icons/ui512/PaleGrinnerPunk.png": {
+      "bytes": 40930,
+      "sha256": "50b07815644dfe8a520525cf3b7f94c351da9e0c2a6762033fe9674046e732ff"
+    },
+    "models/PaleGrinner.blend": {
+      "bytes": 363697,
+      "sha256": "3a84693b9dc7a3f894ec5624563ef966045dc393189d9fd7ebad075435214801"
+    },
+    "models/PaleGrinner.fbx": {
+      "bytes": 387884,
+      "sha256": "02a3e0cf94dae0f1ba03dbc397ecde70bc7369c714bf0af859cc11203678c974"
+    },
+    "models/PaleGrinner.glb": {
+      "bytes": 531332,
+      "sha256": "a0f6d24ee2bc2bd14e47c21d1b60fbe2c4eefc29a1ce2e77bfd10279c5d95f13"
+    },
+    "models/PaleGrinnerAggressive.blend": {
+      "bytes": 405284,
+      "sha256": "aef9454615d43976d7dcd62276d8fc8652588402f775e98b8a725f0307d2f36f"
+    },
+    "models/PaleGrinnerAggressive.fbx": {
+      "bytes": 603388,
+      "sha256": "41869fe3a85a0ad222897c08a2b54ddb79e732334c6bf97d97aa2d89378288d4"
+    },
+    "models/PaleGrinnerAggressive.glb": {
+      "bytes": 552296,
+      "sha256": "cd708bb241a4920d605226cc677373ae514b922dc26e66ad6abc2ee71fc75216"
+    },
+    "models/PaleGrinnerAssassin.blend": {
+      "bytes": 420158,
+      "sha256": "1b56c9f9e40994d3d161561f668c4e4817ecb507775bd071c1bb68f46663dd9a"
+    },
+    "models/PaleGrinnerAssassin.fbx": {
+      "bytes": 464924,
+      "sha256": "cb17d7676a7cb63f7439c3a98bdb2f91af76e894a5dbdb1db3fb07af1ee4b418"
+    },
+    "models/PaleGrinnerAssassin.glb": {
+      "bytes": 725172,
+      "sha256": "0e78169563bfe800f10bcf6913049f12aee7656ce26fa43d3d65644eb4d79182"
+    },
+    "models/PaleGrinnerFarmer.blend": {
+      "bytes": 427970,
+      "sha256": "a70c282b3f3b2be4b0854ca04dc7af97df262284db385a1b41c625dc5fadbf0b"
+    },
+    "models/PaleGrinnerFarmer.fbx": {
+      "bytes": 461452,
+      "sha256": "4696b145bfeb3ff09a76a9e1b4b7393c4eb9e0c1972f528180f5ccf85d15dfab"
+    },
+    "models/PaleGrinnerFarmer.glb": {
+      "bytes": 747972,
+      "sha256": "3902f45aac6653c5c71482709075738b5ad7df9b601ed5aaf3a4bb2e329fd679"
+    },
+    "models/PaleGrinnerKing.blend": {
+      "bytes": 449677,
+      "sha256": "7d28746acefaf24d8777b65003c7816a32d19a35ba9fe00db7d3ebc16c475000"
+    },
+    "models/PaleGrinnerKing.fbx": {
+      "bytes": 497356,
+      "sha256": "6f06655c0116060c9a38583628e16ee8e647d3dd4cd3cb6920139c903bf31021"
+    },
+    "models/PaleGrinnerKing.glb": {
+      "bytes": 845468,
+      "sha256": "dc6b47ae5005b81650e4a031a2b7a7e7dd3ea60f45edc5a99f8dc6c101901017"
+    },
+    "models/PaleGrinnerKnight.blend": {
+      "bytes": 419036,
+      "sha256": "25d07cb04d525727207afc56b75430d8d73c61584987f066626f77cd4f476540"
+    },
+    "models/PaleGrinnerKnight.fbx": {
+      "bytes": 460284,
+      "sha256": "971f27dfef345f9c20f39430246a238b83eb5596afcd4a9b915094967aab4cc9"
+    },
+    "models/PaleGrinnerKnight.glb": {
+      "bytes": 723692,
+      "sha256": "26c02ef0523840f744ab8ed5bf205acb9458d8d177f0be6228993288f56d8bfd"
+    },
+    "models/PaleGrinnerMiner.blend": {
+      "bytes": 419009,
+      "sha256": "353242ec2e98722c0dd7f7b6d13535483a4f8bd0e72e7014f4dafe636627eee9"
+    },
+    "models/PaleGrinnerMiner.fbx": {
+      "bytes": 458140,
+      "sha256": "9dd9b5f3cea2c29f3d088bd9f74bb60d9ade1b7232abd77e676656f79923d14d"
+    },
+    "models/PaleGrinnerMiner.glb": {
+      "bytes": 724684,
+      "sha256": "af118f1147898b3298c416b96741cea03f9b2ee2a3e6ff405c84ef7c6b577cde"
+    },
+    "models/PaleGrinnerPunk.blend": {
+      "bytes": 446349,
+      "sha256": "2d44d942ac0640f684cf780bda752e8b4c7e46f831437930b1952bdb5103ce49"
+    },
+    "models/PaleGrinnerPunk.fbx": {
+      "bytes": 485180,
+      "sha256": "e93dfe16f7cf1768ff8944dfa492093fb52c7e68259dac4bcbd35353e2524e33"
+    },
+    "models/PaleGrinnerPunk.glb": {
+      "bytes": 827396,
+      "sha256": "462a2f4e14d95f9730e18d8d108ec443efdc52c31644f5882efcaf133544398c"
+    },
+    "previews/Comparison.jpg": {
+      "bytes": 85882,
+      "sha256": "47ed1c2812789e85c5ba2e3e3ab56595dbe88a4da6a96352c06809333991c616"
+    },
+    "summary.json": {
+      "bytes": 949,
+      "sha256": "0a2d097279c560e5409c333ca187668a942ff70fc72acf6f414c97706b1c9e95"
+    }
+  }
+}

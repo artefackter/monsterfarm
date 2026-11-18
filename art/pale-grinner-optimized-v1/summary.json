@@ -1,0 +1,48 @@
+{
+  "triangles": {
+    "before": 150506,
+    "after": 105850,
+    "reduction_percent": 29.67
+  },
+  "head_lunge_keys": {
+    "before": 694,
+    "after": 480,
+    "reduction_percent": 30.84
+  },
+  "visual_comparison": {
+    "PaleGrinner": {
+      "silhouette_iou": 0.99718,
+      "visible_psnr_db": 37.02
+    },
+    "PaleGrinnerAggressive": {
+      "silhouette_iou": 0.99893,
+      "visible_psnr_db": 39.52
+    }
+  },
+  "roblox_load_time_measured": false,
+  "glb_bytes": {
+    "before": 8533276,
+    "after": 5678012,
+    "reduction_percent": 33.46
+  },
+  "fbx_bytes": {
+    "before": 4933776,
+    "after": 3818608,
+    "reduction_percent": 22.6
+  },
+  "blend_bytes": {
+    "before": 4328522,
+    "after": 3351180,
+    "reduction_percent": 22.58
+  },
+  "ui512_bytes": {
+    "before": 576256,
+    "after": 239272,
+    "reduction_percent": 58.48
+  },
+  "small256_bytes": {
+    "before": 194898,
+    "after": 81177,
+    "reduction_percent": 58.35
+  }
+}

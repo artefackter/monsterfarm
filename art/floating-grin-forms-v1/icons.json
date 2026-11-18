@@ -1,0 +1,74 @@
+{
+  "FloatingGrinFarmer": {
+    "ui512": {
+      "input_bytes": 173975,
+      "output_bytes": 43075,
+      "visible_composite_psnr_db": 39.61
+    },
+    "small256": {
+      "input_bytes": 54591,
+      "output_bytes": 16086,
+      "visible_composite_psnr_db": 38.83
+    }
+  },
+  "FloatingGrinMiner": {
+    "ui512": {
+      "input_bytes": 166265,
+      "output_bytes": 40394,
+      "visible_composite_psnr_db": 39.85
+    },
+    "small256": {
+      "input_bytes": 52195,
+      "output_bytes": 15546,
+      "visible_composite_psnr_db": 39.3
+    }
+  },
+  "FloatingGrinKnight": {
+    "ui512": {
+      "input_bytes": 140473,
+      "output_bytes": 39476,
+      "visible_composite_psnr_db": 42.11
+    },
+    "small256": {
+      "input_bytes": 44668,
+      "output_bytes": 14475,
+      "visible_composite_psnr_db": 41.32
+    }
+  },
+  "FloatingGrinKing": {
+    "ui512": {
+      "input_bytes": 193819,
+      "output_bytes": 48593,
+      "visible_composite_psnr_db": 38.66
+    },
+    "small256": {
+      "input_bytes": 60631,
+      "output_bytes": 17623,
+      "visible_composite_psnr_db": 38.0
+    }
+  },
+  "FloatingGrinPunk": {
+    "ui512": {
+      "input_bytes": 158874,
+      "output_bytes": 44672,
+      "visible_composite_psnr_db": 41.4
+    },
+    "small256": {
+      "input_bytes": 49121,
+      "output_bytes": 15549,
+      "visible_composite_psnr_db": 40.84
+    }
+  },
+  "FloatingGrinAssassin": {
+    "ui512": {
+      "input_bytes": 177881,
+      "output_bytes": 44042,
+      "visible_composite_psnr_db": 41.61
+    },
+    "small256": {
+      "input_bytes": 56121,
+      "output_bytes": 16784,
+      "visible_composite_psnr_db": 41.0
+    }
+  }
+}

@@ -1,0 +1,66 @@
+{
+  "ui512": {
+    "PaleGrinnerAssassin": {
+      "input_bytes": 96603,
+      "output_bytes": 43248,
+      "visible_composite_psnr_db": 40.19
+    },
+    "PaleGrinnerFarmer": {
+      "input_bytes": 96847,
+      "output_bytes": 38405,
+      "visible_composite_psnr_db": 36.85
+    },
+    "PaleGrinnerKing": {
+      "input_bytes": 99849,
+      "output_bytes": 41531,
+      "visible_composite_psnr_db": 36.8
+    },
+    "PaleGrinnerKnight": {
+      "input_bytes": 99322,
+      "output_bytes": 39535,
+      "visible_composite_psnr_db": 37.21
+    },
+    "PaleGrinnerMiner": {
+      "input_bytes": 91956,
+      "output_bytes": 35623,
+      "visible_composite_psnr_db": 36.91
+    },
+    "PaleGrinnerPunk": {
+      "input_bytes": 91679,
+      "output_bytes": 40930,
+      "visible_composite_psnr_db": 40.63
+    }
+  },
+  "small256": {
+    "PaleGrinnerAssassin": {
+      "input_bytes": 32816,
+      "output_bytes": 14453,
+      "visible_composite_psnr_db": 39.66
+    },
+    "PaleGrinnerFarmer": {
+      "input_bytes": 33171,
+      "output_bytes": 13362,
+      "visible_composite_psnr_db": 36.13
+    },
+    "PaleGrinnerKing": {
+      "input_bytes": 33057,
+      "output_bytes": 13785,
+      "visible_composite_psnr_db": 36.11
+    },
+    "PaleGrinnerKnight": {
+      "input_bytes": 33580,
+      "output_bytes": 13542,
+      "visible_composite_psnr_db": 36.8
+    },
+    "PaleGrinnerMiner": {
+      "input_bytes": 31269,
+      "output_bytes": 12404,
+      "visible_composite_psnr_db": 36.2
+    },
+    "PaleGrinnerPunk": {
+      "input_bytes": 31005,
+      "output_bytes": 13631,
+      "visible_composite_psnr_db": 39.93
+    }
+  }
+}

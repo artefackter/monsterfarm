@@ -1,0 +1,1652 @@
+{
+  "scp": [
+    {
+      "model": "SC_Floor64",
+      "position": [
+        -224,
+        0,
+        0
+      ],
+      "yawDegrees": 0
+    },
+    {
+      "model": "SC_WallB",
+      "position": [
+        -224,
+        0,
+        70
+      ],
+      "yawDegrees": 180
+    },
+    {
+      "model": "SC_WallA",
+      "position": [
+        -224,
+        0,
+        -70
+      ],
+      "yawDegrees": 0
+    },
+    {
+      "model": "SC_Floor64",
+      "position": [
+        -160,
+        0,
+        0
+      ],
+      "yawDegrees": 0
+    },
+    {
+      "model": "SC_WallA",
+      "position": [
+        -160,
+        0,
+        70
+      ],
+      "yawDegrees": 180
+    },
+    {
+      "model": "SC_WallA",
+      "position": [
+        -160,
+        0,
+        -70
+      ],
+      "yawDegrees": 0
+    },
+    {
+      "model": "SC_Floor64",
+      "position": [
+        -96,
+        0,
+        0
+      ],
+      "yawDegrees": 0
+    },
+    {
+      "model": "SC_WallA",
+      "position": [
+        -96,
+        0,
+        70
+      ],
+      "yawDegrees": 180
+    },
+    {
+      "model": "SC_WallB",
+      "position": [
+        -96,
+        0,
+        -70
+      ],
+      "yawDegrees": 0
+    },
+    {
+      "model": "SC_Floor64",
+      "position": [
+        -32,
+        0,
+        0
+      ],
+      "yawDegrees": 0
+    },
+    {
+      "model": "SC_WallB",
+      "position": [
+        -32,
+        0,
+        70
+      ],
+      "yawDegrees": 180
+    },
+    {
+      "model": "SC_Floor64",
+      "position": [
+        32,
+        0,
+        0
+      ],
+      "yawDegrees": 0
+    },
+    {
+      "model": "SC_WallA",
+      "position": [
+        32,
+        0,
+        70
+      ],
+      "yawDegrees": 180
+    },
+    {
+      "model": "SC_Floor64",
+      "position": [
+        96,
+        0,
+        0
+      ],
+      "yawDegrees": 0
+    },
+    {
+      "model": "SC_WallA",
+      "position": [
+        96,
+        0,
+        70
+      ],
+      "yawDegrees": 180
+    },
+    {
+      "model": "SC_WallB",
+      "position": [
+        96,
+        0,
+        -70
+      ],
+      "yawDegrees": 0
+    },
+    {
+      "model": "SC_Floor64",
+      "position": [
+        160,
+        0,
+        0
+      ],
+      "yawDegrees": 0
+    },
+    {
+      "model": "SC_WallB",
+      "position": [
+        160,
+        0,
+        70
+      ],
+      "yawDegrees": 180
+    },
+    {
+      "model": "SC_WallA",
+      "position": [
+        160,
+        0,
+        -70
+      ],
+      "yawDegrees": 0
+    },
+    {
+      "model": "SC_Floor64",
+      "position": [
+        224,
+        0,
+        0
+      ],
+      "yawDegrees": 0
+    },
+    {
+      "model": "SC_WallA",
+      "position": [
+        224,
+        0,
+        70
+      ],
+      "yawDegrees": 180
+    },
+    {
+      "model": "SC_WallA",
+      "position": [
+        224,
+        0,
+        -70
+      ],
+      "yawDegrees": 0
+    },
+    {
+      "model": "SC_Arena",
+      "position": [
+        0,
+        0,
+        -150
+      ],
+      "yawDegrees": 0
+    },
+    {
+      "model": "SC_Barrier",
+      "position": [
+        -180,
+        0,
+        -47.0
+      ],
+      "yawDegrees": 16
+    },
+    {
+      "model": "SC_Barrier",
+      "position": [
+        -57,
+        0,
+        54.0
+      ],
+      "yawDegrees": -11
+    },
+    {
+      "model": "SC_Barrier",
+      "position": [
+        87,
+        0,
+        -48.0
+      ],
+      "yawDegrees": 18
+    },
+    {
+      "model": "SC_Barrier",
+      "position": [
+        194,
+        0,
+        48.0
+      ],
+      "yawDegrees": -8
+    },
+    {
+      "model": "SC_Beacon",
+      "position": [
+        -210,
+        14.5,
+        68.4
+      ],
+      "yawDegrees": 0
+    },
+    {
+      "model": "SC_Beacon",
+      "position": [
+        -210,
+        14.5,
+        -68.4
+      ],
+      "yawDegrees": 0
+    },
+    {
+      "model": "SC_Beacon",
+      "position": [
+        110,
+        14.5,
+        68.4
+      ],
+      "yawDegrees": 0
+    },
+    {
+      "model": "SC_Beacon",
+      "position": [
+        110,
+        14.5,
+        -68.4
+      ],
+      "yawDegrees": 0
+    },
+    {
+      "model": "SC_Beacon",
+      "position": [
+        210,
+        14.5,
+        68.4
+      ],
+      "yawDegrees": 0
+    },
+    {
+      "model": "SC_Beacon",
+      "position": [
+        210,
+        14.5,
+        -68.4
+      ],
+      "yawDegrees": 0
+    },
+    {
+      "model": "SC_Camera",
+      "position": [
+        -151,
+        9.5,
+        -67
+      ],
+      "yawDegrees": 0
+    },
+    {
+      "model": "SC_Camera",
+      "position": [
+        120,
+        9.5,
+        67
+      ],
+      "yawDegrees": 180
+    }
+  ],
+  "mall": [
+    {
+      "model": "TC_Floor64",
+      "position": [
+        -224,
+        0,
+        0
+      ],
+      "yawDegrees": 0
+    },
+    {
+      "model": "TC_WallB",
+      "position": [
+        -224,
+        0,
+        70
+      ],
+      "yawDegrees": 180
+    },
+    {
+      "model": "TC_WallA",
+      "position": [
+        -224,
+        0,
+        -70
+      ],
+      "yawDegrees": 0
+    },
+    {
+      "model": "TC_Floor64",
+      "position": [
+        -160,
+        0,
+        0
+      ],
+      "yawDegrees": 0
+    },
+    {
+      "model": "TC_WallA",
+      "position": [
+        -160,
+        0,
+        70
+      ],
+      "yawDegrees": 180
+    },
+    {
+      "model": "TC_WallA",
+      "position": [
+        -160,
+        0,
+        -70
+      ],
+      "yawDegrees": 0
+    },
+    {
+      "model": "TC_Floor64",
+      "position": [
+        -96,
+        0,
+        0
+      ],
+      "yawDegrees": 0
+    },
+    {
+      "model": "TC_WallA",
+      "position": [
+        -96,
+        0,
+        70
+      ],
+      "yawDegrees": 180
+    },
+    {
+      "model": "TC_WallB",
+      "position": [
+        -96,
+        0,
+        -70
+      ],
+      "yawDegrees": 0
+    },
+    {
+      "model": "TC_Floor64",
+      "position": [
+        -32,
+        0,
+        0
+      ],
+      "yawDegrees": 0
+    },
+    {
+      "model": "TC_WallB",
+      "position": [
+        -32,
+        0,
+        70
+      ],
+      "yawDegrees": 180
+    },
+    {
+      "model": "TC_Floor64",
+      "position": [
+        32,
+        0,
+        0
+      ],
+      "yawDegrees": 0
+    },
+    {
+      "model": "TC_WallA",
+      "position": [
+        32,
+        0,
+        70
+      ],
+      "yawDegrees": 180
+    },
+    {
+      "model": "TC_Floor64",
+      "position": [
+        96,
+        0,
+        0
+      ],
+      "yawDegrees": 0
+    },
+    {
+      "model": "TC_WallA",
+      "position": [
+        96,
+        0,
+        70
+      ],
+      "yawDegrees": 180
+    },
+    {
+      "model": "TC_WallB",
+      "position": [
+        96,
+        0,
+        -70
+      ],
+      "yawDegrees": 0
+    },
+    {
+      "model": "TC_Floor64",
+      "position": [
+        160,
+        0,
+        0
+      ],
+      "yawDegrees": 0
+    },
+    {
+      "model": "TC_WallB",
+      "position": [
+        160,
+        0,
+        70
+      ],
+      "yawDegrees": 180
+    },
+    {
+      "model": "TC_WallA",
+      "position": [
+        160,
+        0,
+        -70
+      ],
+      "yawDegrees": 0
+    },
+    {
+      "model": "TC_Floor64",
+      "position": [
+        224,
+        0,
+        0
+      ],
+      "yawDegrees": 0
+    },
+    {
+      "model": "TC_WallA",
+      "position": [
+        224,
+        0,
+        70
+      ],
+      "yawDegrees": 180
+    },
+    {
+      "model": "TC_WallA",
+      "position": [
+        224,
+        0,
+        -70
+      ],
+      "yawDegrees": 0
+    },
+    {
+      "model": "TC_Arena",
+      "position": [
+        0,
+        0,
+        -150
+      ],
+      "yawDegrees": 0
+    },
+    {
+      "model": "TC_Bench",
+      "position": [
+        -189,
+        0,
+        -52.0
+      ],
+      "yawDegrees": 3
+    },
+    {
+      "model": "TC_Directory",
+      "position": [
+        -111,
+        0,
+        51.0
+      ],
+      "yawDegrees": 166
+    },
+    {
+      "model": "TC_Bench",
+      "position": [
+        -44,
+        0,
+        58.0
+      ],
+      "yawDegrees": 179
+    },
+    {
+      "model": "TC_CleanerCart",
+      "position": [
+        22,
+        0,
+        -46.0
+      ],
+      "yawDegrees": -19
+    },
+    {
+      "model": "TC_Bench",
+      "position": [
+        118,
+        0,
+        -53.0
+      ],
+      "yawDegrees": 4
+    },
+    {
+      "model": "TC_Directory",
+      "position": [
+        189,
+        0,
+        47.0
+      ],
+      "yawDegrees": 165
+    },
+    {
+      "model": "TC_DryFountain",
+      "position": [
+        -24,
+        0,
+        -216
+      ],
+      "yawDegrees": 0
+    }
+  ],
+  "pizza": [
+    {
+      "model": "PZ_Floor64",
+      "position": [
+        -224,
+        0,
+        0
+      ],
+      "yawDegrees": 0
+    },
+    {
+      "model": "PZ_WallB",
+      "position": [
+        -224,
+        0,
+        70
+      ],
+      "yawDegrees": 180
+    },
+    {
+      "model": "PZ_WallA",
+      "position": [
+        -224,
+        0,
+        -70
+      ],
+      "yawDegrees": 0
+    },
+    {
+      "model": "PZ_Floor64",
+      "position": [
+        -160,
+        0,
+        0
+      ],
+      "yawDegrees": 0
+    },
+    {
+      "model": "PZ_WallA",
+      "position": [
+        -160,
+        0,
+        70
+      ],
+      "yawDegrees": 180
+    },
+    {
+      "model": "PZ_WallA",
+      "position": [
+        -160,
+        0,
+        -70
+      ],
+      "yawDegrees": 0
+    },
+    {
+      "model": "PZ_Floor64",
+      "position": [
+        -96,
+        0,
+        0
+      ],
+      "yawDegrees": 0
+    },
+    {
+      "model": "PZ_WallA",
+      "position": [
+        -96,
+        0,
+        70
+      ],
+      "yawDegrees": 180
+    },
+    {
+      "model": "PZ_WallB",
+      "position": [
+        -96,
+        0,
+        -70
+      ],
+      "yawDegrees": 0
+    },
+    {
+      "model": "PZ_Floor64",
+      "position": [
+        -32,
+        0,
+        0
+      ],
+      "yawDegrees": 0
+    },
+    {
+      "model": "PZ_WallB",
+      "position": [
+        -32,
+        0,
+        70
+      ],
+      "yawDegrees": 180
+    },
+    {
+      "model": "PZ_Floor64",
+      "position": [
+        32,
+        0,
+        0
+      ],
+      "yawDegrees": 0
+    },
+    {
+      "model": "PZ_WallA",
+      "position": [
+        32,
+        0,
+        70
+      ],
+      "yawDegrees": 180
+    },
+    {
+      "model": "PZ_Floor64",
+      "position": [
+        96,
+        0,
+        0
+      ],
+      "yawDegrees": 0
+    },
+    {
+      "model": "PZ_WallA",
+      "position": [
+        96,
+        0,
+        70
+      ],
+      "yawDegrees": 180
+    },
+    {
+      "model": "PZ_WallB",
+      "position": [
+        96,
+        0,
+        -70
+      ],
+      "yawDegrees": 0
+    },
+    {
+      "model": "PZ_Floor64",
+      "position": [
+        160,
+        0,
+        0
+      ],
+      "yawDegrees": 0
+    },
+    {
+      "model": "PZ_WallB",
+      "position": [
+        160,
+        0,
+        70
+      ],
+      "yawDegrees": 180
+    },
+    {
+      "model": "PZ_WallA",
+      "position": [
+        160,
+        0,
+        -70
+      ],
+      "yawDegrees": 0
+    },
+    {
+      "model": "PZ_Floor64",
+      "position": [
+        224,
+        0,
+        0
+      ],
+      "yawDegrees": 0
+    },
+    {
+      "model": "PZ_WallA",
+      "position": [
+        224,
+        0,
+        70
+      ],
+      "yawDegrees": 180
+    },
+    {
+      "model": "PZ_WallA",
+      "position": [
+        224,
+        0,
+        -70
+      ],
+      "yawDegrees": 0
+    },
+    {
+      "model": "PZ_Arena",
+      "position": [
+        0,
+        0,
+        -150
+      ],
+      "yawDegrees": 0
+    },
+    {
+      "model": "PZ_Booth",
+      "position": [
+        -170,
+        0,
+        -57.0
+      ],
+      "yawDegrees": 0
+    },
+    {
+      "model": "PZ_Table",
+      "position": [
+        -170,
+        0,
+        -49.0
+      ],
+      "yawDegrees": 0
+    },
+    {
+      "model": "PZ_Booth",
+      "position": [
+        -78,
+        0,
+        54.0
+      ],
+      "yawDegrees": 180
+    },
+    {
+      "model": "PZ_Table",
+      "position": [
+        -78,
+        0,
+        46.0
+      ],
+      "yawDegrees": 0
+    },
+    {
+      "model": "PZ_BoxCart",
+      "position": [
+        34,
+        0,
+        -51.0
+      ],
+      "yawDegrees": -10
+    },
+    {
+      "model": "PZ_Booth",
+      "position": [
+        146,
+        0,
+        -57.0
+      ],
+      "yawDegrees": 0
+    },
+    {
+      "model": "PZ_Table",
+      "position": [
+        146,
+        0,
+        -49.0
+      ],
+      "yawDegrees": 0
+    },
+    {
+      "model": "PZ_Stage",
+      "position": [
+        0,
+        0,
+        -225
+      ],
+      "yawDegrees": 0
+    }
+  ],
+  "zoo": [
+    {
+      "model": "ZO_Floor64",
+      "position": [
+        -224,
+        0,
+        0
+      ],
+      "yawDegrees": 0
+    },
+    {
+      "model": "ZO_WallB",
+      "position": [
+        -224,
+        0,
+        70
+      ],
+      "yawDegrees": 180
+    },
+    {
+      "model": "ZO_WallA",
+      "position": [
+        -224,
+        0,
+        -70
+      ],
+      "yawDegrees": 0
+    },
+    {
+      "model": "ZO_Floor64",
+      "position": [
+        -160,
+        0,
+        0
+      ],
+      "yawDegrees": 0
+    },
+    {
+      "model": "ZO_WallA",
+      "position": [
+        -160,
+        0,
+        70
+      ],
+      "yawDegrees": 180
+    },
+    {
+      "model": "ZO_WallA",
+      "position": [
+        -160,
+        0,
+        -70
+      ],
+      "yawDegrees": 0
+    },
+    {
+      "model": "ZO_Floor64",
+      "position": [
+        -96,
+        0,
+        0
+      ],
+      "yawDegrees": 0
+    },
+    {
+      "model": "ZO_WallA",
+      "position": [
+        -96,
+        0,
+        70
+      ],
+      "yawDegrees": 180
+    },
+    {
+      "model": "ZO_WallB",
+      "position": [
+        -96,
+        0,
+        -70
+      ],
+      "yawDegrees": 0
+    },
+    {
+      "model": "ZO_Floor64",
+      "position": [
+        -32,
+        0,
+        0
+      ],
+      "yawDegrees": 0
+    },
+    {
+      "model": "ZO_WallB",
+      "position": [
+        -32,
+        0,
+        70
+      ],
+      "yawDegrees": 180
+    },
+    {
+      "model": "ZO_Floor64",
+      "position": [
+        32,
+        0,
+        0
+      ],
+      "yawDegrees": 0
+    },
+    {
+      "model": "ZO_WallA",
+      "position": [
+        32,
+        0,
+        70
+      ],
+      "yawDegrees": 180
+    },
+    {
+      "model": "ZO_Floor64",
+      "position": [
+        96,
+        0,
+        0
+      ],
+      "yawDegrees": 0
+    },
+    {
+      "model": "ZO_WallA",
+      "position": [
+        96,
+        0,
+        70
+      ],
+      "yawDegrees": 180
+    },
+    {
+      "model": "ZO_WallB",
+      "position": [
+        96,
+        0,
+        -70
+      ],
+      "yawDegrees": 0
+    },
+    {
+      "model": "ZO_Floor64",
+      "position": [
+        160,
+        0,
+        0
+      ],
+      "yawDegrees": 0
+    },
+    {
+      "model": "ZO_WallB",
+      "position": [
+        160,
+        0,
+        70
+      ],
+      "yawDegrees": 180
+    },
+    {
+      "model": "ZO_WallA",
+      "position": [
+        160,
+        0,
+        -70
+      ],
+      "yawDegrees": 0
+    },
+    {
+      "model": "ZO_Floor64",
+      "position": [
+        224,
+        0,
+        0
+      ],
+      "yawDegrees": 0
+    },
+    {
+      "model": "ZO_WallA",
+      "position": [
+        224,
+        0,
+        70
+      ],
+      "yawDegrees": 180
+    },
+    {
+      "model": "ZO_WallA",
+      "position": [
+        224,
+        0,
+        -70
+      ],
+      "yawDegrees": 0
+    },
+    {
+      "model": "ZO_Arena",
+      "position": [
+        0,
+        0,
+        -150
+      ],
+      "yawDegrees": 0
+    },
+    {
+      "model": "ZO_PawSign",
+      "position": [
+        -168,
+        0,
+        -50.0
+      ],
+      "yawDegrees": 0
+    },
+    {
+      "model": "ZO_KeeperCart",
+      "position": [
+        -78,
+        0,
+        48.0
+      ],
+      "yawDegrees": 22
+    },
+    {
+      "model": "ZO_BirdSign",
+      "position": [
+        32,
+        0,
+        58.0
+      ],
+      "yawDegrees": 180
+    },
+    {
+      "model": "ZO_FeedBucket",
+      "position": [
+        86,
+        0,
+        -48.0
+      ],
+      "yawDegrees": 0
+    },
+    {
+      "model": "ZO_BirdSign",
+      "position": [
+        158,
+        0,
+        -53.0
+      ],
+      "yawDegrees": 0
+    },
+    {
+      "model": "ZO_PawSign",
+      "position": [
+        216,
+        0,
+        51.0
+      ],
+      "yawDegrees": 180
+    }
+  ],
+  "rift": [
+    {
+      "model": "IR_Floor64",
+      "position": [
+        -224,
+        0,
+        0
+      ],
+      "yawDegrees": 0
+    },
+    {
+      "model": "IR_WallB",
+      "position": [
+        -224,
+        0,
+        70
+      ],
+      "yawDegrees": 180
+    },
+    {
+      "model": "IR_WallA",
+      "position": [
+        -224,
+        0,
+        -70
+      ],
+      "yawDegrees": 0
+    },
+    {
+      "model": "IR_Floor64",
+      "position": [
+        -160,
+        0,
+        0
+      ],
+      "yawDegrees": 0
+    },
+    {
+      "model": "IR_WallA",
+      "position": [
+        -160,
+        0,
+        70
+      ],
+      "yawDegrees": 180
+    },
+    {
+      "model": "IR_WallA",
+      "position": [
+        -160,
+        0,
+        -70
+      ],
+      "yawDegrees": 0
+    },
+    {
+      "model": "IR_Floor64",
+      "position": [
+        -96,
+        0,
+        0
+      ],
+      "yawDegrees": 0
+    },
+    {
+      "model": "IR_WallA",
+      "position": [
+        -96,
+        0,
+        70
+      ],
+      "yawDegrees": 180
+    },
+    {
+      "model": "IR_WallB",
+      "position": [
+        -96,
+        0,
+        -70
+      ],
+      "yawDegrees": 0
+    },
+    {
+      "model": "IR_Floor64",
+      "position": [
+        -32,
+        0,
+        0
+      ],
+      "yawDegrees": 0
+    },
+    {
+      "model": "IR_WallB",
+      "position": [
+        -32,
+        0,
+        70
+      ],
+      "yawDegrees": 180
+    },
+    {
+      "model": "IR_Floor64",
+      "position": [
+        32,
+        0,
+        0
+      ],
+      "yawDegrees": 0
+    },
+    {
+      "model": "IR_WallA",
+      "position": [
+        32,
+        0,
+        70
+      ],
+      "yawDegrees": 180
+    },
+    {
+      "model": "IR_Floor64",
+      "position": [
+        96,
+        0,
+        0
+      ],
+      "yawDegrees": 0
+    },
+    {
+      "model": "IR_WallA",
+      "position": [
+        96,
+        0,
+        70
+      ],
+      "yawDegrees": 180
+    },
+    {
+      "model": "IR_WallB",
+      "position": [
+        96,
+        0,
+        -70
+      ],
+      "yawDegrees": 0
+    },
+    {
+      "model": "IR_Floor64",
+      "position": [
+        160,
+        0,
+        0
+      ],
+      "yawDegrees": 0
+    },
+    {
+      "model": "IR_WallB",
+      "position": [
+        160,
+        0,
+        70
+      ],
+      "yawDegrees": 180
+    },
+    {
+      "model": "IR_WallA",
+      "position": [
+        160,
+        0,
+        -70
+      ],
+      "yawDegrees": 0
+    },
+    {
+      "model": "IR_Floor64",
+      "position": [
+        224,
+        0,
+        0
+      ],
+      "yawDegrees": 0
+    },
+    {
+      "model": "IR_WallA",
+      "position": [
+        224,
+        0,
+        70
+      ],
+      "yawDegrees": 180
+    },
+    {
+      "model": "IR_WallA",
+      "position": [
+        224,
+        0,
+        -70
+      ],
+      "yawDegrees": 0
+    },
+    {
+      "model": "IR_Arena",
+      "position": [
+        0,
+        0,
+        -150
+      ],
+      "yawDegrees": 0
+    },
+    {
+      "model": "IR_LooseDoor",
+      "position": [
+        -163,
+        0,
+        -49.0
+      ],
+      "yawDegrees": 11
+    },
+    {
+      "model": "IR_Lamp",
+      "position": [
+        -64,
+        0,
+        53.0
+      ],
+      "yawDegrees": 160
+    },
+    {
+      "model": "IR_FloatShards",
+      "position": [
+        42,
+        0,
+        50.0
+      ],
+      "yawDegrees": 14
+    },
+    {
+      "model": "IR_Lamp",
+      "position": [
+        128,
+        0,
+        -49.0
+      ],
+      "yawDegrees": -6
+    },
+    {
+      "model": "IR_FloatShards",
+      "position": [
+        183,
+        0,
+        -57.0
+      ],
+      "yawDegrees": 47
+    }
+  ],
+  "space": [
+    {
+      "model": "DS_Floor64",
+      "position": [
+        -224,
+        0,
+        0
+      ],
+      "yawDegrees": 0
+    },
+    {
+      "model": "DS_WallB",
+      "position": [
+        -224,
+        0,
+        70
+      ],
+      "yawDegrees": 180
+    },
+    {
+      "model": "DS_WallA",
+      "position": [
+        -224,
+        0,
+        -70
+      ],
+      "yawDegrees": 0
+    },
+    {
+      "model": "DS_Floor64",
+      "position": [
+        -160,
+        0,
+        0
+      ],
+      "yawDegrees": 0
+    },
+    {
+      "model": "DS_WallA",
+      "position": [
+        -160,
+        0,
+        70
+      ],
+      "yawDegrees": 180
+    },
+    {
+      "model": "DS_WallA",
+      "position": [
+        -160,
+        0,
+        -70
+      ],
+      "yawDegrees": 0
+    },
+    {
+      "model": "DS_Floor64",
+      "position": [
+        -96,
+        0,
+        0
+      ],
+      "yawDegrees": 0
+    },
+    {
+      "model": "DS_WallA",
+      "position": [
+        -96,
+        0,
+        70
+      ],
+      "yawDegrees": 180
+    },
+    {
+      "model": "DS_WallB",
+      "position": [
+        -96,
+        0,
+        -70
+      ],
+      "yawDegrees": 0
+    },
+    {
+      "model": "DS_Floor64",
+      "position": [
+        -32,
+        0,
+        0
+      ],
+      "yawDegrees": 0
+    },
+    {
+      "model": "DS_WallB",
+      "position": [
+        -32,
+        0,
+        70
+      ],
+      "yawDegrees": 180
+    },
+    {
+      "model": "DS_Floor64",
+      "position": [
+        32,
+        0,
+        0
+      ],
+      "yawDegrees": 0
+    },
+    {
+      "model": "DS_WallA",
+      "position": [
+        32,
+        0,
+        70
+      ],
+      "yawDegrees": 180
+    },
+    {
+      "model": "DS_Floor64",
+      "position": [
+        96,
+        0,
+        0
+      ],
+      "yawDegrees": 0
+    },
+    {
+      "model": "DS_WallA",
+      "position": [
+        96,
+        0,
+        70
+      ],
+      "yawDegrees": 180
+    },
+    {
+      "model": "DS_WallB",
+      "position": [
+        96,
+        0,
+        -70
+      ],
+      "yawDegrees": 0
+    },
+    {
+      "model": "DS_Floor64",
+      "position": [
+        160,
+        0,
+        0
+      ],
+      "yawDegrees": 0
+    },
+    {
+      "model": "DS_WallB",
+      "position": [
+        160,
+        0,
+        70
+      ],
+      "yawDegrees": 180
+    },
+    {
+      "model": "DS_WallA",
+      "position": [
+        160,
+        0,
+        -70
+      ],
+      "yawDegrees": 0
+    },
+    {
+      "model": "DS_Floor64",
+      "position": [
+        224,
+        0,
+        0
+      ],
+      "yawDegrees": 0
+    },
+    {
+      "model": "DS_WallA",
+      "position": [
+        224,
+        0,
+        70
+      ],
+      "yawDegrees": 180
+    },
+    {
+      "model": "DS_WallA",
+      "position": [
+        224,
+        0,
+        -70
+      ],
+      "yawDegrees": 0
+    },
+    {
+      "model": "DS_Arena",
+      "position": [
+        0,
+        0,
+        -150
+      ],
+      "yawDegrees": 0
+    },
+    {
+      "model": "DS_AirlockCargo",
+      "position": [
+        -178,
+        0,
+        49.0
+      ],
+      "yawDegrees": 13
+    },
+    {
+      "model": "DS_SolarDebris",
+      "position": [
+        -92,
+        0,
+        -48.0
+      ],
+      "yawDegrees": -8
+    },
+    {
+      "model": "DS_Dish",
+      "position": [
+        -21,
+        0,
+        55.0
+      ],
+      "yawDegrees": 165
+    },
+    {
+      "model": "DS_AirlockCargo",
+      "position": [
+        91,
+        0,
+        -51.0
+      ],
+      "yawDegrees": -18
+    },
+    {
+      "model": "DS_SolarDebris",
+      "position": [
+        177,
+        0,
+        50.0
+      ],
+      "yawDegrees": 16
+    },
+    {
+      "model": "DS_Dish",
+      "position": [
+        38,
+        0,
+        -215
+      ],
+      "yawDegrees": 16
+    }
+  ]
+}

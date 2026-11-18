@@ -1,0 +1,86 @@
+{
+  "ui512/FloatingGrinAssassin.png": {
+    "input_bytes": 44042,
+    "output_bytes": 42877,
+    "width": 512,
+    "height": 512,
+    "max_RGBA_channel_difference": 0
+  },
+  "ui512/FloatingGrinFarmer.png": {
+    "input_bytes": 43075,
+    "output_bytes": 39994,
+    "width": 512,
+    "height": 512,
+    "max_RGBA_channel_difference": 0
+  },
+  "ui512/FloatingGrinKing.png": {
+    "input_bytes": 48593,
+    "output_bytes": 44890,
+    "width": 512,
+    "height": 512,
+    "max_RGBA_channel_difference": 0
+  },
+  "ui512/FloatingGrinKnight.png": {
+    "input_bytes": 39476,
+    "output_bytes": 35198,
+    "width": 512,
+    "height": 512,
+    "max_RGBA_channel_difference": 0
+  },
+  "ui512/FloatingGrinMiner.png": {
+    "input_bytes": 40394,
+    "output_bytes": 38682,
+    "width": 512,
+    "height": 512,
+    "max_RGBA_channel_difference": 0
+  },
+  "ui512/FloatingGrinPunk.png": {
+    "input_bytes": 44672,
+    "output_bytes": 41188,
+    "width": 512,
+    "height": 512,
+    "max_RGBA_channel_difference": 0
+  },
+  "small256/FloatingGrinAssassin.png": {
+    "input_bytes": 16784,
+    "output_bytes": 16101,
+    "width": 256,
+    "height": 256,
+    "max_RGBA_channel_difference": 0
+  },
+  "small256/FloatingGrinFarmer.png": {
+    "input_bytes": 16086,
+    "output_bytes": 15133,
+    "width": 256,
+    "height": 256,
+    "max_RGBA_channel_difference": 0
+  },
+  "small256/FloatingGrinKing.png": {
+    "input_bytes": 17623,
+    "output_bytes": 16198,
+    "width": 256,
+    "height": 256,
+    "max_RGBA_channel_difference": 0
+  },
+  "small256/FloatingGrinKnight.png": {
+    "input_bytes": 14475,
+    "output_bytes": 13008,
+    "width": 256,
+    "height": 256,
+    "max_RGBA_channel_difference": 0
+  },
+  "small256/FloatingGrinMiner.png": {
+    "input_bytes": 15546,
+    "output_bytes": 14694,
+    "width": 256,
+    "height": 256,
+    "max_RGBA_channel_difference": 0
+  },
+  "small256/FloatingGrinPunk.png": {
+    "input_bytes": 15549,
+    "output_bytes": 14605,
+    "width": 256,
+    "height": 256,
+    "max_RGBA_channel_difference": 0
+  }
+}

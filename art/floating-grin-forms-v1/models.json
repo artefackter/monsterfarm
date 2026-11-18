@@ -1,0 +1,80 @@
+{
+  "FloatingGrinFarmer": {
+    "role": "Farmer",
+    "label": "Фермер",
+    "triangles": 9092,
+    "bones": 14,
+    "animations": [],
+    "original_vertices": 3908,
+    "packed": {
+      "vertices": 8781,
+      "input_animation_keys": 0,
+      "animation_keys": 0
+    }
+  },
+  "FloatingGrinMiner": {
+    "role": "Miner",
+    "label": "Шахтёр",
+    "triangles": 8556,
+    "bones": 14,
+    "animations": [],
+    "original_vertices": 3908,
+    "packed": {
+      "vertices": 7670,
+      "input_animation_keys": 0,
+      "animation_keys": 0
+    }
+  },
+  "FloatingGrinKnight": {
+    "role": "Knight",
+    "label": "Рыцарь",
+    "triangles": 8318,
+    "bones": 14,
+    "animations": [],
+    "original_vertices": 3908,
+    "packed": {
+      "vertices": 7406,
+      "input_animation_keys": 0,
+      "animation_keys": 0
+    }
+  },
+  "FloatingGrinKing": {
+    "role": "King",
+    "label": "Король",
+    "triangles": 9720,
+    "bones": 14,
+    "animations": [],
+    "original_vertices": 3908,
+    "packed": {
+      "vertices": 11388,
+      "input_animation_keys": 0,
+      "animation_keys": 0
+    }
+  },
+  "FloatingGrinPunk": {
+    "role": "Punk",
+    "label": "Нефор",
+    "triangles": 9820,
+    "bones": 14,
+    "animations": [],
+    "original_vertices": 3908,
+    "packed": {
+      "vertices": 8605,
+      "input_animation_keys": 0,
+      "animation_keys": 0
+    }
+  },
+  "FloatingGrinAssassin": {
+    "role": "Assassin",
+    "label": "Убийца",
+    "triangles": 8766,
+    "bones": 14,
+    "animations": [],
+    "original_vertices": 3908,
+    "packed": {
+      "vertices": 8032,
+      "input_animation_keys": 0,
+      "animation_keys": 0
+    }
+  }
+}

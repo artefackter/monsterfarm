@@ -1,0 +1,98 @@
+{
+  "PaleGrinnerFarmer": {
+    "role": "Farmer",
+    "label": "Фермер",
+    "triangles": 18836,
+    "bones": 27,
+    "icons": {
+      "ui512": {
+        "size_px": 512,
+        "file_bytes": 96847
+      },
+      "small256": {
+        "size_px": 256,
+        "file_bytes": 33171
+      }
+    }
+  },
+  "PaleGrinnerMiner": {
+    "role": "Miner",
+    "label": "Шахтёр",
+    "triangles": 18644,
+    "bones": 27,
+    "icons": {
+      "ui512": {
+        "size_px": 512,
+        "file_bytes": 91956
+      },
+      "small256": {
+        "size_px": 256,
+        "file_bytes": 31269
+      }
+    }
+  },
+  "PaleGrinnerKnight": {
+    "role": "Knight",
+    "label": "Рыцарь",
+    "triangles": 18610,
+    "bones": 27,
+    "icons": {
+      "ui512": {
+        "size_px": 512,
+        "file_bytes": 99322
+      },
+      "small256": {
+        "size_px": 256,
+        "file_bytes": 33580
+      }
+    }
+  },
+  "PaleGrinnerKing": {
+    "role": "King",
+    "label": "Король",
+    "triangles": 19452,
+    "bones": 27,
+    "icons": {
+      "ui512": {
+        "size_px": 512,
+        "file_bytes": 99849
+      },
+      "small256": {
+        "size_px": 256,
+        "file_bytes": 33057
+      }
+    }
+  },
+  "PaleGrinnerPunk": {
+    "role": "Punk",
+    "label": "Нефор",
+    "triangles": 19740,
+    "bones": 27,
+    "icons": {
+      "ui512": {
+        "size_px": 512,
+        "file_bytes": 91679
+      },
+      "small256": {
+        "size_px": 256,
+        "file_bytes": 31005
+      }
+    }
+  },
+  "PaleGrinnerAssassin": {
+    "role": "Assassin",
+    "label": "Убийца",
+    "triangles": 18628,
+    "bones": 27,
+    "icons": {
+      "ui512": {
+        "size_px": 512,
+        "file_bytes": 96603
+      },
+      "small256": {
+        "size_px": 256,
+        "file_bytes": 32816
+      }
+    }
+  }
+}

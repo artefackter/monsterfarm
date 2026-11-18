@@ -1,0 +1,40 @@
+{
+  "FloatingGrin": {
+    "triangles": 5724,
+    "tested_digits": 10
+  },
+  "FloatingGrinAggressive": {
+    "triangles": 5724,
+    "tested_digits": 10,
+    "forward_travel": {
+      "Head": 1.934,
+      "HandL": 0.74,
+      "HandR": 0.62
+    },
+    "duration_seconds": 1.2
+  },
+  "FloatingGrinAssassin": {
+    "triangles": 6910,
+    "tested_digits": 10
+  },
+  "FloatingGrinFarmer": {
+    "triangles": 7236,
+    "tested_digits": 10
+  },
+  "FloatingGrinKing": {
+    "triangles": 7864,
+    "tested_digits": 10
+  },
+  "FloatingGrinKnight": {
+    "triangles": 6462,
+    "tested_digits": 10
+  },
+  "FloatingGrinMiner": {
+    "triangles": 6700,
+    "tested_digits": 10
+  },
+  "FloatingGrinPunk": {
+    "triangles": 7964,
+    "tested_digits": 10
+  }
+}

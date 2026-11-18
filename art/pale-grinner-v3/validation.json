@@ -1,0 +1,37 @@
+{
+  "passed": true,
+  "results": {
+    "PaleGrinner": {
+      "glb": {
+        "passed": true,
+        "checks": [
+          {
+            "bone": "Head",
+            "moved_vertices": 7576
+          },
+          {
+            "bone": "HandL",
+            "moved_vertices": 1294
+          }
+        ],
+        "triangles": 16804,
+        "bones": 27
+      },
+      "fbx": {
+        "passed": true,
+        "checks": [
+          {
+            "bone": "Head",
+            "moved_vertices": 6934
+          },
+          {
+            "bone": "HandL",
+            "moved_vertices": 1224
+          }
+        ],
+        "triangles": 16804,
+        "bones": 27
+      }
+    }
+  }
+}

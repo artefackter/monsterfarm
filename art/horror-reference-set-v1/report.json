@@ -1,0 +1,149 @@
+{
+  "status": "awaiting_visual_approval",
+  "models": {
+    "PaleGrinner": {
+      "reference": 1,
+      "source_asset": null,
+      "review_baseline_only": false,
+      "triangles": 4516,
+      "vertices": 9624,
+      "bones": 27,
+      "meshes": 1,
+      "materials": 1,
+      "textures": 0,
+      "animation_clips": 0,
+      "bounds": [
+        [
+          -1.800279974937439,
+          -0.7166908383369446,
+          0.009999990463256836
+        ],
+        [
+          1.800279974937439,
+          0.4999999701976776,
+          7.019999980926514
+        ]
+      ],
+      "height": 7.01,
+      "interpretation": "Stylized interpretation of one screenshot; unseen sides invented; working name, no claimed identification."
+    },
+    "Longfinger": {
+      "reference": 2,
+      "source_asset": null,
+      "review_baseline_only": false,
+      "triangles": 4752,
+      "vertices": 9812,
+      "bones": 27,
+      "meshes": 1,
+      "materials": 1,
+      "textures": 0,
+      "animation_clips": 0,
+      "bounds": [
+        [
+          -2.1002800464630127,
+          -0.7840016484260559,
+          0.009999990463256836
+        ],
+        [
+          2.1002800464630127,
+          0.6323176622390747,
+          8.680000305175781
+        ]
+      ],
+      "height": 8.67,
+      "interpretation": "Stylized interpretation of one screenshot; unseen sides invented; working name, no claimed identification."
+    },
+    "FloatingGrin": {
+      "reference": 3,
+      "source_asset": null,
+      "review_baseline_only": false,
+      "triangles": 3316,
+      "vertices": 6664,
+      "bones": 14,
+      "meshes": 1,
+      "materials": 1,
+      "textures": 0,
+      "animation_clips": 0,
+      "bounds": [
+        [
+          -2.520280122756958,
+          -0.9895949363708496,
+          1.9180271625518799
+        ],
+        [
+          2.520280122756958,
+          0.8999999165534973,
+          6.550000190734863
+        ]
+      ],
+      "height": 4.632,
+      "interpretation": "Stylized interpretation of one screenshot; unseen sides invented; working name, no claimed identification."
+    },
+    "BlindCrawler": {
+      "reference": 4,
+      "source_asset": null,
+      "review_baseline_only": false,
+      "triangles": 3240,
+      "vertices": 7408,
+      "bones": 13,
+      "meshes": 1,
+      "materials": 1,
+      "textures": 0,
+      "animation_clips": 0,
+      "bounds": [
+        [
+          -2.2546801567077637,
+          -2.654924154281616,
+          0.01000000536441803
+        ],
+        [
+          2.2546801567077637,
+          2.1069588661193848,
+          2.820000171661377
+        ]
+      ],
+      "height": 2.81,
+      "interpretation": "Stylized interpretation of one screenshot; unseen sides invented; working name, no claimed identification."
+    },
+    "DoorwayShade": {
+      "reference": 5,
+      "source_asset": null,
+      "review_baseline_only": false,
+      "triangles": 4516,
+      "vertices": 9624,
+      "bones": 27,
+      "meshes": 1,
+      "materials": 1,
+      "textures": 0,
+      "animation_clips": 0,
+      "bounds": [
+        [
+          -2.1002800464630127,
+          -0.7167807817459106,
+          0.009999990463256836
+        ],
+        [
+          2.1002800464630127,
+          0.4999999701976776,
+          8.420000076293945
+        ]
+      ],
+      "height": 8.41,
+      "interpretation": "Stylized interpretation of one screenshot; unseen sides invented; working name, no claimed identification."
+    }
+  },
+  "authoring_axes": {
+    "up": "Z",
+    "front": "-Y"
+  },
+  "export_axes": {
+    "up": "Y"
+  },
+  "unit": "One intended Roblox stud; scale not verified in Studio",
+  "rig": "Custom rigid-segment NPC skeletons; not Roblox R15",
+  "game_integrated": false,
+  "studio_modified": false,
+  "uploaded": false,
+  "scope": "Five base studies from supplied screenshots. Working names, unseen anatomy interpreted. No costumes or animation clips.",
+  "previews": "Rendered from the actual exported source geometry, no paintovers"
+}

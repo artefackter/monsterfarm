@@ -1,0 +1,30 @@
+{
+  "FloatingGrin.fbx": {
+    "triangles": 7580,
+    "tested_digits": 10
+  },
+  "FloatingGrin.glb": {
+    "triangles": 7580,
+    "tested_digits": 10
+  },
+  "FloatingGrinAggressive.fbx": {
+    "triangles": 7580,
+    "tested_digits": 10,
+    "forward_travel": {
+      "Head": 1.955,
+      "HandL": 0.74,
+      "HandR": 0.62
+    },
+    "duration_seconds": 1.2
+  },
+  "FloatingGrinAggressive.glb": {
+    "triangles": 7580,
+    "tested_digits": 10,
+    "forward_travel": {
+      "Head": 1.955,
+      "HandL": 0.74,
+      "HandR": 0.62
+    },
+    "duration_seconds": 1.2
+  }
+}

@@ -1,0 +1,812 @@
+[
+  {
+    "file": "models/scp/SC_Floor64.glb",
+    "biome": "scp",
+    "name": "SC_Floor64",
+    "title": "Пол дороги 64 × 140",
+    "group": "floor",
+    "triangles": 18,
+    "boundsMin": [
+      -32,
+      -1.2,
+      -70
+    ],
+    "boundsMax": [
+      32,
+      0.018,
+      70
+    ]
+  },
+  {
+    "file": "models/scp/SC_WallA.glb",
+    "biome": "scp",
+    "name": "SC_WallA",
+    "title": "Камера содержания",
+    "group": "wall",
+    "triangles": 600,
+    "boundsMin": [
+      -32.0,
+      0.0,
+      -0.0
+    ],
+    "boundsMax": [
+      32.0,
+      14.5,
+      6.425
+    ]
+  },
+  {
+    "file": "models/scp/SC_WallB.glb",
+    "biome": "scp",
+    "name": "SC_WallB",
+    "title": "Бронированная гермодверь",
+    "group": "wall",
+    "triangles": 384,
+    "boundsMin": [
+      -32.0,
+      0.0,
+      -0.0
+    ],
+    "boundsMax": [
+      32.0,
+      14.5,
+      4.2
+    ]
+  },
+  {
+    "file": "models/scp/SC_Beacon.glb",
+    "biome": "scp",
+    "name": "SC_Beacon",
+    "title": "Красный аварийный маячок",
+    "group": "mount",
+    "triangles": 112,
+    "boundsMin": [
+      -1.45,
+      0.0,
+      -1.45
+    ],
+    "boundsMax": [
+      1.45,
+      2.0,
+      1.45
+    ]
+  },
+  {
+    "file": "models/scp/SC_Barrier.glb",
+    "biome": "scp",
+    "name": "SC_Barrier",
+    "title": "Бетонный барьер с полосами",
+    "group": "prop",
+    "triangles": 60,
+    "boundsMin": [
+      -5.5,
+      0.0,
+      -2.0
+    ],
+    "boundsMax": [
+      5.5,
+      3.7,
+      2.0
+    ]
+  },
+  {
+    "file": "models/scp/SC_Camera.glb",
+    "biome": "scp",
+    "name": "SC_Camera",
+    "title": "Камера наблюдения",
+    "group": "mount",
+    "triangles": 72,
+    "boundsMin": [
+      -1.2,
+      0.0,
+      -0.325
+    ],
+    "boundsMax": [
+      1.2,
+      3.0,
+      5.43
+    ]
+  },
+  {
+    "file": "models/scp/SC_Arena.glb",
+    "biome": "scp",
+    "name": "SC_Arena",
+    "title": "Боковая арена с открытым входом",
+    "group": "arena",
+    "triangles": 2644,
+    "boundsMin": [
+      -99.938,
+      -1.2,
+      -100.0
+    ],
+    "boundsMax": [
+      99.938,
+      8.85,
+      80.0
+    ]
+  },
+  {
+    "file": "models/mall/TC_Floor64.glb",
+    "biome": "mall",
+    "name": "TC_Floor64",
+    "title": "Пол дороги 64 × 140",
+    "group": "floor",
+    "triangles": 140,
+    "boundsMin": [
+      -32,
+      -1.2,
+      -70
+    ],
+    "boundsMax": [
+      32,
+      0,
+      70
+    ]
+  },
+  {
+    "file": "models/mall/TC_WallA.glb",
+    "biome": "mall",
+    "name": "TC_WallA",
+    "title": "Закрытая витрина",
+    "group": "wall",
+    "triangles": 408,
+    "boundsMin": [
+      -32.0,
+      0.0,
+      -0.0
+    ],
+    "boundsMax": [
+      32.0,
+      14.5,
+      4.575
+    ]
+  },
+  {
+    "file": "models/mall/TC_WallB.glb",
+    "biome": "mall",
+    "name": "TC_WallB",
+    "title": "Магазин с роллетой",
+    "group": "wall",
+    "triangles": 480,
+    "boundsMin": [
+      -32.0,
+      0.0,
+      -0.0
+    ],
+    "boundsMax": [
+      32.0,
+      14.5,
+      4.575
+    ]
+  },
+  {
+    "file": "models/mall/TC_Bench.glb",
+    "biome": "mall",
+    "name": "TC_Bench",
+    "title": "Скамейка галереи",
+    "group": "prop",
+    "triangles": 108,
+    "boundsMin": [
+      -5.5,
+      0.0,
+      -1.8
+    ],
+    "boundsMax": [
+      5.5,
+      5.385,
+      1.8
+    ]
+  },
+  {
+    "file": "models/mall/TC_Directory.glb",
+    "biome": "mall",
+    "name": "TC_Directory",
+    "title": "Двусторонняя схема этажей",
+    "group": "prop",
+    "triangles": 144,
+    "boundsMin": [
+      -3.0,
+      0.0,
+      -1.5
+    ],
+    "boundsMax": [
+      3.0,
+      9.6,
+      1.5
+    ]
+  },
+  {
+    "file": "models/mall/TC_CleanerCart.glb",
+    "biome": "mall",
+    "name": "TC_CleanerCart",
+    "title": "Тележка уборщика",
+    "group": "prop",
+    "triangles": 428,
+    "boundsMin": [
+      -3.85,
+      0.049,
+      -2.44
+    ],
+    "boundsMax": [
+      4.17,
+      6.3,
+      2.44
+    ]
+  },
+  {
+    "file": "models/mall/TC_DryFountain.glb",
+    "biome": "mall",
+    "name": "TC_DryFountain",
+    "title": "Сухой фонтан",
+    "group": "arena_prop",
+    "triangles": 752,
+    "boundsMin": [
+      -11.0,
+      0.0,
+      -11.0
+    ],
+    "boundsMax": [
+      11.0,
+      6.7,
+      11.0
+    ]
+  },
+  {
+    "file": "models/mall/TC_Arena.glb",
+    "biome": "mall",
+    "name": "TC_Arena",
+    "title": "Боковая арена с открытым входом",
+    "group": "arena",
+    "triangles": 2044,
+    "boundsMin": [
+      -99.938,
+      -1.2,
+      -100.0
+    ],
+    "boundsMax": [
+      99.938,
+      8.85,
+      80.0
+    ]
+  },
+  {
+    "file": "models/pizza/PZ_Floor64.glb",
+    "biome": "pizza",
+    "name": "PZ_Floor64",
+    "title": "Пол дороги 64 × 140",
+    "group": "floor",
+    "triangles": 236,
+    "boundsMin": [
+      -32,
+      -1.2,
+      -70
+    ],
+    "boundsMax": [
+      32,
+      0,
+      70
+    ]
+  },
+  {
+    "file": "models/pizza/PZ_WallA.glb",
+    "biome": "pizza",
+    "name": "PZ_WallA",
+    "title": "Окно выдачи под козырьком",
+    "group": "wall",
+    "triangles": 528,
+    "boundsMin": [
+      -32.0,
+      0.0,
+      -0.0
+    ],
+    "boundsMax": [
+      32.0,
+      14.5,
+      8.05
+    ]
+  },
+  {
+    "file": "models/pizza/PZ_WallB.glb",
+    "biome": "pizza",
+    "name": "PZ_WallB",
+    "title": "Фасад с вывеской-пиццей",
+    "group": "wall",
+    "triangles": 736,
+    "boundsMin": [
+      -32.0,
+      0.0,
+      -0.0
+    ],
+    "boundsMax": [
+      32.0,
+      14.5,
+      8.05
+    ]
+  },
+  {
+    "file": "models/pizza/PZ_Booth.glb",
+    "biome": "pizza",
+    "name": "PZ_Booth",
+    "title": "Красный диванчик",
+    "group": "prop",
+    "triangles": 60,
+    "boundsMin": [
+      -5.55,
+      0.0,
+      -2.1
+    ],
+    "boundsMax": [
+      5.55,
+      6.5,
+      2.15
+    ]
+  },
+  {
+    "file": "models/pizza/PZ_Table.glb",
+    "biome": "pizza",
+    "name": "PZ_Table",
+    "title": "Круглый стол",
+    "group": "prop",
+    "triangles": 228,
+    "boundsMin": [
+      -4.0,
+      0.0,
+      -4.0
+    ],
+    "boundsMax": [
+      4.0,
+      4.48,
+      4.0
+    ]
+  },
+  {
+    "file": "models/pizza/PZ_BoxCart.glb",
+    "biome": "pizza",
+    "name": "PZ_BoxCart",
+    "title": "Тележка с коробками пиццы",
+    "group": "prop",
+    "triangles": 312,
+    "boundsMin": [
+      -3.85,
+      0.049,
+      -2.44
+    ],
+    "boundsMax": [
+      4.17,
+      6.209,
+      2.44
+    ]
+  },
+  {
+    "file": "models/pizza/PZ_Stage.glb",
+    "biome": "pizza",
+    "name": "PZ_Stage",
+    "title": "Сцена с занавесом",
+    "group": "arena_prop",
+    "triangles": 276,
+    "boundsMin": [
+      -13.5,
+      0.0,
+      -5.5
+    ],
+    "boundsMax": [
+      13.5,
+      12.8,
+      5.5
+    ]
+  },
+  {
+    "file": "models/pizza/PZ_Arena.glb",
+    "biome": "pizza",
+    "name": "PZ_Arena",
+    "title": "Боковая арена с открытым входом",
+    "group": "arena",
+    "triangles": 2716,
+    "boundsMin": [
+      -99.938,
+      -1.2,
+      -100.0
+    ],
+    "boundsMax": [
+      99.938,
+      8.85,
+      80.0
+    ]
+  },
+  {
+    "file": "models/zoo/ZO_Floor64.glb",
+    "biome": "zoo",
+    "name": "ZO_Floor64",
+    "title": "Пол дороги 64 × 140",
+    "group": "floor",
+    "triangles": 16,
+    "boundsMin": [
+      -32,
+      -1.2,
+      -70
+    ],
+    "boundsMax": [
+      32,
+      0,
+      70
+    ]
+  },
+  {
+    "file": "models/zoo/ZO_WallA.glb",
+    "biome": "zoo",
+    "name": "ZO_WallA",
+    "title": "Узкий вольер за решёткой",
+    "group": "wall",
+    "triangles": 548,
+    "boundsMin": [
+      -32.0,
+      0.0,
+      -0.0
+    ],
+    "boundsMax": [
+      32.0,
+      14.5,
+      7.76
+    ]
+  },
+  {
+    "file": "models/zoo/ZO_WallB.glb",
+    "biome": "zoo",
+    "name": "ZO_WallB",
+    "title": "Вольер с укрытием",
+    "group": "wall",
+    "triangles": 441,
+    "boundsMin": [
+      -32.0,
+      0.0,
+      -0.0
+    ],
+    "boundsMax": [
+      32.0,
+      14.5,
+      7.63
+    ]
+  },
+  {
+    "file": "models/zoo/ZO_PawSign.glb",
+    "biome": "zoo",
+    "name": "ZO_PawSign",
+    "title": "Табличка с отпечатком лапы",
+    "group": "prop",
+    "triangles": 164,
+    "boundsMin": [
+      -3.25,
+      0.0,
+      -0.5
+    ],
+    "boundsMax": [
+      3.25,
+      8.9,
+      0.66
+    ]
+  },
+  {
+    "file": "models/zoo/ZO_BirdSign.glb",
+    "biome": "zoo",
+    "name": "ZO_BirdSign",
+    "title": "Табличка с птицей",
+    "group": "prop",
+    "triangles": 33,
+    "boundsMin": [
+      -3.25,
+      0.0,
+      -0.5
+    ],
+    "boundsMax": [
+      3.25,
+      8.9,
+      0.53
+    ]
+  },
+  {
+    "file": "models/zoo/ZO_KeeperCart.glb",
+    "biome": "zoo",
+    "name": "ZO_KeeperCart",
+    "title": "Тележка смотрителя",
+    "group": "prop",
+    "triangles": 324,
+    "boundsMin": [
+      -3.85,
+      0.049,
+      -2.44
+    ],
+    "boundsMax": [
+      4.17,
+      6.209,
+      2.44
+    ]
+  },
+  {
+    "file": "models/zoo/ZO_FeedBucket.glb",
+    "biome": "zoo",
+    "name": "ZO_FeedBucket",
+    "title": "Ведро для корма",
+    "group": "prop",
+    "triangles": 88,
+    "boundsMin": [
+      -1.5,
+      0.0,
+      -1.5
+    ],
+    "boundsMax": [
+      1.5,
+      2.3,
+      1.5
+    ]
+  },
+  {
+    "file": "models/zoo/ZO_Arena.glb",
+    "biome": "zoo",
+    "name": "ZO_Arena",
+    "title": "Боковая арена с открытым входом",
+    "group": "arena",
+    "triangles": 2304,
+    "boundsMin": [
+      -99.938,
+      -1.2,
+      -100.0
+    ],
+    "boundsMax": [
+      99.938,
+      9.9,
+      80.0
+    ]
+  },
+  {
+    "file": "models/rift/IR_Floor64.glb",
+    "biome": "rift",
+    "name": "IR_Floor64",
+    "title": "Пол дороги 64 × 140",
+    "group": "floor",
+    "triangles": 16,
+    "boundsMin": [
+      -32,
+      -1.2,
+      -70
+    ],
+    "boundsMax": [
+      32,
+      0,
+      70
+    ]
+  },
+  {
+    "file": "models/rift/IR_WallA.glb",
+    "biome": "rift",
+    "name": "IR_WallA",
+    "title": "Перекошенные двери",
+    "group": "wall",
+    "triangles": 348,
+    "boundsMin": [
+      -32.0,
+      0.0,
+      -0.0
+    ],
+    "boundsMax": [
+      32.0,
+      14.5,
+      4.12
+    ]
+  },
+  {
+    "file": "models/rift/IR_WallB.glb",
+    "biome": "rift",
+    "name": "IR_WallB",
+    "title": "Смещённые окна",
+    "group": "wall",
+    "triangles": 396,
+    "boundsMin": [
+      -32.0,
+      0.0,
+      -0.0
+    ],
+    "boundsMax": [
+      32.0,
+      14.5,
+      4.12
+    ]
+  },
+  {
+    "file": "models/rift/IR_LooseDoor.glb",
+    "biome": "rift",
+    "name": "IR_LooseDoor",
+    "title": "Отдельный дверной проём",
+    "group": "prop",
+    "triangles": 36,
+    "boundsMin": [
+      -4.117,
+      0.085,
+      -0.49
+    ],
+    "boundsMax": [
+      4.327,
+      10.411,
+      0.49
+    ]
+  },
+  {
+    "file": "models/rift/IR_FloatShards.glb",
+    "biome": "rift",
+    "name": "IR_FloatShards",
+    "title": "Три зависших осколка",
+    "group": "floating",
+    "triangles": 36,
+    "boundsMin": [
+      -6.801,
+      8.281,
+      -2.646
+    ],
+    "boundsMax": [
+      7.279,
+      20.254,
+      2.646
+    ]
+  },
+  {
+    "file": "models/rift/IR_Lamp.glb",
+    "biome": "rift",
+    "name": "IR_Lamp",
+    "title": "Наклонённый фонарь",
+    "group": "prop",
+    "triangles": 56,
+    "boundsMin": [
+      -1.5,
+      0.0,
+      -1.5
+    ],
+    "boundsMax": [
+      4.267,
+      13.612,
+      1.5
+    ]
+  },
+  {
+    "file": "models/rift/IR_Arena.glb",
+    "biome": "rift",
+    "name": "IR_Arena",
+    "title": "Боковая арена с открытым входом",
+    "group": "arena",
+    "triangles": 2080,
+    "boundsMin": [
+      -99.938,
+      -1.2,
+      -100.0
+    ],
+    "boundsMax": [
+      99.938,
+      14.353,
+      80.0
+    ]
+  },
+  {
+    "file": "models/space/DS_Floor64.glb",
+    "biome": "space",
+    "name": "DS_Floor64",
+    "title": "Пол дороги 64 × 140",
+    "group": "floor",
+    "triangles": 164,
+    "boundsMin": [
+      -32,
+      -1.2,
+      -70
+    ],
+    "boundsMax": [
+      32,
+      0.07,
+      70
+    ]
+  },
+  {
+    "file": "models/space/DS_WallA.glb",
+    "biome": "space",
+    "name": "DS_WallA",
+    "title": "Шлюз станции",
+    "group": "wall",
+    "triangles": 288,
+    "boundsMin": [
+      -32.0,
+      0.0,
+      -0.0
+    ],
+    "boundsMax": [
+      32.0,
+      14.5,
+      4.7
+    ]
+  },
+  {
+    "file": "models/space/DS_WallB.glb",
+    "biome": "space",
+    "name": "DS_WallB",
+    "title": "Панель станции с иллюминаторами",
+    "group": "wall",
+    "triangles": 288,
+    "boundsMin": [
+      -32.0,
+      0.0,
+      -0.0
+    ],
+    "boundsMax": [
+      32.0,
+      14.5,
+      4.25
+    ]
+  },
+  {
+    "file": "models/space/DS_AirlockCargo.glb",
+    "biome": "space",
+    "name": "DS_AirlockCargo",
+    "title": "Повреждённый грузовой модуль",
+    "group": "prop",
+    "triangles": 60,
+    "boundsMin": [
+      -3.5,
+      0.0,
+      -2.6
+    ],
+    "boundsMax": [
+      3.5,
+      5.998,
+      2.63
+    ]
+  },
+  {
+    "file": "models/space/DS_SolarDebris.glb",
+    "biome": "space",
+    "name": "DS_SolarDebris",
+    "title": "Обломок солнечной панели",
+    "group": "prop",
+    "triangles": 84,
+    "boundsMin": [
+      -6.387,
+      0.0,
+      -4.004
+    ],
+    "boundsMax": [
+      6.387,
+      1.225,
+      4.004
+    ]
+  },
+  {
+    "file": "models/space/DS_Dish.glb",
+    "biome": "space",
+    "name": "DS_Dish",
+    "title": "Антенна связи",
+    "group": "prop",
+    "triangles": 200,
+    "boundsMin": [
+      -4.4,
+      0.0,
+      -2.4
+    ],
+    "boundsMax": [
+      4.4,
+      9.104,
+      5.185
+    ]
+  },
+  {
+    "file": "models/space/DS_Arena.glb",
+    "biome": "space",
+    "name": "DS_Arena",
+    "title": "Боковая арена с открытым входом",
+    "group": "arena",
+    "triangles": 2092,
+    "boundsMin": [
+      -99.938,
+      -1.2,
+      -100.0
+    ],
+    "boundsMax": [
+      99.938,
+      8.85,
+      80.0
+    ]
+  }
+]

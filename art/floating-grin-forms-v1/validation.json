@@ -1,0 +1,50 @@
+{
+  "FloatingGrinAssassin.fbx": {
+    "triangles": 8766,
+    "tested_digits": 10
+  },
+  "FloatingGrinAssassin.glb": {
+    "triangles": 8766,
+    "tested_digits": 10
+  },
+  "FloatingGrinFarmer.fbx": {
+    "triangles": 9092,
+    "tested_digits": 10
+  },
+  "FloatingGrinFarmer.glb": {
+    "triangles": 9092,
+    "tested_digits": 10
+  },
+  "FloatingGrinKing.fbx": {
+    "triangles": 9720,
+    "tested_digits": 10
+  },
+  "FloatingGrinKing.glb": {
+    "triangles": 9720,
+    "tested_digits": 10
+  },
+  "FloatingGrinKnight.fbx": {
+    "triangles": 8318,
+    "tested_digits": 10
+  },
+  "FloatingGrinKnight.glb": {
+    "triangles": 8318,
+    "tested_digits": 10
+  },
+  "FloatingGrinMiner.fbx": {
+    "triangles": 8556,
+    "tested_digits": 10
+  },
+  "FloatingGrinMiner.glb": {
+    "triangles": 8556,
+    "tested_digits": 10
+  },
+  "FloatingGrinPunk.fbx": {
+    "triangles": 9820,
+    "tested_digits": 10
+  },
+  "FloatingGrinPunk.glb": {
+    "triangles": 9820,
+    "tested_digits": 10
+  }
+}

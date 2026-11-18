@@ -1,0 +1,41 @@
+{
+  "status": "approved",
+  "approved_on": "2026-11-18",
+  "scope": "Floating Grin base and lunge with corrected anatomical right hand",
+  "user_confirmation": "Да, утверждаю в таком виде.",
+  "game_integration_authorized": false,
+  "files": {
+    "models/FloatingGrin.blend": {
+      "bytes": 231995,
+      "sha256": "f9b11d4fc823e196c8e64b9e65db01d5e85bee66d11c5abc1e8ace4f69ecf9dd"
+    },
+    "models/FloatingGrin.fbx": {
+      "bytes": 212652,
+      "sha256": "c7031f244df3bd404a3ac7a68d804b295e1db7f4db8cedbe3a736e4234c4e55a"
+    },
+    "models/FloatingGrin.glb": {
+      "bytes": 299324,
+      "sha256": "7d2850dbf297419d95a4d10c0fb59221b363c5f80653321fbde8ad99f77a23d8"
+    },
+    "models/FloatingGrinAggressive.blend": {
+      "bytes": 242242,
+      "sha256": "c7dd54a58731aa557691217311705d1f6ba8d958508b871ebaaa5cd4ef780c1e"
+    },
+    "models/FloatingGrinAggressive.fbx": {
+      "bytes": 286860,
+      "sha256": "b20d653b67c2c652a4645097a8b05efdab025de8c73755f19e878e089448c6a1"
+    },
+    "models/FloatingGrinAggressive.glb": {
+      "bytes": 309344,
+      "sha256": "47e5f0b0835286223a763b50e4878272fe77c4303c4613ad0d72bff0fb7a8bc3"
+    },
+    "previews/RightHand_Review.jpg": {
+      "bytes": 47881,
+      "sha256": "93446ef09a1ba5003efe63e3de4b8ee8b9c31f693aba94cc97ff86f303e1a949"
+    },
+    "FloatingGrin_RightHand.zip": {
+      "bytes": 1093448,
+      "sha256": "fe2f76e533bbc105d253ccaf84832a60d6f216068df0ca1414494fd56259245a"
+    }
+  }
+}

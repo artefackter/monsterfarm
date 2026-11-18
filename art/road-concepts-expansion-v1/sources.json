@@ -1,0 +1,38 @@
+[
+  {
+    "id": "01-scp-prison",
+    "title": "SCP тюрьма",
+    "source": "/Users/wingman/.codex/generated_images/01a1da26-5b2e-7050-96e9-8d126914be00/exec-a137d241-3a0e-4d3d-88bf-58b0483bca60.png",
+    "file": "01-scp-prison.png"
+  },
+  {
+    "id": "02-shopping-mall",
+    "title": "Торговый центр",
+    "source": "/Users/wingman/.codex/generated_images/01a1da26-5b2e-7050-96e9-8d126914be00/exec-2dccd453-04e9-4114-a9fe-3dd8fa7aeb93.png",
+    "file": "02-shopping-mall.png"
+  },
+  {
+    "id": "03-pizzeria",
+    "title": "Пиццерия",
+    "source": "/Users/wingman/.codex/generated_images/01a1da26-5b2e-7050-96e9-8d126914be00/exec-575abe1c-4e25-4cda-88f5-0e5212c5b3bd.png",
+    "file": "03-pizzeria.png"
+  },
+  {
+    "id": "04-zoo",
+    "title": "Зоопарк",
+    "source": "/Users/wingman/.codex/generated_images/01a1da26-5b2e-7050-96e9-8d126914be00/exec-3e35b1e7-e52e-45b0-b0b0-e7debdb0e991.png",
+    "file": "04-zoo.png"
+  },
+  {
+    "id": "05-distorted-reality",
+    "title": "Искажённая реальность",
+    "source": "/Users/wingman/.codex/generated_images/01a1da26-5b2e-7050-96e9-8d126914be00/exec-774b2f1d-803b-4ae7-8201-ffae8a4ff3f8.png",
+    "file": "05-distorted-reality.png"
+  },
+  {
+    "id": "06-dark-space",
+    "title": "Тёмный космос",
+    "source": "/Users/wingman/.codex/generated_images/01a1da26-5b2e-7050-96e9-8d126914be00/exec-a3e62fbd-3726-4c0f-b2ec-c69feab9639c.png",
+    "file": "06-dark-space.png"
+  }
+]

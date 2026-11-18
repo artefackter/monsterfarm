@@ -1,0 +1,560 @@
+{
+  "PaleGrinner": [
+    {
+      "part": "ArmL",
+      "mesh": "PaleGrinner.ArmL",
+      "offset": [
+        0.901,
+        4.171,
+        -0.009
+      ],
+      "size": [
+        0.644,
+        1.466,
+        0.517
+      ],
+      "tint": null,
+      "attach": "ArmL",
+      "material": "SmoothPlastic",
+      "transparency": 0.0,
+      "collide": false,
+      "cast": true,
+      "tris": 60
+    },
+    {
+      "part": "ForearmL",
+      "mesh": "PaleGrinner.ForearmL",
+      "offset": [
+        1.138,
+        2.999,
+        -0.113
+      ],
+      "size": [
+        0.561,
+        1.051,
+        0.494
+      ],
+      "tint": null,
+      "attach": "ForearmL",
+      "material": "SmoothPlastic",
+      "transparency": 0.0,
+      "collide": false,
+      "cast": true,
+      "tris": 60
+    },
+    {
+      "part": "HandL",
+      "mesh": "PaleGrinner.HandL",
+      "offset": [
+        1.349,
+        2.32,
+        -0.279
+      ],
+      "size": [
+        0.505,
+        0.514,
+        0.488
+      ],
+      "tint": null,
+      "attach": "HandL",
+      "material": "SmoothPlastic",
+      "transparency": 0.0,
+      "collide": false,
+      "cast": true,
+      "tris": 60
+    },
+    {
+      "part": "HandLFinger0",
+      "mesh": "PaleGrinner.HandLFinger0",
+      "offset": [
+        1.65,
+        1.931,
+        -0.346
+      ],
+      "size": [
+        0.301,
+        0.672,
+        0.275
+      ],
+      "tint": null,
+      "attach": "HandLFinger0",
+      "material": "SmoothPlastic",
+      "transparency": 0.0,
+      "collide": false,
+      "cast": true,
+      "tris": 120
+    },
+    {
+      "part": "HandLFinger1",
+      "mesh": "PaleGrinner.HandLFinger1",
+      "offset": [
+        1.459,
+        1.878,
+        -0.347
+      ],
+      "size": [
+        0.202,
+        0.758,
+        0.275
+      ],
+      "tint": null,
+      "attach": "HandLFinger1",
+      "material": "SmoothPlastic",
+      "transparency": 0.0,
+      "collide": false,
+      "cast": true,
+      "tris": 120
+    },
+    {
+      "part": "HandLFinger2",
+      "mesh": "PaleGrinner.HandLFinger2",
+      "offset": [
+        1.28,
+        1.828,
+        -0.346
+      ],
+      "size": [
+        0.138,
+        0.848,
+        0.277
+      ],
+      "tint": null,
+      "attach": "HandLFinger2",
+      "material": "SmoothPlastic",
+      "transparency": 0.0,
+      "collide": false,
+      "cast": true,
+      "tris": 120
+    },
+    {
+      "part": "HandLFinger3",
+      "mesh": "PaleGrinner.HandLFinger3",
+      "offset": [
+        1.101,
+        1.878,
+        -0.347
+      ],
+      "size": [
+        0.202,
+        0.758,
+        0.275
+      ],
+      "tint": null,
+      "attach": "HandLFinger3",
+      "material": "SmoothPlastic",
+      "transparency": 0.0,
+      "collide": false,
+      "cast": true,
+      "tris": 120
+    },
+    {
+      "part": "HandLFinger4",
+      "mesh": "PaleGrinner.HandLFinger4",
+      "offset": [
+        0.91,
+        1.931,
+        -0.346
+      ],
+      "size": [
+        0.301,
+        0.672,
+        0.275
+      ],
+      "tint": null,
+      "attach": "HandLFinger4",
+      "material": "SmoothPlastic",
+      "transparency": 0.0,
+      "collide": false,
+      "cast": true,
+      "tris": 120
+    },
+    {
+      "part": "LegL",
+      "mesh": "PaleGrinner.LegL",
+      "offset": [
+        0.351,
+        2.251,
+        0.131
+      ],
+      "size": [
+        0.604,
+        1.557,
+        0.526
+      ],
+      "tint": null,
+      "attach": "LegL",
+      "material": "SmoothPlastic",
+      "transparency": 0.0,
+      "collide": false,
+      "cast": true,
+      "tris": 60
+    },
+    {
+      "part": "ShinL",
+      "mesh": "PaleGrinner.ShinL",
+      "offset": [
+        0.484,
+        0.928,
+        0.189
+      ],
+      "size": [
+        0.502,
+        1.194,
+        0.532
+      ],
+      "tint": null,
+      "attach": "ShinL",
+      "material": "SmoothPlastic",
+      "transparency": 0.0,
+      "collide": false,
+      "cast": true,
+      "tris": 60
+    },
+    {
+      "part": "FootL",
+      "mesh": "PaleGrinner.FootL",
+      "offset": [
+        0.5,
+        0.21,
+        -0.19
+      ],
+      "size": [
+        0.38,
+        0.4,
+        0.86
+      ],
+      "tint": null,
+      "attach": "FootL",
+      "material": "SmoothPlastic",
+      "transparency": 0.0,
+      "collide": false,
+      "cast": true,
+      "tris": 80
+    },
+    {
+      "part": "ArmR",
+      "mesh": "PaleGrinner.ArmR",
+      "offset": [
+        -0.901,
+        4.171,
+        -0.009
+      ],
+      "size": [
+        0.644,
+        1.466,
+        0.517
+      ],
+      "tint": null,
+      "attach": "ArmR",
+      "material": "SmoothPlastic",
+      "transparency": 0.0,
+      "collide": false,
+      "cast": true,
+      "tris": 60
+    },
+    {
+      "part": "ForearmR",
+      "mesh": "PaleGrinner.ForearmR",
+      "offset": [
+        -1.138,
+        2.999,
+        -0.113
+      ],
+      "size": [
+        0.561,
+        1.051,
+        0.494
+      ],
+      "tint": null,
+      "attach": "ForearmR",
+      "material": "SmoothPlastic",
+      "transparency": 0.0,
+      "collide": false,
+      "cast": true,
+      "tris": 60
+    },
+    {
+      "part": "HandR",
+      "mesh": "PaleGrinner.HandR",
+      "offset": [
+        -1.349,
+        2.32,
+        -0.279
+      ],
+      "size": [
+        0.505,
+        0.514,
+        0.488
+      ],
+      "tint": null,
+      "attach": "HandR",
+      "material": "SmoothPlastic",
+      "transparency": 0.0,
+      "collide": false,
+      "cast": true,
+      "tris": 60
+    },
+    {
+      "part": "HandRFinger0",
+      "mesh": "PaleGrinner.HandRFinger0",
+      "offset": [
+        -0.91,
+        1.931,
+        -0.346
+      ],
+      "size": [
+        0.301,
+        0.672,
+        0.275
+      ],
+      "tint": null,
+      "attach": "HandRFinger0",
+      "material": "SmoothPlastic",
+      "transparency": 0.0,
+      "collide": false,
+      "cast": true,
+      "tris": 120
+    },
+    {
+      "part": "HandRFinger1",
+      "mesh": "PaleGrinner.HandRFinger1",
+      "offset": [
+        -1.101,
+        1.878,
+        -0.347
+      ],
+      "size": [
+        0.202,
+        0.758,
+        0.275
+      ],
+      "tint": null,
+      "attach": "HandRFinger1",
+      "material": "SmoothPlastic",
+      "transparency": 0.0,
+      "collide": false,
+      "cast": true,
+      "tris": 120
+    },
+    {
+      "part": "HandRFinger2",
+      "mesh": "PaleGrinner.HandRFinger2",
+      "offset": [
+        -1.28,
+        1.828,
+        -0.346
+      ],
+      "size": [
+        0.138,
+        0.848,
+        0.277
+      ],
+      "tint": null,
+      "attach": "HandRFinger2",
+      "material": "SmoothPlastic",
+      "transparency": 0.0,
+      "collide": false,
+      "cast": true,
+      "tris": 120
+    },
+    {
+      "part": "HandRFinger3",
+      "mesh": "PaleGrinner.HandRFinger3",
+      "offset": [
+        -1.459,
+        1.878,
+        -0.347
+      ],
+      "size": [
+        0.202,
+        0.758,
+        0.275
+      ],
+      "tint": null,
+      "attach": "HandRFinger3",
+      "material": "SmoothPlastic",
+      "transparency": 0.0,
+      "collide": false,
+      "cast": true,
+      "tris": 120
+    },
+    {
+      "part": "HandRFinger4",
+      "mesh": "PaleGrinner.HandRFinger4",
+      "offset": [
+        -1.65,
+        1.931,
+        -0.346
+      ],
+      "size": [
+        0.301,
+        0.672,
+        0.275
+      ],
+      "tint": null,
+      "attach": "HandRFinger4",
+      "material": "SmoothPlastic",
+      "transparency": 0.0,
+      "collide": false,
+      "cast": true,
+      "tris": 120
+    },
+    {
+      "part": "LegR",
+      "mesh": "PaleGrinner.LegR",
+      "offset": [
+        -0.351,
+        2.251,
+        0.131
+      ],
+      "size": [
+        0.604,
+        1.557,
+        0.526
+      ],
+      "tint": null,
+      "attach": "LegR",
+      "material": "SmoothPlastic",
+      "transparency": 0.0,
+      "collide": false,
+      "cast": true,
+      "tris": 60
+    },
+    {
+      "part": "ShinR",
+      "mesh": "PaleGrinner.ShinR",
+      "offset": [
+        -0.484,
+        0.928,
+        0.189
+      ],
+      "size": [
+        0.502,
+        1.194,
+        0.532
+      ],
+      "tint": null,
+      "attach": "ShinR",
+      "material": "SmoothPlastic",
+      "transparency": 0.0,
+      "collide": false,
+      "cast": true,
+      "tris": 60
+    },
+    {
+      "part": "FootR",
+      "mesh": "PaleGrinner.FootR",
+      "offset": [
+        -0.5,
+        0.21,
+        -0.19
+      ],
+      "size": [
+        0.38,
+        0.4,
+        0.86
+      ],
+      "tint": null,
+      "attach": "FootR",
+      "material": "SmoothPlastic",
+      "transparency": 0.0,
+      "collide": false,
+      "cast": true,
+      "tris": 80
+    },
+    {
+      "part": "Neck",
+      "mesh": "PaleGrinner.Neck",
+      "offset": [
+        -0.01,
+        5.245,
+        -0.07
+      ],
+      "size": [
+        0.6,
+        0.97,
+        0.54
+      ],
+      "tint": null,
+      "attach": "Neck",
+      "material": "SmoothPlastic",
+      "transparency": 0.0,
+      "collide": false,
+      "cast": true,
+      "tris": 236
+    },
+    {
+      "part": "Body",
+      "mesh": "PaleGrinner.Body",
+      "offset": [
+        0.0,
+        3.87,
+        -0.038
+      ],
+      "size": [
+        1.96,
+        2.72,
+        1.055
+      ],
+      "tint": null,
+      "attach": "Chest",
+      "material": "SmoothPlastic",
+      "transparency": 0.0,
+      "collide": false,
+      "cast": true,
+      "tris": 760
+    },
+    {
+      "part": "EyeAndDentalDetail",
+      "mesh": "PaleGrinner.EyeAndDentalDetail",
+      "offset": [
+        0.015,
+        6.43,
+        -0.374
+      ],
+      "size": [
+        0.658,
+        0.875,
+        0.171
+      ],
+      "tint": null,
+      "attach": "Head",
+      "material": "SmoothPlastic",
+      "transparency": 0.0,
+      "collide": false,
+      "cast": true,
+      "tris": 340
+    },
+    {
+      "part": "Throat",
+      "mesh": "PaleGrinner.Throat",
+      "offset": [
+        0.0,
+        5.125,
+        -0.295
+      ],
+      "size": [
+        0.51,
+        0.71,
+        0.546
+      ],
+      "tint": null,
+      "attach": "Neck",
+      "material": "SmoothPlastic",
+      "transparency": 0.0,
+      "collide": false,
+      "cast": true,
+      "tris": 176
+    },
+    {
+      "part": "Portrait",
+      "attach": "Head",
+      "source_mesh": "Facial landmark reconstruction"
+    },
+    {
+      "part": "Hair",
+      "attach": "Head",
+      "source_mesh": "Swept tapered locks"
+    }
+  ]
+}

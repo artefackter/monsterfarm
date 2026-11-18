@@ -1,0 +1,84 @@
+{
+  "PaleGrinner": {
+    "glb": {
+      "passed": true,
+      "tested_digits": 10
+    },
+    "fbx": {
+      "passed": true,
+      "tested_digits": 10
+    }
+  },
+  "PaleGrinnerAggressive": {
+    "glb": {
+      "passed": true,
+      "tested_digits": 10,
+      "forward_head_travel": 2.195
+    },
+    "fbx": {
+      "passed": true,
+      "tested_digits": 10,
+      "forward_head_travel": 2.195
+    }
+  },
+  "PaleGrinnerFarmer": {
+    "glb": {
+      "passed": true,
+      "tested_digits": 10
+    },
+    "fbx": {
+      "passed": true,
+      "tested_digits": 10
+    }
+  },
+  "PaleGrinnerMiner": {
+    "glb": {
+      "passed": true,
+      "tested_digits": 10
+    },
+    "fbx": {
+      "passed": true,
+      "tested_digits": 10
+    }
+  },
+  "PaleGrinnerKnight": {
+    "glb": {
+      "passed": true,
+      "tested_digits": 10
+    },
+    "fbx": {
+      "passed": true,
+      "tested_digits": 10
+    }
+  },
+  "PaleGrinnerKing": {
+    "glb": {
+      "passed": true,
+      "tested_digits": 10
+    },
+    "fbx": {
+      "passed": true,
+      "tested_digits": 10
+    }
+  },
+  "PaleGrinnerPunk": {
+    "glb": {
+      "passed": true,
+      "tested_digits": 10
+    },
+    "fbx": {
+      "passed": true,
+      "tested_digits": 10
+    }
+  },
+  "PaleGrinnerAssassin": {
+    "glb": {
+      "passed": true,
+      "tested_digits": 10
+    },
+    "fbx": {
+      "passed": true,
+      "tested_digits": 10
+    }
+  }
+}

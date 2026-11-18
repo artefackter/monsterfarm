@@ -1,0 +1,94 @@
+{
+  "PaleGrinner": {
+    "glb": {
+      "passed": true,
+      "tested_digits": 10
+    },
+    "fbx": {
+      "passed": true,
+      "tested_digits": 10
+    },
+    "hand_positions_colours_weights_exact": true
+  },
+  "PaleGrinnerAggressive": {
+    "glb": {
+      "passed": true,
+      "tested_digits": 10,
+      "max_joint_position_error_over_73_samples": 0.0,
+      "forward_head_travel": 2.2
+    },
+    "fbx": {
+      "passed": true,
+      "tested_digits": 10,
+      "max_joint_position_error_over_73_samples": 0.0,
+      "forward_head_travel": 2.201
+    },
+    "hand_positions_colours_weights_exact": true
+  },
+  "PaleGrinnerFarmer": {
+    "glb": {
+      "passed": true,
+      "tested_digits": 10
+    },
+    "fbx": {
+      "passed": true,
+      "tested_digits": 10
+    },
+    "hand_positions_colours_weights_exact": true
+  },
+  "PaleGrinnerMiner": {
+    "glb": {
+      "passed": true,
+      "tested_digits": 10
+    },
+    "fbx": {
+      "passed": true,
+      "tested_digits": 10
+    },
+    "hand_positions_colours_weights_exact": true
+  },
+  "PaleGrinnerKnight": {
+    "glb": {
+      "passed": true,
+      "tested_digits": 10
+    },
+    "fbx": {
+      "passed": true,
+      "tested_digits": 10
+    },
+    "hand_positions_colours_weights_exact": true
+  },
+  "PaleGrinnerKing": {
+    "glb": {
+      "passed": true,
+      "tested_digits": 10
+    },
+    "fbx": {
+      "passed": true,
+      "tested_digits": 10
+    },
+    "hand_positions_colours_weights_exact": true
+  },
+  "PaleGrinnerPunk": {
+    "glb": {
+      "passed": true,
+      "tested_digits": 10
+    },
+    "fbx": {
+      "passed": true,
+      "tested_digits": 10
+    },
+    "hand_positions_colours_weights_exact": true
+  },
+  "PaleGrinnerAssassin": {
+    "glb": {
+      "passed": true,
+      "tested_digits": 10
+    },
+    "fbx": {
+      "passed": true,
+      "tested_digits": 10
+    },
+    "hand_positions_colours_weights_exact": true
+  }
+}

@@ -1,0 +1,40 @@
+{
+  "models": {
+    "PaleGrinnerFarmer": {
+      "role": "Farmer",
+      "label": "Фермер",
+      "triangles": 18836,
+      "bones": 27
+    },
+    "PaleGrinnerMiner": {
+      "role": "Miner",
+      "label": "Шахтёр",
+      "triangles": 18644,
+      "bones": 27
+    },
+    "PaleGrinnerKnight": {
+      "role": "Knight",
+      "label": "Рыцарь",
+      "triangles": 18610,
+      "bones": 27
+    },
+    "PaleGrinnerKing": {
+      "role": "King",
+      "label": "Король",
+      "triangles": 19452,
+      "bones": 27
+    },
+    "PaleGrinnerPunk": {
+      "role": "Punk",
+      "label": "Нефор",
+      "triangles": 19740,
+      "bones": 27
+    },
+    "PaleGrinnerAssassin": {
+      "role": "Assassin",
+      "label": "Убийца",
+      "triangles": 18628,
+      "bones": 27
+    }
+  }
+}

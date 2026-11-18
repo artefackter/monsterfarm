@@ -1,0 +1,44 @@
+{
+  "PaleGrinner": {
+    "triangles": 17028,
+    "bones": 27,
+    "animations": []
+  },
+  "PaleGrinnerAggressive": {
+    "triangles": 18224,
+    "bones": 34,
+    "animations": [
+      "HeadLunge"
+    ]
+  },
+  "PaleGrinnerFarmer": {
+    "triangles": 19060,
+    "bones": 27,
+    "animations": []
+  },
+  "PaleGrinnerMiner": {
+    "triangles": 18868,
+    "bones": 27,
+    "animations": []
+  },
+  "PaleGrinnerKnight": {
+    "triangles": 18834,
+    "bones": 27,
+    "animations": []
+  },
+  "PaleGrinnerKing": {
+    "triangles": 19676,
+    "bones": 27,
+    "animations": []
+  },
+  "PaleGrinnerPunk": {
+    "triangles": 19964,
+    "bones": 27,
+    "animations": []
+  },
+  "PaleGrinnerAssassin": {
+    "triangles": 18852,
+    "bones": 27,
+    "animations": []
+  }
+}

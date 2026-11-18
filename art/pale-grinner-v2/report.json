@@ -1,0 +1,45 @@
+{
+  "status": "awaiting_visual_approval",
+  "models": {
+    "PaleGrinner": {
+      "reference": 1,
+      "source_asset": null,
+      "review_baseline_only": false,
+      "triangles": 11930,
+      "vertices": 9174,
+      "bones": 27,
+      "meshes": 1,
+      "materials": 1,
+      "textures": 0,
+      "animation_clips": 0,
+      "bounds": [
+        [
+          -1.800279974937439,
+          -0.8135126233100891,
+          0.009999990463256836
+        ],
+        [
+          1.800279974937439,
+          0.5799999833106995,
+          7.539999961853027
+        ]
+      ],
+      "height": 7.53,
+      "interpretation": "Face and neckline matched to the supplied front view. Profile, rear and lower body interpreted."
+    }
+  },
+  "authoring_axes": {
+    "up": "Z",
+    "front": "-Y"
+  },
+  "export_axes": {
+    "up": "Y"
+  },
+  "unit": "One intended Roblox stud; scale not verified in Studio",
+  "rig": "Custom rigid-segment NPC skeletons; not Roblox R15",
+  "game_integrated": false,
+  "studio_modified": false,
+  "uploaded": false,
+  "scope": "PaleGrinner revision 2. Frontal likeness study from the provided reference.",
+  "previews": "Rendered from the actual exported source geometry, no paintovers"
+}

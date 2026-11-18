@@ -1,0 +1,132 @@
+{
+  "PaleGrinner": {
+    "triangles": 11446,
+    "bones": 27,
+    "animations": [],
+    "original_triangles": 17028,
+    "surfaces": {
+      "Portrait": [
+        7788,
+        3956
+      ],
+      "Hair": [
+        5544,
+        3794
+      ]
+    }
+  },
+  "PaleGrinnerAggressive": {
+    "triangles": 12642,
+    "bones": 34,
+    "animations": [
+      "HeadLunge"
+    ],
+    "original_triangles": 18224,
+    "surfaces": {
+      "Portrait": [
+        7788,
+        3956
+      ],
+      "Hair": [
+        5544,
+        3794
+      ]
+    }
+  },
+  "PaleGrinnerFarmer": {
+    "triangles": 13478,
+    "bones": 27,
+    "animations": [],
+    "original_triangles": 19060,
+    "surfaces": {
+      "Portrait": [
+        7788,
+        3956
+      ],
+      "Hair": [
+        5544,
+        3794
+      ]
+    }
+  },
+  "PaleGrinnerMiner": {
+    "triangles": 13286,
+    "bones": 27,
+    "animations": [],
+    "original_triangles": 18868,
+    "surfaces": {
+      "Portrait": [
+        7788,
+        3956
+      ],
+      "Hair": [
+        5544,
+        3794
+      ]
+    }
+  },
+  "PaleGrinnerKnight": {
+    "triangles": 13252,
+    "bones": 27,
+    "animations": [],
+    "original_triangles": 18834,
+    "surfaces": {
+      "Portrait": [
+        7788,
+        3956
+      ],
+      "Hair": [
+        5544,
+        3794
+      ]
+    }
+  },
+  "PaleGrinnerKing": {
+    "triangles": 14094,
+    "bones": 27,
+    "animations": [],
+    "original_triangles": 19676,
+    "surfaces": {
+      "Portrait": [
+        7788,
+        3956
+      ],
+      "Hair": [
+        5544,
+        3794
+      ]
+    }
+  },
+  "PaleGrinnerPunk": {
+    "triangles": 14382,
+    "bones": 27,
+    "animations": [],
+    "original_triangles": 19964,
+    "surfaces": {
+      "Portrait": [
+        7788,
+        3956
+      ],
+      "Hair": [
+        5544,
+        3794
+      ]
+    }
+  },
+  "PaleGrinnerAssassin": {
+    "triangles": 13270,
+    "bones": 27,
+    "animations": [],
+    "original_triangles": 18852,
+    "surfaces": {
+      "Portrait": [
+        7788,
+        3956
+      ],
+      "Hair": [
+        5544,
+        3794
+      ]
+    }
+  }
+}

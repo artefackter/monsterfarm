@@ -1,0 +1,24 @@
+{
+  "FloatingGrin": {
+    "triangles": 7580,
+    "bones": 14,
+    "animations": [],
+    "packed": {
+      "vertices": 5636,
+      "input_animation_keys": 0,
+      "animation_keys": 0
+    }
+  },
+  "FloatingGrinAggressive": {
+    "triangles": 7580,
+    "bones": 14,
+    "animations": [
+      "OrbLunge"
+    ],
+    "packed": {
+      "vertices": 5636,
+      "input_animation_keys": 224,
+      "animation_keys": 155
+    }
+  }
+}

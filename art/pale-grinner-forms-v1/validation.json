@@ -1,0 +1,197 @@
+{
+  "passed": true,
+  "results": {
+    "PaleGrinnerFarmer": {
+      "glb": {
+        "passed": true,
+        "checks": [
+          {
+            "bone": "Head",
+            "moved_vertices": 10100
+          },
+          {
+            "bone": "HandL",
+            "moved_vertices": 1294
+          }
+        ],
+        "triangles": 18836,
+        "bones": 27
+      },
+      "fbx": {
+        "passed": true,
+        "checks": [
+          {
+            "bone": "Head",
+            "moved_vertices": 9082
+          },
+          {
+            "bone": "HandL",
+            "moved_vertices": 1224
+          }
+        ],
+        "triangles": 18836,
+        "bones": 27
+      }
+    },
+    "PaleGrinnerMiner": {
+      "glb": {
+        "passed": true,
+        "checks": [
+          {
+            "bone": "Head",
+            "moved_vertices": 8875
+          },
+          {
+            "bone": "HandL",
+            "moved_vertices": 1294
+          }
+        ],
+        "triangles": 18644,
+        "bones": 27
+      },
+      "fbx": {
+        "passed": true,
+        "checks": [
+          {
+            "bone": "Head",
+            "moved_vertices": 7978
+          },
+          {
+            "bone": "HandL",
+            "moved_vertices": 1224
+          }
+        ],
+        "triangles": 18644,
+        "bones": 27
+      }
+    },
+    "PaleGrinnerKnight": {
+      "glb": {
+        "passed": true,
+        "checks": [
+          {
+            "bone": "Head",
+            "moved_vertices": 9031
+          },
+          {
+            "bone": "HandL",
+            "moved_vertices": 1294
+          }
+        ],
+        "triangles": 18610,
+        "bones": 27
+      },
+      "fbx": {
+        "passed": true,
+        "checks": [
+          {
+            "bone": "Head",
+            "moved_vertices": 8048
+          },
+          {
+            "bone": "HandL",
+            "moved_vertices": 1224
+          }
+        ],
+        "triangles": 18610,
+        "bones": 27
+      }
+    },
+    "PaleGrinnerKing": {
+      "glb": {
+        "passed": true,
+        "checks": [
+          {
+            "bone": "Head",
+            "moved_vertices": 10044
+          },
+          {
+            "bone": "HandL",
+            "moved_vertices": 1294
+          }
+        ],
+        "triangles": 19452,
+        "bones": 27
+      },
+      "fbx": {
+        "passed": true,
+        "checks": [
+          {
+            "bone": "Head",
+            "moved_vertices": 9074
+          },
+          {
+            "bone": "HandL",
+            "moved_vertices": 1224
+          }
+        ],
+        "triangles": 19452,
+        "bones": 27
+      }
+    },
+    "PaleGrinnerPunk": {
+      "glb": {
+        "passed": true,
+        "checks": [
+          {
+            "bone": "Head",
+            "moved_vertices": 8088
+          },
+          {
+            "bone": "HandL",
+            "moved_vertices": 1294
+          }
+        ],
+        "triangles": 19740,
+        "bones": 27
+      },
+      "fbx": {
+        "passed": true,
+        "checks": [
+          {
+            "bone": "Head",
+            "moved_vertices": 7414
+          },
+          {
+            "bone": "HandL",
+            "moved_vertices": 1224
+          }
+        ],
+        "triangles": 19740,
+        "bones": 27
+      }
+    },
+    "PaleGrinnerAssassin": {
+      "glb": {
+        "passed": true,
+        "checks": [
+          {
+            "bone": "Head",
+            "moved_vertices": 7576
+          },
+          {
+            "bone": "HandL",
+            "moved_vertices": 1294
+          }
+        ],
+        "triangles": 18628,
+        "bones": 27
+      },
+      "fbx": {
+        "passed": true,
+        "checks": [
+          {
+            "bone": "Head",
+            "moved_vertices": 6934
+          },
+          {
+            "bone": "HandL",
+            "moved_vertices": 1224
+          }
+        ],
+        "triangles": 18628,
+        "bones": 27
+      }
+    }
+  }
+}
